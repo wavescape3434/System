@@ -1,0 +1,715 @@
+import { COMBAT_EFFECTS } from "./class-roles";
+import type { Character, Stats } from "./domain";
+import { stats, currentPath, totalXP, level } from "./domain";
+import { SKILLS } from "./skill-catalog";
+export interface Campaign {
+  cleared: string[];
+  gold: number;
+  inventory: Record<string, number>;
+  roster: string[];
+  party: string[];
+  equipment: string[];
+  equippedSkills: string[];
+  battle?: Battle;
+}
+export interface Encounter {
+  id: string;
+  name: string;
+  region: string;
+  tier: number;
+  enemies: string[];
+  gold: number;
+  recruit?: string;
+}
+export const REGIONS = [
+  {
+    id: "mossfall",
+    name: "Mossfall Woods",
+    biome: "forest",
+    enemies: ["slime", "wolf", "bandit"],
+    boss: "alpha",
+    recruit: "orin",
+  },
+  {
+    id: "quarry",
+    name: "Stonepass Quarry",
+    biome: "quarry",
+    enemies: ["bat", "crawler", "bandit"],
+    boss: "golem",
+    recruit: "lyra",
+  },
+  {
+    id: "ruins",
+    name: "Ember Ruins",
+    biome: "ruins",
+    enemies: ["wisp", "skeleton", "sentinel"],
+    boss: "construct",
+    recruit: "gideon",
+  },
+  {
+    id: "ridge",
+    name: "Stormridge",
+    biome: "mountain",
+    enemies: ["harpy", "wolf", "wisp"],
+    boss: "wyvern",
+  },
+  {
+    id: "keep",
+    name: "Blackthorn Keep",
+    biome: "keep",
+    enemies: ["skeleton", "sentinel", "crawler"],
+    boss: "warden",
+  },
+] as const;
+export const ENCOUNTERS: Encounter[] = REGIONS.flatMap((r, i) => [
+  {
+    id: `${r.id}-1`,
+    name: `${r.name}: Approach`,
+    region: r.id,
+    tier: i + 1,
+    enemies: [r.enemies[0], r.enemies[0]],
+    gold: 20 + i * 15,
+  },
+  {
+    id: `${r.id}-2`,
+    name: `${r.name}: Patrol`,
+    region: r.id,
+    tier: i + 1,
+    enemies: [r.enemies[1], r.enemies[2]],
+    gold: 30 + i * 15,
+  },
+  {
+    id: `${r.id}-boss`,
+    name: `${r.name}: ${r.boss[0].toUpperCase() + r.boss.slice(1)}`,
+    region: r.id,
+    tier: i + 1,
+    enemies: [r.boss],
+    gold: 60 + i * 25,
+    recruit: "recruit" in r ? r.recruit : undefined,
+  },
+]);
+export const COMPANIONS = [
+  {
+    id: "mira",
+    name: "Mira",
+    role: "Medic",
+    description: "Restoration and support. Assigned to your first expedition.",
+    skill: "heal",
+    requires: "",
+  },
+  {
+    id: "orin",
+    name: "Orin",
+    role: "Guardian",
+    description: "High defense and a shield attack.",
+    skill: "power",
+    requires: "mossfall-boss",
+  },
+  {
+    id: "lyra",
+    name: "Lyra",
+    role: "Ranger",
+    description: "Fast attacks and multi-target shots.",
+    skill: "quick",
+    requires: "quarry-boss",
+  },
+  {
+    id: "gideon",
+    name: "Gideon",
+    role: "Scholar",
+    description: "Magic damage and enemy analysis.",
+    skill: "fire",
+    requires: "ruins-boss",
+  },
+] as const;
+export interface Equipment {
+  id: string;
+  name: string;
+  slot: "weapon" | "armor" | "accessory";
+  price: number;
+  mod: Partial<Stats>;
+  description: string;
+}
+export const EQUIPMENT: Equipment[] = [
+  {
+    id: "training-sword",
+    name: "Training Sword",
+    slot: "weapon",
+    price: 0,
+    mod: { STR: 1 },
+    description: "+1 combat STR",
+  },
+  {
+    id: "iron-sword",
+    name: "Iron Sword",
+    slot: "weapon",
+    price: 75,
+    mod: { STR: 3 },
+    description: "+3 combat STR",
+  },
+  {
+    id: "oak-staff",
+    name: "Oak Staff",
+    slot: "weapon",
+    price: 75,
+    mod: { INT: 3 },
+    description: "+3 combat INT",
+  },
+  {
+    id: "shortbow",
+    name: "Shortbow",
+    slot: "weapon",
+    price: 90,
+    mod: { DEX: 3 },
+    description: "+3 combat DEX",
+  },
+  {
+    id: "runed-blade",
+    name: "Runed Blade",
+    slot: "weapon",
+    price: 300,
+    mod: { STR: 4, INT: 2 },
+    description: "+4 combat STR, +2 combat INT",
+  },
+  {
+    id: "travel-clothes",
+    name: "Travel Clothes",
+    slot: "armor",
+    price: 0,
+    mod: { CON: 1 },
+    description: "+1 combat CON",
+  },
+  {
+    id: "leather-armor",
+    name: "Leather Armor",
+    slot: "armor",
+    price: 80,
+    mod: { CON: 3, DEX: 1 },
+    description: "+3 combat CON, +1 combat DEX",
+  },
+  {
+    id: "steel-armor",
+    name: "Steel Armor",
+    slot: "armor",
+    price: 220,
+    mod: { CON: 6 },
+    description: "+6 combat CON",
+  },
+  {
+    id: "scholar-robes",
+    name: "Scholar Robes",
+    slot: "armor",
+    price: 180,
+    mod: { INT: 3, WIS: 2 },
+    description: "+3 combat INT, +2 combat WIS",
+  },
+  {
+    id: "focus-charm",
+    name: "Focus Charm",
+    slot: "accessory",
+    price: 120,
+    mod: { INT: 2, WIS: 2 },
+    description: "+2 combat INT, +2 combat WIS",
+  },
+  {
+    id: "trail-ring",
+    name: "Trail Ring",
+    slot: "accessory",
+    price: 120,
+    mod: { DEX: 2, CON: 2 },
+    description: "+2 combat DEX, +2 combat CON",
+  },
+];
+export function newCampaign(): Campaign {
+  return {
+    cleared: [],
+    gold: 0,
+    inventory: {
+      potion: 3,
+      ether: 1,
+      "training-sword": 1,
+      "travel-clothes": 1,
+    },
+    roster: ["mira"],
+    party: ["mira"],
+    equipment: ["training-sword", "travel-clothes"],
+    equippedSkills: [],
+  };
+}
+export const campaign = (c: Character) => c.campaign || newCampaign();
+export function combatAttributes(c: Character): Stats {
+  const result = { ...stats(c) };
+  result[currentPath(c).stat] += 2;
+  for (const id of campaign(c).equipment) {
+    const item = EQUIPMENT.find((x) => x.id === id);
+    if (item)
+      for (const [a, n] of Object.entries(item.mod))
+        result[a as keyof Stats] += n!;
+  }
+  for (const id of campaign(c).equippedSkills) {
+    const s = SKILLS.find((x) => x.id === id);
+    if (
+      s &&
+      c.earnedSkills.includes(id) &&
+      !s.automatic &&
+      s.id !== "universal-root"
+    )
+      result[s.stat] += s.cost >= 2 ? 2 : 1;
+  }
+  return result;
+}
+export interface Ability {
+  id: string;
+  name: string;
+  type: string;
+  cost: number;
+  power: number;
+}
+const ability = (id: string, name: string, type: string): Ability => ({
+  id,
+  name,
+  type,
+  cost: COMBAT_EFFECTS[type]?.mp || 5,
+  power: type === "fire" ? 1.6 : type === "power" ? 1.8 : 1.2,
+});
+export interface Unit {
+  id: string;
+  name: string;
+  sprite: string;
+  hp: number;
+  maxHp: number;
+  mp: number;
+  maxMp: number;
+  attack: number;
+  magic: number;
+  defense: number;
+  speed: number;
+  guard: boolean;
+  abilities: Ability[];
+  boss?: boolean;
+  penetration?: number;
+  healing?: number;
+  stun?: number;
+  taunt?: number;
+  counter?: boolean;
+  burn?: number;
+  burnDamage?: number;
+}
+export interface Battle {
+  encounterId: string;
+  party: Unit[];
+  enemies: Unit[];
+  actor: number;
+  round: number;
+  phase: "player" | "won" | "lost" | "fled";
+  log: string[];
+  items: Record<string, number>;
+  claimed: boolean;
+}
+const enemyNames: Record<string, string> = {
+  slime: "Forest Slime",
+  wolf: "Briar Wolf",
+  bandit: "Road Bandit",
+  alpha: "Briar Alpha",
+  bat: "Cave Bat",
+  crawler: "Stone Crawler",
+  golem: "Quarry Golem",
+  wisp: "Ember Wisp",
+  skeleton: "Ruins Guard",
+  sentinel: "Iron Sentinel",
+  construct: "Ember Construct",
+  harpy: "Storm Harpy",
+  wyvern: "Ridge Wyvern",
+  warden: "Blackthorn Warden",
+};
+export function encounterAvailable(c: Character, id: string): boolean {
+  const i = ENCOUNTERS.findIndex((e) => e.id === id);
+  return (
+    i >= 0 && (i === 0 || campaign(c).cleared.includes(ENCOUNTERS[i - 1].id))
+  );
+}
+export function startBattle(c: Character, id: string): Character {
+  if (!encounterAvailable(c, id) || campaign(c).battle?.phase === "player")
+    return c;
+  const e = ENCOUNTERS.find((x) => x.id === id)!,
+    s = combatAttributes(c),
+    lv = level(totalXP(c));
+  const maxHp = 40 + s.CON * 5 + (c.activeClass === "sentinel" ? 25 : 0),
+    maxMp =
+      12 +
+      s.INT * 2 +
+      s.WIS +
+      (c.activeClass === "scholar" ? 10 : c.activeClass === "bard" ? 5 : 0);
+  const hero: Unit = {
+    id: "hero",
+    name: c.name,
+    sprite: c.activeClass,
+    hp: maxHp,
+    maxHp,
+    mp: maxMp,
+    maxMp,
+    attack:
+      7 +
+      s.STR * 2 +
+      s.DEX +
+      (c.activeClass === "monk" ? Math.floor(s.DEX / 2) : 0),
+    magic:
+      6 +
+      s.INT * 2 +
+      s.WIS +
+      (c.activeClass === "artificer" ? 4 : c.activeClass === "paladin" ? 2 : 0),
+    defense:
+      2 +
+      Math.floor(s.CON * 0.8) +
+      (c.activeClass === "sentinel"
+        ? 5
+        : ["warrior", "paladin"].includes(c.activeClass)
+          ? 2
+          : 0),
+    speed: 5 + s.DEX,
+    guard: false,
+    penetration:
+      c.activeClass === "rogue" ? 4 : c.activeClass === "ranger" ? 2 : 0,
+    healing: c.activeClass === "disciple" ? 1.25 : 1,
+    abilities: campaign(c).equippedSkills.flatMap((id) => {
+      const skill = SKILLS.find((s) => s.id === id);
+      return skill?.combat && c.earnedSkills.includes(id)
+        ? [ability(id, skill.name, skill.combat)]
+        : [];
+    }),
+  };
+  if (c.activeClass === "sage")
+    for (const skill of hero.abilities)
+      skill.cost = Math.max(1, skill.cost - 1);
+  const companions = campaign(c)
+    .party.filter((id) => campaign(c).roster.includes(id))
+    .slice(0, 2)
+    .flatMap((id) => {
+      const npc = COMPANIONS.find((n) => n.id === id);
+      if (!npc) return [];
+      const hp = 60 + lv * 12,
+        mp = 20 + lv * 5 + (c.activeClass === "bard" ? 5 : 0);
+      return [
+        {
+          id,
+          name: npc.name,
+          sprite: id,
+          hp,
+          maxHp: hp,
+          mp,
+          maxMp: mp,
+          attack: 15 + lv * 3 + (c.activeClass === "marshal" ? 2 : 0),
+          magic: 18 + lv * 4,
+          defense: id === "orin" ? 12 + lv * 2 : 5 + lv,
+          speed: 9 + lv + (id === "lyra" ? 5 : 0),
+          guard: false,
+          abilities: [
+            ability(
+              `${id}-skill`,
+              (
+                {
+                  heal: "Restore",
+                  power: "Shield Bash",
+                  quick: "Twin Shot",
+                  fire: "Ember Burst",
+                } as Record<string, string>
+              )[npc.skill],
+              npc.skill,
+            ),
+          ],
+        },
+      ];
+    });
+  const enemies = e.enemies.map((kind, i) => {
+    const boss = ["alpha", "golem", "construct", "wyvern", "warden"].includes(
+        kind,
+      ),
+      hp = (boss ? 105 : 38) + e.tier * (boss ? 28 : 12);
+    return {
+      id: `${kind}-${i}`,
+      name: enemyNames[kind] || kind,
+      sprite: kind,
+      hp,
+      maxHp: hp,
+      mp: 0,
+      maxMp: 0,
+      attack: 9 + e.tier * 5 + (boss ? 4 : 0),
+      magic: 0,
+      defense: 2 + e.tier * 2,
+      speed: 7 + e.tier,
+      guard: false,
+      abilities: [],
+      boss,
+    };
+  });
+  const battle: Battle = {
+    encounterId: id,
+    party: [hero, ...companions],
+    enemies,
+    actor: 0,
+    round: 1,
+    phase: "player",
+    log: [`Battle started: ${e.name}.`],
+    items: { ...campaign(c).inventory },
+    claimed: false,
+  };
+  return { ...c, campaign: { ...campaign(c), battle } };
+}
+export interface Action {
+  kind: "attack" | "guard" | "ability" | "potion" | "ether" | "flee";
+  target: number;
+  abilityId?: string;
+}
+export function takeAction(input: Battle, action: Action): Battle {
+  if (input.phase !== "player") return input;
+  const b = structuredClone(input),
+    actor = b.party[b.actor];
+  if (!actor || actor.hp <= 0) return input;
+  const hit = (target: Unit, raw: number) => {
+    const damage = Math.max(
+      1,
+      Math.round(
+        (raw - Math.max(0, target.defense - (actor.penetration || 0))) *
+          (target.guard ? 0.45 : 1),
+      ),
+    );
+    target.hp = Math.max(0, target.hp - damage);
+    b.log.push(`${actor.name} → ${target.name}: ${damage} damage.`);
+  };
+  if (action.kind === "flee") {
+    b.phase = "fled";
+    b.log.push("Party retreated. Used items are not restored.");
+    return b;
+  }
+  if (action.kind === "attack") {
+    const target = b.enemies[action.target];
+    if (!target || target.hp <= 0) return input;
+    hit(target, actor.attack);
+  } else if (action.kind === "guard") {
+    actor.guard = true;
+    actor.mp = Math.min(actor.maxMp, actor.mp + 3);
+    b.log.push(`${actor.name} guards and restores 3 MP.`);
+  } else if (action.kind === "potion" || action.kind === "ether") {
+    const target = b.party[action.target];
+    if (!target || target.hp <= 0 || !(b.items[action.kind] > 0)) return input;
+    b.items[action.kind]--;
+    if (action.kind === "potion")
+      target.hp = Math.min(target.maxHp, target.hp + 50);
+    else target.mp = Math.min(target.maxMp, target.mp + 20);
+    b.log.push(`${actor.name} uses ${action.kind} on ${target.name}.`);
+  } else {
+    const skill = actor.abilities.find((x) => x.id === action.abilityId);
+    if (!skill || actor.mp < skill.cost) return input;
+    const target =
+      skill.type === "heal" ? b.party[action.target] : b.enemies[action.target];
+    if (!target || target.hp <= 0) return input;
+    actor.mp -= skill.cost;
+    b.log.push(`${actor.name} uses ${skill.name}.`);
+    const restore = (ally: Unit, scale: number) => {
+      const amount = Math.round(actor.magic * scale * (actor.healing || 1));
+      ally.hp = Math.min(ally.maxHp, ally.hp + amount);
+      b.log.push(`${ally.name}: +${amount} HP.`);
+    };
+    if (skill.type === "heal") restore(target, 1.3);
+    else if (skill.type === "heal-self") restore(actor, 1.15);
+    else if (skill.type === "heal-all")
+      for (const ally of b.party.filter((p) => p.hp > 0)) restore(ally, 0.85);
+    else if (["guard", "ward", "bulwark"].includes(skill.type)) {
+      for (const ally of b.party.filter((p) => p.hp > 0)) ally.guard = true;
+      if (skill.type === "bulwark") actor.taunt = 2;
+    } else if (skill.type === "taunt") {
+      actor.guard = true;
+      actor.taunt = 2;
+    } else if (skill.type === "counter") {
+      actor.guard = true;
+      actor.counter = true;
+    } else if (skill.type === "rally" || skill.type === "formation")
+      for (const ally of b.party.filter((p) => p.hp > 0)) {
+        ally.attack += skill.type === "formation" ? 3 : 2;
+        ally.magic += 2;
+        if (skill.type === "formation") {
+          ally.defense += 2;
+          ally.guard = true;
+        }
+      }
+    else if (skill.type === "scan") {
+      target.defense = Math.max(0, target.defense - 3);
+      b.log.push(`${target.name}: defense -3.`);
+    } else if (skill.type === "focus" || skill.type === "focus-all") {
+      for (const ally of skill.type === "focus"
+        ? [actor]
+        : b.party.filter((p) => p.hp > 0)) {
+        const amount = skill.type === "focus" ? 12 : 10;
+        ally.mp = Math.min(ally.maxMp, ally.mp + amount);
+        b.log.push(`${ally.name}: +${amount} MP.`);
+      }
+      if (skill.type === "focus") restore(actor, 0.35);
+    } else if (skill.type === "quick" || skill.type === "area")
+      for (const enemy of b.enemies.filter((p) => p.hp > 0))
+        hit(
+          enemy,
+          skill.type === "quick" ? actor.attack * 0.9 : actor.magic * 1.1,
+        );
+    else if (skill.type === "pierce")
+      hit(target, actor.attack * 1.2 + target.defense);
+    else if (skill.type === "flurry") {
+      hit(target, actor.attack * 0.8);
+      if (target.hp > 0) hit(target, actor.attack * 0.8);
+    } else if (skill.type === "bash") {
+      hit(target, actor.attack * 1.15);
+      if (!target.boss) target.stun = 1;
+      else b.log.push(`${target.name} resists stun.`);
+    } else if (skill.type === "hybrid") {
+      hit(target, actor.attack * 0.85 + actor.magic * 0.6);
+      restore(actor, 0.25);
+    } else if (skill.type === "coordinated")
+      hit(
+        target,
+        actor.attack +
+          b.party
+            .filter((p) => p.hp > 0 && p.id !== actor.id)
+            .reduce((n, p) => n + p.attack * 0.4, 0),
+      );
+    else if (skill.type === "burn") {
+      hit(target, actor.magic * 0.9);
+      target.burn = 3;
+      target.burnDamage = Math.max(1, Math.round(actor.magic * 0.3));
+    } else
+      hit(
+        target,
+        (skill.type === "fire" ? actor.magic : actor.attack) * skill.power,
+      );
+  }
+
+  if (b.enemies.every((x) => x.hp === 0)) {
+    b.phase = "won";
+    b.log.push("Victory. Claim expedition rewards.");
+    return b;
+  }
+  let next = b.actor + 1;
+  while (next < b.party.length && b.party[next].hp === 0) next++;
+  if (next < b.party.length) {
+    b.actor = next;
+    b.log = b.log.slice(-30);
+    return b;
+  }
+  for (let i = 0; i < b.enemies.length; i++) {
+    const enemy = b.enemies[i];
+    if (enemy.hp === 0) continue;
+    if ((enemy.burn || 0) > 0) {
+      enemy.burn!--;
+      enemy.hp = Math.max(0, enemy.hp - (enemy.burnDamage || 1));
+      b.log.push(`${enemy.name} takes ${enemy.burnDamage || 1} burn damage.`);
+      if (enemy.hp === 0) continue;
+    }
+    if ((enemy.stun || 0) > 0) {
+      enemy.stun!--;
+      b.log.push(`${enemy.name} is stunned.`);
+      continue;
+    }
+    const living = b.party.filter((x) => x.hp > 0);
+    if (!living.length) break;
+    const target =
+        living.find((p) => (p.taunt || 0) > 0) ||
+        living[(b.round + i) % living.length],
+      charged = enemy.boss && b.round % 3 === 0;
+    const damage = Math.max(
+      1,
+      Math.round(
+        (enemy.attack * (charged ? 1.6 : 1) - target.defense) *
+          (target.guard ? 0.45 : 1),
+      ),
+    );
+    target.hp = Math.max(0, target.hp - damage);
+    b.log.push(
+      `${enemy.name}${charged ? " uses Heavy Strike on" : " attacks"} ${target.name}: ${damage} damage.`,
+    );
+    if (target.counter && target.hp > 0) {
+      const amount = Math.max(1, target.attack - enemy.defense);
+      enemy.hp = Math.max(0, enemy.hp - amount);
+      b.log.push(`${target.name} counters: ${amount} damage.`);
+    }
+  }
+  for (const ally of b.party) {
+    ally.guard = false;
+    ally.counter = false;
+    if ((ally.taunt || 0) > 0) ally.taunt!--;
+  }
+  if (b.enemies.every((x) => x.hp === 0) && b.party.some((p) => p.hp > 0)) {
+    b.phase = "won";
+    b.log.push("Victory. Claim expedition rewards.");
+  } else if (b.party.every((x) => x.hp === 0)) {
+    b.phase = "lost";
+    b.log.push("Party defeated. No real-world progress is lost.");
+  } else {
+    b.actor = b.party.findIndex((x) => x.hp > 0);
+    b.round++;
+    b.log.push(`Round ${b.round}.`);
+  }
+  b.log = b.log.slice(-30);
+  return b;
+}
+export function act(c: Character, action: Action): Character {
+  const old = campaign(c).battle;
+  if (!old) return c;
+  const battle = takeAction(old, action);
+  if (old === battle) return c;
+  return {
+    ...c,
+    campaign: { ...campaign(c), battle, inventory: { ...battle.items } },
+  };
+}
+export function claimVictory(c: Character): Character {
+  const data = campaign(c),
+    b = data.battle;
+  if (!b || b.phase !== "won" || b.claimed) return c;
+  const e = ENCOUNTERS.find((x) => x.id === b.encounterId)!;
+  return {
+    ...c,
+    relics: e.id.endsWith("-boss")
+      ? [...new Set([...c.relics, `${e.region}-sigil`])]
+      : c.relics,
+    campaign: {
+      ...data,
+      cleared: [...new Set([...data.cleared, e.id])],
+      gold: data.gold + e.gold,
+      inventory: {
+        ...data.inventory,
+        potion: (data.inventory.potion || 0) + 1,
+      },
+      battle: { ...b, claimed: true },
+    },
+  };
+}
+export function buy(c: Character, id: string): Character {
+  const data = campaign(c),
+    item = EQUIPMENT.find((x) => x.id === id),
+    price =
+      item?.price ?? (id === "potion" ? 20 : id === "ether" ? 25 : Infinity);
+  if (data.gold < price || (item && data.inventory[id])) return c;
+  return {
+    ...c,
+    campaign: {
+      ...data,
+      gold: data.gold - price,
+      inventory: { ...data.inventory, [id]: (data.inventory[id] || 0) + 1 },
+    },
+  };
+}
+export function equip(c: Character, id: string): Character {
+  const data = campaign(c),
+    item = EQUIPMENT.find((x) => x.id === id);
+  if (!item || !data.inventory[id] || data.battle?.phase === "player") return c;
+  return {
+    ...c,
+    campaign: {
+      ...data,
+      equipment: [
+        ...data.equipment.filter(
+          (old) => EQUIPMENT.find((x) => x.id === old)?.slot !== item.slot,
+        ),
+        id,
+      ],
+    },
+  };
+}

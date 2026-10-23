@@ -85,6 +85,7 @@ export function Crest({ small = false }: { small?: boolean }) {
   );
 }
 export function StatRadar({ values }: { values: Stats }) {
+  const scale = Math.max(30, ...Object.values(values));
   const at = (i: number, r: number) => [
     140 + Math.sin((i * Math.PI) / 3) * r,
     125 - Math.cos((i * Math.PI) / 3) * r,
@@ -120,7 +121,7 @@ export function StatRadar({ values }: { values: Stats }) {
       ))}
       <polygon
         points={ATTRIBUTES.map((a, i) =>
-          at(i, Math.min(100, (values[a] / 20) * 100)).join(","),
+          at(i, Math.min(100, (values[a] / scale) * 100)).join(","),
         ).join(" ")}
         fill="#3d786249"
         stroke="#447d65"
@@ -129,8 +130,8 @@ export function StatRadar({ values }: { values: Stats }) {
       {ATTRIBUTES.map((a, i) => (
         <g key={a}>
           <circle
-            cx={at(i, Math.min(100, (values[a] / 20) * 100))[0]}
-            cy={at(i, Math.min(100, (values[a] / 20) * 100))[1]}
+            cx={at(i, Math.min(100, (values[a] / scale) * 100))[0]}
+            cy={at(i, Math.min(100, (values[a] / scale) * 100))[1]}
             r="3"
             fill="#2d624e"
           />

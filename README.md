@@ -1,6 +1,6 @@
 # The Guild
 
-A personal improvement RPG for Android, built with React, TypeScript, Vite, and Capacitor. Grow your body, mind, and heart through real-world action. The visual interface includes an illustrated guildhall, a personal guild card, attribute charts, and a networking skill tree. All fonts and artwork are bundled for offline use.
+An Android app for real-world objectives, class and profession progression, branching skill trees, and turn-based party combat. Built with React, TypeScript, Vite, and Capacitor. Fonts and artwork are bundled for offline use.
 
 ## Try it
 
@@ -8,7 +8,7 @@ Download the prebuilt [Android APK](downloads/the-guild-debug.apk?raw=true), or 
 
 The APK requires Android 7.0 or newer. This is a development build, not a Play Store release. A device may ask you to allow installation from the app used to open the APK. Local builds produce `android/app/build/outputs/apk/debug/app-debug.apk`.
 
-On first launch, choose **Begin your story** to create your character, or **Explore a sample character first** to try all features without entering personal information. Sample progress is explicitly labeled and can be replaced with your own application.
+On first launch, choose **Register character** to create your character, or **Try a sample character** to try all features without entering personal information. Sample progress is explicitly labeled and can be replaced with your own application.
 
 ### Run the web interface
 
@@ -29,18 +29,60 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
-## What is implemented
+## Version 1.1.0
 
-- **Guild application:** choose a name and profession, estimate a baseline with bodyweight or weighted exercise, and select an eligible starting class. There is always an open beginner path. Every new character starts at F adventurer rank.
-- **Six attributes:** STR, DEX, CON, INT, WIS, CHA. Baselines cover strength, movement, balance, reading, reflection, and connection. These are personal game scores, not medical, intellectual, or spiritual assessments.
-- **Eight classes:** Warrior, Ranger, Scholar, Bard, Disciple, Sentinel, Paladin, and Sage. Advanced classes have visible attribute and XP prerequisites. Class changes preserve all earned class XP, levels, skills, and total progress.
-- **Subclasses:** including Eldritch Knight, Warpriest, Scripture Scribe, Trailwarden, Guardian, Herald, Apologist, and others. Reach class level 2 and the secondary attribute requirement to choose one. Faith objectives use Christianity, Scripture, prayer, and service.
-- **Objectives:** daily tasks, weekly quests, and monthly adventures follow the active class, subclass, and profession. Networking practice and Christian reflection have dedicated objectives. Monthly adventures have a milestone checklist before claiming.
-- **Progression:** each objective rewards once per local calendar period. Days reset at midnight, weeks on Monday, and months on the first. Existing rewards never expire. Every 100 attribute XP adds a point; every 100 class XP adds a class level; every 250 lifetime XP adds an adventurer level. Class ranks advance at levels 3, 5, 10, and 20. Adventurer ranks range from F through SSS with visible thresholds.
-- **Professions and skills:** freely select a profession. Practice earns foundational skills. Recording a CCNA, Network+, or JNCIA-Junos earns **Architect of Connections**; CCNP Enterprise or JNCIP-ENT earns **Realm Network Architect**. Credentials are self-reported, not issuer-verified. Earned skills remain in the character record.
-- **Story realm:** a complete three-encounter adventure uses current real-world attributes to resolve choices. Both high and low scores continue the story through different outcomes. It awards a permanent keepsake, not real-world XP.
-- **Journal and backups:** write reflections, inspect the completion chronicle, export/import validated JSON backups, and recover malformed saved data without silently deleting it. Android export uses the native share sheet.
-- **Google linking:** actual Firebase Authentication integration with web Google sign-in and Android Credential Manager, plus explicit upload/restore cloud backups. This requires the configuration below; it is not simulated.
+Install the updated APK over the existing app to retain its character data. The package identifier and signing certificate are unchanged; the Android version code is increased to 2. Export a backup before upgrading. Existing baselines, objective history, class XP, credentials, earned skills, reflections, and keepsakes are retained. Derived attribute totals now follow the revised progression rules below.
+
+### Professions and assessment
+
+- 283 searchable roles in 23 US SOC major occupation groups plus a personal/undecided group. Includes common recruiting titles in analysis, business, technology, trades, healthcare, education, and other fields. This is a curated catalog organized by SOC, not an exhaustive or verbatim O*NET/BLS database.
+- Assessment inputs can be cleared and left blank; there is no forced leading zero. Walking uses minutes, balance uses seconds, reading/study uses minutes per week, and other fields state their repetition, weight, or weekly units.
+- Bodyweight and weighted strength options are supported. Pushup variation affects the game score. Weighted strength needs a body weight; an unknown value does not receive an assumed strength advantage.
+- Baseline scores range from 3–30. Scoring thresholds are **guild game benchmarks**, not measured population averages, percentiles, or medical/intelligence/spiritual assessments.
+
+### Progression rules
+
+- **Base stats** increase only from class level-ups, profession level-ups, and explicitly listed weekly/monthly stat rewards. A class level gives +1 to its core attribute. A profession level gives +1 to its role-group focus attribute. Subclass selection, skill purchases, gear, ordinary daily attribute XP, and combat victories never directly change base stats.
+- **Class and profession levels:** 100 progression XP per level. Class objectives progress the active class; profession and technical objectives progress the selected profession. Subclass objectives progress both the specialization and its parent class. Universal objectives progress the adventurer and universal skill wallet.
+- **Skill currency:** each path earns one skill shard per 25 path XP and two additional shards per path level. Shards are tracked separately for universal, each class, each subclass, and each profession. Purchases debit their recorded wallet once. Changing focus does not refund or remove purchases.
+- **Guild rank:** F through SSS. Each promotion costs twice the preceding promotion: 500, 1,000, 2,000, 4,000, and so on. Cumulative thresholds are 0 / 500 / 1,500 / 3,500 / 7,500 / 15,500 / 31,500 / 63,500 / 127,500 rank XP.
+- **Starting placement:** ordinary or incomplete assessments start at F. E requires an average baseline score of at least 18, at least three attributes at 22+, and at least two physical attributes at 22+. D requires an average of at least 25 and five attributes at 25+. Starting placement is capped at D. Placement credit affects guild rank only; it does not grant adventurer levels, class/profession XP, or skill shards. Older characters keep their original F starting placement.
+- Each objective rewards once per local calendar period: midnight, Monday, or the first of the month. Monthly checklists persist across closing the dialog and restarting the app.
+
+### Classes, subclasses, and skill trees
+
+12 classes and 23 subclasses have 348 skill nodes across universal, class, subclass, profession, networking, and data-analysis trees. Nodes have visible prerequisite connections, practice requirements, prices, and level gates. The tree supports scrolling, dragging, zooming, and node inspection. Class and subclass sections unlock at levels 1, 3, 5, 10, and 20 (Novice, Apprentice, Adept, Expert, Master).
+
+| Class     | Combat role       | Examples                                      |
+| --------- | ----------------- | --------------------------------------------- |
+| Warrior   | Vanguard          | Shield Bash, Cleave, Riposte                  |
+| Ranger    | Marksman          | Aimed Shot, Twin Arrows, Hail of Arrows       |
+| Scholar   | Caster            | Arcane Bolt, Elemental Burst, Blazing Field   |
+| Bard      | Support           | Battle Song, Inspiring Chorus, Guiding Chorus |
+| Disciple  | Healer            | Restoration, Sanctuary, Group Restoration     |
+| Sentinel  | Defender          | Brace, Hold the Line, Unbroken Bulwark        |
+| Paladin   | Frontline support | Radiant Strike, Aegis, Merciful Blow          |
+| Sage      | Tactician         | Focused Bolt, Insight, Shared Understanding   |
+| Monk      | Skirmisher        | Flurry, Centering, Counter Stance             |
+| Rogue     | Striker           | Backstab, Evasion, Finishing Strike           |
+| Artificer | Combat engineer   | Spark Charge, Field Repair, Incendiary Array  |
+| Marshal   | Commander         | Command, Coordinated Strike, Grand Strategy   |
+
+Subclasses add daily, weekly, and monthly objectives plus their own branching tree. Selection itself grants no stat or combat bonus. Named techniques include Warpriest's Healing Prayer and Consecrated Guard, Eldritch Knight's Spellblade and Runic Guard, and Guardian's Interpose and Shield Wall. Paladin requires Warrior level 5 and Disciple level 3; Sage requires Scholar level 8 and Disciple level 3, in addition to their displayed attributes and XP.
+
+CCNA/Network+/JNCIA-Junos and CCNP Enterprise/JNCIP-ENT remain self-reported credential milestones. Recording them earns the associated credential node, which does not itself provide a free combat modifier. Practice and combat skill purchases use their normal requirements and wallets.
+
+### Objectives and JRPG adventures
+
+- A character has 27 available objectives before specialization, with class-specific training, profession projects, networking labs, subnetting, SQL, spreadsheets, Bible study, service, and other activities. Subclasses add three more. Category filters help select a focus.
+- The JRPG has five regions and 15 ordered encounters, including bosses. Battles use individual party turns, HP/MP, attacks, guard, equipped abilities, healing items, and enemy turns. Bosses use Heavy Strike every third round.
+- Four companions are available; three can be recruited through region progression. The party holds your character plus two companions.
+- Combat effects include armor piercing, multi-hit attacks, area damage, stun, taunt, counterattacks, party wards, healing, MP recovery, combined attacks, and damage over time.
+- Eleven gear items, potions, ether, and a gold shop are included. Equip up to four purchased skills. Equipment, skill modifiers, and class stances affect combat only.
+- Victories award combat gold and supplies and unlock further encounters and recruitment. They never award real-world XP or base attributes. Battle state, inventory, party, gear, and skill loadout persist across app restarts.
+- Faith-related real-world content uses Christian Scripture, prayer, study, and service. The Monk class is physical bodyweight training, without another religion's practices.
+
+Journal, completion history, private local saves, native backup sharing, validated import/restore, and Google/Firebase integration remain available.
 
 ## Google accounts and cloud backups
 
@@ -82,11 +124,14 @@ Progress is stored locally in the WebView/browser's private `localStorage`. Clea
 
 Objectives and credentials rely on honest self-reporting. The application is personal motivation software and does not validate exercise form, certification authenticity, or health outcomes. Fitness descriptions support gentle and equipment-free alternatives. There are no notifications, wearable integrations, automatic certification checks, purchases, or live multiplayer systems in this version.
 
-The current project has meaningful domain and browser tests plus a compiled Android APK. It has not been run on a physical Android device or emulator. Test Google authentication, native backup sharing/import, keyboard and system-bar behavior, and app upgrades on your device before relying on it daily.
+The current project has progression, combat, and browser workflow tests plus a compiled Android APK. It has not been run on a physical Android device or emulator. Test Google authentication, native backup sharing/import, keyboard and system-bar behavior, and app upgrades on your device before relying on it daily.
 
 ## Code map
 
-- `src/domain.ts`: progression rules, classes, objective templates, skills, and calendar periods.
+- `src/domain.ts`: progression rules, classes, objective templates, wallets, and calendar periods.
+- `src/skill-catalog.ts`, `src/class-roles.ts`, `src/SkillTree.tsx`: skill definitions, class combat roles, effects, and branching trees.
+- `src/professions.ts`, `src/ProfessionPicker.tsx`: SOC-organized role catalog and searchable selector.
+- `src/rpg.ts`, `src/AdventureGame.tsx`, `src/BattleSprite.tsx`: persistent combat engine, world/party/shop interface, and sprite art.
 - `src/storage.ts`: local persistence and backup validation.
 - `src/Onboarding.tsx`: guild application and baseline assessment.
 - `src/screens.tsx`: guild card, objectives, classes, skills, adventure, and journal.

@@ -1,3 +1,4 @@
+import { ENCOUNTERS, COMPANIONS, EQUIPMENT } from "./rpg";
 import type { Character } from "./domain";
 import { ATTRIBUTES, CLASSES, PROFESSIONS, SKILLS } from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
@@ -22,10 +23,25 @@ export function validateCharacter(x: unknown): x is Character {
         path.subclasses.some((s) => s.id === c.subclass)) &&
       PROFESSIONS.includes(c.profession as (typeof PROFESSIONS)[number]) &&
       typeof c.demo === "boolean" &&
+      (c.startingRank === undefined ||
+        ["F", "E", "D"].includes(c.startingRank)) &&
+      (c.learnedSkills === undefined ||
+        (Array.isArray(c.learnedSkills) &&
+          c.learnedSkills.every((id) => SKILLS.some((s) => s.id === id)))) &&
+      (c.skillPurchases === undefined ||
+        (Array.isArray(c.skillPurchases) &&
+          c.skillPurchases.every(
+            (p) =>
+              str(p.id) &&
+              SKILLS.some((s) => s.id === p.id) &&
+              str(p.wallet) &&
+              finite(p.cost),
+          ))) &&
+      (c.campaign === undefined || validCampaign(c.campaign)) &&
       !!c.baseStats &&
       ATTRIBUTES.every(
         (a) =>
-          finite(c.baseStats[a]) && c.baseStats[a] >= 3 && c.baseStats[a] <= 18,
+          finite(c.baseStats[a]) && c.baseStats[a] >= 3 && c.baseStats[a] <= 30,
       ) &&
       !!c.baseline &&
       ["bodyweight", "weights"].includes(c.baseline.mode) &&
@@ -50,6 +66,16 @@ export function validateCharacter(x: unknown): x is Character {
           date(o.at) &&
           finite(o.xp) &&
           o.xp <= 400 &&
+          (o.profession === undefined || str(o.profession)) &&
+          (o.scope === undefined ||
+            ["universal", "class", "subclass", "profession"].includes(
+              o.scope,
+            )) &&
+          (o.statReward === undefined ||
+            (ATTRIBUTES.includes(o.statReward.stat) &&
+              Number.isInteger(o.statReward.amount) &&
+              o.statReward.amount >= 0 &&
+              o.statReward.amount <= 3)) &&
           ATTRIBUTES.includes(o.stat) &&
           CLASSES.some((p) => p.id === o.classId),
       ) &&
@@ -97,3 +123,90 @@ export function loadCharacter(): Character | null {
 }
 export const saveCharacter = (c: Character) =>
   localStorage.setItem(STORAGE_KEY, JSON.stringify(c));
+
+function validCampaign(input: unknown): boolean {
+  try {
+    if (!input || typeof input !== "object") return false;
+    const c = input as import("./rpg").Campaign;
+    const strings = (x: unknown) => Array.isArray(x) && x.every(str);
+    const inv = (x: unknown) =>
+      !!x && typeof x === "object" && Object.values(x).every((n) => finite(n));
+    if (
+      !strings(c.cleared) ||
+      !finite(c.gold) ||
+      !inv(c.inventory) ||
+      !strings(c.roster) ||
+      !c.roster.every((id) => COMPANIONS.some((n) => n.id === id)) ||
+      !strings(c.party) ||
+      c.party.length > 2 ||
+      !c.party.every((id) => c.roster.includes(id)) ||
+      !strings(c.equipment) ||
+      !c.equipment.every((id) => EQUIPMENT.some((e) => e.id === id)) ||
+      !strings(c.equippedSkills) ||
+      c.equippedSkills.length > 4 ||
+      !c.equippedSkills.every((id) => SKILLS.some((s) => s.id === id)) ||
+      new Set(c.equippedSkills).size !== c.equippedSkills.length
+    )
+      return false;
+    if (!c.battle) return true;
+    const b = c.battle;
+    const units = (arr: unknown) =>
+      Array.isArray(arr) &&
+      arr.length > 0 &&
+      arr.every(
+        (u) =>
+          u &&
+          str(u.id) &&
+          str(u.name) &&
+          str(u.sprite) &&
+          [
+            "hp",
+            "maxHp",
+            "mp",
+            "maxMp",
+            "attack",
+            "magic",
+            "defense",
+            "speed",
+          ].every((k) => finite(u[k])) &&
+          u.hp <= u.maxHp &&
+          u.mp <= u.maxMp &&
+          typeof u.guard === "boolean" &&
+          [
+            "penetration",
+            "healing",
+            "stun",
+            "taunt",
+            "burn",
+            "burnDamage",
+          ].every((k) => u[k] === undefined || finite(u[k])) &&
+          (u.counter === undefined || typeof u.counter === "boolean") &&
+          Array.isArray(u.abilities) &&
+          u.abilities.every(
+            (a: Record<string, unknown>) =>
+              str(a.id) &&
+              str(a.name) &&
+              str(a.type) &&
+              finite(a.cost) &&
+              finite(a.power),
+          ),
+      );
+    return (
+      str(b.encounterId) &&
+      ENCOUNTERS.some((e) => e.id === b.encounterId) &&
+      units(b.party) &&
+      units(b.enemies) &&
+      Number.isInteger(b.actor) &&
+      b.actor >= 0 &&
+      b.actor < b.party.length &&
+      Number.isInteger(b.round) &&
+      b.round >= 1 &&
+      ["player", "won", "lost", "fled"].includes(b.phase) &&
+      strings(b.log) &&
+      inv(b.items) &&
+      typeof b.claimed === "boolean"
+    );
+  } catch {
+    return false;
+  }
+}

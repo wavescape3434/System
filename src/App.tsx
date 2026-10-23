@@ -63,51 +63,47 @@ const PAGES = [
     id: "guild",
     name: "Guild Card",
     icon: CreditCard,
-    eyebrow: "YOUR PERSONAL ADVENTURE",
-    title: "A little better. Every day.",
-    description: "A stronger body. A curious mind. A steadfast heart.",
+    title: "Guild Card",
+    description: "Character, rank, class history, and recent progress.",
   },
   {
     id: "objectives",
     name: "Objectives",
     icon: Target,
-    eyebrow: "PURPOSE IN THE EVERYDAY",
-    title: "Small actions. Lasting change.",
-    description: "The next chapter starts with what you do today.",
+    title: "Objectives",
+    description:
+      "Complete tasks, quests, and monthly goals to earn real-world XP.",
   },
   {
     id: "paths",
     name: "Class Paths",
     icon: Route,
-    eyebrow: "CHOOSE YOUR DIRECTION",
-    title: "There’s more than one way to grow.",
-    description: "Explore a new focus. Keep every chapter you’ve earned.",
+    title: "Classes & Subclasses",
+    description:
+      "View requirements, select a class, and manage specializations.",
   },
   {
     id: "skills",
     name: "Skills & Stats",
     icon: Sparkles,
-    eyebrow: "PROOF OF YOUR PROGRESS",
-    title: "Earned, one step at a time.",
+    title: "Skills & Stats",
     description:
-      "Your attributes, skills, profession, and the milestones along the way.",
+      "Universal, class, and profession skill trees; attributes and credentials.",
   },
   {
     id: "adventures",
     name: "Adventures",
     icon: Compass,
-    eyebrow: "BEYOND THE EVERYDAY",
-    title: "Your growth has a story to tell.",
-    description: "Step into a world shaped by the character you’re becoming.",
+    title: "Adventures",
+    description:
+      "Explore regions, manage your party, and fight turn-based battles.",
   },
   {
     id: "journal",
     name: "Journal",
     icon: BookOpen,
-    eyebrow: "A RECORD OF BECOMING",
-    title: "Some moments are worth keeping.",
-    description:
-      "Make space for gratitude, lessons, prayer, and the journey so far.",
+    title: "Journal",
+    description: "Reflections and objective completion history.",
   },
 ] as const;
 type Dialog = "account" | "certificate" | "reset" | null;
@@ -252,7 +248,7 @@ export default function App() {
       {recovery ? (
         <main className="recovery panel">
           <Crest />
-          <h1>Your story is still here.</h1>
+          <h1>Saved data needs recovery.</h1>
           <p>{recovery}</p>
           <button
             className="button primary"
@@ -275,7 +271,7 @@ export default function App() {
             Restore a valid backup
           </button>
           <button className="text-button" onClick={() => setDialog("reset")}>
-            Start a new story
+            Create a new character
           </button>
         </main>
       ) : !c ? (
@@ -300,7 +296,7 @@ export default function App() {
             >
               <Crest small />
               <span>
-                THE GUILD<small>MAKE LIFE LEGENDARY</small>
+                THE GUILD<small>PERSONAL DEVELOPMENT</small>
               </span>
             </a>
             <div className="sidebar-divider" />
@@ -322,11 +318,11 @@ export default function App() {
             <div className="sidebar-note">
               <span>✦</span>
               <p>
-                Great stories are built
+                Track objectives.
                 <br />
-                one ordinary day at a time.
+                Develop your character.
               </p>
-              <small>THIS ONE IS YOURS.</small>
+              <small>REAL-WORLD PROGRESS</small>
             </div>
             <div className="sidebar-bottom">
               <button onClick={() => setDialog("account")}>
@@ -385,10 +381,12 @@ export default function App() {
                 </button>
               </div>
             </header>
-            <main className="main-content" id="main">
+            <main
+              className={`main-content ${page === "adventures" && c.campaign?.battle ? "in-battle" : ""}`}
+              id="main"
+            >
               <div className="page-heading">
                 <div>
-                  <span className="eyebrow">{active.eyebrow}</span>
                   <h1>{active.title}</h1>
                   <p>{active.description}</p>
                 </div>
@@ -410,8 +408,8 @@ export default function App() {
               {c.demo && (
                 <div className="demo-banner">
                   <span>
-                    You’re exploring a sample character. Try anything — your own
-                    story starts fresh.
+                    Sample character. Creating your own character starts a
+                    separate record.
                   </span>
                   <button onClick={() => setDialog("reset")}>
                     Create your character <ArrowRight size={15} />
@@ -440,7 +438,7 @@ export default function App() {
                 </div>
               )}
               <footer className="main-footer">
-                <span>✦ &nbsp; A LITTLE BETTER IS A WORTHY QUEST.</span>
+                <span>✦ &nbsp; THE GUILD</span>
                 <span>BODY. MIND. HEART.</span>
               </footer>
             </main>
@@ -499,11 +497,17 @@ export default function App() {
           <div className="objective-modal-meta">
             <Tag>{objective.category}</Tag>
             <Tag tone="gold">
-              +{objective.xp} XP · {objective.stat}
+              +{objective.xp} {objective.scope || "class"} XP
             </Tag>
             <span>{objective.minutes}</span>
           </div>
           <p>{objective.description}</p>
+          {objective.statReward && (
+            <div className="notice">
+              Special reward: +{objective.statReward.amount} base{" "}
+              {objective.statReward.stat} on completion.
+            </div>
+          )}
           {objective.kind === "fitness" && (
             <div className="notice">
               Choose a variation and effort that suit you. Rest as needed and
@@ -548,9 +552,7 @@ export default function App() {
             }
             onClick={() => {
               if (!update(complete(c, objective))) return;
-              notify(
-                `+${objective.xp} XP earned. A small step, a stronger you.`,
-              );
+              notify(`+${objective.xp} XP earned. Progress saved.`);
               close();
             }}
           >
@@ -567,7 +569,7 @@ export default function App() {
         </Modal>
       )}
       {dialog === "account" && (
-        <Modal title="A home for your story" onClose={close}>
+        <Modal title="Account & Backups" onClose={close}>
           <div className="account-status">
             <span className="objective-icon wis">
               <Cloud size={25} />
@@ -576,7 +578,7 @@ export default function App() {
               <b>
                 {user
                   ? user.displayName || "Google account connected"
-                  : "Your progress, your own."}
+                  : "Local character storage"}
               </b>
               <p>
                 {user
@@ -726,11 +728,11 @@ export default function App() {
         />
       )}
       {dialog === "reset" && (
-        <Modal title="Begin a new chapter?" onClose={close}>
+        <Modal title="Create a new character?" onClose={close}>
           <p>
             {c?.demo
               ? "Your sample character will be replaced with your own guild application."
-              : "Starting a new character replaces the progress and reflections on this device. Export a backup first if you want to keep this story."}
+              : "Starting a new character replaces the progress and reflections on this device. Export a backup first if you want to keep this character."}
           </p>
           <div className="account-actions">
             {c && !c.demo && (
@@ -749,7 +751,7 @@ export default function App() {
                 close();
               }}
             >
-              Begin a new story <ArrowRight size={16} />
+              Create character <ArrowRight size={16} />
             </button>
           </div>
         </Modal>
@@ -775,7 +777,7 @@ export default function App() {
                 setRecovery("");
                 navigate("guild");
                 close();
-                notify("Character restored. Welcome back to your story.");
+                notify("Character restored. Character restored.");
               }}
             >
               Restore character
@@ -819,7 +821,7 @@ function CertificateDialog({
     "Juniper JNCIP-ENT": "Juniper",
   };
   return (
-    <Modal title="A milestone worth recording" onClose={onClose}>
+    <Modal title="Record a certification" onClose={onClose}>
       <p>
         Record a credential you have earned. Your ledger is self-reported; this
         app does not verify certifications with issuers.

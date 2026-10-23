@@ -1,20 +1,18 @@
 import { test, expect } from "@playwright/test";
 async function sample(page: import("@playwright/test").Page) {
   await page.goto("/");
-  await page
-    .getByRole("button", { name: "Explore a sample character first" })
-    .click();
+  await page.getByRole("button", { name: "Try a sample character" }).click();
 }
 test("onboarding supports an untested beginner and persists the F-rank character", async ({
   page,
 }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "Begin your story" }).click();
+  await page.getByRole("button", { name: "Register character" }).click();
   await page.getByLabel("Adventurer name").fill("Vincent");
-  await page.getByRole("button", { name: "Meet the guild examiner" }).click();
-  await page.getByRole("button", { name: "Discover your path" }).click();
+  await page.getByRole("button", { name: "Continue to assessment" }).click();
+  await page.getByRole("button", { name: "Review starting classes" }).click();
   await expect(page.getByRole("button", { name: /Disciple/ })).toBeVisible();
-  await page.getByRole("button", { name: "Take the guild oath" }).click();
+  await page.getByRole("button", { name: "Create character" }).click();
   await expect(
     page.getByRole("heading", { name: "Vincent", exact: true }),
   ).toBeVisible();
@@ -28,11 +26,11 @@ test("objectives cannot award twice and the reward survives reload", async ({
   page,
 }) => {
   await sample(page);
-  await page.getByRole("button", { name: /Forge your strength/ }).click();
+  await page.getByRole("button", { name: /Strength session/ }).click();
   await page
     .getByRole("button", { name: "I completed this objective" })
     .click();
-  await page.getByRole("button", { name: /Forge your strength/ }).click();
+  await page.getByRole("button", { name: /Strength session/ }).click();
   await expect(
     page.getByRole("button", { name: "Already completed this period" }),
   ).toBeDisabled();
@@ -44,7 +42,7 @@ test("class changes update objectives and keep the previous class record", async
   page,
 }) => {
   await sample(page);
-  await page.getByRole("button", { name: /Forge your strength/ }).click();
+  await page.getByRole("button", { name: /Strength session/ }).click();
   await page
     .getByRole("button", { name: "I completed this objective" })
     .click();
@@ -52,7 +50,7 @@ test("class changes update objectives and keep the previous class record", async
   await page
     .locator(".path-card")
     .filter({ has: page.getByRole("heading", { name: "Bard", exact: true }) })
-    .getByRole("button", { name: "Walk this path" })
+    .getByRole("button", { name: "Select class" })
     .click();
   await page.getByRole("button", { name: "Your class record" }).click();
   await expect(
@@ -64,7 +62,7 @@ test("class changes update objectives and keep the previous class record", async
     .first()
     .click();
   await expect(
-    page.getByRole("heading", { name: "Make a meaningful connection" }),
+    page.getByRole("heading", { name: "Conversation practice" }),
   ).toBeVisible();
 });
 test("CCNA unlocks the named intermediate skill and a journal reflection persists", async ({
@@ -79,16 +77,13 @@ test("CCNA unlocks the named intermediate skill and a journal reflection persist
     .getByRole("button", { name: "Record credential", exact: true })
     .click();
   await page.getByRole("button", { name: "Record earned credential" }).click();
+  await page.getByRole("tab", { name: "Profession", exact: true }).click();
+  await page.getByLabel("Profession tree").selectOption("networking");
   await expect(
-    page
-      .locator(".skill-card")
-      .filter({
-        has: page.getByRole("heading", {
-          name: "Architect of Connections",
-          exact: true,
-        }),
-      })
-      .getByText("Earned", { exact: true }),
+    page.getByRole("button", {
+      name: "Architect of Connections: learned",
+      exact: true,
+    }),
   ).toBeVisible();
   await page
     .getByRole("button", { name: "Journal", exact: true })
@@ -118,7 +113,7 @@ test("monthly objectives require every milestone before claiming", async ({
     .first()
     .click();
   await page.getByRole("button", { name: /Monthly adventures/ }).click();
-  await page.getByRole("button", { name: /The making of a hero/ }).click();
+  await page.getByRole("button", { name: /Monthly training plan/ }).click();
   const claim = page.getByRole("button", {
     name: "I completed this objective",
   });
@@ -137,7 +132,7 @@ test("monthly objectives require every milestone before claiming", async ({
     .first()
     .click();
   await page.getByRole("button", { name: /Monthly adventures/ }).click();
-  await page.getByRole("button", { name: /The making of a hero/ }).click();
+  await page.getByRole("button", { name: /Monthly training plan/ }).click();
   await expect(claim).toBeEnabled();
   await claim.click();
   await page.getByRole("button", { name: "Guild Card", exact: true }).click();
@@ -161,13 +156,11 @@ test("character backups export and restore after explicit confirmation", async (
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
   );
   c.name = "Restored Adventurer";
-  await page
-    .locator("input[type=file]")
-    .setInputFiles({
-      name: "backup.json",
-      mimeType: "application/json",
-      buffer: Buffer.from(JSON.stringify(c)),
-    });
+  await page.locator("input[type=file]").setInputFiles({
+    name: "backup.json",
+    mimeType: "application/json",
+    buffer: Buffer.from(JSON.stringify(c)),
+  });
   await expect(
     page.getByRole("heading", { name: "Restore this character?" }),
   ).toBeVisible();
@@ -180,18 +173,19 @@ test("character backups export and restore after explicit confirmation", async (
 });
 test("weighted baseline opens eligible strength paths", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "Begin your story" }).click();
+  await page.getByRole("button", { name: "Register character" }).click();
   await page.getByLabel("Adventurer name").fill("Ari");
-  await page.getByRole("button", { name: "Meet the guild examiner" }).click();
+  await page.getByRole("button", { name: "Continue to assessment" }).click();
   await page.getByRole("button", { name: "With weights", exact: true }).click();
   await page.getByLabel("Squat working weight (kg)").fill("50");
   await page.getByLabel("Repetitions in that set").fill("8");
-  await page.getByRole("button", { name: "Discover your path" }).click();
+  await page.getByLabel("Body weight (kg)").fill("70");
+  await page.getByRole("button", { name: "Review starting classes" }).click();
   await page.getByRole("button", { name: /Warrior/ }).click();
-  await page.getByRole("button", { name: "Take the guild oath" }).click();
+  await page.getByRole("button", { name: "Create character" }).click();
   await expect(page.locator(".hero-tags")).toContainText("Warrior");
 });
-test("story adventure uses character choices and awards a keepsake without real-world XP", async ({
+test("JRPG party battle persists, completes, and grants only combat rewards", async ({
   page,
 }) => {
   await sample(page);
@@ -199,25 +193,36 @@ test("story adventure uses character choices and awards a keepsake without real-
     .getByRole("button", { name: "Adventures", exact: true })
     .first()
     .click();
-  await page.getByRole("button", { name: "Enter with Rowan" }).click();
-  await page.getByRole("button", { name: /Move the fallen timber/ }).click();
-  await expect(page.getByText(/Your training pays off/)).toBeVisible();
-  await page.getByRole("button", { name: "Continue the journey" }).click();
-  await page.getByRole("button", { name: /Decipher the inscription/ }).click();
-  await page.getByRole("button", { name: "Continue the journey" }).click();
+  await page.getByRole("button", { name: /Approach.*slime/ }).click();
+  await page.getByRole("button", { name: "Attack", exact: true }).click();
+  await expect(page.getByText("Mira's turn", { exact: true })).toBeVisible();
+  await page.reload();
   await page
-    .getByRole("button", { name: /Offer words of encouragement/ })
+    .getByRole("button", { name: "Adventures", exact: true })
+    .first()
     .click();
-  await page.getByRole("button", { name: "Enter the guildhall" }).click();
-  await expect(
-    page.getByRole("heading", { name: "A light to carry forward." }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Guild Card", exact: true }).click();
-  await expect(page.locator(".hero-progress b")).toHaveText("0 / 250 XP");
+  await expect(page.getByText("Mira's turn", { exact: true })).toBeVisible();
+  for (let i = 0; i < 20; i++) {
+    if (
+      await page
+        .getByRole("button", { name: "Claim rewards", exact: false })
+        .isVisible()
+    )
+      break;
+    await page.getByRole("button", { name: "Attack", exact: true }).click();
+  }
+  await page
+    .getByRole("button", { name: "Claim rewards", exact: false })
+    .click();
+  await page
+    .getByRole("button", { name: "Return to map", exact: false })
+    .click();
   const data = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
   );
-  expect(data.relics).toEqual(["mossfall-lantern"]);
+  expect(data.completions).toHaveLength(0);
+  expect(data.campaign.gold).toBe(20);
+  expect(data.campaign.cleared).toContain("mossfall-1");
 });
 test("phone navigation fits and all main screens render without page errors", async ({
   page,
@@ -258,9 +263,85 @@ test("invalid saved data is preserved for recovery", async ({ page }) => {
   );
   await page.reload();
   await expect(
-    page.getByRole("heading", { name: "Your story is still here." }),
+    page.getByRole("heading", { name: "Saved data needs recovery." }),
   ).toBeVisible();
   expect(
     await page.evaluate(() => localStorage.getItem("the-guild.character.v1")),
   ).toBe('{"broken":true}');
+});
+
+test("assessment fields clear without a forced zero and show time units", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Register character" }).click();
+  await page.getByLabel("Adventurer name").fill("Test");
+  await page.getByLabel("Find a profession").fill("network");
+  await page
+    .getByLabel("Your profession", { exact: true })
+    .selectOption("Network Engineer");
+  await page.getByRole("button", { name: "Continue to assessment" }).click();
+  const input = page.getByLabel("Pushups (repetitions)", { exact: false });
+  await expect(input).toHaveValue("");
+  await input.fill("0");
+  await input.fill("");
+  await expect(input).toHaveValue("");
+  await input.pressSequentially("12");
+  await expect(input).toHaveValue("12");
+  await expect(
+    page.getByLabel("Walking duration (minutes)", { exact: false }),
+  ).toBeVisible();
+  await expect(
+    page.getByLabel("Balance duration (seconds)", { exact: false }),
+  ).toBeVisible();
+  await expect(
+    page.getByLabel("Reading / study (minutes per week)", { exact: false }),
+  ).toBeVisible();
+});
+test("class skill purchases use class shards and locked sections block skills", async ({
+  page,
+}) => {
+  await sample(page);
+  await page
+    .getByRole("button", { name: "Objectives", exact: true })
+    .first()
+    .click();
+  for (const title of ["Strength session", "Warrior technique"]) {
+    await page
+      .getByRole("button")
+      .filter({ has: page.getByRole("heading", { name: title, exact: true }) })
+      .click();
+    await page
+      .getByRole("button", { name: "I completed this objective" })
+      .click();
+  }
+  await page
+    .getByRole("button", { name: "Skills & Stats", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Skill tree", exact: true }).click();
+  await page.getByRole("tab", { name: "Class", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Weapon Drills: available", exact: true })
+    .click();
+  await page.getByRole("button", { name: /Purchase skill/ }).click();
+  await expect(
+    page.getByRole("button", { name: "Weapon Drills: learned", exact: true }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Shield Bash: locked", exact: true })
+    .click();
+  await expect(page.getByText(/Class level 3/)).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: /Purchase skill/ }),
+  ).toBeDisabled();
+  await page.getByRole("button", { name: "Close dialog" }).click();
+  await page.reload();
+  await page
+    .getByRole("button", { name: "Skills & Stats", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Skill tree", exact: true }).click();
+  await page.getByRole("tab", { name: "Class", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Weapon Drills: learned", exact: true }),
+  ).toBeVisible();
 });

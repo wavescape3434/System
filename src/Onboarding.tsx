@@ -9,15 +9,16 @@ import {
 } from "lucide-react";
 import {
   CLASSES,
-  PROFESSIONS,
   EMPTY_BASELINE,
   startingStats,
   available,
   createCharacter,
   demoCharacter,
+  startingRankFor,
 } from "./domain";
 import type { Character, Baseline } from "./domain";
 import { Crest, Icon, Tag } from "./ui";
+import ProfessionPicker from "./ProfessionPicker";
 export default function Onboarding({
   onCreate,
   onGoogle,
@@ -30,6 +31,9 @@ export default function Onboarding({
     [baseline, setBaseline] = useState<Baseline>({ ...EMPTY_BASELINE }),
     [classId, setClassId] = useState("disciple"),
     [profession, setProfession] = useState("Analyst");
+  const [drafts, setDrafts] = useState<Partial<Record<keyof Baseline, string>>>(
+    {},
+  );
   const values = startingStats(baseline);
   const input = (
     key: keyof Baseline,
@@ -44,13 +48,21 @@ export default function Onboarding({
         min="0"
         max={max}
         inputMode="numeric"
-        value={baseline[key]}
-        onChange={(e) =>
+        value={drafts[key] ?? (baseline[key] || "")}
+        placeholder="Not assessed"
+        step={key === "load" || key === "bodyweight" ? "0.1" : "1"}
+        onChange={(e) => {
+          const raw = e.target.value;
+          setDrafts({ ...drafts, [key]: raw });
           setBaseline({
             ...baseline,
-            [key]: Math.max(0, Math.min(max, Number(e.target.value))),
-          })
-        }
+            [key]: Math.max(0, Math.min(max, Number(raw) || 0)),
+          });
+        }}
+        onBlur={() => {
+          if (drafts[key])
+            setDrafts({ ...drafts, [key]: String(baseline[key]) });
+        }}
       />
       <small>{help}</small>
     </label>
@@ -63,56 +75,54 @@ export default function Onboarding({
           <span>THE GUILD</span>
         </div>
         <div className="onboard-copy">
-          <span className="eyebrow">
-            AN ORDINARY LIFE. AN EXTRAORDINARY STORY.
-          </span>
+          <span className="eyebrow">THE ADVENTURERS’ GUILD</span>
           <h1>
-            Become who
+            Train. Study.
             <br />
-            you’re called to be.
+            Level up.
           </h1>
           <p>
-            Stronger in body. Sharper in mind.
+            Track real-world training, learning, and Christian practice.
             <br />
-            Steadier in heart. One small quest at a time.
+            Build a character from your progress.
           </p>
           <span className="art-caption">
-            <span /> YOUR ADVENTURE BEGINS IN THE EVERYDAY
+            <span /> CHARACTER REGISTRATION
           </span>
         </div>
         <div className="art-coordinates">
-          EST. TODAY <span>✦</span> THE REALM OF POSSIBILITY
+          THE GUILD <span>✦</span> ANDROID
         </div>
       </div>
       <main className="onboard-form">
         {step === 0 ? (
           <div className="welcome">
-            <Tag>YOUR GUILD INVITATION</Tag>
+            <Tag>REGISTRATION</Tag>
             <h2>
-              Every hero
+              Create an
               <br />
-              starts somewhere.
+              adventurer.
             </h2>
             <p>
-              You don’t need a gym, a perfect routine, or a fresh start. Just a
-              willingness to take the next step.
+              Choose a profession, record your starting assessment, and select a
+              class. Equipment is optional.
             </p>
             <div className="welcome-points">
               <div>
                 <Icon name="sword" />
-                <span>Turn real effort into lasting progress</span>
+                <span>Earn XP from real-world objectives</span>
               </div>
               <div>
                 <Icon name="book" />
-                <span>Build a path for body, mind & heart</span>
+                <span>Train attributes and unlock skill trees</span>
               </div>
               <div>
                 <Icon name="shield" />
-                <span>Keep everything you earn along the way</span>
+                <span>Keep skills and levels when switching classes</span>
               </div>
             </div>
             <button className="button primary full" onClick={() => setStep(1)}>
-              Begin your story <ArrowRight size={18} />
+              Register character <ArrowRight size={18} />
             </button>
             <button className="button secondary full" onClick={onGoogle}>
               <Globe size={17} /> Link Google account
@@ -121,7 +131,7 @@ export default function Onboarding({
               className="text-button full"
               onClick={() => onCreate(demoCharacter())}
             >
-              Explore a sample character first <ArrowRight size={15} />
+              Try a sample character <ArrowRight size={15} />
             </button>
             <p className="privacy-note">
               Private by default. Start locally, link Google when you’re ready.
@@ -146,16 +156,9 @@ export default function Onboarding({
             </div>
             {step === 1 && (
               <>
-                <span className="eyebrow">FIRST, AN INTRODUCTION</span>
-                <h2>
-                  What shall we
-                  <br />
-                  call you, adventurer?
-                </h2>
-                <p>
-                  Your guild name is yours to choose. Your story will be
-                  uniquely yours.
-                </p>
+                <span className="eyebrow">PROFILE</span>
+                <h2>Character profile</h2>
+                <p>Choose your display name and current profession.</p>
                 <label className="field">
                   Adventurer name
                   <input
@@ -166,17 +169,7 @@ export default function Onboarding({
                     onChange={(e) => setName(e.target.value)}
                   />
                 </label>
-                <label className="field">
-                  Your profession
-                  <select
-                    value={profession}
-                    onChange={(e) => setProfession(e.target.value)}
-                  >
-                    {PROFESSIONS.map((p) => (
-                      <option key={p}>{p}</option>
-                    ))}
-                  </select>
-                </label>
+                <ProfessionPicker value={profession} onChange={setProfession} />
                 <p className="helper">
                   A profession is your chosen craft. Switch it whenever your
                   goals change.
@@ -186,23 +179,17 @@ export default function Onboarding({
                   disabled={!name.trim()}
                   onClick={() => setStep(2)}
                 >
-                  Meet the guild examiner <ArrowRight size={18} />
+                  Continue to assessment <ArrowRight size={18} />
                 </button>
               </>
             )}
             {step === 2 && (
               <>
-                <span className="eyebrow">
-                  THE BASELINE, NOT THE FINISH LINE
-                </span>
-                <h2>
-                  Meet yourself
-                  <br />
-                  where you are.
-                </h2>
+                <span className="eyebrow">STARTING ASSESSMENT</span>
+                <h2>Record your baseline</h2>
                 <p>
-                  Use comfortable recent results or estimates. Skip anything you
-                  don’t know by leaving it at zero. You never need to test to
+                  Use comfortable recent results or estimates. Leave a field
+                  blank if you have not assessed it. You never need to test to
                   exhaustion.
                 </p>
                 <div className="segmented">
@@ -223,12 +210,32 @@ export default function Onboarding({
                     <Dumbbell size={16} /> With weights
                   </button>
                 </div>
+                {baseline.mode === "bodyweight" && (
+                  <label className="field">
+                    Pushup variation
+                    <select
+                      value={baseline.pushupStyle || "floor"}
+                      onChange={(e) =>
+                        setBaseline({
+                          ...baseline,
+                          pushupStyle: e.target
+                            .value as Baseline["pushupStyle"],
+                        })
+                      }
+                    >
+                      <option value="floor">Floor pushups</option>
+                      <option value="knee">Knee pushups</option>
+                      <option value="incline">Incline pushups</option>
+                      <option value="wall">Wall pushups</option>
+                    </select>
+                  </label>
+                )}
                 <div className="assessment-grid">
                   {baseline.mode === "bodyweight" ? (
                     input(
                       "pushups",
-                      "Comfortable pushups",
-                      80,
+                      "Pushups (repetitions)",
+                      120,
                       "Wall, knee, or floor — use your variation.",
                     )
                   ) : (
@@ -249,32 +256,32 @@ export default function Onboarding({
                         "bodyweight",
                         "Body weight (kg)",
                         300,
-                        "Used only to scale your baseline.",
+                        "Needed for weighted strength scoring. Leave blank if unknown.",
                       )}
                     </>
                   )}
                   {input(
                     "squats",
-                    "Comfortable bodyweight squats",
-                    80,
+                    "Bodyweight squats (repetitions)",
+                    120,
                     "Use a chair for support if needed.",
                   )}
                   {input(
                     "walk",
-                    "Comfortable walking (minutes)",
-                    120,
+                    "Walking duration (minutes)",
+                    180,
                     "Your usual comfortable duration.",
                   )}
                   {input(
                     "balance",
-                    "Supported balance (seconds)",
-                    90,
+                    "Balance duration (seconds)",
+                    180,
                     "Stand near a wall; skip if unsuitable.",
                   )}
                   {input(
                     "reading",
-                    "Reading / study (min per week)",
-                    150,
+                    "Reading / study (minutes per week)",
+                    1200,
                     "Your recent weekly habit.",
                   )}
                   {input(
@@ -285,8 +292,8 @@ export default function Onboarding({
                   )}
                   {input(
                     "connection",
-                    "Meaningful conversations per week",
-                    10,
+                    "Conversations (per week)",
+                    30,
                     "A rough estimate is enough.",
                   )}
                 </div>
@@ -309,14 +316,14 @@ export default function Onboarding({
                     setStep(3);
                   }}
                 >
-                  Discover your path <ArrowRight size={18} />
+                  Review starting classes <ArrowRight size={18} />
                 </button>
               </>
             )}
             {step === 3 && (
               <>
-                <span className="eyebrow">YOUR FIRST CHAPTER</span>
-                <h2>A path, not a box.</h2>
+                <span className="eyebrow">CLASS SELECTION</span>
+                <h2>Choose a starting class</h2>
                 <p>
                   Your baseline opens starting paths. You can change classes
                   freely as you qualify. Nothing you earn is lost.
@@ -346,10 +353,13 @@ export default function Onboarding({
                   ))}
                 </div>
                 <div className="rank-intro">
-                  <div className="rank-mini">F</div>
+                  <div className="rank-mini">{startingRankFor(values)}</div>
                   <span>
-                    Every adventurer begins at F rank.
-                    <small>Your first chapter is full of possibility.</small>
+                    Starting rank: {startingRankFor(values)}
+                    <small>
+                      Most assessments start at F. E and D require exceptional
+                      results across several attributes.
+                    </small>
                   </span>
                 </div>
                 <button
@@ -360,13 +370,13 @@ export default function Onboarding({
                     )
                   }
                 >
-                  Take the guild oath <ArrowRight size={18} />
+                  Create character <ArrowRight size={18} />
                 </button>
               </>
             )}
           </div>
         )}
-        <footer>✦ &nbsp; GROW AT YOUR OWN PACE. KEEP YOUR OWN STORY.</footer>
+        <footer>✦ &nbsp; THE GUILD · PERSONAL DEVELOPMENT</footer>
       </main>
     </div>
   );

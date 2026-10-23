@@ -17,6 +17,12 @@ import {
   CLASSES,
   rank,
   awardSkills,
+  learnSkill,
+  skillPointsAvailable,
+  professionLevel,
+  rankXP,
+  RANKS,
+  selectSubclass,
   hasSkill,
   SKILLS,
 } from "./domain";
@@ -50,7 +56,7 @@ describe("baseline and eligibility", () => {
           }),
         ),
       ),
-    ).toBeLessThanOrEqual(18);
+    ).toBeLessThanOrEqual(30);
   });
   it("enforces prerequisites for initial and advanced classes", () => {
     expect(
@@ -149,6 +155,8 @@ describe("permanent character history", () => {
         new Date(2026, 9, d),
       );
     c = awardSkills(c);
+    expect(c.earnedSkills).not.toContain("network-initiate");
+    c = learnSkill(c, "network-initiate");
     expect(c.earnedSkills).toContain("network-initiate");
     expect(c.earnedSkills).not.toContain("network-intermediate");
   });
@@ -158,6 +166,101 @@ describe("permanent character history", () => {
       objectives(c).some((o) => o.id === "warpriest-daily" && o.stat === "WIS"),
     ).toBe(true);
     expect(switchClass(c, "scholar").profession).toBe("Analyst");
+  });
+});
+describe("revised progression rules", () => {
+  it("doubles the cost of each rank promotion", () => {
+    const costs = RANKS.slice(1).map((r, i) => r.xp - RANKS[i].xp);
+    expect(costs[0]).toBe(500);
+    for (let i = 1; i < costs.length; i++)
+      expect(costs[i]).toBe(costs[i - 1] * 2);
+  });
+  it("keeps ordinary assessments at F and caps exceptional placement at D without granting XP", () => {
+    const normal = demoCharacter();
+    expect(normal.startingRank).toBe("F");
+    const high = createCharacter(
+      "Test",
+      {
+        ...EMPTY_BASELINE,
+        pushups: 120,
+        squats: 120,
+        walk: 180,
+        balance: 180,
+        reading: 1200,
+        reflection: 7,
+        connection: 30,
+      },
+      "warrior",
+      "Analyst",
+    );
+    expect(high.startingRank).toBe("D");
+    expect(totalXP(high)).toBe(0);
+    expect(rankXP(high)).toBe(1500);
+  });
+  it("changes base stats only at relevant class or profession levels or special rewards", () => {
+    let c = demoCharacter(),
+      s = stats(c);
+    c = complete(
+      c,
+      objectives(c).find((o) => o.id === "reflection-daily")!,
+      now,
+    );
+    expect(stats(c)).toEqual(s);
+    c = complete(
+      c,
+      objectives(c).find((o) => o.id === "network-weekly")!,
+      now,
+    );
+    expect(professionLevel(c)).toBe(2);
+    expect(stats(c).INT).toBe(s.INT + 1);
+    expect(stats(c).WIS).toBe(s.WIS);
+    const before = stats(c);
+    c = complete(
+      c,
+      objectives(c).find((o) => o.id === "warrior-review-weekly")!,
+      now,
+    );
+    expect(stats(c).WIS).toBe(before.WIS + 1);
+  });
+  it("debits the correct skill wallet once and never changes base stats when purchasing", () => {
+    let c = demoCharacter();
+    for (let d = 1; d <= 3; d++)
+      c = complete(
+        c,
+        objectives(c).find((o) => o.id === "network-daily")!,
+        new Date(2026, 9, d),
+      );
+    const s = stats(c),
+      before = skillPointsAvailable(c, `profession:${c.profession}`);
+    c = learnSkill(c, "network-initiate");
+    expect(stats(c)).toEqual(s);
+    expect(skillPointsAvailable(c, `profession:${c.profession}`)).toBe(
+      before - 1,
+    );
+    expect(learnSkill(c, "network-initiate")).toBe(c);
+  });
+  it("requires prerequisite nodes and unlocked level sections", () => {
+    const c = demoCharacter();
+    expect(learnSkill(c, "warrior-branch-0")).toBe(c);
+    expect(learnSkill(c, "network-master")).toBe(c);
+  });
+  it("contains valid, acyclic branching skill trees", () => {
+    expect(SKILLS.length).toBeGreaterThan(200);
+    expect(new Set(SKILLS.map((s) => s.id)).size).toBe(SKILLS.length);
+    const visit = (id: string, path: string[] = []) => {
+      expect(path).not.toContain(id);
+      const s = SKILLS.find((s) => s.id === id);
+      expect(s).toBeDefined();
+      for (const p of s!.parents) visit(p, [...path, id]);
+    };
+    for (const s of SKILLS) visit(s.id);
+  });
+  it("loads old characters without inventing a campaign or deleting history", () => {
+    const old = JSON.parse(JSON.stringify(demoCharacter()));
+    delete old.startingRank;
+    delete old.learnedSkills;
+    delete old.skillPurchases;
+    expect(validateCharacter(old)).toBe(true);
   });
 });
 describe("backup validation", () => {
@@ -180,5 +283,33 @@ describe("backup validation", () => {
     expect(
       validateCharacter({ ...c, baseStats: { ...c.baseStats, STR: NaN } }),
     ).toBe(false);
+  });
+});
+
+describe("class and profession focus", () => {
+  it("subclass selection adds content without changing base attributes", () => {
+    let c = demoCharacter();
+    const goal = objectives(c).find((o) => o.id === "warrior-monthly")!;
+    c.milestones[`${goal.id}:${period(goal.cadence, now)}`] = [0, 1, 2];
+    c = complete(c, goal, now);
+    const before = stats(c),
+      next = selectSubclass(c, "warpriest");
+    expect(next.subclass).toBe("warpriest");
+    expect(stats(next)).toEqual(before);
+    expect(objectives(next).filter((o) => o.scope === "subclass")).toHaveLength(
+      3,
+    );
+  });
+  it("profession stat gains remain when selecting another profession", () => {
+    let c = demoCharacter();
+    c = complete(
+      c,
+      objectives(c).find((o) => o.id === "network-weekly")!,
+      now,
+    );
+    const before = stats(c);
+    c = { ...c, profession: "Teacher" };
+    expect(professionLevel(c)).toBe(1);
+    expect(stats(c)).toEqual(before);
   });
 });

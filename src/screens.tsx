@@ -1,3 +1,7 @@
+import { CLASS_ROLES } from "./class-roles";
+import AdventureGame from "./AdventureGame";
+import SkillTree from "./SkillTree";
+import ProfessionPicker from "./ProfessionPicker";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -7,24 +11,28 @@ import {
   LockKeyhole,
   Plus,
   Sparkles,
-  Map,
   Trophy,
-  Mountain,
   Flag,
   Award,
 } from "lucide-react";
-import type { Character, Objective, Cadence, Stats, Attribute } from "./domain";
+import type { Character, Objective, Cadence, Stats } from "./domain";
 import {
   CLASSES,
   ATTRIBUTES,
-  PROFESSIONS,
   SKILLS,
   RANKS,
   stats,
   currentPath,
   level,
   totalXP,
-  rank,
+  rankXP,
+  characterRank,
+  startingRankCredit,
+  subclassRequirements,
+  selectSubclass,
+  professionLevel,
+  professionXP,
+  professionStat,
   classLevel,
   classXP,
   classRank,
@@ -71,7 +79,13 @@ export function ObjectiveRow({
       </span>
       <span className="objective-reward">
         {done ? "Completed" : `+${o.xp} XP`}
-        <small>{done ? "Well done" : `+${o.stat}`}</small>
+        <small>
+          {done
+            ? "Saved"
+            : o.statReward
+              ? `+${o.statReward.amount} ${o.statReward.stat}`
+              : `${o.scope || "class"} XP`}
+        </small>
       </span>
       <ChevronRight size={16} className="row-chevron" />
     </button>
@@ -97,7 +111,7 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
     dailies = objectives(c).filter((o) => o.cadence === "daily"),
     done = dailies.filter((o) => isComplete(c, o)).length,
     week = activity(c),
-    nextRank = RANKS.find((r) => r.xp > xp);
+    nextRank = RANKS.find((r) => r.xp > rankXP(c));
   const history = CLASSES.filter(
     (p) => classXP(c, p.id) > 0 || p.id === c.activeClass,
   );
@@ -117,9 +131,7 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
               <span>LV. {level(xp)}</span>
             </div>
             <div>
-              <span className="hero-kicker">
-                YOUR STORY IS STILL BEING WRITTEN
-              </span>
+              <span className="hero-kicker">REGISTERED ADVENTURER</span>
               <h2>{c.name}</h2>
               <p>{c.title}</p>
               <div className="hero-tags">
@@ -162,26 +174,24 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
           </div>
           <div className="rank-emblem">
             <span>GUILD RANK</span>
-            <strong>{rank(xp).name}</strong>
-            <span>
-              {xp === 0 ? "THE FIRST CHAPTER" : "THE JOURNEY CONTINUES"}
-            </span>
+            <strong>{characterRank(c).name}</strong>
+            <span>{xp === 0 ? "REGISTERED" : "ACTIVE"}</span>
           </div>
           <p>
             {nextRank
-              ? "Every completed objective is a step forward."
-              : "A remarkable journey, one day at a time."}
+              ? "Complete real-world objectives to increase your rank."
+              : "Highest adventurer rank reached."}
           </p>
           <div className="small-progress-label">
             <span>
               {nextRank ? `Toward ${nextRank.name} rank` : "Highest guild rank"}
             </span>
             <b>
-              {xp.toLocaleString()} / {(nextRank?.xp || 50000).toLocaleString()}{" "}
-              XP
+              {rankXP(c).toLocaleString()} /{" "}
+              {(nextRank?.xp || RANKS.at(-1)!.xp).toLocaleString()} XP
             </b>
           </div>
-          <Progress value={xp} max={nextRank?.xp || 50000} />
+          <Progress value={rankXP(c)} max={nextRank?.xp || RANKS.at(-1)!.xp} />
           <button className="text-button" onClick={() => navigate("skills")}>
             View your progression <ArrowRight size={14} />
           </button>
@@ -232,8 +242,8 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
         <section className="panel daily-panel">
           <div className="section-heading">
             <div>
-              <span className="eyebrow">SMALL STEPS, REAL GROWTH</span>
-              <h3>Your daily focus</h3>
+              <span className="eyebrow">DAILY TASKS</span>
+              <h3>Daily objectives</h3>
             </div>
             <button
               className="text-button"
@@ -254,8 +264,7 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
           </div>
           <div className="daily-footer">
             <span>
-              <span className="status-dot" /> A little progress is still
-              progress.
+              <span className="status-dot" /> Progress saved after completion.
             </span>
             <span>
               {done} of {dailies.length} complete
@@ -285,15 +294,15 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
             </div>
           </div>
           <p className="panel-caption">
-            Grown through the things you actually do.
+            Attributes increase through objective XP.
           </p>
         </section>
       </div>
       <section className="panel legacy-panel">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">NOTHING YOU EARN IS LEFT BEHIND</span>
-            <h3>Your lasting legacy</h3>
+            <span className="eyebrow">CLASS & SKILL HISTORY</span>
+            <h3>Character record</h3>
           </div>
           <button className="text-button" onClick={() => navigate("paths")}>
             Explore paths <ArrowRight size={14} />
@@ -321,11 +330,11 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
       <div className="dashboard-low">
         <section className="panel weekly-panel">
           <div>
-            <span className="eyebrow">SHOW UP FOR YOURSELF</span>
-            <h3>A week of becoming</h3>
+            <span className="eyebrow">ACTIVITY</span>
+            <h3>Last 7 days</h3>
             <p>
               {week.filter((x) => x.count > 0).length} active days in the last
-              seven. A fresh start is always welcome.
+              seven.
             </p>
           </div>
           <div className="week-dots">
@@ -354,17 +363,25 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
 }
 export function Objectives({ c, openObjective }: ScreenProps) {
   const [tab, setTab] = useState<Cadence>("daily");
-  const list = objectives(c).filter((o) => o.cadence === tab),
+  const [filter, setFilter] = useState("all");
+  const list = objectives(c).filter(
+      (o) =>
+        o.cadence === tab &&
+        (filter === "all" ||
+          (filter === "networking" && o.category === "Networking") ||
+          (filter === "analysis" && o.category === "Data Analysis") ||
+          o.scope === filter),
+    ),
     done = list.filter((o) => isComplete(c, o)).length;
   return (
     <>
       <div className="intro-banner">
         <Icon name="compass" size={30} />
         <div>
-          <h3>A purpose for every season.</h3>
+          <h3>Objective schedule</h3>
           <p>
-            Daily tasks build habits. Weekly quests build momentum. Monthly
-            adventures make room for something bigger.
+            Tasks award XP to their progression path. Weekly and monthly goals
+            may also list a base stat reward.
           </p>
         </div>
       </div>
@@ -384,13 +401,25 @@ export function Objectives({ c, openObjective }: ScreenProps) {
           </button>
         ))}
       </div>
+      <label className="objective-filter">
+        Category
+        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+          <option value="all">All objectives</option>
+          <option value="class">Current class</option>
+          <option value="subclass">Current subclass</option>
+          <option value="profession">Profession & technical practice</option>
+          <option value="universal">Universal</option>
+          <option value="networking">Networking</option>
+          <option value="analysis">Data Analysis</option>
+        </select>
+      </label>
       <div className="section-heading page-section-heading">
         <h3>
           {tab === "daily"
-            ? "Today’s small victories"
+            ? "Daily tasks"
             : tab === "weekly"
-              ? "Make this week count"
-              : "A chapter worth remembering"}
+              ? "Weekly quests"
+              : "Monthly adventures"}
         </h3>
         <Tag>
           {done} / {list.length} completed
@@ -413,6 +442,11 @@ export function Objectives({ c, openObjective }: ScreenProps) {
             </div>
             <h3>{o.title}</h3>
             <p>{o.description}</p>
+            {o.statReward && (
+              <Tag tone="gold">
+                Special reward: +{o.statReward.amount} base {o.statReward.stat}
+              </Tag>
+            )}
             <div className="objective-card-bottom">
               <span>
                 <Clock3 size={14} />
@@ -446,7 +480,7 @@ export function Paths({ c, update, notify }: ScreenProps) {
   const select = (id: string) => {
     if (!update(switchClass(c, id))) return;
     notify(
-      `Your ${CLASSES.find((p) => p.id === id)!.name} chapter begins. All previous progress is preserved.`,
+      `${CLASSES.find((p) => p.id === id)!.name} selected. Previous progress is preserved.`,
     );
   };
   return (
@@ -489,7 +523,7 @@ export function Paths({ c, update, notify }: ScreenProps) {
       {view === "all" && (
         <div className="path-grid">
           {CLASSES.map((path) => {
-            const unlocked = available(path, s, totalXP(c)),
+            const unlocked = available(path, s, totalXP(c), c),
               active = path.id === p.id;
             return (
               <article
@@ -509,7 +543,11 @@ export function Paths({ c, update, notify }: ScreenProps) {
                     <Tag tone="neutral">Available</Tag>
                   )}
                 </div>
-                <p>{path.description}</p>
+                <Tag tone="neutral">{CLASS_ROLES[path.id]?.role}</Tag>
+                <p>{CLASS_ROLES[path.id]?.description || path.description}</p>
+                <small className="class-stance">
+                  Combat stance: {CLASS_ROLES[path.id]?.stance}
+                </small>
                 <div className="requirements">
                   <span>
                     CORE ATTRIBUTE <b>{path.stat}</b>
@@ -519,6 +557,12 @@ export function Paths({ c, update, notify }: ScreenProps) {
                       .map(([a, n]) => `${a} ${n}+`)
                       .join(" · ") || "Open to everyone"}
                     {path.minXP ? ` · ${path.minXP} total XP` : ""}
+                    {path.classRequirements?.map((r) => (
+                      <span key={r.id} className="required-class">
+                        {CLASSES.find((p) => p.id === r.id)?.name} level{" "}
+                        {r.level} required · current {classLevel(c, r.id)}
+                      </span>
+                    ))}
                   </small>
                 </div>
                 <button
@@ -529,8 +573,8 @@ export function Paths({ c, update, notify }: ScreenProps) {
                   {active
                     ? `Level ${classLevel(c, path.id)} ${path.name}`
                     : unlocked
-                      ? "Walk this path"
-                      : "Keep growing to unlock"}
+                      ? "Select class"
+                      : "Requirements not met"}
                   {!active && unlocked && <ArrowRight size={15} />}
                 </button>
               </article>
@@ -541,8 +585,10 @@ export function Paths({ c, update, notify }: ScreenProps) {
       {view === "sub" && (
         <>
           <div className="section-heading page-section-heading">
-            <h3>Give your {p.name.toLowerCase()} path a new dimension.</h3>
-            <Tag tone="gold">Unlock at class level 2</Tag>
+            <h3>
+              Select a specialization for your {p.name.toLowerCase()} class.
+            </h3>
+            <Tag tone="gold">Requirements vary by subclass</Tag>
           </div>
           <div className="path-grid">
             {p.subclasses.map((sub) => (
@@ -555,21 +601,29 @@ export function Paths({ c, update, notify }: ScreenProps) {
                 </div>
                 <h3>{sub.name}</h3>
                 <p>{sub.description}</p>
+                <small className="class-stance">
+                  Adds specialization objectives and its own skill tree. No
+                  automatic stat or combat bonus.
+                </small>
                 <div className="requirements">
                   <span>
-                    SECONDARY FOCUS <b>{sub.stat}</b>
+                    OBJECTIVE FOCUS <b>{sub.stat}</b>
                   </span>
                   <small>
-                    {p.name} Lv. 2 · {sub.stat} 5+
+                    {p.name} Lv. {sub.minClassLevel || 3} ·{" "}
+                    {Object.entries(sub.requirements || {})
+                      .map(([a, n]) => `${a} ${n}+`)
+                      .join(" · ")}
                   </small>
                 </div>
                 <button
                   className="button primary full"
                   disabled={
-                    subLevel < 2 || s[sub.stat] < 5 || c.subclass === sub.id
+                    subclassRequirements(c, sub).length > 0 ||
+                    c.subclass === sub.id
                   }
                   onClick={() => {
-                    if (!update({ ...c, subclass: sub.id })) return;
+                    if (!update(selectSubclass(c, sub.id))) return;
                     notify(
                       `${sub.name} selected. Your objectives now include its focus.`,
                     );
@@ -577,8 +631,8 @@ export function Paths({ c, update, notify }: ScreenProps) {
                 >
                   {c.subclass === sub.id
                     ? "Current subclass"
-                    : subLevel < 2 || s[sub.stat] < 5
-                      ? "Keep growing to unlock"
+                    : subclassRequirements(c, sub).length > 0
+                      ? "Requirements not met"
                       : "Choose subclass"}
                 </button>
               </article>
@@ -597,7 +651,7 @@ export function Paths({ c, update, notify }: ScreenProps) {
       {view === "history" && (
         <section className="panel record-panel">
           <div className="section-heading">
-            <h3>Every chapter stays with you.</h3>
+            <h3>Class history</h3>
             <Icon name="book" />
           </div>
           {CLASSES.filter(
@@ -675,19 +729,18 @@ export function Skills({
         <>
           <div className="stats-top">
             <section className="panel stat-radar-panel">
-              <span className="eyebrow">YOUR CHARACTER, IN BALANCE</span>
+              <span className="eyebrow">ATTRIBUTES</span>
               <StatRadar values={s} />
               <Attributes s={s} />
             </section>
             <div className="stat-description">
-              <span className="eyebrow">EARNED IN THE REAL WORLD</span>
-              <h2>
-                More than
-                <br />a set of numbers.
-              </h2>
+              <span className="eyebrow">ATTRIBUTE PROGRESSION</span>
+              <h2>Base attributes</h2>
               <p>
-                Your baseline is a starting point. Every 100 XP earned for an
-                attribute adds one point. Small actions compound over time.
+                Class and profession level-ups grant +1 to their focus
+                attribute. Selected weekly and monthly goals award the listed
+                stat point. Skill purchases and combat equipment never change
+                these numbers.
               </p>
               <div className="notice">
                 These are personal game scores, not clinical measurements or a
@@ -697,9 +750,7 @@ export function Skills({
           </div>
           <div className="stat-detail-grid">
             {ATTRIBUTES.map((a) => {
-              const xp = c.completions
-                .filter((x) => x.stat === a)
-                .reduce((sum, x) => sum + x.xp, 0);
+              const earned = s[a] - c.baseStats[a];
               return (
                 <section className="panel stat-detail" key={a}>
                   <div>
@@ -709,14 +760,14 @@ export function Skills({
                     <span>
                       <h3>{STAT_NAMES[a]}</h3>
                       <small>
-                        {a} · Baseline {c.baseStats[a]} + {Math.floor(xp / 100)}{" "}
-                        earned
+                        {a} · Baseline {c.baseStats[a]} + {earned} earned
                       </small>
                     </span>
                     <b>{s[a]}</b>
                   </div>
-                  <Progress value={xp % 100} />
-                  <small>{xp % 100} / 100 XP toward next point</small>
+                  <small>
+                    From class/profession levels and explicit goal rewards
+                  </small>
                 </section>
               );
             })}
@@ -724,106 +775,49 @@ export function Skills({
         </>
       )}
       {tab === "skills" && (
-        <>
-          <div className="section-heading page-section-heading">
-            <div>
-              <span className="eyebrow">EARNED, NEVER ASSIGNED</span>
-              <h3>Your growing repertoire</h3>
-            </div>
-            <button className="button secondary" onClick={onCertificate}>
-              <Plus size={16} />
-              Record credential
-            </button>
-          </div>
-          <section className="network-tree panel">
-            <div>
-              <Tag tone="blue">NETWORKING SKILL PATH</Tag>
-              <h3>From curiosity to connection.</h3>
-              <p>Real practice. Recognized credentials. Permanent skills.</p>
-            </div>
-            <div className="tree-nodes">
-              {SKILLS.slice(0, 3).map((skill, i) => (
-                <div
-                  className={hasSkill(c, skill) ? "earned" : ""}
-                  key={skill.id}
-                >
-                  <span className="tree-node">
-                    {hasSkill(c, skill) ? (
-                      <Check size={23} />
-                    ) : i === 0 ? (
-                      <Icon name="INT" size={23} />
-                    ) : (
-                      <LockKeyhole size={21} />
-                    )}
-                  </span>
-                  <small>{skill.tier}</small>
-                  <b>{skill.name}</b>
-                </div>
-              ))}
-            </div>
-          </section>
-          <div className="skill-grid">
-            {SKILLS.map((skill) => {
-              const earned = hasSkill(c, skill);
-              return (
-                <section
-                  className={`panel skill-card ${earned ? "earned" : ""}`}
-                  key={skill.id}
-                >
-                  <div className="section-heading">
-                    <span
-                      className={`objective-icon ${skill.stat.toLowerCase()}`}
-                    >
-                      <Icon name={skill.stat} />
-                    </span>
-                    <Tag tone={earned ? "green" : "neutral"}>
-                      {earned ? "Earned" : skill.tier}
-                    </Tag>
-                  </div>
-                  <h3>{skill.name}</h3>
-                  <p>{skill.description}</p>
-                  <Progress
-                    value={hasSkill(c, skill) ? skill.target : skill.current(c)}
-                    max={skill.target}
-                  />
-                  <small>{skill.proof}</small>
-                  {earned &&
-                    skill.id.includes("network-") &&
-                    skill.id !== "network-initiate" && (
-                      <span className="helper">
-                        Credential is self-reported
-                      </span>
-                    )}
-                </section>
-              );
-            })}
-          </div>
-        </>
+        <SkillTree c={c} update={update} onCertificate={onCertificate} />
       )}
       {tab === "profession" && (
         <div className="profession-layout">
           <section className="panel">
-            <span className="eyebrow">YOUR CHOSEN CRAFT</span>
+            <span className="eyebrow">PROFESSION</span>
             <h2>{c.profession}</h2>
+            <Tag>
+              Level {professionLevel(c)} · {professionXP(c)} XP · Focus{" "}
+              {professionStat(c.profession)}
+            </Tag>
             <p>
               Your profession shapes your work objectives. It can change as
               often as your ambitions do.
             </p>
-            <label className="field">
-              Choose a profession
-              <select
-                value={c.profession}
-                onChange={(e) => update({ ...c, profession: e.target.value })}
-              >
-                {PROFESSIONS.map((p) => (
-                  <option key={p}>{p}</option>
-                ))}
-              </select>
-            </label>
+            <ProfessionPicker
+              value={c.profession}
+              onChange={(profession) => update({ ...c, profession })}
+            />
             <div className="notice">
-              Skills are earned through practice and milestones independently of
-              your profession.
+              Profession objectives award profession XP and skill shards. Each
+              level adds +1 to this profession’s focus attribute. Previous
+              profession levels and purchased skills are retained.
             </div>
+            <details className="profession-history">
+              <summary>Profession history</summary>
+              {[
+                ...new Set([
+                  c.profession,
+                  ...c.completions
+                    .filter((o) => o.scope === "profession" && o.profession)
+                    .map((o) => o.profession!),
+                ]),
+              ].map((name) => (
+                <div key={name}>
+                  <b>{name}</b>
+                  <small>
+                    Level {professionLevel(c, name)} · {professionXP(c, name)}{" "}
+                    XP
+                  </small>
+                </div>
+              ))}
+            </details>
           </section>
           <section className="panel">
             <div className="section-heading">
@@ -860,7 +854,7 @@ export function Skills({
                 </div>
               ))
             ) : (
-              <Empty icon="shield" title="Real milestones belong here.">
+              <Empty icon="shield" title="No credentials recorded">
                 Record a certification when you earn it. Qualifying credentials
                 unlock permanent skills. Removing a ledger entry keeps an earned
                 skill.
@@ -877,26 +871,27 @@ export function Skills({
           <div className="intro-banner">
             <Trophy size={30} />
             <div>
-              <h3>From F to SSS. At your own pace.</h3>
+              <h3>Adventurer ranks</h3>
               <p>
-                Adventurer rank reflects lifetime objective XP. A change of
-                class never resets it.
+                Promotion costs double at each rank. Rank XP = objective XP +
+                starting-rank credit ({startingRankCredit(c)}). Starting credit
+                does not grant levels, class XP, or skill points.
               </p>
             </div>
           </div>
           <div className="ranks-grid">
             {RANKS.map((r) => (
               <section
-                className={`panel rank-tile ${rank(totalXP(c)).name === r.name ? "selected" : ""}`}
+                className={`panel rank-tile ${characterRank(c).name === r.name ? "selected" : ""}`}
                 key={r.name}
               >
                 <div className="rank-mini">{r.name}</div>
                 <h3>{r.name} Rank</h3>
-                <p>{r.xp.toLocaleString()} lifetime XP</p>
-                <Tag tone={totalXP(c) >= r.xp ? "green" : "neutral"}>
-                  {rank(totalXP(c)).name === r.name
+                <p>{r.xp.toLocaleString()} rank XP</p>
+                <Tag tone={rankXP(c) >= r.xp ? "green" : "neutral"}>
+                  {characterRank(c).name === r.name
                     ? "Your current rank"
-                    : totalXP(c) >= r.xp
+                    : rankXP(c) >= r.xp
                       ? "Achieved"
                       : "On the horizon"}
                 </Tag>
@@ -908,276 +903,8 @@ export function Skills({
     </>
   );
 }
-const ENCOUNTERS: {
-  title: string;
-  text: string;
-  choices: {
-    label: string;
-    stat: Attribute;
-    target: number;
-    success: string;
-    fallback: string;
-  }[];
-}[] = [
-  {
-    title: "The bridge at Mossfall",
-    text: "Mist rises from the ravine. An old bridge has fallen, but the guildhall is waiting on the other side. How will you cross?",
-    choices: [
-      {
-        label: "Move the fallen timber",
-        stat: "STR",
-        target: 8,
-        success:
-          "Your training pays off. You steady a heavy beam and build a crossing.",
-        fallback:
-          "The beam is heavier than expected. You make progress, then find a safer route with a traveler.",
-      },
-      {
-        label: "Find a careful way around",
-        stat: "DEX",
-        target: 7,
-        success: "Your steady footing carries you across the stones below.",
-        fallback:
-          "You take your time, testing each step. The longer trail gets you there safely.",
-      },
-    ],
-  },
-  {
-    title: "The forgotten waystone",
-    text: "Beyond the bridge, an inscription marks three paths. A tired traveler asks for your help.",
-    choices: [
-      {
-        label: "Decipher the inscription",
-        stat: "INT",
-        target: 8,
-        success:
-          "You recognize the pattern and uncover the route to the guild.",
-        fallback:
-          "You sketch the inscription and work it through together. Patience reveals the way.",
-      },
-      {
-        label: "Listen to the traveler",
-        stat: "WIS",
-        target: 7,
-        success:
-          "You listen carefully. A detail in their story reveals the right path.",
-        fallback:
-          "You share a quiet moment and agree to retrace the safest trail together.",
-      },
-    ],
-  },
-  {
-    title: "A light at the guildhall",
-    text: "At the gate, a small group gathers around a discouraged apprentice. Your journey has given you something to offer.",
-    choices: [
-      {
-        label: "Offer words of encouragement",
-        stat: "CHA",
-        target: 7,
-        success:
-          "Your words restore their courage. The guild welcomes a new friend.",
-        fallback:
-          "You offer a simple, sincere greeting. Sometimes presence is enough.",
-      },
-      {
-        label: "Lend a steady hand",
-        stat: "CON",
-        target: 7,
-        success:
-          "You help finish the evening work. Together, you carry the last supplies inside.",
-        fallback:
-          "You help at your own pace. Every contribution finds a place.",
-      },
-    ],
-  },
-];
 export function Adventures({ c, update }: ScreenProps) {
-  const [scene, setScene] = useState(-1),
-    [result, setResult] = useState<string | null>(null),
-    [finished, setFinished] = useState(false),
-    s = stats(c),
-    earned = c.relics.includes("mossfall-lantern");
-  const resolve = (choice: (typeof ENCOUNTERS)[0]["choices"][number]) =>
-    setResult(
-      s[choice.stat] >= choice.target ? choice.success : choice.fallback,
-    );
-  return (
-    <>
-      <div className="adventure-hero">
-        <div>
-          <Tag tone="gold">THE STORY REALM</Tag>
-          <h2>
-            Bring your real-world
-            <br />
-            growth into the story.
-          </h2>
-          <p>
-            The attributes you build in life shape the choices you make here.
-          </p>
-        </div>
-        <div className="adventure-map">
-          <Map size={95} strokeWidth={0.8} />
-          <span className="map-pin pin-one">
-            <Mountain size={20} />
-          </span>
-          <span className="map-pin pin-two">
-            <Flag size={20} />
-          </span>
-          <span className="map-pin pin-three">
-            <Icon name="shield" size={20} />
-          </span>
-        </div>
-      </div>
-      {scene === -1 ? (
-        <div className="adventure-grid">
-          <section className="panel adventure-story-card">
-            <span className="eyebrow">CHAPTER I · A SHORT SOLO ADVENTURE</span>
-            <h3>The road to Mossfall</h3>
-            <p>
-              A broken bridge. A forgotten waystone. A light at the guildhall.
-              An ordinary traveler can make an extraordinary difference.
-            </p>
-            <div className="adventure-info">
-              <span>
-                <Clock3 size={15} /> 3 encounters
-              </span>
-              <span>
-                <Icon name="compass" size={16} /> All ranks welcome
-              </span>
-            </div>
-            <div className="relic-preview">
-              <span>✧</span>
-              <div>
-                <small>STORY REWARD</small>
-                <b>The Mossfall Lantern</b>
-              </div>
-              {earned && <Tag>Collected</Tag>}
-            </div>
-            <button
-              className="button primary"
-              onClick={() => {
-                setScene(0);
-                setResult(null);
-                setFinished(false);
-              }}
-            >
-              Enter with {c.name} <ArrowRight size={16} />
-            </button>
-          </section>
-          <section className="panel">
-            <span className="eyebrow">YOUR ADVENTURING SELF</span>
-            <h3>
-              {c.name} · Level {level(totalXP(c))}
-            </h3>
-            <Attributes s={s} />
-            <p>
-              Your current attributes resolve each challenge. Lower scores
-              reveal a different route; they never end your story.
-            </p>
-            <div className="notice">
-              Story adventures award keepsakes. Real-world XP and attribute
-              points come from your real-world objectives.
-            </div>
-          </section>
-        </div>
-      ) : (
-        <section className="panel encounter-panel">
-          <div className="section-heading">
-            <Tag tone="gold">
-              {finished ? "CHAPTER COMPLETE" : `ENCOUNTER ${scene + 1} OF 3`}
-            </Tag>
-            <button className="text-button" onClick={() => setScene(-1)}>
-              Leave adventure
-            </button>
-          </div>
-          {finished ? (
-            <>
-              <div className="story-ornament">✧</div>
-              <h2>A light to carry forward.</h2>
-              <p>
-                The guildhall doors open. Your journey wasn’t about being the
-                strongest person on the road. It was about choosing to keep
-                going, and bringing others with you.
-              </p>
-              <div className="relic-preview">
-                <span>✧</span>
-                <div>
-                  <small>KEEPSAKE COLLECTED</small>
-                  <b>The Mossfall Lantern</b>
-                </div>
-              </div>
-              <button className="button primary" onClick={() => setScene(-1)}>
-                Return to the trail <ArrowRight size={16} />
-              </button>
-            </>
-          ) : (
-            <>
-              <div className="story-ornament">
-                {scene === 0 ? "⌁" : scene === 1 ? "✧" : "♜"}
-              </div>
-              <h2>{ENCOUNTERS[scene].title}</h2>
-              <p>{ENCOUNTERS[scene].text}</p>
-              {result ? (
-                <div className="encounter-result">
-                  <p>{result}</p>
-                  <button
-                    className="button primary"
-                    onClick={() => {
-                      if (scene < 2) {
-                        setScene(scene + 1);
-                        setResult(null);
-                      } else {
-                        setFinished(true);
-                        if (!earned)
-                          update({
-                            ...c,
-                            relics: [...c.relics, "mossfall-lantern"],
-                          });
-                      }
-                    }}
-                  >
-                    {scene < 2 ? "Continue the journey" : "Enter the guildhall"}
-                    <ArrowRight size={16} />
-                  </button>
-                </div>
-              ) : (
-                <div className="encounter-choices">
-                  {ENCOUNTERS[scene].choices.map((choice) => (
-                    <button key={choice.stat} onClick={() => resolve(choice)}>
-                      <Icon name={choice.stat} />
-                      <span>
-                        {choice.label}
-                        <small>
-                          {choice.stat} {s[choice.stat]} · Challenge{" "}
-                          {choice.target}
-                        </small>
-                      </span>
-                      <ChevronRight size={18} />
-                    </button>
-                  ))}
-                </div>
-              )}
-            </>
-          )}
-        </section>
-      )}
-      {c.relics.length > 0 && (
-        <section className="panel keepsakes">
-          <div className="section-heading">
-            <h3>Your keepsakes</h3>
-            <Sparkles size={19} />
-          </div>
-          <div className="relic-preview">
-            <span>✧</span>
-            <div>
-              <b>The Mossfall Lantern</b>
-              <small>A reminder that every small light matters.</small>
-            </div>
-          </div>
-        </section>
-      )}
-    </>
-  );
+  return <AdventureGame c={c} update={update} />;
 }
 export function Journal({ c, update, notify }: ScreenProps) {
   const [text, setText] = useState(""),
@@ -1187,7 +914,7 @@ export function Journal({ c, update, notify }: ScreenProps) {
       <div className="intro-banner">
         <Icon name="book" size={28} />
         <div>
-          <h3>Remember the becoming.</h3>
+          <h3>Reflections</h3>
           <p>
             What did you learn? Where did you see God at work? What is one small
             step for tomorrow?
@@ -1211,8 +938,8 @@ export function Journal({ c, update, notify }: ScreenProps) {
       {tab === "reflections" ? (
         <div className="journal-layout">
           <section className="panel journal-compose">
-            <span className="eyebrow">A MOMENT FOR YOURSELF</span>
-            <h3>A page in your story</h3>
+            <span className="eyebrow">NEW ENTRY</span>
+            <h3>New reflection</h3>
             <label className="field">
               <span className="sr-only">Your reflection</span>
               <textarea
@@ -1267,7 +994,7 @@ export function Journal({ c, update, notify }: ScreenProps) {
               ))
             ) : (
               <section className="panel">
-                <Empty title="Your story has room to grow.">
+                <Empty title="No saved reflections">
                   Your saved reflections will appear here. A few honest words
                   are enough.
                 </Empty>
@@ -1297,7 +1024,7 @@ export function Journal({ c, update, notify }: ScreenProps) {
               </div>
             ))
           ) : (
-            <Empty icon="compass" title="The first page is waiting.">
+            <Empty icon="compass" title="No completed objectives">
               Complete your first objective to begin your chronicle.
             </Empty>
           )}
