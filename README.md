@@ -29,17 +29,23 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
-## Version 1.6.0
+## Version 1.7.0
 
-Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 7. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.6.md).
+Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 8. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.7.md).
 
 Guild Cards follow the member's rank metal: **Tin, Copper, Bronze, Iron, Silver, Gold, Platinum, Mythril, Orichalcum** for F through SSS. Objectives are pinned parchment commissions on a timber board. The fixed header includes an in-app notification inbox. [View the screenshots](docs/screenshots/README.md).
 
 ### Request balance and simulation report
 
-Daily tasks use **F–C**, weekly quests **F–A**, and monthly adventures **F–SSS**. Weekly rewards are four times the base rank price; monthly rewards are eighteen times it. Monthly adventures retain their start, checklist, and dated practice across months. Each repeat requires pressing **Take again** and meeting fresh preparation requirements. All monthly adventures require at least 28 elapsed days; higher ranks require up to 168 days and an assessed outcome.
+Related objective ranks now share one request card. Choose a rank before accepting, search by topic, filter by stat/category, and pin useful requests. The sample Warrior / Analyst / Networking catalog contains **259 rank variants in 145 groups**, including class trials. Actual options follow the selected class, profession, vocation, and eligibility.
 
-Four synthetic accounts were run for **7 and 30 days** using the app's real rules and daily backup validation. The moderate account reached E at day 7 and D at day 30, earning 17,550 XP; the intensive account reached C at day 30. The moderate earning rate projects A (Gold) at about nine months. [Read the balance report, charts, and assumptions](docs/balance-report-1.6.md). Run `npm run simulate:balance` to reproduce the results.
+Weekly goals use Monday–Sunday and monthly goals use the calendar month. They include relevant work already logged earlier in that period. Acceptance and checklist progress expire at the boundary; earned activity and history remain. Daily tasks retain F–C limits, weekly quests F–A, and monthly adventures F–SSS. Expert achievements check prior preparation before rewarding a current-month outcome.
+
+Adventures now has **eight regions, 24 places, 96 stage battles, six towns, 48 guild commissions, seven companions, and 30 town-crafted items**. Clear a place's four stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use classic blue command windows.
+
+Hybrid requests either require a named adventure commission or pay an optional bonus when it is completed. Ordinary requests remain available. [Content, calendar, exploration, and shop rules](docs/update-1.7.md) · [New screenshots](docs/screenshots/README.md).
+
+The four-account 7-/30-day balance check was rerun under calendar rules. Results remain **3,200 / 17,550 / 45,260 / 2,225 XP** after 30 days for light, moderate, intensive, and intermittent routines. The moderate schedule projects Gold at 276 days; schedules and reward totals are reproducible through `npm run simulate:balance`. [Current data](docs/balance-1.7/simulation-results.json). The [1.6 report](docs/balance-report-1.6.md) records the previous persistence design.
 
 The app includes sequential assessments with metric or feet/inches inputs, gym access, 24 mental-check forms per attribute, improvement exams at five-level stat milestones, solo daily tasks, group quests with shared training focus, request gold, and wider skill webs with sword, spear, axe, and unarmed Fighter routes. Adventures has a reserved **Guild requests** board. [Update rules and limits](docs/update-1.5.md).
 
@@ -47,7 +53,7 @@ The app includes sequential assessments with metric or feet/inches inputs, gym a
 
 The full [assessment and progression audit](metrics-audit.md) evaluates the previous metrics, verified reference values, scoring formulas, task ranks, and limitations. The assessment centers supported reference results on 10, leaves missing tests labeled unassessed at 10, and has no stat ceiling. It includes maximum consecutive pushups or chair stands, balance and six-minute walking distance; optional bench-press and dynamometer measurements; and five-question INT/WIS/CHA checks. Questions stay hidden until Start; checks rotate through 24 scenario sets for each attribute. No test includes Bible verses. Published age/sex grip means and supported walk equations are distinguished from sample-pooled and provisional references. The mental checks, pushup variants, bench anchor and balance anchor are not presented as validated population averages.
 
-Request rewards account for rank and duration. Floor pushups 3×20 remain a C daily task at **150 XP / 30 gold**. Strict pullups 5×20 now form an S adventure at **32,400 XP / 6,480 gold**, requiring 56+ days, 24 dated practices, appropriate equipment, capacity, and recovery. Lower ranks have easier long-term habit goals. SS/SSS require sustained preparation and independently assessed outcomes; elapsed time alone does not qualify. [Reward table and rank thresholds](docs/balance-report-1.6.md).
+Request rewards account for rank and duration. Floor pushups 3×20 remain a C daily task at **150 XP / 30 gold**. Strict pullups 5×20 now form an S adventure at **32,400 XP / 6,480 gold**, requiring prior preparation of 56 days and 24 dates, current-month practice and outcome, appropriate equipment, capacity, and recovery. Lower ranks have easier long-term habit goals. SS/SSS require sustained preparation and independently assessed outcomes; elapsed time alone does not qualify. [Reward table and rank thresholds](docs/balance-report-1.6.md).
 
 Universal work awards player XP once and partial related class, profession, and vocation credit. New class entry requires a trial, banks 25% of relevant earlier work, and starts that class at level 1. Class-specific work certifies further levels while retaining banked XP. Player and class levels remain separate. Technical requests follow the selected profession/vocation; Networking and Data Analysis are absent from global category filters.
 
@@ -57,9 +63,9 @@ Universal work awards player XP once and partial related class, profession, and 
 
 Page subtitles, decorative slogans, and repeated explanations have been removed from normal screens. **Help** is a searchable handbook for requests, attributes, levels, classes, vocation, skills, combat, reports, and backups. It is available from registration, navigation, and the question-mark button.
 
-**Objectives** now has **Guild board**, **Taken**, and **Suggested** pages. Press **Take request** to accept a daily task, weekly quest, or monthly adventure. Taken contains current daily/weekly commitments and persistent monthly adventure runs, including their completion status. Release removes the commitment without removing earned progress. A taken request retains its original class/profession/vocation credit even if the current focus changes. Canonical request templates supply all rewards.
+**Objectives** now has **Guild board**, **Taken**, **Pinned**, and **Suggested** pages. Press **Take request** to accept a daily task, weekly quest, or monthly adventure. Taken contains current calendar commitments, including their completion status. Release removes the commitment without removing earned progress. A taken request retains its original class/profession/vocation credit even if the current focus changes. Canonical request templates supply all rewards.
 
-Recurring requests **never accept themselves**. Daily commitments expire at local midnight and weekly commitments on Monday. Monthly adventures retain their progress until completed or released. Previously taken or completed requests can appear in Suggested. Daily/weekly completion pays once per period; monthly completion pays once per saved run. Take again explicitly starts fresh monthly preparation.
+Recurring requests **never accept themselves**. Daily commitments expire at local midnight and weekly commitments on Monday. Monthly commitments expire on the first of the next month. Previously taken or completed requests can appear in Suggested. Each request group pays once per period. Relevant daily activity is counted retroactively within the current week/month after an explicit acceptance.
 
 **Journey** replaces the Journal page and requires no new writing. Its chronological timeline combines existing completions, credentials, and archived notes with automatically recorded new class/vocation changes, skills, level and stat gains, rank promotions, and adventure results. Existing journal text is retained as read-only archived notes. Restoring a backup does not manufacture new milestones.
 
@@ -100,12 +106,12 @@ Older saves receive one-time progression credits that retain their earned levels
 
 ### Requests, assessment, and adventures
 
-- Request content follows the current class and its secondary archetype, profession, and vocation. Daily tasks are individual; weekly quests can involve other people. Group hikes split training credit between CON and CHA, while player XP is paid once. Category filters select a focus. Daily rewards refresh at local midnight and weekly on Monday. Monthly adventures use persistent saved runs with fresh preparation after every explicit repeat.
-- Base rank gold is **2 / 5 / 12 / 30 / 70 / 160 / 360 / 840 / 2,000**, subject to cadence ceilings and the 1× / 4× / 18× duration multipliers. Earned gold joins the adventure wallet for supplies and equipment. Previous completions are not paid retroactively. Adventures → Guild requests is a placeholder awaiting a separate design pass.
+- Request content follows the current class and its secondary archetype, profession, and vocation. Daily tasks are individual; weekly quests can involve other people. Group hikes split training credit between CON and CHA, while player XP is paid once. Category filters select a focus. Daily rewards refresh at local midnight and weekly on Monday. Monthly adventures reset on the first and include relevant activity already logged that month.
+- Base rank gold is **2 / 5 / 12 / 30 / 70 / 160 / 360 / 840 / 2,000**, subject to cadence ceilings and the 1× / 4× / 18× duration multipliers. Earned gold joins the adventure wallet for supplies and equipment. Previous completions are not paid retroactively. Adventures → Guild requests contains delivery, patrol, named-monster, dungeon, and roaming-boss commissions.
 - Assessment inputs remain clearable, with no forced leading zero. Walking records distance over six minutes, balance uses seconds, and bench estimates require body mass. Bodyweight registration needs no gym equipment. Baselines use reference-centered indexes with no upper ceiling; supported age/sex references and provisional anchors are explicitly distinguished.
-- JRPG expeditions have five regions, 15 ordered encounters, bosses, and individual party turns. Your character can bring two of four recruitable companions. Commands include attacks, guard, class signatures, equipped skills, potions, and ether.
+- JRPG expeditions have eight regions, 24 places with four stages each, repeatable exploration, bosses, and individual party turns. Your character can bring two of seven recruitable companions. Commands include attacks, guard, class signatures, equipped skills, potions, and ether.
 - Combat includes armor piercing, multi-hit and area attacks, stun, taunt, counters, party barriers, healing, MP recovery, coordinated attacks, and burning. Victories grant combat gold and supplies, encounter access, and recruitment; they never grant real-world XP or base attributes.
-- Eleven gear items, a supply shop, saved battle state, character backup sharing, validated restore, Journey, archived notes, and completion history remain available.
+- Eleven legacy gear items and 30 town-crafted items, town-specific general stores and smiths, saved battle state, character backup sharing, validated restore, Journey, archived notes, and completion history remain available.
 - Faith-related real-world content uses Christian Scripture, prayer, comprehension, and service. Monk training is physical bodyweight practice.
 
 ## Google accounts and cloud backups
@@ -171,4 +177,9 @@ The current project has progression, combat, and browser workflow tests plus a c
 - `android/`: native Android shell and build configuration.
 - `public/`: original guild artwork. Fonts are supplied by Fontsource and retain their packaged licenses.
 
-The balance harness is in `src/balance-simulation.ts`; request prices and persistent preparation rules are in `src/request-balance.ts` and `src/adventure-requests.ts`. Simulation data and account snapshots are under `docs/balance/`.
+The balance harness is in `src/balance-simulation.ts`; prices are in `src/request-balance.ts`. Current simulation data is under `docs/balance-1.7/`; historical 1.6 data stays in `docs/balance/`.
+
+- `src/objective-catalog.ts`, `src/RequestBoard.tsx`: grouped ranks, expanded activity catalog, search, pins, and filters.
+- `src/calendar-goals.ts`: calendar periods, retrospective credit, and hybrid rewards.
+- `src/world-catalog.ts`, `src/world-state.ts`, `src/world.ts`: towns, places, stages, discoveries, boss danger, stock, and commissions.
+- `src/WorldMap.tsx`, `src/PixelScene.tsx`, `src/world.css`: pixel world, stores, guild boards, and battle presentation.

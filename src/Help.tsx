@@ -9,19 +9,19 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "Taking a request",
-        "Choose Take request on the board or in its details. Taken lists your current commitments. Release removes a commitment; completed rewards stay in your history.",
+        "Search by activity or topic, filter by focus and rank, and pin useful requests. Related difficulty variants share one card. Choose rank, inspect its work and reward, then press Take request. Only one rank of a group can reward each period. Release removes an unfinished commitment; completed rewards stay in your history.",
       ],
       [
         "Recurring requests",
-        "Daily tasks reset at local midnight and weekly quests on Monday. Monthly adventures retain their start date, dated practice, and checklist across months. Completing a repeatable adventure offers Take again; a new run starts only when you accept it, with new preparation. Suggestions are never accepted automatically.",
+        "Daily tasks reset at local midnight, weekly quests on Monday, and monthly adventures on the first. Weekly and monthly goals count relevant activity already logged during that calendar period, even before acceptance. Acceptance and checklists expire at the boundary. A new period requires an explicit Take request; suggestions never accept themselves.",
       ],
       [
         "Completing requests",
-        "Mark completed real-world work to claim its listed XP and gold. Adventures require their checklist, elapsed preparation time, and relevant practice on distinct dates. Each daily/weekly period or accepted adventure run pays once. Releasing and retaking an unfinished adventure starts preparation over.",
+        "Mark completed real-world work to claim its listed XP and gold. Weekly and monthly goals check distinct relevant practice dates in the current period. Several completions on one date count as one practice day. Each rank group pays once per period. One-time achievements remain one-time.",
       ],
       [
         "Changing focus",
-        "A taken request keeps the class, profession, and vocation it had when accepted. Finish it from Taken to credit that original path. Daily and weekly commitments expire at their calendar boundary. Monthly adventures and one-time trials remain until completed or released.",
+        "A taken request keeps the class, profession, and vocation it had when accepted. Finish it from Taken to credit that original path. Weekly and monthly commitments expire at their calendar boundary. Logged activity and earned rewards remain in your history. Daily one-time class trials remain until completed or released.",
       ],
     ],
   },
@@ -53,7 +53,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "Difficulty and rewards",
-        "Daily tasks use F–C ranks and pay 10, 25, 60, or 150 XP. Weekly quests use F–A and pay four times the base rank reward. Monthly adventures use F–SSS and pay eighteen times the base reward. Gold scales by the same cadence multiplier. Monthly preparation spans at least 28 days; A needs 42, S 56, SS 84, and SSS 168 days. SS/SSS also require independently assessed outcomes; time alone does not qualify. These are game reward rules.",
+        "Daily tasks use F–C ranks and pay 10, 25, 60, or 150 XP. Weekly quests use F–A and pay four times the base rank reward. Monthly adventures use F–SSS and pay eighteen times the base reward. Gold scales by the same cadence multiplier. Monthly goals must finish within their calendar month. Expert S/SS/SSS achievements additionally require prior preparation of 56/84/168 days and 24/36/72 practice dates across history, plus their assessed outcome. Their current-month goals and acceptance still expire at month end. Time alone does not qualify. These are game reward rules.",
       ],
       [
         "Universal training",
@@ -91,7 +91,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Gold and notifications",
-        "Completed real-world requests pay their listed gold once into the same wallet used for adventure supplies and equipment. Open the header bell for saved rewards, progression, and ready examinations. Adventures → Guild requests is reserved for a future content pass.",
+        "Completed real-world requests pay their listed gold once into the same wallet used for adventure supplies and equipment. Open the header bell for saved rewards, progression, and ready examinations. Adventures → Guild requests offers gathering deliveries, area patrols, named-monster hunts, roaming-boss bounties, and first-clear dungeon commissions. Delivery stock changes are saved.",
       ],
     ],
   },
@@ -194,6 +194,26 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     page: "adventures",
     sections: [
       [
+        "World and stages",
+        "Eight regions contain 24 places: outer fields, remote wilds, and dungeons. Each place has four stages. Clear them to unlock repeatable exploration there. Later places and regions have stage requirements. The map shows local materials, towns, and cleared stages.",
+      ],
+      [
+        "Exploration",
+        "A free exploration can reveal monsters, materials, gold caches, landmarks, or a roaming boss. Rewards are saved immediately for findings; battle loot requires Claim rewards. Exploration never awards real-world XP or base stats.",
+      ],
+      [
+        "Boss appearance",
+        "Each place has its own base chance. Fields begin at 4%, wilds at 7%, and dungeons at 10%; each unsuccessful exploration adds 2.5, 3, or 4 percentage points. Normal chance caps at 85%; a boss is guaranteed after 24, 20, or 16 unsuccessful explorations respectively. Defeating it resets the counter.",
+      ],
+      [
+        "Leaving and ambushes",
+        "A discovered boss offers fight or leave. Leaving adds a deferral, and each later exploration adds another. Ambush chance begins at 8%, 10%, or 14%, adds 8 percentage points per deferral, and is guaranteed at ten deferrals. An ambush gives enemies an opening turn. Pending bosses and danger persist after travel or reload.",
+      ],
+      [
+        "Hybrid objectives",
+        "Adventure required means the named guild commission must also be completed during this period before claiming the real-world request. Adventure bonus keeps the base reward available and adds the displayed XP/gold if the commission is complete when you claim. A claimed reward cannot receive the bonus later.",
+      ],
+      [
         "Party turns",
         "Your character and up to two companions act before the enemy round. Select an enemy for attacks and an ally for healing or items. Guard restores 3 MP and reduces incoming damage.",
       ],
@@ -207,7 +227,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Equipment",
-        "Buy supplies and gear with adventure gold. Equipment and equipped skill modifiers change combat attributes. Character base attributes are shown separately.",
+        "Every town has a general store and smith. Store stock is local; medicinal-herb deliveries replenish healing potions, and supply-route commissions replenish ether. Smith quality doubles in power by tier; forging needs gold and local materials. Equipment and equipped skill modifiers affect combat attributes only.",
       ],
     ],
   },

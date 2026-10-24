@@ -1,21 +1,27 @@
-# The Adventurers Guild 1.6.0 — screenshots
+# The Adventurers Guild 1.7.0 — screenshots
 
-All previews use the sample character. Journey previews include illustrative sample activity. Open an image to view it at full size.
+These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
 
-[Rank metal cards](rank-metals.png) · [Full Fighter skill web](fighter-web.png) · [Improvement examinations](examinations.png) · [Physical exam](milestone-exam.png) · [Passed milestone](milestone-passed.png)
+| Grouped objectives                                                                                                          | Rank selection                                                                                                                      | Pixel party battle                                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<img src="objective-groups.png" width="330" alt="One pushup request card with F to C rank choices">](objective-groups.png) | [<img src="request-rank-picker.png" width="330" alt="Request rank selector showing workload XP and gold">](request-rank-picker.png) | [<img src="pixel-battle-android.png" width="210" alt="Pixel party battle on a phone after a roaming boss ambush">](pixel-battle-android.png) |
 
-[Gym preferences](training-preferences.png) · [Feet and inches assessment](assessment-imperial.png) · [Mental check before Start](mental-ready.png) · [Question in progress](mental-check.png) · [Notifications](notifications.png) · [Adventure Guild requests placeholder](adventure-guild-requests.png)
+[Expanded board](objectives-expanded.png) · [Weekly retrospective progress](weekly-retroactive.png) · [Required hybrid quest](hybrid-required.png) · [Required quest after delivery](hybrid-ready.png) · [Optional adventure bonus](hybrid-bonus.png)
 
-| Guild Card                                                                                              | Request board                                                                                                          | Party battle                                                                                                        |
-| ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| [<img src="guild-android.png" width="250" alt="Rank-colored adventurer guild card">](guild-android.png) | [<img src="objectives-android.png" width="250" alt="Guild requests pinned to a timber board">](objectives-android.png) | [<img src="battle-android.png" width="250" alt="Turn-based battle with class signature skill">](battle-android.png) |
+[World map](world-desktop.png) · [Free exploration](world-exploration.png) · [Boss discovery](boss-warning.png) · [Ambush battle](ambush-battle.png) · [Adventure guild commissions](world-guild-requests.png)
 
-[Settings](settings.png) · [Settings on Android](settings-android.png) · [Large text on Android](settings-large-android.png) · [Assessment](assessment.png) · [Assessment results](assessment-results.png) · [Ranked requests](ranked-requests.png)
+[Town potion shortage](town-shortage.png) · [Store after a medicinal-herb delivery](town-restocked.png) · [Frostholm grandmaster smith](town-grandmaster.png) · [Seven companions](companions-expanded.png)
 
-[Journey reports](journey-reports.png) · [Journey chronicle](journey-timeline.png) · [Journey on Android](journey-android.png) · [Taken requests](taken-requests.png) · [Help](help.png)
+## Retained feature previews
 
-[Guild Card detail](guild-card-detail.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Vocation](vocation.png) · [Shared Fighter tree](skill-tree.png) · [Career tree](profession-tree.png) · [Desktop Guild Card](guild-desktop.png) · [Registration](welcome.png)
+These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots may reflect the release in which they were captured; the 1.7 world and objective previews above show the current changes.
 
-These are browser previews at desktop and Android phone viewport sizes. They do not establish physical-device runtime verification.
+[Guild Card on phone](guild-android.png) · [Guild Card detail](guild-card-detail.png) · [Rank metals](rank-metals.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Full Fighter skill web](fighter-web.png) · [Career tree](profession-tree.png) · [Vocation](vocation.png)
 
-[Monthly adventure board](monthly-adventures.png) · [Saved preparation across months](monthly-progress.png) · [Balance report and graphs](../balance-report-1.6.md).
+[Settings](settings.png) · [Gym preferences](training-preferences.png) · [Metric assessment](assessment.png) · [Feet and inches](assessment-imperial.png) · [Mental check before Start](mental-ready.png) · [Question in progress](mental-check.png) · [Examinations](examinations.png)
+
+[Journey reports](journey-reports.png) · [Journey chronicle](journey-timeline.png) · [Journey on phone](journey-android.png) · [Help](help.png) · [Registration](welcome.png)
+
+[Version 1.7 rules and content](../update-1.7.md) · [Verification](../verification-1.7.md)
+
+Browser viewport checks do not establish runtime verification on a physical Android device.

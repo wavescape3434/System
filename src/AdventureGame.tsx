@@ -1,3 +1,7 @@
+import WorldMap from "./WorldMap";
+import PixelScene from "./PixelScene";
+import { leaveBattle } from "./world";
+import { RESOURCE_NAMES, PLACES } from "./world-catalog";
 import { currentPath } from "./domain";
 import { classPower } from "./class-catalog";
 import { COMBAT_EFFECTS } from "./class-roles";
@@ -12,8 +16,6 @@ import {
   Backpack,
   Map,
   Coins,
-  LockKeyhole,
-  Check,
   Flag,
   ArrowLeft,
 } from "lucide-react";
@@ -21,16 +23,10 @@ import type { Character } from "./domain";
 import { stats, SKILLS, hasSkill } from "./domain";
 import {
   campaign,
-  REGIONS,
   ENCOUNTERS,
   COMPANIONS,
-  EQUIPMENT,
-  encounterAvailable,
-  startBattle,
   combatAttributes,
   act,
-  buy,
-  equip,
   claimVictory,
 } from "./rpg";
 import type { Unit, Action, Campaign } from "./rpg";
@@ -45,13 +41,11 @@ export default function AdventureGame({
 }) {
   const data = campaign(c),
     [tab, setTab] = useState("map"),
-    [region, setRegion] = useState("mossfall"),
     [enemyTarget, setEnemyTarget] = useState(0),
     [allyTarget, setAllyTarget] = useState(0),
     [actionError, setActionError] = useState("");
   const change = (next: Campaign) => update({ ...c, campaign: next });
   const battle = data.battle;
-  const selectedRegion = REGIONS.find((r) => r.id === region)!;
   const command = (action: Action) => {
     if (!battle) return;
     const next = act(c, action);
@@ -82,7 +76,7 @@ export default function AdventureGame({
           ? allyTarget
           : battle.party.findIndex((e) => e.hp > 0);
     const encounter = ENCOUNTERS.find((e) => e.id === battle.encounterId)!,
-      biome = REGIONS.find((r) => r.id === encounter.region)!.biome;
+      biome = PLACES.find((p) => p.id === encounter.placeId)!.biome;
     const fighter = (unit: Unit, index: number, enemy: boolean) => (
       <button
         className={`fighter ${unit.hp === 0 ? "down" : ""} ${enemy && index === target ? "targeted" : ""} ${!enemy && index === battle.actor ? "acting" : ""} ${!enemy && index === ally ? "ally-targeted" : ""}`}
@@ -104,7 +98,7 @@ export default function AdventureGame({
       </button>
     );
     return (
-      <section className="jrpg-battle">
+      <section className="jrpg-battle pixel-adventure">
         <div className="battle-title">
           <div>
             <Tag tone="gold">ROUND {battle.round}</Tag>
@@ -121,8 +115,7 @@ export default function AdventureGame({
           </span>
         </div>
         <div className={`battlefield biome-${biome}`}>
-          <div className="battle-moon" />
-          <div className="battle-hills" />
+          <PixelScene biome={biome} />
           <div className="enemy-line">
             {battle.enemies.map((unit, i) => fighter(unit, i, true))}
           </div>
@@ -196,7 +189,11 @@ export default function AdventureGame({
             </h2>
             <p>
               {battle.phase === "won"
-                ? `${encounter.gold} gold · 1 potion · ${encounter.recruit ? "Companion recruitment unlocked · " : ""}`
+                ? `${encounter.gold} gold · ${Object.entries(encounter.loot)
+                    .map(([id, n]) => `${n} ${RESOURCE_NAMES[id]}`)
+                    .join(
+                      " · ",
+                    )}${encounter.recruit ? " · Companion recruitment unlocked" : ""}`
                 : ""}
             </p>
             {battle.phase === "won" && !battle.claimed ? (
@@ -210,9 +207,7 @@ export default function AdventureGame({
               <button
                 className="button primary"
                 onClick={() => {
-                  const next = { ...data };
-                  delete next.battle;
-                  change(next);
+                  update(leaveBattle(c));
                 }}
               >
                 Return to map <Map size={16} />
@@ -232,11 +227,16 @@ export default function AdventureGame({
     );
   }
   return (
-    <>
+    <section className="pixel-adventure">
       <div className="jrpg-summary">
         <span>
           <Flag size={18} />
-          {data.cleared.length}/{ENCOUNTERS.length} encounters cleared
+          {
+            data.cleared.filter(
+              (id) => ENCOUNTERS.find((e) => e.id === id)?.kind === "stage",
+            ).length
+          }
+          /96 stages cleared
         </span>
         <span>
           <Coins size={18} />
@@ -284,90 +284,8 @@ export default function AdventureGame({
           Skill loadout
         </button>
       </div>
-      {tab === "map" && (
-        <>
-          <div className="region-list">
-            {REGIONS.map((r, i) => (
-              <button
-                className={r.id === region ? "selected" : ""}
-                key={r.id}
-                onClick={() => setRegion(r.id)}
-              >
-                <small>REGION {i + 1}</small>
-                <b>{r.name}</b>
-                <span>
-                  {data.cleared.filter((id) => id.startsWith(r.id)).length}/3
-                  cleared
-                </span>
-              </button>
-            ))}
-          </div>
-          <div className={`world-map biome-${selectedRegion.biome}`}>
-            <div className="map-heading">
-              <h2>{selectedRegion.name}</h2>
-              <p>Approach → Patrol → Boss</p>
-            </div>
-            <svg viewBox="0 0 900 300" aria-hidden="true">
-              <path
-                d="M100 230Q250 0 450 160T790 90"
-                fill="none"
-                stroke="#ddd1a1"
-                strokeWidth="3"
-                strokeDasharray="9 9"
-              />
-              <path
-                d="m0 280 160-230 170 220 90-130 130 140 140-225 200 220v100H0Z"
-                fill="#163e31"
-                opacity=".4"
-              />
-            </svg>
-            <div className="encounter-nodes">
-              {ENCOUNTERS.filter((e) => e.region === region).map((e, i) => {
-                const unlocked = encounterAvailable(c, e.id),
-                  cleared = data.cleared.includes(e.id);
-                return (
-                  <button
-                    key={e.id}
-                    className={`${unlocked ? "open" : "locked"} ${cleared ? "cleared" : ""}`}
-                    disabled={!unlocked}
-                    onClick={() => update(startBattle(c, e.id))}
-                  >
-                    <span>
-                      {cleared ? (
-                        <Check size={24} />
-                      ) : !unlocked ? (
-                        <LockKeyhole size={23} />
-                      ) : i === 2 ? (
-                        <Icon name="shield" size={26} />
-                      ) : (
-                        <Sword size={25} />
-                      )}
-                    </span>
-                    <b>{i === 2 ? "Boss" : i === 0 ? "Approach" : "Patrol"}</b>
-                    <small>
-                      {e.enemies
-                        .map((id) => id.replaceAll("-", " "))
-                        .join(" + ")}
-                    </small>
-                    <Tag tone="gold">{e.gold} gold</Tag>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </>
-      )}
-      {tab === "requests" && (
-        <section className="adventure-guild-requests">
-          <div className="board-inscription">
-            THE ADVENTURERS GUILD · EXPEDITION REQUESTS
-          </div>
-          <div className="guild-counter">
-            <Icon name="shield" size={55} />
-            <h2>Guild requests</h2>
-            <p>No requests posted.</p>
-          </div>
-        </section>
+      {(tab === "map" || tab === "requests") && (
+        <WorldMap c={c} update={update} mode={tab} />
       )}
       {tab === "party" && (
         <div className="companion-grid">
@@ -455,64 +373,7 @@ export default function AdventureGame({
               ))}
             </div>
           </div>
-          <div className="shop-grid">
-            {EQUIPMENT.map((item) => (
-              <article className="panel shop-item" key={item.id}>
-                <Icon
-                  name={
-                    item.slot === "armor"
-                      ? "shield"
-                      : item.slot === "weapon"
-                        ? "sword"
-                        : "sparkles"
-                  }
-                  size={30}
-                />
-                <Tag tone="neutral">{item.slot}</Tag>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <button
-                  className={`button full ${data.equipment.includes(item.id) ? "secondary" : "primary"}`}
-                  disabled={
-                    data.equipment.includes(item.id) ||
-                    (!data.inventory[item.id] && data.gold < item.price)
-                  }
-                  onClick={() =>
-                    update(
-                      data.inventory[item.id]
-                        ? equip(c, item.id)
-                        : buy(c, item.id),
-                    )
-                  }
-                >
-                  {data.equipment.includes(item.id)
-                    ? "Equipped"
-                    : data.inventory[item.id]
-                      ? "Equip"
-                      : `Buy · ${item.price} gold`}
-                </button>
-              </article>
-            ))}
-            {["potion", "ether"].map((id) => (
-              <article className="panel shop-item" key={id}>
-                <FlaskConical size={30} />
-                <h3>{id === "potion" ? "Potion" : "Ether"}</h3>
-                <p>
-                  {id === "potion"
-                    ? "Restore 50 HP to a living ally."
-                    : "Restore 20 MP to a living ally."}{" "}
-                  Stock: {data.inventory[id] || 0}
-                </p>
-                <button
-                  className="button primary full"
-                  disabled={data.gold < (id === "potion" ? 20 : 25)}
-                  onClick={() => update(buy(c, id))}
-                >
-                  Buy · {id === "potion" ? 20 : 25} gold
-                </button>
-              </article>
-            ))}
-          </div>
+          <WorldMap c={c} update={update} mode="shop" />
         </>
       )}
       {tab === "equipment" && c.relics.length > 0 && (
@@ -588,6 +449,6 @@ export default function AdventureGame({
           </div>
         </>
       )}
-    </>
+    </section>
   );
 }

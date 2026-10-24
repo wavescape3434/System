@@ -1,3 +1,5 @@
+import { validWorld } from "./world-state";
+import { PLACES } from "./world-catalog";
 import { validMentalFormId } from "./exam-bank";
 import { validExam } from "./exams";
 import { TASK_RANKS } from "./task-ranks";
@@ -16,6 +18,7 @@ import {
   upgradeTraining,
   upgradeExams,
   upgradeBalance,
+  upgradeCalendar,
 } from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
 const finite = (x: unknown) =>
@@ -49,6 +52,11 @@ export function validateCharacter(x: unknown): x is Character {
       (c.trainingVersion === undefined || c.trainingVersion === 3) &&
       (c.examVersion === undefined || c.examVersion === 1) &&
       (c.balanceVersion === undefined || c.balanceVersion === 1) &&
+      (c.calendarVersion === undefined || c.calendarVersion === 1) &&
+      (c.favoriteRequests === undefined ||
+        (Array.isArray(c.favoriteRequests) &&
+          c.favoriteRequests.length <= 500 &&
+          c.favoriteRequests.every(str))) &&
       (c.rankLegacyCredit === undefined || finite(c.rankLegacyCredit)) &&
       (c.assessmentFormsSeen === undefined ||
         (Array.isArray(c.assessmentFormsSeen) &&
@@ -203,6 +211,9 @@ export function validateCharacter(x: unknown): x is Character {
           date(o.at) &&
           finite(o.xp) &&
           o.xp <= 180000 &&
+          (o.requestGroup === undefined || str(o.requestGroup)) &&
+          (o.bonusXP === undefined ||
+            (finite(o.bonusXP) && o.bonusXP <= o.xp)) &&
           (o.gold === undefined ||
             (finite(o.gold) && Number.isInteger(o.gold) && o.gold <= 36000)) &&
           (o.participants === undefined ||
@@ -297,8 +308,8 @@ export function loadCharacter(): Character | null {
     throw new Error(
       "Your saved character needs attention. Export or restore a valid backup; your existing data has been kept.",
     );
-  return upgradeBalance(
-    upgradeExams(upgradeTraining(upgradeProgression(parsed))),
+  return upgradeCalendar(
+    upgradeBalance(upgradeExams(upgradeTraining(upgradeProgression(parsed)))),
   );
 }
 export const saveCharacter = (c: Character) =>
@@ -312,6 +323,7 @@ function validCampaign(input: unknown): boolean {
     const inv = (x: unknown) =>
       !!x && typeof x === "object" && Object.values(x).every((n) => finite(n));
     if (
+      (c.world !== undefined && !validWorld(c.world)) ||
       !strings(c.cleared) ||
       !finite(c.gold) ||
       (c.trainingGoldAccrued !== undefined && !finite(c.trainingGoldAccrued)) ||
@@ -375,6 +387,11 @@ function validCampaign(input: unknown): boolean {
           ),
       );
     return (
+      (b.source === undefined ||
+        (PLACES.some((p) => p.id === b.source!.placeId) &&
+          ["stage", "wild", "roaming-boss", "ambush"].includes(
+            b.source.kind,
+          ))) &&
       str(b.encounterId) &&
       ENCOUNTERS.some((e) => e.id === b.encounterId) &&
       units(b.party) &&

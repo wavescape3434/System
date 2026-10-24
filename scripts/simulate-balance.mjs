@@ -6,8 +6,12 @@ const server = await createServer({
   appType: "custom",
 });
 try {
-  const { SIMULATION_PROFILES, simulateAccount, simulateEarlyClaims } =
-    await server.ssrLoadModule("/src/balance-simulation.ts");
+  const {
+    SIMULATION_START,
+    SIMULATION_PROFILES,
+    simulateAccount,
+    simulateEarlyClaims,
+  } = await server.ssrLoadModule("/src/balance-simulation.ts");
   const { RANKS, objectives } = await server.ssrLoadModule("/src/domain.ts");
   const { requestReward } = await server.ssrLoadModule(
     "/src/request-balance.ts",
@@ -16,8 +20,11 @@ try {
   const results = {
     generatedAt: new Date().toISOString(),
     timezone: "America/Denver",
-    start: "2027-01-25",
-    end: "2027-02-23",
+    version: "1.7.0",
+    start: SIMULATION_START.toISOString().slice(0, 10),
+    end: new Date(SIMULATION_START.getTime() + 29 * 86400000)
+      .toISOString()
+      .slice(0, 10),
     ranks: RANKS,
     rewards: Object.fromEntries(
       ["daily", "weekly", "monthly"].map((c) => [
@@ -32,13 +39,13 @@ try {
     earlyClaims: simulateEarlyClaims(),
     accounts: runs.map(({ character, ...data }) => data),
   };
-  await mkdir("docs/balance", { recursive: true });
+  await mkdir("docs/balance-1.7", { recursive: true });
   await writeFile(
-    "docs/balance/simulation-results.json",
+    "docs/balance-1.7/simulation-results.json",
     JSON.stringify(results, null, 2) + "\n",
   );
   await writeFile(
-    "docs/balance/daily-progress.csv",
+    "docs/balance-1.7/daily-progress.csv",
     "profile,day,xp,gold,rank,player_level,class_level,profession_level,completed\n" +
       runs
         .flatMap((r) =>
@@ -61,7 +68,7 @@ try {
   );
   for (const run of runs)
     await writeFile(
-      `docs/balance/account-${run.profile}.json`,
+      `docs/balance-1.7/account-${run.profile}.json`,
       JSON.stringify(run.character, null, 2) + "\n",
     );
   const sample = runs[0].character,

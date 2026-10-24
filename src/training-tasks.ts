@@ -1,3 +1,4 @@
+import { periodStart, adventureConditionMet } from "./calendar-goals";
 import { habitRequests, balanceRequest } from "./adventure-requests";
 import { requestReward } from "./request-balance";
 import { hasEquipment } from "./preferences";
@@ -859,7 +860,7 @@ export function taskRequirements(
   const previous = c.completions
     .filter((x) => x.family && x.family === o.family)
     .sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime())[0];
-  if (previous) {
+  if (previous && !(o.calendarBound && o.minimumSessions)) {
     const elapsed = (now.getTime() - new Date(previous.at).getTime()) / 3600000;
     if (
       previous.cadence === "daily" &&
@@ -912,6 +913,29 @@ export function taskRequirements(
         );
     }
   }
+  if (
+    phase === "complete" &&
+    o.adventureRequirement &&
+    !adventureConditionMet(c, o.adventureRequirement, o.cadence, now)
+  )
+    missing.push("Complete the linked adventure guild request this period");
+  if (phase === "complete" && (o.preparationDays || o.preparationSessions)) {
+    const practice = c.completions.filter(
+      (x) =>
+        x.cadence === "daily" && x.stat === o.stat && new Date(x.at) <= now,
+    );
+    const dates = new Set(practice.map((x) => new Date(x.at).toDateString()))
+      .size;
+    const first = practice
+      .map((x) => new Date(x.at).getTime())
+      .sort((a, b) => a - b)[0];
+    const elapsed =
+      first === undefined ? 0 : Math.floor((now.getTime() - first) / 86400000);
+    if (o.preparationDays && elapsed < o.preparationDays)
+      missing.push(`Prior preparation: ${elapsed}/${o.preparationDays} days`);
+    if (o.preparationSessions && dates < o.preparationSessions)
+      missing.push(`Prior practice: ${dates}/${o.preparationSessions} dates`);
+  }
   return missing;
 }
 export const rankIndex = (rank: TaskRank = "D") => TASK_RANKS.indexOf(rank);
@@ -919,7 +943,9 @@ export const rankIndex = (rank: TaskRank = "D") => TASK_RANKS.indexOf(rank);
 export function requestProgress(c: Character, o: Objective, now = new Date()) {
   const taken = c.takenRequests?.find((r) => r.id === o.id);
   if (!taken) return { days: 0, sessions: 0, startedAt: undefined };
-  const start = new Date(taken.takenAt);
+  const start = o.calendarBound
+    ? periodStart(o.cadence, now)
+    : new Date(taken.takenAt);
   const localDay = (d: Date) =>
     Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
   const days = Math.max(

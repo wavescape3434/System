@@ -313,13 +313,13 @@ describe("difficulty, routing, and class mastery", () => {
     expect(validateCharacter(next)).toBe(true);
     expect(upgradeTraining(next)).toBe(next);
   });
-  it("retains one-time long adventures across months and requires actual elapsed time and dated practice", () => {
+  it("expires calendar adventure acceptance at the boundary and retains its achievement requirement", () => {
     let c = takeRequest(demoCharacter(), "u-strength-sss", now);
     const o = find(c, "u-strength-sss");
     expect(o.once).toBe(true);
     expect(
       takenObjectives(c, new Date(2027, 0, 1)).some((t) => t.id === o.id),
-    ).toBe(true);
+    ).toBe(false);
     c.milestones[`${o.id}:once`] = [0, 1, 2, 3];
     expect(completeTaken(c, o, new Date(2027, 0, 1))).toBe(c);
     expect(validateCharacter(c)).toBe(true);

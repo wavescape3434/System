@@ -1,3 +1,11 @@
+import { groupRequests } from "./objective-catalog";
+import {
+  periodStart,
+  periodEnd,
+  adventureBonus,
+  adventureConditionMet,
+} from "./calendar-goals";
+import { WORLD_CONTRACTS, TOWNS } from "./world-catalog";
 import { requestProgress } from "./training-tasks";
 import Notifications, {
   notificationFeed,
@@ -49,10 +57,12 @@ import {
   upgradeTraining,
   upgradeExams,
   upgradeBalance,
+  upgradeCalendar,
   taskRequirements,
   classCreditRewards,
   universalCareerCredits,
   takenObjectives,
+  objectives,
 } from "./domain";
 import {
   loadCharacter,
@@ -224,7 +234,7 @@ export default function App() {
     (next: Character, track = true) => {
       try {
         const prepared = awardSkills(
-          upgradeBalance(upgradeExams(upgradeTraining(next))),
+          upgradeCalendar(upgradeBalance(upgradeExams(upgradeTraining(next)))),
         );
         const awarded = track
           ? recordJourney(characterRef.current, prepared)
@@ -249,7 +259,11 @@ export default function App() {
   };
   const openObjective = (input: Objective) => {
     const o = c
-      ? takenObjectives(c).find((o) => o.id === input.id) || input
+      ? takenObjectives(c).find(
+          (o) =>
+            o.id === input.id ||
+            (!!input.requestGroup && o.requestGroup === input.requestGroup),
+        ) || input
       : input;
     setChecked(c?.milestones[`${o.id}:${objectivePeriod(o)}`] || []);
     setObjective(o);
@@ -568,7 +582,89 @@ export default function App() {
         <Notifications c={c} onClose={() => setNotificationsOpen(false)} />
       )}
       {objective && c && (
-        <Modal title={objective.title} onClose={close}>
+        <Modal title={objective.groupTitle || objective.title} onClose={close}>
+          {(() => {
+            const variants =
+              groupRequests(objectives(c)).find(
+                (g) => g.id === objective.requestGroup,
+              )?.variants || [];
+            return variants.length > 1 ? (
+              <div className="request-rank-picker">
+                <label>
+                  Rank
+                  <select
+                    aria-label="Choose request rank"
+                    value={objective.id}
+                    disabled={isTaken(c, objective) || isComplete(c, objective)}
+                    onChange={(e) => {
+                      const o = variants.find((o) => o.id === e.target.value)!;
+                      setObjective(o);
+                      setChecked(
+                        c.milestones[`${o.id}:${objectivePeriod(o)}`] || [],
+                      );
+                    }}
+                  >
+                    {variants.map((o) => (
+                      <option key={o.id} value={o.id}>
+                        {o.rank} · {o.xp} XP · {o.gold} gold · {o.minutes}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <div className="rank-picker-names">
+                  {variants.map((o) => (
+                    <span
+                      key={o.id}
+                      className={o.id === objective.id ? "selected" : ""}
+                    >
+                      {o.rank} · {o.title}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : null;
+          })()}
+          {objective.calendarBound && (
+            <Tag>
+              {periodStart(objective.cadence).toLocaleDateString()} –{" "}
+              {new Date(
+                periodEnd(objective.cadence).getTime() - 1,
+              ).toLocaleDateString()}
+            </Tag>
+          )}
+          {(() => {
+            const id =
+                objective.adventureRequirement ||
+                objective.adventureBonus?.contractId,
+              contract = WORLD_CONTRACTS.find((r) => r.id === id);
+            if (!contract) return null;
+            const done = adventureConditionMet(
+              c,
+              contract.id,
+              objective.cadence,
+            );
+            return (
+              <div className="hybrid-requirement">
+                <b>
+                  {objective.adventureRequirement
+                    ? "Required adventure request"
+                    : "Adventure bonus"}{" "}
+                  · {done ? "Complete" : "Pending"}
+                </b>
+                <p>
+                  {contract.title} ·{" "}
+                  {TOWNS.find((t) => t.id === contract.town)!.name}
+                </p>
+                {objective.adventureBonus && (
+                  <Tag>
+                    +{objective.adventureBonus.xp} XP · +
+                    {objective.adventureBonus.gold} gold
+                    {adventureBonus(c, objective) ? " · Ready" : ""}
+                  </Tag>
+                )}
+              </div>
+            );
+          })()}
           <div className="objective-modal-meta">
             <Tag>{objective.category}</Tag>
             {objective.rank && <Tag tone="gold">{objective.rank} rank</Tag>}
@@ -589,7 +685,7 @@ export default function App() {
                 <div className="request-credit-preview">
                   {progress.startedAt && (
                     <Tag>
-                      Started{" "}
+                      {objective.calendarBound ? "Period start " : "Started "}{" "}
                       {new Date(progress.startedAt).toLocaleDateString()}
                     </Tag>
                   )}
@@ -605,7 +701,15 @@ export default function App() {
                       {objective.minimumSessions} practice days
                     </Tag>
                   )}
-                  {objective.persistent && <Tag>Saved across months</Tag>}
+                  {objective.calendarBound ? (
+                    <Tag>
+                      {objective.cadence === "weekly"
+                        ? "This week"
+                        : "This month"}
+                    </Tag>
+                  ) : (
+                    objective.persistent && <Tag>Saved across months</Tag>
+                  )}
                 </div>
               );
             })()}
@@ -727,8 +831,12 @@ export default function App() {
                   checked.length < objective.checklist.length)
               }
               onClick={() => {
-                if (!update(completeTaken(c, objective))) return;
-                notify(`+${objective.xp} XP earned. Progress saved.`);
+                const next = completeTaken(c, objective);
+                if (next === c || !update(next)) return;
+                const reward = next.completions.at(-1)!;
+                notify(
+                  `+${reward.xp} XP · +${reward.gold || 0} gold. Progress saved.`,
+                );
                 close();
               }}
             >

@@ -1,0 +1,26 @@
+{
+  "profile": "Warrior / Analyst / Networking sample",
+  "objectives": 259,
+  "groupedRequests": 145,
+  "cadences": {
+    "daily": {
+      "variants": 140,
+      "groups": 69
+    },
+    "weekly": {
+      "variants": 53,
+      "groups": 34
+    },
+    "monthly": {
+      "variants": 66,
+      "groups": 42
+    }
+  },
+  "regions": 8,
+  "places": 24,
+  "stages": 96,
+  "guildCommissions": 48,
+  "towns": 6,
+  "craftedGear": 30,
+  "companions": 7
+}

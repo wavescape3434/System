@@ -13,3 +13,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 import "./guild-update.css";
+
+import "./world.css";

@@ -23,7 +23,7 @@ import { taskRequirements, requestProgress } from "./training-tasks";
 import { validateCharacter } from "./storage";
 import { campaign } from "./rpg";
 import { recordJourney } from "./journey-events";
-export const SIMULATION_START = new Date("2027-01-25T18:00:00Z");
+export const SIMULATION_START = new Date("2027-02-01T18:00:00Z");
 export const SIMULATION_PROFILES = [
   "light",
   "moderate",

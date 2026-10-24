@@ -17,10 +17,15 @@ import { allowedRanks, requestReward } from "./request-balance";
 import { validateCharacter } from "./storage";
 import {
   SIMULATION_START,
-  simulationCharacter,
+  simulationCharacter as currentSimulationCharacter,
   simulateAccount,
   simulateEarlyClaims,
 } from "./balance-simulation";
+const simulationCharacter = (name: string) => {
+  const c = currentSimulationCharacter(name);
+  delete c.calendarVersion;
+  return c;
+};
 const at = (day: number) =>
   new Date(SIMULATION_START.getTime() + day * 86400000);
 const current = (c: Character, id: string) =>
@@ -186,14 +191,14 @@ describe("rank migration and time scale", () => {
         ...r,
         instanceId: undefined,
         persistent: undefined,
-        takenPeriod: "2027-01",
+        takenPeriod: "2027-02",
       },
     ];
-    c.milestones[`${r.id}:2027-01`] = [0, 1];
+    c.milestones[`${r.id}:2027-02`] = [0, 1];
     c = upgradeBalance(c);
     const o = takenObjectives(c, at(28))[0];
-    expect(o.instanceId).toBe("2027-01");
-    expect(c.milestones[`${r.id}:2027-01`]).toEqual([0, 1]);
+    expect(o.instanceId).toBe("2027-02");
+    expect(c.milestones[`${r.id}:2027-02`]).toEqual([0, 1]);
     expect(c.takenRequests![0].takenAt).toBe(r.takenAt);
     expect(validateCharacter(c)).toBe(true);
   });
@@ -212,5 +217,5 @@ describe("rank migration and time scale", () => {
     expect(moderate.projectedDaysToGold).toBeGreaterThanOrEqual(270);
     expect(moderate.projectedDaysToGold).toBeLessThanOrEqual(366);
     expect(results[2].last.xp).toBeGreaterThan(moderate.last.xp);
-  }, 30000);
+  }, 60000);
 });

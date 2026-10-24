@@ -2,6 +2,8 @@
 
 Reviewed 24 October 2026. This document separates published measurements from game balance. Reference values are available in the app under **Help → Assessment & training sources**, and scored published measurements link to their source. Version 1.5 retains the physical reference models introduced in 1.4, replaces the fixed mental questions, and adds milestone examinations. [Detailed update rules](docs/update-1.5.md).
 
+**Version 1.7:** Assessment references and exam scoring are retained. Current request grouping, calendar credit, and hybrid rewards are documented in the [1.7 update](docs/update-1.7.md).
+
 **Version 1.6 reward update:** The physical assessment references and exam rules below are retained. Current cadence rewards, longer-term guild thresholds, and persistent monthly preparation supersede the 1.5 reward tables; see the [balance report](docs/balance-report-1.6.md).
 
 ## Findings from the previous assessment

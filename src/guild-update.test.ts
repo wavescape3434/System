@@ -289,11 +289,11 @@ describe("guild rewards, requirements and branches", () => {
     let c = claim(demoCharacter(), "u-floor-push-20");
     expect(campaign(c).gold).toBe(30);
     expect(campaign(claim(c, "u-floor-push-20")).gold).toBe(30);
-    c = buy(c, "potion");
-    expect(campaign(c).gold).toBe(10);
+    c = buy(c, "ether");
+    expect(campaign(c).gold).toBe(5);
     expect(c.campaign!.trainingGoldAccrued).toBe(30);
     c = claim(c, "u-read-5");
-    expect(campaign(c).gold).toBe(12);
+    expect(campaign(c).gold).toBe(7);
     expect(validateCharacter(c)).toBe(true);
   });
   it("keeps daily tasks solo and routes group hike XP to both conditioning and communication classes", () => {

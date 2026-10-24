@@ -1,3 +1,18 @@
+import {
+  WORLD_REGIONS,
+  WORLD_ENCOUNTERS,
+  TOWN_GEAR,
+  TOWNS,
+  MONSTER_NAMES,
+  BOSS_KINDS,
+} from "./world-catalog";
+import {
+  newWorld,
+  worldEncounterOpen,
+  placeProgress,
+  regionOpen,
+} from "./world-state";
+import type { WorldState } from "./world-state";
 import { classPower } from "./class-catalog";
 import { COMBAT_EFFECTS } from "./class-roles";
 import type { Character, Stats } from "./domain";
@@ -13,83 +28,11 @@ export interface Campaign {
   equipment: string[];
   equippedSkills: string[];
   battle?: Battle;
+  world?: WorldState;
 }
-export interface Encounter {
-  id: string;
-  name: string;
-  region: string;
-  tier: number;
-  enemies: string[];
-  gold: number;
-  recruit?: string;
-}
-export const REGIONS = [
-  {
-    id: "mossfall",
-    name: "Mossfall Woods",
-    biome: "forest",
-    enemies: ["slime", "wolf", "bandit"],
-    boss: "alpha",
-    recruit: "orin",
-  },
-  {
-    id: "quarry",
-    name: "Stonepass Quarry",
-    biome: "quarry",
-    enemies: ["bat", "crawler", "bandit"],
-    boss: "golem",
-    recruit: "lyra",
-  },
-  {
-    id: "ruins",
-    name: "Ember Ruins",
-    biome: "ruins",
-    enemies: ["wisp", "skeleton", "sentinel"],
-    boss: "construct",
-    recruit: "gideon",
-  },
-  {
-    id: "ridge",
-    name: "Stormridge",
-    biome: "mountain",
-    enemies: ["harpy", "wolf", "wisp"],
-    boss: "wyvern",
-  },
-  {
-    id: "keep",
-    name: "Blackthorn Keep",
-    biome: "keep",
-    enemies: ["skeleton", "sentinel", "crawler"],
-    boss: "warden",
-  },
-] as const;
-export const ENCOUNTERS: Encounter[] = REGIONS.flatMap((r, i) => [
-  {
-    id: `${r.id}-1`,
-    name: `${r.name}: Approach`,
-    region: r.id,
-    tier: i + 1,
-    enemies: [r.enemies[0], r.enemies[0]],
-    gold: 20 + i * 15,
-  },
-  {
-    id: `${r.id}-2`,
-    name: `${r.name}: Patrol`,
-    region: r.id,
-    tier: i + 1,
-    enemies: [r.enemies[1], r.enemies[2]],
-    gold: 30 + i * 15,
-  },
-  {
-    id: `${r.id}-boss`,
-    name: `${r.name}: ${r.boss[0].toUpperCase() + r.boss.slice(1)}`,
-    region: r.id,
-    tier: i + 1,
-    enemies: [r.boss],
-    gold: 60 + i * 25,
-    recruit: "recruit" in r ? r.recruit : undefined,
-  },
-]);
+export type Encounter = import("./world-catalog").WorldEncounter;
+export const REGIONS = WORLD_REGIONS;
+export const ENCOUNTERS: Encounter[] = WORLD_ENCOUNTERS;
 export const COMPANIONS = [
   {
     id: "mira",
@@ -123,6 +66,30 @@ export const COMPANIONS = [
     skill: "fire",
     requires: "ruins-boss",
   },
+  {
+    id: "nessa",
+    name: "Nessa",
+    role: "Tide Warden",
+    description: "Party barriers and steady support.",
+    skill: "ward",
+    requires: "coast-boss",
+  },
+  {
+    id: "toma",
+    name: "Toma",
+    role: "Fen Scout",
+    description: "Armor-piercing attacks and quick positioning.",
+    skill: "pierce",
+    requires: "fen-boss",
+  },
+  {
+    id: "elara",
+    name: "Elara",
+    role: "Winter Guardian",
+    description: "Draws enemy attacks away from vulnerable allies.",
+    skill: "taunt",
+    requires: "frost-boss",
+  },
 ] as const;
 export interface Equipment {
   id: string;
@@ -132,7 +99,7 @@ export interface Equipment {
   mod: Partial<Stats>;
   description: string;
 }
-export const EQUIPMENT: Equipment[] = [
+const LEGACY_EQUIPMENT: Equipment[] = [
   {
     id: "training-sword",
     name: "Training Sword",
@@ -222,6 +189,7 @@ export const EQUIPMENT: Equipment[] = [
     description: "+2 combat DEX, +2 combat CON",
   },
 ];
+export const EQUIPMENT: Equipment[] = [...LEGACY_EQUIPMENT, ...TOWN_GEAR];
 export function newCampaign(): Campaign {
   return {
     cleared: [],
@@ -245,6 +213,7 @@ export const campaign = (c: Character): Campaign => {
     ...data,
     gold: data.gold + Math.max(0, earned - (data.trainingGoldAccrued || 0)),
     trainingGoldAccrued: earned,
+    ...(c.calendarVersion === 1 ? { world: data.world || newWorld() } : {}),
   };
 };
 export function combatAttributes(c: Character): Stats {
@@ -318,31 +287,21 @@ export interface Battle {
   log: string[];
   items: Record<string, number>;
   claimed: boolean;
+  source?: {
+    placeId: string;
+    kind: "stage" | "wild" | "roaming-boss" | "ambush";
+  };
 }
-const enemyNames: Record<string, string> = {
-  slime: "Forest Slime",
-  wolf: "Briar Wolf",
-  bandit: "Road Bandit",
-  alpha: "Briar Alpha",
-  bat: "Cave Bat",
-  crawler: "Stone Crawler",
-  golem: "Quarry Golem",
-  wisp: "Ember Wisp",
-  skeleton: "Ruins Guard",
-  sentinel: "Iron Sentinel",
-  construct: "Ember Construct",
-  harpy: "Storm Harpy",
-  wyvern: "Ridge Wyvern",
-  warden: "Blackthorn Warden",
-};
+const enemyNames = MONSTER_NAMES;
 export function encounterAvailable(c: Character, id: string): boolean {
-  const i = ENCOUNTERS.findIndex((e) => e.id === id);
-  return (
-    i >= 0 && (i === 0 || campaign(c).cleared.includes(ENCOUNTERS[i - 1].id))
-  );
+  return worldEncounterOpen(campaign(c), id);
 }
 export function startBattle(c: Character, id: string): Character {
-  if (!encounterAvailable(c, id) || campaign(c).battle?.phase === "player")
+  if (
+    !encounterAvailable(c, id) ||
+    campaign(c).battle?.phase === "player" ||
+    (campaign(c).battle?.phase === "won" && !campaign(c).battle?.claimed)
+  )
     return c;
   const e = ENCOUNTERS.find((x) => x.id === id)!,
     s = combatAttributes(c),
@@ -430,6 +389,9 @@ export function startBattle(c: Character, id: string): Character {
                   power: "Shield Bash",
                   quick: "Twin Shot",
                   fire: "Ember Burst",
+                  ward: "Tidal Barrier",
+                  pierce: "Fenfang Strike",
+                  taunt: "Winter Watch",
                 } as Record<string, string>
               )[npc.skill],
               npc.skill,
@@ -439,9 +401,7 @@ export function startBattle(c: Character, id: string): Character {
       ];
     });
   const enemies = e.enemies.map((kind, i) => {
-    const boss = ["alpha", "golem", "construct", "wyvern", "warden"].includes(
-        kind,
-      ),
+    const boss = BOSS_KINDS.has(kind),
       hp = (boss ? 105 : 38) + e.tier * (boss ? 28 : 12);
     return {
       id: `${kind}-${i}`,
@@ -460,7 +420,7 @@ export function startBattle(c: Character, id: string): Character {
       boss,
     };
   });
-  const battle: Battle = {
+  let battle: Battle = {
     encounterId: id,
     party: [hero, ...companions],
     enemies,
@@ -470,8 +430,33 @@ export function startBattle(c: Character, id: string): Character {
     log: [`Battle started: ${e.name}.`],
     items: { ...campaign(c).inventory },
     claimed: false,
+    source: { placeId: e.placeId, kind: e.kind },
   };
-  return { ...c, campaign: { ...campaign(c), battle } };
+  const data = campaign(c);
+  if (
+    data.world?.areas[e.placeId]?.last?.kind === "ambush" &&
+    data.world.areas[e.placeId].last?.encounterId === id
+  ) {
+    battle.source = { placeId: e.placeId, kind: "ambush" };
+    battle.log.push("Ambush! The enemy strikes first.");
+    battle = enemyVolley(battle);
+  }
+  return {
+    ...c,
+    campaign: {
+      ...data,
+      battle,
+      ...(data.world
+        ? {
+            world: {
+              ...data.world,
+              townId: REGIONS.find((r) => r.id === e.region)!.town,
+              placeId: e.placeId,
+            },
+          }
+        : {}),
+    },
+  };
 }
 export interface Action {
   kind: "attack" | "guard" | "ability" | "potion" | "ether" | "flee";
@@ -625,6 +610,9 @@ export function takeAction(input: Battle, action: Action): Battle {
     b.log = b.log.slice(-30);
     return b;
   }
+  return enemyVolley(b);
+}
+export function enemyVolley(b: Battle): Battle {
   for (let i = 0; i < b.enemies.length; i++) {
     const enemy = b.enemies[i];
     if (enemy.hp === 0) continue;
@@ -697,6 +685,57 @@ export function claimVictory(c: Character): Character {
     b = data.battle;
   if (!b || b.phase !== "won" || b.claimed) return c;
   const e = ENCOUNTERS.find((x) => x.id === b.encounterId)!;
+  const inventory = { ...data.inventory };
+  if (data.world)
+    for (const [id, n] of Object.entries(e.loot))
+      inventory[id] = (inventory[id] || 0) + n;
+  else inventory.potion = (inventory.potion || 0) + 1;
+  let world = data.world;
+  if (world) {
+    const kills = { ...world.kills };
+    for (const enemy of e.enemies)
+      kills[`${e.placeId}:${enemy}`] =
+        (kills[`${e.placeId}:${enemy}`] || 0) + 1;
+    const old = placeProgress(world, e.placeId),
+      roaming = e.kind === "roaming-boss";
+    world = {
+      ...world,
+      journal: old.last
+        ? world.journal.map((event) =>
+            event.id === old.last!.id
+              ? { ...event, resolved: true, text: `Victory: ${e.name}` }
+              : event,
+          )
+        : world.journal,
+      kills: {
+        ...kills,
+        [e.placeId]: (world.kills[e.placeId] || 0) + e.enemies.length,
+      },
+      areas: {
+        ...world.areas,
+        [e.placeId]: {
+          ...old,
+          ...(roaming
+            ? {
+                pendingBoss: false,
+                ignored: 0,
+                sinceBoss: 0,
+                bossVictories: old.bossVictories + 1,
+              }
+            : {}),
+          ...(old.last
+            ? {
+                last: {
+                  ...old.last,
+                  resolved: true,
+                  text: `Victory: ${e.name}`,
+                },
+              }
+            : {}),
+        },
+      },
+    };
+  }
   return {
     ...c,
     relics: e.id.endsWith("-boss")
@@ -706,26 +745,58 @@ export function claimVictory(c: Character): Character {
       ...data,
       cleared: [...new Set([...data.cleared, e.id])],
       gold: data.gold + e.gold,
-      inventory: {
-        ...data.inventory,
-        potion: (data.inventory.potion || 0) + 1,
-      },
+      inventory,
       battle: { ...b, claimed: true },
+      ...(world ? { world } : {}),
     },
   };
 }
+
 export function buy(c: Character, id: string): Character {
   const data = campaign(c),
     item = EQUIPMENT.find((x) => x.id === id),
     price =
       item?.price ?? (id === "potion" ? 20 : id === "ether" ? 25 : Infinity);
-  if (data.gold < price || (item && data.inventory[id])) return c;
+  if (
+    data.battle?.phase === "player" ||
+    data.gold < price ||
+    (item && data.inventory[id])
+  )
+    return c;
+  let world = data.world;
+  const inventory = { ...data.inventory };
+  if (world) {
+    const town = TOWNS.find((t) => t.id === world!.townId)!,
+      gear = TOWN_GEAR.find((g) => g.id === id);
+    if (!regionOpen(data, town.region)) return c;
+    if (gear) {
+      if (
+        gear.town !== town.id ||
+        (inventory[gear.material] || 0) < gear.quantity
+      )
+        return c;
+      inventory[gear.material] -= gear.quantity;
+    } else if (id === "potion" || id === "ether") {
+      if (!(world.stock[town.id]?.[id] > 0)) return c;
+      world = {
+        ...world,
+        stock: {
+          ...world.stock,
+          [town.id]: {
+            ...world.stock[town.id],
+            [id]: world.stock[town.id][id] - 1,
+          },
+        },
+      };
+    } else return c;
+  }
   return {
     ...c,
     campaign: {
       ...data,
       gold: data.gold - price,
-      inventory: { ...data.inventory, [id]: (data.inventory[id] || 0) + 1 },
+      inventory: { ...inventory, [id]: (inventory[id] || 0) + 1 },
+      ...(world ? { world } : {}),
     },
   };
 }

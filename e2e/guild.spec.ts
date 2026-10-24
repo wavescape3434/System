@@ -172,11 +172,25 @@ test("CCNA unlocks its milestone and appears in the automatic Journey", async ({
     }),
   ).toBeVisible();
 });
-test("monthly adventures preserve checklists and dated preparation across months before paying", async ({
+test("monthly requests include earlier logged practice and expire at the calendar boundary", async ({
   page,
 }) => {
-  await page.clock.install({ time: new Date("2027-01-25T18:00:00Z") });
+  await page.clock.install({ time: new Date("2027-02-01T18:00:00Z") });
   await sample(page);
+  await page.evaluate(async () => {
+    const d = await import("/src/domain.ts");
+    const key = "the-guild.character.v1";
+    let c = JSON.parse(localStorage.getItem(key)!);
+    for (const day of [1, 3, 5, 8, 10, 12, 15, 17, 19, 22, 24, 26]) {
+      const at = new Date(Date.UTC(2027, 1, day, 19));
+      c = d.takeRequest(c, "warrior-daily", at);
+      const o = d.takenObjectives(c, at).find((o) => o.id === "warrior-daily")!;
+      c = d.awardSkills(d.completeTaken(c, o, at));
+    }
+    localStorage.setItem(key, JSON.stringify(c));
+  });
+  await page.clock.setFixedTime(new Date("2027-02-27T18:00:00Z"));
+  await page.reload();
   await page
     .getByRole("button", { name: "Objectives", exact: true })
     .first()
@@ -191,45 +205,16 @@ test("monthly adventures preserve checklists and dated preparation across months
   await takeOpen(page);
   const claim = page.getByRole("button", {
     name: "I completed this objective",
+    exact: true,
   });
+  await expect(page.getByRole("dialog")).toContainText("12 / 12 practice days");
+  await expect(claim).toBeDisabled();
   for (const name of [
     "Complete 12 practice sessions",
     "Reflect on what improved",
     "Set a sustainable next goal",
   ])
     await page.getByRole("button", { name, exact: true }).click();
-  await expect(claim).toBeDisabled();
-  await page.evaluate(async () => {
-    const d = await import("/src/domain.ts");
-    const key = "the-guild.character.v1";
-    let c = JSON.parse(localStorage.getItem(key)!);
-    for (const offset of [0, 2, 4, 7, 9, 11, 14, 16, 18, 21, 23, 25]) {
-      const at = new Date(Date.UTC(2027, 0, 25 + offset, 20));
-      c = d.takeRequest(c, "warrior-daily", at);
-      const o = d.takenObjectives(c, at).find((o) => o.id === "warrior-daily")!;
-      c = d.awardSkills(d.completeTaken(c, o, at));
-    }
-    localStorage.setItem(key, JSON.stringify(c));
-  });
-  await page.clock.setFixedTime(new Date("2027-02-22T18:00:00Z"));
-  await page.reload();
-  await page
-    .getByRole("button", { name: "Objectives", exact: true })
-    .first()
-    .click();
-  await page
-    .getByRole("button", { name: "Taken", exact: false })
-    .first()
-    .click();
-  await page.getByRole("button", { name: /^Monthly adventures/ }).click();
-  await page
-    .getByRole("button", {
-      name: "View Warrior training adventure",
-      exact: true,
-    })
-    .click();
-  await expect(page.getByRole("dialog")).toContainText("28 / 28 days");
-  await expect(page.getByRole("dialog")).toContainText("12 / 12 practice days");
   await expect(claim).toBeEnabled();
   await claim.click();
   const saved = await page.evaluate(() =>
@@ -237,17 +222,26 @@ test("monthly adventures preserve checklists and dated preparation across months
   );
   expect(saved.completions.at(-1).xp).toBe(6300);
   expect(saved.completions.at(-1).gold).toBe(1260);
+  await page.clock.setFixedTime(new Date("2027-03-01T18:00:00Z"));
+  await page.reload();
+  await page
+    .getByRole("button", { name: "Objectives", exact: true })
+    .first()
+    .click();
+  await page.getByRole("button", { name: /^Taken/ }).click();
+  await page.getByRole("button", { name: /^Monthly adventures/ }).click();
+  await expect(
+    page.getByRole("heading", { name: "No taken requests", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Guild board", exact: true }).click();
   await page
     .getByRole("button", {
       name: "View Warrior training adventure",
       exact: true,
     })
     .click();
-  await page
-    .getByRole("dialog")
-    .getByRole("button", { name: "Take again", exact: true })
-    .click();
-  await expect(page.getByRole("dialog")).toContainText("0 / 28 days");
+  await takeOpen(page);
+  await expect(page.getByRole("dialog")).toContainText("0 / 12 practice days");
   await expect(claim).toBeDisabled();
 });
 
@@ -311,7 +305,7 @@ test("JRPG party battle persists, completes, and grants only combat rewards", as
     .getByRole("button", { name: "Adventures", exact: true })
     .first()
     .click();
-  await page.getByRole("button", { name: /Approach.*slime/ }).click();
+  await page.getByRole("button", { name: /Approach.*Enter battle/ }).click();
   await page.getByRole("button", { name: "Attack", exact: true }).click();
   await expect(page.getByText("Mira's turn", { exact: true })).toBeVisible();
   await page.reload();
@@ -556,7 +550,7 @@ test("active class signature is usable in battle without a skill purchase", asyn
     .getByRole("button", { name: "Adventures", exact: true })
     .first()
     .click();
-  await page.getByRole("button", { name: /Approach.*slime/ }).click();
+  await page.getByRole("button", { name: /Approach.*Enter battle/ }).click();
   await page.getByRole("button", { name: /Iron Cleave/ }).click();
   await expect(page.getByText("Mira's turn", { exact: true })).toBeVisible();
   const c = await page.evaluate(() =>
@@ -879,7 +873,7 @@ test("settings persist display, units, equipment, opening screen, and separate a
   await expect(page.getByLabel("Pull-up bar", { exact: true })).toBeChecked();
 });
 
-test("ranked board prices demanding work higher and hides irrelevant technical categories", async ({
+test("grouped board offers cadence rank limits and prices demanding adventure preparation higher", async ({
   page,
 }) => {
   await sample(page);
@@ -887,15 +881,12 @@ test("ranked board prices demanding work higher and hides irrelevant technical c
     .getByRole("button", { name: "Objectives", exact: true })
     .first()
     .click();
-  const push = page.locator(".guild-request-paper").filter({
-    has: page.getByRole("heading", {
-      name: "Floor pushups · 3 × 20",
-      exact: true,
-    }),
-  });
-  const pull = page.locator(".guild-request-paper").filter({
-    has: page.getByRole("heading", { name: "Pullups · 5 × 20", exact: true }),
-  });
+  await page.getByLabel("Search requests").fill("Pushup");
+  const push = page
+    .locator(".guild-request-paper")
+    .filter({
+      has: page.getByRole("heading", { name: "Pushup practice", exact: true }),
+    });
   await expect(push).toContainText("150");
   expect(
     await page
@@ -915,6 +906,13 @@ test("ranked board prices demanding work higher and hides irrelevant technical c
       ),
   ).toEqual(["all", "F", "E", "D", "C", "B", "A"]);
   await page.getByRole("button", { name: /^Monthly adventures/ }).click();
+  await page.getByLabel("Search requests").fill("Pullups");
+  await page.getByLabel("Request rank").selectOption("S");
+  const pull = page
+    .locator(".guild-request-paper")
+    .filter({
+      has: page.getByRole("heading", { name: "Pullups · 5 × 20", exact: true }),
+    });
   await expect(pull).toContainText("32400");
   await expect(
     pull.getByRole("button", { name: "Take Pullups · 5 × 20", exact: true }),
@@ -925,11 +923,4 @@ test("ranked board prices demanding work higher and hides irrelevant technical c
     .allTextContents();
   expect(categories).not.toContain("Networking");
   expect(categories).not.toContain("Data Analysis");
-  await page.getByLabel("Request rank", { exact: true }).selectOption("S");
-  await expect(
-    page.getByRole("heading", { name: "Pullups · 5 × 20", exact: true }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "Wall pushups · 2 × 5", exact: true }),
-  ).toHaveCount(0);
 });

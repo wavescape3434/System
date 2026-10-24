@@ -203,7 +203,10 @@ test("phone header remains fixed while scrolling and notifications show real tas
     page.getByRole("heading", { name: "Guild requests", exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByText("No requests posted.", { exact: true }),
+    page.getByRole("heading", {
+      name: "Alderhaven clinic supplies",
+      exact: true,
+    }),
   ).toBeVisible();
   expect(
     await page.evaluate(

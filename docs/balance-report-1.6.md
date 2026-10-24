@@ -1,5 +1,7 @@
 # Request and guild-rank balance report — 1.6.0
 
+**Historical report:** This describes version 1.6. Version 1.7 replaces persistent monthly runs with calendar periods and retrospective logged-activity credit. Its rerun retains the same 30-day totals for these schedules. [Current rules and data](update-1.7.md).
+
 The moderate test account reached **E after 7 days and D after 30 days**, earning **17,550 XP** and **3,510 gold**. Repeating that earning rate projects A (Gold) at **276 days, about 9.1 months**, matching the requested 9–12 month target. The intensive account reached C at 30 days. None of these four accounts reached A in its first month.
 
 These are simulated local accounts using the app's real request, reward, progression, and save-validation functions. The fictional test window runs **25 January–23 February 2027**, deliberately crossing a month boundary. No live Google accounts or real-world fitness improvements were created. All accounts begin at F with six stats of 10, the Warrior class, Analyst profession, and Networking vocation. Varying the routines against this shared starting point isolates request and reward behavior.
