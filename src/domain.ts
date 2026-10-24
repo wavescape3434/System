@@ -1,3 +1,4 @@
+import type { JourneyEvent } from "./journey-events";
 import { levelFromXP, xpForLevel, statMilestones } from "./progression";
 import { CAREER_CATEGORIES, VOCATIONS, careerCategory } from "./careers";
 import { SKILLS } from "./skill-catalog";
@@ -149,7 +150,15 @@ const CORE: Record<string, [string, string, string, string]> = {
     "Organize a small shared project. Record the plan, decisions, and outcome.",
   ],
 };
+export interface TakenRequest extends Objective {
+  takenAt: string;
+  takenPeriod: string;
+  classId: string;
+  profession: string;
+  vocationId?: string;
+}
 export interface Completion {
+  cadence?: Cadence;
   id: string;
   period: string;
   at: string;
@@ -198,6 +207,8 @@ export interface Character {
     skillPoints: Record<string, number>;
   };
   completions: Completion[];
+  takenRequests?: TakenRequest[];
+  journeyEvents?: JourneyEvent[];
   certificates: Certificate[];
   journal: JournalEntry[];
   relics: string[];
@@ -468,7 +479,7 @@ export function objectives(c: Character): Objective[] {
           : "Profession practice",
       description:
         c.profession === "Analyst"
-          ? "Tailor one job application, improve a portfolio insight, or reach out to a professional contact. Record what you did in your journal."
+          ? "Tailor and submit one application, improve a portfolio work sample, or contact a professional connection."
           : `Spend 20 focused minutes developing your ${c.profession.toLowerCase()} practice. Record what you learned.`,
       cadence: "daily",
       stat: "INT",
@@ -866,8 +877,13 @@ export function complete(
   o: Objective,
   now = new Date(),
 ): Character {
-  // Only current objective templates can award real-world progress. A period can be claimed once.
-  const actual = objectives(c).find((x) => x.id === o.id);
+  // Use the stored request context, never reward values supplied by a button caller.
+  const taken = c.takenRequests?.find(
+    (x) => x.id === o.id && x.takenPeriod === period(x.cadence, now),
+  );
+  const actual = taken
+    ? resolveTakenRequest(c, taken)
+    : objectives(c).find((x) => x.id === o.id);
   if (!actual || isComplete(c, actual, now)) return c;
   const checked =
     c.milestones[`${actual.id}:${period(actual.cadence, now)}`] || [];
@@ -886,9 +902,10 @@ export function complete(
         at: now.toISOString(),
         xp: actual.xp,
         stat: actual.stat,
-        classId: c.activeClass,
+        classId: taken?.classId || c.activeClass,
         title: actual.title,
-        profession: c.profession,
+        cadence: actual.cadence,
+        profession: taken?.profession || c.profession,
         scope: actual.scope,
         ...(actual.scope === "subclass" && c.subclass
           ? { subclassId: c.subclass }
@@ -897,12 +914,77 @@ export function complete(
         ...(actual.careerCategory
           ? {
               careerCategory: actual.careerCategory,
-              vocationId: c.vocation || undefined,
+              vocationId: taken?.vocationId || c.vocation || undefined,
             }
           : {}),
       },
     ],
   };
+}
+export function isTaken(c: Character, o: Objective, now = new Date()): boolean {
+  return !!c.takenRequests?.some(
+    (r) => r.id === o.id && r.takenPeriod === period(o.cadence, now),
+  );
+}
+export function takeRequest(
+  c: Character,
+  id: string,
+  now = new Date(),
+): Character {
+  const o = objectives(c).find((o) => o.id === id);
+  if (!o) return c;
+  if (isTaken(c, o, now) || isComplete(c, o, now)) return c;
+  return {
+    ...c,
+    takenRequests: [
+      ...(c.takenRequests || []).filter((r) => r.id !== id),
+      {
+        ...o,
+        takenAt: now.toISOString(),
+        takenPeriod: period(o.cadence, now),
+        classId: c.activeClass,
+        profession: c.profession,
+        ...(c.vocation ? { vocationId: c.vocation } : {}),
+      },
+    ],
+  };
+}
+export const releaseRequest = (c: Character, id: string): Character => ({
+  ...c,
+  takenRequests: (c.takenRequests || []).filter((r) => r.id !== id),
+});
+export function resolveTakenRequest(
+  c: Character,
+  r: TakenRequest,
+): Objective | undefined {
+  return objectives({
+    ...c,
+    activeClass: r.classId,
+    profession: r.profession,
+    vocation: r.vocationId || null,
+  }).find((o) => o.id === r.id);
+}
+export const takenObjectives = (c: Character, now = new Date()): Objective[] =>
+  (c.takenRequests || [])
+    .filter((r) => r.takenPeriod === period(r.cadence, now))
+    .flatMap((r) => {
+      const o = resolveTakenRequest(c, r);
+      return o ? [o] : [];
+    });
+export const suggestedObjectives = (c: Character, now = new Date()) =>
+  objectives(c).filter(
+    (o) =>
+      !isTaken(c, o, now) &&
+      !isComplete(c, o, now) &&
+      (c.takenRequests?.some((r) => r.id === o.id) ||
+        c.completions.some((r) => r.id === o.id)),
+  );
+export function completeTaken(
+  c: Character,
+  o: Objective,
+  now = new Date(),
+): Character {
+  return isTaken(c, o, now) ? complete(c, o, now) : c;
 }
 export function switchClass(c: Character, id: string): Character {
   const p = CLASSES.find((x) => x.id === id);

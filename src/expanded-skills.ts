@@ -237,7 +237,7 @@ for (const g of CAREER_CATEGORIES) {
     EXPANDED_SKILLS.push({
       id: `profession-${g.id}-${i}`,
       name,
-      description: `${CAREER_GUIDES[g.id][i]} This is a non-combat competency.`,
+      description: `${CAREER_GUIDES[g.id][i]}`,
       stat: g.stat,
       category: "profession",
       branch: g.name,

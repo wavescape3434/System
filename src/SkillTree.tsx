@@ -346,20 +346,8 @@ export default function SkillTree({
                 <span key={id}>{SKILLS.find((s) => s.id === id)?.name}</span>
               ))}
           </div>
-          <p className="helper">
-            Previous purchases remain learned. Combat skills can still be
-            equipped in Adventures.
-          </p>
         </details>
       )}
-      <p className="helper">
-        Every 100 objective XP earns one point for its path. Combat points are
-        shared across classes; career points are shared within a career
-        discipline. Shared archetype levels include training from every
-        contributing class. Nodes require level, prerequisite skills, practice,
-        and multiple points. Learned skills remain yours. Equip combat skills in
-        Adventures. Career competencies are non-combat.
-      </p>
       {selected && (
         <Modal title={selected.name} onClose={() => setSelected(null)}>
           <div className="skill-detail-meta">
@@ -371,18 +359,12 @@ export default function SkillTree({
             </Tag>
           </div>
           <p>{selected.description}</p>
-          {selected.nonCombat && (
-            <div className="notice">
-              Non-combat competency. It grants no stat bonus or battle action.
-              Future exploration uses are planned.
-            </div>
-          )}
+          {selected.nonCombat && <Tag>Non-combat</Tag>}
           {!selected.automatic &&
             selected.id !== "universal-root" &&
             !selected.nonCombat && (
               <div className="notice">
-                Combat modifier when equipped: +{selected.cost >= 2 ? 2 : 1}{" "}
-                {selected.stat}.
+                Equipped: +{selected.cost >= 2 ? 2 : 1} {selected.stat}.
                 {selected.combat && COMBAT_EFFECTS[selected.combat] && (
                   <>
                     <br />
@@ -390,8 +372,6 @@ export default function SkillTree({
                     {COMBAT_EFFECTS[selected.combat].mp}.
                   </>
                 )}
-                <br />
-                Base attributes are unchanged.
               </div>
             )}
           <Progress

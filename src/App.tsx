@@ -1,3 +1,6 @@
+import Help from "./Help";
+import Journey from "./Journey";
+import { recordJourney } from "./journey-events";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
@@ -7,7 +10,9 @@ import {
   Route,
   Sparkles,
   Compass,
-  BookOpen,
+  History,
+  CircleHelp,
+  BookmarkPlus,
   Settings2,
   ChevronDown,
   ArrowRight,
@@ -23,7 +28,10 @@ import {
 } from "lucide-react";
 import type { Character, Objective } from "./domain";
 import {
-  complete,
+  completeTaken,
+  takeRequest,
+  releaseRequest,
+  isTaken,
   isComplete,
   currentPath,
   totalXP,
@@ -47,14 +55,7 @@ import {
 } from "./auth";
 import { Crest, Modal, Tag, CheckList } from "./ui";
 import Onboarding from "./Onboarding";
-import {
-  Guild,
-  Objectives,
-  Paths,
-  Skills,
-  Adventures,
-  Journal,
-} from "./screens";
+import { Guild, Objectives, Paths, Skills, Adventures } from "./screens";
 import type { Page } from "./screens";
 import { Capacitor } from "@capacitor/core";
 import { App as NativeApp } from "@capacitor/app";
@@ -64,47 +65,38 @@ const PAGES = [
     name: "Guild Card",
     icon: CreditCard,
     title: "Guild Card",
-    description: "Character, rank, class history, and recent progress.",
   },
   {
     id: "objectives",
     name: "Objectives",
     icon: Target,
     title: "Guild Requests",
-    description:
-      "Complete tasks, quests, and monthly goals to earn real-world XP.",
   },
   {
     id: "paths",
     name: "Class Paths",
     icon: Route,
     title: "Class Register",
-    description:
-      "Compare classes, follow prestige paths, and choose your vocation.",
   },
   {
     id: "skills",
     name: "Skills & Stats",
     icon: Sparkles,
     title: "Skills & Stats",
-    description:
-      "Universal, class, and profession skill trees; attributes and credentials.",
   },
   {
     id: "adventures",
     name: "Adventures",
     icon: Compass,
     title: "Adventures",
-    description:
-      "Explore regions, manage your party, and fight turn-based battles.",
   },
   {
-    id: "journal",
-    name: "Journal",
-    icon: BookOpen,
-    title: "Journal",
-    description: "Reflections and objective completion history.",
+    id: "journey",
+    name: "Journey",
+    icon: History,
+    title: "Journey",
   },
+  { id: "help", name: "Help", title: "Help", icon: CircleHelp },
 ] as const;
 type Dialog = "account" | "certificate" | "reset" | null;
 async function exportData(data: string, name: string) {
@@ -194,11 +186,17 @@ export default function App() {
       void listener.then((handle) => handle.remove());
     };
   }, [dialog, objective, cloudCandidate, importCandidate, menu, page, close]);
+  const characterRef = useRef(c);
+  characterRef.current = c;
   const update = useCallback(
-    (next: Character) => {
+    (next: Character, track = true) => {
       try {
-        const awarded = awardSkills(next);
+        const prepared = awardSkills(next);
+        const awarded = track
+          ? recordJourney(characterRef.current, prepared)
+          : prepared;
         saveCharacter(awarded);
+        characterRef.current = awarded;
         setC(awarded);
         return true;
       } catch {
@@ -239,7 +237,7 @@ export default function App() {
         JSON.stringify(c, null, 2),
         `the-guild-${new Date().toISOString().slice(0, 10)}.json`,
       );
-      notify("Character backup prepared. Keep it somewhere safe.");
+      notify("Backup exported.");
     });
   const props = c ? { c, update, navigate, openObjective, notify } : null;
   const active = PAGES.find((p) => p.id === page)!;
@@ -274,8 +272,20 @@ export default function App() {
             Create a new character
           </button>
         </main>
+      ) : !c && page === "help" ? (
+        <main className="registration-help">
+          <button
+            className="button secondary"
+            onClick={() => navigate("guild")}
+          >
+            Back to registration
+          </button>
+          <h1>Help</h1>
+          <Help />
+        </main>
       ) : !c ? (
         <Onboarding
+          onHelp={() => navigate("help")}
           onCreate={(next) => {
             update(next);
             navigate("guild");
@@ -315,15 +325,6 @@ export default function App() {
                 </button>
               ))}
             </nav>
-            <div className="sidebar-note">
-              <span>✦</span>
-              <p>
-                Guild records.
-                <br />
-                Train. Quest. Advance.
-              </p>
-              <small>REAL-WORLD PROGRESS</small>
-            </div>
             <div className="sidebar-bottom">
               <button onClick={() => setDialog("account")}>
                 <Settings2 size={18} /> Guild settings
@@ -368,10 +369,15 @@ export default function App() {
               <div className="topbar-right">
                 <span className="local-status">
                   <span className="status-dot" />
-                  {user
-                    ? "Google linked · local changes"
-                    : "Progress saved on this device"}
+                  {user ? "Google linked · local changes" : "Saved locally"}
                 </span>
+                <button
+                  className="icon-button help-shortcut"
+                  aria-label="Open help"
+                  onClick={() => navigate("help")}
+                >
+                  <CircleHelp size={21} />
+                </button>
                 <button
                   className="profile-initial"
                   aria-label="Open account settings"
@@ -388,7 +394,6 @@ export default function App() {
               <div className="page-heading">
                 <div>
                   <h1>{active.title}</h1>
-                  <p>{active.description}</p>
                 </div>
                 <div className="date-block">
                   <span>
@@ -407,10 +412,7 @@ export default function App() {
               </div>
               {c.demo && (
                 <div className="demo-banner">
-                  <span>
-                    Sample character. Creating your own character starts a
-                    separate record.
-                  </span>
+                  <span>Sample character</span>
                   <button onClick={() => setDialog("reset")}>
                     Create your character <ArrowRight size={15} />
                   </button>
@@ -432,8 +434,10 @@ export default function App() {
                     />
                   ) : page === "adventures" ? (
                     <Adventures {...props} />
+                  ) : page === "journey" ? (
+                    <Journey c={c} />
                   ) : (
-                    <Journal {...props} />
+                    <Help navigate={navigate} />
                   )}
                 </div>
               )}
@@ -444,23 +448,25 @@ export default function App() {
             </main>
           </div>
           <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
-            {PAGES.filter((p) => p.id !== "paths").map((p) => (
-              <button
-                key={p.id}
-                className={page === p.id ? "active" : ""}
-                onClick={() => navigate(p.id)}
-                aria-label={p.name}
-              >
-                <p.icon size={20} />
-                <span>
-                  {p.id === "guild"
-                    ? "Guild"
-                    : p.id === "skills"
-                      ? "Skills"
-                      : p.name}
-                </span>
-              </button>
-            ))}
+            {PAGES.filter((p) => p.id !== "paths" && p.id !== "help").map(
+              (p) => (
+                <button
+                  key={p.id}
+                  className={page === p.id ? "active" : ""}
+                  onClick={() => navigate(p.id)}
+                  aria-label={p.name}
+                >
+                  <p.icon size={20} />
+                  <span>
+                    {p.id === "guild"
+                      ? "Guild"
+                      : p.id === "skills"
+                        ? "Skills"
+                        : p.name}
+                  </span>
+                </button>
+              ),
+            )}
           </nav>
         </div>
       )}
@@ -508,13 +514,6 @@ export default function App() {
               {objective.statReward.stat} on completion.
             </div>
           )}
-          {objective.kind === "fitness" && (
-            <div className="notice">
-              Choose a variation and effort that suit you. Rest as needed and
-              stop if movement causes pain. Consistency matters more than
-              intensity.
-            </div>
-          )}
           {!isComplete(c, objective) && objective.checklist && (
             <CheckList
               items={objective.checklist}
@@ -533,39 +532,53 @@ export default function App() {
               }}
             />
           )}
-          <p className="helper">
-            Rewards are self-reported. Claim this objective after completing the
-            real-world action. Each objective rewards XP once per{" "}
-            {objective.cadence === "daily"
-              ? "day"
-              : objective.cadence === "weekly"
-                ? "week"
-                : "month"}
-            .
-          </p>
-          <button
-            className="button primary full"
-            disabled={
-              isComplete(c, objective) ||
-              (!!objective.checklist &&
-                checked.length < objective.checklist.length)
-            }
-            onClick={() => {
-              if (!update(complete(c, objective))) return;
-              notify(`+${objective.xp} XP earned. Progress saved.`);
-              close();
-            }}
-          >
-            {isComplete(c, objective) ? (
-              <>
-                <CheckCircle2 size={18} /> Already completed this period
-              </>
-            ) : (
-              <>
-                I completed this objective <Check size={18} />
-              </>
-            )}
-          </button>
+          {!isTaken(c, objective) && !isComplete(c, objective) && (
+            <button
+              className="button primary full"
+              onClick={() => {
+                if (update(takeRequest(c, objective.id)))
+                  notify("Request taken.");
+              }}
+            >
+              <BookmarkPlus size={17} />
+              Take request
+            </button>
+          )}
+          {(isTaken(c, objective) || isComplete(c, objective)) && (
+            <button
+              className="button primary full"
+              disabled={
+                isComplete(c, objective) ||
+                (!!objective.checklist &&
+                  checked.length < objective.checklist.length)
+              }
+              onClick={() => {
+                if (!update(completeTaken(c, objective))) return;
+                notify(`+${objective.xp} XP earned. Progress saved.`);
+                close();
+              }}
+            >
+              {isComplete(c, objective) ? (
+                <>
+                  <CheckCircle2 size={18} /> Already completed this period
+                </>
+              ) : (
+                <>
+                  I completed this objective <Check size={18} />
+                </>
+              )}
+            </button>
+          )}
+          {isTaken(c, objective) && !isComplete(c, objective) && (
+            <button
+              className="text-button release-request"
+              onClick={() => {
+                if (update(releaseRequest(c, objective.id))) close();
+              }}
+            >
+              Release request
+            </button>
+          )}
         </Modal>
       )}
       {dialog === "account" && (
@@ -580,11 +593,7 @@ export default function App() {
                   ? user.displayName || "Google account connected"
                   : "Local character storage"}
               </b>
-              <p>
-                {user
-                  ? user.email
-                  : "Keep your character on this device, or link Google for a private cloud backup."}
-              </p>
+              <p>{user ? user.email : "Saved on this device"}</p>
             </div>
           </div>
           {!user ? (
@@ -595,9 +604,7 @@ export default function App() {
                 onClick={() =>
                   run(async () => {
                     await loginGoogle();
-                    notify(
-                      "Google account linked. You can now upload or restore your character.",
-                    );
+                    notify("Google account linked.");
                   })
                 }
               >
@@ -606,19 +613,12 @@ export default function App() {
               </button>
               {!googleConfigured && (
                 <div className="notice">
-                  Google linking is not configured for this build yet. Your
-                  local character works in full. The project README explains the
-                  Firebase and Google OAuth setup.
+                  Google linking is not configured for this build.
                 </div>
               )}
             </>
           ) : (
             <>
-              <p className="helper">
-                Cloud backups are manual. Upload replaces this account’s cloud
-                copy. Restore lets you review before replacing the character on
-                this device.
-              </p>
               <div className="account-actions">
                 <button
                   className="button primary"
@@ -661,9 +661,7 @@ export default function App() {
                 onClick={() =>
                   run(async () => {
                     await logoutGoogle();
-                    notify(
-                      "Google disconnected. Local progress is still on this device.",
-                    );
+                    notify("Google disconnected.");
                   })
                 }
               >
@@ -674,10 +672,7 @@ export default function App() {
           )}
           <div className="modal-divider" />
           <h3>Keep a copy</h3>
-          <p>
-            Export a JSON backup before changing devices or starting fresh. It
-            includes your personal reflections.
-          </p>
+
           <div className="account-actions">
             <button
               className="button secondary"
@@ -773,11 +768,12 @@ export default function App() {
             <button
               className="button primary"
               onClick={() => {
-                if (!update((cloudCandidate || importCandidate)!)) return;
+                if (!update((cloudCandidate || importCandidate)!, false))
+                  return;
                 setRecovery("");
                 navigate("guild");
                 close();
-                notify("Character restored. Character restored.");
+                notify("Character restored.");
               }}
             >
               Restore character
@@ -822,10 +818,6 @@ function CertificateDialog({
   };
   return (
     <Modal title="Record a certification" onClose={onClose}>
-      <p>
-        Record a credential you have earned. Your ledger is self-reported; this
-        app does not verify certifications with issuers.
-      </p>
       <form
         onSubmit={(e) => {
           e.preventDefault();

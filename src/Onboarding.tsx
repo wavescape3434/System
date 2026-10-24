@@ -11,14 +11,16 @@ import {
   startingRankFor,
 } from "./domain";
 import type { Character, Baseline } from "./domain";
-import { Crest, Icon, Tag } from "./ui";
+import { Crest, Tag } from "./ui";
 import ProfessionPicker from "./ProfessionPicker";
 export default function Onboarding({
   onCreate,
   onGoogle,
+  onHelp,
 }: {
   onCreate: (c: Character) => void;
   onGoogle: () => void;
+  onHelp: () => void;
 }) {
   const [step, setStep] = useState(0),
     [name, setName] = useState(""),
@@ -33,7 +35,7 @@ export default function Onboarding({
     key: keyof Baseline,
     label: string,
     max: number,
-    help: string,
+    _help: string,
   ) => (
     <label className="assessment-field" key={key}>
       <span>{label}</span>
@@ -58,7 +60,6 @@ export default function Onboarding({
             setDrafts({ ...drafts, [key]: String(baseline[key]) });
         }}
       />
-      <small>{help}</small>
     </label>
   );
   return (
@@ -71,15 +72,10 @@ export default function Onboarding({
         <div className="onboard-copy">
           <span className="eyebrow">THE ADVENTURERS’ GUILD</span>
           <h1>
-            Train. Study.
+            Adventurers’
             <br />
-            Level up.
+            Guild
           </h1>
-          <p>
-            Track real-world training, learning, and Christian practice.
-            <br />
-            Build a character from your progress.
-          </p>
           <span className="art-caption">
             <span /> CHARACTER REGISTRATION
           </span>
@@ -97,24 +93,6 @@ export default function Onboarding({
               <br />
               adventurer.
             </h2>
-            <p>
-              Choose a profession, record your starting assessment, and select a
-              class. Equipment is optional.
-            </p>
-            <div className="welcome-points">
-              <div>
-                <Icon name="sword" />
-                <span>Earn XP from real-world objectives</span>
-              </div>
-              <div>
-                <Icon name="book" />
-                <span>Train attributes and unlock skill trees</span>
-              </div>
-              <div>
-                <Icon name="shield" />
-                <span>Keep skills and levels when switching classes</span>
-              </div>
-            </div>
             <button className="button primary full" onClick={() => setStep(1)}>
               Register character <ArrowRight size={18} />
             </button>
@@ -127,9 +105,9 @@ export default function Onboarding({
             >
               Try a sample character <ArrowRight size={15} />
             </button>
-            <p className="privacy-note">
-              Private by default. Start locally, link Google when you’re ready.
-            </p>
+            <button className="text-button full" onClick={onHelp}>
+              Help
+            </button>
           </div>
         ) : (
           <div className="application">
@@ -152,7 +130,6 @@ export default function Onboarding({
               <>
                 <span className="eyebrow">PROFILE</span>
                 <h2>Character profile</h2>
-                <p>Choose your display name and current profession.</p>
                 <label className="field">
                   Adventurer name
                   <input
@@ -164,10 +141,6 @@ export default function Onboarding({
                   />
                 </label>
                 <ProfessionPicker value={profession} onChange={setProfession} />
-                <p className="helper">
-                  A profession is your chosen craft. Switch it whenever your
-                  goals change.
-                </p>
                 <button
                   className="button primary full"
                   disabled={!name.trim()}
@@ -181,11 +154,6 @@ export default function Onboarding({
               <>
                 <span className="eyebrow">STARTING ASSESSMENT</span>
                 <h2>Record your baseline</h2>
-                <p>
-                  Use comfortable recent results or estimates. Leave a field
-                  blank if you have not assessed it. You never need to test to
-                  exhaustion.
-                </p>
                 <div className="segmented">
                   <button
                     className={baseline.mode === "bodyweight" ? "active" : ""}
@@ -291,11 +259,6 @@ export default function Onboarding({
                     "A rough estimate is enough.",
                   )}
                 </div>
-                <div className="notice">
-                  Attributes are game scores for motivation, not health,
-                  intelligence, or faith assessments. Adapt movement to your
-                  abilities.
-                </div>
                 <button
                   className="button primary full"
                   onClick={() => {
@@ -318,10 +281,6 @@ export default function Onboarding({
               <>
                 <span className="eyebrow">CLASS SELECTION</span>
                 <h2>Choose a starting class</h2>
-                <p>
-                  Your baseline opens starting paths. You can change classes
-                  freely as you qualify. Nothing you earn is lost.
-                </p>
                 <div className="starting-stats">
                   {Object.entries(values).map(([a, v]) => (
                     <span key={a}>
@@ -337,13 +296,7 @@ export default function Onboarding({
                 />
                 <div className="rank-intro">
                   <div className="rank-mini">{startingRankFor(values)}</div>
-                  <span>
-                    Starting rank: {startingRankFor(values)}
-                    <small>
-                      Most assessments start at F. E and D require exceptional
-                      results across several attributes.
-                    </small>
-                  </span>
+                  <span>Starting rank: {startingRankFor(values)}</span>
                 </div>
                 <button
                   className="button primary full"
@@ -359,7 +312,9 @@ export default function Onboarding({
             )}
           </div>
         )}
-        <footer>✦ &nbsp; THE GUILD · PERSONAL DEVELOPMENT</footer>
+        <footer>
+          <button onClick={onHelp}>Help</button> · THE GUILD
+        </footer>
       </main>
     </div>
   );

@@ -236,7 +236,7 @@ export function Empty({
 }: {
   icon?: string;
   title: string;
-  children: ReactNode;
+  children?: ReactNode;
 }) {
   return (
     <div className="empty">
@@ -244,7 +244,7 @@ export function Empty({
         <Icon name={icon} size={30} />
       </span>
       <h3>{title}</h3>
-      <p>{children}</p>
+      {children && <p>{children}</p>}
     </div>
   );
 }

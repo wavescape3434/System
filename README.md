@@ -29,11 +29,23 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
-## Version 1.2.0
+## Version 1.3.0
 
-Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 3. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment.
+Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 4. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment.
 
 The Guild Card is an engraved brass membership card inspired by isekai guild registers. Objectives are posted as pinned parchment commissions on a timber guild board. [View the screenshots](docs/screenshots/README.md).
+
+### Help, commitments, and Journey
+
+Page subtitles, decorative slogans, and repeated explanations have been removed from normal screens. **Help** is a searchable handbook for requests, attributes, levels, classes, vocation, skills, combat, reports, and backups. It is available from registration, navigation, and the question-mark button.
+
+**Objectives** now has **Guild board**, **Taken**, and **Suggested** pages. Press **Take request** to accept a daily task, weekly quest, or monthly adventure. Taken contains commitments for the current calendar period, including their completion status. Release removes the commitment without removing earned progress. A taken request retains its original class/profession/vocation credit even if the current focus changes. Canonical request templates supply all rewards.
+
+Recurring requests **never accept themselves**. At local midnight, Monday, or the first of the month, the old commitment expires. Previously taken or completed requests can appear in Suggested. Press Take request again to commit for the new period. Completion still pays only once per request per period, including after releasing and retaking.
+
+**Journey** replaces the Journal page and requires no new writing. Its chronological timeline combines existing completions, credentials, and archived notes with automatically recorded new class/vocation changes, skills, level and stat gains, rank promotions, and adventure results. Existing journal text is retained as read-only archived notes. Restoring a backup does not manufacture new milestones.
+
+Journey offers 7-day, 30-day, 90-day, and all-time summaries, plus a **Reports** view with interactive cumulative XP and completion charts, accessible data tables, a 12-week activity calendar, XP by progression path, class contributions, and registration-to-current attribute comparisons. Selecting a calendar day opens that day’s completed requests. Comparisons use the preceding equal-length period. Older milestone dates that were never recorded are not invented; new milestone tracking begins with this update. XP charts use recorded objective XP, separate from legacy progression credits.
 
 ### Class register and prestige
 
@@ -74,7 +86,7 @@ Older saves receive one-time progression credits that retain their earned levels
 - Assessment inputs remain clearable, with no forced leading zero. Walking is in minutes, balance in seconds, and study in minutes per week. Bodyweight training needs no equipment; weighted strength requires body weight for scoring. Baselines range from 3–30.
 - JRPG expeditions have five regions, 15 ordered encounters, bosses, and individual party turns. Your character can bring two of four recruitable companions. Commands include attacks, guard, class signatures, equipped skills, potions, and ether.
 - Combat includes armor piercing, multi-hit and area attacks, stun, taunt, counters, party barriers, healing, MP recovery, coordinated attacks, and burning. Victories grant combat gold and supplies, encounter access, and recruitment; they never grant real-world XP or base attributes.
-- Eleven gear items, a supply shop, saved battle state, character backup sharing, validated restore, journal, and completion history remain available.
+- Eleven gear items, a supply shop, saved battle state, character backup sharing, validated restore, Journey, archived notes, and completion history remain available.
 - Faith-related real-world content uses Christian Scripture, prayer, comprehension, and service. Monk training is physical bodyweight practice.
 
 ## Google accounts and cloud backups

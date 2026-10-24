@@ -107,7 +107,6 @@ export default function GuildCard({
           <div className="engraved-name">
             <small>REGISTERED NAME</small>
             <h2>{c.name}</h2>
-            <span>{c.title}</span>
           </div>
           <div className="engraved-line">
             <small>CLASS</small>

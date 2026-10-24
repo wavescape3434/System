@@ -28,7 +28,6 @@ import {
   totalXP,
   rankXP,
   characterRank,
-  startingRankCredit,
   professionLevel,
   professionXP,
   professionStat,
@@ -36,6 +35,10 @@ import {
   classXP,
   classRank,
   objectives,
+  takeRequest,
+  takenObjectives,
+  suggestedObjectives,
+  isTaken,
   isComplete,
   activity,
   switchClass,
@@ -43,7 +46,13 @@ import {
 } from "./domain";
 import { Icon, Progress, StatRadar, Tag, Empty, STAT_NAMES } from "./ui";
 export type Page =
-  "guild" | "objectives" | "paths" | "skills" | "adventures" | "journal";
+  | "guild"
+  | "objectives"
+  | "paths"
+  | "skills"
+  | "adventures"
+  | "journey"
+  | "help";
 interface ScreenProps {
   c: Character;
   update: (c: Character) => boolean;
@@ -126,11 +135,6 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
             <strong>{characterRank(c).name}</strong>
             <span>{xp === 0 ? "REGISTERED" : "ACTIVE"}</span>
           </div>
-          <p>
-            {nextRank
-              ? "Complete real-world objectives to increase your rank."
-              : "Highest adventurer rank reached."}
-          </p>
           <div className="small-progress-label">
             <span>
               {nextRank ? `Toward ${nextRank.name} rank` : "Highest guild rank"}
@@ -213,9 +217,6 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
           </div>
           <div className="daily-footer">
             <span>
-              <span className="status-dot" /> Progress saved after completion.
-            </span>
-            <span>
               {done} of {dailies.length} complete
             </span>
           </div>
@@ -242,10 +243,6 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
               ))}
             </div>
           </div>
-          <p className="panel-caption">
-            Attributes grow at class and profession milestones and through
-            listed quest rewards.
-          </p>
         </section>
       </div>
       <section className="panel legacy-panel">
@@ -311,21 +308,46 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
     </>
   );
 }
-export function Objectives({ c, openObjective }: ScreenProps) {
-  const [tab, setTab] = useState<Cadence>("daily");
-  const [filter, setFilter] = useState("all");
-  const list = objectives(c).filter(
-      (o) =>
-        o.cadence === tab &&
-        (filter === "all" ||
-          (filter === "networking" && o.category === "Networking") ||
-          (filter === "analysis" && o.category === "Data Analysis") ||
-          (filter === "vocation" && o.id.startsWith("vocation-")) ||
-          o.scope === filter),
-    ),
-    done = list.filter((o) => isComplete(c, o)).length;
+export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
+  const [view, setView] = useState("board"),
+    [tab, setTab] = useState<Cadence>("daily"),
+    [filter, setFilter] = useState("all");
+  const board = objectives(c),
+    taken = takenObjectives(c);
+  const suggestions = suggestedObjectives(c);
+  const source =
+    view === "taken" ? taken : view === "suggested" ? suggestions : board;
+  const list = source.filter(
+    (o) =>
+      o.cadence === tab &&
+      (filter === "all" ||
+        (filter === "vocation" && o.id.startsWith("vocation-")) ||
+        (filter === "networking" && o.category === "Networking") ||
+        (filter === "analysis" && o.category === "Data Analysis") ||
+        o.scope === filter),
+  );
   return (
     <>
+      <div className="request-view-tabs">
+        <button
+          className={view === "board" ? "active" : ""}
+          onClick={() => setView("board")}
+        >
+          Guild board
+        </button>
+        <button
+          className={view === "taken" ? "active" : ""}
+          onClick={() => setView("taken")}
+        >
+          Taken <span>{taken.filter((o) => !isComplete(c, o)).length}</span>
+        </button>
+        <button
+          className={view === "suggested" ? "active" : ""}
+          onClick={() => setView("suggested")}
+        >
+          Suggested <span>{suggestions.length}</span>
+        </button>
+      </div>
       <div className="tabs">
         {(["daily", "weekly", "monthly"] as Cadence[]).map((t) => (
           <button
@@ -338,16 +360,20 @@ export function Objectives({ c, openObjective }: ScreenProps) {
               : t === "weekly"
                 ? "Weekly quests"
                 : "Monthly adventures"}
-            <span>{objectives(c).filter((o) => o.cadence === t).length}</span>
+            <span>{source.filter((o) => o.cadence === t).length}</span>
           </button>
         ))}
       </div>
       <label className="objective-filter">
         Category
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <select
+          aria-label="Objective category"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        >
           <option value="all">All objectives</option>
-          <option value="class">Current class</option>
-          <option value="vocation">Current vocation</option>
+          <option value="class">Class</option>
+          <option value="vocation">Vocation</option>
           <option value="profession">Profession & technical practice</option>
           <option value="universal">Universal</option>
           <option value="networking">Networking</option>
@@ -356,74 +382,124 @@ export function Objectives({ c, openObjective }: ScreenProps) {
       </label>
       <div className="section-heading page-section-heading">
         <h3>
-          {tab === "daily"
-            ? "Daily tasks"
-            : tab === "weekly"
-              ? "Weekly quests"
-              : "Monthly adventures"}
+          {view === "taken"
+            ? "Taken requests"
+            : view === "suggested"
+              ? "Suggested requests"
+              : tab === "daily"
+                ? "Daily tasks"
+                : tab === "weekly"
+                  ? "Weekly quests"
+                  : "Monthly adventures"}
         </h3>
         <Tag>
-          {done} / {list.length} completed
+          {list.filter((o) => isComplete(c, o)).length} / {list.length}{" "}
+          completed
         </Tag>
       </div>
       <div className="guild-request-board">
         <div className="board-inscription">
-          <span>✦</span> REQUESTS OF THE ADVENTURERS’ GUILD <span>✦</span>
+          <span>✦</span>
+          {view === "taken"
+            ? "ACCEPTED COMMISSIONS"
+            : view === "suggested"
+              ? "RETURNING COMMISSIONS"
+              : "REQUESTS OF THE ADVENTURERS’ GUILD"}
+          <span>✦</span>
         </div>
         <div className="objectives-grid request-papers">
           {list.map((o) => (
-            <button
+            <article
               key={o.id}
               className={`panel objective-card guild-request-paper ${isComplete(c, o) ? "completed" : ""}`}
-              onClick={() => openObjective(o)}
             >
-              <span className="request-pin" aria-hidden="true" />
-              <small className="request-number">
-                {o.cadence === "daily"
-                  ? "GUILD TASK"
-                  : o.cadence === "weekly"
-                    ? "QUEST COMMISSION"
-                    : "MONTHLY EXPEDITION"}
-              </small>
-              <div className="objective-card-top">
-                <span className={`objective-icon ${o.stat.toLowerCase()}`}>
-                  <Icon name={o.stat} size={24} />
-                </span>
-                <Tag tone={isComplete(c, o) ? "green" : "neutral"}>
-                  {isComplete(c, o) ? "Completed" : o.category}
-                </Tag>
-              </div>
-              <h3>{o.title}</h3>
-              <p>{o.description}</p>
-              {o.statReward && (
-                <Tag tone="gold">
-                  Special reward: +{o.statReward.amount} base{" "}
-                  {o.statReward.stat}
-                </Tag>
-              )}
+              <button
+                className="request-details"
+                aria-label={`View ${o.title}`}
+                onClick={() => openObjective(o)}
+              >
+                <span className="request-pin" aria-hidden="true" />
+                <small className="request-number">
+                  {o.cadence === "daily"
+                    ? "GUILD TASK"
+                    : o.cadence === "weekly"
+                      ? "QUEST COMMISSION"
+                      : "MONTHLY EXPEDITION"}
+                </small>
+                <div className="objective-card-top">
+                  <span className={`objective-icon ${o.stat.toLowerCase()}`}>
+                    <Icon name={o.stat} size={24} />
+                  </span>
+                  <Tag tone={isComplete(c, o) ? "green" : "neutral"}>
+                    {isComplete(c, o) ? "Completed" : o.category}
+                  </Tag>
+                </div>
+                <h3>{o.title}</h3>
+                <p>{o.description}</p>
+                {o.statReward && (
+                  <Tag tone="gold">
+                    +{o.statReward.amount} base {o.statReward.stat}
+                  </Tag>
+                )}
+              </button>
               <div className="objective-card-bottom">
                 <span>
                   <Clock3 size={14} />
                   {o.minutes}
                 </span>
-                <b>
-                  {isComplete(c, o) ? (
-                    <Check size={18} />
-                  ) : (
-                    <>
-                      +{o.xp} XP <ArrowRight size={16} />
-                    </>
-                  )}
-                </b>
+                <b>+{o.xp} XP</b>
               </div>
-            </button>
+              <div className="request-actions">
+                {isComplete(c, o) ? (
+                  <button onClick={() => openObjective(o)}>
+                    <Check size={15} />
+                    Completed
+                  </button>
+                ) : isTaken(c, o) ? (
+                  <button
+                    className="taken-request-action"
+                    onClick={() => openObjective(o)}
+                  >
+                    <Check size={15} />
+                    Taken · Open
+                  </button>
+                ) : (
+                  <button
+                    aria-label={`Take ${o.title}`}
+                    onClick={() => {
+                      if (update(takeRequest(c, o.id)))
+                        notify("Request taken.");
+                    }}
+                  >
+                    <Plus size={15} />
+                    Take request
+                  </button>
+                )}
+              </div>
+            </article>
           ))}
         </div>
+        {!list.length && (
+          <div className="empty-request-board">
+            <Icon name="compass" size={30} />
+            <h3>
+              {view === "taken"
+                ? "No taken requests"
+                : view === "suggested"
+                  ? "No suggestions"
+                  : "No requests"}
+            </h3>
+            {view !== "board" && (
+              <button
+                className="button secondary"
+                onClick={() => setView("board")}
+              >
+                Browse guild board
+              </button>
+            )}
+          </div>
+        )}
       </div>
-      <p className="helper center">
-        Daily tasks refresh at local midnight, weekly quests on Monday, and
-        monthly adventures on the first. Completed rewards stay with you.
-      </p>
     </>
   );
 }
@@ -510,12 +586,6 @@ export function Paths({ c, update, notify }: ScreenProps) {
               </div>
             );
           })}
-          <p className="helper">
-            Every level costs more XP. There is no level cap. Every fifth class
-            level grants a base attribute point following that class’s archetype
-            balance. Prestige promotion starts a separate class record at level
-            1.
-          </p>
         </section>
       )}
     </>
@@ -568,21 +638,6 @@ export function Skills({
               <StatRadar values={s} />
               <Attributes s={s} />
             </section>
-            <div className="stat-description">
-              <span className="eyebrow">ATTRIBUTE PROGRESSION</span>
-              <h2>Base attributes</h2>
-              <p>
-                Every fifth class or profession level grants a base stat point.
-                Hybrid classes distribute milestones across their archetype
-                focuses. Selected weekly and monthly goals award the listed stat
-                point. Skill purchases and combat equipment never change these
-                numbers.
-              </p>
-              <div className="notice">
-                These are personal game scores, not clinical measurements or a
-                comparison with anyone else.
-              </div>
-            </div>
           </div>
           <div className="stat-detail-grid">
             {ATTRIBUTES.map((a) => {
@@ -601,9 +656,6 @@ export function Skills({
                     </span>
                     <b>{s[a]}</b>
                   </div>
-                  <small>
-                    From class/profession levels and explicit goal rewards
-                  </small>
                 </section>
               );
             })}
@@ -622,19 +674,10 @@ export function Skills({
               Level {professionLevel(c)} · {professionXP(c)} XP · Focus{" "}
               {professionStat(c.profession)}
             </Tag>
-            <p>
-              Your profession shapes your work objectives. It can change as
-              often as your ambitions do.
-            </p>
             <ProfessionPicker
               value={c.profession}
               onChange={(profession) => update({ ...c, profession })}
             />
-            <div className="notice">
-              Profession objectives award profession XP and skill points. Every
-              fifth level adds +1 to this profession’s focus attribute. Previous
-              profession levels and purchased skills are retained.
-            </div>
             <details className="profession-history">
               <summary>Profession history</summary>
               {[
@@ -690,11 +733,7 @@ export function Skills({
                 </div>
               ))
             ) : (
-              <Empty icon="shield" title="No credentials recorded">
-                Record a certification when you earn it. Qualifying credentials
-                unlock permanent skills. Removing a ledger entry keeps an earned
-                skill.
-              </Empty>
+              <Empty icon="shield" title="No credentials recorded"></Empty>
             )}
             <button className="button secondary full" onClick={onCertificate}>
               <Plus size={16} /> Record a certification
@@ -708,11 +747,6 @@ export function Skills({
             <Trophy size={30} />
             <div>
               <h3>Adventurer ranks</h3>
-              <p>
-                Promotion costs double at each rank. Rank XP = objective XP +
-                starting-rank credit ({startingRankCredit(c)}). Starting credit
-                does not grant levels, class XP, or skill points.
-              </p>
             </div>
           </div>
           <div className="ranks-grid">
@@ -729,7 +763,7 @@ export function Skills({
                     ? "Your current rank"
                     : rankXP(c) >= r.xp
                       ? "Achieved"
-                      : "On the horizon"}
+                      : "Locked"}
                 </Tag>
               </section>
             ))}
@@ -741,131 +775,4 @@ export function Skills({
 }
 export function Adventures({ c, update }: ScreenProps) {
   return <AdventureGame c={c} update={update} />;
-}
-export function Journal({ c, update, notify }: ScreenProps) {
-  const [text, setText] = useState(""),
-    [tab, setTab] = useState("reflections");
-  return (
-    <>
-      <div className="intro-banner">
-        <Icon name="book" size={28} />
-        <div>
-          <h3>Reflections</h3>
-          <p>
-            What did you learn? Where did you see God at work? What is one small
-            step for tomorrow?
-          </p>
-        </div>
-      </div>
-      <div className="tabs">
-        <button
-          className={tab === "reflections" ? "active" : ""}
-          onClick={() => setTab("reflections")}
-        >
-          Reflections
-        </button>
-        <button
-          className={tab === "history" ? "active" : ""}
-          onClick={() => setTab("history")}
-        >
-          Adventure chronicle
-        </button>
-      </div>
-      {tab === "reflections" ? (
-        <div className="journal-layout">
-          <section className="panel journal-compose">
-            <span className="eyebrow">NEW ENTRY</span>
-            <h3>New reflection</h3>
-            <label className="field">
-              <span className="sr-only">Your reflection</span>
-              <textarea
-                maxLength={4000}
-                rows={8}
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                placeholder="Today, I’m grateful for…"
-              />
-            </label>
-            <div className="section-heading">
-              <small>{text.length} / 4,000</small>
-              <button
-                className="button primary"
-                disabled={!text.trim()}
-                onClick={() => {
-                  if (
-                    !update({
-                      ...c,
-                      journal: [
-                        {
-                          id: crypto.randomUUID(),
-                          at: new Date().toISOString(),
-                          text: text.trim(),
-                        },
-                        ...c.journal,
-                      ],
-                    })
-                  )
-                    return;
-                  setText("");
-                  notify("A moment worth remembering. Reflection saved.");
-                }}
-              >
-                Save reflection <Plus size={16} />
-              </button>
-            </div>
-          </section>
-          <div>
-            {c.journal.length ? (
-              c.journal.map((j) => (
-                <article className="panel journal-entry" key={j.id}>
-                  <span className="eyebrow">
-                    {new Date(j.at).toLocaleDateString(undefined, {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-                  </span>
-                  <p>{j.text}</p>
-                </article>
-              ))
-            ) : (
-              <section className="panel">
-                <Empty title="No saved reflections">
-                  Your saved reflections will appear here. A few honest words
-                  are enough.
-                </Empty>
-              </section>
-            )}
-          </div>
-        </div>
-      ) : (
-        <section className="panel">
-          {c.completions.length ? (
-            [...c.completions].reverse().map((entry, i) => (
-              <div
-                className="chronicle-row"
-                key={`${entry.id}-${entry.period}-${i}`}
-              >
-                <span className={`objective-icon ${entry.stat.toLowerCase()}`}>
-                  <Check size={18} />
-                </span>
-                <div>
-                  <b>{entry.title}</b>
-                  <small>
-                    {new Date(entry.at).toLocaleString()} ·{" "}
-                    {CLASSES.find((p) => p.id === entry.classId)?.name}
-                  </small>
-                </div>
-                <Tag>+{entry.xp} XP</Tag>
-              </div>
-            ))
-          ) : (
-            <Empty icon="compass" title="No completed objectives">
-              Complete your first objective to begin your chronicle.
-            </Empty>
-          )}
-        </section>
-      )}
-    </>
-  );
 }

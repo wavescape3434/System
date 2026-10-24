@@ -15,7 +15,6 @@ export default function VocationPanel({
     [category, setCategory] = useState(
       current?.category || careerCategory(c.profession).id,
     );
-  const group = CAREER_CATEGORIES.find((g) => g.id === category)!;
   return (
     <section className="vocation-panel panel">
       <div className="section-heading">
@@ -28,10 +27,6 @@ export default function VocationPanel({
         </div>
         <Icon name="book" size={30} />
       </div>
-      <p>
-        Your profession is your role. Your vocation is the career focus you are
-        training toward. Both are independent of your combat class.
-      </p>
       <ProfessionPicker
         value={c.profession}
         onChange={(profession) => update({ ...c, profession })}
@@ -65,11 +60,6 @@ export default function VocationPanel({
           </button>
         ))}
       </div>
-      <p className="helper">
-        {group.name} has one shared career tree with ten competencies. Vocation
-        adds focused daily, weekly, and monthly requests. These skills are
-        non-combat; future exploration uses are not implemented yet.
-      </p>
       {current && (
         <button
           className="text-button"
@@ -81,11 +71,7 @@ export default function VocationPanel({
       {c.subclass && (
         <details className="legacy-specialization">
           <summary>Earlier specialization retained in your record</summary>
-          <p>
-            {c.subclass.replaceAll("-", " ")}. Previous objectives, earned
-            skills, and purchases are preserved. Combat specialization now
-            advances through class paths.
-          </p>
+          <p>{c.subclass.replaceAll("-", " ")}</p>
         </details>
       )}
     </section>

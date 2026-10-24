@@ -7,6 +7,8 @@ import {
   PROFESSIONS,
   SKILLS,
   upgradeProgression,
+  resolveTakenRequest,
+  period,
 } from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
 const finite = (x: unknown) =>
@@ -53,6 +55,51 @@ export function validateCharacter(x: unknown): x is Character {
               finite(p.cost),
           ))) &&
       (c.campaign === undefined || validCampaign(c.campaign)) &&
+      (c.takenRequests === undefined ||
+        (Array.isArray(c.takenRequests) &&
+          new Set(c.takenRequests.map((r) => r.id)).size ===
+            c.takenRequests.length &&
+          c.takenRequests.every(
+            (r) =>
+              date(r.takenAt) &&
+              str(r.takenPeriod) &&
+              r.takenPeriod === period(r.cadence, new Date(r.takenAt)) &&
+              str(r.title) &&
+              str(r.category) &&
+              ["daily", "weekly", "monthly"].includes(r.cadence) &&
+              CLASSES.some((p) => p.id === r.classId) &&
+              PROFESSIONS.includes(r.profession) &&
+              (r.vocationId === undefined ||
+                VOCATIONS.some((v) => v.id === r.vocationId)) &&
+              !!resolveTakenRequest(c, r),
+          ))) &&
+      (c.journeyEvents === undefined ||
+        (Array.isArray(c.journeyEvents) &&
+          c.journeyEvents.every(
+            (e) =>
+              str(e.id) &&
+              date(e.at) &&
+              [
+                "class",
+                "profession",
+                "vocation",
+                "skill",
+                "unlock",
+                "level",
+                "rank",
+                "stat",
+                "adventure",
+                "companion",
+                "equipment",
+                "request",
+              ].includes(e.kind) &&
+              str(e.title) &&
+              e.title.length <= 250 &&
+              (e.detail === undefined ||
+                (str(e.detail) && e.detail.length <= 1000)) &&
+              (e.amount === undefined || finite(e.amount)) &&
+              (e.subject === undefined || str(e.subject)),
+          ))) &&
       !!c.baseStats &&
       ATTRIBUTES.every(
         (a) =>
@@ -75,6 +122,8 @@ export function validateCharacter(x: unknown): x is Character {
       Array.isArray(c.completions) &&
       c.completions.every(
         (o) =>
+          (o.cadence === undefined ||
+            ["daily", "weekly", "monthly"].includes(o.cadence)) &&
           str(o.id) &&
           str(o.title) &&
           str(o.period) &&

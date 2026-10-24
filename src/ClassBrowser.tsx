@@ -98,7 +98,7 @@ export default function ClassBrowser({
               {COMBAT_EFFECTS[p.signature.effect]?.mp} MP ·{" "}
               {classPower(p) > 1
                 ? `${Math.round((classPower(p) - 1) * 100)}% increased signature potency`
-                : "Available immediately in Adventures"}
+                : "Class signature"}
             </small>
           </div>
         </div>
@@ -120,11 +120,6 @@ export default function ClassBrowser({
             <Tag>Unlocked permanently</Tag>
           )}
         </div>
-        <p className="helper">
-          {p.tier === "Prestige" || p.tier === "Ascendant"
-            ? "Promotion starts this class at level 1. Your adventurer level, learned skills, and earlier class records remain."
-            : "Class levels have no ceiling. Stat milestones occur every 5 levels."}
-        </p>
         <button
           className="button primary full"
           disabled={!eligible(p) || selected === p.id}

@@ -21,10 +21,10 @@ export interface Skill {
   current: (c: Character) => number;
   automatic?: boolean;
   combat?: string;
-  archetype?:string;
-  requiredLevel?:number;
-  legacy?:boolean;
-  nonCombat?:boolean;
+  archetype?: string;
+  requiredLevel?: number;
+  legacy?: boolean;
+  nonCombat?: boolean;
 }
 const count = (c: Character, stat?: Attribute) =>
   c.completions.filter((o) => !stat || o.stat === stat).length;
@@ -35,8 +35,7 @@ const add = (s: Skill) => SKILLS.push(s);
 add({
   id: "universal-root",
   name: "Guild Training",
-  description:
-    "Basic adventure actions: attack, defend, and use items. No real-world stat bonus.",
+  description: "Basic adventure actions: attack, defend, and use items.",
   stat: "CON",
   category: "universal",
   branch: "Universal",
@@ -123,7 +122,7 @@ universal.forEach(([stat, a, b, d, description], i) => {
   add({
     id: oldId,
     name: b,
-    description: `Continue ${description.toLowerCase()} Requires the earlier node.`,
+    description: `Continue ${description.toLowerCase()}`,
     stat,
     category: "universal",
     branch: "Universal",
@@ -139,7 +138,7 @@ universal.forEach(([stat, a, b, d, description], i) => {
   add({
     id: `universal-${stat.toLowerCase()}-3`,
     name: d,
-    description: `Unlocks ${d.toLowerCase()} in adventures. Does not increase real-world attributes.`,
+    description: `Unlocks ${d.toLowerCase()} in adventures.`,
     stat,
     category: "universal",
     branch: "Universal",
@@ -779,9 +778,23 @@ for (const [subclass, owner, stat, name] of subclasses) {
 }
 
 // Original skill IDs are retained for saved characters and purchased-skill records.
-for(const s of SKILLS) {
- if(s.category==='class'||s.category==='subclass'||(s.category==='profession'&&!['networking','analysis'].includes(s.owner||''))) s.legacy=true;
- if(s.category==='universal'&&!s.automatic&&s.id!=='universal-root') s.cost=Math.max(4,s.cost*4);
- if(s.category==='profession'&&['networking','analysis'].includes(s.owner||'')) {s.nonCombat=true;s.combat=undefined;if(!s.automatic)s.cost=Math.max(4,s.cost*4);}
+for (const s of SKILLS) {
+  if (
+    s.category === "class" ||
+    s.category === "subclass" ||
+    (s.category === "profession" &&
+      !["networking", "analysis"].includes(s.owner || ""))
+  )
+    s.legacy = true;
+  if (s.category === "universal" && !s.automatic && s.id !== "universal-root")
+    s.cost = Math.max(4, s.cost * 4);
+  if (
+    s.category === "profession" &&
+    ["networking", "analysis"].includes(s.owner || "")
+  ) {
+    s.nonCombat = true;
+    s.combat = undefined;
+    if (!s.automatic) s.cost = Math.max(4, s.cost * 4);
+  }
 }
 SKILLS.push(...EXPANDED_SKILLS);

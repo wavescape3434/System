@@ -183,12 +183,6 @@ export default function AdventureGame({
                 Retreat
               </button>
             </div>
-            <p className="battle-help">
-              Select enemies to target attacks; select allies to target healing
-              or items. Enemies act after all living party members. Guard
-              reduces incoming damage. Bosses use Heavy Strike every third
-              round.
-            </p>
             {actionError && <p role="alert">{actionError}</p>}
           </div>
         ) : (
@@ -202,8 +196,8 @@ export default function AdventureGame({
             </h2>
             <p>
               {battle.phase === "won"
-                ? `${encounter.gold} gold · 1 potion · ${encounter.recruit ? "Companion recruitment unlocked · " : ""}No real-world XP or base stat changes.`
-                : "No real-world progress was lost. Review equipment and skills, or train your classes before retrying."}
+                ? `${encounter.gold} gold · 1 potion · ${encounter.recruit ? "Companion recruitment unlocked · " : ""}`
+                : ""}
             </p>
             {battle.phase === "won" && !battle.claimed ? (
               <button
@@ -354,11 +348,6 @@ export default function AdventureGame({
               })}
             </div>
           </div>
-          <p className="helper">
-            Clear encounters in order to unlock the next region. Replays earn
-            combat gold and supplies. Your character and companions take
-            individual turns; enemies act at the end of the party round.
-          </p>
         </>
       )}
       {tab === "party" && (
@@ -430,12 +419,7 @@ export default function AdventureGame({
         <>
           <div className="combat-attribute-panel panel">
             <h3>Base and combat attributes</h3>
-            <p>
-              Class stance, equipped gear, and up to four equipped skills modify
-              combat only. Subclass selection adds no modifier.
-              <br />
-              Current stance: {CLASS_ROLES[c.activeClass]?.stance}.
-            </p>
+            <Tag>{CLASS_ROLES[c.activeClass]?.stance}</Tag>
             <div>
               {Object.entries(base).map(([a, value]) => (
                 <span key={a}>
@@ -550,18 +534,9 @@ export default function AdventureGame({
           </section>
           <div className="panel loadout-header">
             <h3>Equipped skills · {data.equippedSkills.length}/4</h3>
-            <p>
-              Purchase skills in the skill trees, then equip them here. Equipped
-              skills apply combat attribute modifiers; action skills also add a
-              battle command.
-            </p>
           </div>
           {!skills.length && (
-            <div className="notice">
-              No purchased skills yet. Complete objectives to earn skill points,
-              unlock tree sections through levels, and purchase nodes in Skills
-              & Stats.
-            </div>
+            <div className="notice">No purchased combat skills</div>
           )}
           <div className="skill-grid">
             {skills.map((s) => (
