@@ -15,6 +15,8 @@ import {
   classLevel,
   totalXP,
   stats,
+  qualificationRequirements,
+  transferableXP,
 } from "./domain";
 import { ARCHETYPES, classPower } from "./class-catalog";
 import { COMBAT_EFFECTS } from "./class-roles";
@@ -24,11 +26,13 @@ export default function ClassBrowser({
   baseline,
   selected,
   onSelect,
+  onTrial,
 }: {
   c?: Character;
   baseline?: Stats;
   selected: string;
   onSelect: (id: string) => void;
+  onTrial?: (id: string) => void;
 }) {
   const [search, setSearch] = useState(""),
     [tier, setTier] = useState("all"),
@@ -120,6 +124,23 @@ export default function ClassBrowser({
             <Tag>Unlocked permanently</Tag>
           )}
         </div>
+        {c?.trainingVersion === 3 &&
+          !c.unlockedClasses?.includes(p.id) &&
+          qualificationRequirements(p, s, xp, c).every((r) => r.met) && (
+            <div className="entry-trial-preview">
+              <Tag>Transferable training: {transferableXP(c, p.id)} XP</Tag>
+              <button
+                className="button primary full"
+                onClick={() => {
+                  onTrial?.(p.id);
+                  setDetail(null);
+                  setComparing(false);
+                }}
+              >
+                Open entry trial
+              </button>
+            </div>
+          )}
         <button
           className="button primary full"
           disabled={!eligible(p) || selected === p.id}

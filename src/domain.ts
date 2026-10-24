@@ -1,3 +1,14 @@
+import { assessedStats } from "./metrics";
+import type { Assessment } from "./metrics";
+import type { Preferences } from "./preferences";
+import { DEFAULT_PREFERENCES } from "./preferences";
+import {
+  rankedObjectives,
+  entryTrial,
+  taskRequirements,
+} from "./training-tasks";
+import { checkpointUnits, milestonePoints } from "./task-ranks";
+import type { TaskRank } from "./task-ranks";
 import type { JourneyEvent } from "./journey-events";
 import { levelFromXP, xpForLevel, statMilestones } from "./progression";
 import { CAREER_CATEGORIES, VOCATIONS, careerCategory } from "./careers";
@@ -9,6 +20,7 @@ export type Attribute = (typeof ATTRIBUTES)[number];
 export type Stats = Record<Attribute, number>;
 export type Cadence = "daily" | "weekly" | "monthly";
 export interface Baseline {
+  assessment?: Assessment;
   mode: "bodyweight" | "weights";
   pushupStyle?: "floor" | "knee" | "incline" | "wall";
   pushups: number;
@@ -70,7 +82,17 @@ export interface Objective {
   xp: number;
   minutes: string;
   category: string;
-  kind?: "fitness";
+  kind?: "fitness" | "class-trial";
+  rank?: TaskRank;
+  taskVersion?: 2;
+  targetClass?: string;
+  family?: string;
+  equipment?: "bodyweight" | "pullup-bar" | "weights";
+  cooldownHours?: number;
+  minimumPullups?: number;
+  minimumDays?: number;
+  minimumSessions?: number;
+  once?: boolean;
   careerCategory?: string;
   checklist?: string[];
   scope?: "universal" | "class" | "subclass" | "profession";
@@ -158,6 +180,14 @@ export interface TakenRequest extends Objective {
   vocationId?: string;
 }
 export interface Completion {
+  rank?: TaskRank;
+  taskVersion?: 2;
+  family?: string;
+  cooldownHours?: number;
+  classCredits?: Record<string, number>;
+  professionCredit?: { name: string; category: string; xp: number };
+  vocationCredit?: { id: string; category: string; xp: number };
+  trialClass?: string;
   cadence?: Cadence;
   id: string;
   period: string;
@@ -199,6 +229,16 @@ export interface Character {
   vocation?: string | null;
   unlockedClasses?: string[];
   progressionVersion?: 2;
+  trainingVersion?: 3;
+  preferences?: Preferences;
+  classEntries?: Record<string, { at: string; credit: number }>;
+  trainingLegacy?: {
+    count: number;
+    classLevels: Record<string, number>;
+    professionLevels: Record<string, number>;
+    earnedStats: Stats;
+  };
+  assessmentHistory?: { at: string; assessment: Assessment; stats: Stats }[];
   legacyProgress?: {
     adventurerXP: number;
     classes: Record<string, number>;
@@ -224,6 +264,7 @@ const clamp = (n: number, max: number) =>
   Math.max(0, Math.min(max, Number.isFinite(n) ? n : 0));
 // Guild scoring benchmarks, not population percentiles or clinical measurements.
 export function startingStats(b: Baseline): Stats {
+  if (b.assessment?.version === 2) return assessedStats(b.assessment);
   const str =
     b.mode === "weights"
       ? (b.bodyweight > 0
@@ -250,7 +291,26 @@ export function startingStats(b: Baseline): Stats {
 export function startingRankFor(s: Stats): "F" | "E" | "D" {
   const values = Object.values(s),
     average = values.reduce((a, b) => a + b, 0) / 6;
-  if (average >= 25 && values.filter((n) => n >= 25).length >= 5) return "D";
+  // Game placement, not claimed population percentiles. The asymmetric route
+  // accommodates short mental checks and the 45-second balance protocol.
+  const mental = [s.INT, s.WIS, s.CHA];
+  if (
+    (average >= 25 && values.filter((n) => n >= 25).length >= 5) ||
+    (average >= 18 &&
+      s.STR >= 32 &&
+      s.CON >= 14 &&
+      s.DEX >= 13 &&
+      mental.every((n) => n >= 14))
+  )
+    return "D";
+  if (
+    average >= 14 &&
+    s.STR >= 22 &&
+    s.CON >= 12 &&
+    s.DEX >= 12 &&
+    mental.filter((n) => n >= 12).length >= 2
+  )
+    return "E";
   if (
     average >= 18 &&
     values.filter((n) => n >= 22).length >= 3 &&
@@ -264,7 +324,7 @@ export const totalXP = (c: Character) =>
 export const level = (xp: number) => levelFromXP(xp, 250);
 export const adventurerXP = (c: Character) =>
   totalXP(c) + (c.legacyProgress?.adventurerXP || 0);
-export const classXP = (c: Character, id: string) =>
+const ownClassXP = (c: Character, id: string) =>
   c.completions
     .filter(
       (x) =>
@@ -272,16 +332,54 @@ export const classXP = (c: Character, id: string) =>
         (!x.scope || x.scope === "class" || x.scope === "subclass"),
     )
     .reduce((n, x) => n + x.xp, 0);
-export const classLevel = (c: Character, id: string) =>
-  levelFromXP(classXP(c, id) + (c.legacyProgress?.classes[id] || 0));
+export const classXP = (c: Character, id: string) =>
+  ownClassXP(c, id) +
+  c.completions.reduce((n, o) => n + (o.classCredits?.[id] || 0), 0) +
+  (c.classEntries?.[id]?.credit || 0);
+export const classLevel = (c: Character, id: string) => {
+  const raw = levelFromXP(
+    classXP(c, id) + (c.legacyProgress?.classes[id] || 0),
+  );
+  if (c.trainingVersion !== 3) return raw;
+  const floor = c.trainingLegacy?.classLevels[id] || 1;
+  const work = c.completions
+    .slice(c.trainingLegacy?.count || 0)
+    .filter((o) => o.classId === id && o.scope === "class" && !o.trialClass)
+    .reduce((n, o) => n + checkpointUnits(o.rank), 0);
+  return Math.min(raw, floor + work);
+};
+export function classProgress(c: Character, id: string) {
+  const lv = classLevel(c, id),
+    xp = classXP(c, id) + (c.legacyProgress?.classes[id] || 0);
+  const start = xpForLevel(lv),
+    next = xpForLevel(lv + 1),
+    needed = next - start;
+  return {
+    current: Math.min(needed, Math.max(0, xp - start)),
+    needed,
+    waiting: xp >= next && c.trainingVersion === 3,
+    banked: Math.max(0, xp - next),
+  };
+}
 export const professionXP = (c: Character, name = c.profession) =>
   c.completions
-    .filter((x) => x.scope === "profession" && x.profession === name)
-    .reduce((n, x) => n + x.xp, 0);
-export const professionLevel = (c: Character, name = c.profession) =>
-  levelFromXP(
+    .filter((o) => o.scope === "profession" && o.profession === name)
+    .reduce((n, o) => n + o.xp, 0) +
+  c.completions
+    .filter((o) => o.professionCredit?.name === name)
+    .reduce((n, o) => n + (o.professionCredit?.xp || 0), 0);
+export const professionLevel = (c: Character, name = c.profession) => {
+  const raw = levelFromXP(
     professionXP(c, name) + (c.legacyProgress?.professions[name] || 0),
   );
+  if (c.trainingVersion !== 3) return raw;
+  const floor = c.trainingLegacy?.professionLevels[name] || 1;
+  const work = c.completions
+    .slice(c.trainingLegacy?.count || 0)
+    .filter((o) => o.scope === "profession" && o.profession === name)
+    .reduce((n, o) => n + checkpointUnits(o.rank), 0);
+  return Math.min(raw, floor + work);
+};
 export const subclassXP = (c: Character, id = c.subclass) =>
   c.completions
     .filter((x) => x.scope === "subclass" && x.subclassId === id)
@@ -301,6 +399,7 @@ function legacyProfessionStat(name: string): Attribute {
 export const professionStat = (name: string): Attribute =>
   careerCategory(name).stat;
 export function stats(c: Character): Stats {
+  if (c.trainingVersion === 3) return trainingStats(c);
   const result = { ...c.baseStats };
   for (const p of CLASSES) {
     const milestones = statMilestones(classLevel(c, p.id));
@@ -331,6 +430,43 @@ export function stats(c: Character): Stats {
     if (o.statReward) result[o.statReward.stat] += o.statReward.amount;
   return result;
 }
+function distributeStats(result: Stats, p: ClassPath, points: number) {
+  const entries = Object.entries(p.mix).map(([id, weight]) => ({
+    stat: ARCHETYPE_STAT[id],
+    exact: (points * weight!) / 100,
+  }));
+  let left = points - entries.reduce((n, e) => n + Math.floor(e.exact), 0);
+  for (const e of entries) result[e.stat] += Math.floor(e.exact);
+  for (const e of entries.sort((a, b) => (b.exact % 1) - (a.exact % 1))) {
+    if (left-- <= 0) break;
+    result[e.stat]++;
+  }
+}
+function trainingStats(c: Character): Stats {
+  const result = { ...c.baseStats };
+  for (const a of ATTRIBUTES)
+    result[a] += c.trainingLegacy?.earnedStats[a] || 0;
+  for (const p of CLASSES) {
+    const previous = c.trainingLegacy?.classLevels[p.id] || 1;
+    const growth =
+      milestonePoints(classLevel(c, p.id)) - milestonePoints(previous);
+    if (growth > 0) distributeStats(result, p, growth);
+  }
+  const names = new Set(
+    c.completions
+      .flatMap((o) => [o.profession, o.professionCredit?.name])
+      .filter((s): s is string => !!s),
+  );
+  for (const name of names)
+    result[professionStat(name)] += Math.max(
+      0,
+      milestonePoints(professionLevel(c, name)) -
+        milestonePoints(c.trainingLegacy?.professionLevels[name] || 1),
+    );
+  for (const o of c.completions.slice(c.trainingLegacy?.count || 0))
+    if (o.statReward) result[o.statReward.stat] += o.statReward.amount;
+  return result;
+}
 export const classRank = (lv: number) =>
   lv >= 100
     ? "Mythic"
@@ -355,7 +491,7 @@ export const startingRankCredit = (c: Character) =>
   RANKS.find((r) => r.name === (c.startingRank || "F"))!.xp;
 export const rankXP = (c: Character) => totalXP(c) + startingRankCredit(c);
 export const characterRank = (c: Character) => rank(rankXP(c));
-export function classRequirements(
+export function qualificationRequirements(
   p: ClassPath,
   s: Stats,
   xp: number,
@@ -387,6 +523,60 @@ export function classRequirements(
       : []),
   ];
 }
+export function classRequirements(
+  p: ClassPath,
+  s: Stats,
+  xp: number,
+  c?: Character,
+): { label: string; met: boolean }[] {
+  const result = qualificationRequirements(p, s, xp, c);
+  if (
+    c?.trainingVersion === 3 &&
+    !c.unlockedClasses?.includes(p.id) &&
+    p.id !== c.activeClass
+  )
+    result.push({
+      label: `${p.name} entry trial`,
+      met: c.completions.some((o) => o.trialClass === p.id),
+    });
+  return result;
+}
+export function transferableXP(c: Character, id: string): number {
+  const p = CLASSES.find((p) => p.id === id);
+  if (!p) return 0;
+  return Math.floor(
+    c.completions
+      .filter(
+        (o) =>
+          o.classId !== id &&
+          (!o.scope || o.scope === "class" || o.scope === "universal"),
+      )
+      .reduce((sum, o) => sum + o.xp * classRelevance(p, o.stat) * 0.25, 0),
+  );
+}
+function classRelevance(p: ClassPath, stat: Attribute) {
+  return Object.entries(p.mix).reduce(
+    (n, [id, weight]) => n + (ARCHETYPE_STAT[id] === stat ? weight! / 100 : 0),
+    0,
+  );
+}
+export function classCreditRewards(
+  c: Character,
+  o: Objective,
+  target: string,
+): Record<string, number> {
+  if (c.trainingVersion !== 3) return {};
+  const credits: Record<string, number> = {};
+  for (const id of c.unlockedClasses || [c.activeClass]) {
+    const p = CLASSES.find((p) => p.id === id)!;
+    const relevance = classRelevance(p, o.stat);
+    if (!relevance || o.scope === "profession") continue;
+    if (o.scope === "class" && id === target) continue;
+    const value = Math.floor(o.xp * relevance * (id === target ? 0.5 : 0.25));
+    if (value) credits[id] = value;
+  }
+  return credits;
+}
 export const available = (p: ClassPath, s: Stats, xp: number, c?: Character) =>
   !!c?.unlockedClasses?.includes(p.id) ||
   classRequirements(p, s, xp, c).every((r) => r.met);
@@ -404,7 +594,12 @@ export function archetypeXP(c: Character, id: string) {
   return CLASSES.reduce(
     (sum, p) =>
       sum +
-      ((classXP(c, p.id) + (c.legacyProgress?.classes[p.id] || 0)) *
+      ((c.trainingVersion === 3
+        ? Math.min(
+            classXP(c, p.id) + (c.legacyProgress?.classes[p.id] || 0),
+            xpForLevel(classLevel(c, p.id) + 1) - 1,
+          )
+        : classXP(c, p.id) + (c.legacyProgress?.classes[p.id] || 0)) *
         (p.mix[id as keyof typeof p.mix] || 0)) /
         100,
     0,
@@ -413,13 +608,27 @@ export function archetypeXP(c: Character, id: string) {
 export const activeVocation = (c: Character) =>
   VOCATIONS.find((v) => v.id === c.vocation);
 export function careerXP(c: Character, id: string) {
-  return c.completions
-    .filter(
-      (o) =>
-        o.scope === "profession" &&
-        (o.careerCategory || legacyCareer(o)) === id,
+  return (
+    c.completions
+      .filter(
+        (o) =>
+          o.scope === "profession" &&
+          (o.careerCategory || legacyCareer(o)) === id,
+      )
+      .reduce((n, o) => n + o.xp, 0) +
+    c.completions
+      .filter((o) => o.professionCredit?.category === id)
+      .reduce((n, o) => n + (o.professionCredit?.xp || 0), 0) +
+    c.completions.reduce(
+      (n, o) =>
+        n +
+        (o.vocationCredit?.category === id &&
+        o.professionCredit?.category !== id
+          ? o.vocationCredit.xp
+          : 0),
+      0,
     )
-    .reduce((n, o) => n + o.xp, 0);
+  );
 }
 function legacyCareer(o: Completion) {
   return o.id.startsWith("network-")
@@ -430,7 +639,7 @@ function legacyCareer(o: Completion) {
 }
 export const currentPath = (c: Character) =>
   CLASSES.find((p) => p.id === c.activeClass)!;
-export function objectives(c: Character): Objective[] {
+export function legacyObjectives(c: Character): Objective[] {
   const p = currentPath(c),
     core =
       CORE[p.id] ||
@@ -860,6 +1069,25 @@ export function objectives(c: Character): Objective[] {
   );
   return visible;
 }
+export function objectives(c: Character): Objective[] {
+  const legacy = legacyObjectives(c);
+  if (c.trainingVersion !== 3) return legacy;
+  const tasks = rankedObjectives(c, legacy),
+    attributes = stats(c),
+    xp = totalXP(c);
+  for (const p of CLASSES)
+    if (
+      !c.unlockedClasses?.includes(p.id) &&
+      qualificationRequirements(p, attributes, xp, c).every((r) => r.met)
+    ) {
+      const trial = entryTrial(c, p.id);
+      if (trial) tasks.push(trial);
+    }
+  return tasks;
+}
+export const objectivePeriod = (o: Objective, now = new Date()) =>
+  o.once ? "once" : period(o.cadence, now);
+export { taskRequirements };
 export function period(cadence: Cadence, date = new Date()): string {
   const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
   if (cadence === "weekly") d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
@@ -870,7 +1098,7 @@ export function period(cadence: Cadence, date = new Date()): string {
 }
 export const isComplete = (c: Character, o: Objective, now = new Date()) =>
   c.completions.some(
-    (x) => x.id === o.id && x.period === period(o.cadence, now),
+    (x) => x.id === o.id && x.period === objectivePeriod(o, now),
   );
 export function complete(
   c: Character,
@@ -879,14 +1107,16 @@ export function complete(
 ): Character {
   // Use the stored request context, never reward values supplied by a button caller.
   const taken = c.takenRequests?.find(
-    (x) => x.id === o.id && x.takenPeriod === period(x.cadence, now),
+    (x) => x.id === o.id && x.takenPeriod === objectivePeriod(x, now),
   );
   const actual = taken
     ? resolveTakenRequest(c, taken)
     : objectives(c).find((x) => x.id === o.id);
   if (!actual || isComplete(c, actual, now)) return c;
+  if (actual.taskVersion === 2 && taskRequirements(c, actual, now).length)
+    return c;
   const checked =
-    c.milestones[`${actual.id}:${period(actual.cadence, now)}`] || [];
+    c.milestones[`${actual.id}:${objectivePeriod(actual, now)}`] || [];
   if (
     actual.checklist &&
     !actual.checklist.every((_, i) => checked.includes(i))
@@ -894,19 +1124,50 @@ export function complete(
     return c;
   return {
     ...c,
+    ...(actual.targetClass
+      ? {
+          classEntries: {
+            ...(c.classEntries || {}),
+            [actual.targetClass]: {
+              at: now.toISOString(),
+              credit: transferableXP(c, actual.targetClass),
+            },
+          },
+        }
+      : {}),
     completions: [
       ...c.completions,
       {
         id: actual.id,
-        period: period(actual.cadence, now),
+        period: objectivePeriod(actual, now),
         at: now.toISOString(),
         xp: actual.xp,
         stat: actual.stat,
-        classId: taken?.classId || c.activeClass,
+        classId: actual.targetClass || taken?.classId || c.activeClass,
         title: actual.title,
         cadence: actual.cadence,
         profession: taken?.profession || c.profession,
         scope: actual.scope,
+        ...(actual.taskVersion === 2
+          ? {
+              taskVersion: 2 as const,
+              rank: actual.rank,
+              family: actual.family,
+              cooldownHours: actual.cooldownHours,
+              classCredits: classCreditRewards(
+                c,
+                actual,
+                actual.targetClass || taken?.classId || c.activeClass,
+              ),
+            }
+          : {}),
+        ...(actual.targetClass ? { trialClass: actual.targetClass } : {}),
+        ...universalCareerCredits(
+          c,
+          actual,
+          taken?.profession || c.profession,
+          taken ? taken.vocationId : c.vocation,
+        ),
         ...(actual.scope === "subclass" && c.subclass
           ? { subclassId: c.subclass }
           : {}),
@@ -921,9 +1182,43 @@ export function complete(
     ],
   };
 }
+export function universalCareerCredits(
+  c: Character,
+  o: Objective,
+  role = c.profession,
+  vocationId = c.vocation,
+): Pick<Completion, "professionCredit" | "vocationCredit"> {
+  if (o.taskVersion !== 2 || o.scope !== "universal") return {};
+  const related = (category: string) => {
+    const group = CAREER_CATEGORIES.find((g) => g.id === category)!;
+    return (
+      o.stat === group.stat ||
+      (["STR", "DEX", "CON"].includes(o.stat) &&
+        [
+          "trades",
+          "logistics",
+          "agriculture",
+          "public-safety",
+          "hospitality",
+          "manufacturing",
+        ].includes(category))
+    );
+  };
+  const category = careerCategory(role).id,
+    vocation = VOCATIONS.find((v) => v.id === vocationId);
+  const xp = Math.floor(o.xp * 0.25);
+  return {
+    ...(related(category)
+      ? { professionCredit: { name: role, category, xp } }
+      : {}),
+    ...(vocation && related(vocation.category)
+      ? { vocationCredit: { id: vocation.id, category: vocation.category, xp } }
+      : {}),
+  };
+}
 export function isTaken(c: Character, o: Objective, now = new Date()): boolean {
   return !!c.takenRequests?.some(
-    (r) => r.id === o.id && r.takenPeriod === period(o.cadence, now),
+    (r) => r.id === o.id && r.takenPeriod === objectivePeriod(o, now),
   );
 }
 export function takeRequest(
@@ -934,6 +1229,11 @@ export function takeRequest(
   const o = objectives(c).find((o) => o.id === id);
   if (!o) return c;
   if (isTaken(c, o, now) || isComplete(c, o, now)) return c;
+  if (
+    o.taskVersion === 2 &&
+    taskRequirements(c, o, now).some((s) => !s.includes("day commitment"))
+  )
+    return c;
   return {
     ...c,
     takenRequests: [
@@ -941,7 +1241,7 @@ export function takeRequest(
       {
         ...o,
         takenAt: now.toISOString(),
-        takenPeriod: period(o.cadence, now),
+        takenPeriod: objectivePeriod(o, now),
         classId: c.activeClass,
         profession: c.profession,
         ...(c.vocation ? { vocationId: c.vocation } : {}),
@@ -957,16 +1257,22 @@ export function resolveTakenRequest(
   c: Character,
   r: TakenRequest,
 ): Objective | undefined {
-  return objectives({
+  const context = {
     ...c,
     activeClass: r.classId,
     profession: r.profession,
     vocation: r.vocationId || null,
-  }).find((o) => o.id === r.id);
+  };
+  return r.kind === "class-trial" && r.targetClass
+    ? entryTrial(context, r.targetClass)
+    : (r.taskVersion === 2
+        ? objectives(context)
+        : legacyObjectives(context)
+      ).find((o) => o.id === r.id);
 }
 export const takenObjectives = (c: Character, now = new Date()): Objective[] =>
   (c.takenRequests || [])
-    .filter((r) => r.takenPeriod === period(r.cadence, now))
+    .filter((r) => r.takenPeriod === objectivePeriod(r, now))
     .flatMap((r) => {
       const o = resolveTakenRequest(c, r);
       return o ? [o] : [];
@@ -1033,12 +1339,36 @@ export function createCharacter(
     earnedSkills: [],
     milestones: {},
     startingRank: startingRankFor(baseStats),
+    ...(baseline.assessment
+      ? {
+          preferences: {
+            ...DEFAULT_PREFERENCES,
+            equipment:
+              baseline.assessment.strengthTest === "weighted"
+                ? ["bodyweight", "weights"]
+                : ["bodyweight"],
+          },
+          trainingVersion: 3 as const,
+          classEntries: {
+            [selected && available(selected, baseStats, 0)
+              ? selected.id
+              : "disciple"]: { at: new Date().toISOString(), credit: 0 },
+          },
+          assessmentHistory: [
+            {
+              at: new Date().toISOString(),
+              assessment: baseline.assessment,
+              stats: baseStats,
+            },
+          ],
+        }
+      : {}),
     learnedSkills: [],
     skillPurchases: [],
     demo,
   };
 }
-export function demoCharacter(): Character {
+export function legacyDemoCharacter(): Character {
   const c = createCharacter(
     "Rowan",
     {
@@ -1058,6 +1388,68 @@ export function demoCharacter(): Character {
   c.title = "Registered adventurer";
   c.vocation = "networking";
   return c;
+}
+export function demoCharacter(): Character {
+  const c = legacyDemoCharacter();
+  return {
+    ...c,
+    trainingVersion: 3,
+    classEntries: { warrior: { at: c.createdAt, credit: 0 } },
+    baseline: {
+      ...c.baseline,
+      assessment: {
+        version: 2,
+        age: 35,
+        sex: "male",
+        strengthTest: "pushups",
+        pushupStyle: "floor",
+        pushups: 20,
+        chairStands: null,
+        balanceSeconds: 30,
+        walkMetres: 550,
+        heightCm: 175,
+        massKg: 75,
+        liftKg: null,
+        liftReps: null,
+        pullups: 0,
+      },
+    },
+    baseStats: { STR: 10, DEX: 10, CON: 10, INT: 10, WIS: 10, CHA: 10 },
+    unlockedClasses: ["warrior"],
+  };
+}
+export function upgradeTraining(c: Character): Character {
+  if (c.trainingVersion === 3) return c;
+  const before = stats(c),
+    earnedStats = { ...before };
+  for (const a of ATTRIBUTES) earnedStats[a] -= c.baseStats[a];
+  const classLevels = Object.fromEntries(
+    CLASSES.map((p) => [p.id, classLevel(c, p.id)]),
+  );
+  const names = [
+    ...new Set(
+      c.completions.map((o) => o.profession).filter((v): v is string => !!v),
+    ),
+  ];
+  return {
+    ...c,
+    trainingVersion: 3,
+    trainingLegacy: {
+      count: c.completions.length,
+      classLevels,
+      professionLevels: Object.fromEntries(
+        names.map((name) => [name, professionLevel(c, name)]),
+      ),
+      earnedStats,
+    },
+    unlockedClasses: [
+      ...new Set([
+        ...(c.unlockedClasses || []),
+        c.activeClass,
+        ...CLASSES.filter((p) => ownClassXP(c, p.id) > 0).map((p) => p.id),
+      ]),
+    ],
+  };
 }
 export function activity(c: Character, days = 7, now = new Date()) {
   return Array.from({ length: days }, (_, i) => {
@@ -1092,9 +1484,16 @@ export function skillWallet(c: Character, s?: Skill): string {
 }
 export function walletXP(c: Character, wallet: string): number {
   if (wallet === "combat")
-    return c.completions
-      .filter((o) => !o.scope || o.scope === "class" || o.scope === "subclass")
-      .reduce((n, o) => n + o.xp, 0);
+    return (
+      c.completions
+        .filter(
+          (o) => !o.scope || o.scope === "class" || o.scope === "subclass",
+        )
+        .reduce((n, o) => n + o.xp, 0) +
+      c.completions
+        .filter((o) => o.scope === "universal")
+        .reduce((n, o) => n + (o.classCredits?.[o.classId] || 0), 0)
+    );
   if (wallet.startsWith("class:")) return classXP(c, wallet.slice(6));
   if (wallet.startsWith("subclass:")) return subclassXP(c, wallet.slice(9));
   if (wallet.startsWith("profession:")) return careerXP(c, wallet.slice(11));

@@ -146,7 +146,7 @@ export default function GuildCard({
             <span>ADVENTURER</span>
           </div>
           <div className="engraved-level">
-            <small>LEVEL</small>
+            <small>PLAYER LEVEL</small>
             <strong>{level(adventurerXP(c))}</strong>
           </div>
         </div>

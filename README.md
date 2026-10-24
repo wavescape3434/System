@@ -29,11 +29,21 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
-## Version 1.3.0
+## Version 1.4.0
 
-Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 4. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment.
+Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 5. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.4.md).
 
 The Guild Card is an engraved brass membership card inspired by isekai guild registers. Objectives are posted as pinned parchment commissions on a timber guild board. [View the screenshots](docs/screenshots/README.md).
+
+### Assessment, ranked training, and Settings
+
+The full [assessment and progression audit](metrics-audit.md) evaluates the previous metrics, verified reference values, scoring formulas, task ranks, and limitations. The new assessment centers supported reference results on 10, leaves missing tests labeled unassessed at 10, and has no stat ceiling. It includes equipment-free pushups/chair stands, balance and six-minute walking distance; optional bench-press and dynamometer measurements; and three original five-question INT/WIS/CHA checks. Published age/sex grip means and supported walk equations are distinguished from sample-pooled and provisional references. The brief mental checks, pushup variants, bench anchor and balance anchor are not presented as validated population averages.
+
+Requests now carry F–SSS ranks and increasing XP prices: **10 / 25 / 60 / 150 / 350 / 800 / 1,800 / 4,200 / 10,000**. Floor pushups 3×20 pay **150 XP**; strict pullups 5×20 pay **1,800 XP** and require appropriate equipment, recorded capacity, and recovery. There are easier and harder universal options for all six attributes. SS/SSS require sustained preparation, dated practice, and independently assessed advanced/expert outcomes; elapsed time alone does not qualify. One-time commitments persist across months.
+
+Universal work awards player XP once and partial related class, profession, and vocation credit. New class entry requires a trial, banks 25% of relevant earlier work, and starts that class at level 1. Class-specific work certifies further levels while retaining banked XP. Player and class levels remain separate. Technical requests follow the selected profession/vocation; Networking and Data Analysis are absent from global category filters.
+
+**Settings** now has General, Training, Assessment, and Account & data pages. Name, units, text size, reduced motion, opening screen, equipment, and locked-request visibility persist. Performance checks save raw results without automatically changing base stats; baseline recalibration requires a separate confirmation and retains earned points. Account sign-in, export, and restore remain under Settings → Account & data → Account & backups.
 
 ### Help, commitments, and Journey
 
@@ -72,18 +82,18 @@ Career competencies are explicitly **non-combat** and cannot supply battle attri
 ### Uncapped levels and attributes
 
 - Adventurer, class, profession, and archetype levels have no configured ceiling. Each successive level requires more XP. Cumulative XP for level `L` is `round(B × ((L−1) + 0.15 × (L−1)²))`, where `B=250` for adventurer levels and `B=100` for other paths.
-- Base attributes increase **every five class or profession levels**, rather than at every level. Hybrid class milestones follow the archetype balance; ten Paladin milestones distribute seven points to STR and three to WIS. Profession milestones use the career discipline’s focus attribute.
+- Base attributes increase **every five class or profession levels**, rather than at every level. Milestone rewards grow: 2 points at level 5, 3 at 10, 4 at 15, and so on. Hybrid classes distribute accumulated points by archetype focus; profession milestones use the career discipline’s focus attribute.
 - Explicitly listed weekly/monthly rewards may also grant a base attribute. Ordinary daily completion, purchases, vocation selection, equipment, and combat victories do not directly grant base attributes.
-- Every 100 objective XP earns one skill point for its path. Combat points pool all class objective XP; career points pool the relevant discipline; universal points use universal objectives. Most new skills cost 4–30 points and require level, practice, and earlier nodes. A purchase is charged once and remains learned.
+- Every 100 source path XP earns one skill point for its path. Combat points include class objectives and related active-class universal credit once; career points pool the relevant discipline, counting overlapping profession/vocation credit once; universal points use universal objectives. Most new skills cost 4–30 points and require level, practice, and earlier nodes. A purchase is charged once and remains learned.
 - **Guild rank** remains F–SSS with doubling promotion costs: cumulative thresholds 0 / 500 / 1,500 / 3,500 / 7,500 / 15,500 / 31,500 / 63,500 / 127,500. Guild rank and adventurer level are separate measures.
-- Ordinary assessments begin at F. Exceptional starting placement is capped at D. E requires mean baseline 18+, three attributes 22+, and two physical attributes 22+; D requires mean 25+ and five attributes 25+. These are guild game benchmarks, not measured population percentiles.
+- Ordinary assessments begin at F. Exceptional starting placement is capped at D. New exceptional placement uses demanding combinations of strength, conditioning, balance, and completed mental checks; legacy placement routes remain supported. Exact thresholds are in the [audit](metrics-audit.md). These are guild game benchmarks, not measured population percentiles.
 
 Older saves receive one-time progression credits that retain their earned levels, base attributes, point balances, purchases, and raw objective XP after the curve changes. Credits do not increase guild rank or claim additional real-world objective rewards. Earlier purchased skills remain visible in the skill archive and combat skills remain equippable.
 
 ### Requests, assessment, and adventures
 
 - Request content follows the current class and its secondary archetype, profession, and vocation. Category filters select a focus. Daily rewards refresh at local midnight, weekly on Monday, and monthly on the first; each request rewards once per period. Monthly checklists persist.
-- Assessment inputs remain clearable, with no forced leading zero. Walking is in minutes, balance in seconds, and study in minutes per week. Bodyweight training needs no equipment; weighted strength requires body weight for scoring. Baselines range from 3–30.
+- Assessment inputs remain clearable, with no forced leading zero. Walking records distance over six minutes, balance uses seconds, and bench estimates require body mass. Bodyweight registration needs no gym equipment. Baselines use reference-centered indexes with no upper ceiling; supported age/sex references and provisional anchors are explicitly distinguished.
 - JRPG expeditions have five regions, 15 ordered encounters, bosses, and individual party turns. Your character can bring two of four recruitable companions. Commands include attacks, guard, class signatures, equipped skills, potions, and ether.
 - Combat includes armor piercing, multi-hit and area attacks, stun, taunt, counters, party barriers, healing, MP recovery, coordinated attacks, and burning. Victories grant combat gold and supplies, encounter access, and recruitment; they never grant real-world XP or base attributes.
 - Eleven gear items, a supply shop, saved battle state, character backup sharing, validated restore, Journey, archived notes, and completion history remain available.
@@ -104,7 +114,7 @@ The APK works locally without any cloud setup. Google sign-in and cloud backup *
 4. Copy `.env.example` to `.env.local` and fill in the four public Firebase fields. Set `VITE_GOOGLE_WEB_CLIENT_ID` to the OAuth client of type **Web application** from the same project. Never put service-account credentials or private keys in this client app. Vite embeds these public settings at build time.
 5. For Android, create an OAuth client of type **Android** with package **`com.theguild.personal`** and the SHA-1 fingerprint of the key signing your APK. Use `cd android && ./gradlew signingReport` to inspect fingerprints. A release signing key needs its own registered Android client. Do not use the Android client ID for `VITE_GOOGLE_WEB_CLIENT_ID`.
 6. Run `npm run android:build` again and install the rebuilt APK on a device with Google Play services and a Google account. Native authentication uses the Google-only Capgo Social Login plugin and exchanges the Google ID token for a Firebase session. This approach does not require a service-account key or `google-services.json`.
-7. Open **Guild settings → Continue with Google**. Upload a character, then test **Restore cloud copy**. Each Firebase UID has its own private character document at `characters/{uid}`. Restore requires confirmation before replacing local progress.
+7. Open **Settings → Account & data → Account & backups → Continue with Google**. Upload a character, then test **Restore cloud copy**. Each Firebase UID has its own private character document at `characters/{uid}`. Restore requires confirmation before replacing local progress.
 
 Deploy rules before relying on cloud storage. Firebase console setup, OAuth registration, Firestore deployment, and end-to-end Google login require access to your Firebase/Google project and are not performed by local builds.
 
@@ -139,7 +149,11 @@ The current project has progression, combat, and browser workflow tests plus a c
 - `src/rpg.ts`, `src/AdventureGame.tsx`, `src/BattleSprite.tsx`: persistent combat engine, world/party/shop interface, and sprite art.
 - `src/storage.ts`: local persistence and backup validation.
 - `src/Onboarding.tsx`: guild application and baseline assessment.
-- `src/screens.tsx`: guild card, objectives, classes, skills, adventure, and journal.
+- `src/screens.tsx`: guild card, objectives, classes, and skills.
+- `src/metrics.ts`, `src/AssessmentForm.tsx`: reference models, assessment protocols, and original mental checks.
+- `src/task-ranks.ts`, `src/training-tasks.ts`: ranked catalog, work requirements, and recovery.
+- `src/Settings.tsx`, `src/preferences.ts`: persisted display/training preferences and performance checks.
+- `src/Journey.tsx`, `src/journey-events.ts`: automatic history and reports.
 - `src/App.tsx`: navigation, persistence, dialogs, backup flows, native sharing/back button.
 - `src/auth.ts`: Google/Firebase authentication and owner-scoped cloud snapshots.
 - `android/`: native Android shell and build configuration.

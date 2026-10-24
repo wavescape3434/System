@@ -9,7 +9,7 @@ import {
   characterRank,
   level,
   adventurerXP,
-  period,
+  objectivePeriod,
 } from "./domain";
 import { VOCATIONS } from "./careers";
 import { campaign, ENCOUNTERS, COMPANIONS, EQUIPMENT } from "./rpg";
@@ -201,7 +201,7 @@ export function recordJourney(
     );
   for (const r of (previous.takenRequests || []).filter(
     (r) =>
-      r.takenPeriod === period(r.cadence, now) &&
+      r.takenPeriod === objectivePeriod(r, now) &&
       !(next.takenRequests || []).some((n) => n.id === r.id),
   ))
     add("request", `${r.title} released`, r.category, undefined, r.id);

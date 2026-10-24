@@ -7,6 +7,39 @@ async function takeOpen(page: import("@playwright/test").Page) {
   const take = page.getByRole("button", { name: "Take request", exact: true });
   if (await take.isVisible()) await take.click();
 }
+async function enterClass(page: import("@playwright/test").Page, name: string) {
+  await page
+    .getByRole("button", { name: "Inspect " + name, exact: true })
+    .click();
+  const trial = page.getByRole("button", {
+    name: "Open entry trial",
+    exact: true,
+  });
+  if (await trial.isVisible()) {
+    await trial.click();
+    await takeOpen(page);
+    for (const item of await page.locator(".checklist button").all())
+      await item.click();
+    await page
+      .getByRole("button", { name: "I completed this objective", exact: true })
+      .click();
+    await page
+      .getByRole("button", { name: "Inspect " + name, exact: true })
+      .click();
+  }
+  await page
+    .getByRole("button", { name: "Choose " + name, exact: true })
+    .click();
+}
+async function account(page: import("@playwright/test").Page) {
+  await page.getByRole("button", { name: "Settings", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Account & data", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Account & backups", exact: true })
+    .click();
+}
 test("onboarding supports an untested beginner and persists the F-rank character", async ({
   page,
 }) => {
@@ -32,44 +65,56 @@ test("objectives cannot award twice and the reward survives reload", async ({
   page,
 }) => {
   await sample(page);
-  await page.getByRole("button", { name: /Strength session/ }).click();
+  await page.getByRole("button", { name: /Warrior commission/ }).click();
   await takeOpen(page);
   await page
     .getByRole("button", { name: "I completed this objective" })
     .click();
-  await page.getByRole("button", { name: /Strength session/ }).click();
+  await page
+    .getByRole("button", { name: "Objectives", exact: true })
+    .first()
+    .click();
+  await page
+    .getByRole("button", { name: "View Warrior commission", exact: true })
+    .click();
   await expect(
     page.getByRole("button", { name: "Already completed this period" }),
   ).toBeDisabled();
   await page.getByRole("button", { name: "Close dialog" }).click();
   await page.reload();
   await expect(page.locator(".engraved-experience>b")).toHaveText(
-    "30 / 288 XP",
+    "60 / 288 XP",
   );
 });
 test("class changes update objectives and keep the previous class record", async ({
   page,
 }) => {
   await sample(page);
-  await page.getByRole("button", { name: /Strength session/ }).click();
+  await page.getByRole("button", { name: /Warrior commission/ }).click();
   await takeOpen(page);
   await page
     .getByRole("button", { name: "I completed this objective" })
     .click();
   await page.getByRole("button", { name: "Class Paths", exact: true }).click();
-  await page.getByRole("button", { name: "Inspect Bard", exact: true }).click();
-  await page.getByRole("button", { name: "Choose Bard", exact: true }).click();
+  await enterClass(page, "Bard");
   await page.getByRole("button", { name: "Your class record" }).click();
   await expect(
     page.getByRole("heading", { name: "Warrior", exact: true }),
   ).toBeVisible();
-  await expect(page.getByText("Level 1 · Novice · 30 XP earned")).toBeVisible();
+  await expect(
+    page
+      .locator(".class-record")
+      .filter({
+        has: page.getByRole("heading", { name: "Warrior", exact: true }),
+      })
+      .getByText("Level 1 · Novice · 60 XP earned"),
+  ).toBeVisible();
   await page
     .getByRole("button", { name: "Objectives", exact: true })
     .first()
     .click();
   await expect(
-    page.getByRole("heading", { name: "Conversation practice" }),
+    page.getByRole("heading", { name: "Bard commission" }),
   ).toBeVisible();
 });
 test("CCNA unlocks its milestone and appears in the automatic Journey", async ({
@@ -158,16 +203,14 @@ test("monthly objectives require every milestone before claiming", async ({
   await claim.click();
   await page.getByRole("button", { name: "Guild Card", exact: true }).click();
   await expect(page.locator(".engraved-experience>b")).toHaveText(
-    "112 / 362 XP",
+    "62 / 362 XP",
   );
 });
 test("character backups export and restore after explicit confirmation", async ({
   page,
 }) => {
   await sample(page);
-  await page
-    .getByRole("button", { name: "Guild settings", exact: true })
-    .click();
+  await account(page);
   const downloadPromise = page.waitForEvent("download");
   await page
     .getByRole("button", { name: "Export character", exact: true })
@@ -199,10 +242,12 @@ test("weighted baseline opens eligible strength paths", async ({ page }) => {
   await page.getByRole("button", { name: "Register character" }).click();
   await page.getByLabel("Adventurer name").fill("Ari");
   await page.getByRole("button", { name: "Continue to assessment" }).click();
-  await page.getByRole("button", { name: "With weights", exact: true }).click();
-  await page.getByLabel("Squat working weight (kg)").fill("50");
-  await page.getByLabel("Repetitions in that set").fill("8");
-  await page.getByLabel("Body weight (kg)").fill("70");
+  await page
+    .getByLabel("Strength assessment", { exact: true })
+    .selectOption("weighted");
+  await page.getByLabel("Bench press load (kg)").fill("50");
+  await page.getByLabel("Repetitions in the set (reps)").fill("8");
+  await page.getByLabel("Body mass (kg)").fill("70");
   await page.getByRole("button", { name: "Review starting classes" }).click();
   await page
     .getByRole("button", { name: "Inspect Warrior", exact: true })
@@ -270,6 +315,7 @@ test("phone navigation fits and all main screens render without page errors", as
     "Adventures",
     "Journey",
     "Help",
+    "Settings",
     "Guild Card",
   ]) {
     await page.getByRole("button", { name: "Open navigation" }).click();
@@ -310,7 +356,9 @@ test("assessment fields clear without a forced zero and show time units", async 
     .getByLabel("Your profession", { exact: true })
     .selectOption("Network Engineer");
   await page.getByRole("button", { name: "Continue to assessment" }).click();
-  const input = page.getByLabel("Pushups (repetitions)", { exact: false });
+  const input = page.getByLabel("Controlled pushups (repetitions)", {
+    exact: false,
+  });
   await expect(input).toHaveValue("");
   await input.fill("0");
   await input.fill("");
@@ -318,13 +366,14 @@ test("assessment fields clear without a forced zero and show time units", async 
   await input.pressSequentially("12");
   await expect(input).toHaveValue("12");
   await expect(
-    page.getByLabel("Walking duration (minutes)", { exact: false }),
+    page.getByLabel("Distance walked in 6 minutes (metres)", { exact: false }),
   ).toBeVisible();
   await expect(
-    page.getByLabel("Balance duration (seconds)", { exact: false }),
+    page.getByLabel("One-leg balance, eyes open (seconds)", { exact: false }),
   ).toBeVisible();
+  await page.getByRole("button", { name: "INT", exact: true }).click();
   await expect(
-    page.getByLabel("Reading / study (minutes per week)", { exact: false }),
+    page.getByRole("button", { name: "Start INT check", exact: true }),
   ).toBeVisible();
 });
 test("class skill purchases require multiple points and locked sections block skills", async ({
@@ -342,7 +391,7 @@ test("class skill purchases require multiple points and locked sections block sk
       stat: "STR",
       classId: "warrior",
       scope: "class",
-      title: "Strength session",
+      title: "Warrior commission",
     }));
     localStorage.setItem(key, JSON.stringify(c));
   });
@@ -351,7 +400,7 @@ test("class skill purchases require multiple points and locked sections block sk
     .getByRole("button", { name: "Objectives", exact: true })
     .first()
     .click();
-  for (const title of ["Strength session", "Warrior technique"]) {
+  for (const title of ["Warrior commission"]) {
     await page
       .getByRole("button")
       .filter({ has: page.getByRole("heading", { name: title, exact: true }) })
@@ -417,9 +466,13 @@ test("class comparison exposes real goals and vocation remains independent", asy
   await expect(
     dialog.getByRole("heading", { name: "Prayer of Restoration", exact: true }),
   ).toBeVisible();
+  await expect(
+    dialog.getByRole("button", { name: "Requirements not met", exact: true }),
+  ).toBeDisabled();
   await dialog
-    .getByRole("button", { name: "Choose Disciple", exact: true })
+    .getByRole("button", { name: "Close dialog", exact: true })
     .click();
+  await enterClass(page, "Disciple");
   await expect(page.locator(".class-current-banner")).toContainText("Disciple");
   await page.getByRole("button", { name: "Vocation", exact: true }).click();
   await expect(
@@ -485,19 +538,18 @@ test("Taken requests persist and keep their original class credit after a class 
     .first()
     .click();
   await page
-    .getByRole("button", { name: "Take Strength session", exact: true })
+    .getByRole("button", { name: "Take Warrior commission", exact: true })
     .click();
   await page
     .locator(".request-view-tabs")
     .getByRole("button", { name: /^Taken/ })
     .click();
   await expect(
-    page.getByRole("button", { name: "View Strength session", exact: true }),
+    page.getByRole("button", { name: "View Warrior commission", exact: true }),
   ).toBeVisible();
   await page.reload();
   await page.getByRole("button", { name: "Class Paths", exact: true }).click();
-  await page.getByRole("button", { name: "Inspect Bard", exact: true }).click();
-  await page.getByRole("button", { name: "Choose Bard", exact: true }).click();
+  await enterClass(page, "Bard");
   await page
     .getByRole("button", { name: "Objectives", exact: true })
     .first()
@@ -507,7 +559,7 @@ test("Taken requests persist and keep their original class credit after a class 
     .getByRole("button", { name: /^Taken/ })
     .click();
   await page
-    .getByRole("button", { name: "View Strength session", exact: true })
+    .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
   await page
     .getByRole("button", { name: "I completed this objective", exact: true })
@@ -516,14 +568,18 @@ test("Taken requests persist and keep their original class credit after a class 
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
   );
   expect(c.activeClass).toBe("bard");
-  expect(c.completions[0].classId).toBe("warrior");
-  expect(c.completions[0].xp).toBe(30);
+  expect(
+    c.completions.find((o: { id: string }) => o.id === "warrior-daily").classId,
+  ).toBe("warrior");
+  expect(
+    c.completions.find((o: { id: string }) => o.id === "warrior-daily").xp,
+  ).toBe(60);
   await page
     .getByRole("button", { name: "Journey", exact: true })
     .first()
     .click();
   await expect(
-    page.getByRole("heading", { name: "Strength session", exact: true }),
+    page.getByRole("heading", { name: "Warrior commission", exact: true }),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Bard selected", exact: true }),
@@ -535,7 +591,7 @@ test("recurring requests return as suggestions and require another manual accept
 }) => {
   await page.clock.install({ time: new Date("2026-10-20T12:00:00Z") });
   await sample(page);
-  await page.getByRole("button", { name: /Strength session/ }).click();
+  await page.getByRole("button", { name: /Warrior commission/ }).click();
   await takeOpen(page);
   await page
     .getByRole("button", { name: "I completed this objective", exact: true })
@@ -555,10 +611,10 @@ test("recurring requests return as suggestions and require another manual accept
   ).toBeVisible();
   await page.getByRole("button", { name: /^Suggested/ }).click();
   await expect(
-    page.getByRole("button", { name: "Take Strength session", exact: true }),
+    page.getByRole("button", { name: "Take Warrior commission", exact: true }),
   ).toBeVisible();
   await page
-    .getByRole("button", { name: "View Strength session", exact: true })
+    .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
   await expect(
     page.getByRole("button", {
@@ -576,7 +632,7 @@ test("recurring requests return as suggestions and require another manual accept
   expect(c.completions).toHaveLength(2);
   expect(
     c.completions.reduce((n: number, o: { xp: number }) => n + o.xp, 0),
-  ).toBe(60);
+  ).toBe(120);
 });
 
 test("Journey reports show saved activity, interactive data, and archived notes on a phone", async ({
@@ -601,7 +657,7 @@ test("Journey reports show saved activity, interactive data, and archived notes 
         stat: "STR",
         classId: "warrior",
         scope: "class",
-        title: "Strength session",
+        title: "Warrior commission",
       };
     });
     c.journal = [
@@ -644,7 +700,7 @@ test("Journey reports show saved activity, interactive data, and archived notes 
   ).toBe(true);
   await page.locator(".calendar-days button").last().click();
   await expect(
-    page.getByRole("heading", { name: "Strength session", exact: true }),
+    page.getByRole("heading", { name: "Warrior commission", exact: true }),
   ).toHaveCount(1);
 });
 
@@ -669,4 +725,149 @@ test("Help is searchable from registration and normal page headings have no expl
   await expect(
     page.getByRole("heading", { name: "Recurring requests", exact: true }),
   ).toBeVisible();
+});
+
+test("mental checks save actual answers, distinguish unknown from zero, and persist on the character", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Register character", exact: true })
+    .click();
+  await page.getByLabel("Adventurer name", { exact: true }).fill("Mara");
+  await page
+    .getByRole("button", { name: "Continue to assessment", exact: true })
+    .click();
+  await page
+    .getByLabel("Controlled pushups (repetitions)", { exact: true })
+    .fill("0");
+  const answers = {
+    INT: [1, 2, 0, 3, 1],
+    WIS: [2, 0, 1, 3, 1],
+    CHA: [1, 2, 0, 3, 2],
+  };
+  for (const stat of ["INT", "WIS", "CHA"] as const) {
+    await page.getByRole("button", { name: stat, exact: true }).click();
+    await page
+      .getByRole("button", { name: `Start ${stat} check`, exact: true })
+      .click();
+    for (let i = 0; i < 5; i++) {
+      await page.locator(".check-options button").nth(answers[stat][i]).click();
+      await page
+        .getByRole("button", {
+          name: i < 4 ? "Next question" : `Finish ${stat} check`,
+          exact: true,
+        })
+        .click();
+    }
+    await expect(page.getByRole("heading", { name: /5\/5/ })).toBeVisible();
+  }
+  await page.getByRole("button", { name: "Results", exact: true }).click();
+  await expect(
+    page
+      .locator(".assessment-results section")
+      .filter({ has: page.locator("b", { hasText: "STR" }) })
+      .locator("strong"),
+  ).toHaveText("1");
+  await expect(
+    page
+      .locator(".assessment-results section")
+      .filter({ has: page.locator("b", { hasText: "DEX" }) })
+      .locator("strong"),
+  ).toHaveText("10");
+  await page
+    .getByRole("button", { name: "Review starting classes", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Create character", exact: true })
+    .click();
+  await page.reload();
+  const c = await page.evaluate(() =>
+    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  );
+  expect(c.baseStats.STR).toBe(1);
+  expect(c.baseStats.INT).toBe(17);
+  expect(Object.keys(c.baseline.assessment.mental)).toHaveLength(3);
+});
+
+test("settings persist display, units, equipment, opening screen, and separate a performance check from earned stats", async ({
+  page,
+}) => {
+  await sample(page);
+  await page.getByRole("button", { name: "Settings", exact: true }).click();
+  await page
+    .getByLabel("Measurement units", { exact: true })
+    .selectOption("imperial");
+  await page.getByLabel("Text size", { exact: true }).selectOption("large");
+  await page.getByLabel("Reduce motion", { exact: true }).check();
+  await page
+    .getByLabel("Open app to", { exact: true })
+    .selectOption("objectives");
+  await page.getByRole("button", { name: "Training", exact: true }).click();
+  await page.getByLabel("Pull-up bar", { exact: true }).check();
+  await page.getByRole("button", { name: "Assessment", exact: true }).click();
+  await expect(page.getByLabel("Body mass (lb)", { exact: true })).toHaveValue(
+    "165.3",
+  );
+  await page
+    .getByLabel("Controlled pushups (repetitions)", { exact: true })
+    .fill("40");
+  await page
+    .getByRole("button", { name: "Save performance check", exact: true })
+    .click();
+  const before = await page.evaluate(() =>
+    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  );
+  expect(before.baseStats.STR).toBe(10);
+  expect(before.baseline.assessment.pushups).toBe(40);
+  expect(before.assessmentHistory.at(-1).assessment.pushups).toBe(40);
+  await page.reload();
+  await expect(
+    page.getByRole("heading", { name: "Guild Requests", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("data-text-size", "large");
+  await expect(page.locator("html")).toHaveAttribute("data-motion", "reduced");
+  await page.getByRole("button", { name: "Settings", exact: true }).click();
+  await expect(
+    page.getByLabel("Measurement units", { exact: true }),
+  ).toHaveValue("imperial");
+  await page.getByRole("button", { name: "Training", exact: true }).click();
+  await expect(page.getByLabel("Pull-up bar", { exact: true })).toBeChecked();
+});
+
+test("ranked board prices demanding work higher and hides irrelevant technical categories", async ({
+  page,
+}) => {
+  await sample(page);
+  await page
+    .getByRole("button", { name: "Objectives", exact: true })
+    .first()
+    .click();
+  const push = page.locator(".guild-request-paper").filter({
+    has: page.getByRole("heading", {
+      name: "Floor pushups · 3 × 20",
+      exact: true,
+    }),
+  });
+  const pull = page.locator(".guild-request-paper").filter({
+    has: page.getByRole("heading", { name: "Pullups · 5 × 20", exact: true }),
+  });
+  await expect(push).toContainText("150");
+  await expect(pull).toContainText("1800");
+  await expect(
+    pull.getByRole("button", { name: "Take Pullups · 5 × 20", exact: true }),
+  ).toBeDisabled();
+  const categories = await page
+    .getByLabel("Objective category")
+    .locator("option")
+    .allTextContents();
+  expect(categories).not.toContain("Networking");
+  expect(categories).not.toContain("Data Analysis");
+  await page.getByLabel("Request rank", { exact: true }).selectOption("S");
+  await expect(
+    page.getByRole("heading", { name: "Pullups · 5 × 20", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Wall pushups · 2 × 5", exact: true }),
+  ).toHaveCount(0);
 });

@@ -1,3 +1,5 @@
+import { TASK_RANKS } from "./task-ranks";
+import { validAssessment } from "./metrics";
 import { VOCATIONS, CAREER_CATEGORIES } from "./careers";
 import { ENCOUNTERS, COMPANIONS, EQUIPMENT } from "./rpg";
 import type { Character } from "./domain";
@@ -8,7 +10,8 @@ import {
   SKILLS,
   upgradeProgression,
   resolveTakenRequest,
-  period,
+  objectivePeriod,
+  upgradeTraining,
 } from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
 const finite = (x: unknown) =>
@@ -39,6 +42,30 @@ export function validateCharacter(x: unknown): x is Character {
         (Array.isArray(c.unlockedClasses) &&
           c.unlockedClasses.every((id) => CLASSES.some((p) => p.id === id)))) &&
       (c.progressionVersion === undefined || c.progressionVersion === 2) &&
+      (c.trainingVersion === undefined || c.trainingVersion === 3) &&
+      (c.baseline?.assessment === undefined ||
+        validAssessment(c.baseline.assessment)) &&
+      (c.assessmentHistory === undefined ||
+        (Array.isArray(c.assessmentHistory) &&
+          c.assessmentHistory.every(
+            (h) =>
+              date(h.at) &&
+              validAssessment(h.assessment) &&
+              ATTRIBUTES.every((a) => finite(h.stats?.[a]) && h.stats[a] >= 1),
+          ))) &&
+      (c.preferences === undefined || validPreferences(c.preferences)) &&
+      (c.classEntries === undefined ||
+        (!!c.classEntries &&
+          typeof c.classEntries === "object" &&
+          Object.entries(c.classEntries).every(
+            ([id, e]) =>
+              CLASSES.some((p) => p.id === id) &&
+              date(e.at) &&
+              finite(e.credit),
+          ))) &&
+      (c.trainingLegacy === undefined ||
+        (validTrainingLegacy(c.trainingLegacy) &&
+          c.trainingLegacy.count <= c.completions.length)) &&
       (c.legacyProgress === undefined || validLegacy(c.legacyProgress)) &&
       (c.startingRank === undefined ||
         ["F", "E", "D"].includes(c.startingRank)) &&
@@ -63,7 +90,7 @@ export function validateCharacter(x: unknown): x is Character {
             (r) =>
               date(r.takenAt) &&
               str(r.takenPeriod) &&
-              r.takenPeriod === period(r.cadence, new Date(r.takenAt)) &&
+              r.takenPeriod === objectivePeriod(r, new Date(r.takenAt)) &&
               str(r.title) &&
               str(r.category) &&
               ["daily", "weekly", "monthly"].includes(r.cadence) &&
@@ -101,10 +128,7 @@ export function validateCharacter(x: unknown): x is Character {
               (e.subject === undefined || str(e.subject)),
           ))) &&
       !!c.baseStats &&
-      ATTRIBUTES.every(
-        (a) =>
-          finite(c.baseStats[a]) && c.baseStats[a] >= 3 && c.baseStats[a] <= 30,
-      ) &&
+      ATTRIBUTES.every((a) => finite(c.baseStats[a]) && c.baseStats[a] >= 1) &&
       !!c.baseline &&
       ["bodyweight", "weights"].includes(c.baseline.mode) &&
       [
@@ -129,7 +153,31 @@ export function validateCharacter(x: unknown): x is Character {
           str(o.period) &&
           date(o.at) &&
           finite(o.xp) &&
-          o.xp <= 400 &&
+          o.xp <= 10000 &&
+          (o.rank === undefined || TASK_RANKS.includes(o.rank)) &&
+          (o.classCredits === undefined ||
+            (typeof o.classCredits === "object" &&
+              Object.entries(o.classCredits).every(
+                ([id, xp]) =>
+                  CLASSES.some((p) => p.id === id) && finite(xp) && xp <= o.xp,
+              ))) &&
+          (o.professionCredit === undefined ||
+            (str(o.professionCredit.name) &&
+              CAREER_CATEGORIES.some(
+                (g) => g.id === o.professionCredit!.category,
+              ) &&
+              finite(o.professionCredit.xp) &&
+              o.professionCredit.xp <= o.xp)) &&
+          (o.vocationCredit === undefined ||
+            (VOCATIONS.some(
+              (v) =>
+                v.id === o.vocationCredit!.id &&
+                v.category === o.vocationCredit!.category,
+            ) &&
+              finite(o.vocationCredit.xp) &&
+              o.vocationCredit.xp <= o.xp)) &&
+          (o.trialClass === undefined ||
+            CLASSES.some((p) => p.id === o.trialClass)) &&
           (o.profession === undefined || str(o.profession)) &&
           (o.careerCategory === undefined ||
             CAREER_CATEGORIES.some((g) => g.id === o.careerCategory)) &&
@@ -143,7 +191,7 @@ export function validateCharacter(x: unknown): x is Character {
             (ATTRIBUTES.includes(o.statReward.stat) &&
               Number.isInteger(o.statReward.amount) &&
               o.statReward.amount >= 0 &&
-              o.statReward.amount <= 3)) &&
+              o.statReward.amount <= 6)) &&
           ATTRIBUTES.includes(o.stat) &&
           CLASSES.some((p) => p.id === o.classId),
       ) &&
@@ -187,7 +235,7 @@ export function loadCharacter(): Character | null {
     throw new Error(
       "Your saved character needs attention. Export or restore a valid backup; your existing data has been kept.",
     );
-  return upgradeProgression(parsed);
+  return upgradeTraining(upgradeProgression(parsed));
 }
 export const saveCharacter = (c: Character) =>
   localStorage.setItem(STORAGE_KEY, JSON.stringify(c));
@@ -298,6 +346,39 @@ function validLegacy(p: NonNullable<Character["legacyProgress"]>) {
     Object.keys(p.classes).every((id) => CLASSES.some((c) => c.id === id)) &&
     Object.keys(p.stats).every((a) =>
       ATTRIBUTES.includes(a as (typeof ATTRIBUTES)[number]),
+    )
+  );
+}
+
+function validPreferences(p: NonNullable<Character["preferences"]>) {
+  return (
+    !!p &&
+    ["metric", "imperial"].includes(p.units) &&
+    ["standard", "large"].includes(p.textSize) &&
+    typeof p.reduceMotion === "boolean" &&
+    typeof p.showLockedRequests === "boolean" &&
+    ["guild", "objectives", "journey"].includes(p.defaultPage) &&
+    Array.isArray(p.equipment) &&
+    p.equipment.every((s) =>
+      ["bodyweight", "pullup-bar", "weights"].includes(s),
+    )
+  );
+}
+function validTrainingLegacy(p: NonNullable<Character["trainingLegacy"]>) {
+  return (
+    !!p &&
+    Number.isInteger(p.count) &&
+    p.count >= 0 &&
+    !!p.earnedStats &&
+    ATTRIBUTES.every((a) => finite(p.earnedStats[a])) &&
+    !!p.classLevels &&
+    Object.entries(p.classLevels).every(
+      ([id, lv]) =>
+        CLASSES.some((p) => p.id === id) && Number.isInteger(lv) && lv >= 1,
+    ) &&
+    !!p.professionLevels &&
+    Object.values(p.professionLevels).every(
+      (lv) => Number.isInteger(lv) && lv >= 1,
     )
   );
 }

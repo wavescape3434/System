@@ -1,7 +1,9 @@
+import { TASK_RANKS, TASK_NAMES } from "./task-ranks";
+import { assessmentResults } from "./metrics";
 import ClassBrowser from "./ClassBrowser";
 import VocationPanel from "./VocationPanel";
 import GuildCard from "./GuildCard";
-import { levelProgress } from "./progression";
+
 import AdventureGame from "./AdventureGame";
 import SkillTree from "./SkillTree";
 import ProfessionPicker from "./ProfessionPicker";
@@ -32,6 +34,7 @@ import {
   professionXP,
   professionStat,
   classLevel,
+  classProgress,
   classXP,
   classRank,
   objectives,
@@ -43,6 +46,7 @@ import {
   activity,
   switchClass,
   hasSkill,
+  taskRequirements,
 } from "./domain";
 import { Icon, Progress, StatRadar, Tag, Empty, STAT_NAMES } from "./ui";
 export type Page =
@@ -52,7 +56,8 @@ export type Page =
   | "skills"
   | "adventures"
   | "journey"
-  | "help";
+  | "help"
+  | "settings";
 interface ScreenProps {
   c: Character;
   update: (c: Character) => boolean;
@@ -114,7 +119,13 @@ function Attributes({ s }: { s: Stats }) {
 export function Guild({ c, navigate, openObjective }: ScreenProps) {
   const xp = totalXP(c),
     s = stats(c),
-    dailies = objectives(c).filter((o) => o.cadence === "daily"),
+    offers = objectives(c).filter(
+      (o) =>
+        o.cadence === "daily" &&
+        o.kind !== "class-trial" &&
+        !taskRequirements(c, o).length,
+    ),
+    dailies = takenObjectives(c).filter((o) => o.cadence === "daily"),
     done = dailies.filter((o) => isComplete(c, o)).length,
     week = activity(c),
     nextRank = RANKS.find((r) => r.xp > rankXP(c));
@@ -158,9 +169,9 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
           <span>
             <b>
               {done}
-              <small> / {dailies.length}</small>
+              {dailies.length > 0 && <small> / {dailies.length}</small>}
             </b>
-            <small>Daily objectives</small>
+            <small>Taken today</small>
           </span>
         </div>
         <div>
@@ -196,7 +207,7 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
           <div className="section-heading">
             <div>
               <span className="eyebrow">DAILY TASKS</span>
-              <h3>Daily objectives</h3>
+              <h3>{dailies.length ? "Taken today" : "Available requests"}</h3>
             </div>
             <button
               className="text-button"
@@ -206,18 +217,35 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
             </button>
           </div>
           <div className="objective-list">
-            {dailies.slice(0, 3).map((o) => (
-              <ObjectiveRow
-                key={o.id}
-                o={o}
-                c={c}
-                onClick={() => openObjective(o)}
-              />
-            ))}
+            {[
+              ...takenObjectives(c).filter(
+                (o) => o.cadence === "daily" && !isComplete(c, o),
+              ),
+              ...offers.filter((o) => o.scope === "class"),
+              ...offers.filter((o) => o.scope === "profession"),
+              ...offers,
+            ]
+              .filter(
+                (o, i, list) =>
+                  list.findIndex(
+                    (x) => (x.family || x.id) === (o.family || o.id),
+                  ) === i,
+              )
+              .slice(0, 3)
+              .map((o) => (
+                <ObjectiveRow
+                  key={o.id}
+                  o={o}
+                  c={c}
+                  onClick={() => openObjective(o)}
+                />
+              ))}
           </div>
           <div className="daily-footer">
             <span>
-              {done} of {dailies.length} complete
+              {dailies.length
+                ? `${done} of ${dailies.length} taken requests complete`
+                : "No requests taken today"}
             </span>
           </div>
         </section>
@@ -311,19 +339,26 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
 export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
   const [view, setView] = useState("board"),
     [tab, setTab] = useState<Cadence>("daily"),
-    [filter, setFilter] = useState("all");
-  const board = objectives(c),
-    taken = takenObjectives(c);
+    [filter, setFilter] = useState("all"),
+    [difficulty, setDifficulty] = useState("all");
+  const taken = takenObjectives(c),
+    board = objectives(c).map((o) => taken.find((t) => t.id === o.id) || o);
   const suggestions = suggestedObjectives(c);
   const source =
     view === "taken" ? taken : view === "suggested" ? suggestions : board;
   const list = source.filter(
     (o) =>
       o.cadence === tab &&
+      (filter === "trials"
+        ? o.kind === "class-trial"
+        : o.kind !== "class-trial") &&
+      (difficulty === "all" || o.rank === difficulty) &&
+      (c.preferences?.showLockedRequests !== false ||
+        taskRequirements(c, o).length === 0 ||
+        isTaken(c, o)) &&
       (filter === "all" ||
         (filter === "vocation" && o.id.startsWith("vocation-")) ||
-        (filter === "networking" && o.category === "Networking") ||
-        (filter === "analysis" && o.category === "Data Analysis") ||
+        (filter === "trials" && o.kind === "class-trial") ||
         o.scope === filter),
   );
   return (
@@ -376,8 +411,22 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
           <option value="vocation">Vocation</option>
           <option value="profession">Profession & technical practice</option>
           <option value="universal">Universal</option>
-          <option value="networking">Networking</option>
-          <option value="analysis">Data Analysis</option>
+          <option value="trials">Class trials</option>
+        </select>
+      </label>
+      <label className="objective-filter">
+        Rank
+        <select
+          aria-label="Request rank"
+          value={difficulty}
+          onChange={(e) => setDifficulty(e.target.value)}
+        >
+          <option value="all">F–SSS · All ranks</option>
+          {TASK_RANKS.map((rank) => (
+            <option value={rank} key={rank}>
+              {rank} · {TASK_NAMES[rank]}
+            </option>
+          ))}
         </select>
       </label>
       <div className="section-heading page-section-heading">
@@ -430,6 +479,11 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
                   <span className={`objective-icon ${o.stat.toLowerCase()}`}>
                     <Icon name={o.stat} size={24} />
                   </span>
+                  {o.rank && (
+                    <Tag tone={`rank-${o.rank.toLowerCase()}`}>
+                      {o.rank} rank
+                    </Tag>
+                  )}
                   <Tag tone={isComplete(c, o) ? "green" : "neutral"}>
                     {isComplete(c, o) ? "Completed" : o.category}
                   </Tag>
@@ -465,6 +519,14 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
                   </button>
                 ) : (
                   <button
+                    disabled={
+                      o.taskVersion === 2 && taskRequirements(c, o).length > 0
+                    }
+                    title={
+                      o.taskVersion === 2
+                        ? taskRequirements(c, o).join(" · ")
+                        : undefined
+                    }
                     aria-label={`Take ${o.title}`}
                     onClick={() => {
                       if (update(takeRequest(c, o.id)))
@@ -503,7 +565,7 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
     </>
   );
 }
-export function Paths({ c, update, notify }: ScreenProps) {
+export function Paths({ c, update, notify, openObjective }: ScreenProps) {
   const [view, setView] = useState("all");
   const p = currentPath(c);
   return (
@@ -545,6 +607,10 @@ export function Paths({ c, update, notify }: ScreenProps) {
         <ClassBrowser
           c={c}
           selected={c.activeClass}
+          onTrial={(id) => {
+            const trial = objectives(c).find((o) => o.targetClass === id);
+            if (trial) openObjective(trial);
+          }}
           onSelect={(id) => {
             if (update(switchClass(c, id)))
               notify(
@@ -560,9 +626,7 @@ export function Paths({ c, update, notify }: ScreenProps) {
           {CLASSES.filter(
             (p) => classXP(c, p.id) > 0 || p.id === c.activeClass,
           ).map((p) => {
-            const prog = levelProgress(
-              classXP(c, p.id) + (c.legacyProgress?.classes[p.id] || 0),
-            );
+            const prog = classProgress(c, p.id);
             return (
               <div className="class-record" key={p.id}>
                 <span className={`path-icon ${p.color}`}>
@@ -582,6 +646,11 @@ export function Paths({ c, update, notify }: ScreenProps) {
                     max={prog.needed}
                     label={`${p.name} next level`}
                   />
+                  {prog.waiting && (
+                    <small className="class-trial-status">
+                      Class commission required · XP retained
+                    </small>
+                  )}
                 </div>
               </div>
             );
@@ -639,6 +708,24 @@ export function Skills({
               <Attributes s={s} />
             </section>
           </div>
+          {c.baseline.assessment && (
+            <section className="panel performance-ledger">
+              <h3>Latest real-world check</h3>
+              {assessmentResults(c.baseline.assessment).map((r) => (
+                <div key={r.stat}>
+                  <b>{r.stat}</b>
+                  <span>{r.raw}</span>
+                  <Tag>
+                    {r.measured
+                      ? r.evidence === "published"
+                        ? "Published reference"
+                        : "Provisional reference"
+                      : "Unassessed"}
+                  </Tag>
+                </div>
+              ))}
+            </section>
+          )}
           <div className="stat-detail-grid">
             {ATTRIBUTES.map((a) => {
               const earned = s[a] - c.baseStats[a];

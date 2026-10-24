@@ -1,3 +1,5 @@
+import Settings from "./Settings";
+import { DEFAULT_PREFERENCES } from "./preferences";
 import Help from "./Help";
 import Journey from "./Journey";
 import { recordJourney } from "./journey-events";
@@ -37,7 +39,12 @@ import {
   totalXP,
   classLevel,
   awardSkills,
-  period,
+  objectivePeriod,
+  upgradeTraining,
+  taskRequirements,
+  classCreditRewards,
+  universalCareerCredits,
+  takenObjectives,
 } from "./domain";
 import {
   loadCharacter,
@@ -96,6 +103,7 @@ const PAGES = [
     icon: History,
     title: "Journey",
   },
+  { id: "settings", name: "Settings", title: "Settings", icon: Settings2 },
   { id: "help", name: "Help", title: "Help", icon: CircleHelp },
 ] as const;
 type Dialog = "account" | "certificate" | "reset" | null;
@@ -142,7 +150,9 @@ export default function App() {
   });
   const [c, setC] = useState<Character | null>(initial.character),
     [recovery, setRecovery] = useState(initial.error),
-    [page, setPage] = useState<Page>("guild"),
+    [page, setPage] = useState<Page>(
+      initial.character?.preferences?.defaultPage || "guild",
+    ),
     [dialog, setDialog] = useState<Dialog>(null),
     [objective, setObjective] = useState<Objective | null>(null),
     [checked, setChecked] = useState<number[]>([]),
@@ -152,6 +162,13 @@ export default function App() {
     [busy, setBusy] = useState(false),
     [cloudCandidate, setCloudCandidate] = useState<Character | null>(null),
     [importCandidate, setImportCandidate] = useState<Character | null>(null);
+  const preferences = { ...DEFAULT_PREFERENCES, ...c?.preferences };
+  useEffect(() => {
+    document.documentElement.dataset.textSize = preferences.textSize;
+    document.documentElement.dataset.motion = preferences.reduceMotion
+      ? "reduced"
+      : "full";
+  }, [preferences.textSize, preferences.reduceMotion]);
   const [, tick] = useState(0),
     inputRef = useRef<HTMLInputElement>(null),
     toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -191,7 +208,7 @@ export default function App() {
   const update = useCallback(
     (next: Character, track = true) => {
       try {
-        const prepared = awardSkills(next);
+        const prepared = awardSkills(upgradeTraining(next));
         const awarded = track
           ? recordJourney(characterRef.current, prepared)
           : prepared;
@@ -213,8 +230,11 @@ export default function App() {
     setMenu(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const openObjective = (o: Objective) => {
-    setChecked(c?.milestones[`${o.id}:${period(o.cadence)}`] || []);
+  const openObjective = (input: Objective) => {
+    const o = c
+      ? takenObjectives(c).find((o) => o.id === input.id) || input
+      : input;
+    setChecked(c?.milestones[`${o.id}:${objectivePeriod(o)}`] || []);
     setObjective(o);
   };
   const run = async (fn: () => Promise<void>) => {
@@ -326,9 +346,6 @@ export default function App() {
               ))}
             </nav>
             <div className="sidebar-bottom">
-              <button onClick={() => setDialog("account")}>
-                <Settings2 size={18} /> Guild settings
-              </button>
               <button
                 className="sidebar-profile"
                 onClick={() => setDialog("account")}
@@ -436,6 +453,13 @@ export default function App() {
                     <Adventures {...props} />
                   ) : page === "journey" ? (
                     <Journey c={c} />
+                  ) : page === "settings" ? (
+                    <Settings
+                      c={c}
+                      update={update}
+                      notify={notify}
+                      onAccount={() => setDialog("account")}
+                    />
                   ) : (
                     <Help navigate={navigate} />
                   )}
@@ -448,25 +472,25 @@ export default function App() {
             </main>
           </div>
           <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
-            {PAGES.filter((p) => p.id !== "paths" && p.id !== "help").map(
-              (p) => (
-                <button
-                  key={p.id}
-                  className={page === p.id ? "active" : ""}
-                  onClick={() => navigate(p.id)}
-                  aria-label={p.name}
-                >
-                  <p.icon size={20} />
-                  <span>
-                    {p.id === "guild"
-                      ? "Guild"
-                      : p.id === "skills"
-                        ? "Skills"
-                        : p.name}
-                  </span>
-                </button>
-              ),
-            )}
+            {PAGES.filter(
+              (p) => p.id !== "paths" && p.id !== "help" && p.id !== "settings",
+            ).map((p) => (
+              <button
+                key={p.id}
+                className={page === p.id ? "active" : ""}
+                onClick={() => navigate(p.id)}
+                aria-label={p.name}
+              >
+                <p.icon size={20} />
+                <span>
+                  {p.id === "guild"
+                    ? "Guild"
+                    : p.id === "skills"
+                      ? "Skills"
+                      : p.name}
+                </span>
+              </button>
+            ))}
           </nav>
         </div>
       )}
@@ -502,12 +526,64 @@ export default function App() {
         <Modal title={objective.title} onClose={close}>
           <div className="objective-modal-meta">
             <Tag>{objective.category}</Tag>
+            {objective.rank && <Tag tone="gold">{objective.rank} rank</Tag>}
             <Tag tone="gold">
               +{objective.xp} {objective.scope || "class"} XP
             </Tag>
             <span>{objective.minutes}</span>
           </div>
           <p>{objective.description}</p>
+          {objective.taskVersion === 2 && (
+            <div className="request-credit-preview">
+              <Tag>Player +{objective.xp} XP</Tag>
+              {Object.entries(
+                classCreditRewards(
+                  c,
+                  objective,
+                  objective.targetClass ||
+                    c.takenRequests?.find((r) => r.id === objective.id)
+                      ?.classId ||
+                    c.activeClass,
+                ),
+              ).map(([id, xp]) => (
+                <Tag key={id}>
+                  {id.replaceAll("-", " ")} +{xp} XP
+                </Tag>
+              ))}
+              {(() => {
+                const request = c.takenRequests?.find(
+                  (r) => r.id === objective.id,
+                );
+                const credit = universalCareerCredits(
+                  c,
+                  objective,
+                  request?.profession || c.profession,
+                  request ? request.vocationId : c.vocation,
+                );
+                return (
+                  <>
+                    {credit.professionCredit && (
+                      <Tag>
+                        {credit.professionCredit.name} +
+                        {credit.professionCredit.xp} XP
+                      </Tag>
+                    )}
+                    {credit.vocationCredit && (
+                      <Tag>Vocation +{credit.vocationCredit.xp} XP</Tag>
+                    )}
+                  </>
+                );
+              })()}
+            </div>
+          )}
+          {objective.taskVersion === 2 &&
+            taskRequirements(c, objective).length > 0 && (
+              <ul className="skill-requirements">
+                {taskRequirements(c, objective).map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+            )}
           {objective.statReward && (
             <div className="notice">
               Special reward: +{objective.statReward.amount} base{" "}
@@ -524,7 +600,7 @@ export default function App() {
                     ...c,
                     milestones: {
                       ...c.milestones,
-                      [`${objective.id}:${period(objective.cadence)}`]: items,
+                      [`${objective.id}:${objectivePeriod(objective)}`]: items,
                     },
                   })
                 )
@@ -535,6 +611,10 @@ export default function App() {
           {!isTaken(c, objective) && !isComplete(c, objective) && (
             <button
               className="button primary full"
+              disabled={
+                objective.taskVersion === 2 &&
+                taskRequirements(c, objective).length > 0
+              }
               onClick={() => {
                 if (update(takeRequest(c, objective.id)))
                   notify("Request taken.");
@@ -548,6 +628,8 @@ export default function App() {
             <button
               className="button primary full"
               disabled={
+                (objective.taskVersion === 2 &&
+                  taskRequirements(c, objective).length > 0) ||
                 isComplete(c, objective) ||
                 (!!objective.checklist &&
                   checked.length < objective.checklist.length)

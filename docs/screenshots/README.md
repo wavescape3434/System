@@ -1,10 +1,12 @@
-# The Guild 1.3.0 — screenshots
+# The Guild 1.4.0 — screenshots
 
 All previews use the sample character. Journey previews include illustrative sample activity. Open an image to view it at full size.
 
 | Guild Card                                                                                                | Request board                                                                                                          | Party battle                                                                                                        |
 | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | [<img src="guild-android.png" width="250" alt="Engraved brass adventurer guild card">](guild-android.png) | [<img src="objectives-android.png" width="250" alt="Guild requests pinned to a timber board">](objectives-android.png) | [<img src="battle-android.png" width="250" alt="Turn-based battle with class signature skill">](battle-android.png) |
+
+[Settings](settings.png) · [Settings on Android](settings-android.png) · [Large text on Android](settings-large-android.png) · [Assessment](assessment.png) · [Assessment results](assessment-results.png) · [Ranked requests](ranked-requests.png)
 
 [Journey reports](journey-reports.png) · [Journey chronicle](journey-timeline.png) · [Journey on Android](journey-android.png) · [Taken requests](taken-requests.png) · [Help](help.png)
 

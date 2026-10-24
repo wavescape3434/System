@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Search, ChevronRight } from "lucide-react";
+import { Search, ChevronRight, ExternalLink } from "lucide-react";
+import { METRIC_SOURCES } from "./metrics";
 import type { Page } from "./screens";
 const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
   {
@@ -20,7 +21,55 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Changing focus",
-        "A taken request keeps the class, profession, and vocation it had when accepted. Finish it from Taken to credit that original path. Its commitment expires when its daily, weekly, or monthly period ends.",
+        "A taken request keeps the class, profession, and vocation it had when accepted. Finish it from Taken to credit that original path. Its commitment expires when its daily, weekly, or monthly period ends. One-time class trials and long commitments remain in Taken until completed or released.",
+      ],
+    ],
+  },
+  {
+    title: "Assessment calibration",
+    page: "settings",
+    sections: [
+      [
+        "Reference level 10",
+        "A reference-level result maps to 10. Missing tests remain neutral at 10 and are labelled unassessed. Different characters can start above or below that reference; each account is not forced to total 60. Stats have no numeric ceiling.",
+      ],
+      [
+        "Published and provisional references",
+        "Grip strength uses published age/sex means for adults 20–90, with interpolation between five-year ages. Unassisted chair stands use a pooled mean for ages 18–35. Walking uses age/sex/height/mass equations where supported. These are sample-specific references, not universal averages. Pushups, bench estimates, balance, and the original mental checks use explicitly provisional game anchors.",
+      ],
+      [
+        "What the checks measure",
+        "Pushups and chair stands measure muscular endurance/function, a bench estimate measures a different aspect of strength, and one-leg stance measures static balance. INT checks learning and reasoning; WIS checks Scripture comprehension and practical judgment; CHA checks listening and communication choices. These brief checks are not global intelligence, spiritual, or personality tests.",
+      ],
+      [
+        "Rechecking progress",
+        "Save performance checks in Settings to compare actual results over time. Recalibrating starting stats is a separate confirmed action and retains earned training points. Repeating the same mental questions can improve familiarity; use real-world application and feedback to assess broader progress.",
+      ],
+    ],
+  },
+  {
+    title: "Task ranks & transfer",
+    page: "objectives",
+    sections: [
+      [
+        "Difficulty and rewards",
+        "Ranks F, E, D, C, B, A, S, SS and SSS award 10, 25, 60, 150, 350, 800, 1800, 4200 and 10000 player XP. These are game-design prices, not physiological conversion factors. SS and SSS commitments require many weeks, dated practice, and an independently assessed advanced or rare expert outcome. Time alone does not qualify.",
+      ],
+      [
+        "Universal training",
+        "Universal work awards its full player XP once. It gives a related active class 50% credit weighted by its focus and other unlocked related classes 25%. Relevant professions receive 25% credit. These credits do not add a second player XP reward.",
+      ],
+      [
+        "Class trials and mastery",
+        "An entry trial is required before activating a new class. It receives 25% of relevant prior training as transferable XP. The class begins at level 1, then class-specific commissions certify further levels. Stored XP cannot bypass the class-work requirement. Prior class progress is retained.",
+      ],
+      [
+        "Stat milestones",
+        "Every fifth class or profession level awards increasing game stat points: 2 at level 5, 3 at level 10, 4 at level 15, and so on. Hybrid classes divide these points by their focus. Game growth rewards sustained practice and exceeds real-world change; it does not predict extra kilograms lifted or a medical improvement. Actual performance checks remain visible separately.",
+      ],
+      [
+        "Training groups and recovery",
+        "Alternative requests for the same movement group do not pay repeatedly for the same day. Strength and high-volume endurance requests include recovery intervals. Equipment and recent ability checks gate advanced pull-up tasks. Difficulty is not a recommendation to exceed your current capacity.",
       ],
     ],
   },
@@ -34,11 +83,11 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Base attribute gains",
-        "Every fifth class or profession level grants a base stat point. Hybrid class milestones follow their archetype balance. Some weekly and monthly requests list a separate stat reward. Purchased skills, equipment, and class stances apply modifiers only during adventures.",
+        "Every fifth class or profession level grants increasing base stat points. Hybrid class milestones follow their archetype balance. Some weekly and monthly requests list a separate stat reward. Purchased skills, equipment, and class stances apply modifiers only during adventures.",
       ],
       [
         "Starting assessment",
-        "Use recent results or estimates. Blank fields count as zero practice. Walking uses minutes, balance seconds, and study minutes per week. Weighted strength requires body weight for scaling. Baselines are guild game scores from 3–30.",
+        "Use recent repeatable test results. Blank fields stay unassessed at 10; an entered zero is a measured result. Walking records distance in six minutes, balance uses seconds, and bench estimates require load, 4–10 repetitions, and body mass. Stats have no numeric ceiling.",
       ],
     ],
   },
@@ -48,7 +97,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "Experience",
-        "All completed requests add adventurer XP. Class requests train their class, profession requests train the recorded role and career discipline, and universal requests earn universal points.",
+        "All completed requests add adventurer XP. Class requests train their class, profession requests train the recorded role and career discipline, and universal requests earn universal points and partial related training credit.",
       ],
       [
         "Level costs",
@@ -106,7 +155,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "Learning skills",
-        "Every 100 path XP earns a point. Class points pool across combat classes, career points pool by discipline, and universal points use universal requests. Nodes cost multiple points and require level, practice, and prerequisites.",
+        "Every 100 source path XP earns a point. Class points pool across combat classes, career points pool by discipline, and universal points use universal requests. Nodes cost multiple points and require level, practice, and prerequisites.",
       ],
       [
         "Using the tree",
@@ -236,6 +285,17 @@ export default function Help({ navigate }: { navigate?: (p: Page) => void }) {
         ))}
       </div>
       {!list.length && <p className="panel">No matching help topics.</p>}
+      <details className="panel research-sources">
+        <summary>Assessment & training sources</summary>
+        {METRIC_SOURCES.map((s) => (
+          <p key={s.id}>
+            <a href={s.url} target="_blank" rel="noreferrer">
+              {s.title} <ExternalLink size={12} />
+            </a>
+            <small>{s.note}</small>
+          </p>
+        ))}
+      </details>
     </div>
   );
 }

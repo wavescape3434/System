@@ -1,6 +1,8 @@
+import AssessmentForm from "./AssessmentForm";
+import { EMPTY_ASSESSMENT, assessmentErrors } from "./metrics";
 import ClassBrowser from "./ClassBrowser";
 import { useState } from "react";
-import { ArrowRight, ArrowLeft, Leaf, Globe, Dumbbell } from "lucide-react";
+import { ArrowRight, ArrowLeft, Globe } from "lucide-react";
 import {
   CLASSES,
   EMPTY_BASELINE,
@@ -24,44 +26,13 @@ export default function Onboarding({
 }) {
   const [step, setStep] = useState(0),
     [name, setName] = useState(""),
-    [baseline, setBaseline] = useState<Baseline>({ ...EMPTY_BASELINE }),
+    [baseline, setBaseline] = useState<Baseline>({
+      ...EMPTY_BASELINE,
+      assessment: { ...EMPTY_ASSESSMENT },
+    }),
     [classId, setClassId] = useState("disciple"),
     [profession, setProfession] = useState("Analyst");
-  const [drafts, setDrafts] = useState<Partial<Record<keyof Baseline, string>>>(
-    {},
-  );
   const values = startingStats(baseline);
-  const input = (
-    key: keyof Baseline,
-    label: string,
-    max: number,
-    _help: string,
-  ) => (
-    <label className="assessment-field" key={key}>
-      <span>{label}</span>
-      <input
-        type="number"
-        min="0"
-        max={max}
-        inputMode="numeric"
-        value={drafts[key] ?? (baseline[key] || "")}
-        placeholder="Not assessed"
-        step={key === "load" || key === "bodyweight" ? "0.1" : "1"}
-        onChange={(e) => {
-          const raw = e.target.value;
-          setDrafts({ ...drafts, [key]: raw });
-          setBaseline({
-            ...baseline,
-            [key]: Math.max(0, Math.min(max, Number(raw) || 0)),
-          });
-        }}
-        onBlur={() => {
-          if (drafts[key])
-            setDrafts({ ...drafts, [key]: String(baseline[key]) });
-        }}
-      />
-    </label>
-  );
   return (
     <div className="onboarding">
       <div className="onboard-art">
@@ -154,113 +125,22 @@ export default function Onboarding({
               <>
                 <span className="eyebrow">STARTING ASSESSMENT</span>
                 <h2>Record your baseline</h2>
-                <div className="segmented">
-                  <button
-                    className={baseline.mode === "bodyweight" ? "active" : ""}
-                    onClick={() =>
-                      setBaseline({ ...baseline, mode: "bodyweight" })
-                    }
-                  >
-                    <Leaf size={16} /> No equipment
-                  </button>
-                  <button
-                    className={baseline.mode === "weights" ? "active" : ""}
-                    onClick={() =>
-                      setBaseline({ ...baseline, mode: "weights" })
-                    }
-                  >
-                    <Dumbbell size={16} /> With weights
-                  </button>
-                </div>
-                {baseline.mode === "bodyweight" && (
-                  <label className="field">
-                    Pushup variation
-                    <select
-                      value={baseline.pushupStyle || "floor"}
-                      onChange={(e) =>
-                        setBaseline({
-                          ...baseline,
-                          pushupStyle: e.target
-                            .value as Baseline["pushupStyle"],
-                        })
-                      }
-                    >
-                      <option value="floor">Floor pushups</option>
-                      <option value="knee">Knee pushups</option>
-                      <option value="incline">Incline pushups</option>
-                      <option value="wall">Wall pushups</option>
-                    </select>
-                  </label>
-                )}
-                <div className="assessment-grid">
-                  {baseline.mode === "bodyweight" ? (
-                    input(
-                      "pushups",
-                      "Pushups (repetitions)",
-                      120,
-                      "Wall, knee, or floor — use your variation.",
-                    )
-                  ) : (
-                    <>
-                      {input(
-                        "load",
-                        "Squat working weight (kg)",
-                        500,
-                        "A familiar, comfortable set; no max test.",
-                      )}
-                      {input(
-                        "reps",
-                        "Repetitions in that set",
-                        30,
-                        "Good technique, with reps in reserve.",
-                      )}
-                      {input(
-                        "bodyweight",
-                        "Body weight (kg)",
-                        300,
-                        "Needed for weighted strength scoring. Leave blank if unknown.",
-                      )}
-                    </>
-                  )}
-                  {input(
-                    "squats",
-                    "Bodyweight squats (repetitions)",
-                    120,
-                    "Use a chair for support if needed.",
-                  )}
-                  {input(
-                    "walk",
-                    "Walking duration (minutes)",
-                    180,
-                    "Your usual comfortable duration.",
-                  )}
-                  {input(
-                    "balance",
-                    "Balance duration (seconds)",
-                    180,
-                    "Stand near a wall; skip if unsuitable.",
-                  )}
-                  {input(
-                    "reading",
-                    "Reading / study (minutes per week)",
-                    1200,
-                    "Your recent weekly habit.",
-                  )}
-                  {input(
-                    "reflection",
-                    "Prayer / reflection (days per week)",
-                    7,
-                    "Your recent rhythm, without judgment.",
-                  )}
-                  {input(
-                    "connection",
-                    "Conversations (per week)",
-                    30,
-                    "A rough estimate is enough.",
-                  )}
-                </div>
+                <AssessmentForm
+                  value={baseline.assessment!}
+                  onChange={(assessment) =>
+                    setBaseline({
+                      ...baseline,
+                      mode:
+                        assessment.strengthTest === "weighted"
+                          ? "weights"
+                          : "bodyweight",
+                      assessment,
+                    })
+                  }
+                />
                 <button
                   className="button primary full"
+                  disabled={assessmentErrors(baseline.assessment!).length > 0}
                   onClick={() => {
                     if (
                       !available(

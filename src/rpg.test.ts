@@ -1,5 +1,6 @@
+// Regression coverage for retained version 1.3 characters and their accepted rewards.
 import { describe, it, expect } from "vitest";
-import { demoCharacter, stats, totalXP } from "./domain";
+import { legacyDemoCharacter as demoCharacter, stats, totalXP } from "./domain";
 import {
   campaign,
   startBattle,

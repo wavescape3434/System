@@ -1,6 +1,7 @@
+// Regression coverage for retained version 1.3 characters and their accepted rewards.
 import { describe, it, expect } from "vitest";
 import {
-  demoCharacter,
+  legacyDemoCharacter as demoCharacter,
   complete,
   objectives,
   takeRequest,
