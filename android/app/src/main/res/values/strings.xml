@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">The Guild</string>
-    <string name="title_activity_main">The Guild</string>
+    <string name="app_name">The Adventurers Guild</string>
+    <string name="title_activity_main">The Adventurers Guild</string>
     <string name="package_name">com.theguild.personal</string>
     <string name="custom_url_scheme">com.theguild.personal</string>
 </resources>

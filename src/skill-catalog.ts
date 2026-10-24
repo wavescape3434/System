@@ -12,6 +12,7 @@ export interface Skill {
   owner?: string;
   subclass?: string;
   parents: string[];
+  anyParents?: string[];
   x: number;
   y: number;
   cost: number;

@@ -80,7 +80,7 @@ export function Progress({
 export function Crest({ small = false }: { small?: boolean }) {
   return (
     <div className={`crest ${small ? "small" : ""}`}>
-      <img src="/crest.svg" alt="The Guild crest" />
+      <img src="/crest.svg" alt="The Adventurers Guild crest" />
     </div>
   );
 }
@@ -204,7 +204,7 @@ export function Modal({
       >
         <div className="modal-header">
           <div>
-            <span className="eyebrow">THE ADVENTURERS’ GUILD</span>
+            <span className="eyebrow">THE ADVENTURERS GUILD</span>
             <h2>{title}</h2>
           </div>
           <button

@@ -1,0 +1,372 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 24;
+  background: #f6f0e3f7;
+  box-shadow: 0 4px 18px #382a1510;
+}
+.brand > span {
+  font-size: 19px;
+  letter-spacing: 1px;
+  line-height: 1.15;
+}
+.onboard-brand > span {
+  max-width: 190px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.onboard-form footer {
+  font-size: 9px;
+}
+.height-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  grid-column: span 1;
+  min-width: 0;
+}
+.assessment-units {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  margin: 12px 0;
+}
+.assessment-units select {
+  max-width: 70%;
+  padding: 10px;
+  border: 1px solid #c9b782;
+  background: #fff8e9;
+  color: #514c35;
+}
+.assessment-next {
+  margin-top: 20px;
+}
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.exam-dossier > svg {
+  float: right;
+  color: #a48643;
+}
+.exam-dossier h3 {
+  font-size: 28px;
+  margin: 12px 0;
+}
+.exam-dossier > b {
+  font-size: 12px;
+}
+.exam-dossier p {
+  margin: 14px 0;
+  font-size: 12px;
+}
+.exam-history {
+  margin-top: 20px;
+}
+.exam-history summary {
+  cursor: pointer;
+}
+.exam-history p {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid #d0c09b;
+  padding: 15px 0;
+  font-size: 12px;
+}
+.exam-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px 0;
+  padding: 14px;
+  border: 1px solid #c9b782;
+  background: #eee4c9;
+  font-size: 12px;
+}
+.exam-comparison p {
+  font-size: 12px;
+  margin: 0;
+}
+.fitness-exam > .field {
+  margin: 20px 0;
+}
+.fitness-exam > p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.exam-result.passed {
+  background: #dbe6ca;
+}
+.exam-result.failed {
+  background: #f0dcc9;
+}
+.exam-result p {
+  font-size: 12px;
+  margin-top: 7px;
+}
+.request-rewards {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+.request-rewards > b:last-child {
+  color: #967132;
+  font-size: 11px;
+}
+.request-mix {
+  display: flex;
+  gap: 5px;
+  margin: 8px 0;
+}
+.notification-trigger {
+  position: relative;
+}
+.notification-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #986735;
+  color: #fff8e4;
+  border: 1px solid #f1e3c4;
+  border-radius: 99px;
+  font: 9px "DM Sans";
+  padding: 2px 4px;
+  min-width: 15px;
+}
+.notification-list article {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 17px 0;
+  border-bottom: 1px solid #c9bb96;
+}
+.notification-list article > div {
+  flex: 1;
+}
+.notification-list b {
+  font-size: 13px;
+}
+.notification-list p,
+.notification-list small {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.notification-list small {
+  color: #8c7a52;
+}
+.adventure-guild-requests {
+  margin: 20px 0;
+  padding: 24px;
+  border: 9px solid #55432b;
+  background: repeating-linear-gradient(
+    90deg,
+    #775c3c 0 150px,
+    #654b30 151px 155px
+  );
+  box-shadow: inset 0 0 24px #20180d66;
+}
+.guild-counter {
+  max-width: 600px;
+  margin: 24px auto;
+  padding: 50px 25px;
+  background: #efe1bc;
+  border: 2px solid #a7874d;
+  text-align: center;
+  box-shadow: 0 5px 15px #241b1177;
+}
+.guild-counter svg {
+  color: #a08348;
+}
+.guild-counter h2 {
+  font-size: 38px;
+  margin: 12px 0;
+}
+.guild-counter p {
+  font-size: 13px;
+}
+.engraved-card {
+  --metal-base: #b4bec6;
+  --metal-light: #e0e5e8;
+  --metal-edge: #85949f;
+  --ink: #34424b;
+  background:
+    radial-gradient(ellipse at 25% 15%, #ffffff80, transparent 62%),
+    repeating-linear-gradient(100deg, #ffffff0b 0 1px, transparent 1px 3px),
+    linear-gradient(
+      110deg,
+      var(--metal-base),
+      var(--metal-light) 35%,
+      var(--metal-edge)
+    );
+  border-color: var(--ink);
+  outline-color: var(--metal-edge);
+  box-shadow:
+    0 9px 24px #241b1622,
+    inset 0 0 20px #26333e33;
+}
+.engraved-card[data-metal="copper"] {
+  --metal-base: #be855f;
+  --metal-light: #efd1b1;
+  --metal-edge: #a26743;
+  --ink: #54321d;
+}
+.engraved-card[data-metal="bronze"] {
+  --metal-base: #b49a57;
+  --metal-light: #e7d29c;
+  --metal-edge: #9d7d3f;
+  --ink: #51401d;
+}
+.engraved-card[data-metal="iron"] {
+  --metal-base: #8e9ba4;
+  --metal-light: #c9d4da;
+  --metal-edge: #697b89;
+  --ink: #263b46;
+}
+.engraved-card[data-metal="silver"] {
+  --metal-base: #c1c9cf;
+  --metal-light: #f0f3f5;
+  --metal-edge: #a2afb9;
+  --ink: #374b59;
+}
+.engraved-card[data-metal="gold"] {
+  --metal-base: #c6a34e;
+  --metal-light: #fff0b0;
+  --metal-edge: #ba923e;
+  --ink: #5b4518;
+}
+.engraved-card[data-metal="platinum"] {
+  --metal-base: #c2cdd2;
+  --metal-light: #fcffff;
+  --metal-edge: #b2c1c8;
+  --ink: #36535e;
+}
+.engraved-card[data-metal="mythril"] {
+  --metal-base: #83b8c9;
+  --metal-light: #e0faff;
+  --metal-edge: #699cac;
+  --ink: #244e61;
+}
+.engraved-card[data-metal="orichalcum"] {
+  --metal-base: #cb8b72;
+  --metal-light: #ffe6bf;
+  --metal-edge: #ad604f;
+  --ink: #632f2c;
+  box-shadow:
+    0 4px 25px #bf795c44,
+    inset 0 0 24px #ffddaa80;
+}
+.engraved-card::before,
+.engraved-card::after,
+.engraved-card .engraved-header,
+.engraved-card .engraved-line,
+.engraved-card .engraved-runes,
+.engraved-card .engraved-information,
+.engraved-card .engraved-name,
+.engraved-card .engraved-stats {
+  border-color: var(--ink);
+}
+.engraved-card .engraved-rank {
+  background: linear-gradient(120deg, var(--metal-light), var(--metal-base));
+  border-color: var(--ink);
+}
+.engraved-card .engraved-skills-link {
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tree-specializations {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.tree-specializations button {
+  font-size: 11px;
+  padding: 8px 12px;
+  border: 1px solid #8e9a69;
+  background: #243e31;
+  color: #dfd3aa;
+}
+@media (max-width: 700px) {
+  .topbar {
+    z-index: 24;
+  }
+  .mobile-brand > b {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    max-width: 135px;
+  }
+  .mobile-brand > .crest.small {
+    display: none;
+  }
+  .topbar-right {
+    gap: 5px;
+  }
+  .topbar-right .local-status {
+    display: none;
+  }
+  .topbar-right .icon-button {
+    width: 30px;
+    height: 35px;
+  }
+  .exam-grid {
+    grid-template-columns: 1fr;
+  }
+  .exam-history p {
+    flex-direction: column;
+  }
+  .assessment-units {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .assessment-units select {
+    max-width: 100%;
+    width: 100%;
+  }
+  .height-pair {
+    gap: 8px;
+  }
+  .adventure-guild-requests {
+    padding: 12px;
+    border-width: 6px;
+  }
+  .guild-counter {
+    padding: 35px 12px;
+  }
+  .guild-counter h2 {
+    font-size: 31px;
+  }
+}
+
+@media (max-width: 650px) {
+  .height-pair {
+    grid-column: 1/-1;
+  }
+}
+
+.brand > span {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: normal;
+  font-size: 17px;
+  letter-spacing: 0.7px;
+}
+.brand > .crest {
+  flex: 0 0 27px;
+}
+.brand small {
+  letter-spacing: 1px;
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .sidebar .brand > span {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+}

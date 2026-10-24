@@ -746,7 +746,24 @@ export const CLASSES: ClassPath[] = rows.map(
         bard: "purple",
         artificer: "blue",
       }[primary],
-      requirements,
+      requirements:
+        tier === "Basic"
+          ? {}
+          : Object.fromEntries(
+              Object.entries(
+                Object.keys(requirements).length
+                  ? requirements
+                  : { [a.stat]: 12 },
+              ).map(([stat, value]) => [
+                stat,
+                tier === "Advanced"
+                  ? Math.max(12, Math.round(value! * 1.25))
+                  : Math.max(
+                      tier === "Ascendant" ? 50 : 25,
+                      Math.round(value! * 2),
+                    ),
+              ]),
+            ),
       classRequirements: prior?.map(([id, level]) => ({ id, level })),
       requiredSkills: skills,
       professionCategories: professions,

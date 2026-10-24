@@ -39,11 +39,11 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "What the checks measure",
-        "Pushups and chair stands measure muscular endurance/function, a bench estimate measures a different aspect of strength, and one-leg stance measures static balance. INT checks learning and reasoning; WIS checks Scripture comprehension and practical judgment; CHA checks listening and communication choices. These brief checks are not global intelligence, spiritual, or personality tests.",
+        "Pushups and chair stands measure muscular endurance/function, a bench estimate measures a different aspect of strength, and one-leg stance measures static balance. INT checks learning and reasoning; WIS checks evidence, planning, and practical judgment; CHA checks listening and communication choices. These brief checks are not global intelligence, spiritual, or personality tests.",
       ],
       [
         "Rechecking progress",
-        "Save performance checks in Settings to compare actual results over time. Recalibrating starting stats is a separate confirmed action and retains earned training points. Repeating the same mental questions can improve familiarity; use real-world application and feedback to assess broader progress.",
+        "Save performance checks in Settings to compare actual results over time. Recalibrating starting stats is a separate confirmed action and retains earned training points. New checks rotate through 24 scenario sets per attribute and keep previous form IDs, scores, and timing. The checks are game assessments, not psychometrically validated trait tests. No assessment includes Bible verses.",
       ],
     ],
   },
@@ -61,7 +61,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Class trials and mastery",
-        "An entry trial is required before activating a new class. It receives 25% of relevant prior training as transferable XP. The class begins at level 1, then class-specific commissions certify further levels. Stored XP cannot bypass the class-work requirement. Prior class progress is retained.",
+        "An entry trial is required before activating a new class. It receives 25% of relevant prior training as transferable XP. The class begins at level 1, then class-specific commissions certify further levels. Stored XP cannot bypass class work or milestone examinations. Prior class progress is retained.",
       ],
       [
         "Stat milestones",
@@ -70,6 +70,28 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       [
         "Training groups and recovery",
         "Alternative requests for the same movement group do not pay repeatedly for the same day. Strength and high-volume endurance requests include recovery intervals. Equipment and recent ability checks gate advanced pull-up tasks. Difficulty is not a recommendation to exceed your current capacity.",
+      ],
+    ],
+  },
+  {
+    title: "Milestone examinations",
+    page: "paths",
+    sections: [
+      [
+        "Level 5, 10, 15…",
+        "Open Class Paths → Examinations. Both training XP and class/profession work must qualify first. Pending exams hold the milestone level and stat reward; XP is retained. Earlier earned levels are preserved on update.",
+      ],
+      [
+        "Physical improvement",
+        "Use the same protocol and improve on its recorded baseline by at least 5%, with at least one extra counted repetition where applicable. Lower times use a 5% reduction. Repeat on a later calendar day. Alternate tests are available; a new test first records its own baseline. These are game gates, not clinical change thresholds.",
+      ],
+      [
+        "Mental improvement",
+        "Complete a fresh five-question form, score at least 4/5, and improve accuracy; alternatively retain accuracy and improve completion time by at least 5%. Fixed-form scores and times are approximate practice indicators, not proof of global ability. An alternate ten-minute work sample can use a documented task and marking guide, followed by a later-day improvement check.",
+      ],
+      [
+        "Gold and notifications",
+        "Completed real-world requests pay their listed gold once into the same wallet used for adventure supplies and equipment. Open the header bell for saved rewards, progression, and ready examinations. Adventures → Guild requests is reserved for a future content pass.",
       ],
     ],
   },
@@ -83,7 +105,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Base attribute gains",
-        "Every fifth class or profession level grants increasing base stat points. Hybrid class milestones follow their archetype balance. Some weekly and monthly requests list a separate stat reward. Purchased skills, equipment, and class stances apply modifiers only during adventures.",
+        "Every fifth class or profession level requires a passed examination before that level and its increasing base stat points are awarded. Hybrid class milestones follow their archetype balance. Some weekly and monthly requests list a separate stat reward. Purchased skills, equipment, and class stances apply modifiers only during adventures.",
       ],
       [
         "Starting assessment",

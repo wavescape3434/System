@@ -256,6 +256,13 @@ export default function AdventureGame({
           World map
         </button>
         <button
+          className={tab === "requests" ? "active" : ""}
+          onClick={() => setTab("requests")}
+        >
+          <Flag size={15} />
+          Guild requests
+        </button>
+        <button
           className={tab === "party" ? "active" : ""}
           onClick={() => setTab("party")}
         >
@@ -349,6 +356,18 @@ export default function AdventureGame({
             </div>
           </div>
         </>
+      )}
+      {tab === "requests" && (
+        <section className="adventure-guild-requests">
+          <div className="board-inscription">
+            THE ADVENTURERS GUILD · EXPEDITION REQUESTS
+          </div>
+          <div className="guild-counter">
+            <Icon name="shield" size={55} />
+            <h2>Guild requests</h2>
+            <p>No requests posted.</p>
+          </div>
+        </section>
       )}
       {tab === "party" && (
         <div className="companion-grid">

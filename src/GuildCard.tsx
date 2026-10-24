@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import type { Character } from "./domain";
 import {
   ATTRIBUTES,
@@ -93,13 +94,14 @@ export default function GuildCard({
   return (
     <section
       className="engraved-card"
+      data-metal={characterRank(c).metal.toLowerCase()}
       aria-label="Engraved adventurer guild card"
     >
       <div className="engraved-runes" aria-hidden="true">
         ◇ ⟐ △ ✧ ◇ ⟐ △ ✧ ◇ ⟐ △ ✧ ◇ ⟐ △ ✧ ◇ ⟐ △ ✧ ◇ ⟐ △ ✧
       </div>
       <div className="engraved-header">
-        <span>THE ADVENTURERS’ GUILD</span>
+        <span>THE ADVENTURERS GUILD</span>
         <b>REGISTER OF THE REALM</b>
       </div>
       <div className="engraved-body">
@@ -135,7 +137,7 @@ export default function GuildCard({
             ))}
           </div>
           <button className="engraved-skills-link" onClick={onSkills}>
-            OPEN SKILL REGISTER <span>↗</span>
+            OPEN SKILL REGISTER <ArrowUpRight size={12} />
           </button>
         </div>
         <div className="engraved-seal-column">
@@ -143,7 +145,7 @@ export default function GuildCard({
           <div className="engraved-rank">
             <small>GUILD RANK</small>
             <strong>{characterRank(c).name}</strong>
-            <span>ADVENTURER</span>
+            <span>{characterRank(c).metal.toUpperCase()}</span>
           </div>
           <div className="engraved-level">
             <small>PLAYER LEVEL</small>

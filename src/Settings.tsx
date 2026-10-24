@@ -1,3 +1,4 @@
+import { usedExamForms } from "./exams";
 import { useState } from "react";
 import { Settings2, UserRound, Shield, Activity, Save } from "lucide-react";
 import type { Character, Stats } from "./domain";
@@ -6,7 +7,7 @@ import { DEFAULT_PREFERENCES } from "./preferences";
 import type { Preferences } from "./preferences";
 import {
   EMPTY_ASSESSMENT,
-  assessmentResults,
+  displayAssessmentResults,
   assessmentErrors,
 } from "./metrics";
 import AssessmentForm from "./AssessmentForm";
@@ -27,6 +28,7 @@ export default function Settings({
     [assessment, setAssessment] = useState(
       c.baseline.assessment || { ...EMPTY_ASSESSMENT },
     ),
+    [assessmentStage, setAssessmentStage] = useState("physical"),
     [confirm, setConfirm] = useState<Stats | null>(null);
   const p = { ...DEFAULT_PREFERENCES, ...c.preferences };
   const preference = <K extends keyof Preferences>(
@@ -130,7 +132,7 @@ export default function Settings({
                 }
               >
                 <option value="metric">Metric · kg, cm, metres</option>
-                <option value="imperial">Imperial · lb, inches, yards</option>
+                <option value="imperial">Imperial · ft & in, lb, yards</option>
               </select>
             </label>
             <label className="field">
@@ -184,30 +186,34 @@ export default function Settings({
             <Activity size={23} />
           </div>
           <h3>Available equipment</h3>
-          {(["bodyweight", "pullup-bar", "weights"] as const).map((id) => (
-            <label className="setting-toggle" key={id}>
-              <span>
-                {id === "bodyweight"
-                  ? "Bodyweight / household equipment"
-                  : id === "pullup-bar"
-                    ? "Pull-up bar"
-                    : "Weights"}
-              </span>
-              <input
-                type="checkbox"
-                checked={p.equipment.includes(id)}
-                disabled={id === "bodyweight"}
-                onChange={(e) =>
-                  preference(
-                    "equipment",
-                    e.target.checked
-                      ? [...p.equipment, id]
-                      : p.equipment.filter((x) => x !== id),
-                  )
-                }
-              />
-            </label>
-          ))}
+          {(["bodyweight", "pullup-bar", "weights", "gym"] as const).map(
+            (id) => (
+              <label className="setting-toggle" key={id}>
+                <span>
+                  {id === "bodyweight"
+                    ? "Bodyweight / household equipment"
+                    : id === "pullup-bar"
+                      ? "Pull-up bar"
+                      : id === "gym"
+                        ? "Gym equipment"
+                        : "Weights"}
+                </span>
+                <input
+                  type="checkbox"
+                  checked={p.equipment.includes(id)}
+                  disabled={id === "bodyweight"}
+                  onChange={(e) =>
+                    preference(
+                      "equipment",
+                      e.target.checked
+                        ? [...p.equipment, id]
+                        : p.equipment.filter((x) => x !== id),
+                    )
+                  }
+                />
+              </label>
+            ),
+          )}
           <label className="setting-toggle">
             <span>Show requests with unmet requirements</span>
             <input
@@ -227,32 +233,45 @@ export default function Settings({
             value={assessment}
             onChange={setAssessment}
             units={p.units}
+            onUnitsChange={(u) => preference("units", u)}
+            onStageChange={setAssessmentStage}
+            usedForms={usedExamForms(c)}
+            onFormStart={(id) =>
+              update({
+                ...c,
+                assessmentFormsSeen: [
+                  ...new Set([...(c.assessmentFormsSeen || []), id]),
+                ],
+              })
+            }
           />
-          <div className="account-actions">
-            <button
-              className="button primary"
-              disabled={assessmentErrors(assessment).length > 0}
-              onClick={() => saveAssessment()}
-            >
-              <Save size={16} />
-              Save performance check
-            </button>
-            <button
-              className="button secondary"
-              disabled={assessmentErrors(assessment).length > 0}
-              onClick={() =>
-                setConfirm(startingStats({ ...c.baseline, assessment }))
-              }
-            >
-              Recalibrate starting stats
-            </button>
-          </div>
+          {assessmentStage === "results" && (
+            <div className="account-actions">
+              <button
+                className="button primary"
+                disabled={assessmentErrors(assessment).length > 0}
+                onClick={() => saveAssessment()}
+              >
+                <Save size={16} />
+                Save performance check
+              </button>
+              <button
+                className="button secondary"
+                disabled={assessmentErrors(assessment).length > 0}
+                onClick={() =>
+                  setConfirm(startingStats({ ...c.baseline, assessment }))
+                }
+              >
+                Recalibrate starting stats
+              </button>
+            </div>
+          )}
           <details className="assessment-history">
             <summary>Saved checks · {c.assessmentHistory?.length || 0}</summary>
             {[...(c.assessmentHistory || [])].reverse().map((h, i) => (
               <div key={`${h.at}-${i}`}>
                 <b>{new Date(h.at).toLocaleDateString()}</b>
-                {assessmentResults(h.assessment)
+                {displayAssessmentResults(h.assessment, p.units)
                   .filter((r) => r.measured)
                   .map((r) => (
                     <span key={r.stat}>
@@ -284,7 +303,7 @@ export default function Settings({
           </div>
           <div className="settings-record">
             <span>Version</span>
-            <Tag>1.4.0</Tag>
+            <Tag>1.5.0</Tag>
           </div>
           <button className="button primary" onClick={onAccount}>
             Account & backups

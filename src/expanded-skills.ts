@@ -123,33 +123,34 @@ const techniques: Record<string, [string, string, string][]> = {
 };
 const levels = [1, 5, 5, 10, 10, 15, 25, 25, 40, 60, 80, 100],
   costs = [4, 6, 6, 8, 8, 10, 12, 12, 16, 20, 24, 30];
-const parents = [
-  [],
-  [0],
-  [0],
-  [1],
-  [2],
-  [3, 4],
-  [5],
-  [5],
-  [6, 7],
-  [8],
-  [9],
-  [10],
-];
+const parents = [[], [0], [0], [1], [2], [0], [3], [4], [5], [6], [7], [8]];
 const positions = [
   [540, 1040],
-  [290, 920],
-  [790, 920],
-  [290, 800],
-  [790, 800],
-  [540, 680],
-  [290, 560],
-  [790, 560],
-  [540, 440],
-  [290, 320],
-  [540, 200],
-  [790, 80],
+  [230, 860],
+  [850, 860],
+  [150, 650],
+  [930, 650],
+  [540, 820],
+  [240, 450],
+  [840, 450],
+  [540, 580],
+  [150, 230],
+  [930, 230],
+  [540, 180],
+];
+const fighterPositions = [
+  [800, 1000],
+  [420, 1050],
+  [1180, 1050],
+  [180, 900],
+  [1420, 900],
+  [800, 700],
+  [180, 600],
+  [1420, 600],
+  [800, 450],
+  [180, 300],
+  [1420, 300],
+  [800, 200],
 ];
 export const EXPANDED_SKILLS: Skill[] = [];
 for (const a of ARCHETYPES) {
@@ -169,9 +170,13 @@ for (const a of ARCHETYPES) {
       branch: a.name,
       owner: a.id,
       archetype: a.id,
-      parents: parents[i].map((n) => `arc-${a.id}-${n + 1}`),
-      x: positions[i][0],
-      y: positions[i][1],
+      parents: i >= 9 ? [] : parents[i].map((n) => `arc-${a.id}-${n + 1}`),
+      anyParents:
+        i >= 9
+          ? [parents[i][0], 5].map((n) => `arc-${a.id}-${n + 1}`)
+          : undefined,
+      x: (a.id === "fighter" ? fighterPositions : positions)[i][0],
+      y: (a.id === "fighter" ? fighterPositions : positions)[i][1],
       cost: costs[i],
       target: [2, 5, 5, 10, 10, 20, 30, 30, 50, 75, 100, 150][i],
       proof: `Complete ${[2, 5, 5, 10, 10, 20, 30, 30, 50, 75, 100, 150][i]} requests with a class that trains ${a.name}`,
@@ -182,6 +187,107 @@ for (const a of ARCHETYPES) {
     }),
   );
 }
+// Four independent weapon disciplines share the foundation and offer optional cross-training routes.
+const martialBranches: [
+  string,
+  string,
+  string[],
+  string[],
+  [number, number][],
+][] = [
+  [
+    "sword",
+    "Swordsmanship",
+    ["Sword Guard", "Measured Cut", "Riposte Line", "Master of the Blade"],
+    ["ward", "pierce", "counter", "quick"],
+    [
+      [480, 800],
+      [480, 600],
+      [480, 400],
+      [480, 200],
+    ],
+  ],
+  [
+    "spear",
+    "Spearcraft",
+    ["Spear Reach", "Line Thrust", "Braced Point", "Master of the Spear"],
+    ["pierce", "power", "counter", "coordinated"],
+    [
+      [650, 1200],
+      [650, 1400],
+      [650, 1600],
+      [650, 1800],
+    ],
+  ],
+  [
+    "axe",
+    "Axe Fighting",
+    ["Axe Leverage", "Hooking Strike", "Sundering Arc", "Master of the Axe"],
+    ["power", "bash", "pierce", "quick"],
+    [
+      [950, 1200],
+      [950, 1400],
+      [950, 1600],
+      [950, 1800],
+    ],
+  ],
+  [
+    "unarmed",
+    "Unarmed Combat",
+    [
+      "Open-Hand Guard",
+      "Combination Strike",
+      "Counterstep",
+      "Master of the Empty Hand",
+    ],
+    ["ward", "flurry", "counter", "power"],
+    [
+      [1120, 800],
+      [1120, 600],
+      [1120, 400],
+      [1120, 200],
+    ],
+  ],
+];
+for (const [branch, title, names, effects, coordinates] of martialBranches)
+  names.forEach((name, i) => {
+    const alternate =
+      branch === "sword"
+        ? "unarmed"
+        : branch === "unarmed"
+          ? "sword"
+          : branch === "spear"
+            ? "axe"
+            : "spear";
+    EXPANDED_SKILLS.push({
+      id: `martial-${branch}-${i + 1}`,
+      name,
+      description: `${title}: ${["establish a distinct combat approach", "develop a focused follow-up", "exploit the discipline's tactical advantage", "master an advanced adventure technique"][i]}. Applies only in adventures.`,
+      stat: "STR",
+      category: "class",
+      branch: title,
+      owner: "fighter",
+      archetype: "fighter",
+      parents:
+        i === 0 ? ["arc-fighter-1"] : i === 2 ? [] : [`martial-${branch}-${i}`],
+      anyParents:
+        i === 2 ? [`martial-${branch}-2`, `martial-${alternate}-2`] : undefined,
+      x: coordinates[i][0],
+      y: coordinates[i][1],
+      cost: [4, 8, 14, 24][i],
+      target: [2, 8, 20, 50][i],
+      proof: `Complete ${[2, 8, 20, 50][i]} Fighter class requests`,
+      current: (c) =>
+        c.completions.filter(
+          (o) =>
+            o.scope === "class" &&
+            !!CLASSES.find((p) => p.id === o.classId)?.mix.fighter,
+        ).length,
+      tier: "I",
+      requiredLevel: [1, 5, 15, 30][i],
+      combat: effects[i],
+    });
+  });
 // Focus trees add class identity to the shared archetype foundations.
 for (const p of CLASSES) {
   const current = (c: Character) =>
@@ -208,9 +314,10 @@ for (const p of CLASSES) {
       category: "class",
       branch: `${p.name} Focus`,
       owner: p.id,
-      parents: i ? [`focus-${p.id}-${i - 1}`] : [],
+      parents: i === 1 || i === 2 ? [`focus-${p.id}-0`] : [],
+      anyParents: i === 3 ? [`focus-${p.id}-1`, `focus-${p.id}-2`] : undefined,
       x: [540, 320, 760, 540][i],
-      y: [680, 470, 280, 90][i],
+      y: [680, 450, 450, 160][i],
       cost: [4, 8, 14, 24][i],
       target: [2, 10, 30, 75][i],
       current,
@@ -245,13 +352,20 @@ for (const g of CAREER_CATEGORIES) {
       parents:
         i === 0
           ? []
-          : i === 7
-            ? [`profession-${g.id}-5`, `profession-${g.id}-6`]
-            : [
-                `profession-${g.id}-${i === 1 || i === 2 ? 0 : i === 3 || i === 4 ? i - 2 : i === 5 || i === 6 ? i - 2 : i - 1}`,
-              ],
-      x: [540, 290, 790, 290, 790, 290, 790, 540, 540, 540][i],
-      y: [1040, 900, 900, 760, 760, 620, 620, 480, 340, 200][i],
+          : i <= 3
+            ? [`profession-${g.id}-0`]
+            : i <= 6
+              ? [`profession-${g.id}-${i - 3}`]
+              : [],
+      anyParents:
+        i >= 7
+          ? [
+              `profession-${g.id}-${i - 3}`,
+              `profession-${g.id}-${i === 9 ? 4 : i - 2}`,
+            ]
+          : undefined,
+      x: [540, 220, 540, 860, 150, 540, 930, 220, 540, 860][i],
+      y: [900, 700, 650, 700, 480, 430, 480, 220, 140, 220][i],
       cost: [4, 6, 6, 8, 8, 10, 10, 14, 18, 24][i],
       target: [2, 5, 5, 10, 10, 20, 20, 35, 55, 80][i],
       current,

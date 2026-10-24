@@ -114,7 +114,7 @@ describe("uncapped progression and migration", () => {
   it("preserves raw XP, vocation, learned skills and earlier records on prestige promotion", () => {
     let c = training(demoCharacter(), "warrior", xpForLevel(15));
     c = training(c, "disciple", xpForLevel(10));
-    c.baseStats = { STR: 20, DEX: 20, CON: 20, INT: 20, WIS: 20, CHA: 20 };
+    c.baseStats = { STR: 60, DEX: 60, CON: 60, INT: 60, WIS: 60, CHA: 60 };
     c.earnedSkills = ["arc-fighter-1"];
     const xp = totalXP(c),
       prior = classLevel(c, "warrior"),
@@ -175,7 +175,10 @@ describe("class and career catalogs", () => {
     expect(CLASSES.some((p) => p.requiredSkills?.length)).toBe(true);
   });
   it("enforces skills and career requirements in addition to attributes", () => {
-    const c = demoCharacter(),
+    const c = {
+        ...demoCharacter(),
+        baseStats: { STR: 20, DEX: 20, CON: 20, INT: 20, WIS: 20, CHA: 20 },
+      },
       p = CLASSES.find((p) => p.id === "network-weaver")!;
     expect(classRequirements(p, stats(c), 0, c).some((r) => !r.met)).toBe(true);
     const unlocked = awardSkills({

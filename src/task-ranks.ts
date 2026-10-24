@@ -38,3 +38,15 @@ export const milestonePoints = (lv: number) => {
   const n = Math.floor(Math.max(0, lv) / 5);
   return (n * (n + 3)) / 2;
 };
+
+export const TASK_GOLD: Record<TaskRank, number> = {
+  F: 2,
+  E: 5,
+  D: 12,
+  C: 30,
+  B: 70,
+  A: 160,
+  S: 360,
+  SS: 840,
+  SSS: 2000,
+};

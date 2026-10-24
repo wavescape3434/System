@@ -3,22 +3,41 @@ import { ExternalLink } from "lucide-react";
 import type { Assessment } from "./metrics";
 import {
   METRIC_SOURCES,
-  assessmentResults,
-  MIND_CHECKS,
-  checkScore,
+  displayAssessmentResults,
   assessmentErrors,
 } from "./metrics";
 import { Icon, Tag } from "./ui";
+import MentalCheck from "./MentalCheck";
 export default function AssessmentForm({
   value,
   onChange,
   units = "metric",
+  onUnitsChange,
+  onFormStart,
+  usedForms = [],
+  onComplete,
+  completeLabel = "Finish assessment",
+  onStageChange,
 }: {
   value: Assessment;
   onChange: (a: Assessment) => void;
   units?: "metric" | "imperial";
+  onUnitsChange?: (units: "metric" | "imperial") => void;
+  usedForms?: string[];
+  onFormStart?: (id: string) => void;
+  onComplete?: () => void;
+  completeLabel?: string;
+  onStageChange?: (stage: string) => void;
 }) {
-  const [tab, setTab] = useState("physical");
+  const [mindBusy, setMindBusy] = useState(false),
+    [seenForms, setSeenForms] = useState<string[]>([]);
+  const [tab, setTabState] = useState("physical"),
+    [localUnits, setLocalUnits] = useState(units);
+  const setTab = (stage: string) => {
+    setMindBusy(false);
+    setTabState(stage);
+    onStageChange?.(stage);
+  };
   const field = (
     key: Exclude<
       keyof Assessment,
@@ -34,7 +53,7 @@ export default function AssessmentForm({
     factor = 1,
   ) => (
     <MetricInput
-      key={`${key}-${units}`}
+      key={`${key}-${localUnits}`}
       label={label}
       unit={unit}
       value={(value[key] ?? null) as number | null}
@@ -42,7 +61,7 @@ export default function AssessmentForm({
       onChange={(n) => onChange({ ...value, [key]: n })}
     />
   );
-  const imperial = units === "imperial";
+  const imperial = localUnits === "imperial";
   return (
     <div className="assessment-v2">
       {assessmentErrors(value).length > 0 && (
@@ -50,6 +69,21 @@ export default function AssessmentForm({
           {assessmentErrors(value).join(" · ")}
         </div>
       )}
+      <label className="assessment-units">
+        Measurement units
+        <select
+          aria-label="Assessment units"
+          value={localUnits}
+          onChange={(e) => {
+            const u = e.target.value as "metric" | "imperial";
+            setLocalUnits(u);
+            onUnitsChange?.(u);
+          }}
+        >
+          <option value="metric">Metric · cm, kg, metres</option>
+          <option value="imperial">Imperial · ft & in, lb, yards</option>
+        </select>
+      </label>
       <div className="assessment-tabs">
         {[
           ["physical", "Body"],
@@ -91,11 +125,14 @@ export default function AssessmentForm({
                 <option value="female">Female</option>
               </select>
             </label>
-            {field(
-              "heightCm",
-              "Height",
-              imperial ? "in" : "cm",
-              imperial ? 1 / 2.54 : 1,
+            {imperial ? (
+              <HeightInput
+                key="imperial-height"
+                value={value.heightCm}
+                onChange={(heightCm) => onChange({ ...value, heightCm })}
+              />
+            ) : (
+              field("heightCm", "Height", "cm")
             )}
             {field(
               "massKg",
@@ -141,7 +178,7 @@ export default function AssessmentForm({
                   <option value="wall">Wall</option>
                 </select>
               </label>
-              {field("pushups", "Controlled pushups", "repetitions")}
+              {field("pushups", "Maximum consecutive pushups", "repetitions")}
             </>
           )}
           {value.strengthTest === "grip" && (
@@ -226,7 +263,11 @@ export default function AssessmentForm({
               imperial ? "yards" : "metres",
               imperial ? 1.0936132983 : 1,
             )}
-            {field("pullups", "Recent strict pullups", "repetitions")}
+            {field(
+              "pullups",
+              "Maximum consecutive strict pullups",
+              "repetitions",
+            )}
           </div>
           <details className="assessment-protocol">
             <summary>Balance & walking protocols</summary>
@@ -243,25 +284,29 @@ export default function AssessmentForm({
       {(["INT", "WIS", "CHA"] as const).map(
         (stat) =>
           tab === stat && (
-            <MindCheck
+            <MentalCheck
               key={stat}
               stat={stat}
               saved={value.mental?.[stat]}
-              onFinish={(answers) =>
+              usedForms={[...usedForms, ...seenForms]}
+              onStart={(form) => {
+                setMindBusy(true);
+                setSeenForms([...seenForms, form.id]);
+                onFormStart?.(form.id);
+              }}
+              onFinish={(result) => {
+                setMindBusy(false);
                 onChange({
                   ...value,
-                  mental: {
-                    ...value.mental,
-                    [stat]: { answers, completedAt: new Date().toISOString() },
-                  },
-                })
-              }
+                  mental: { ...value.mental, [stat]: result },
+                });
+              }}
             />
           ),
       )}
       {tab === "results" && (
         <div className="assessment-results">
-          {assessmentResults(value).map((r) => (
+          {displayAssessmentResults(value, localUnits).map((r) => (
             <section key={r.stat}>
               <Icon name={r.stat} />
               <div>
@@ -291,6 +336,43 @@ export default function AssessmentForm({
           ))}
         </div>
       )}
+      {!mindBusy &&
+        (tab !== "results" ? (
+          <button
+            className="button primary full assessment-next"
+            disabled={tab === "physical" && assessmentErrors(value).length > 0}
+            onClick={() =>
+              setTab(
+                (
+                  {
+                    physical: "INT",
+                    INT: "WIS",
+                    WIS: "CHA",
+                    CHA: "results",
+                  } as Record<string, string>
+                )[tab],
+              )
+            }
+          >
+            {tab === "physical"
+              ? "Next: INT check"
+              : tab === "INT"
+                ? "Next: WIS check"
+                : tab === "WIS"
+                  ? "Next: CHA check"
+                  : "View assessment results"}
+          </button>
+        ) : (
+          onComplete && (
+            <button
+              className="button primary full assessment-next"
+              disabled={assessmentErrors(value).length > 0}
+              onClick={onComplete}
+            >
+              {completeLabel}
+            </button>
+          )
+        ))}
     </div>
   );
 }
@@ -342,98 +424,71 @@ function MetricInput({
     </label>
   );
 }
-function MindCheck({
-  stat,
-  saved,
-  onFinish,
+function HeightInput({
+  value,
+  onChange,
 }: {
-  stat: "INT" | "WIS" | "CHA";
-  saved?: { answers: number[]; completedAt: string };
-  onFinish: (answers: number[]) => void;
+  value: number | null;
+  onChange: (n: number | null) => void;
 }) {
-  const check = MIND_CHECKS[stat],
-    [stage, setStage] = useState<"lesson" | "questions" | "result">(
-      saved ? "result" : "lesson",
+  const total = value === null ? null : Math.round((value / 2.54) * 10) / 10;
+  const [feet, setFeet] = useState(
+      total === null ? "" : String(Math.floor(total / 12)),
     ),
-    [answers, setAnswers] = useState<number[]>(saved?.answers || []),
-    [index, setIndex] = useState(0);
-  if (stage === "lesson")
-    return (
-      <section className="mind-check">
-        <h3>{check.name}</h3>
-        <Tag>5 questions · 2–4 minutes</Tag>
-        <p className="mind-lesson">{check.lesson}</p>
-        <button
-          className="button primary full"
-          onClick={() => setStage("questions")}
-        >
-          Start {stat} check
-        </button>
-      </section>
+    [inches, setInches] = useState(
+      total === null ? "" : String(Math.round((total % 12) * 10) / 10),
     );
-  if (stage === "result")
-    return (
-      <section className="mind-check">
-        <h3>
-          {check.name} · {checkScore(stat, answers)}/5
-        </h3>
-        <div className="check-review">
-          {check.questions.map((q, i) => (
-            <details key={q.prompt}>
-              <summary>
-                {answers[i] === q.answer ? "✓" : "○"} {q.prompt}
-              </summary>
-              <p>{q.explanation}</p>
-            </details>
-          ))}
-        </div>
-        <button
-          className="button secondary full"
-          onClick={() => {
-            setAnswers([]);
-            setIndex(0);
-            setStage("lesson");
-          }}
-        >
-          Review & retake {stat}
-        </button>
-      </section>
+  const change = (f: string, i: string) => {
+    onChange(
+      f === "" && i === ""
+        ? null
+        : ((Number(f) || 0) * 12 + (Number(i) || 0)) * 2.54,
     );
-  const q = check.questions[index];
+  };
   return (
-    <section className="mind-check">
-      <span className="eyebrow">
-        {stat} · QUESTION {index + 1} / 5
-      </span>
-      <h3>{q.prompt}</h3>
-      <div className="check-options">
-        {q.options.map((option, i) => (
-          <button
-            className={answers[index] === i ? "selected" : ""}
-            key={option}
-            onClick={() => {
-              const next = [...answers];
-              next[index] = i;
-              setAnswers(next);
-            }}
-          >
-            {option}
-          </button>
-        ))}
-      </div>
-      <button
-        className="button primary full"
-        disabled={answers[index] === undefined}
-        onClick={() => {
-          if (index < 4) setIndex(index + 1);
-          else {
-            onFinish(answers);
-            setStage("result");
-          }
-        }}
-      >
-        {index < 4 ? "Next question" : `Finish ${stat} check`}
-      </button>
-    </section>
+    <div className="height-pair">
+      <label className="assessment-field">
+        <span>Height (feet)</span>
+        <input
+          type="number"
+          min="0"
+          step="1"
+          inputMode="numeric"
+          placeholder="ft"
+          value={feet}
+          onChange={(e) => {
+            setFeet(e.target.value);
+            change(e.target.value, inches);
+          }}
+        />
+      </label>
+      <label className="assessment-field">
+        <span>Height (inches)</span>
+        <input
+          type="number"
+          min="0"
+          max="11.9"
+          step="0.1"
+          inputMode="decimal"
+          placeholder="in"
+          value={inches}
+          onChange={(e) => {
+            setInches(e.target.value);
+            change(feet, e.target.value);
+          }}
+          onBlur={() => {
+            if (Number(inches) >= 12) {
+              const f = String(
+                  (Number(feet) || 0) + Math.floor(Number(inches) / 12),
+                ),
+                i = String(Number(inches) % 12);
+              setFeet(f);
+              setInches(i);
+              change(f, i);
+            }
+          }}
+        />
+      </label>
+    </div>
   );
 }

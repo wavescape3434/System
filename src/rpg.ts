@@ -6,6 +6,7 @@ import { SKILLS } from "./skill-catalog";
 export interface Campaign {
   cleared: string[];
   gold: number;
+  trainingGoldAccrued?: number;
   inventory: Record<string, number>;
   roster: string[];
   party: string[];
@@ -237,7 +238,15 @@ export function newCampaign(): Campaign {
     equippedSkills: [],
   };
 }
-export const campaign = (c: Character) => c.campaign || newCampaign();
+export const campaign = (c: Character): Campaign => {
+  const data = c.campaign || newCampaign(),
+    earned = c.completions.reduce((n, o) => n + (o.gold || 0), 0);
+  return {
+    ...data,
+    gold: data.gold + Math.max(0, earned - (data.trainingGoldAccrued || 0)),
+    trainingGoldAccrued: earned,
+  };
+};
 export function combatAttributes(c: Character): Stats {
   const result = { ...stats(c) };
   result[currentPath(c).stat] += 2;

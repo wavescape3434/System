@@ -1,5 +1,6 @@
+import ClassExams from "./ClassExams";
 import { TASK_RANKS, TASK_NAMES } from "./task-ranks";
-import { assessmentResults } from "./metrics";
+import { displayAssessmentResults } from "./metrics";
 import ClassBrowser from "./ClassBrowser";
 import VocationPanel from "./VocationPanel";
 import GuildCard from "./GuildCard";
@@ -142,7 +143,7 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
             <Trophy size={17} />
           </div>
           <div className="rank-emblem">
-            <span>GUILD RANK</span>
+            <span>{characterRank(c).metal.toUpperCase()} · GUILD RANK</span>
             <strong>{characterRank(c).name}</strong>
             <span>{xp === 0 ? "REGISTERED" : "ACTIVE"}</span>
           </div>
@@ -453,7 +454,7 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
             ? "ACCEPTED COMMISSIONS"
             : view === "suggested"
               ? "RETURNING COMMISSIONS"
-              : "REQUESTS OF THE ADVENTURERS’ GUILD"}
+              : "REQUESTS OF THE ADVENTURERS GUILD"}
           <span>✦</span>
         </div>
         <div className="objectives-grid request-papers">
@@ -489,6 +490,16 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
                   </Tag>
                 </div>
                 <h3>{o.title}</h3>
+                {o.participants === "group" && <Tag>Group quest</Tag>}
+                {o.trainingMix && (
+                  <div className="request-mix">
+                    {Object.entries(o.trainingMix).map(([stat, weight]) => (
+                      <Tag key={stat}>
+                        {stat} {Math.round(weight! * 100)}%
+                      </Tag>
+                    ))}
+                  </div>
+                )}
                 <p>{o.description}</p>
                 {o.statReward && (
                   <Tag tone="gold">
@@ -501,7 +512,10 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
                   <Clock3 size={14} />
                   {o.minutes}
                 </span>
-                <b>+{o.xp} XP</b>
+                <span className="request-rewards">
+                  <b>+{o.xp} XP</b>
+                  {o.gold !== undefined && <b>+{o.gold} gold</b>}
+                </span>
               </div>
               <div className="request-actions">
                 {isComplete(c, o) ? (
@@ -597,6 +611,12 @@ export function Paths({ c, update, notify, openObjective }: ScreenProps) {
           Vocation
         </button>
         <button
+          className={view === "exams" ? "active" : ""}
+          onClick={() => setView("exams")}
+        >
+          Examinations
+        </button>
+        <button
           className={view === "history" ? "active" : ""}
           onClick={() => setView("history")}
         >
@@ -620,6 +640,7 @@ export function Paths({ c, update, notify, openObjective }: ScreenProps) {
         />
       )}
       {view === "vocation" && <VocationPanel c={c} update={update} />}
+      {view === "exams" && <ClassExams c={c} update={update} />}
       {view === "history" && (
         <section className="panel record-panel">
           <h3>Class chronicle</h3>
@@ -648,7 +669,9 @@ export function Paths({ c, update, notify, openObjective }: ScreenProps) {
                   />
                   {prog.waiting && (
                     <small className="class-trial-status">
-                      Class commission required · XP retained
+                      {prog.examRequired
+                        ? `Level ${classLevel(c, p.id) + 1} exam required · XP retained`
+                        : "Class commission required · XP retained"}
                     </small>
                   )}
                 </div>
@@ -711,7 +734,10 @@ export function Skills({
           {c.baseline.assessment && (
             <section className="panel performance-ledger">
               <h3>Latest real-world check</h3>
-              {assessmentResults(c.baseline.assessment).map((r) => (
+              {displayAssessmentResults(
+                c.baseline.assessment,
+                c.preferences?.units,
+              ).map((r) => (
                 <div key={r.stat}>
                   <b>{r.stat}</b>
                   <span>{r.raw}</span>
@@ -843,7 +869,9 @@ export function Skills({
                 key={r.name}
               >
                 <div className="rank-mini">{r.name}</div>
-                <h3>{r.name} Rank</h3>
+                <h3>
+                  {r.metal} · {r.name}
+                </h3>
                 <p>{r.xp.toLocaleString()} rank XP</p>
                 <Tag tone={rankXP(c) >= r.xp ? "green" : "neutral"}>
                   {characterRank(c).name === r.name

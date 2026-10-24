@@ -1,10 +1,11 @@
 import AssessmentForm from "./AssessmentForm";
-import { EMPTY_ASSESSMENT, assessmentErrors } from "./metrics";
+import { EMPTY_ASSESSMENT } from "./metrics";
 import ClassBrowser from "./ClassBrowser";
 import { useState } from "react";
 import { ArrowRight, ArrowLeft, Globe } from "lucide-react";
 import {
   CLASSES,
+  RANKS,
   EMPTY_BASELINE,
   startingStats,
   available,
@@ -30,6 +31,8 @@ export default function Onboarding({
       ...EMPTY_BASELINE,
       assessment: { ...EMPTY_ASSESSMENT },
     }),
+    [seenForms, setSeenForms] = useState<string[]>([]),
+    [units, setUnits] = useState<"metric" | "imperial">("metric"),
     [classId, setClassId] = useState("disciple"),
     [profession, setProfession] = useState("Analyst");
   const values = startingStats(baseline);
@@ -38,12 +41,12 @@ export default function Onboarding({
       <div className="onboard-art">
         <div className="onboard-brand">
           <Crest small />
-          <span>THE GUILD</span>
+          <span>THE ADVENTURERS GUILD</span>
         </div>
         <div className="onboard-copy">
-          <span className="eyebrow">THE ADVENTURERS’ GUILD</span>
+          <span className="eyebrow">THE ADVENTURERS GUILD</span>
           <h1>
-            Adventurers’
+            The Adventurers
             <br />
             Guild
           </h1>
@@ -52,7 +55,7 @@ export default function Onboarding({
           </span>
         </div>
         <div className="art-coordinates">
-          THE GUILD <span>✦</span> ANDROID
+          THE ADVENTURERS GUILD <span>✦</span> ANDROID
         </div>
       </div>
       <main className="onboard-form">
@@ -126,6 +129,24 @@ export default function Onboarding({
                 <span className="eyebrow">STARTING ASSESSMENT</span>
                 <h2>Record your baseline</h2>
                 <AssessmentForm
+                  units={units}
+                  usedForms={seenForms}
+                  onFormStart={(id) =>
+                    setSeenForms([...new Set([...seenForms, id])])
+                  }
+                  onUnitsChange={setUnits}
+                  completeLabel="Review starting classes"
+                  onComplete={() => {
+                    if (
+                      !available(
+                        CLASSES.find((p) => p.id === classId)!,
+                        values,
+                        0,
+                      )
+                    )
+                      setClassId("disciple");
+                    setStep(3);
+                  }}
                   value={baseline.assessment!}
                   onChange={(assessment) =>
                     setBaseline({
@@ -138,23 +159,6 @@ export default function Onboarding({
                     })
                   }
                 />
-                <button
-                  className="button primary full"
-                  disabled={assessmentErrors(baseline.assessment!).length > 0}
-                  onClick={() => {
-                    if (
-                      !available(
-                        CLASSES.find((p) => p.id === classId)!,
-                        values,
-                        0,
-                      )
-                    )
-                      setClassId("disciple");
-                    setStep(3);
-                  }}
-                >
-                  Review starting classes <ArrowRight size={18} />
-                </button>
               </>
             )}
             {step === 3 && (
@@ -176,14 +180,32 @@ export default function Onboarding({
                 />
                 <div className="rank-intro">
                   <div className="rank-mini">{startingRankFor(values)}</div>
-                  <span>Starting rank: {startingRankFor(values)}</span>
+                  <span>
+                    Starting rank: {startingRankFor(values)} ·{" "}
+                    {
+                      RANKS.find((r) => r.name === startingRankFor(values))!
+                        .metal
+                    }
+                  </span>
                 </div>
                 <button
                   className="button primary full"
                   onClick={() =>
-                    onCreate(
-                      createCharacter(name, baseline, classId, profession),
-                    )
+                    onCreate({
+                      ...createCharacter(name, baseline, classId, profession),
+                      assessmentFormsSeen: seenForms,
+                      preferences: {
+                        units,
+                        textSize: "standard",
+                        reduceMotion: false,
+                        equipment:
+                          baseline.mode === "weights"
+                            ? ["bodyweight", "weights"]
+                            : ["bodyweight"],
+                        showLockedRequests: true,
+                        defaultPage: "guild",
+                      },
+                    })
                   }
                 >
                   Create character <ArrowRight size={18} />
@@ -193,7 +215,7 @@ export default function Onboarding({
           </div>
         )}
         <footer>
-          <button onClick={onHelp}>Help</button> · THE GUILD
+          <button onClick={onHelp}>Help</button> · THE ADVENTURERS GUILD
         </footer>
       </main>
     </div>

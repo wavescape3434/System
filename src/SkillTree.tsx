@@ -65,15 +65,25 @@ export default function SkillTree({
             : s.archetype === owner)
         : s.owner === owner),
   );
-  const worldHeight = Math.max(810, ...list.map((s) => s.y + 125));
+  const worldHeight = Math.max(810, ...list.map((s) => s.y + 125)),
+    worldWidth = Math.max(1100, ...list.map((s) => s.x + 170));
   useEffect(() => {
     const el = treeRef.current;
-    if (el)
+    if (el) {
+      const root =
+        list.find((s) => !s.parents.length && !s.anyParents?.length) || list[0];
       el.scrollTo({
-        left: Math.max(0, (1100 * zoom - el.clientWidth) / 2),
-        top: Math.max(0, worldHeight * zoom - el.clientHeight),
+        left: Math.max(
+          0,
+          (root?.x || worldWidth / 2) * zoom - el.clientWidth / 2,
+        ),
+        top: Math.max(
+          0,
+          (root?.y || worldHeight) * zoom - el.clientHeight * 0.55,
+        ),
       });
-  }, [category, branch, zoom, worldHeight]);
+    }
+  }, [category, branch, zoom, worldHeight, worldWidth]);
   const wallet =
     category === "universal"
       ? "universal"
@@ -196,6 +206,32 @@ export default function SkillTree({
           </button>
         </div>
       </div>
+      {category === "class" && owner === "fighter" && (
+        <div className="tree-specializations">
+          {[
+            ["sword", "Swordsmanship"],
+            ["spear", "Spearcraft"],
+            ["axe", "Axe Fighting"],
+            ["unarmed", "Unarmed Combat"],
+          ].map(([id, name]) => (
+            <button
+              key={id}
+              onClick={() => {
+                const node = list.find((s) => s.id === `martial-${id}-1`),
+                  el = treeRef.current;
+                if (node && el)
+                  el.scrollTo({
+                    left: Math.max(0, node.x * zoom - el.clientWidth / 2),
+                    top: Math.max(0, node.y * zoom - el.clientHeight / 2),
+                    behavior: "smooth",
+                  });
+              }}
+            >
+              Find {name}
+            </button>
+          ))}
+        </div>
+      )}
       <div
         ref={treeRef}
         onPointerDown={(e) => {
@@ -223,16 +259,20 @@ export default function SkillTree({
       >
         <div
           className="skill-tree-world"
-          style={{ width: 1100 * zoom, height: worldHeight * zoom }}
+          style={{ width: worldWidth * zoom, height: worldHeight * zoom }}
         >
           <div
             className="skill-tree-canvas"
-            style={{ transform: `scale(${zoom})`, height: worldHeight }}
+            style={{
+              transform: `scale(${zoom})`,
+              height: worldHeight,
+              width: worldWidth,
+            }}
           >
             <svg
               className="skill-connections"
-              viewBox={`0 0 1100 ${worldHeight}`}
-              style={{ height: worldHeight }}
+              viewBox={`0 0 ${worldWidth} ${worldHeight}`}
+              style={{ height: worldHeight, width: worldWidth }}
               aria-hidden="true"
             >
               <defs>
@@ -246,9 +286,13 @@ export default function SkillTree({
                   <circle cx="78" cy="63" r=".7" fill="#c8c4a2" opacity=".35" />
                 </pattern>
               </defs>
-              <rect width="1100" height={worldHeight} fill="url(#starfield)" />
+              <rect
+                width={worldWidth}
+                height={worldHeight}
+                fill="url(#starfield)"
+              />
               {list.flatMap((s) =>
-                s.parents.map((id) => {
+                [...s.parents, ...(s.anyParents || [])].map((id) => {
                   const parent = list.find((p) => p.id === id);
                   return parent ? (
                     <path

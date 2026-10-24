@@ -1,3 +1,6 @@
+import { RANK_METALS } from "./rank-metals";
+import { certifiedLevel } from "./exam-rules";
+import type { ExamRecord } from "./exam-rules";
 import { assessedStats } from "./metrics";
 import type { Assessment } from "./metrics";
 import type { Preferences } from "./preferences";
@@ -7,7 +10,7 @@ import {
   entryTrial,
   taskRequirements,
 } from "./training-tasks";
-import { checkpointUnits, milestonePoints } from "./task-ranks";
+import { checkpointUnits, milestonePoints, TASK_GOLD } from "./task-ranks";
 import type { TaskRank } from "./task-ranks";
 import type { JourneyEvent } from "./journey-events";
 import { levelFromXP, xpForLevel, statMilestones } from "./progression";
@@ -74,6 +77,9 @@ export function selectSubclass(c: Character, id: string | null): Character {
 }
 export { PROFESSIONS } from "./professions";
 export interface Objective {
+  gold?: number;
+  trainingMix?: Partial<Record<Attribute, number>>;
+  participants?: "solo" | "group";
   id: string;
   title: string;
   description: string;
@@ -180,6 +186,9 @@ export interface TakenRequest extends Objective {
   vocationId?: string;
 }
 export interface Completion {
+  gold?: number;
+  trainingMix?: Partial<Record<Attribute, number>>;
+  participants?: "solo" | "group";
   rank?: TaskRank;
   taskVersion?: 2;
   family?: string;
@@ -230,6 +239,15 @@ export interface Character {
   unlockedClasses?: string[];
   progressionVersion?: 2;
   trainingVersion?: 3;
+  examVersion?: 1;
+  exams?: ExamRecord[];
+  examGrandfather?: {
+    classes: Record<string, number>;
+    professions: Record<string, number>;
+  };
+  assessmentFormsSeen?: string[];
+  notificationsReadAt?: string;
+  notificationReads?: string[];
   preferences?: Preferences;
   classEntries?: Record<string, { at: string; credit: number }>;
   trainingLegacy?: {
@@ -336,7 +354,7 @@ export const classXP = (c: Character, id: string) =>
   ownClassXP(c, id) +
   c.completions.reduce((n, o) => n + (o.classCredits?.[id] || 0), 0) +
   (c.classEntries?.[id]?.credit || 0);
-export const classLevel = (c: Character, id: string) => {
+export const classTrainingLevel = (c: Character, id: string) => {
   const raw = levelFromXP(
     classXP(c, id) + (c.legacyProgress?.classes[id] || 0),
   );
@@ -348,6 +366,8 @@ export const classLevel = (c: Character, id: string) => {
     .reduce((n, o) => n + checkpointUnits(o.rank), 0);
   return Math.min(raw, floor + work);
 };
+export const classLevel = (c: Character, id: string) =>
+  certifiedLevel(c, "class", id, classTrainingLevel(c, id));
 export function classProgress(c: Character, id: string) {
   const lv = classLevel(c, id),
     xp = classXP(c, id) + (c.legacyProgress?.classes[id] || 0);
@@ -358,6 +378,10 @@ export function classProgress(c: Character, id: string) {
     current: Math.min(needed, Math.max(0, xp - start)),
     needed,
     waiting: xp >= next && c.trainingVersion === 3,
+    examRequired:
+      c.examVersion === 1 &&
+      classTrainingLevel(c, id) >= lv + 1 &&
+      (lv + 1) % 5 === 0,
     banked: Math.max(0, xp - next),
   };
 }
@@ -368,7 +392,7 @@ export const professionXP = (c: Character, name = c.profession) =>
   c.completions
     .filter((o) => o.professionCredit?.name === name)
     .reduce((n, o) => n + (o.professionCredit?.xp || 0), 0);
-export const professionLevel = (c: Character, name = c.profession) => {
+export const professionTrainingLevel = (c: Character, name = c.profession) => {
   const raw = levelFromXP(
     professionXP(c, name) + (c.legacyProgress?.professions[name] || 0),
   );
@@ -380,6 +404,8 @@ export const professionLevel = (c: Character, name = c.profession) => {
     .reduce((n, o) => n + checkpointUnits(o.rank), 0);
   return Math.min(raw, floor + work);
 };
+export const professionLevel = (c: Character, name = c.profession) =>
+  certifiedLevel(c, "profession", name, professionTrainingLevel(c, name));
 export const subclassXP = (c: Character, id = c.subclass) =>
   c.completions
     .filter((x) => x.scope === "subclass" && x.subclassId === id)
@@ -483,7 +509,7 @@ export const classRank = (lv: number) =>
               : "Novice";
 // Each promotion costs twice the previous: 500, 1,000, 2,000, ... XP.
 export const RANKS = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"].map(
-  (name, i) => ({ name, xp: 500 * (2 ** i - 1) }),
+  (name, i) => ({ name, metal: RANK_METALS[i], xp: 500 * (2 ** i - 1) }),
 );
 export const rank = (xp: number) =>
   [...RANKS].reverse().find((r) => xp >= r.xp) || RANKS[0];
@@ -551,7 +577,7 @@ export function transferableXP(c: Character, id: string): number {
           o.classId !== id &&
           (!o.scope || o.scope === "class" || o.scope === "universal"),
       )
-      .reduce((sum, o) => sum + o.xp * classRelevance(p, o.stat) * 0.25, 0),
+      .reduce((sum, o) => sum + o.xp * objectiveRelevance(p, o) * 0.25, 0),
   );
 }
 function classRelevance(p: ClassPath, stat: Attribute) {
@@ -559,6 +585,18 @@ function classRelevance(p: ClassPath, stat: Attribute) {
     (n, [id, weight]) => n + (ARCHETYPE_STAT[id] === stat ? weight! / 100 : 0),
     0,
   );
+}
+function objectiveRelevance(
+  p: ClassPath,
+  o: { stat: Attribute; trainingMix?: Partial<Record<Attribute, number>> },
+) {
+  return o.trainingMix
+    ? Object.entries(o.trainingMix).reduce(
+        (n, [stat, weight]) =>
+          n + classRelevance(p, stat as Attribute) * weight!,
+        0,
+      )
+    : classRelevance(p, o.stat);
 }
 export function classCreditRewards(
   c: Character,
@@ -569,7 +607,7 @@ export function classCreditRewards(
   const credits: Record<string, number> = {};
   for (const id of c.unlockedClasses || [c.activeClass]) {
     const p = CLASSES.find((p) => p.id === id)!;
-    const relevance = classRelevance(p, o.stat);
+    const relevance = objectiveRelevance(p, o);
     if (!relevance || o.scope === "profession") continue;
     if (o.scope === "class" && id === target) continue;
     const value = Math.floor(o.xp * relevance * (id === target ? 0.5 : 0.25));
@@ -1142,6 +1180,17 @@ export function complete(
         period: objectivePeriod(actual, now),
         at: now.toISOString(),
         xp: actual.xp,
+        ...(c.examVersion === 1
+          ? {
+              gold:
+                actual.gold ??
+                (actual.rank
+                  ? TASK_GOLD[actual.rank]
+                  : Math.max(1, Math.round(actual.xp / 5))),
+            }
+          : {}),
+        ...(actual.trainingMix ? { trainingMix: actual.trainingMix } : {}),
+        ...(actual.participants ? { participants: actual.participants } : {}),
         stat: actual.stat,
         classId: actual.targetClass || taken?.classId || c.activeClass,
         title: actual.title,
@@ -1192,7 +1241,7 @@ export function universalCareerCredits(
   const related = (category: string) => {
     const group = CAREER_CATEGORIES.find((g) => g.id === category)!;
     return (
-      o.stat === group.stat ||
+      (o.trainingMix ? !!o.trainingMix[group.stat] : o.stat === group.stat) ||
       (["STR", "DEX", "CON"].includes(o.stat) &&
         [
           "trades",
@@ -1207,12 +1256,27 @@ export function universalCareerCredits(
   const category = careerCategory(role).id,
     vocation = VOCATIONS.find((v) => v.id === vocationId);
   const xp = Math.floor(o.xp * 0.25);
+  const weighted = (category: string) =>
+    o.trainingMix
+      ? Math.floor(
+          xp *
+            (o.trainingMix[
+              CAREER_CATEGORIES.find((g) => g.id === category)!.stat
+            ] || 0),
+        )
+      : xp;
   return {
     ...(related(category)
-      ? { professionCredit: { name: role, category, xp } }
+      ? { professionCredit: { name: role, category, xp: weighted(category) } }
       : {}),
     ...(vocation && related(vocation.category)
-      ? { vocationCredit: { id: vocation.id, category: vocation.category, xp } }
+      ? {
+          vocationCredit: {
+            id: vocation.id,
+            category: vocation.category,
+            xp: weighted(vocation.category),
+          },
+        }
       : {}),
   };
 }
@@ -1349,6 +1413,7 @@ export function createCharacter(
                 : ["bodyweight"],
           },
           trainingVersion: 3 as const,
+          examVersion: 1 as const,
           classEntries: {
             [selected && available(selected, baseStats, 0)
               ? selected.id
@@ -1394,6 +1459,7 @@ export function demoCharacter(): Character {
   return {
     ...c,
     trainingVersion: 3,
+    examVersion: 1,
     classEntries: { warrior: { at: c.createdAt, credit: 0 } },
     baseline: {
       ...c.baseline,
@@ -1416,6 +1482,28 @@ export function demoCharacter(): Character {
     },
     baseStats: { STR: 10, DEX: 10, CON: 10, INT: 10, WIS: 10, CHA: 10 },
     unlockedClasses: ["warrior"],
+  };
+}
+export function upgradeExams(c: Character): Character {
+  if (c.examVersion === 1) return c;
+  const roles = [
+    ...new Set(
+      c.completions.map((o) => o.profession).filter((n): n is string => !!n),
+    ),
+  ];
+  return {
+    ...c,
+    examVersion: 1,
+    notificationsReadAt: new Date().toISOString(),
+    exams: [],
+    examGrandfather: {
+      classes: Object.fromEntries(
+        CLASSES.map((p) => [p.id, classLevel(c, p.id)]),
+      ),
+      professions: Object.fromEntries(
+        roles.map((name) => [name, professionLevel(c, name)]),
+      ),
+    },
   };
 }
 export function upgradeTraining(c: Character): Character {
@@ -1546,6 +1634,13 @@ export function skillRequirements(c: Character, s: Skill): string[] {
     const parent = SKILLS.find((x) => x.id === id);
     if (parent && !hasSkill(c, parent)) missing.push(`Learn ${parent.name}`);
   }
+  if (
+    s.anyParents?.length &&
+    !s.anyParents.some((id) => c.earnedSkills.includes(id))
+  )
+    missing.push(
+      `Learn one of: ${s.anyParents.map((id) => SKILLS.find((p) => p.id === id)?.name || id).join(" / ")}`,
+    );
   const wallet = skillWallet(c, s),
     lv = s.archetype
       ? levelFromXP(archetypeXP(c, s.archetype))

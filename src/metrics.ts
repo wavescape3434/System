@@ -1,3 +1,5 @@
+import { mentalForm, formScore, validMentalFormId } from "./exam-bank";
+import type { MentalResult } from "./exam-bank";
 import type { Attribute, Baseline, Stats } from "./domain";
 export type ReferenceSex = "male" | "female" | "unspecified";
 export interface Assessment {
@@ -17,9 +19,7 @@ export interface Assessment {
   pullups: number | null;
   gripKg?: number | null;
   chairAssisted?: boolean;
-  mental?: Partial<
-    Record<"INT" | "WIS" | "CHA", { answers: number[]; completedAt: string }>
-  >;
+  mental?: Partial<Record<"INT" | "WIS" | "CHA", MentalResult>>;
 }
 export const EMPTY_ASSESSMENT: Assessment = {
   version: 2,
@@ -208,214 +208,27 @@ export function predictedWalk(a: Assessment): number | null {
       : 2.11 * a.heightCm - 2.29 * a.massKg - 5.78 * a.age + 667;
   return result > 0 ? result : null;
 }
-export interface CheckQuestion {
-  prompt: string;
-  options: string[];
-  answer: number;
-  explanation: string;
-}
-export const MIND_CHECKS: Record<
-  "INT" | "WIS" | "CHA",
-  { name: string; lesson?: string; questions: CheckQuestion[] }
-> = {
-  INT: {
-    name: "Learning & reasoning",
-    lesson:
-      "A guild relay sends one packet at a time. A blue seal means its destination is inside the town; a red seal means outside. Every packet needs a destination. If a relay cannot find a destination, it returns the packet to its sender. A second relay can offer another route, but does not remove the need for a destination.",
-    questions: [
-      {
-        prompt: "Which seal marks a destination outside town?",
-        options: ["Blue", "Red", "Both", "Neither"],
-        answer: 1,
-        explanation:
-          "The lesson assigns a red seal to outside-town destinations.",
-      },
-      {
-        prompt: "A packet has no usable destination. What happens?",
-        options: [
-          "It is sent anywhere",
-          "It becomes blue",
-          "It is returned to its sender",
-          "It is always discarded",
-        ],
-        answer: 2,
-        explanation: "The stated rule is to return the packet.",
-      },
-      {
-        prompt: "What does a second relay change?",
-        options: [
-          "It can provide another route",
-          "It removes destinations",
-          "It changes every seal",
-          "It guarantees delivery",
-        ],
-        answer: 0,
-        explanation:
-          "An alternative route does not eliminate the original requirements.",
-      },
-      {
-        prompt: "What is the next number: 3, 6, 12, 24, …?",
-        options: ["27", "30", "36", "48"],
-        answer: 3,
-        explanation: "Each number is twice the preceding number.",
-      },
-      {
-        prompt: "All iron keys open gate A. This key is iron. What follows?",
-        options: [
-          "It opens every gate",
-          "It opens gate A",
-          "Only iron keys open A",
-          "Gate A is iron",
-        ],
-        answer: 1,
-        explanation:
-          "Apply the given rule without adding an unsupported converse.",
-      },
-    ],
-  },
-  WIS: {
-    name: "Scripture & practical judgment",
-    lesson:
-      "James 1:19 (KJV): “Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath.” The surrounding passage discusses receiving and doing the word, not merely hearing it.",
-    questions: [
-      {
-        prompt:
-          "Which response most directly applies the passage during a disagreement?",
-        options: [
-          "Reply before the other person finishes",
-          "Avoid every difficult conversation",
-          "Listen first and respond deliberately",
-          "Win the argument quickly",
-        ],
-        answer: 2,
-        explanation: "The passage emphasizes listening and restraint.",
-      },
-      {
-        prompt:
-          "Before applying a verse to an unfamiliar situation, what is a useful first step?",
-        options: [
-          "Read its surrounding passage and identify its audience",
-          "Use only the shortest quotation",
-          "Assume every example is a command",
-          "Ignore the original context",
-        ],
-        answer: 0,
-        explanation:
-          "Context helps distinguish what a passage says from an isolated interpretation.",
-      },
-      {
-        prompt:
-          "A claim supports your preferred opinion, but its source is unclear. What should you do?",
-        options: [
-          "Share it because it agrees with you",
-          "Check the source and look for contrary evidence",
-          "Treat uncertainty as proof",
-          "Assume popularity makes it true",
-        ],
-        answer: 1,
-        explanation:
-          "Checking evidence before acting reduces confirmation bias.",
-      },
-      {
-        prompt:
-          "You promised more help than you can reliably give. What is the soundest next step?",
-        options: [
-          "Disappear",
-          "Make another larger promise",
-          "Blame the person who asked",
-          "Explain your limits and agree on a realistic commitment",
-        ],
-        answer: 3,
-        explanation:
-          "Honest, workable commitments are more useful than unreliable promises.",
-      },
-      {
-        prompt: "What best tests whether you understood this passage?",
-        options: [
-          "Count how many times you read it",
-          "Explain its meaning and give an appropriate application",
-          "Memorize the page number only",
-          "Agree with every interpretation",
-        ],
-        answer: 1,
-        explanation:
-          "Comprehension and application provide more information than exposure counts.",
-      },
-    ],
-  },
-  CHA: {
-    name: "Listening & communication",
-    lesson:
-      "A teammate says: “I studied all week, failed the practice exam, and feel embarrassed. I am not asking for a study plan yet; I just need someone to listen.”",
-    questions: [
-      {
-        prompt:
-          "Which opening best reflects what the teammate actually asked for?",
-        options: [
-          "Here is a ten-step plan",
-          "That sounds discouraging. Do you want to talk about what happened?",
-          "It is not a big deal",
-          "You should have studied harder",
-        ],
-        answer: 1,
-        explanation: "Acknowledge the feeling and honor the request to listen.",
-      },
-      {
-        prompt: "Which summary checks your understanding?",
-        options: [
-          "You never want advice",
-          "The exam is unfair",
-          "You worked hard and feel embarrassed by this result—is that right?",
-          "You are bad at this subject",
-        ],
-        answer: 2,
-        explanation:
-          "An accurate tentative summary invites correction without adding a judgment.",
-      },
-      {
-        prompt: "How can you offer advice while respecting the request?",
-        options: [
-          "Ask whether they want ideas after listening",
-          "Give advice over them",
-          "Change the subject immediately",
-          "Explain why their feelings are wrong",
-        ],
-        answer: 0,
-        explanation:
-          "Ask permission before switching from listening to problem solving.",
-      },
-      {
-        prompt: "Which question is most open and neutral?",
-        options: [
-          "Why did you fail again?",
-          "You did not study properly, did you?",
-          "Do you agree with my plan?",
-          "Which part felt hardest?",
-        ],
-        answer: 3,
-        explanation:
-          "An open question invites detail without inserting an accusation.",
-      },
-      {
-        prompt: "Which message makes a work request easiest to act on?",
-        options: [
-          "Fix this soon",
-          "Everything is broken",
-          "Please check the route table by 3 pm and tell me which destination fails",
-          "You know what to do",
-        ],
-        answer: 2,
-        explanation:
-          "A clear action, timeframe, and expected response reduce ambiguity.",
-      },
-    ],
-  },
+export const MIND_CHECKS = {
+  INT: mentalForm("INT"),
+  WIS: mentalForm("WIS"),
+  CHA: mentalForm("CHA"),
 };
-export function checkScore(stat: "INT" | "WIS" | "CHA", answers: number[]) {
-  return MIND_CHECKS[stat].questions.reduce(
-    (n, q, i) => n + (answers[i] === q.answer ? 1 : 0),
-    0,
-  );
+const LEGACY_ANSWERS = {
+  INT: [1, 2, 0, 3, 1],
+  WIS: [2, 0, 1, 3, 1],
+  CHA: [1, 2, 0, 3, 2],
+};
+export function checkScore(
+  stat: "INT" | "WIS" | "CHA",
+  answers: number[],
+  formId?: string,
+) {
+  return formId
+    ? formScore(mentalForm(stat, formId), answers)
+    : LEGACY_ANSWERS[stat].reduce(
+        (n, a, i) => n + (answers[i] === a ? 1 : 0),
+        0,
+      );
 }
 export function assessmentResults(a: Assessment): MetricResult[] {
   const results: MetricResult[] = [];
@@ -518,7 +331,7 @@ export function assessmentResults(a: Assessment): MetricResult[] {
   );
   for (const stat of ["INT", "WIS", "CHA"] as const) {
     const check = a.mental?.[stat];
-    const score = check ? checkScore(stat, check.answers) : null;
+    const score = check ? checkScore(stat, check.answers, check.formId) : null;
     add(
       stat,
       score,
@@ -605,7 +418,38 @@ export function validAssessment(input: unknown): input is Assessment {
             result.answers.every(
               (n) => Number.isInteger(n) && n >= 0 && n <= 3,
             ) &&
-            Number.isFinite(Date.parse(result.completedAt)),
+            Number.isFinite(Date.parse(result.completedAt)) &&
+            (result.formId === undefined ||
+              (validMentalFormId(result.formId) &&
+                result.formId.startsWith(stat.toLowerCase() + "-"))) &&
+            (result.durationMs === undefined ||
+              (Number.isFinite(result.durationMs) &&
+                result.durationMs >= 1000)) &&
+            (result.challenge === undefined ||
+              (Number.isInteger(result.challenge) && result.challenge >= 1)),
         )))
   );
+}
+
+export function displayAssessmentResults(
+  a: Assessment,
+  units: "metric" | "imperial" = "metric",
+): MetricResult[] {
+  const results = assessmentResults(a);
+  if (units === "metric") return results;
+  const format = (value: string) =>
+    value
+      .replace(
+        /(\d+(?:\.\d+)?) kg\b/g,
+        (_, n) => `${Math.round(Number(n) * 2.2046226218 * 10) / 10} lb`,
+      )
+      .replace(
+        /(\d+(?:\.\d+)?) m\b/g,
+        (_, n) => `${Math.round(Number(n) * 1.0936132983 * 10) / 10} yd`,
+      );
+  return results.map((r) => ({
+    ...r,
+    raw: format(r.raw),
+    reference: format(r.reference),
+  }));
 }

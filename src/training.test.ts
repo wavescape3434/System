@@ -103,10 +103,16 @@ describe("reference-centred assessment", () => {
   it("scores original learning, judgment, and communication questions from answers", () => {
     for (const stat of ["INT", "WIS", "CHA"] as const) {
       const answers = MIND_CHECKS[stat].questions.map((q) => q.answer);
-      expect(checkScore(stat, answers)).toBe(5);
+      expect(checkScore(stat, answers, MIND_CHECKS[stat].id)).toBe(5);
       const result = assessmentResults({
         ...EMPTY_ASSESSMENT,
-        mental: { [stat]: { answers, completedAt: now.toISOString() } },
+        mental: {
+          [stat]: {
+            answers,
+            formId: MIND_CHECKS[stat].id,
+            completedAt: now.toISOString(),
+          },
+        },
       }).find((r) => r.stat === stat)!;
       expect(result.value).toBeGreaterThan(10);
       expect(result.evidence).toBe("provisional");

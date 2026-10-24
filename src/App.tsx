@@ -1,3 +1,7 @@
+import Notifications, {
+  notificationFeed,
+  notificationUnread,
+} from "./Notifications";
 import Settings from "./Settings";
 import { DEFAULT_PREFERENCES } from "./preferences";
 import Help from "./Help";
@@ -7,6 +11,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 import {
+  Bell,
   CreditCard,
   Target,
   Route,
@@ -41,6 +46,7 @@ import {
   awardSkills,
   objectivePeriod,
   upgradeTraining,
+  upgradeExams,
   taskRequirements,
   classCreditRewards,
   universalCareerCredits,
@@ -119,7 +125,7 @@ async function exportData(data: string, name: string) {
       encoding: Encoding.UTF8,
     });
     await Share.share({
-      title: "The Guild character backup",
+      title: "The Adventurers Guild character backup",
       url: file.uri,
       dialogTitle: "Save your guild character",
     });
@@ -153,6 +159,7 @@ export default function App() {
     [page, setPage] = useState<Page>(
       initial.character?.preferences?.defaultPage || "guild",
     ),
+    [notificationsOpen, setNotificationsOpen] = useState(false),
     [dialog, setDialog] = useState<Dialog>(null),
     [objective, setObjective] = useState<Objective | null>(null),
     [checked, setChecked] = useState<number[]>([]),
@@ -179,6 +186,7 @@ export default function App() {
   }, []);
   const close = useCallback(() => {
     setDialog(null);
+    setNotificationsOpen(false);
     setObjective(null);
     setCloudCandidate(null);
     setImportCandidate(null);
@@ -194,7 +202,12 @@ export default function App() {
   useEffect(() => {
     if (!Capacitor.isNativePlatform()) return;
     const listener = NativeApp.addListener("backButton", () => {
-      if (dialog || objective || cloudCandidate || importCandidate) close();
+      if (document.querySelector('[role="dialog"]'))
+        document.dispatchEvent(
+          new KeyboardEvent("keydown", { key: "Escape", bubbles: true }),
+        );
+      else if (dialog || objective || cloudCandidate || importCandidate)
+        close();
       else if (menu) setMenu(false);
       else if (page !== "guild") setPage("guild");
       else void NativeApp.minimizeApp();
@@ -208,7 +221,7 @@ export default function App() {
   const update = useCallback(
     (next: Character, track = true) => {
       try {
-        const prepared = awardSkills(upgradeTraining(next));
+        const prepared = awardSkills(upgradeExams(upgradeTraining(next)));
         const awarded = track
           ? recordJourney(characterRef.current, prepared)
           : prepared;
@@ -326,7 +339,7 @@ export default function App() {
             >
               <Crest small />
               <span>
-                THE GUILD<small>PERSONAL DEVELOPMENT</small>
+                THE ADVENTURERS GUILD<small>PERSONAL DEVELOPMENT</small>
               </span>
             </a>
             <div className="sidebar-divider" />
@@ -378,7 +391,7 @@ export default function App() {
                   {menu ? <X size={21} /> : <Menu size={21} />}
                 </button>
                 <Crest small />
-                <b>THE GUILD</b>
+                <b>THE ADVENTURERS GUILD</b>
               </div>
               <span className="breadcrumb">
                 Your adventure <span>/</span> <b>{active.name}</b>
@@ -388,6 +401,31 @@ export default function App() {
                   <span className="status-dot" />
                   {user ? "Google linked · local changes" : "Saved locally"}
                 </span>
+                <button
+                  className="icon-button notification-trigger"
+                  aria-label="Notifications"
+                  aria-expanded={notificationsOpen}
+                  onClick={() => {
+                    setNotificationsOpen(true);
+                    update({
+                      ...c,
+                      notificationsReadAt: new Date().toISOString(),
+                      notificationReads: [
+                        ...new Set([
+                          ...notificationFeed(c).map((n) => n.id),
+                          ...(c.notificationReads || []),
+                        ]),
+                      ].slice(0, 500),
+                    });
+                  }}
+                >
+                  <Bell size={21} />
+                  {notificationUnread(c).length > 0 && (
+                    <span className="notification-count">
+                      {notificationUnread(c).length}
+                    </span>
+                  )}
+                </button>
                 <button
                   className="icon-button help-shortcut"
                   aria-label="Open help"
@@ -466,7 +504,7 @@ export default function App() {
                 </div>
               )}
               <footer className="main-footer">
-                <span>✦ &nbsp; THE GUILD</span>
+                <span>✦ &nbsp; THE ADVENTURERS GUILD</span>
                 <span>BODY. MIND. HEART.</span>
               </footer>
             </main>
@@ -522,6 +560,9 @@ export default function App() {
           e.target.value = "";
         }}
       />
+      {notificationsOpen && c && (
+        <Notifications c={c} onClose={() => setNotificationsOpen(false)} />
+      )}
       {objective && c && (
         <Modal title={objective.title} onClose={close}>
           <div className="objective-modal-meta">
@@ -530,6 +571,9 @@ export default function App() {
             <Tag tone="gold">
               +{objective.xp} {objective.scope || "class"} XP
             </Tag>
+            {objective.gold !== undefined && (
+              <Tag tone="gold">+{objective.gold} gold</Tag>
+            )}
             <span>{objective.minutes}</span>
           </div>
           <p>{objective.description}</p>

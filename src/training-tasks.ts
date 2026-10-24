@@ -1,6 +1,7 @@
+import { hasEquipment } from "./preferences";
 import type { Character, Objective, Attribute } from "./domain";
 import { CLASSES } from "./class-catalog";
-import { TASK_RANKS, TASK_XP } from "./task-ranks";
+import { TASK_RANKS, TASK_XP, TASK_GOLD } from "./task-ranks";
 import type { TaskRank } from "./task-ranks";
 import { careerCategory } from "./careers";
 type TaskRow = [
@@ -313,7 +314,7 @@ const ROWS: TaskRow[] = [
   [
     "teach-topic",
     "Teach a difficult topic",
-    "Prepare a sourced explanation, teach it, answer questions, and correct one identified misunderstanding.",
+    "Prepare and record a sourced explanation of a difficult topic. Answer five likely questions and check your answers against original sources.",
     "B",
     "INT",
     "2–3 hours",
@@ -349,7 +350,7 @@ const ROWS: TaskRow[] = [
   [
     "bible-application",
     "Study and apply Scripture",
-    "Study a passage in context, identify an appropriate application, and carry out a specific action of service or restraint.",
+    "Study a passage in context, explain its meaning, and carry out an appropriate personal application that does not require another participant.",
     "D",
     "WIS",
     "25 min",
@@ -384,8 +385,8 @@ const ROWS: TaskRow[] = [
   ],
   [
     "contact",
-    "Contact a friend",
-    "Send a thoughtful message or check in with someone.",
+    "Draft a thoughtful message",
+    "Write a thoughtful message to a friend. Review its tone and clarity; no reply is required.",
     "F",
     "CHA",
     "5 min",
@@ -393,8 +394,8 @@ const ROWS: TaskRow[] = [
   ],
   [
     "listen",
-    "Listening practice",
-    "Have a conversation where you ask an open question, listen without interrupting, and check your summary with the speaker.",
+    "Recorded listening practice",
+    "Listen to a short public talk without the transcript. Summarize its point, then compare your summary against the transcript.",
     "E",
     "CHA",
     "15 min",
@@ -402,8 +403,8 @@ const ROWS: TaskRow[] = [
   ],
   [
     "explain-clearly",
-    "Explain something clearly",
-    "Give a concise explanation or request. Ask the listener what they understood and clarify any mismatch.",
+    "Record a clear explanation",
+    "Record a concise explanation. Review whether its purpose, key points, and next action are clear; revise one unclear section.",
     "D",
     "CHA",
     "20 min",
@@ -411,8 +412,8 @@ const ROWS: TaskRow[] = [
   ],
   [
     "presentation",
-    "Presentation with feedback",
-    "Deliver a prepared ten-minute presentation and use specific audience feedback to revise it.",
+    "Solo presentation rehearsal",
+    "Rehearse and record a ten-minute presentation alone. Use a clarity and structure checklist to revise the weakest section.",
     "C",
     "CHA",
     "45–60 min",
@@ -574,8 +575,10 @@ export function universalTasks(): Objective[] {
       equipment: equipment || "bodyweight",
       cooldownHours,
       minimumPullups,
-      cadence:
-        id === "marathon"
+      participants: "solo",
+      cadence: ["service-plan", "lead-discussion"].includes(id)
+        ? "weekly"
+        : id === "marathon"
           ? "monthly"
           : id === "half-marathon"
             ? "weekly"
@@ -622,8 +625,106 @@ export function universalTasks(): Objective[] {
         ],
         statReward: { stat, amount: rank === "SS" ? 3 : 6 },
       });
+  for (const o of list) {
+    o.gold = TASK_GOLD[o.rank!];
+    o.participants ??= "solo";
+  }
+  list.push(...GROUP_QUESTS);
   return list;
 }
+const GROUP_QUESTS: Objective[] = [
+  {
+    id: "q-group-hike",
+    title: "Group hike",
+    description:
+      "Complete a planned 60–90 minute hike with companions. Keep a sustainable pace, share navigation decisions, and check that the route suits the group.",
+    stat: "CON",
+    trainingMix: { CON: 0.7, CHA: 0.3 },
+    rank: "C",
+    xp: 150,
+    gold: 30,
+    minutes: "60–90 min",
+    family: "u-walk",
+    cadence: "weekly",
+    scope: "universal",
+    category: "Universal",
+    taskVersion: 2,
+    participants: "group",
+    cooldownHours: 24,
+  },
+  {
+    id: "q-listening",
+    title: "Conversation and listening quest",
+    description:
+      "Have a focused conversation. Ask open questions, summarize the other person's view, and ask them to correct anything you missed.",
+    stat: "CHA",
+    rank: "D",
+    xp: 60,
+    gold: 12,
+    minutes: "20–30 min",
+    family: "q-conversation",
+    cadence: "weekly",
+    scope: "universal",
+    category: "Universal",
+    taskVersion: 2,
+    participants: "group",
+  },
+  {
+    id: "q-study-group",
+    title: "Study circle",
+    description:
+      "Prepare a topic independently, explain it to a study partner, solve unfamiliar problems together, and correct errors using original sources.",
+    stat: "INT",
+    trainingMix: { INT: 0.7, CHA: 0.3 },
+    rank: "C",
+    xp: 150,
+    gold: 30,
+    minutes: "60 min",
+    family: "q-study",
+    cadence: "weekly",
+    scope: "universal",
+    category: "Universal",
+    taskVersion: 2,
+    participants: "group",
+  },
+  {
+    id: "q-service-team",
+    title: "Service team commission",
+    description:
+      "Agree on a useful Christian service project with others. Complete your responsibilities and obtain feedback from the people served.",
+    stat: "WIS",
+    trainingMix: { WIS: 0.7, CHA: 0.3 },
+    rank: "B",
+    xp: 350,
+    gold: 70,
+    minutes: "2–3 hours",
+    family: "q-service",
+    cadence: "weekly",
+    scope: "universal",
+    category: "Universal",
+    taskVersion: 2,
+    participants: "group",
+  },
+  {
+    id: "q-training-partner",
+    title: "Partner technique review",
+    description:
+      "Complete a suitable strength session with a partner. Review each other's technique and record one useful correction without competing for maximum load.",
+    stat: "STR",
+    trainingMix: { STR: 0.8, CHA: 0.2 },
+    rank: "C",
+    xp: 150,
+    gold: 30,
+    minutes: "45 min",
+    family: "u-resistance",
+    cadence: "weekly",
+    scope: "universal",
+    category: "Universal",
+    taskVersion: 2,
+    participants: "group",
+    cooldownHours: 48,
+  },
+];
 export function rankedObjectives(
   c: Character,
   legacy: Objective[],
@@ -644,6 +745,8 @@ export function rankedObjectives(
         rank,
         xp: TASK_XP[rank],
         taskVersion: 2 as const,
+        gold: TASK_GOLD[rank],
+        participants: "solo" as const,
         family:
           o.scope === "class" ? `class-${c.activeClass}-${o.cadence}` : o.id,
       };
@@ -666,8 +769,8 @@ export function rankedObjectives(
         ? `${CLASSES.find((p) => p.id === c.activeClass)!.name} technique check`
         : `${CLASSES.find((p) => p.id === c.activeClass)!.name} commission`;
       o.description = o.id.endsWith("technique-daily")
-        ? "Review one specific technique from your training. Use feedback or a checked example to make one correction."
-        : `Review completed training for this class. ${CLASSES.find((p) => p.id === c.activeClass)!.goal} Demonstrate a specific correction, teach-back, or practical application and choose the next progression.`;
+        ? "Independently review one technique using a recording, worked example, or self-check rubric. Make and document one correction."
+        : `Complete individual practice toward this class goal: ${CLASSES.find((p) => p.id === c.activeClass)!.goal} Use a recording, simulation, or checked example to demonstrate a correction or application; choose the next progression.`;
       o.kind = undefined;
     }
   const filtered = list.filter(
@@ -675,6 +778,19 @@ export function rankedObjectives(
       (!o.id.startsWith("network-") || networking) &&
       (!o.id.startsWith("analysis-") || analysis),
   );
+  for (const o of filtered)
+    if (
+      o.scope === "profession" &&
+      o.id !== "profession-daily" &&
+      o.cadence === "daily" &&
+      !o.id.startsWith("network-") &&
+      !o.id.startsWith("analysis-")
+    )
+      o.description = `Work independently on ${o.category} using a written case, simulation, or practical exercise. Check the result against a source or marking guide and record one correction.`;
+  const application = filtered.find((o) => o.id === "profession-daily");
+  if (application && c.profession === "Analyst")
+    application.description =
+      "Independently tailor and submit one relevant job application, or improve a portfolio work sample against a target role's requirements.";
   const monthly = filtered.find((o) => o.id === "profession-monthly");
   if (monthly) monthly.careerCategory = careerCategory(c.profession).id;
   return [...universalTasks(), ...filtered];
@@ -697,6 +813,8 @@ export function entryTrial(_c: Character, id: string): Objective | undefined {
     category: "Class trials",
     rank,
     taskVersion: 2,
+    gold: TASK_GOLD[rank],
+    participants: "solo",
     kind: "class-trial",
     once: true,
     targetClass: id,
@@ -724,7 +842,7 @@ export function taskRequirements(
   if (
     o.equipment &&
     o.equipment !== "bodyweight" &&
-    !(prefs?.equipment || []).includes(o.equipment)
+    !hasEquipment(prefs?.equipment, o.equipment)
   )
     missing.push(
       `Equipment: ${o.equipment === "pullup-bar" ? "pull-up bar" : "weights"}`,

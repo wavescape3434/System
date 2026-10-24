@@ -1,3 +1,5 @@
+import { validMentalFormId } from "./exam-bank";
+import { validExam } from "./exams";
 import { TASK_RANKS } from "./task-ranks";
 import { validAssessment } from "./metrics";
 import { VOCATIONS, CAREER_CATEGORIES } from "./careers";
@@ -12,6 +14,7 @@ import {
   resolveTakenRequest,
   objectivePeriod,
   upgradeTraining,
+  upgradeExams,
 } from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
 const finite = (x: unknown) =>
@@ -43,6 +46,39 @@ export function validateCharacter(x: unknown): x is Character {
           c.unlockedClasses.every((id) => CLASSES.some((p) => p.id === id)))) &&
       (c.progressionVersion === undefined || c.progressionVersion === 2) &&
       (c.trainingVersion === undefined || c.trainingVersion === 3) &&
+      (c.examVersion === undefined || c.examVersion === 1) &&
+      (c.assessmentFormsSeen === undefined ||
+        (Array.isArray(c.assessmentFormsSeen) &&
+          c.assessmentFormsSeen.every(validMentalFormId))) &&
+      (c.notificationsReadAt === undefined || date(c.notificationsReadAt)) &&
+      (c.notificationReads === undefined ||
+        (Array.isArray(c.notificationReads) &&
+          c.notificationReads.length <= 500 &&
+          c.notificationReads.every(str))) &&
+      (c.exams === undefined ||
+        (Array.isArray(c.exams) &&
+          new Set(c.exams.map((e) => e.id)).size === c.exams.length &&
+          c.exams.every(
+            (e) =>
+              validExam(e) &&
+              (e.scope === "class"
+                ? CLASSES.some((p) => p.id === e.owner && p.stat === e.stat)
+                : PROFESSIONS.some((p) => p === e.owner)),
+          ))) &&
+      (c.examGrandfather === undefined ||
+        (!!c.examGrandfather &&
+          !!c.examGrandfather.classes &&
+          !!c.examGrandfather.professions &&
+          Object.entries(c.examGrandfather.classes).every(
+            ([id, n]) =>
+              CLASSES.some((p) => p.id === id) && Number.isInteger(n) && n >= 1,
+          ) &&
+          Object.entries(c.examGrandfather.professions).every(
+            ([name, n]) =>
+              PROFESSIONS.some((p) => p === name) &&
+              Number.isInteger(n) &&
+              n >= 1,
+          ))) &&
       (c.baseline?.assessment === undefined ||
         validAssessment(c.baseline.assessment)) &&
       (c.assessmentHistory === undefined ||
@@ -154,6 +190,19 @@ export function validateCharacter(x: unknown): x is Character {
           date(o.at) &&
           finite(o.xp) &&
           o.xp <= 10000 &&
+          (o.gold === undefined ||
+            (finite(o.gold) && Number.isInteger(o.gold) && o.gold <= 2000)) &&
+          (o.participants === undefined ||
+            ["solo", "group"].includes(o.participants)) &&
+          (o.trainingMix === undefined ||
+            (typeof o.trainingMix === "object" &&
+              Object.entries(o.trainingMix).every(
+                ([a, n]) =>
+                  ATTRIBUTES.some((s) => s === a) && finite(n) && n! <= 1,
+              ) &&
+              Math.abs(
+                Object.values(o.trainingMix).reduce((n, v) => n + v!, 0) - 1,
+              ) < 0.001)) &&
           (o.rank === undefined || TASK_RANKS.includes(o.rank)) &&
           (o.classCredits === undefined ||
             (typeof o.classCredits === "object" &&
@@ -235,7 +284,7 @@ export function loadCharacter(): Character | null {
     throw new Error(
       "Your saved character needs attention. Export or restore a valid backup; your existing data has been kept.",
     );
-  return upgradeTraining(upgradeProgression(parsed));
+  return upgradeExams(upgradeTraining(upgradeProgression(parsed)));
 }
 export const saveCharacter = (c: Character) =>
   localStorage.setItem(STORAGE_KEY, JSON.stringify(c));
@@ -250,6 +299,7 @@ function validCampaign(input: unknown): boolean {
     if (
       !strings(c.cleared) ||
       !finite(c.gold) ||
+      (c.trainingGoldAccrued !== undefined && !finite(c.trainingGoldAccrued)) ||
       !inv(c.inventory) ||
       !strings(c.roster) ||
       !c.roster.every((id) => COMPANIONS.some((n) => n.id === id)) ||
@@ -360,7 +410,7 @@ function validPreferences(p: NonNullable<Character["preferences"]>) {
     ["guild", "objectives", "journey"].includes(p.defaultPage) &&
     Array.isArray(p.equipment) &&
     p.equipment.every((s) =>
-      ["bodyweight", "pullup-bar", "weights"].includes(s),
+      ["bodyweight", "pullup-bar", "weights", "gym"].includes(s),
     )
   );
 }

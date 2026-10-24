@@ -1,3 +1,4 @@
+import { mentalForm } from "../src/exam-bank";
 import { test, expect } from "@playwright/test";
 async function sample(page: import("@playwright/test").Page) {
   await page.goto("/");
@@ -31,6 +32,12 @@ async function enterClass(page: import("@playwright/test").Page, name: string) {
     .getByRole("button", { name: "Choose " + name, exact: true })
     .click();
 }
+async function reviewClasses(page: import("@playwright/test").Page) {
+  await page.getByRole("button", { name: "Results", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Review starting classes", exact: true })
+    .click();
+}
 async function account(page: import("@playwright/test").Page) {
   await page.getByRole("button", { name: "Settings", exact: true }).click();
   await page
@@ -47,7 +54,7 @@ test("onboarding supports an untested beginner and persists the F-rank character
   await page.getByRole("button", { name: "Register character" }).click();
   await page.getByLabel("Adventurer name").fill("Vincent");
   await page.getByRole("button", { name: "Continue to assessment" }).click();
-  await page.getByRole("button", { name: "Review starting classes" }).click();
+  await reviewClasses(page);
   await expect(
     page.getByRole("button", { name: "Inspect Disciple", exact: true }),
   ).toBeVisible();
@@ -248,7 +255,7 @@ test("weighted baseline opens eligible strength paths", async ({ page }) => {
   await page.getByLabel("Bench press load (kg)").fill("50");
   await page.getByLabel("Repetitions in the set (reps)").fill("8");
   await page.getByLabel("Body mass (kg)").fill("70");
-  await page.getByRole("button", { name: "Review starting classes" }).click();
+  await reviewClasses(page);
   await page
     .getByRole("button", { name: "Inspect Warrior", exact: true })
     .click();
@@ -356,7 +363,7 @@ test("assessment fields clear without a forced zero and show time units", async 
     .getByLabel("Your profession", { exact: true })
     .selectOption("Network Engineer");
   await page.getByRole("button", { name: "Continue to assessment" }).click();
-  const input = page.getByLabel("Controlled pushups (repetitions)", {
+  const input = page.getByLabel("Maximum consecutive pushups (repetitions)", {
     exact: false,
   });
   await expect(input).toHaveValue("");
@@ -739,12 +746,12 @@ test("mental checks save actual answers, distinguish unknown from zero, and pers
     .getByRole("button", { name: "Continue to assessment", exact: true })
     .click();
   await page
-    .getByLabel("Controlled pushups (repetitions)", { exact: true })
+    .getByLabel("Maximum consecutive pushups (repetitions)", { exact: true })
     .fill("0");
   const answers = {
-    INT: [1, 2, 0, 3, 1],
-    WIS: [2, 0, 1, 3, 1],
-    CHA: [1, 2, 0, 3, 2],
+    INT: mentalForm("INT").questions.map((q) => q.answer),
+    WIS: mentalForm("WIS").questions.map((q) => q.answer),
+    CHA: mentalForm("CHA").questions.map((q) => q.answer),
   };
   for (const stat of ["INT", "WIS", "CHA"] as const) {
     await page.getByRole("button", { name: stat, exact: true }).click();
@@ -775,9 +782,7 @@ test("mental checks save actual answers, distinguish unknown from zero, and pers
       .filter({ has: page.locator("b", { hasText: "DEX" }) })
       .locator("strong"),
   ).toHaveText("10");
-  await page
-    .getByRole("button", { name: "Review starting classes", exact: true })
-    .click();
+  await reviewClasses(page);
   await page
     .getByRole("button", { name: "Create character", exact: true })
     .click();
@@ -810,8 +815,9 @@ test("settings persist display, units, equipment, opening screen, and separate a
     "165.3",
   );
   await page
-    .getByLabel("Controlled pushups (repetitions)", { exact: true })
+    .getByLabel("Maximum consecutive pushups (repetitions)", { exact: true })
     .fill("40");
+  await page.getByRole("button", { name: "Results", exact: true }).click();
   await page
     .getByRole("button", { name: "Save performance check", exact: true })
     .click();

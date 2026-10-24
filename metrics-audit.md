@@ -1,6 +1,6 @@
-# Assessment and progression audit — 1.4.0
+# Assessment and progression audit — 1.5.0
 
-Reviewed 24 October 2026. This document separates published measurements from game balance. Reference values are available in the app under **Help → Assessment & training sources**, and scored published measurements link to their source.
+Reviewed 24 October 2026. This document separates published measurements from game balance. Reference values are available in the app under **Help → Assessment & training sources**, and scored published measurements link to their source. Version 1.5 retains the physical reference models introduced in 1.4, replaces the fixed mental questions, and adds milestone examinations. [Detailed update rules](docs/update-1.5.md).
 
 ## Findings from the previous assessment
 
@@ -98,15 +98,15 @@ Similarly, [CDC STEADI chair-stand cutoffs](https://www.cdc.gov/steadi/media/pdf
 
 ## INT, WIS, CHA checks
 
-Each original check has five questions, takes approximately 2–4 minutes, and shows a review explaining answers. The lesson is hidden while answering.
+Each check has five questions, takes approximately 2–4 minutes, and shows a review explaining answers afterward. No questions are displayed until Start. Each attribute has 24 scenario sets before case patterns recur, with recorded form IDs preventing immediate reuse across registration, reevaluation, and class exams. Started but abandoned forms also count as seen. None includes Bible verses.
 
-| Attribute | Check                                                                                                                               | Useful information / limitation                                                                                                                     |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| INT       | Learn a novel guild packet-routing rule; recall, infer consequences, solve a number pattern and deduction.                          | Samples immediate learning and reasoning. Reading comprehension, language, prior familiarity, and repetition affect results. It is not an IQ test.  |
-| WIS       | James 1:19 with surrounding context; interpret an application, check a source, distinguish context, choose a realistic commitment.  | Samples Christian Scripture comprehension and practical judgment choices. It does not measure faithfulness, holiness, or wisdom in every situation. |
-| CHA       | Listen to a discouraged teammate; summarize accurately, ask an open question, obtain permission to advise, make a specific request. | Samples knowledge of communication choices. It cannot establish real conversational behavior, charisma, or personality.                             |
+| Attribute | Check                                                                                                                                            | Useful information / limitation                                                                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| INT       | Numerical reasoning, learning a rule, identifying patterns, checking a calculation, and drawing supported conclusions in varied guild scenarios. | Samples immediate learning and reasoning. Reading comprehension, language, prior familiarity, and repetition affect results. It is not an IQ test. |
+| WIS       | Evaluate evidence, distinguish observation from assumption, revise a plan, choose a useful check, and recognize uncertainty.                     | Samples practical judgment choices. It does not measure faithfulness, holiness, or wisdom in every situation.                                      |
+| CHA       | Summarize another person's concern, ask open questions, seek agreement, and make clear requests in varied social situations.                     | Samples knowledge of communication choices. It cannot establish real conversational behavior, charisma, or personality.                            |
 
-The provisional anchor is **3/5 → 10**; 4/5 → 13; 5/5 → 17. Original questions have no published normative dataset. A high quiz score does not substitute for measured physical results when assigning exceptional rank. Repeating fixed questions creates familiarity effects. Broader progress should come from applied objectives with retrieval, feedback, and review; the saved check is supporting evidence, not a validated global trait estimate.
+The provisional anchor is **3/5 → 10**; 4/5 → 13; 5/5 → 17. Original questions have no published normative dataset or demonstrated equivalence between forms. A high quiz score does not substitute for measured physical results when assigning exceptional rank. Varying cases reduces immediate question repetition but does not eliminate familiarity effects. Broader progress should come from applied objectives with retrieval, feedback, and review; the saved check is supporting evidence, not a validated global trait estimate. Christian study remains an objective category outside the assessment.
 
 ## Request difficulty and rewards
 
@@ -143,6 +143,8 @@ Player levels and class levels are displayed separately. A player can be level 3
 Cumulative XP for level L remains `round(B × ((L−1) + 0.15 × (L−1)²))`, with B=250 for player levels and B=100 for class/profession levels. There is no configured ceiling. Harder work gives more XP; ordinary work remains useful but advances more slowly.
 
 Base stats increase only at class/profession milestones or explicit special weekly/monthly rewards. Every fifth level grants increasing points: **2 at 5, 3 at 10, 4 at 15, …**. That totals 65 points by level 50 and 230 by level 100. Class focus distributes its points automatically; profession focus determines its attribute. Equipment, purchases, signatures, class stances, and battles do not grant base stats. Combat effects remain combat modifiers.
+
+For new progress in 1.5, each five-level class/profession milestone is held until a passed improvement exam, after XP and relevant work qualify. Physical checks require at least 5% improvement and one whole additional recorded unit for increasing metrics; lower-is-better times require a 5% reduction. Mental checks require at least 4/5 and improved accuracy, or maintained accuracy with 5% less recorded time. An alternate repeatable work sample is available. A new protocol first records a baseline, and its comparison must occur on a later local calendar day. These thresholds are game rules, not validated minimum detectable changes or proof of real-world trait growth. Previous earned levels are preserved. Full protocols and limitations are in the [update notes](docs/update-1.5.md).
 
 This produces faster game growth from repeated evidence-informed practice, without asserting that +10 STR predicts a particular extra load. Actual performance checks retain raw repetitions, force, time, distance, and quiz answers beside the game stats. A nominal game increase can be rewarding without fabricating a measured real-world improvement. Old levels, earned attributes, purchases, and accepted commitments are preserved by a one-time migration snapshot.
 

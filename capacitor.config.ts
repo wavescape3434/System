@@ -1,11 +1,15 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 const config: CapacitorConfig = {
   appId: "com.theguild.personal",
-  appName: "The Guild",
+  appName: "The Adventurers Guild",
   webDir: "dist",
   android: { backgroundColor: "#f5f3ed" },
   plugins: {
-    SystemBars: { style: "LIGHT", insetsHandling: "css", initialViewportFitValueHint: "cover" },
+    SystemBars: {
+      style: "LIGHT",
+      insetsHandling: "css",
+      initialViewportFitValueHint: "cover",
+    },
     SocialLogin: {
       providers: {
         google: true,

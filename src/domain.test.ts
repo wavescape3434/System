@@ -147,6 +147,7 @@ describe("permanent character history", () => {
       date: "2026-10-01",
       reference: "self-reported",
     });
+    c.baseStats.INT = 20;
     c = awardSkills(c);
     expect(hasSkill(c, skill)).toBe(true);
     expect(c.unlockedClasses).toContain("network-weaver");
