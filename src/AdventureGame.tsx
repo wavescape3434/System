@@ -1,3 +1,6 @@
+import { currentPath } from "./domain";
+import { classPower } from "./class-catalog";
+import { COMBAT_EFFECTS } from "./class-roles";
 import { CLASS_ROLES } from "./class-roles";
 import { useState } from "react";
 import {
@@ -60,7 +63,11 @@ export default function AdventureGame({
     update(next);
   };
   const skills = SKILLS.filter(
-    (s) => hasSkill(c, s) && !s.automatic && s.id !== "universal-root",
+    (s) =>
+      hasSkill(c, s) &&
+      !s.automatic &&
+      !s.nonCombat &&
+      s.id !== "universal-root",
   );
   const base = stats(c),
     combat = combatAttributes(c);
@@ -522,6 +529,25 @@ export default function AdventureGame({
       )}
       {tab === "loadout" && (
         <>
+          <section className="panel signature-loadout">
+            <span className="path-icon gold">
+              <Icon name={currentPath(c).icon} />
+            </span>
+            <div>
+              <span className="eyebrow">
+                ACTIVE CLASS SIGNATURE · NO SLOT REQUIRED
+              </span>
+              <h3>{currentPath(c).signature.name}</h3>
+              <p>{currentPath(c).signature.description}</p>
+              <Tag>
+                {COMBAT_EFFECTS[currentPath(c).signature.effect]?.mp} MP ·{" "}
+                {currentPath(c).name}
+                {classPower(currentPath(c)) > 1
+                  ? ` · +${Math.round((classPower(currentPath(c)) - 1) * 100)}% potency`
+                  : ""}
+              </Tag>
+            </div>
+          </section>
           <div className="panel loadout-header">
             <h3>Equipped skills · {data.equippedSkills.length}/4</h3>
             <p>
@@ -532,7 +558,7 @@ export default function AdventureGame({
           </div>
           {!skills.length && (
             <div className="notice">
-              No purchased skills yet. Complete objectives to earn skill shards,
+              No purchased skills yet. Complete objectives to earn skill points,
               unlock tree sections through levels, and purchase nodes in Skills
               & Stats.
             </div>

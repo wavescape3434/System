@@ -1,3 +1,4 @@
+import { CLASSES, ARCHETYPES, classPower } from "./class-catalog";
 export const CLASS_ROLES: Record<
   string,
   { role: string; description: string; stance: string }
@@ -257,3 +258,15 @@ export const COMBAT_EFFECTS: Record<
     mp: 8,
   },
 };
+
+// The base families also supply combat roles to hybrid and prestige classes.
+
+for (const p of CLASSES) {
+  const primary = Object.entries(p.mix).sort((a, b) => b[1]! - a[1]!)[0][0];
+  const a = ARCHETYPES.find((a) => a.id === primary)!;
+  CLASS_ROLES[p.id] = {
+    role: a.role,
+    description: p.description,
+    stance: `+2 combat ${p.stat}${classPower(p) > 1 ? ` · ${Math.round((classPower(p) - 1) * 100)}% signature potency` : ""}`,
+  };
+}

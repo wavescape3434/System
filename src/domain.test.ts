@@ -22,7 +22,7 @@ import {
   professionLevel,
   rankXP,
   RANKS,
-  selectSubclass,
+  activeVocation,
   hasSkill,
   SKILLS,
 } from "./domain";
@@ -106,13 +106,17 @@ describe("real-world rewards and calendar recurrence", () => {
     const c = demoCharacter();
     expect(complete(c, { ...objectives(c)[0], id: "invented" }, now)).toBe(c);
   });
-  it("grows the rewarded attribute after 100 XP", () => {
+  it("waits for a fifth-level milestone before growing the class attribute", () => {
     let c = demoCharacter();
     const base = c.baseStats.STR;
     for (let d = 1; d <= 4; d++)
       c = complete(c, objectives(c)[0], new Date(2026, 9, d));
-    expect(stats(c).STR).toBe(base + 1);
+    expect(stats(c).STR).toBe(base);
     expect(classLevel(c, "warrior")).toBe(2);
+    for (let d = 5; d <= 22; d++)
+      c = complete(c, objectives(c)[0], new Date(2026, 9, d));
+    expect(classLevel(c, "warrior")).toBe(5);
+    expect(stats(c).STR).toBe(base + 1);
   });
 });
 describe("permanent character history", () => {
@@ -124,7 +128,8 @@ describe("permanent character history", () => {
     const xp = totalXP(c);
     c = switchClass(c, "bard");
     expect(c.activeClass).toBe("bard");
-    expect(c.subclass).toBe(null);
+    expect(c.subclass).toBe("warpriest");
+    expect(c.vocation).toBe("networking");
     expect(classXP(c, "warrior")).toBe(120);
     expect(totalXP(c)).toBe(xp);
     c = switchClass(c, "warrior");
@@ -143,12 +148,13 @@ describe("permanent character history", () => {
     });
     c = awardSkills(c);
     expect(hasSkill(c, skill)).toBe(true);
+    expect(c.unlockedClasses).toContain("network-weaver");
     c.certificates = [];
     expect(hasSkill(c, skill)).toBe(true);
   });
   it("does not unlock certifications from ordinary study XP", () => {
     let c = demoCharacter();
-    for (let d = 1; d <= 3; d++)
+    for (let d = 1; d <= 16; d++)
       c = complete(
         c,
         objectives(c).find((o) => o.id === "network-daily")!,
@@ -160,12 +166,15 @@ describe("permanent character history", () => {
     expect(c.earnedSkills).toContain("network-initiate");
     expect(c.earnedSkills).not.toContain("network-intermediate");
   });
-  it("changes objectives with a subclass and keeps the profession independent", () => {
+  it("keeps vocational objectives independent of combat class and archives the former subclass", () => {
     const c = { ...demoCharacter(), subclass: "warpriest" };
     expect(
-      objectives(c).some((o) => o.id === "warpriest-daily" && o.stat === "WIS"),
+      objectives(c).some((o) => o.id === "vocation-networking-daily"),
     ).toBe(true);
-    expect(switchClass(c, "scholar").profession).toBe("Analyst");
+    expect(objectives(c).some((o) => o.id === "warpriest-daily")).toBe(false);
+    const next = switchClass(c, "scholar");
+    expect(next.profession).toBe("Analyst");
+    expect(activeVocation(next)?.name).toBe("Networking");
   });
 });
 describe("revised progression rules", () => {
@@ -211,8 +220,8 @@ describe("revised progression rules", () => {
       objectives(c).find((o) => o.id === "network-weekly")!,
       now,
     );
-    expect(professionLevel(c)).toBe(2);
-    expect(stats(c).INT).toBe(s.INT + 1);
+    expect(professionLevel(c)).toBe(1);
+    expect(stats(c).INT).toBe(s.INT);
     expect(stats(c).WIS).toBe(s.WIS);
     const before = stats(c);
     c = complete(
@@ -224,19 +233,17 @@ describe("revised progression rules", () => {
   });
   it("debits the correct skill wallet once and never changes base stats when purchasing", () => {
     let c = demoCharacter();
-    for (let d = 1; d <= 3; d++)
+    for (let d = 1; d <= 16; d++)
       c = complete(
         c,
         objectives(c).find((o) => o.id === "network-daily")!,
         new Date(2026, 9, d),
       );
     const s = stats(c),
-      before = skillPointsAvailable(c, `profession:${c.profession}`);
+      before = skillPointsAvailable(c, "profession:technology");
     c = learnSkill(c, "network-initiate");
     expect(stats(c)).toEqual(s);
-    expect(skillPointsAvailable(c, `profession:${c.profession}`)).toBe(
-      before - 1,
-    );
+    expect(skillPointsAvailable(c, "profession:technology")).toBe(before - 4);
     expect(learnSkill(c, "network-initiate")).toBe(c);
   });
   it("requires prerequisite nodes and unlocked level sections", () => {
@@ -287,18 +294,19 @@ describe("backup validation", () => {
 });
 
 describe("class and profession focus", () => {
-  it("subclass selection adds content without changing base attributes", () => {
-    let c = demoCharacter();
-    const goal = objectives(c).find((o) => o.id === "warrior-monthly")!;
-    c.milestones[`${goal.id}:${period(goal.cadence, now)}`] = [0, 1, 2];
-    c = complete(c, goal, now);
-    const before = stats(c),
-      next = selectSubclass(c, "warpriest");
-    expect(next.subclass).toBe("warpriest");
+  it("vocation selection adds non-combat objectives without changing base attributes", () => {
+    const c = { ...demoCharacter(), vocation: null };
+    const before = stats(c);
+    const next = { ...c, vocation: "networking" };
     expect(stats(next)).toEqual(before);
-    expect(objectives(next).filter((o) => o.scope === "subclass")).toHaveLength(
-      3,
-    );
+    expect(
+      objectives(next).filter((o) => o.id.startsWith("vocation-")),
+    ).toHaveLength(3);
+    expect(
+      objectives(next)
+        .filter((o) => o.id.startsWith("vocation-"))
+        .every((o) => o.scope === "profession"),
+    ).toBe(true);
   });
   it("profession stat gains remain when selecting another profession", () => {
     let c = demoCharacter();

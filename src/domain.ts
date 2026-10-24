@@ -1,3 +1,5 @@
+import { levelFromXP, xpForLevel, statMilestones } from "./progression";
+import { CAREER_CATEGORIES, VOCATIONS, careerCategory } from "./careers";
 import { SKILLS } from "./skill-catalog";
 import type { Skill } from "./skill-catalog";
 import { professionGroup } from "./professions";
@@ -32,377 +34,10 @@ export const EMPTY_BASELINE: Baseline = {
   reps: 0,
   bodyweight: 0,
 };
-export interface ClassPath {
-  id: string;
-  name: string;
-  motto: string;
-  description: string;
-  stat: Attribute;
-  icon: string;
-  color: string;
-  requirements: Partial<Stats>;
-  minXP?: number;
-  classRequirements?: { id: string; level: number }[];
-  subclasses: {
-    id: string;
-    name: string;
-    description: string;
-    stat: Attribute;
-    minClassLevel?: number;
-    requirements?: Partial<Stats>;
-    requiredSkills?: string[];
-  }[];
-}
-export const CLASSES: ClassPath[] = [
-  {
-    id: "warrior",
-    name: "Warrior",
-    motto: "Strength through consistency.",
-    description:
-      "Build practical strength, move with intention, and become someone you can count on.",
-    stat: "STR",
-    icon: "sword",
-    color: "rust",
-    requirements: { STR: 5 },
-    subclasses: [
-      {
-        id: "eldritch-knight",
-        name: "Eldritch Knight",
-        description: "Pair strength with focused study and information recall.",
-        stat: "INT",
-      },
-      {
-        id: "warpriest",
-        name: "Warpriest",
-        description:
-          "Train your body. Study Scripture. Put faith into practice.",
-        stat: "WIS",
-      },
-      {
-        id: "guardian",
-        name: "Guardian",
-        description: "Build endurance and serve the people around you.",
-        stat: "CON",
-      },
-    ],
-  },
-  {
-    id: "ranger",
-    name: "Ranger",
-    motto: "Find your own trail.",
-    description:
-      "Develop coordination, mobility, and an enduring connection to the outdoors.",
-    stat: "DEX",
-    icon: "compass",
-    color: "green",
-    requirements: { DEX: 5 },
-    subclasses: [
-      {
-        id: "trailwarden",
-        name: "Trailwarden",
-        description: "Go farther with stamina and outdoor exploration.",
-        stat: "CON",
-      },
-      {
-        id: "pathfinder",
-        name: "Pathfinder",
-        description: "Learn navigation, plan routes, and solve problems.",
-        stat: "INT",
-      },
-    ],
-  },
-  {
-    id: "scholar",
-    name: "Scholar",
-    motto: "Curiosity is a calling.",
-    description:
-      "Read deeply, reason clearly, and turn new knowledge into useful skills.",
-    stat: "INT",
-    icon: "book",
-    color: "blue",
-    requirements: { INT: 5 },
-    subclasses: [
-      {
-        id: "scribe",
-        name: "Scripture Scribe",
-        description:
-          "Read the Bible with context, reflection, and application.",
-        stat: "WIS",
-      },
-      {
-        id: "tactician",
-        name: "Tactician",
-        description: "Practice communication and teach what you learn.",
-        stat: "CHA",
-      },
-    ],
-  },
-  {
-    id: "bard",
-    name: "Bard",
-    motto: "Leave people a little brighter.",
-    description:
-      "Strengthen relationships, communicate with courage, and create something meaningful.",
-    stat: "CHA",
-    icon: "music",
-    color: "purple",
-    requirements: { CHA: 5 },
-    subclasses: [
-      {
-        id: "herald",
-        name: "Herald",
-        description: "Build public speaking and persuasive writing skills.",
-        stat: "INT",
-      },
-      {
-        id: "encourager",
-        name: "Encourager",
-        description:
-          "Listen well, pray for others, and offer practical encouragement.",
-        stat: "WIS",
-      },
-    ],
-  },
-  {
-    id: "disciple",
-    name: "Disciple",
-    motto: "Faithful in the little things.",
-    description:
-      "Grow in Christian faith through Scripture, prayer, reflection, and service.",
-    stat: "WIS",
-    icon: "cross",
-    color: "gold",
-    requirements: {},
-    subclasses: [
-      {
-        id: "servant",
-        name: "Servant",
-        description: "Express faith through acts of care and community.",
-        stat: "CHA",
-      },
-      {
-        id: "apologist",
-        name: "Apologist",
-        description:
-          "Study Christian theology and explain your faith thoughtfully.",
-        stat: "INT",
-      },
-    ],
-  },
-  {
-    id: "sentinel",
-    name: "Sentinel",
-    motto: "A steady heart. A stronger foundation.",
-    description:
-      "Build sustainable health through movement, rest, and everyday resilience.",
-    stat: "CON",
-    icon: "shield",
-    color: "teal",
-    requirements: { CON: 5 },
-    subclasses: [
-      {
-        id: "ironheart",
-        name: "Ironheart",
-        description: "Build strength alongside your endurance practice.",
-        stat: "STR",
-      },
-      {
-        id: "wayfarer",
-        name: "Wayfarer",
-        description: "Improve balance, mobility, and time outside.",
-        stat: "DEX",
-      },
-    ],
-  },
-  {
-    id: "paladin",
-    name: "Paladin",
-    motto: "Strength in service of something greater.",
-    description:
-      "An advanced path that brings physical discipline and Christian service together.",
-    stat: "STR",
-    icon: "shield",
-    color: "gold",
-    requirements: { STR: 7, WIS: 7 },
-    minXP: 500,
-    subclasses: [
-      {
-        id: "oathkeeper",
-        name: "Oathkeeper",
-        description: "Lead with integrity, Scripture, and consistent action.",
-        stat: "WIS",
-      },
-    ],
-  },
-  {
-    id: "sage",
-    name: "Sage",
-    motto: "Knowledge, made wise.",
-    description:
-      "An advanced path for deep study, thoughtful reflection, and teaching others.",
-    stat: "INT",
-    icon: "sparkles",
-    color: "blue",
-    requirements: { INT: 8, WIS: 7 },
-    minXP: 1000,
-    subclasses: [
-      {
-        id: "mentor",
-        name: "Mentor",
-        description: "Share what you know through patient, practical teaching.",
-        stat: "CHA",
-      },
-    ],
-  },
-];
-CLASSES.push(
-  {
-    id: "monk",
-    name: "Monk",
-    motto: "Bodyweight training and coordination",
-    description:
-      "Train movement control, coordination, and bodyweight strength. This is a physical training class.",
-    stat: "DEX",
-    icon: "DEX",
-    color: "green",
-    requirements: { DEX: 7, CON: 6 },
-    subclasses: [
-      {
-        id: "pugilist",
-        name: "Pugilist",
-        description: "Add strength and controlled striking drills.",
-        stat: "STR",
-        minClassLevel: 3,
-        requirements: { STR: 10 },
-      },
-      {
-        id: "athlete",
-        name: "Athlete",
-        description: "Develop conditioning and recovery routines.",
-        stat: "CON",
-        minClassLevel: 3,
-        requirements: { CON: 10 },
-      },
-    ],
-  },
-  {
-    id: "rogue",
-    name: "Rogue",
-    motto: "Precision, planning, and agility",
-    description:
-      "Develop coordination, situational awareness, and problem-solving.",
-    stat: "DEX",
-    icon: "compass",
-    color: "purple",
-    requirements: { DEX: 8, INT: 6 },
-    subclasses: [
-      {
-        id: "scout",
-        name: "Scout",
-        description: "Practice observation, navigation, and planning.",
-        stat: "INT",
-        minClassLevel: 3,
-        requirements: { INT: 10 },
-      },
-      {
-        id: "duelist",
-        name: "Duelist",
-        description: "Combine precise movement with strength practice.",
-        stat: "STR",
-        minClassLevel: 4,
-        requirements: { STR: 12 },
-      },
-    ],
-  },
-  {
-    id: "artificer",
-    name: "Artificer",
-    motto: "Technical study and practical projects",
-    description:
-      "Build useful things through technical learning, design, and iteration.",
-    stat: "INT",
-    icon: "INT",
-    color: "blue",
-    requirements: { INT: 8 },
-    subclasses: [
-      {
-        id: "engineer",
-        name: "Engineer",
-        description:
-          "Practice precision design, tools, and technical validation.",
-        stat: "DEX",
-        minClassLevel: 3,
-        requirements: { DEX: 10 },
-      },
-      {
-        id: "runewright",
-        name: "Runewright",
-        description:
-          "Practice careful design, documentation, and ethical decisions.",
-        stat: "WIS",
-        minClassLevel: 3,
-        requirements: { WIS: 10 },
-      },
-    ],
-  },
-  {
-    id: "marshal",
-    name: "Marshal",
-    motto: "Leadership and team coordination",
-    description: "Develop planning, communication, and responsible leadership.",
-    stat: "CHA",
-    icon: "shield",
-    color: "gold",
-    requirements: { CHA: 8, INT: 7 },
-    subclasses: [
-      {
-        id: "commander",
-        name: "Commander",
-        description: "Study planning, delegation, and decision-making.",
-        stat: "INT",
-        minClassLevel: 4,
-        requirements: { INT: 12 },
-      },
-      {
-        id: "chaplain",
-        name: "Chaplain",
-        description: "Study Christian Scripture and practice care and service.",
-        stat: "WIS",
-        minClassLevel: 3,
-        requirements: { WIS: 10 },
-      },
-    ],
-  },
-);
-CLASSES.find((p) => p.id === "paladin")!.classRequirements = [
-  { id: "warrior", level: 5 },
-  { id: "disciple", level: 3 },
-];
-CLASSES.find((p) => p.id === "sage")!.classRequirements = [
-  { id: "scholar", level: 8 },
-  { id: "disciple", level: 3 },
-];
-for (const p of CLASSES)
-  p.motto =
-    {
-      warrior: "Strength training",
-      ranger: "Mobility and outdoor activity",
-      scholar: "Study and applied knowledge",
-      bard: "Communication and relationships",
-      disciple: "Christian Scripture, prayer, and service",
-      sentinel: "Conditioning and recovery",
-      paladin: "Strength training and Christian service",
-      sage: "Research and teaching",
-      monk: "Bodyweight control and coordination",
-      rogue: "Agility and planning",
-      artificer: "Technical learning and projects",
-      marshal: "Leadership and coordination",
-    }[p.id] || p.motto;
-for (const p of CLASSES)
-  for (const sub of p.subclasses) {
-    sub.minClassLevel ??= sub.id === "eldritch-knight" ? 4 : 3;
-    sub.requirements ??= { [sub.stat]: sub.id === "eldritch-knight" ? 12 : 10 };
-  }
+import { CLASSES } from "./class-catalog";
+import type { ClassPath } from "./class-catalog";
+export { CLASSES } from "./class-catalog";
+export type { ClassPath } from "./class-catalog";
 export function subclassRequirements(
   c: Character,
   sub: ClassPath["subclasses"][number],
@@ -435,6 +70,7 @@ export interface Objective {
   minutes: string;
   category: string;
   kind?: "fitness";
+  careerCategory?: string;
   checklist?: string[];
   scope?: "universal" | "class" | "subclass" | "profession";
   statReward?: { stat: Attribute; amount: number };
@@ -524,6 +160,8 @@ export interface Completion {
   profession?: string;
   scope?: "universal" | "class" | "subclass" | "profession";
   subclassId?: string;
+  careerCategory?: string;
+  vocationId?: string;
   statReward?: { stat: Attribute; amount: number };
 }
 export interface Certificate {
@@ -549,6 +187,16 @@ export interface Character {
   activeClass: string;
   subclass: string | null;
   profession: string;
+  vocation?: string | null;
+  unlockedClasses?: string[];
+  progressionVersion?: 2;
+  legacyProgress?: {
+    adventurerXP: number;
+    classes: Record<string, number>;
+    professions: Record<string, number>;
+    stats: Partial<Stats>;
+    skillPoints: Record<string, number>;
+  };
   completions: Completion[];
   certificates: Certificate[];
   journal: JournalEntry[];
@@ -602,7 +250,9 @@ export function startingRankFor(s: Stats): "F" | "E" | "D" {
 }
 export const totalXP = (c: Character) =>
   c.completions.reduce((s, x) => s + x.xp, 0);
-export const level = (xp: number) => Math.floor(xp / 250) + 1;
+export const level = (xp: number) => levelFromXP(xp, 250);
+export const adventurerXP = (c: Character) =>
+  totalXP(c) + (c.legacyProgress?.adventurerXP || 0);
 export const classXP = (c: Character, id: string) =>
   c.completions
     .filter(
@@ -612,20 +262,22 @@ export const classXP = (c: Character, id: string) =>
     )
     .reduce((n, x) => n + x.xp, 0);
 export const classLevel = (c: Character, id: string) =>
-  1 + Math.floor(classXP(c, id) / 100);
+  levelFromXP(classXP(c, id) + (c.legacyProgress?.classes[id] || 0));
 export const professionXP = (c: Character, name = c.profession) =>
   c.completions
     .filter((x) => x.scope === "profession" && x.profession === name)
     .reduce((n, x) => n + x.xp, 0);
 export const professionLevel = (c: Character, name = c.profession) =>
-  1 + Math.floor(professionXP(c, name) / 100);
+  levelFromXP(
+    professionXP(c, name) + (c.legacyProgress?.professions[name] || 0),
+  );
 export const subclassXP = (c: Character, id = c.subclass) =>
   c.completions
     .filter((x) => x.scope === "subclass" && x.subclassId === id)
     .reduce((n, x) => n + x.xp, 0);
 export const subclassLevel = (c: Character, id = c.subclass) =>
   1 + Math.floor(subclassXP(c, id) / 100);
-export function professionStat(name: string): Attribute {
+function legacyProfessionStat(name: string): Attribute {
   const code = professionGroup(name).code;
   return ["21", "23", "25", "41", "43"].includes(code)
     ? "CHA"
@@ -635,9 +287,24 @@ export function professionStat(name: string): Attribute {
         ? "CON"
         : "INT";
 }
+export const professionStat = (name: string): Attribute =>
+  careerCategory(name).stat;
 export function stats(c: Character): Stats {
   const result = { ...c.baseStats };
-  for (const p of CLASSES) result[p.stat] += classLevel(c, p.id) - 1;
+  for (const p of CLASSES) {
+    const milestones = statMilestones(classLevel(c, p.id));
+    const balance: Record<string, number> = {};
+    for (let i = 0; i < milestones; i++) {
+      const id = Object.entries(p.mix).sort(
+        ([a, wa], [b, wb]) =>
+          (wb! * (i + 1)) / 100 -
+          (balance[b] || 0) -
+          ((wa! * (i + 1)) / 100 - (balance[a] || 0)),
+      )[0][0];
+      balance[id] = (balance[id] || 0) + 1;
+      result[ARCHETYPE_STAT[id]]++;
+    }
+  }
   const professions = [
     ...new Set(
       c.completions
@@ -647,21 +314,26 @@ export function stats(c: Character): Stats {
     ),
   ];
   for (const name of professions)
-    result[professionStat(name)] += professionLevel(c, name) - 1;
+    result[professionStat(name)] += statMilestones(professionLevel(c, name));
+  for (const a of ATTRIBUTES) result[a] += c.legacyProgress?.stats[a] || 0;
   for (const o of c.completions)
     if (o.statReward) result[o.statReward.stat] += o.statReward.amount;
   return result;
 }
 export const classRank = (lv: number) =>
-  lv >= 20
-    ? "Master"
-    : lv >= 10
-      ? "Expert"
-      : lv >= 5
-        ? "Adept"
-        : lv >= 3
-          ? "Apprentice"
-          : "Novice";
+  lv >= 100
+    ? "Mythic"
+    : lv >= 60
+      ? "Grandmaster"
+      : lv >= 40
+        ? "Master"
+        : lv >= 25
+          ? "Expert"
+          : lv >= 15
+            ? "Adept"
+            : lv >= 5
+              ? "Apprentice"
+              : "Novice";
 // Each promotion costs twice the previous: 500, 1,000, 2,000, ... XP.
 export const RANKS = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"].map(
   (name, i) => ({ name, xp: 500 * (2 ** i - 1) }),
@@ -672,17 +344,99 @@ export const startingRankCredit = (c: Character) =>
   RANKS.find((r) => r.name === (c.startingRank || "F"))!.xp;
 export const rankXP = (c: Character) => totalXP(c) + startingRankCredit(c);
 export const characterRank = (c: Character) => rank(rankXP(c));
+export function classRequirements(
+  p: ClassPath,
+  s: Stats,
+  xp: number,
+  c?: Character,
+): { label: string; met: boolean }[] {
+  return [
+    ...Object.entries(p.requirements).map(([a, n]) => ({
+      label: `${a} ${n}`,
+      met: s[a as Attribute] >= n!,
+    })),
+    ...(p.minXP ? [{ label: `${p.minXP} total XP`, met: xp >= p.minXP }] : []),
+    ...(p.classRequirements || []).map((r) => ({
+      label: `${CLASSES.find((p) => p.id === r.id)?.name} Lv. ${r.level}`,
+      met: !!c && classLevel(c, r.id) >= r.level,
+    })),
+    ...(p.requiredSkills || []).map((id) => ({
+      label: `Skill: ${SKILLS.find((s) => s.id === id)?.name || id}`,
+      met: !!c && c.earnedSkills.includes(id),
+    })),
+    ...(p.professionCategories?.length
+      ? [
+          {
+            label: `Profession: ${p.professionCategories.map((id) => CAREER_CATEGORIES.find((g) => g.id === id)?.name).join(" / ")}`,
+            met:
+              !!c &&
+              p.professionCategories.includes(careerCategory(c.profession).id),
+          },
+        ]
+      : []),
+  ];
+}
 export const available = (p: ClassPath, s: Stats, xp: number, c?: Character) =>
-  Object.entries(p.requirements).every(([a, n]) => s[a as Attribute] >= n!) &&
-  xp >= (p.minXP || 0) &&
-  (p.classRequirements || []).every(
-    (r) => !!c && classLevel(c, r.id) >= r.level,
+  !!c?.unlockedClasses?.includes(p.id) ||
+  classRequirements(p, s, xp, c).every((r) => r.met);
+const ARCHETYPE_STAT: Record<string, Attribute> = {
+  fighter: "STR",
+  guardian: "CON",
+  ranger: "DEX",
+  rogue: "DEX",
+  mage: "INT",
+  cleric: "WIS",
+  bard: "CHA",
+  artificer: "INT",
+};
+export function archetypeXP(c: Character, id: string) {
+  return CLASSES.reduce(
+    (sum, p) =>
+      sum +
+      ((classXP(c, p.id) + (c.legacyProgress?.classes[p.id] || 0)) *
+        (p.mix[id as keyof typeof p.mix] || 0)) /
+        100,
+    0,
   );
+}
+export const activeVocation = (c: Character) =>
+  VOCATIONS.find((v) => v.id === c.vocation);
+export function careerXP(c: Character, id: string) {
+  return c.completions
+    .filter(
+      (o) =>
+        o.scope === "profession" &&
+        (o.careerCategory || legacyCareer(o)) === id,
+    )
+    .reduce((n, o) => n + o.xp, 0);
+}
+function legacyCareer(o: Completion) {
+  return o.id.startsWith("network-")
+    ? "technology"
+    : o.id.startsWith("analysis-")
+      ? "business"
+      : careerCategory(o.profession || "Undecided").id;
+}
 export const currentPath = (c: Character) =>
   CLASSES.find((p) => p.id === c.activeClass)!;
 export function objectives(c: Character): Objective[] {
   const p = currentPath(c),
-    core = CORE[p.id];
+    core =
+      CORE[p.id] ||
+      CORE[
+        (
+          {
+            fighter: "warrior",
+            guardian: "sentinel",
+            ranger: "ranger",
+            rogue: "rogue",
+            mage: "scholar",
+            cleric: "disciple",
+            bard: "bard",
+            artificer: "artificer",
+          } as Record<string, string>
+        )[Object.entries(p.mix).sort((a, b) => b[1]! - a[1]!)[0][0]]
+      ];
   const result: Objective[] = [
     {
       id: `${p.id}-daily`,
@@ -786,6 +540,32 @@ export function objectives(c: Character): Objective[] {
       ],
     },
   ];
+  const secondary = Object.entries(p.mix).sort((a, b) => b[1]! - a[1]!)[1];
+  if (secondary) {
+    const source = (
+      {
+        fighter: "warrior",
+        guardian: "sentinel",
+        ranger: "ranger",
+        rogue: "rogue",
+        mage: "scholar",
+        cleric: "disciple",
+        bard: "bard",
+        artificer: "artificer",
+      } as Record<string, string>
+    )[secondary[0]];
+    result.push({
+      id: `${p.id}-secondary-daily`,
+      title: CORE[source][0],
+      description: CORE[source][1],
+      cadence: "daily",
+      stat: ARCHETYPE_STAT[secondary[0]],
+      xp: 25,
+      minutes: "15–20 min",
+      category: p.name,
+      scope: "class",
+    });
+  }
   const group = professionGroup(c.profession);
   const extra: [string, string, string, Cadence, Attribute, number, string][] =
     [
@@ -936,7 +716,7 @@ export function objectives(c: Character): Objective[] {
       [
         `${p.id}-technique-daily`,
         `${p.name} technique`,
-        CORE[p.id][1] +
+        core[1] +
           " Spend 10 minutes focusing on technique or reviewing what you learned.",
         "daily",
         p.stat,
@@ -989,70 +769,85 @@ export function objectives(c: Character): Objective[] {
             ]
           : undefined,
     });
-  const sub = p.subclasses.find((x) => x.id === c.subclass);
-  if (sub)
-    result.splice(1, 0, {
-      id: `${sub.id}-daily`,
-      title:
-        sub.id === "warpriest" || sub.id === "scribe"
-          ? "Scripture study"
-          : `${sub.name} practice`,
-      description:
-        sub.description +
-        " Spend 15 minutes practicing and write a specific takeaway.",
+  const vocation = activeVocation(c);
+  if (vocation) {
+    result.push({
+      id: `vocation-${vocation.id}-daily`,
+      title: `${vocation.name} practice`,
+      description: vocation.practice,
       cadence: "daily",
-      stat: sub.stat,
-      xp: 25,
-      minutes: "15 min",
-      category: sub.name,
+      stat: CAREER_CATEGORIES.find((g) => g.id === vocation.category)!.stat,
+      xp: 30,
+      minutes: "20 min",
+      category: vocation.name,
+      scope: "profession",
+      careerCategory: vocation.category,
     });
+    result.push({
+      id: `vocation-${vocation.id}-weekly`,
+      title: `${vocation.name} field assignment`,
+      description: `Complete three focused practice sessions. ${vocation.project}`,
+      cadence: "weekly",
+      stat: CAREER_CATEGORIES.find((g) => g.id === vocation.category)!.stat,
+      xp: 100,
+      minutes: "3 sessions",
+      category: vocation.name,
+      scope: "profession",
+      careerCategory: vocation.category,
+    });
+    result.push({
+      id: `vocation-${vocation.id}-monthly`,
+      title: `${vocation.name} portfolio commission`,
+      description: vocation.project,
+      cadence: "monthly",
+      stat: CAREER_CATEGORIES.find((g) => g.id === vocation.category)!.stat,
+      xp: 350,
+      minutes: "4 sessions",
+      category: vocation.name,
+      scope: "profession",
+      careerCategory: vocation.category,
+      checklist: [
+        "Define the project and acceptance criteria",
+        "Complete and validate the work",
+        "Save evidence and review the result",
+      ],
+    });
+  }
   for (const o of result) {
-    o.scope =
+    o.scope ??=
       o.id.startsWith("profession-") ||
       o.id.startsWith("network-") ||
       o.id.startsWith("analysis-")
         ? "profession"
         : o.category === p.name
           ? "class"
-          : o.category === sub?.name
-            ? "subclass"
-            : "universal";
+          : "universal";
+    if (o.scope === "profession")
+      o.careerCategory ??= o.id.startsWith("network-")
+        ? "technology"
+        : o.id.startsWith("analysis-")
+          ? "business"
+          : careerCategory(c.profession).id;
     if (o.id === `${p.id}-monthly`) o.statReward = { stat: p.stat, amount: 1 };
     if (o.id === "profession-monthly")
       o.statReward = { stat: professionStat(c.profession), amount: 1 };
     if (o.id === `${p.id}-review-weekly`)
       o.statReward = { stat: "WIS", amount: 1 };
   }
-  if (sub) {
-    result.push({
-      id: `${sub.id}-weekly`,
-      title: `${sub.name} weekly practice`,
-      description: `Complete three ${sub.name.toLowerCase()} practice sessions. Review the notes and explain what you learned.`,
-      cadence: "weekly",
-      stat: sub.stat,
-      xp: 90,
-      minutes: "3 sessions",
-      category: sub.name,
-      scope: "subclass",
-    });
-    result.push({
-      id: `${sub.id}-monthly`,
-      title: `${sub.name} project`,
-      description: `Complete a focused ${sub.name.toLowerCase()} project or study plan. ${sub.description}`,
-      cadence: "monthly",
-      stat: sub.stat,
-      xp: 300,
-      minutes: "4 sessions",
-      category: sub.name,
-      scope: "subclass",
-      checklist: [
-        "Complete four focused sessions",
-        "Save notes or evidence",
-        "Explain the practical result",
-      ],
-    });
-  }
-  return result;
+  // Technical requests follow the selected vocation instead of appearing for every profession.
+  const technical =
+    vocation?.id === "networking" ||
+    careerCategory(c.profession).id === "technology";
+  const analytical =
+    vocation?.id === "analysis" ||
+    vocation?.id === "business-analysis" ||
+    careerCategory(c.profession).id === "business";
+  const visible = result.filter(
+    (o) =>
+      (!o.id.startsWith("network-") || technical) &&
+      (!o.id.startsWith("analysis-") || analytical),
+  );
+  return visible;
 }
 export function period(cadence: Cadence, date = new Date()): string {
   const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -1099,6 +894,12 @@ export function complete(
           ? { subclassId: c.subclass }
           : {}),
         ...(actual.statReward ? { statReward: actual.statReward } : {}),
+        ...(actual.careerCategory
+          ? {
+              careerCategory: actual.careerCategory,
+              vocationId: c.vocation || undefined,
+            }
+          : {}),
       },
     ],
   };
@@ -1109,7 +910,11 @@ export function switchClass(c: Character, id: string): Character {
   return {
     ...c,
     activeClass: id,
-    subclass: id === c.activeClass ? c.subclass : null,
+    // Legacy combat specializations remain archived; vocation is independent.
+    subclass: c.subclass,
+    unlockedClasses: [
+      ...new Set([...(c.unlockedClasses || []), c.activeClass, id]),
+    ],
   };
 }
 export function createCharacter(
@@ -1133,6 +938,12 @@ export function createCharacter(
       selected && available(selected, baseStats, 0) ? selected.id : "disciple",
     subclass: null,
     profession,
+    vocation: null,
+    progressionVersion: 2,
+    unlockedClasses:
+      selected && available(selected, baseStats, 0)
+        ? [selected.id]
+        : ["disciple"],
     completions: [],
     certificates: [],
     journal: [],
@@ -1163,6 +974,7 @@ export function demoCharacter(): Character {
     true,
   );
   c.title = "Registered adventurer";
+  c.vocation = "networking";
   return c;
 }
 export function activity(c: Character, days = 7, now = new Date()) {
@@ -1185,76 +997,107 @@ export const hasSkill = (c: Character, s: Skill) =>
   c.earnedSkills.includes(s.id);
 export function skillWallet(c: Character, s?: Skill): string {
   if (!s || s.category === "universal") return "universal";
-  if (s.subclass) return `subclass:${s.subclass}`;
-  if (s.category === "class") return `class:${s.owner}`;
-  return `profession:${c.profession}`;
+  if (s.category === "class" || s.category === "subclass") return "combat";
+  const category =
+    s.owner === "networking"
+      ? "technology"
+      : s.owner === "analysis"
+        ? "business"
+        : CAREER_CATEGORIES.some((g) => g.id === s.owner)
+          ? s.owner!
+          : careerCategory(c.profession).id;
+  return `profession:${category}`;
 }
 export function walletXP(c: Character, wallet: string): number {
-  const [type, ...rest] = wallet.split(":"),
-    id = rest.join(":");
-  if (type === "class") return classXP(c, id);
-  if (type === "subclass") return subclassXP(c, id);
-  if (type === "profession") return professionXP(c, id);
+  if (wallet === "combat")
+    return c.completions
+      .filter((o) => !o.scope || o.scope === "class" || o.scope === "subclass")
+      .reduce((n, o) => n + o.xp, 0);
+  if (wallet.startsWith("class:")) return classXP(c, wallet.slice(6));
+  if (wallet.startsWith("subclass:")) return subclassXP(c, wallet.slice(9));
+  if (wallet.startsWith("profession:")) return careerXP(c, wallet.slice(11));
   return c.completions
     .filter((o) => o.scope === "universal")
     .reduce((n, o) => n + o.xp, 0);
 }
 export const walletLevel = (c: Character, wallet: string) =>
   wallet === "universal"
-    ? level(totalXP(c))
-    : 1 + Math.floor(walletXP(c, wallet) / 100);
+    ? level(adventurerXP(c))
+    : wallet === "combat"
+      ? classLevel(c, c.activeClass)
+      : levelFromXP(walletXP(c, wallet));
 export const skillPointsEarned = (c: Character, wallet = "universal") =>
-  Math.floor(walletXP(c, wallet) / 25) +
-  Math.max(0, walletLevel(c, wallet) - 1) * 2;
+  Math.floor(walletXP(c, wallet) / 100) +
+  (c.legacyProgress?.skillPoints[wallet] || 0);
+const migratedWallet = (wallet: string) =>
+  wallet.startsWith("class:") || wallet.startsWith("subclass:")
+    ? "combat"
+    : wallet.startsWith("profession:") &&
+        !CAREER_CATEGORIES.some((g) => `profession:${g.id}` === wallet)
+      ? `profession:${careerCategory(wallet.slice(11)).id}`
+      : wallet;
 export const skillPointsAvailable = (c: Character, wallet = "universal") =>
-  skillPointsEarned(c, wallet) -
-  (c.skillPurchases || [])
-    .filter((p) => p.wallet === wallet)
-    .reduce((n, p) => n + p.cost, 0);
+  Math.max(
+    0,
+    skillPointsEarned(c, wallet) -
+      (c.skillPurchases || [])
+        .filter((p) => migratedWallet(p.wallet) === wallet)
+        .reduce((n, p) => n + p.cost, 0),
+  );
 export function skillTier(s: Skill): number {
-  return s.tier === "V"
-    ? 20
-    : s.tier === "IV"
-      ? 10
-      : s.tier === "III" || s.tier === "4"
-        ? 5
-        : s.tier === "II" || s.tier === "2" || s.tier === "3"
-          ? 3
-          : 1;
+  return (
+    s.requiredLevel ??
+    (
+      { V: 40, IV: 25, III: 15, II: 5, "4": 15, "3": 10, "2": 5 } as Record<
+        string,
+        number
+      >
+    )[s.tier] ??
+    1
+  );
 }
 export function skillRequirements(c: Character, s: Skill): string[] {
   const missing: string[] = [];
   if (s.current(c) < s.target)
     missing.push(`${s.proof} (${s.current(c)}/${s.target})`);
-  if (!s.automatic) {
-    for (const id of s.parents) {
-      const parent = SKILLS.find((x) => x.id === id);
-      if (parent && !hasSkill(c, parent)) missing.push(`Learn ${parent.name}`);
-    }
-    const wallet = skillWallet(c, s),
-      lv = walletLevel(c, wallet),
-      needed = skillTier(s);
-    if (lv < needed)
-      missing.push(
-        `${s.subclass ? "Subclass" : s.category === "class" ? "Class" : s.category === "profession" ? "Profession" : "Adventurer"} level ${needed} (current ${lv})`,
-      );
-    if (
-      (s.category === "class" || s.category === "subclass") &&
-      s.owner !== c.activeClass
-    )
-      missing.push(`Active class: ${s.owner}`);
-    if (s.subclass && s.subclass !== c.subclass)
-      missing.push(`Select subclass: ${s.subclass}`);
-    if (
-      s.category === "profession" &&
-      s.owner !== "networking" &&
-      s.owner !== "analysis" &&
-      s.owner !== professionGroup(c.profession).code
-    )
-      missing.push(`Select a profession in ${s.branch}`);
-    if (skillPointsAvailable(c, wallet) < s.cost)
-      missing.push(`Need ${s.cost} ${wallet.split(":")[0]} skill shards`);
+  if (s.automatic) return missing;
+  for (const id of s.parents) {
+    const parent = SKILLS.find((x) => x.id === id);
+    if (parent && !hasSkill(c, parent)) missing.push(`Learn ${parent.name}`);
   }
+  const wallet = skillWallet(c, s),
+    lv = s.archetype
+      ? levelFromXP(archetypeXP(c, s.archetype))
+      : s.category === "class" && s.owner
+        ? classLevel(c, s.owner)
+        : walletLevel(c, wallet);
+  if (lv < skillTier(s))
+    missing.push(
+      `${s.archetype ? "Archetype" : s.category === "class" ? "Class" : s.category === "profession" ? "Career tree" : "Adventurer"} level ${skillTier(s)} (current ${lv})`,
+    );
+  if (
+    s.category === "class" &&
+    (s.archetype
+      ? !currentPath(c).mix[s.archetype as keyof ClassPath["mix"]]
+      : s.owner !== c.activeClass)
+  )
+    missing.push(
+      `Active class must train ${s.archetype || CLASSES.find((p) => p.id === s.owner)?.name || s.owner}`,
+    );
+  if (s.category === "profession") {
+    const category = wallet.slice(11);
+    if (
+      careerCategory(c.profession).id !== category &&
+      activeVocation(c)?.category !== category
+    )
+      missing.push(
+        `Select a profession or vocation in ${CAREER_CATEGORIES.find((g) => g.id === category)?.name || category}`,
+      );
+  }
+  if (skillPointsAvailable(c, wallet) < s.cost)
+    missing.push(
+      `Need ${s.cost} ${wallet === "combat" ? "combat" : wallet.split(":")[0]} skill points`,
+    );
   return missing;
 }
 export function learnSkill(c: Character, id: string): Character {
@@ -1271,17 +1114,114 @@ export function learnSkill(c: Character, id: string): Character {
     ],
   };
 }
-export function awardSkills(c: Character): Character {
-  return {
-    ...c,
+export function awardSkills(input: Character): Character {
+  const upgraded = upgradeProgression(input);
+  const c: Character = {
+    ...upgraded,
     earnedSkills: [
       ...new Set([
-        ...c.earnedSkills,
+        ...upgraded.earnedSkills,
         "universal-root",
-        ...SKILLS.filter((s) => s.automatic && s.current(c) >= s.target).map(
-          (s) => s.id,
-        ),
+        ...SKILLS.filter(
+          (s) => s.automatic && s.current(upgraded) >= s.target,
+        ).map((s) => s.id),
       ]),
     ],
   };
+  const attributes = stats(c),
+    xp = totalXP(c);
+  return {
+    ...c,
+    unlockedClasses: [
+      ...new Set([
+        ...(c.unlockedClasses || []),
+        c.activeClass,
+        ...CLASSES.filter((p) =>
+          classRequirements(p, attributes, xp, c).every((r) => r.met),
+        ).map((p) => p.id),
+      ]),
+    ],
+  };
+}
+
+/** Preserve previously earned levels, attributes, purchases and XP when upgrading a v1.1 save. */
+export function upgradeProgression(c: Character): Character {
+  if (c.progressionVersion === 2) return c;
+  const classes: Record<string, number> = {},
+    professions: Record<string, number> = {};
+  const oldStats = { ...c.baseStats };
+  for (const p of CLASSES) {
+    const xp = classXP(c, p.id),
+      lv = 1 + Math.floor(xp / 100);
+    classes[p.id] = Math.max(0, xpForLevel(lv) - xp);
+    oldStats[p.stat] += lv - 1;
+  }
+  for (const name of new Set(
+    c.completions
+      .filter((o) => o.scope === "profession")
+      .map((o) => o.profession)
+      .filter((x): x is string => !!x),
+  )) {
+    const xp = professionXP(c, name),
+      lv = 1 + Math.floor(xp / 100);
+    professions[name] = Math.max(0, xpForLevel(lv) - xp);
+    oldStats[legacyProfessionStat(name)] += lv - 1;
+  }
+  for (const o of c.completions)
+    if (o.statReward) oldStats[o.statReward.stat] += o.statReward.amount;
+  const next: Character = {
+    ...c,
+    progressionVersion: 2,
+    vocation:
+      c.vocation ??
+      (c.completions.some((o) => o.id.startsWith("network-"))
+        ? "networking"
+        : null),
+    legacyProgress: {
+      adventurerXP: Math.max(
+        0,
+        xpForLevel(1 + Math.floor(totalXP(c) / 250), 250) - totalXP(c),
+      ),
+      classes,
+      professions,
+      stats: {},
+      skillPoints: {},
+    },
+  };
+  const recalculated = stats(next);
+  for (const a of ATTRIBUTES)
+    next.legacyProgress!.stats[a] = Math.max(0, oldStats[a] - recalculated[a]);
+  // Honored balances let existing purchases remain paid for after the rebalance.
+  const legacyEarned: Record<string, number> = {};
+  const wallets = new Set([
+    "universal",
+    ...CLASSES.map((p) => `class:${p.id}`),
+    ...CLASSES.flatMap((p) => p.subclasses.map((s) => `subclass:${s.id}`)),
+    ...c.completions
+      .filter((o) => o.profession)
+      .map((o) => `profession:${o.profession}`),
+  ]);
+  for (const wallet of wallets) {
+    const xp =
+      wallet === "universal"
+        ? walletXP(c, wallet)
+        : wallet.startsWith("class:")
+          ? classXP(c, wallet.slice(6))
+          : wallet.startsWith("subclass:")
+            ? subclassXP(c, wallet.slice(9))
+            : professionXP(c, wallet.slice(11));
+    const lv =
+      wallet === "universal"
+        ? 1 + Math.floor(totalXP(c) / 250)
+        : 1 + Math.floor(xp / 100);
+    const key = migratedWallet(wallet);
+    legacyEarned[key] =
+      (legacyEarned[key] || 0) + Math.floor(xp / 25) + 2 * (lv - 1);
+  }
+  for (const [wallet, earned] of Object.entries(legacyEarned))
+    next.legacyProgress!.skillPoints[wallet] = Math.max(
+      0,
+      earned - Math.floor(walletXP(next, wallet) / 100),
+    );
+  return next;
 }

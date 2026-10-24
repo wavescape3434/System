@@ -136,3 +136,68 @@ describe("class combat effects", () => {
     expect(stats(fighting)).toEqual(before);
   });
 });
+
+describe("class signatures", () => {
+  it("grants every class its own signature without purchasing it or using a loadout slot", async () => {
+    const { CLASSES } = await import("./domain");
+    for (const p of CLASSES) {
+      const c = { ...demoCharacter(), activeClass: p.id },
+        before = stats(c),
+        battle = campaign(startBattle(c, "mossfall-1")).battle!;
+      expect(
+        battle.party[0].abilities.some(
+          (a) => a.id === `signature-${p.id}` && a.name === p.signature.name,
+        ),
+      ).toBe(true);
+      expect(campaign(c).equippedSkills).toHaveLength(0);
+      expect(stats(c)).toEqual(before);
+    }
+  });
+  it("makes prestige signatures stronger and removes an earlier signature when changing class", () => {
+    const warrior = campaign(
+      startBattle(demoCharacter(), "mossfall-1"),
+    ).battle!;
+    const c = { ...demoCharacter(), activeClass: "paladin" },
+      b = campaign(startBattle(c, "mossfall-1")).battle!;
+    expect(b.party[0].abilities.some((a) => a.id === "signature-warrior")).toBe(
+      false,
+    );
+    expect(b.party[0].abilities[0].potency).toBe(1.2);
+    expect(warrior.party[0].abilities[0].potency).toBe(1);
+    const ordinary = structuredClone(b),
+      prestige = structuredClone(b);
+    for (const battle of [ordinary, prestige]) {
+      battle.party[0].attack = 10;
+      battle.party[0].magic = 10;
+      battle.enemies[0].hp = battle.enemies[0].maxHp = 1000;
+    }
+    ordinary.party[0].abilities[0].potency = 1;
+    const action = {
+      kind: "ability" as const,
+      target: 0,
+      abilityId: "signature-paladin",
+    };
+    expect(takeAction(prestige, action).enemies[0].hp).toBeLessThan(
+      takeAction(ordinary, action).enemies[0].hp,
+    );
+  });
+  it("prevents non-combat career competencies from supplying combat attributes or commands", () => {
+    const c = demoCharacter();
+    c.earnedSkills = ["profession-technology-0"];
+    c.campaign = {
+      ...campaign(c),
+      equippedSkills: ["profession-technology-0"],
+    };
+    expect(combatAttributes(c)).toEqual(
+      combatAttributes({
+        ...c,
+        campaign: { ...campaign(c), equippedSkills: [] },
+      }),
+    );
+    expect(
+      campaign(startBattle(c, "mossfall-1")).battle!.party[0].abilities.some(
+        (a) => a.id === "profession-technology-0",
+      ),
+    ).toBe(false);
+  });
+});

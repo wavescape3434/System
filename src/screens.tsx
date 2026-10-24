@@ -1,4 +1,7 @@
-import { CLASS_ROLES } from "./class-roles";
+import ClassBrowser from "./ClassBrowser";
+import VocationPanel from "./VocationPanel";
+import GuildCard from "./GuildCard";
+import { levelProgress } from "./progression";
 import AdventureGame from "./AdventureGame";
 import SkillTree from "./SkillTree";
 import ProfessionPicker from "./ProfessionPicker";
@@ -8,7 +11,6 @@ import {
   Check,
   ChevronRight,
   Clock3,
-  LockKeyhole,
   Plus,
   Sparkles,
   Trophy,
@@ -23,20 +25,16 @@ import {
   RANKS,
   stats,
   currentPath,
-  level,
   totalXP,
   rankXP,
   characterRank,
   startingRankCredit,
-  subclassRequirements,
-  selectSubclass,
   professionLevel,
   professionXP,
   professionStat,
   classLevel,
   classXP,
   classRank,
-  available,
   objectives,
   isComplete,
   activity,
@@ -106,7 +104,6 @@ function Attributes({ s }: { s: Stats }) {
 }
 export function Guild({ c, navigate, openObjective }: ScreenProps) {
   const xp = totalXP(c),
-    p = currentPath(c),
     s = stats(c),
     dailies = objectives(c).filter((o) => o.cadence === "daily"),
     done = dailies.filter((o) => isComplete(c, o)).length,
@@ -118,55 +115,7 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
   return (
     <>
       <div className="dashboard-top">
-        <section className="guild-card">
-          <div className="card-topline">
-            <span>ADVENTURERS’ GUILD</span>
-            <span>
-              PERSONAL GUILD CARD <span className="diamond">✦</span>
-            </span>
-          </div>
-          <div className="identity">
-            <div className="avatar-seal">
-              <Icon name={p.icon} size={39} />
-              <span>LV. {level(xp)}</span>
-            </div>
-            <div>
-              <span className="hero-kicker">REGISTERED ADVENTURER</span>
-              <h2>{c.name}</h2>
-              <p>{c.title}</p>
-              <div className="hero-tags">
-                <span>
-                  <Icon name={p.icon} size={13} />
-                  {p.name} · Lv. {classLevel(c, p.id)}
-                </span>
-                <span>{c.profession}</span>
-                {c.subclass && (
-                  <span>
-                    {p.subclasses.find((x) => x.id === c.subclass)?.name}
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
-          <div className="hero-progress">
-            <span>
-              ADVENTURER LEVEL {level(xp)} <b>{xp % 250} / 250 XP</b>
-            </span>
-            <Progress value={xp % 250} max={250} label="Adventurer level" />
-          </div>
-          <div className="card-bottomline">
-            <span>✦ &nbsp; BODY · MIND · HEART</span>
-            <span>
-              MEMBER SINCE{" "}
-              {new Date(c.createdAt)
-                .toLocaleDateString(undefined, {
-                  month: "short",
-                  year: "numeric",
-                })
-                .toUpperCase()}
-            </span>
-          </div>
-        </section>
+        <GuildCard c={c} onSkills={() => navigate("skills")} />
         <section className="panel rank-panel">
           <div className="section-heading">
             <h3>Adventurer rank</h3>
@@ -294,7 +243,8 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
             </div>
           </div>
           <p className="panel-caption">
-            Attributes increase through objective XP.
+            Attributes grow at class and profession milestones and through
+            listed quest rewards.
           </p>
         </section>
       </div>
@@ -370,21 +320,12 @@ export function Objectives({ c, openObjective }: ScreenProps) {
         (filter === "all" ||
           (filter === "networking" && o.category === "Networking") ||
           (filter === "analysis" && o.category === "Data Analysis") ||
+          (filter === "vocation" && o.id.startsWith("vocation-")) ||
           o.scope === filter),
     ),
     done = list.filter((o) => isComplete(c, o)).length;
   return (
     <>
-      <div className="intro-banner">
-        <Icon name="compass" size={30} />
-        <div>
-          <h3>Objective schedule</h3>
-          <p>
-            Tasks award XP to their progression path. Weekly and monthly goals
-            may also list a base stat reward.
-          </p>
-        </div>
-      </div>
       <div className="tabs">
         {(["daily", "weekly", "monthly"] as Cadence[]).map((t) => (
           <button
@@ -406,7 +347,7 @@ export function Objectives({ c, openObjective }: ScreenProps) {
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="all">All objectives</option>
           <option value="class">Current class</option>
-          <option value="subclass">Current subclass</option>
+          <option value="vocation">Current vocation</option>
           <option value="profession">Profession & technical practice</option>
           <option value="universal">Universal</option>
           <option value="networking">Networking</option>
@@ -425,45 +366,59 @@ export function Objectives({ c, openObjective }: ScreenProps) {
           {done} / {list.length} completed
         </Tag>
       </div>
-      <div className="objectives-grid">
-        {list.map((o) => (
-          <button
-            key={o.id}
-            className={`panel objective-card ${isComplete(c, o) ? "completed" : ""}`}
-            onClick={() => openObjective(o)}
-          >
-            <div className="objective-card-top">
-              <span className={`objective-icon ${o.stat.toLowerCase()}`}>
-                <Icon name={o.stat} size={24} />
-              </span>
-              <Tag tone={isComplete(c, o) ? "green" : "neutral"}>
-                {isComplete(c, o) ? "Completed" : o.category}
-              </Tag>
-            </div>
-            <h3>{o.title}</h3>
-            <p>{o.description}</p>
-            {o.statReward && (
-              <Tag tone="gold">
-                Special reward: +{o.statReward.amount} base {o.statReward.stat}
-              </Tag>
-            )}
-            <div className="objective-card-bottom">
-              <span>
-                <Clock3 size={14} />
-                {o.minutes}
-              </span>
-              <b>
-                {isComplete(c, o) ? (
-                  <Check size={18} />
-                ) : (
-                  <>
-                    +{o.xp} XP <ArrowRight size={16} />
-                  </>
-                )}
-              </b>
-            </div>
-          </button>
-        ))}
+      <div className="guild-request-board">
+        <div className="board-inscription">
+          <span>✦</span> REQUESTS OF THE ADVENTURERS’ GUILD <span>✦</span>
+        </div>
+        <div className="objectives-grid request-papers">
+          {list.map((o) => (
+            <button
+              key={o.id}
+              className={`panel objective-card guild-request-paper ${isComplete(c, o) ? "completed" : ""}`}
+              onClick={() => openObjective(o)}
+            >
+              <span className="request-pin" aria-hidden="true" />
+              <small className="request-number">
+                {o.cadence === "daily"
+                  ? "GUILD TASK"
+                  : o.cadence === "weekly"
+                    ? "QUEST COMMISSION"
+                    : "MONTHLY EXPEDITION"}
+              </small>
+              <div className="objective-card-top">
+                <span className={`objective-icon ${o.stat.toLowerCase()}`}>
+                  <Icon name={o.stat} size={24} />
+                </span>
+                <Tag tone={isComplete(c, o) ? "green" : "neutral"}>
+                  {isComplete(c, o) ? "Completed" : o.category}
+                </Tag>
+              </div>
+              <h3>{o.title}</h3>
+              <p>{o.description}</p>
+              {o.statReward && (
+                <Tag tone="gold">
+                  Special reward: +{o.statReward.amount} base{" "}
+                  {o.statReward.stat}
+                </Tag>
+              )}
+              <div className="objective-card-bottom">
+                <span>
+                  <Clock3 size={14} />
+                  {o.minutes}
+                </span>
+                <b>
+                  {isComplete(c, o) ? (
+                    <Check size={18} />
+                  ) : (
+                    <>
+                      +{o.xp} XP <ArrowRight size={16} />
+                    </>
+                  )}
+                </b>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
       <p className="helper center">
         Daily tasks refresh at local midnight, weekly quests on Monday, and
@@ -473,31 +428,21 @@ export function Objectives({ c, openObjective }: ScreenProps) {
   );
 }
 export function Paths({ c, update, notify }: ScreenProps) {
-  const s = stats(c),
-    p = currentPath(c),
-    [view, setView] = useState("all");
-  const subLevel = classLevel(c, p.id);
-  const select = (id: string) => {
-    if (!update(switchClass(c, id))) return;
-    notify(
-      `${CLASSES.find((p) => p.id === id)!.name} selected. Previous progress is preserved.`,
-    );
-  };
+  const [view, setView] = useState("all");
+  const p = currentPath(c);
   return (
     <>
-      <div className="intro-banner">
+      <div className="intro-banner class-current-banner">
         <Icon name={p.icon} size={30} />
         <div>
-          <span className="eyebrow">YOUR CURRENT PATH</span>
+          <span className="eyebrow">ACTIVE CLASS</span>
           <h3>
             {p.name}{" "}
             <span className="inline-level">
-              Lv. {subLevel} · {classRank(subLevel)}
+              Lv. {classLevel(c, p.id)} · {p.tier}
             </span>
           </h3>
-          <p>
-            {p.motto} Your earned class levels always remain on your record.
-          </p>
+          <p>{p.goal}</p>
         </div>
       </div>
       <div className="tabs">
@@ -508,10 +453,10 @@ export function Paths({ c, update, notify }: ScreenProps) {
           Class paths
         </button>
         <button
-          className={view === "sub" ? "active" : ""}
-          onClick={() => setView("sub")}
+          className={view === "vocation" ? "active" : ""}
+          onClick={() => setView("vocation")}
         >
-          Subclasses
+          Vocation
         </button>
         <button
           className={view === "history" ? "active" : ""}
@@ -521,165 +466,55 @@ export function Paths({ c, update, notify }: ScreenProps) {
         </button>
       </div>
       {view === "all" && (
-        <div className="path-grid">
-          {CLASSES.map((path) => {
-            const unlocked = available(path, s, totalXP(c), c),
-              active = path.id === p.id;
-            return (
-              <article
-                key={path.id}
-                className={`panel path-card ${active ? "selected" : ""} ${!unlocked ? "locked" : ""}`}
-              >
-                <div className={`path-icon ${path.color}`}>
-                  <Icon name={path.icon} size={29} />
-                </div>
-                <div className="path-title">
-                  <h3>{path.name}</h3>
-                  {active ? (
-                    <Tag>Current path</Tag>
-                  ) : !unlocked ? (
-                    <LockKeyhole size={16} />
-                  ) : (
-                    <Tag tone="neutral">Available</Tag>
-                  )}
-                </div>
-                <Tag tone="neutral">{CLASS_ROLES[path.id]?.role}</Tag>
-                <p>{CLASS_ROLES[path.id]?.description || path.description}</p>
-                <small className="class-stance">
-                  Combat stance: {CLASS_ROLES[path.id]?.stance}
-                </small>
-                <div className="requirements">
-                  <span>
-                    CORE ATTRIBUTE <b>{path.stat}</b>
-                  </span>
-                  <small>
-                    {Object.entries(path.requirements)
-                      .map(([a, n]) => `${a} ${n}+`)
-                      .join(" · ") || "Open to everyone"}
-                    {path.minXP ? ` · ${path.minXP} total XP` : ""}
-                    {path.classRequirements?.map((r) => (
-                      <span key={r.id} className="required-class">
-                        {CLASSES.find((p) => p.id === r.id)?.name} level{" "}
-                        {r.level} required · current {classLevel(c, r.id)}
-                      </span>
-                    ))}
-                  </small>
-                </div>
-                <button
-                  className={`button full ${active ? "secondary" : "primary"}`}
-                  disabled={!unlocked || active}
-                  onClick={() => select(path.id)}
-                >
-                  {active
-                    ? `Level ${classLevel(c, path.id)} ${path.name}`
-                    : unlocked
-                      ? "Select class"
-                      : "Requirements not met"}
-                  {!active && unlocked && <ArrowRight size={15} />}
-                </button>
-              </article>
-            );
-          })}
-        </div>
+        <ClassBrowser
+          c={c}
+          selected={c.activeClass}
+          onSelect={(id) => {
+            if (update(switchClass(c, id)))
+              notify(
+                `${CLASSES.find((p) => p.id === id)!.name} selected. Earlier class progress retained.`,
+              );
+          }}
+        />
       )}
-      {view === "sub" && (
-        <>
-          <div className="section-heading page-section-heading">
-            <h3>
-              Select a specialization for your {p.name.toLowerCase()} class.
-            </h3>
-            <Tag tone="gold">Requirements vary by subclass</Tag>
-          </div>
-          <div className="path-grid">
-            {p.subclasses.map((sub) => (
-              <article
-                key={sub.id}
-                className={`panel path-card ${c.subclass === sub.id ? "selected" : ""}`}
-              >
-                <div className="path-icon gold">
-                  <Icon name={sub.stat} size={28} />
-                </div>
-                <h3>{sub.name}</h3>
-                <p>{sub.description}</p>
-                <small className="class-stance">
-                  Adds specialization objectives and its own skill tree. No
-                  automatic stat or combat bonus.
-                </small>
-                <div className="requirements">
-                  <span>
-                    OBJECTIVE FOCUS <b>{sub.stat}</b>
-                  </span>
-                  <small>
-                    {p.name} Lv. {sub.minClassLevel || 3} ·{" "}
-                    {Object.entries(sub.requirements || {})
-                      .map(([a, n]) => `${a} ${n}+`)
-                      .join(" · ")}
-                  </small>
-                </div>
-                <button
-                  className="button primary full"
-                  disabled={
-                    subclassRequirements(c, sub).length > 0 ||
-                    c.subclass === sub.id
-                  }
-                  onClick={() => {
-                    if (!update(selectSubclass(c, sub.id))) return;
-                    notify(
-                      `${sub.name} selected. Your objectives now include its focus.`,
-                    );
-                  }}
-                >
-                  {c.subclass === sub.id
-                    ? "Current subclass"
-                    : subclassRequirements(c, sub).length > 0
-                      ? "Requirements not met"
-                      : "Choose subclass"}
-                </button>
-              </article>
-            ))}
-          </div>
-          {c.subclass && (
-            <button
-              className="text-button"
-              onClick={() => update({ ...c, subclass: null })}
-            >
-              Return to your core class without a subclass
-            </button>
-          )}
-        </>
-      )}
+      {view === "vocation" && <VocationPanel c={c} update={update} />}
       {view === "history" && (
         <section className="panel record-panel">
-          <div className="section-heading">
-            <h3>Class history</h3>
-            <Icon name="book" />
-          </div>
+          <h3>Class chronicle</h3>
           {CLASSES.filter(
-            (x) => classXP(c, x.id) > 0 || x.id === c.activeClass,
-          ).map((x) => (
-            <div className="class-record" key={x.id}>
-              <span className={`path-icon ${x.color}`}>
-                <Icon name={x.icon} />
-              </span>
-              <div>
-                <h4>
-                  {x.name} {x.id === c.activeClass && <Tag>Current</Tag>}
-                </h4>
-                <small>
-                  Level {classLevel(c, x.id)} · {classRank(classLevel(c, x.id))}{" "}
-                  · {classXP(c, x.id)} XP earned
-                </small>
-                <Progress
-                  value={classXP(c, x.id) % 100}
-                  label={`${x.name} next level`}
-                />
+            (p) => classXP(c, p.id) > 0 || p.id === c.activeClass,
+          ).map((p) => {
+            const prog = levelProgress(
+              classXP(c, p.id) + (c.legacyProgress?.classes[p.id] || 0),
+            );
+            return (
+              <div className="class-record" key={p.id}>
+                <span className={`path-icon ${p.color}`}>
+                  <Icon name={p.icon} />
+                </span>
+                <div>
+                  <h4>
+                    {p.name} {p.id === c.activeClass && <Tag>Current</Tag>}
+                  </h4>
+                  <small>
+                    Level {classLevel(c, p.id)} ·{" "}
+                    {classRank(classLevel(c, p.id))} ·{" "}
+                    {classXP(c, p.id).toLocaleString()} XP earned
+                  </small>
+                  <Progress
+                    value={prog.current}
+                    max={prog.needed}
+                    label={`${p.name} next level`}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
           <p className="helper">
-            Class level increases every 100 XP earned while that class is
-            active. Novice → Apprentice (3) → Adept (5) → Expert (10) → Master
-            (20).
+            Every level costs more XP. There is no level cap. Every fifth class
+            level grants a base attribute point following that class’s archetype
+            balance. Prestige promotion starts a separate class record at level
+            1.
           </p>
         </section>
       )}
@@ -737,10 +572,11 @@ export function Skills({
               <span className="eyebrow">ATTRIBUTE PROGRESSION</span>
               <h2>Base attributes</h2>
               <p>
-                Class and profession level-ups grant +1 to their focus
-                attribute. Selected weekly and monthly goals award the listed
-                stat point. Skill purchases and combat equipment never change
-                these numbers.
+                Every fifth class or profession level grants a base stat point.
+                Hybrid classes distribute milestones across their archetype
+                focuses. Selected weekly and monthly goals award the listed stat
+                point. Skill purchases and combat equipment never change these
+                numbers.
               </p>
               <div className="notice">
                 These are personal game scores, not clinical measurements or a
@@ -795,8 +631,8 @@ export function Skills({
               onChange={(profession) => update({ ...c, profession })}
             />
             <div className="notice">
-              Profession objectives award profession XP and skill shards. Each
-              level adds +1 to this profession’s focus attribute. Previous
+              Profession objectives award profession XP and skill points. Every
+              fifth level adds +1 to this profession’s focus attribute. Previous
               profession levels and purchased skills are retained.
             </div>
             <details className="profession-history">

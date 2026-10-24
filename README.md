@@ -29,60 +29,53 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
-## Version 1.1.0
+## Version 1.2.0
 
-Install the updated APK over the existing app to retain its character data. The package identifier and signing certificate are unchanged; the Android version code is increased to 2. Export a backup before upgrading. Existing baselines, objective history, class XP, credentials, earned skills, reflections, and keepsakes are retained. Derived attribute totals now follow the revised progression rules below.
+Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 3. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment.
 
-### Professions and assessment
+The Guild Card is an engraved brass membership card inspired by isekai guild registers. Objectives are posted as pinned parchment commissions on a timber guild board. [View the screenshots](docs/screenshots/README.md).
 
-- 283 searchable roles in 23 US SOC major occupation groups plus a personal/undecided group. Includes common recruiting titles in analysis, business, technology, trades, healthcare, education, and other fields. This is a curated catalog organized by SOC, not an exhaustive or verbatim O*NET/BLS database.
-- Assessment inputs can be cleared and left blank; there is no forced leading zero. Walking uses minutes, balance uses seconds, reading/study uses minutes per week, and other fields state their repetition, weight, or weekly units.
-- Bodyweight and weighted strength options are supported. Pushup variation affects the game score. Weighted strength needs a body weight; an unknown value does not receive an assumed strength advantage.
-- Baseline scores range from 3–30. Scoring thresholds are **guild game benchmarks**, not measured population averages, percentiles, or medical/intelligence/spiritual assessments.
+### Class register and prestige
 
-### Progression rules
+There are **51 classes**: eight Basic, 21 Advanced, 14 Prestige, and eight Ascendant. Search by name or real-world goal, filter by archetype, tier, or availability, inspect a class, and compare up to three before choosing. The same register is used during onboarding; locked options remain visible.
 
-- **Base stats** increase only from class level-ups, profession level-ups, and explicitly listed weekly/monthly stat rewards. A class level gives +1 to its core attribute. A profession level gives +1 to its role-group focus attribute. Subclass selection, skill purchases, gear, ordinary daily attribute XP, and combat victories never directly change base stats.
-- **Class and profession levels:** 100 progression XP per level. Class objectives progress the active class; profession and technical objectives progress the selected profession. Subclass objectives progress both the specialization and its parent class. Universal objectives progress the adventurer and universal skill wallet.
-- **Skill currency:** each path earns one skill shard per 25 path XP and two additional shards per path level. Shards are tracked separately for universal, each class, each subclass, and each profession. Purchases debit their recorded wallet once. Changing focus does not refund or remove purchases.
-- **Guild rank:** F through SSS. Each promotion costs twice the preceding promotion: 500, 1,000, 2,000, 4,000, and so on. Cumulative thresholds are 0 / 500 / 1,500 / 3,500 / 7,500 / 15,500 / 31,500 / 63,500 / 127,500 rank XP.
-- **Starting placement:** ordinary or incomplete assessments start at F. E requires an average baseline score of at least 18, at least three attributes at 22+, and at least two physical attributes at 22+. D requires an average of at least 25 and five attributes at 25+. Starting placement is capped at D. Placement credit affects guild rank only; it does not grant adventurer levels, class/profession XP, or skill shards. Older characters keep their original F starting placement.
-- Each objective rewards once per local calendar period: midnight, Monday, or the first of the month. Monthly checklists persist across closing the dialog and restarting the app.
+Every dossier includes its fantasy role, real-world goal, archetype proportions, signature skill, and entry requirements. Eight basic classes are open to anyone. Other classes require attributes, purchased or credential skills, a profession category, prior class levels, or combinations of those requirements. Once a class is unlocked, it stays available.
 
-### Classes, subclasses, and skill trees
+Classes train eight shared archetype trees: **Fighter, Guardian, Ranger, Rogue, Mage, Cleric, Bard, and Artificer**. Each has 12 connected skills and branching choices. Every class also has four focused nodes. A Paladin is 70% Fighter and 30% Cleric; its class XP contributes to those archetype trees in those proportions. Shared skills already purchased remain learned when changing class.
 
-12 classes and 23 subclasses have 348 skill nodes across universal, class, subclass, profession, networking, and data-analysis trees. Nodes have visible prerequisite connections, practice requirements, prices, and level gates. The tree supports scrolling, dragging, zooming, and node inspection. Class and subclass sections unlock at levels 1, 3, 5, 10, and 20 (Novice, Apprentice, Adept, Expert, Master).
+Prestige and Ascendant classes require experience in earlier classes. Promotion retains total adventurer level and every earlier class record, while the newly selected class begins at level 1. Previously trained classes resume their own retained level when selected again. [Browse all classes and requirements](class-register.md).
 
-| Class     | Combat role       | Examples                                      |
-| --------- | ----------------- | --------------------------------------------- |
-| Warrior   | Vanguard          | Shield Bash, Cleave, Riposte                  |
-| Ranger    | Marksman          | Aimed Shot, Twin Arrows, Hail of Arrows       |
-| Scholar   | Caster            | Arcane Bolt, Elemental Burst, Blazing Field   |
-| Bard      | Support           | Battle Song, Inspiring Chorus, Guiding Chorus |
-| Disciple  | Healer            | Restoration, Sanctuary, Group Restoration     |
-| Sentinel  | Defender          | Brace, Hold the Line, Unbroken Bulwark        |
-| Paladin   | Frontline support | Radiant Strike, Aegis, Merciful Blow          |
-| Sage      | Tactician         | Focused Bolt, Insight, Shared Understanding   |
-| Monk      | Skirmisher        | Flurry, Centering, Counter Stance             |
-| Rogue     | Striker           | Backstab, Evasion, Finishing Strike           |
-| Artificer | Combat engineer   | Spark Charge, Field Repair, Incendiary Array  |
-| Marshal   | Commander         | Command, Coordinated Strike, Grand Strategy   |
+Each active class grants one uniquely named **signature combat skill** without purchasing it or consuming a loadout slot. Advanced signatures have 5% increased potency, Prestige 20%, and Ascendant 40%; damage, healing, recovery, and protective effects use that potency. Other combat skills are learned through trees and equipped in **Adventures → Skill loadout**. Class stances, equipment, and equipped skill modifiers apply only in combat.
 
-Subclasses add daily, weekly, and monthly objectives plus their own branching tree. Selection itself grants no stat or combat bonus. Named techniques include Warpriest's Healing Prayer and Consecrated Guard, Eldritch Knight's Spellblade and Runic Guard, and Guardian's Interpose and Shield Wall. Paladin requires Warrior level 5 and Disciple level 3; Sage requires Scholar level 8 and Disciple level 3, in addition to their displayed attributes and XP.
+### Professions and vocation
 
-CCNA/Network+/JNCIA-Junos and CCNP Enterprise/JNCIP-ENT remain self-reported credential milestones. Recording them earns the associated credential node, which does not itself provide a free combat modifier. Practice and combat skill purchases use their normal requirements and wallets.
+The searchable catalog retains 283 common job titles, originally organized using US SOC major groups. Roles now map to **20 shared career trees**, each with ten named competencies, individual learning descriptions, branching prerequisites, practice gates, level requirements, and point prices. This is a curated role catalog, not an exhaustive or verbatim O*NET/BLS dataset.
 
-### Objectives and JRPG adventures
+A **profession** is the selected job role; a **vocation** is an independent career focus. For example, **Warrior / Analyst → Networking** combines strength objectives with job applications and CCNA/networking practice. Changing combat class does not change profession or vocation. Select a vocation in **Class Paths → Vocation**. Its daily, weekly, and monthly requests train the relevant career discipline, even when the selected profession belongs to another discipline.
 
-- A character has 27 available objectives before specialization, with class-specific training, profession projects, networking labs, subnetting, SQL, spreadsheets, Bible study, service, and other activities. Subclasses add three more. Category filters help select a focus.
-- The JRPG has five regions and 15 ordered encounters, including bosses. Battles use individual party turns, HP/MP, attacks, guard, equipped abilities, healing items, and enemy turns. Bosses use Heavy Strike every third round.
-- Four companions are available; three can be recruited through region progression. The party holds your character plus two companions.
-- Combat effects include armor piercing, multi-hit attacks, area damage, stun, taunt, counterattacks, party wards, healing, MP recovery, combined attacks, and damage over time.
-- Eleven gear items, potions, ether, and a gold shop are included. Equip up to four purchased skills. Equipment, skill modifiers, and class stances affect combat only.
-- Victories award combat gold and supplies and unlock further encounters and recruitment. They never award real-world XP or base attributes. Battle state, inventory, party, gear, and skill loadout persist across app restarts.
-- Faith-related real-world content uses Christian Scripture, prayer, study, and service. The Monk class is physical bodyweight training, without another religion's practices.
+Career points are shared across roles in the same discipline. Exact job-role XP and level history remain separate. Networking and data-analysis focus branches supplement the shared trees. CCNA/Network+/JNCIA-Junos and CCNP Enterprise/JNCIP-ENT award self-reported credential milestones; ordinary study does not substitute for those credentials.
 
-Journal, completion history, private local saves, native backup sharing, validated import/restore, and Google/Firebase integration remain available.
+Career competencies are explicitly **non-combat** and cannot supply battle attributes or commands. Exploration and other utility uses are reserved for a later design pass. Earlier combat subclasses, objectives, and purchases remain archived in existing characters; current combat specialization advances through class and prestige paths.
+
+### Uncapped levels and attributes
+
+- Adventurer, class, profession, and archetype levels have no configured ceiling. Each successive level requires more XP. Cumulative XP for level `L` is `round(B × ((L−1) + 0.15 × (L−1)²))`, where `B=250` for adventurer levels and `B=100` for other paths.
+- Base attributes increase **every five class or profession levels**, rather than at every level. Hybrid class milestones follow the archetype balance; ten Paladin milestones distribute seven points to STR and three to WIS. Profession milestones use the career discipline’s focus attribute.
+- Explicitly listed weekly/monthly rewards may also grant a base attribute. Ordinary daily completion, purchases, vocation selection, equipment, and combat victories do not directly grant base attributes.
+- Every 100 objective XP earns one skill point for its path. Combat points pool all class objective XP; career points pool the relevant discipline; universal points use universal objectives. Most new skills cost 4–30 points and require level, practice, and earlier nodes. A purchase is charged once and remains learned.
+- **Guild rank** remains F–SSS with doubling promotion costs: cumulative thresholds 0 / 500 / 1,500 / 3,500 / 7,500 / 15,500 / 31,500 / 63,500 / 127,500. Guild rank and adventurer level are separate measures.
+- Ordinary assessments begin at F. Exceptional starting placement is capped at D. E requires mean baseline 18+, three attributes 22+, and two physical attributes 22+; D requires mean 25+ and five attributes 25+. These are guild game benchmarks, not measured population percentiles.
+
+Older saves receive one-time progression credits that retain their earned levels, base attributes, point balances, purchases, and raw objective XP after the curve changes. Credits do not increase guild rank or claim additional real-world objective rewards. Earlier purchased skills remain visible in the skill archive and combat skills remain equippable.
+
+### Requests, assessment, and adventures
+
+- Request content follows the current class and its secondary archetype, profession, and vocation. Category filters select a focus. Daily rewards refresh at local midnight, weekly on Monday, and monthly on the first; each request rewards once per period. Monthly checklists persist.
+- Assessment inputs remain clearable, with no forced leading zero. Walking is in minutes, balance in seconds, and study in minutes per week. Bodyweight training needs no equipment; weighted strength requires body weight for scoring. Baselines range from 3–30.
+- JRPG expeditions have five regions, 15 ordered encounters, bosses, and individual party turns. Your character can bring two of four recruitable companions. Commands include attacks, guard, class signatures, equipped skills, potions, and ether.
+- Combat includes armor piercing, multi-hit and area attacks, stun, taunt, counters, party barriers, healing, MP recovery, coordinated attacks, and burning. Victories grant combat gold and supplies, encounter access, and recruitment; they never grant real-world XP or base attributes.
+- Eleven gear items, a supply shop, saved battle state, character backup sharing, validated restore, journal, and completion history remain available.
+- Faith-related real-world content uses Christian Scripture, prayer, comprehension, and service. Monk training is physical bodyweight practice.
 
 ## Google accounts and cloud backups
 

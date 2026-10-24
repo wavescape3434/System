@@ -154,7 +154,9 @@ export function Modal({
   title,
   children,
   onClose,
+  wide = false,
 }: {
+  wide?: boolean;
   title: string;
   children: ReactNode;
   onClose: () => void;
@@ -192,7 +194,7 @@ export function Modal({
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div
-        className="modal"
+        className={`modal ${wide ? "modal-wide" : ""}`}
         role="dialog"
         aria-modal="true"
         aria-label={title}

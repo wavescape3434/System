@@ -1,6 +1,13 @@
+import { VOCATIONS, CAREER_CATEGORIES } from "./careers";
 import { ENCOUNTERS, COMPANIONS, EQUIPMENT } from "./rpg";
 import type { Character } from "./domain";
-import { ATTRIBUTES, CLASSES, PROFESSIONS, SKILLS } from "./domain";
+import {
+  ATTRIBUTES,
+  CLASSES,
+  PROFESSIONS,
+  SKILLS,
+  upgradeProgression,
+} from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
 const finite = (x: unknown) =>
   typeof x === "number" && Number.isFinite(x) && x >= 0;
@@ -20,9 +27,17 @@ export function validateCharacter(x: unknown): x is Character {
       date(c.createdAt) &&
       !!path &&
       (c.subclass === null ||
-        path.subclasses.some((s) => s.id === c.subclass)) &&
+        CLASSES.some((p) => p.subclasses.some((s) => s.id === c.subclass))) &&
       PROFESSIONS.includes(c.profession as (typeof PROFESSIONS)[number]) &&
       typeof c.demo === "boolean" &&
+      (c.vocation === undefined ||
+        c.vocation === null ||
+        VOCATIONS.some((v) => v.id === c.vocation)) &&
+      (c.unlockedClasses === undefined ||
+        (Array.isArray(c.unlockedClasses) &&
+          c.unlockedClasses.every((id) => CLASSES.some((p) => p.id === id)))) &&
+      (c.progressionVersion === undefined || c.progressionVersion === 2) &&
+      (c.legacyProgress === undefined || validLegacy(c.legacyProgress)) &&
       (c.startingRank === undefined ||
         ["F", "E", "D"].includes(c.startingRank)) &&
       (c.learnedSkills === undefined ||
@@ -67,6 +82,10 @@ export function validateCharacter(x: unknown): x is Character {
           finite(o.xp) &&
           o.xp <= 400 &&
           (o.profession === undefined || str(o.profession)) &&
+          (o.careerCategory === undefined ||
+            CAREER_CATEGORIES.some((g) => g.id === o.careerCategory)) &&
+          (o.vocationId === undefined ||
+            VOCATIONS.some((v) => v.id === o.vocationId)) &&
           (o.scope === undefined ||
             ["universal", "class", "subclass", "profession"].includes(
               o.scope,
@@ -119,7 +138,7 @@ export function loadCharacter(): Character | null {
     throw new Error(
       "Your saved character needs attention. Export or restore a valid backup; your existing data has been kept.",
     );
-  return parsed;
+  return upgradeProgression(parsed);
 }
 export const saveCharacter = (c: Character) =>
   localStorage.setItem(STORAGE_KEY, JSON.stringify(c));
@@ -173,6 +192,7 @@ function validCampaign(input: unknown): boolean {
           u.mp <= u.maxMp &&
           typeof u.guard === "boolean" &&
           [
+            "guardPower",
             "penetration",
             "healing",
             "stun",
@@ -188,7 +208,8 @@ function validCampaign(input: unknown): boolean {
               str(a.name) &&
               str(a.type) &&
               finite(a.cost) &&
-              finite(a.power),
+              finite(a.power) &&
+              (a.potency === undefined || finite(a.potency)),
           ),
       );
     return (
@@ -209,4 +230,25 @@ function validCampaign(input: unknown): boolean {
   } catch {
     return false;
   }
+}
+
+function validLegacy(p: NonNullable<Character["legacyProgress"]>) {
+  return (
+    !!p &&
+    finite(p.adventurerXP) &&
+    !!p.classes &&
+    !!p.professions &&
+    !!p.stats &&
+    !!p.skillPoints &&
+    [p.classes, p.professions, p.stats, p.skillPoints].every(
+      (x) =>
+        typeof x === "object" &&
+        !Array.isArray(x) &&
+        Object.values(x).every(finite),
+    ) &&
+    Object.keys(p.classes).every((id) => CLASSES.some((c) => c.id === id)) &&
+    Object.keys(p.stats).every((a) =>
+      ATTRIBUTES.includes(a as (typeof ATTRIBUTES)[number]),
+    )
+  );
 }

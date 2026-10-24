@@ -1,3 +1,4 @@
+import { EXPANDED_SKILLS } from "./expanded-skills";
 import { SUBCLASS_TECHNIQUES } from "./class-roles";
 import type { Attribute, Character } from "./domain";
 import { PROFESSION_GROUPS, professionGroup } from "./professions";
@@ -20,6 +21,10 @@ export interface Skill {
   current: (c: Character) => number;
   automatic?: boolean;
   combat?: string;
+  archetype?:string;
+  requiredLevel?:number;
+  legacy?:boolean;
+  nonCombat?:boolean;
 }
 const count = (c: Character, stat?: Attribute) =>
   c.completions.filter((o) => !stat || o.stat === stat).length;
@@ -772,3 +777,11 @@ for (const [subclass, owner, stat, name] of subclasses) {
     combat: tech[3].split(",")[2],
   });
 }
+
+// Original skill IDs are retained for saved characters and purchased-skill records.
+for(const s of SKILLS) {
+ if(s.category==='class'||s.category==='subclass'||(s.category==='profession'&&!['networking','analysis'].includes(s.owner||''))) s.legacy=true;
+ if(s.category==='universal'&&!s.automatic&&s.id!=='universal-root') s.cost=Math.max(4,s.cost*4);
+ if(s.category==='profession'&&['networking','analysis'].includes(s.owner||'')) {s.nonCombat=true;s.combat=undefined;if(!s.automatic)s.cost=Math.max(4,s.cost*4);}
+}
+SKILLS.push(...EXPANDED_SKILLS);

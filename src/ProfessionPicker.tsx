@@ -1,6 +1,7 @@
+import { CAREER_CATEGORIES, careerCategory } from "./careers";
 import { useId, useState } from "react";
 import { Search } from "lucide-react";
-import { PROFESSION_GROUPS, PROFESSIONS } from "./professions";
+import { PROFESSIONS } from "./professions";
 export default function ProfessionPicker({
   value,
   onChange,
@@ -10,9 +11,11 @@ export default function ProfessionPicker({
 }) {
   const [query, setQuery] = useState("");
   const id = useId();
-  const groups = PROFESSION_GROUPS.map((g) => ({
+  const groups = CAREER_CATEGORIES.map((g) => ({
     ...g,
-    roles: g.roles.filter((role) =>
+    roles: PROFESSIONS.filter(
+      (role) => careerCategory(role).id === g.id,
+    ).filter((role) =>
       `${role} ${g.name}`.toLowerCase().includes(query.trim().toLowerCase()),
     ),
   })).filter((g) => g.roles.length);
@@ -41,10 +44,7 @@ export default function ProfessionPicker({
         >
           <option value={value}>{value} (selected)</option>
           {groups.map((g) => (
-            <optgroup
-              key={g.code}
-              label={`${g.code === "personal" ? "" : `${g.code} · `}${g.name}`}
-            >
+            <optgroup key={g.id} label={g.name}>
               {g.roles
                 .filter((r) => r !== value)
                 .map((r) => (
@@ -60,7 +60,7 @@ export default function ProfessionPicker({
         {query
           ? groups.reduce((n, g) => n + g.roles.length, 0)
           : PROFESSIONS.length}{" "}
-        roles · SOC occupation groups with common job titles
+        roles · 20 shared career trees
       </small>
     </div>
   );

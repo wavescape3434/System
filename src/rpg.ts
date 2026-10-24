@@ -1,6 +1,7 @@
+import { classPower } from "./class-catalog";
 import { COMBAT_EFFECTS } from "./class-roles";
 import type { Character, Stats } from "./domain";
-import { stats, currentPath, totalXP, level } from "./domain";
+import { stats, currentPath, adventurerXP, level } from "./domain";
 import { SKILLS } from "./skill-catalog";
 export interface Campaign {
   cleared: string[];
@@ -252,6 +253,7 @@ export function combatAttributes(c: Character): Stats {
       s &&
       c.earnedSkills.includes(id) &&
       !s.automatic &&
+      !s.nonCombat &&
       s.id !== "universal-root"
     )
       result[s.stat] += s.cost >= 2 ? 2 : 1;
@@ -264,6 +266,7 @@ export interface Ability {
   type: string;
   cost: number;
   power: number;
+  potency?: number;
 }
 const ability = (id: string, name: string, type: string): Ability => ({
   id,
@@ -285,6 +288,7 @@ export interface Unit {
   defense: number;
   speed: number;
   guard: boolean;
+  guardPower?: number;
   abilities: Ability[];
   boss?: boolean;
   penetration?: number;
@@ -333,13 +337,15 @@ export function startBattle(c: Character, id: string): Character {
     return c;
   const e = ENCOUNTERS.find((x) => x.id === id)!,
     s = combatAttributes(c),
-    lv = level(totalXP(c));
-  const maxHp = 40 + s.CON * 5 + (c.activeClass === "sentinel" ? 25 : 0),
+    lv = level(adventurerXP(c)),
+    path = currentPath(c),
+    mix = path.mix;
+  const maxHp = 40 + s.CON * 5 + Math.round((25 * (mix.guardian || 0)) / 100),
     maxMp =
       12 +
       s.INT * 2 +
       s.WIS +
-      (c.activeClass === "scholar" ? 10 : c.activeClass === "bard" ? 5 : 0);
+      Math.round((10 * (mix.mage || 0) + 5 * (mix.bard || 0)) / 100);
   const hero: Unit = {
     id: "hero",
     name: c.name,
@@ -352,31 +358,34 @@ export function startBattle(c: Character, id: string): Character {
       7 +
       s.STR * 2 +
       s.DEX +
-      (c.activeClass === "monk" ? Math.floor(s.DEX / 2) : 0),
-    magic:
-      6 +
-      s.INT * 2 +
-      s.WIS +
-      (c.activeClass === "artificer" ? 4 : c.activeClass === "paladin" ? 2 : 0),
+      Math.floor(((s.DEX / 2) * (mix.rogue || 0)) / 100),
+    magic: 6 + s.INT * 2 + s.WIS + Math.round((4 * (mix.artificer || 0)) / 100),
     defense:
       2 +
       Math.floor(s.CON * 0.8) +
-      (c.activeClass === "sentinel"
-        ? 5
-        : ["warrior", "paladin"].includes(c.activeClass)
-          ? 2
-          : 0),
+      Math.round((5 * (mix.guardian || 0) + 2 * (mix.fighter || 0)) / 100),
     speed: 5 + s.DEX,
     guard: false,
-    penetration:
-      c.activeClass === "rogue" ? 4 : c.activeClass === "ranger" ? 2 : 0,
-    healing: c.activeClass === "disciple" ? 1.25 : 1,
-    abilities: campaign(c).equippedSkills.flatMap((id) => {
-      const skill = SKILLS.find((s) => s.id === id);
-      return skill?.combat && c.earnedSkills.includes(id)
-        ? [ability(id, skill.name, skill.combat)]
-        : [];
-    }),
+    penetration: Math.round(
+      (4 * (mix.rogue || 0) + 2 * (mix.ranger || 0)) / 100,
+    ),
+    healing: 1 + (0.25 * (mix.cleric || 0)) / 100,
+    abilities: [
+      {
+        ...ability(
+          `signature-${path.id}`,
+          path.signature.name,
+          path.signature.effect,
+        ),
+        potency: classPower(path),
+      },
+      ...campaign(c).equippedSkills.flatMap((id) => {
+        const skill = SKILLS.find((s) => s.id === id);
+        return skill?.combat && !skill.nonCombat && c.earnedSkills.includes(id)
+          ? [ability(id, skill.name, skill.combat)]
+          : [];
+      }),
+    ],
   };
   if (c.activeClass === "sage")
     for (const skill of hero.abilities)
@@ -464,13 +473,15 @@ export function takeAction(input: Battle, action: Action): Battle {
   if (input.phase !== "player") return input;
   const b = structuredClone(input),
     actor = b.party[b.actor];
+  let potency = 1;
   if (!actor || actor.hp <= 0) return input;
   const hit = (target: Unit, raw: number) => {
     const damage = Math.max(
       1,
       Math.round(
-        (raw - Math.max(0, target.defense - (actor.penetration || 0))) *
-          (target.guard ? 0.45 : 1),
+        (raw * potency -
+          Math.max(0, target.defense - (actor.penetration || 0))) *
+          (target.guard ? 0.45 / (target.guardPower || 1) : 1),
       ),
     );
     target.hp = Math.max(0, target.hp - damage);
@@ -487,6 +498,7 @@ export function takeAction(input: Battle, action: Action): Battle {
     hit(target, actor.attack);
   } else if (action.kind === "guard") {
     actor.guard = true;
+    actor.guardPower = 1;
     actor.mp = Math.min(actor.maxMp, actor.mp + 3);
     b.log.push(`${actor.name} guards and restores 3 MP.`);
   } else if (action.kind === "potion" || action.kind === "ether") {
@@ -504,9 +516,12 @@ export function takeAction(input: Battle, action: Action): Battle {
       skill.type === "heal" ? b.party[action.target] : b.enemies[action.target];
     if (!target || target.hp <= 0) return input;
     actor.mp -= skill.cost;
+    potency = skill.potency || 1;
     b.log.push(`${actor.name} uses ${skill.name}.`);
     const restore = (ally: Unit, scale: number) => {
-      const amount = Math.round(actor.magic * scale * (actor.healing || 1));
+      const amount = Math.round(
+        actor.magic * scale * (actor.healing || 1) * potency,
+      );
       ally.hp = Math.min(ally.maxHp, ally.hp + amount);
       b.log.push(`${ally.name}: +${amount} HP.`);
     };
@@ -515,31 +530,39 @@ export function takeAction(input: Battle, action: Action): Battle {
     else if (skill.type === "heal-all")
       for (const ally of b.party.filter((p) => p.hp > 0)) restore(ally, 0.85);
     else if (["guard", "ward", "bulwark"].includes(skill.type)) {
-      for (const ally of b.party.filter((p) => p.hp > 0)) ally.guard = true;
-      if (skill.type === "bulwark") actor.taunt = 2;
+      for (const ally of b.party.filter((p) => p.hp > 0)) {
+        ally.guard = true;
+        ally.guardPower = potency;
+      }
+      if (skill.type === "bulwark") actor.taunt = Math.ceil(2 * potency);
     } else if (skill.type === "taunt") {
       actor.guard = true;
-      actor.taunt = 2;
+      actor.taunt = Math.ceil(2 * potency);
+      actor.guardPower = potency;
     } else if (skill.type === "counter") {
       actor.guard = true;
       actor.counter = true;
+      actor.guardPower = potency;
     } else if (skill.type === "rally" || skill.type === "formation")
       for (const ally of b.party.filter((p) => p.hp > 0)) {
-        ally.attack += skill.type === "formation" ? 3 : 2;
-        ally.magic += 2;
+        ally.attack += Math.round(
+          (skill.type === "formation" ? 3 : 2) * potency,
+        );
+        ally.magic += Math.round(2 * potency);
         if (skill.type === "formation") {
-          ally.defense += 2;
+          ally.defense += Math.round(2 * potency);
           ally.guard = true;
+          ally.guardPower = potency;
         }
       }
     else if (skill.type === "scan") {
-      target.defense = Math.max(0, target.defense - 3);
+      target.defense = Math.max(0, target.defense - Math.round(3 * potency));
       b.log.push(`${target.name}: defense -3.`);
     } else if (skill.type === "focus" || skill.type === "focus-all") {
       for (const ally of skill.type === "focus"
         ? [actor]
         : b.party.filter((p) => p.hp > 0)) {
-        const amount = skill.type === "focus" ? 12 : 10;
+        const amount = Math.round((skill.type === "focus" ? 12 : 10) * potency);
         ally.mp = Math.min(ally.maxMp, ally.mp + amount);
         b.log.push(`${ally.name}: +${amount} MP.`);
       }
@@ -573,7 +596,7 @@ export function takeAction(input: Battle, action: Action): Battle {
     else if (skill.type === "burn") {
       hit(target, actor.magic * 0.9);
       target.burn = 3;
-      target.burnDamage = Math.max(1, Math.round(actor.magic * 0.3));
+      target.burnDamage = Math.max(1, Math.round(actor.magic * 0.3 * potency));
     } else
       hit(
         target,
@@ -617,7 +640,7 @@ export function takeAction(input: Battle, action: Action): Battle {
       1,
       Math.round(
         (enemy.attack * (charged ? 1.6 : 1) - target.defense) *
-          (target.guard ? 0.45 : 1),
+          (target.guard ? 0.45 / (target.guardPower || 1) : 1),
       ),
     );
     target.hp = Math.max(0, target.hp - damage);
@@ -632,6 +655,7 @@ export function takeAction(input: Battle, action: Action): Battle {
   }
   for (const ally of b.party) {
     ally.guard = false;
+    ally.guardPower = 1;
     ally.counter = false;
     if ((ally.taunt || 0) > 0) ally.taunt!--;
   }

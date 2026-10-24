@@ -1,12 +1,6 @@
+import ClassBrowser from "./ClassBrowser";
 import { useState } from "react";
-import {
-  ArrowRight,
-  ArrowLeft,
-  Check,
-  Leaf,
-  Globe,
-  Dumbbell,
-} from "lucide-react";
+import { ArrowRight, ArrowLeft, Leaf, Globe, Dumbbell } from "lucide-react";
 import {
   CLASSES,
   EMPTY_BASELINE,
@@ -336,22 +330,11 @@ export default function Onboarding({
                     </span>
                   ))}
                 </div>
-                <div className="starter-paths">
-                  {CLASSES.filter((p) => available(p, values, 0)).map((p) => (
-                    <button
-                      key={p.id}
-                      className={classId === p.id ? "selected" : ""}
-                      onClick={() => setClassId(p.id)}
-                    >
-                      <Icon name={p.icon} />
-                      <span>
-                        <b>{p.name}</b>
-                        <small>{p.motto}</small>
-                      </span>
-                      {classId === p.id && <Check size={18} />}
-                    </button>
-                  ))}
-                </div>
+                <ClassBrowser
+                  baseline={values}
+                  selected={classId}
+                  onSelect={setClassId}
+                />
                 <div className="rank-intro">
                   <div className="rank-mini">{startingRankFor(values)}</div>
                   <span>

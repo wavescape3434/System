@@ -1,15 +1,16 @@
+import { CLASSES } from "./class-catalog";
 import type { Unit } from "./rpg";
 export default function BattleSprite({ unit }: { unit: Unit }) {
+  const path = CLASSES.find((p) => p.id === unit.sprite),
+    family = path
+      ? Object.entries(path.mix).sort((a, b) => b[1]! - a[1]!)[0][0]
+      : null;
   const kind = unit.sprite,
     slime = kind === "slime",
     wolf = ["wolf", "alpha", "wyvern", "harpy", "bat"].includes(kind),
-    construct = [
-      "golem",
-      "construct",
-      "sentinel",
-      "warden",
-      "crawler",
-    ].includes(kind),
+    construct =
+      unit.id !== "hero" &&
+      ["golem", "construct", "sentinel", "warden", "crawler"].includes(kind),
     skull = kind === "skeleton",
     hero =
       unit.id === "hero" || ["mira", "orin", "lyra", "gideon"].includes(kind);
@@ -20,7 +21,17 @@ export default function BattleSprite({ unit }: { unit: Unit }) {
         ? "#84a77d"
         : kind === "gideon"
           ? "#899ab6"
-          : "#b9a56c"
+          : family === "mage"
+            ? "#899ab6"
+            : family === "cleric"
+              ? "#d2c387"
+              : family === "rogue"
+                ? "#8c87a4"
+                : family === "ranger"
+                  ? "#84a77d"
+                  : family === "bard"
+                    ? "#ac8eab"
+                    : "#b9a56c"
     : construct
       ? "#98978a"
       : wolf
@@ -147,7 +158,11 @@ export default function BattleSprite({ unit }: { unit: Unit }) {
               strokeWidth="4"
             />
           )}
-          {kind === "mira" || kind === "gideon" || kind === "scholar" ? (
+          {kind === "mira" ||
+          kind === "gideon" ||
+          family === "mage" ||
+          family === "cleric" ||
+          family === "artificer" ? (
             <>
               <path d="M98 123V52" stroke="#8a704b" strokeWidth="5" />
               <circle

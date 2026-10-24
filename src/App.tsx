@@ -70,7 +70,7 @@ const PAGES = [
     id: "objectives",
     name: "Objectives",
     icon: Target,
-    title: "Objectives",
+    title: "Guild Requests",
     description:
       "Complete tasks, quests, and monthly goals to earn real-world XP.",
   },
@@ -78,9 +78,9 @@ const PAGES = [
     id: "paths",
     name: "Class Paths",
     icon: Route,
-    title: "Classes & Subclasses",
+    title: "Class Register",
     description:
-      "View requirements, select a class, and manage specializations.",
+      "Compare classes, follow prestige paths, and choose your vocation.",
   },
   {
     id: "skills",
@@ -318,9 +318,9 @@ export default function App() {
             <div className="sidebar-note">
               <span>✦</span>
               <p>
-                Track objectives.
+                Guild records.
                 <br />
-                Develop your character.
+                Train. Quest. Advance.
               </p>
               <small>REAL-WORLD PROGRESS</small>
             </div>
