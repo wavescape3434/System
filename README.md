@@ -29,9 +29,9 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
-## Version 1.7.0
+## Version 1.7.1
 
-Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 8. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.7.md).
+Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 9. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.7.md).
 
 Guild Cards follow the member's rank metal: **Tin, Copper, Bronze, Iron, Silver, Gold, Platinum, Mythril, Orichalcum** for F through SSS. Objectives are pinned parchment commissions on a timber board. The fixed header includes an in-app notification inbox. [View the screenshots](docs/screenshots/README.md).
 
@@ -41,7 +41,7 @@ Related objective ranks now share one request card. Choose a rank before accepti
 
 Weekly goals use Monday–Sunday and monthly goals use the calendar month. They include relevant work already logged earlier in that period. Acceptance and checklist progress expire at the boundary; earned activity and history remain. Daily tasks retain F–C limits, weekly quests F–A, and monthly adventures F–SSS. Expert achievements check prior preparation before rewarding a current-month outcome.
 
-Adventures now has **eight regions, 24 places, 96 stage battles, six towns, 48 guild commissions, seven companions, and 30 town-crafted items**. Clear a place's four stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use classic blue command windows.
+Adventures now has **eight regions, 24 places, 96 stage battles, six towns, 60 guild commissions, seven companions, and 30 town-crafted items**. Clear a place's four stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use classic blue command windows.
 
 Hybrid requests either require a named adventure commission or pay an optional bonus when it is completed. Ordinary requests remain available. [Content, calendar, exploration, and shop rules](docs/update-1.7.md) · [New screenshots](docs/screenshots/README.md).
 

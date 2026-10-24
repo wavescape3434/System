@@ -1,4 +1,4 @@
-# The Adventurers Guild 1.7.0
+# The Adventurers Guild 1.7.1
 
 Objectives now group related difficulties into one request with a rank selector. Weekly and monthly requests use calendar periods with retrospective credit for relevant logged activity. Adventures adds a repeatable exploration world, town economies, guild commissions, and original pixel graphics.
 
@@ -73,7 +73,7 @@ Every town has a general store and a smith. Store stocks are independent and per
 
 Thirty craftable items cover blades, staves, bows, armor, and charms across six towns. They consume local materials and gold. Smith tiers produce combat modifiers of **3 / 5 / 9 / 17 / 33**, with prices **150 / 450 / 1,350 / 4,050 / 12,150 gold**. Alderhaven is Apprentice, Brassford Journeyman, Embermere and Tidecross Adept, Greywatch Master, and Frostholm Grandmaster. Materials and item identities differ between towns. Legacy owned equipment remains equippable.
 
-The guild posts **48 adventure commissions**: medicinal deliveries, smith materials, patrols, named-monster hunts, research materials, supply routes, dungeon clears, and roaming-boss bounties. Hunts count kills after acceptance, including the required species when named. Deliveries consume inventory. Completed dungeon bounties are one-time; recurring hunts and deliveries require fresh work/resources before they can pay again.
+Blackthorn March and Lantern Fen share towns with other regions and have their own gathering, named-monster, dungeon, and boss commissions. The guild posts **60 adventure commissions**: medicinal deliveries, smith materials, patrols, named-monster hunts, research materials, supply routes, dungeon clears, and roaming-boss bounties. Hunts count kills after acceptance, including the required species when named. Deliveries consume inventory. Completed dungeon bounties are one-time; recurring hunts and deliveries require fresh work/resources before they can pay again.
 
 ## Hybrid objectives
 

@@ -1,4 +1,4 @@
-# The Adventurers Guild 1.7.0 — screenshots
+# The Adventurers Guild 1.7.1 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
 

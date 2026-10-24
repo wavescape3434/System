@@ -15,6 +15,8 @@ import {
   TOWNS,
   TOWN_GEAR,
   WORLD_CONTRACTS,
+  WORLD_REGIONS,
+  RESOURCE_NAMES,
   WORLD_ENCOUNTERS,
 } from "./world-catalog";
 import {
@@ -63,14 +65,31 @@ function win(c: Character) {
   return claimVictory(c);
 }
 describe("exploration world", () => {
-  it("has 8 regions, 24 places, 96 stages, 6 towns and 48 commissions with unique IDs", () => {
+  it("has 8 regions, 24 places, 96 stages, 6 towns and 60 commissions with unique IDs", () => {
     expect(PLACES).toHaveLength(24);
     expect(WORLD_ENCOUNTERS.filter((e) => e.kind === "stage")).toHaveLength(96);
     expect(TOWNS).toHaveLength(6);
-    expect(WORLD_CONTRACTS).toHaveLength(48);
+    expect(WORLD_CONTRACTS).toHaveLength(60);
     expect(new Set(WORLD_ENCOUNTERS.map((e) => e.id)).size).toBe(
       WORLD_ENCOUNTERS.length,
     );
+  });
+  it("gives every region gathering, monster, dungeon and boss commissions with valid resource locations", () => {
+    for (const region of WORLD_REGIONS) {
+      const jobs = WORLD_CONTRACTS.filter(
+        (r) => PLACES.find((p) => p.id === r.placeId)?.region === region.id,
+      );
+      for (const kind of ["delivery", "hunt", "dungeon", "boss"])
+        expect(jobs.some((r) => r.kind === kind)).toBe(true);
+    }
+    for (const id of Object.keys(RESOURCE_NAMES))
+      expect(
+        WORLD_CONTRACTS.some((r) => r.kind === "delivery" && r.resource === id),
+      ).toBe(true);
+    for (const r of WORLD_CONTRACTS.filter((r) => r.kind === "delivery"))
+      expect(PLACES.find((p) => p.id === r.placeId)!.resources).toContain(
+        r.resource,
+      );
   });
   it("requires all stages for free exploration and earlier stages for later places", () => {
     let c = character(false);

@@ -410,6 +410,9 @@ export const WORLD_CONTRACTS: WorldContract[] = TOWNS.flatMap(
     const p = PLACES.find((p) => p.region === t.region && p.kind === "field")!,
       d = PLACES.find((p) => p.region === t.region && p.kind === "dungeon")!;
     const target = WORLD_REGIONS.find((r) => r.id === t.region)!.enemies[0];
+    const research = WORLD_REGIONS.find(
+      (r) => r.id === t.region,
+    )!.resources.find((id) => id !== t.herb && id !== t.ore)!;
     return [
       {
         id: `${t.id}-monster`,
@@ -461,10 +464,12 @@ export const WORLD_CONTRACTS: WorldContract[] = TOWNS.flatMap(
         id: `${t.id}-relics`,
         town: t.id,
         title: `${t.name} field research`,
-        description: `Recover four ${RESOURCE_NAMES[WORLD_REGIONS.find((r) => r.id === t.region)!.resources[1]]} for the guild's researchers.`,
+        description: `Recover four ${RESOURCE_NAMES[research]} for the guild's researchers.`,
         kind: "delivery" as const,
-        placeId: p.id,
-        resource: WORLD_REGIONS.find((r) => r.id === t.region)!.resources[1],
+        placeId: PLACES.find(
+          (p) => p.region === t.region && p.resources.includes(research),
+        )!.id,
+        resource: research,
         quantity: 4,
         gold: 90 * t.smith,
       },
@@ -503,3 +508,92 @@ export const WORLD_CONTRACTS: WorldContract[] = TOWNS.flatMap(
   },
 );
 export const BOSS_KINDS = new Set(WORLD_REGIONS.map((r) => r.boss));
+
+// Regions sharing a town still need their own material sinks and repeat bounties.
+for (const r of WORLD_REGIONS.filter(
+  (r) => !TOWNS.some((t) => t.region === r.id),
+)) {
+  const town = TOWNS.find((t) => t.id === r.town)!,
+    field = PLACES.find((p) => p.region === r.id && p.kind === "field")!,
+    dungeon = PLACES.find((p) => p.region === r.id && p.kind === "dungeon")!,
+    herb = r.id === "keep" ? "thornroot" : "fen-lily",
+    material = r.id === "keep" ? r.resources[0] : r.resources[1],
+    target = r.enemies[0];
+  WORLD_CONTRACTS.push(
+    {
+      id: `${r.id}-herbs`,
+      town: town.id,
+      title: `${r.name} medicinal supplies`,
+      description: `Deliver six ${RESOURCE_NAMES[herb]} to ${town.name}. The clinic will restore potion stock.`,
+      kind: "delivery",
+      placeId: PLACES.find(
+        (p) => p.region === r.id && p.resources.includes(herb),
+      )!.id,
+      resource: herb,
+      quantity: 6,
+      gold: 100 * town.smith,
+      restock: { potion: 8 },
+    },
+    {
+      id: `${r.id}-materials`,
+      town: town.id,
+      title: `${r.name} material commission`,
+      description: `Deliver five ${RESOURCE_NAMES[material]} from ${r.name} to ${town.name}.`,
+      kind: "delivery",
+      placeId: PLACES.find(
+        (p) => p.region === r.id && p.resources.includes(material),
+      )!.id,
+      resource: material,
+      quantity: 5,
+      gold: 130 * town.smith,
+    },
+    {
+      id: `${r.id}-monster`,
+      town: town.id,
+      title: `${r.name}: ${MONSTER_NAMES[target]} hunt`,
+      description: `Defeat four ${MONSTER_NAMES[target]} monsters in ${field.name} after accepting this bounty.`,
+      kind: "hunt",
+      placeId: field.id,
+      target,
+      quantity: 4,
+      gold: 150 * town.smith,
+    },
+    {
+      id: `${r.id}-dungeon`,
+      town: town.id,
+      title: `Clear ${dungeon.name}`,
+      description: `Complete all four stages of ${dungeon.name}, then report to ${town.name}.`,
+      kind: "dungeon",
+      placeId: dungeon.id,
+      quantity: 4,
+      gold: 300 * town.smith,
+    },
+    {
+      id: `${r.id}-research`,
+      town: town.id,
+      title: `${r.name} field research`,
+      description: `Recover four ${RESOURCE_NAMES[r.resources.find((id) => id !== herb && id !== material)!]} for ${town.name}'s researchers.`,
+      kind: "delivery",
+      placeId: PLACES.find(
+        (p) =>
+          p.region === r.id &&
+          p.resources.includes(
+            r.resources.find((id) => id !== herb && id !== material)!,
+          ),
+      )!.id,
+      resource: r.resources.find((id) => id !== herb && id !== material)!,
+      quantity: 4,
+      gold: 120 * town.smith,
+    },
+    {
+      id: `${r.id}-boss`,
+      town: town.id,
+      title: `${field.name} roaming boss`,
+      description: `Defeat the roaming boss of ${field.name} after taking this bounty.`,
+      kind: "boss",
+      placeId: field.id,
+      quantity: 1,
+      gold: 350 * town.smith,
+    },
+  );
+}
