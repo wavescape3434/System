@@ -1,4 +1,4 @@
-# The Adventurers Guild 1.5.0 — screenshots
+# The Adventurers Guild 1.6.0 — screenshots
 
 All previews use the sample character. Journey previews include illustrative sample activity. Open an image to view it at full size.
 
@@ -17,3 +17,5 @@ All previews use the sample character. Journey previews include illustrative sam
 [Guild Card detail](guild-card-detail.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Vocation](vocation.png) · [Shared Fighter tree](skill-tree.png) · [Career tree](profession-tree.png) · [Desktop Guild Card](guild-desktop.png) · [Registration](welcome.png)
 
 These are browser previews at desktop and Android phone viewport sizes. They do not establish physical-device runtime verification.
+
+[Monthly adventure board](monthly-adventures.png) · [Saved preparation across months](monthly-progress.png) · [Balance report and graphs](../balance-report-1.6.md).

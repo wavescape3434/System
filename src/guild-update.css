@@ -120,6 +120,7 @@
 }
 .request-mix {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   margin: 8px 0;
 }
@@ -368,5 +369,14 @@
   .sidebar .brand > span {
     font-size: 15px;
     letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 700px) {
+  .objective-modal-meta {
+    flex-wrap: wrap;
+  }
+  .objective-modal-meta > span:last-child {
+    flex-basis: 100%;
   }
 }

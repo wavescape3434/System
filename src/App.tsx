@@ -1,3 +1,4 @@
+import { requestProgress } from "./training-tasks";
 import Notifications, {
   notificationFeed,
   notificationUnread,
@@ -47,6 +48,7 @@ import {
   objectivePeriod,
   upgradeTraining,
   upgradeExams,
+  upgradeBalance,
   taskRequirements,
   classCreditRewards,
   universalCareerCredits,
@@ -221,7 +223,9 @@ export default function App() {
   const update = useCallback(
     (next: Character, track = true) => {
       try {
-        const prepared = awardSkills(upgradeExams(upgradeTraining(next)));
+        const prepared = awardSkills(
+          upgradeBalance(upgradeExams(upgradeTraining(next))),
+        );
         const awarded = track
           ? recordJourney(characterRef.current, prepared)
           : prepared;
@@ -577,6 +581,34 @@ export default function App() {
             <span>{objective.minutes}</span>
           </div>
           <p>{objective.description}</p>
+          {isTaken(c, objective) &&
+            (objective.minimumDays || objective.minimumSessions) &&
+            (() => {
+              const progress = requestProgress(c, objective);
+              return (
+                <div className="request-credit-preview">
+                  {progress.startedAt && (
+                    <Tag>
+                      Started{" "}
+                      {new Date(progress.startedAt).toLocaleDateString()}
+                    </Tag>
+                  )}
+                  {objective.minimumDays && (
+                    <Tag>
+                      {Math.min(progress.days, objective.minimumDays)} /{" "}
+                      {objective.minimumDays} days
+                    </Tag>
+                  )}
+                  {objective.minimumSessions && (
+                    <Tag>
+                      {Math.min(progress.sessions, objective.minimumSessions)} /{" "}
+                      {objective.minimumSessions} practice days
+                    </Tag>
+                  )}
+                  {objective.persistent && <Tag>Saved across months</Tag>}
+                </div>
+              );
+            })()}
           {objective.taskVersion === 2 && (
             <div className="request-credit-preview">
               <Tag>Player +{objective.xp} XP</Tag>
@@ -652,20 +684,36 @@ export default function App() {
               }}
             />
           )}
-          {!isTaken(c, objective) && !isComplete(c, objective) && (
+          {((!isTaken(c, objective) && !isComplete(c, objective)) ||
+            (objective.persistent && isComplete(c, objective))) && (
             <button
               className="button primary full"
               disabled={
                 objective.taskVersion === 2 &&
-                taskRequirements(c, objective).length > 0
+                taskRequirements(c, objective, new Date(), "accept").length > 0
               }
               onClick={() => {
-                if (update(takeRequest(c, objective.id)))
+                const next = takeRequest(c, objective.id);
+                if (update(next)) {
+                  const accepted = takenObjectives(next).find(
+                    (o) => o.id === objective.id,
+                  );
+                  if (accepted) {
+                    setObjective(accepted);
+                    setChecked(
+                      next.milestones[
+                        `${accepted.id}:${objectivePeriod(accepted)}`
+                      ] || [],
+                    );
+                  }
                   notify("Request taken.");
+                }
               }}
             >
               <BookmarkPlus size={17} />
-              Take request
+              {objective.persistent && isComplete(c, objective)
+                ? "Take again"
+                : "Take request"}
             </button>
           )}
           {(isTaken(c, objective) || isComplete(c, objective)) && (

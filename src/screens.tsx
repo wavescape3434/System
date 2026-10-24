@@ -1,5 +1,7 @@
+import { allowedRanks } from "./request-balance";
+import { requestProgress } from "./training-tasks";
 import ClassExams from "./ClassExams";
-import { TASK_RANKS, TASK_NAMES } from "./task-ranks";
+import { TASK_NAMES } from "./task-ranks";
 import { displayAssessmentResults } from "./metrics";
 import ClassBrowser from "./ClassBrowser";
 import VocationPanel from "./VocationPanel";
@@ -355,7 +357,7 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
         : o.kind !== "class-trial") &&
       (difficulty === "all" || o.rank === difficulty) &&
       (c.preferences?.showLockedRequests !== false ||
-        taskRequirements(c, o).length === 0 ||
+        taskRequirements(c, o, new Date(), "accept").length === 0 ||
         isTaken(c, o)) &&
       (filter === "all" ||
         (filter === "vocation" && o.id.startsWith("vocation-")) ||
@@ -388,7 +390,10 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
         {(["daily", "weekly", "monthly"] as Cadence[]).map((t) => (
           <button
             className={tab === t ? "active" : ""}
-            onClick={() => setTab(t)}
+            onClick={() => {
+              setTab(t);
+              setDifficulty("all");
+            }}
             key={t}
           >
             {t === "daily"
@@ -422,8 +427,8 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
           value={difficulty}
           onChange={(e) => setDifficulty(e.target.value)}
         >
-          <option value="all">F–SSS · All ranks</option>
-          {TASK_RANKS.map((rank) => (
+          <option value="all">F–{allowedRanks(tab).at(-1)} · All ranks</option>
+          {allowedRanks(tab).map((rank) => (
             <option value={rank} key={rank}>
               {rank} · {TASK_NAMES[rank]}
             </option>
@@ -501,6 +506,28 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
                   </div>
                 )}
                 <p>{o.description}</p>
+                {isTaken(c, o) &&
+                  (o.minimumDays || o.minimumSessions) &&
+                  (() => {
+                    const progress = requestProgress(c, o);
+                    return (
+                      <div className="request-mix">
+                        {o.minimumDays && (
+                          <Tag>
+                            {Math.min(progress.days, o.minimumDays)} /{" "}
+                            {o.minimumDays} days
+                          </Tag>
+                        )}
+                        {o.minimumSessions && (
+                          <Tag>
+                            {Math.min(progress.sessions, o.minimumSessions)} /{" "}
+                            {o.minimumSessions} practice days
+                          </Tag>
+                        )}
+                        {o.persistent && <Tag>Saved across months</Tag>}
+                      </div>
+                    );
+                  })()}
                 {o.statReward && (
                   <Tag tone="gold">
                     +{o.statReward.amount} base {o.statReward.stat}
@@ -518,7 +545,17 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
                 </span>
               </div>
               <div className="request-actions">
-                {isComplete(c, o) ? (
+                {isComplete(c, o) && o.persistent ? (
+                  <button
+                    onClick={() => {
+                      if (update(takeRequest(c, o.id)))
+                        notify("Adventure taken.");
+                    }}
+                  >
+                    <Plus size={15} />
+                    Take again
+                  </button>
+                ) : isComplete(c, o) ? (
                   <button onClick={() => openObjective(o)}>
                     <Check size={15} />
                     Completed
@@ -534,11 +571,14 @@ export function Objectives({ c, openObjective, update, notify }: ScreenProps) {
                 ) : (
                   <button
                     disabled={
-                      o.taskVersion === 2 && taskRequirements(c, o).length > 0
+                      o.taskVersion === 2 &&
+                      taskRequirements(c, o, new Date(), "accept").length > 0
                     }
                     title={
                       o.taskVersion === 2
-                        ? taskRequirements(c, o).join(" · ")
+                        ? taskRequirements(c, o, new Date(), "accept").join(
+                            " · ",
+                          )
                         : undefined
                     }
                     aria-label={`Take ${o.title}`}

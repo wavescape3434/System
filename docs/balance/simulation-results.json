@@ -1,0 +1,8462 @@
+{
+  "generatedAt": "2026-10-24T19:00:50.285Z",
+  "timezone": "America/Denver",
+  "start": "2027-01-25",
+  "end": "2027-02-23",
+  "ranks": [
+    {
+      "name": "F",
+      "metal": "Tin",
+      "xp": 0
+    },
+    {
+      "name": "E",
+      "metal": "Copper",
+      "xp": 2500
+    },
+    {
+      "name": "D",
+      "metal": "Bronze",
+      "xp": 8750
+    },
+    {
+      "name": "C",
+      "metal": "Iron",
+      "xp": 24375
+    },
+    {
+      "name": "B",
+      "metal": "Silver",
+      "xp": 63438
+    },
+    {
+      "name": "A",
+      "metal": "Gold",
+      "xp": 161094
+    },
+    {
+      "name": "S",
+      "metal": "Platinum",
+      "xp": 405234
+    },
+    {
+      "name": "SS",
+      "metal": "Mythril",
+      "xp": 1015586
+    },
+    {
+      "name": "SSS",
+      "metal": "Orichalcum",
+      "xp": 2541465
+    }
+  ],
+  "rewards": {
+    "daily": {
+      "F": {
+        "xp": 10,
+        "gold": 2
+      },
+      "E": {
+        "xp": 25,
+        "gold": 5
+      },
+      "D": {
+        "xp": 60,
+        "gold": 12
+      },
+      "C": {
+        "xp": 150,
+        "gold": 30
+      }
+    },
+    "weekly": {
+      "F": {
+        "xp": 40,
+        "gold": 8
+      },
+      "E": {
+        "xp": 100,
+        "gold": 20
+      },
+      "D": {
+        "xp": 240,
+        "gold": 48
+      },
+      "C": {
+        "xp": 600,
+        "gold": 120
+      },
+      "B": {
+        "xp": 1400,
+        "gold": 280
+      },
+      "A": {
+        "xp": 3200,
+        "gold": 640
+      }
+    },
+    "monthly": {
+      "F": {
+        "xp": 180,
+        "gold": 36
+      },
+      "E": {
+        "xp": 450,
+        "gold": 90
+      },
+      "D": {
+        "xp": 1080,
+        "gold": 216
+      },
+      "C": {
+        "xp": 2700,
+        "gold": 540
+      },
+      "B": {
+        "xp": 6300,
+        "gold": 1260
+      },
+      "A": {
+        "xp": 14400,
+        "gold": 2880
+      },
+      "S": {
+        "xp": 32400,
+        "gold": 6480
+      },
+      "SS": {
+        "xp": 75600,
+        "gold": 15120
+      },
+      "SSS": {
+        "xp": 180000,
+        "gold": 36000
+      }
+    }
+  },
+  "earlyClaims": {
+    "monthlyAvailable": 44,
+    "accepted": 21,
+    "blocked": 21,
+    "xp": 0,
+    "gold": 0,
+    "rank": "F"
+  },
+  "accounts": [
+    {
+      "profile": "light",
+      "days": 30,
+      "day7": {
+        "day": 7,
+        "xp": 550,
+        "gold": 110,
+        "rank": "F",
+        "playerLevel": 2,
+        "classLevel": 1,
+        "professionLevel": 1,
+        "completed": 40
+      },
+      "day30": {
+        "day": 30,
+        "xp": 3200,
+        "gold": 640,
+        "rank": "E",
+        "playerLevel": 7,
+        "classLevel": 1,
+        "professionLevel": 1,
+        "completed": 175
+      },
+      "last": {
+        "day": 30,
+        "xp": 3200,
+        "gold": 640,
+        "rank": "E",
+        "playerLevel": 7,
+        "classLevel": 1,
+        "professionLevel": 1,
+        "completed": 175
+      },
+      "byCadence": {
+        "daily": {
+          "completed": 150,
+          "xp": 1500,
+          "gold": 300
+        },
+        "weekly": {
+          "completed": 20,
+          "xp": 800,
+          "gold": 160
+        },
+        "monthly": {
+          "completed": 5,
+          "xp": 900,
+          "gold": 180
+        }
+      },
+      "pending": [
+        {
+          "id": "habit-walk-monthly-f",
+          "title": "Walking adventure · 8 days",
+          "days": 0,
+          "sessions": 1,
+          "startedAt": "2027-02-23T18:00:00.000Z"
+        },
+        {
+          "id": "habit-mobility-monthly-f",
+          "title": "Mobility adventure · 8 days",
+          "days": 0,
+          "sessions": 1,
+          "startedAt": "2027-02-23T18:00:00.000Z"
+        },
+        {
+          "id": "habit-reading-monthly-f",
+          "title": "Reading adventure · 8 days",
+          "days": 0,
+          "sessions": 1,
+          "startedAt": "2027-02-23T18:00:00.000Z"
+        },
+        {
+          "id": "habit-scripture-monthly-f",
+          "title": "Scripture adventure · 8 days",
+          "days": 0,
+          "sessions": 1,
+          "startedAt": "2027-02-23T18:00:00.000Z"
+        },
+        {
+          "id": "habit-communication-monthly-f",
+          "title": "Communication adventure · 8 days",
+          "days": 0,
+          "sessions": 1,
+          "startedAt": "2027-02-23T18:00:00.000Z"
+        }
+      ],
+      "history": [
+        {
+          "day": 1,
+          "xp": 50,
+          "gold": 10,
+          "rank": "F",
+          "playerLevel": 1,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 5
+        },
+        {
+          "day": 2,
+          "xp": 100,
+          "gold": 20,
+          "rank": "F",
+          "playerLevel": 1,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 10
+        },
+        {
+          "day": 3,
+          "xp": 350,
+          "gold": 70,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 20
+        },
+        {
+          "day": 4,
+          "xp": 400,
+          "gold": 80,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 25
+        },
+        {
+          "day": 5,
+          "xp": 450,
+          "gold": 90,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 30
+        },
+        {
+          "day": 6,
+          "xp": 500,
+          "gold": 100,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 35
+        },
+        {
+          "day": 7,
+          "xp": 550,
+          "gold": 110,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 40
+        },
+        {
+          "day": 8,
+          "xp": 600,
+          "gold": 120,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 45
+        },
+        {
+          "day": 9,
+          "xp": 650,
+          "gold": 130,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 50
+        },
+        {
+          "day": 10,
+          "xp": 900,
+          "gold": 180,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 60
+        },
+        {
+          "day": 11,
+          "xp": 950,
+          "gold": 190,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 65
+        },
+        {
+          "day": 12,
+          "xp": 1000,
+          "gold": 200,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 70
+        },
+        {
+          "day": 13,
+          "xp": 1050,
+          "gold": 210,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 75
+        },
+        {
+          "day": 14,
+          "xp": 1100,
+          "gold": 220,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 80
+        },
+        {
+          "day": 15,
+          "xp": 1150,
+          "gold": 230,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 85
+        },
+        {
+          "day": 16,
+          "xp": 1200,
+          "gold": 240,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 90
+        },
+        {
+          "day": 17,
+          "xp": 1450,
+          "gold": 290,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 100
+        },
+        {
+          "day": 18,
+          "xp": 1500,
+          "gold": 300,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 105
+        },
+        {
+          "day": 19,
+          "xp": 1550,
+          "gold": 310,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 110
+        },
+        {
+          "day": 20,
+          "xp": 1600,
+          "gold": 320,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 115
+        },
+        {
+          "day": 21,
+          "xp": 1650,
+          "gold": 330,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 120
+        },
+        {
+          "day": 22,
+          "xp": 1700,
+          "gold": 340,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 125
+        },
+        {
+          "day": 23,
+          "xp": 1750,
+          "gold": 350,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 130
+        },
+        {
+          "day": 24,
+          "xp": 2000,
+          "gold": 400,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 140
+        },
+        {
+          "day": 25,
+          "xp": 2050,
+          "gold": 410,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 145
+        },
+        {
+          "day": 26,
+          "xp": 2100,
+          "gold": 420,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 150
+        },
+        {
+          "day": 27,
+          "xp": 2150,
+          "gold": 430,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 155
+        },
+        {
+          "day": 28,
+          "xp": 2200,
+          "gold": 440,
+          "rank": "F",
+          "playerLevel": 6,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 160
+        },
+        {
+          "day": 29,
+          "xp": 3150,
+          "gold": 630,
+          "rank": "E",
+          "playerLevel": 7,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 170
+        },
+        {
+          "day": 30,
+          "xp": 3200,
+          "gold": 640,
+          "rank": "E",
+          "playerLevel": 7,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 175
+        }
+      ],
+      "log": [
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-walk-monthly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-mobility-monthly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-reading-monthly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-scripture-monthly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-communication-monthly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-mobility-weekly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-reading-weekly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-scripture-weekly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-communication-weekly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "habit-walk-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "habit-mobility-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "habit-reading-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "habit-scripture-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "habit-communication-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 7,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 7,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 7,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 7,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 7,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 7,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 7,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 7,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 7,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 7,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "habit-mobility-weekly-f"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "habit-reading-weekly-f"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "habit-scripture-weekly-f"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "habit-communication-weekly-f"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "habit-walk-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "habit-mobility-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "habit-reading-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "habit-scripture-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "habit-communication-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 14,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 14,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 14,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 14,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 14,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 14,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 14,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 14,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 14,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 14,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "habit-mobility-weekly-f"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "habit-reading-weekly-f"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "habit-scripture-weekly-f"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "habit-communication-weekly-f"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "habit-walk-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "habit-mobility-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "habit-reading-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "habit-scripture-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "habit-communication-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 21,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 21,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 21,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 21,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 21,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 21,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 21,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 21,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 21,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 21,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "habit-mobility-weekly-f"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "habit-reading-weekly-f"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "habit-scripture-weekly-f"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "habit-communication-weekly-f"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "habit-walk-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "habit-mobility-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "habit-reading-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "habit-scripture-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "habit-communication-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 28,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 28,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 28,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 28,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 28,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 28,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 28,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 28,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 28,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 28,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "habit-mobility-weekly-f"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "habit-reading-weekly-f"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "habit-scripture-weekly-f"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "habit-communication-weekly-f"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "habit-walk-monthly-f",
+          "xp": 180,
+          "gold": 36
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "habit-mobility-monthly-f",
+          "xp": 180,
+          "gold": 36
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "habit-reading-monthly-f",
+          "xp": 180,
+          "gold": 36
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "habit-scripture-monthly-f",
+          "xp": 180,
+          "gold": 36
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "habit-communication-monthly-f",
+          "xp": 180,
+          "gold": 36
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "habit-walk-monthly-f"
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "habit-mobility-monthly-f"
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "habit-reading-monthly-f"
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "habit-scripture-monthly-f"
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "habit-communication-monthly-f"
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-walk-5"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-walk-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-mobility-5"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-mobility-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-read-5"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-read-5",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-bible-short"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-bible-short",
+          "xp": 10,
+          "gold": 2
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-contact"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-contact",
+          "xp": 10,
+          "gold": 2
+        }
+      ],
+      "stats": {
+        "STR": 10,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "projectedDaysToGold": 1511
+    },
+    {
+      "profile": "moderate",
+      "days": 30,
+      "day7": {
+        "day": 7,
+        "xp": 2695,
+        "gold": 539,
+        "rank": "E",
+        "playerLevel": 6,
+        "classLevel": 4,
+        "professionLevel": 4,
+        "completed": 31
+      },
+      "day30": {
+        "day": 30,
+        "xp": 17550,
+        "gold": 3510,
+        "rank": "D",
+        "playerLevel": 19,
+        "classLevel": 4,
+        "professionLevel": 4,
+        "completed": 134
+      },
+      "last": {
+        "day": 30,
+        "xp": 17550,
+        "gold": 3510,
+        "rank": "D",
+        "playerLevel": 19,
+        "classLevel": 4,
+        "professionLevel": 4,
+        "completed": 134
+      },
+      "byCadence": {
+        "daily": {
+          "completed": 125,
+          "xp": 6450,
+          "gold": 1290
+        },
+        "weekly": {
+          "completed": 8,
+          "xp": 4800,
+          "gold": 960
+        },
+        "monthly": {
+          "completed": 1,
+          "xp": 6300,
+          "gold": 1260
+        }
+      },
+      "pending": [
+        {
+          "id": "warrior-monthly",
+          "title": "Warrior training adventure",
+          "days": 0,
+          "sessions": 0,
+          "startedAt": "2027-02-23T18:00:00.000Z"
+        }
+      ],
+      "history": [
+        {
+          "day": 1,
+          "xp": 265,
+          "gold": 53,
+          "rank": "F",
+          "playerLevel": 1,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 5
+        },
+        {
+          "day": 2,
+          "xp": 470,
+          "gold": 94,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 2,
+          "completed": 9
+        },
+        {
+          "day": 3,
+          "xp": 735,
+          "gold": 147,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 2,
+          "professionLevel": 2,
+          "completed": 14
+        },
+        {
+          "day": 4,
+          "xp": 940,
+          "gold": 188,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 2,
+          "professionLevel": 3,
+          "completed": 18
+        },
+        {
+          "day": 5,
+          "xp": 2405,
+          "gold": 481,
+          "rank": "F",
+          "playerLevel": 6,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 25
+        },
+        {
+          "day": 6,
+          "xp": 2610,
+          "gold": 522,
+          "rank": "E",
+          "playerLevel": 6,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 29
+        },
+        {
+          "day": 7,
+          "xp": 2695,
+          "gold": 539,
+          "rank": "E",
+          "playerLevel": 6,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 31
+        },
+        {
+          "day": 8,
+          "xp": 2960,
+          "gold": 592,
+          "rank": "E",
+          "playerLevel": 7,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 36
+        },
+        {
+          "day": 9,
+          "xp": 3165,
+          "gold": 633,
+          "rank": "E",
+          "playerLevel": 7,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 40
+        },
+        {
+          "day": 10,
+          "xp": 3430,
+          "gold": 686,
+          "rank": "E",
+          "playerLevel": 7,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 45
+        },
+        {
+          "day": 11,
+          "xp": 3635,
+          "gold": 727,
+          "rank": "E",
+          "playerLevel": 8,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 49
+        },
+        {
+          "day": 12,
+          "xp": 5100,
+          "gold": 1020,
+          "rank": "E",
+          "playerLevel": 9,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 56
+        },
+        {
+          "day": 13,
+          "xp": 5305,
+          "gold": 1061,
+          "rank": "E",
+          "playerLevel": 10,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 60
+        },
+        {
+          "day": 14,
+          "xp": 5390,
+          "gold": 1078,
+          "rank": "E",
+          "playerLevel": 10,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 62
+        },
+        {
+          "day": 15,
+          "xp": 5655,
+          "gold": 1131,
+          "rank": "E",
+          "playerLevel": 10,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 67
+        },
+        {
+          "day": 16,
+          "xp": 5860,
+          "gold": 1172,
+          "rank": "E",
+          "playerLevel": 10,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 71
+        },
+        {
+          "day": 17,
+          "xp": 6125,
+          "gold": 1225,
+          "rank": "E",
+          "playerLevel": 10,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 76
+        },
+        {
+          "day": 18,
+          "xp": 6330,
+          "gold": 1266,
+          "rank": "E",
+          "playerLevel": 11,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 80
+        },
+        {
+          "day": 19,
+          "xp": 7795,
+          "gold": 1559,
+          "rank": "E",
+          "playerLevel": 12,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 87
+        },
+        {
+          "day": 20,
+          "xp": 8000,
+          "gold": 1600,
+          "rank": "E",
+          "playerLevel": 12,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 91
+        },
+        {
+          "day": 21,
+          "xp": 8085,
+          "gold": 1617,
+          "rank": "E",
+          "playerLevel": 12,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 93
+        },
+        {
+          "day": 22,
+          "xp": 8350,
+          "gold": 1670,
+          "rank": "E",
+          "playerLevel": 12,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 98
+        },
+        {
+          "day": 23,
+          "xp": 8555,
+          "gold": 1711,
+          "rank": "E",
+          "playerLevel": 13,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 102
+        },
+        {
+          "day": 24,
+          "xp": 8820,
+          "gold": 1764,
+          "rank": "D",
+          "playerLevel": 13,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 107
+        },
+        {
+          "day": 25,
+          "xp": 9025,
+          "gold": 1805,
+          "rank": "D",
+          "playerLevel": 13,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 111
+        },
+        {
+          "day": 26,
+          "xp": 10490,
+          "gold": 2098,
+          "rank": "D",
+          "playerLevel": 14,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 118
+        },
+        {
+          "day": 27,
+          "xp": 10695,
+          "gold": 2139,
+          "rank": "D",
+          "playerLevel": 14,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 122
+        },
+        {
+          "day": 28,
+          "xp": 10780,
+          "gold": 2156,
+          "rank": "D",
+          "playerLevel": 14,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 124
+        },
+        {
+          "day": 29,
+          "xp": 17345,
+          "gold": 3469,
+          "rank": "D",
+          "playerLevel": 19,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 130
+        },
+        {
+          "day": 30,
+          "xp": 17550,
+          "gold": 3510,
+          "rank": "D",
+          "playerLevel": 19,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 134
+        }
+      ],
+      "log": [
+        {
+          "day": 1,
+          "action": "take",
+          "id": "warrior-monthly"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "warrior-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "vocation-networking-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 7,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 7,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 7,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 7,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "warrior-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "vocation-networking-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 14,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 14,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 14,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 14,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "warrior-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "vocation-networking-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 21,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 21,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 21,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 21,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "warrior-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "vocation-networking-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 28,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 28,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 28,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 28,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "warrior-monthly",
+          "xp": 6300,
+          "gold": 1260
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "warrior-monthly"
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        }
+      ],
+      "stats": {
+        "STR": 11,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "projectedDaysToGold": 276
+    },
+    {
+      "profile": "intensive",
+      "days": 30,
+      "day7": {
+        "day": 7,
+        "xp": 7760,
+        "gold": 1552,
+        "rank": "E",
+        "playerLevel": 12,
+        "classLevel": 4,
+        "professionLevel": 4,
+        "completed": 47
+      },
+      "day30": {
+        "day": 30,
+        "xp": 45260,
+        "gold": 9052,
+        "rank": "C",
+        "playerLevel": 32,
+        "classLevel": 4,
+        "professionLevel": 4,
+        "completed": 205
+      },
+      "last": {
+        "day": 30,
+        "xp": 45260,
+        "gold": 9052,
+        "rank": "C",
+        "playerLevel": 32,
+        "classLevel": 4,
+        "professionLevel": 4,
+        "completed": 205
+      },
+      "byCadence": {
+        "daily": {
+          "completed": 187,
+          "xp": 19860,
+          "gold": 3972
+        },
+        "weekly": {
+          "completed": 16,
+          "xp": 12800,
+          "gold": 2560
+        },
+        "monthly": {
+          "completed": 2,
+          "xp": 12600,
+          "gold": 2520
+        }
+      },
+      "pending": [
+        {
+          "id": "warrior-monthly",
+          "title": "Warrior training adventure",
+          "days": 0,
+          "sessions": 0,
+          "startedAt": "2027-02-23T18:00:00.000Z"
+        },
+        {
+          "id": "profession-monthly",
+          "title": "Portfolio project",
+          "days": 0,
+          "sessions": 1,
+          "startedAt": "2027-02-23T18:00:00.000Z"
+        }
+      ],
+      "history": [
+        {
+          "day": 1,
+          "xp": 690,
+          "gold": 138,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 2,
+          "completed": 7
+        },
+        {
+          "day": 2,
+          "xp": 1620,
+          "gold": 324,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 2,
+          "professionLevel": 3,
+          "completed": 15
+        },
+        {
+          "day": 3,
+          "xp": 3710,
+          "gold": 742,
+          "rank": "E",
+          "playerLevel": 8,
+          "classLevel": 2,
+          "professionLevel": 4,
+          "completed": 23
+        },
+        {
+          "day": 4,
+          "xp": 4340,
+          "gold": 868,
+          "rank": "E",
+          "playerLevel": 8,
+          "classLevel": 2,
+          "professionLevel": 4,
+          "completed": 29
+        },
+        {
+          "day": 5,
+          "xp": 6230,
+          "gold": 1246,
+          "rank": "E",
+          "playerLevel": 10,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 38
+        },
+        {
+          "day": 6,
+          "xp": 7700,
+          "gold": 1540,
+          "rank": "E",
+          "playerLevel": 12,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 46
+        },
+        {
+          "day": 7,
+          "xp": 7760,
+          "gold": 1552,
+          "rank": "E",
+          "playerLevel": 12,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 47
+        },
+        {
+          "day": 8,
+          "xp": 8450,
+          "gold": 1690,
+          "rank": "E",
+          "playerLevel": 13,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 54
+        },
+        {
+          "day": 9,
+          "xp": 9380,
+          "gold": 1876,
+          "rank": "D",
+          "playerLevel": 13,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 62
+        },
+        {
+          "day": 10,
+          "xp": 11470,
+          "gold": 2294,
+          "rank": "D",
+          "playerLevel": 15,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 70
+        },
+        {
+          "day": 11,
+          "xp": 12100,
+          "gold": 2420,
+          "rank": "D",
+          "playerLevel": 15,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 76
+        },
+        {
+          "day": 12,
+          "xp": 13990,
+          "gold": 2798,
+          "rank": "D",
+          "playerLevel": 17,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 85
+        },
+        {
+          "day": 13,
+          "xp": 15460,
+          "gold": 3092,
+          "rank": "D",
+          "playerLevel": 18,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 93
+        },
+        {
+          "day": 14,
+          "xp": 15520,
+          "gold": 3104,
+          "rank": "D",
+          "playerLevel": 18,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 94
+        },
+        {
+          "day": 15,
+          "xp": 16210,
+          "gold": 3242,
+          "rank": "D",
+          "playerLevel": 18,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 101
+        },
+        {
+          "day": 16,
+          "xp": 17140,
+          "gold": 3428,
+          "rank": "D",
+          "playerLevel": 19,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 109
+        },
+        {
+          "day": 17,
+          "xp": 19230,
+          "gold": 3846,
+          "rank": "D",
+          "playerLevel": 20,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 117
+        },
+        {
+          "day": 18,
+          "xp": 19860,
+          "gold": 3972,
+          "rank": "D",
+          "playerLevel": 20,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 123
+        },
+        {
+          "day": 19,
+          "xp": 21750,
+          "gold": 4350,
+          "rank": "D",
+          "playerLevel": 21,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 132
+        },
+        {
+          "day": 20,
+          "xp": 23220,
+          "gold": 4644,
+          "rank": "D",
+          "playerLevel": 22,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 140
+        },
+        {
+          "day": 21,
+          "xp": 23280,
+          "gold": 4656,
+          "rank": "D",
+          "playerLevel": 22,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 141
+        },
+        {
+          "day": 22,
+          "xp": 23970,
+          "gold": 4794,
+          "rank": "D",
+          "playerLevel": 23,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 148
+        },
+        {
+          "day": 23,
+          "xp": 24900,
+          "gold": 4980,
+          "rank": "C",
+          "playerLevel": 23,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 156
+        },
+        {
+          "day": 24,
+          "xp": 26990,
+          "gold": 5398,
+          "rank": "C",
+          "playerLevel": 24,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 164
+        },
+        {
+          "day": 25,
+          "xp": 27620,
+          "gold": 5524,
+          "rank": "C",
+          "playerLevel": 25,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 170
+        },
+        {
+          "day": 26,
+          "xp": 29510,
+          "gold": 5902,
+          "rank": "C",
+          "playerLevel": 25,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 179
+        },
+        {
+          "day": 27,
+          "xp": 30980,
+          "gold": 6196,
+          "rank": "C",
+          "playerLevel": 26,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 187
+        },
+        {
+          "day": 28,
+          "xp": 31040,
+          "gold": 6208,
+          "rank": "C",
+          "playerLevel": 26,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 188
+        },
+        {
+          "day": 29,
+          "xp": 44330,
+          "gold": 8866,
+          "rank": "C",
+          "playerLevel": 32,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 197
+        },
+        {
+          "day": 30,
+          "xp": 45260,
+          "gold": 9052,
+          "rank": "C",
+          "playerLevel": 32,
+          "classLevel": 4,
+          "professionLevel": 4,
+          "completed": 205
+        }
+      ],
+      "log": [
+        {
+          "day": 1,
+          "action": "take",
+          "id": "warrior-monthly"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "profession-monthly"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-teach-topic"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "q-group-hike"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 2,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 2,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-teach-topic",
+          "xp": 1400,
+          "gold": 280
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 4,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 4,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "warrior-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 5,
+          "action": "complete",
+          "id": "vocation-networking-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "q-group-hike",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 7,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 7,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-teach-topic"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "q-group-hike"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 9,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 9,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-teach-topic",
+          "xp": 1400,
+          "gold": 280
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 11,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 11,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "warrior-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 12,
+          "action": "complete",
+          "id": "vocation-networking-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "q-group-hike",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 14,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 14,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-teach-topic"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "q-group-hike"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 16,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 16,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-teach-topic",
+          "xp": 1400,
+          "gold": 280
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 18,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 18,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "warrior-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 19,
+          "action": "complete",
+          "id": "vocation-networking-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "q-group-hike",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 21,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 21,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-teach-topic"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "q-group-hike"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 23,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 23,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-teach-topic",
+          "xp": 1400,
+          "gold": 280
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 25,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 25,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "warrior-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 26,
+          "action": "complete",
+          "id": "vocation-networking-weekly",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "q-group-hike",
+          "xp": 600,
+          "gold": 120
+        },
+        {
+          "day": 28,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 28,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "warrior-weekly"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "vocation-networking-weekly"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-teach-topic"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "q-group-hike"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "warrior-daily"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "warrior-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "warrior-monthly",
+          "xp": 6300,
+          "gold": 1260
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "profession-monthly",
+          "xp": 6300,
+          "gold": 1260
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "warrior-monthly"
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "profession-monthly"
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-apply-concept"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-apply-concept",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-chapter-study"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-chapter-study",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-presentation"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-presentation",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "profession-daily"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "profession-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "vocation-networking-daily"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "vocation-networking-daily",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-floor-push-20"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-floor-push-20",
+          "xp": 150,
+          "gold": 30
+        },
+        {
+          "day": 30,
+          "action": "take",
+          "id": "u-run-5k"
+        },
+        {
+          "day": 30,
+          "action": "complete",
+          "id": "u-run-5k",
+          "xp": 150,
+          "gold": 30
+        }
+      ],
+      "stats": {
+        "STR": 11,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 11,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "projectedDaysToGold": 107
+    },
+    {
+      "profile": "intermittent",
+      "days": 30,
+      "day7": {
+        "day": 7,
+        "xp": 475,
+        "gold": 95,
+        "rank": "F",
+        "playerLevel": 2,
+        "classLevel": 1,
+        "professionLevel": 1,
+        "completed": 10
+      },
+      "day30": {
+        "day": 30,
+        "xp": 2225,
+        "gold": 445,
+        "rank": "F",
+        "playerLevel": 6,
+        "classLevel": 1,
+        "professionLevel": 1,
+        "completed": 44
+      },
+      "last": {
+        "day": 30,
+        "xp": 2225,
+        "gold": 445,
+        "rank": "F",
+        "playerLevel": 6,
+        "classLevel": 1,
+        "professionLevel": 1,
+        "completed": 44
+      },
+      "byCadence": {
+        "daily": {
+          "completed": 39,
+          "xp": 1885,
+          "gold": 377
+        },
+        "weekly": {
+          "completed": 4,
+          "xp": 160,
+          "gold": 32
+        },
+        "monthly": {
+          "completed": 1,
+          "xp": 180,
+          "gold": 36
+        }
+      },
+      "pending": [],
+      "history": [
+        {
+          "day": 1,
+          "xp": 145,
+          "gold": 29,
+          "rank": "F",
+          "playerLevel": 1,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 3
+        },
+        {
+          "day": 2,
+          "xp": 145,
+          "gold": 29,
+          "rank": "F",
+          "playerLevel": 1,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 3
+        },
+        {
+          "day": 3,
+          "xp": 290,
+          "gold": 58,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 6
+        },
+        {
+          "day": 4,
+          "xp": 290,
+          "gold": 58,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 6
+        },
+        {
+          "day": 5,
+          "xp": 290,
+          "gold": 58,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 6
+        },
+        {
+          "day": 6,
+          "xp": 475,
+          "gold": 95,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 10
+        },
+        {
+          "day": 7,
+          "xp": 475,
+          "gold": 95,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 10
+        },
+        {
+          "day": 8,
+          "xp": 620,
+          "gold": 124,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 13
+        },
+        {
+          "day": 9,
+          "xp": 620,
+          "gold": 124,
+          "rank": "F",
+          "playerLevel": 2,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 13
+        },
+        {
+          "day": 10,
+          "xp": 765,
+          "gold": 153,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 16
+        },
+        {
+          "day": 11,
+          "xp": 765,
+          "gold": 153,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 16
+        },
+        {
+          "day": 12,
+          "xp": 765,
+          "gold": 153,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 16
+        },
+        {
+          "day": 13,
+          "xp": 950,
+          "gold": 190,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 20
+        },
+        {
+          "day": 14,
+          "xp": 950,
+          "gold": 190,
+          "rank": "F",
+          "playerLevel": 3,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 20
+        },
+        {
+          "day": 15,
+          "xp": 1095,
+          "gold": 219,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 23
+        },
+        {
+          "day": 16,
+          "xp": 1095,
+          "gold": 219,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 23
+        },
+        {
+          "day": 17,
+          "xp": 1240,
+          "gold": 248,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 26
+        },
+        {
+          "day": 18,
+          "xp": 1240,
+          "gold": 248,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 26
+        },
+        {
+          "day": 19,
+          "xp": 1240,
+          "gold": 248,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 26
+        },
+        {
+          "day": 20,
+          "xp": 1425,
+          "gold": 285,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 30
+        },
+        {
+          "day": 21,
+          "xp": 1425,
+          "gold": 285,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 30
+        },
+        {
+          "day": 22,
+          "xp": 1570,
+          "gold": 314,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 33
+        },
+        {
+          "day": 23,
+          "xp": 1570,
+          "gold": 314,
+          "rank": "F",
+          "playerLevel": 4,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 33
+        },
+        {
+          "day": 24,
+          "xp": 1715,
+          "gold": 343,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 36
+        },
+        {
+          "day": 25,
+          "xp": 1715,
+          "gold": 343,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 36
+        },
+        {
+          "day": 26,
+          "xp": 1715,
+          "gold": 343,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 36
+        },
+        {
+          "day": 27,
+          "xp": 1900,
+          "gold": 380,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 40
+        },
+        {
+          "day": 28,
+          "xp": 1900,
+          "gold": 380,
+          "rank": "F",
+          "playerLevel": 5,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 40
+        },
+        {
+          "day": 29,
+          "xp": 2225,
+          "gold": 445,
+          "rank": "F",
+          "playerLevel": 6,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 44
+        },
+        {
+          "day": 30,
+          "xp": 2225,
+          "gold": 445,
+          "rank": "F",
+          "playerLevel": 6,
+          "classLevel": 1,
+          "professionLevel": 1,
+          "completed": 44
+        }
+      ],
+      "log": [
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-walk-monthly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 1,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 1,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 3,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 3,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 6,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 6,
+          "action": "complete",
+          "id": "habit-walk-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 8,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 8,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 10,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 10,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 13,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 13,
+          "action": "complete",
+          "id": "habit-walk-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 15,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 15,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 17,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 17,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 20,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 20,
+          "action": "complete",
+          "id": "habit-walk-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 22,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 22,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 24,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 24,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 27,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 27,
+          "action": "complete",
+          "id": "habit-walk-weekly-f",
+          "xp": 40,
+          "gold": 8
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "habit-walk-weekly-f"
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-walk-brisk"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-walk-brisk",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-spaced-recall"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-spaced-recall",
+          "xp": 60,
+          "gold": 12
+        },
+        {
+          "day": 29,
+          "action": "take",
+          "id": "u-bible-recall"
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "u-bible-recall",
+          "xp": 25,
+          "gold": 5
+        },
+        {
+          "day": 29,
+          "action": "complete",
+          "id": "habit-walk-monthly-f",
+          "xp": 180,
+          "gold": 36
+        }
+      ],
+      "stats": {
+        "STR": 10,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "projectedDaysToGold": 2173
+    }
+  ]
+}

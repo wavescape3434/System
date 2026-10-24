@@ -1,4 +1,4 @@
-# Install The Adventurers Guild 1.5.0 on Android
+# Install The Adventurers Guild 1.6.0 on Android
 
 Open `the-guild-debug.apk` in this folder on GitHub, then select **Download raw file** (the download arrow). Open the downloaded APK on your Android phone. Android may ask you to allow installations from your browser or file manager.
 
@@ -7,3 +7,5 @@ Requires Android 7.0 or newer. Install this update over your existing app to ret
 The checksum is in `the-guild-debug.apk.sha256`. Browse the [screenshot gallery](../docs/screenshots/README.md) for the engraved guild card, request board, class comparison, skill trees, vocation, Journey reports, Taken requests, Help, and battle views. All screenshots use the sample character, not personal progress.
 
 The APK is included directly in this repository, so you do not need Android Studio or build tools to try it. If GitHub asks you to sign in, use the account that has access to this repository.
+
+[Request balance and 7-/30-day simulation report](../docs/balance-report-1.6.md).

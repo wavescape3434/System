@@ -307,9 +307,9 @@ describe("guild rewards, requirements and branches", () => {
     c = claim(c, "q-group-hike");
     const event = c.completions.at(-1)!;
     expect(event.trainingMix).toEqual({ CON: 0.7, CHA: 0.3 });
-    expect(event.classCredits?.sentinel).toBe(52);
-    expect(event.classCredits?.bard).toBe(11);
-    expect(totalXP(c)).toBe(150);
+    expect(event.classCredits?.sentinel).toBe(210);
+    expect(event.classCredits?.bard).toBe(45);
+    expect(totalXP(c)).toBe(600);
   });
   it("makes full gym access satisfy weights and bar requirements", () => {
     let c = demoCharacter();

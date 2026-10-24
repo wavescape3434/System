@@ -180,11 +180,11 @@ describe("permanent character history", () => {
   });
 });
 describe("revised progression rules", () => {
-  it("doubles the cost of each rank promotion", () => {
+  it("increases each promotion price exponentially by 2.5 times", () => {
     const costs = RANKS.slice(1).map((r, i) => r.xp - RANKS[i].xp);
-    expect(costs[0]).toBe(500);
+    expect(costs[0]).toBe(2500);
     for (let i = 1; i < costs.length; i++)
-      expect(costs[i]).toBe(costs[i - 1] * 2);
+      expect(Math.abs(costs[i] - costs[i - 1] * 2.5)).toBeLessThanOrEqual(2);
   });
   it("keeps ordinary assessments at F and caps exceptional placement at D without granting XP", () => {
     const normal = demoCharacter();
@@ -206,7 +206,7 @@ describe("revised progression rules", () => {
     );
     expect(high.startingRank).toBe("D");
     expect(totalXP(high)).toBe(0);
-    expect(rankXP(high)).toBe(1500);
+    expect(rankXP(high)).toBe(8750);
   });
   it("changes base stats only at relevant class or profession levels or special rewards", () => {
     let c = demoCharacter(),

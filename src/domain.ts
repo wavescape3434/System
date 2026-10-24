@@ -1,3 +1,4 @@
+import { guildRankThreshold, oldGuildRankThreshold } from "./request-balance";
 import { RANK_METALS } from "./rank-metals";
 import { certifiedLevel } from "./exam-rules";
 import type { ExamRecord } from "./exam-rules";
@@ -98,6 +99,9 @@ export interface Objective {
   minimumPullups?: number;
   minimumDays?: number;
   minimumSessions?: number;
+  persistent?: boolean;
+  instanceId?: string;
+  practice?: { family?: string; classId?: string; careerCategory?: string };
   once?: boolean;
   careerCategory?: string;
   checklist?: string[];
@@ -240,6 +244,8 @@ export interface Character {
   progressionVersion?: 2;
   trainingVersion?: 3;
   examVersion?: 1;
+  balanceVersion?: 1;
+  rankLegacyCredit?: number;
   exams?: ExamRecord[];
   examGrandfather?: {
     classes: Record<string, number>;
@@ -507,15 +513,16 @@ export const classRank = (lv: number) =>
             : lv >= 5
               ? "Apprentice"
               : "Novice";
-// Each promotion costs twice the previous: 500, 1,000, 2,000, ... XP.
+// Each promotion costs 2.5 times the previous, beginning at 2,500 XP.
 export const RANKS = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"].map(
-  (name, i) => ({ name, metal: RANK_METALS[i], xp: 500 * (2 ** i - 1) }),
+  (name, i) => ({ name, metal: RANK_METALS[i], xp: guildRankThreshold(i) }),
 );
 export const rank = (xp: number) =>
   [...RANKS].reverse().find((r) => xp >= r.xp) || RANKS[0];
 export const startingRankCredit = (c: Character) =>
   RANKS.find((r) => r.name === (c.startingRank || "F"))!.xp;
-export const rankXP = (c: Character) => totalXP(c) + startingRankCredit(c);
+export const rankXP = (c: Character) =>
+  totalXP(c) + startingRankCredit(c) + (c.rankLegacyCredit || 0);
 export const characterRank = (c: Character) => rank(rankXP(c));
 export function qualificationRequirements(
   p: ClassPath,
@@ -1121,10 +1128,13 @@ export function objectives(c: Character): Objective[] {
       const trial = entryTrial(c, p.id);
       if (trial) tasks.push(trial);
     }
-  return tasks;
+  return tasks.map((o) => {
+    const taken = c.takenRequests?.find((r) => r.id === o.id);
+    return o.persistent && taken ? { ...o, instanceId: taken.takenPeriod } : o;
+  });
 }
 export const objectivePeriod = (o: Objective, now = new Date()) =>
-  o.once ? "once" : period(o.cadence, now);
+  o.once ? "once" : o.instanceId || period(o.cadence, now);
 export { taskRequirements };
 export function period(cadence: Cadence, date = new Date()): string {
   const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -1145,7 +1155,9 @@ export function complete(
 ): Character {
   // Use the stored request context, never reward values supplied by a button caller.
   const taken = c.takenRequests?.find(
-    (x) => x.id === o.id && x.takenPeriod === objectivePeriod(x, now),
+    (x) =>
+      x.id === o.id &&
+      (x.persistent || x.takenPeriod === objectivePeriod(x, now)),
   );
   const actual = taken
     ? resolveTakenRequest(c, taken)
@@ -1282,7 +1294,9 @@ export function universalCareerCredits(
 }
 export function isTaken(c: Character, o: Objective, now = new Date()): boolean {
   return !!c.takenRequests?.some(
-    (r) => r.id === o.id && r.takenPeriod === objectivePeriod(o, now),
+    (r) =>
+      r.id === o.id &&
+      (r.persistent || r.takenPeriod === objectivePeriod(o, now)),
   );
 }
 export function takeRequest(
@@ -1292,12 +1306,13 @@ export function takeRequest(
 ): Character {
   const o = objectives(c).find((o) => o.id === id);
   if (!o) return c;
-  if (isTaken(c, o, now) || isComplete(c, o, now)) return c;
-  if (
-    o.taskVersion === 2 &&
-    taskRequirements(c, o, now).some((s) => !s.includes("day commitment"))
-  )
+  if (isTaken(c, o, now) && !isComplete(c, o, now)) return c;
+  if (isComplete(c, o, now) && !o.persistent) return c;
+  if (o.taskVersion === 2 && taskRequirements(c, o, now, "accept").length)
     return c;
+  const instanceId = o.persistent
+    ? `adventure-${crypto.randomUUID()}`
+    : undefined;
   return {
     ...c,
     takenRequests: [
@@ -1305,7 +1320,8 @@ export function takeRequest(
       {
         ...o,
         takenAt: now.toISOString(),
-        takenPeriod: objectivePeriod(o, now),
+        ...(instanceId ? { instanceId } : {}),
+        takenPeriod: instanceId || objectivePeriod(o, now),
         classId: c.activeClass,
         profession: c.profession,
         ...(c.vocation ? { vocationId: c.vocation } : {}),
@@ -1336,7 +1352,7 @@ export function resolveTakenRequest(
 }
 export const takenObjectives = (c: Character, now = new Date()): Objective[] =>
   (c.takenRequests || [])
-    .filter((r) => r.takenPeriod === objectivePeriod(r, now))
+    .filter((r) => r.persistent || r.takenPeriod === objectivePeriod(r, now))
     .flatMap((r) => {
       const o = resolveTakenRequest(c, r);
       return o ? [o] : [];
@@ -1344,8 +1360,8 @@ export const takenObjectives = (c: Character, now = new Date()): Objective[] =>
 export const suggestedObjectives = (c: Character, now = new Date()) =>
   objectives(c).filter(
     (o) =>
-      !isTaken(c, o, now) &&
-      !isComplete(c, o, now) &&
+      (!isTaken(c, o, now) || (o.persistent && isComplete(c, o, now))) &&
+      (!isComplete(c, o, now) || o.persistent) &&
       (c.takenRequests?.some((r) => r.id === o.id) ||
         c.completions.some((r) => r.id === o.id)),
   );
@@ -1414,6 +1430,7 @@ export function createCharacter(
           },
           trainingVersion: 3 as const,
           examVersion: 1 as const,
+          balanceVersion: 1 as const,
           classEntries: {
             [selected && available(selected, baseStats, 0)
               ? selected.id
@@ -1460,6 +1477,7 @@ export function demoCharacter(): Character {
     ...c,
     trainingVersion: 3,
     examVersion: 1,
+    balanceVersion: 1,
     classEntries: { warrior: { at: c.createdAt, credit: 0 } },
     baseline: {
       ...c.baseline,
@@ -1482,6 +1500,61 @@ export function demoCharacter(): Character {
     },
     baseStats: { STR: 10, DEX: 10, CON: 10, INT: 10, WIS: 10, CHA: 10 },
     unlockedClasses: ["warrior"],
+  };
+}
+export function upgradeBalance(c: Character): Character {
+  if (c.balanceVersion === 1) return c;
+  const start = RANKS.findIndex((r) => r.name === (c.startingRank || "F"));
+  const oldXP = totalXP(c) + oldGuildRankThreshold(Math.max(0, start));
+  let index = RANKS.length - 1;
+  while (index > 0 && oldXP < oldGuildRankThreshold(index)) index--;
+  const fraction =
+    index === RANKS.length - 1
+      ? 0
+      : (oldXP - oldGuildRankThreshold(index)) /
+        (oldGuildRankThreshold(index + 1) - oldGuildRankThreshold(index));
+  const retained =
+    guildRankThreshold(index) +
+    Math.floor(
+      fraction * (guildRankThreshold(index + 1) - guildRankThreshold(index)),
+    );
+  const milestones = { ...c.milestones };
+  const requests = (c.takenRequests || []).map((r) => {
+    if (r.taskVersion !== 2) return r;
+    const shaped = resolveTakenRequest(c, r);
+    if (!shaped) return r;
+    const persistent = shaped.cadence === "monthly" && !shaped.once;
+    const nextPeriod = persistent
+      ? r.takenPeriod
+      : objectivePeriod(
+          { ...shaped, instanceId: undefined },
+          new Date(r.takenAt),
+        );
+    const oldKey = `${r.id}:${r.takenPeriod}`,
+      newKey = `${r.id}:${nextPeriod}`;
+    if (milestones[oldKey] && !milestones[newKey])
+      milestones[newKey] = milestones[oldKey];
+    return {
+      ...r,
+      ...shaped,
+      persistent,
+      instanceId: persistent ? nextPeriod : undefined,
+      takenAt: r.takenAt,
+      takenPeriod: nextPeriod,
+      classId: r.classId,
+      profession: r.profession,
+      vocationId: r.vocationId,
+    };
+  });
+  return {
+    ...c,
+    balanceVersion: 1,
+    rankLegacyCredit: Math.max(
+      0,
+      retained - totalXP(c) - startingRankCredit(c),
+    ),
+    takenRequests: requests,
+    milestones,
   };
 }
 export function upgradeExams(c: Character): Character {

@@ -13,15 +13,15 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Recurring requests",
-        "Daily requests reset at local midnight, weekly on Monday, and monthly on the first. A new period requires taking the request again. Suggestions include requests you previously took or completed. They are never accepted automatically.",
+        "Daily tasks reset at local midnight and weekly quests on Monday. Monthly adventures retain their start date, dated practice, and checklist across months. Completing a repeatable adventure offers Take again; a new run starts only when you accept it, with new preparation. Suggestions are never accepted automatically.",
       ],
       [
         "Completing requests",
-        "Mark the real-world action complete to claim its listed XP. Monthly requests require all checklist items. Each request pays once per period, even if released, retaken, or completed under another class.",
+        "Mark completed real-world work to claim its listed XP and gold. Adventures require their checklist, elapsed preparation time, and relevant practice on distinct dates. Each daily/weekly period or accepted adventure run pays once. Releasing and retaking an unfinished adventure starts preparation over.",
       ],
       [
         "Changing focus",
-        "A taken request keeps the class, profession, and vocation it had when accepted. Finish it from Taken to credit that original path. Its commitment expires when its daily, weekly, or monthly period ends. One-time class trials and long commitments remain in Taken until completed or released.",
+        "A taken request keeps the class, profession, and vocation it had when accepted. Finish it from Taken to credit that original path. Daily and weekly commitments expire at their calendar boundary. Monthly adventures and one-time trials remain until completed or released.",
       ],
     ],
   },
@@ -53,7 +53,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "Difficulty and rewards",
-        "Ranks F, E, D, C, B, A, S, SS and SSS award 10, 25, 60, 150, 350, 800, 1800, 4200 and 10000 player XP. These are game-design prices, not physiological conversion factors. SS and SSS commitments require many weeks, dated practice, and an independently assessed advanced or rare expert outcome. Time alone does not qualify.",
+        "Daily tasks use F–C ranks and pay 10, 25, 60, or 150 XP. Weekly quests use F–A and pay four times the base rank reward. Monthly adventures use F–SSS and pay eighteen times the base reward. Gold scales by the same cadence multiplier. Monthly preparation spans at least 28 days; A needs 42, S 56, SS 84, and SSS 168 days. SS/SSS also require independently assessed outcomes; time alone does not qualify. These are game reward rules.",
       ],
       [
         "Universal training",
@@ -127,7 +127,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Guild ranks",
-        "Ranks run F, E, D, C, B, A, S, SS, SSS. Promotion costs double each time, beginning at 500 XP. Rank is separate from level. Most characters register at F; exceptional assessments can start at E or D. Starting placement grants rank credit, without progression XP.",
+        "Ranks run F, E, D, C, B, A, S, SS, SSS. Promotion prices grow 2.5 times each step, beginning at 2,500 XP. A (Gold) requires 161,094 cumulative guild XP. Earlier earned ranks and fractional progress are preserved by a separate migration credit. Rank is separate from level. Most characters register at F; exceptional assessments can start at E or D. Starting placement grants rank credit, without progression XP.",
       ],
       [
         "Existing characters",

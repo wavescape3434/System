@@ -1,7 +1,7 @@
 {
   "name": "the-guild",
   "private": true,
-  "version": "1.5.0",
+  "version": "1.6.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -10,7 +10,8 @@
     "test": "vitest run src",
     "android:sync": "npm run build && cap sync android",
     "android:build": "npm run android:sync && cd android && ./gradlew assembleDebug",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "simulate:balance": "node scripts/simulate-balance.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.5.3",

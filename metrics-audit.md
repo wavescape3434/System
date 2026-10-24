@@ -2,6 +2,8 @@
 
 Reviewed 24 October 2026. This document separates published measurements from game balance. Reference values are available in the app under **Help → Assessment & training sources**, and scored published measurements link to their source. Version 1.5 retains the physical reference models introduced in 1.4, replaces the fixed mental questions, and adds milestone examinations. [Detailed update rules](docs/update-1.5.md).
 
+**Version 1.6 reward update:** The physical assessment references and exam rules below are retained. Current cadence rewards, longer-term guild thresholds, and persistent monthly preparation supersede the 1.5 reward tables; see the [balance report](docs/balance-report-1.6.md).
+
 ## Findings from the previous assessment
 
 The previous starting formulas were hand-tuned, capped at 30, and did not use age or sex. Time spent reading, praying, or talking was treated as evidence of INT, WIS, or CHA. Those quantities describe exposure or habits; they do not establish comprehension, judgment, or communication. Squat working load without a clearly specified lift, technique, and repetition protocol could not supply a defensible strength comparison. Walking duration described activity, rather than capacity. Blank fields were effectively scored as no practice.

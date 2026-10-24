@@ -198,7 +198,8 @@ describe("difficulty, routing, and class mastery", () => {
     expect(push.rank).toBe("C");
     expect(push.xp).toBe(150);
     expect(pull.rank).toBe("S");
-    expect(pull.xp).toBe(1800);
+    expect(pull.xp).toBe(32400);
+    expect(pull.cadence).toBe("monthly");
     expect(takeRequest(c, pull.id, now)).toBe(c);
     c = {
       ...c,

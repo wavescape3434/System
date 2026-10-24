@@ -1,3 +1,5 @@
+import { habitRequests, balanceRequest } from "./adventure-requests";
+import { requestReward } from "./request-balance";
 import { hasEquipment } from "./preferences";
 import type { Character, Objective, Attribute } from "./domain";
 import { CLASSES } from "./class-catalog";
@@ -629,7 +631,7 @@ export function universalTasks(): Objective[] {
     o.gold = TASK_GOLD[o.rank!];
     o.participants ??= "solo";
   }
-  list.push(...GROUP_QUESTS);
+  list.push(...GROUP_QUESTS, ...habitRequests());
   return list;
 }
 const GROUP_QUESTS: Objective[] = [
@@ -793,7 +795,7 @@ export function rankedObjectives(
       "Independently tailor and submit one relevant job application, or improve a portfolio work sample against a target role's requirements.";
   const monthly = filtered.find((o) => o.id === "profession-monthly");
   if (monthly) monthly.careerCategory = careerCategory(c.profession).id;
-  return [...universalTasks(), ...filtered];
+  return [...universalTasks(), ...filtered].map((o) => balanceRequest(c, o));
 }
 export function entryTrial(_c: Character, id: string): Objective | undefined {
   const p = CLASSES.find((p) => p.id === id);
@@ -807,13 +809,12 @@ export function entryTrial(_c: Character, id: string): Objective | undefined {
     description: `Complete a ${high ? "three-session" : "focused"} ${p.name.toLowerCase()} commission. ${p.goal}`,
     cadence: high ? "weekly" : "daily",
     stat: p.stat,
-    xp: TASK_XP[rank],
+    ...requestReward(rank, high ? "weekly" : "daily"),
     minutes: high ? "3 sessions" : "25–40 min",
     scope: "class",
     category: "Class trials",
     rank,
     taskVersion: 2,
-    gold: TASK_GOLD[rank],
     participants: "solo",
     kind: "class-trial",
     once: true,
@@ -836,6 +837,7 @@ export function taskRequirements(
   c: Character,
   o: Objective,
   now = new Date(),
+  phase: "accept" | "complete" = "complete",
 ): string[] {
   const missing: string[] = [];
   const prefs = c.preferences;
@@ -866,6 +868,12 @@ export function taskRequirements(
       missing.push(
         "A request from this training group is already completed today",
       );
+    if (o.cadence === "weekly" && previous.cadence === "weekly") {
+      if (monday(new Date(previous.at)) === monday(now))
+        missing.push(
+          "A quest from this training group is already completed this week",
+        );
+    }
     const rest = Math.max(o.cooldownHours || 0, previous.cooldownHours || 0);
     if (elapsed < rest)
       missing.push(
@@ -873,29 +881,77 @@ export function taskRequirements(
       );
   }
   const taken = c.takenRequests?.find((r) => r.id === o.id);
-  if (o.minimumSessions && taken) {
-    const days = new Set(
-      c.completions
-        .filter(
-          (x) =>
-            x.stat === o.stat &&
-            new Date(x.at) >= new Date(taken.takenAt) &&
-            new Date(x.at) <= now,
-        )
-        .map((x) => new Date(x.at).toDateString()),
-    ).size;
-    if (days < o.minimumSessions)
-      missing.push(`Dated practice days: ${days}/${o.minimumSessions}`);
-  }
-  if (
-    o.minimumDays &&
-    taken &&
-    (now.getTime() - new Date(taken.takenAt).getTime()) / 86400000 <
-      o.minimumDays
-  )
-    missing.push(
-      `${o.minimumDays}-day commitment: continue from the recorded start date`,
+  if (phase === "accept" && (o.persistent || o.once || o.practice)) {
+    const conflicting = c.takenRequests?.find(
+      (r) =>
+        r.id !== o.id &&
+        r.family === o.family &&
+        (r.persistent ||
+          r.once ||
+          (r.cadence === "weekly" &&
+            monday(new Date(r.takenAt)) === monday(now))) &&
+        !c.completions.some((x) => x.id === r.id && x.period === r.takenPeriod),
     );
+    if (conflicting)
+      missing.push(
+        `A request from this training group is already taken: ${conflicting.title}`,
+      );
+  }
+  if (phase === "complete" && (o.minimumDays || o.minimumSessions)) {
+    if (!taken)
+      missing.push("Take this request to start its dated preparation");
+    else {
+      const progress = requestProgress(c, o, now);
+      if (o.minimumSessions && progress.sessions < o.minimumSessions)
+        missing.push(
+          `Dated practice days: ${progress.sessions}/${o.minimumSessions}`,
+        );
+      if (o.minimumDays && progress.days < o.minimumDays)
+        missing.push(
+          `${o.minimumDays}-day commitment: ${progress.days}/${o.minimumDays} days`,
+        );
+    }
+  }
   return missing;
 }
 export const rankIndex = (rank: TaskRank = "D") => TASK_RANKS.indexOf(rank);
+
+export function requestProgress(c: Character, o: Objective, now = new Date()) {
+  const taken = c.takenRequests?.find((r) => r.id === o.id);
+  if (!taken) return { days: 0, sessions: 0, startedAt: undefined };
+  const start = new Date(taken.takenAt);
+  const localDay = (d: Date) =>
+    Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
+  const days = Math.max(
+    0,
+    Math.floor((localDay(now) - localDay(start)) / 86400000),
+  );
+  const sessions = new Set(
+    c.completions
+      .filter((x) => {
+        if (
+          x.cadence !== "daily" ||
+          new Date(x.at) < start ||
+          new Date(x.at) > now
+        )
+          return false;
+        if (o.practice?.family) return x.family === o.practice.family;
+        if (o.practice?.classId)
+          return x.scope === "class" && x.classId === o.practice.classId;
+        if (o.practice?.careerCategory)
+          return (
+            x.scope === "profession" &&
+            x.careerCategory === o.practice.careerCategory
+          );
+        return x.stat === o.stat;
+      })
+      .map((x) => new Date(x.at).toDateString()),
+  ).size;
+  return { days, sessions, startedAt: taken.takenAt };
+}
+
+function monday(d: Date) {
+  const copy = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  copy.setDate(copy.getDate() - ((copy.getDay() + 6) % 7));
+  return copy.getTime();
+}

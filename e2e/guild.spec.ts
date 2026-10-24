@@ -172,47 +172,85 @@ test("CCNA unlocks its milestone and appears in the automatic Journey", async ({
     }),
   ).toBeVisible();
 });
-test("monthly objectives require every milestone before claiming", async ({
+test("monthly adventures preserve checklists and dated preparation across months before paying", async ({
   page,
 }) => {
+  await page.clock.install({ time: new Date("2027-01-25T18:00:00Z") });
   await sample(page);
   await page
     .getByRole("button", { name: "Objectives", exact: true })
     .first()
     .click();
-  await page.getByRole("button", { name: /Monthly adventures/ }).click();
+  await page.getByRole("button", { name: /^Monthly adventures/ }).click();
   await page
-    .getByRole("button", { name: "View Monthly training plan", exact: true })
+    .getByRole("button", {
+      name: "View Warrior training adventure",
+      exact: true,
+    })
     .click();
   await takeOpen(page);
   const claim = page.getByRole("button", {
     name: "I completed this objective",
   });
-  await expect(claim).toBeDisabled();
   for (const name of [
     "Complete 12 practice sessions",
     "Reflect on what improved",
     "Set a sustainable next goal",
   ])
     await page.getByRole("button", { name, exact: true }).click();
-  await expect(claim).toBeEnabled();
-  await page.getByRole("button", { name: "Close dialog" }).click();
+  await expect(claim).toBeDisabled();
+  await page.evaluate(async () => {
+    const d = await import("/src/domain.ts");
+    const key = "the-guild.character.v1";
+    let c = JSON.parse(localStorage.getItem(key)!);
+    for (const offset of [0, 2, 4, 7, 9, 11, 14, 16, 18, 21, 23, 25]) {
+      const at = new Date(Date.UTC(2027, 0, 25 + offset, 20));
+      c = d.takeRequest(c, "warrior-daily", at);
+      const o = d.takenObjectives(c, at).find((o) => o.id === "warrior-daily")!;
+      c = d.awardSkills(d.completeTaken(c, o, at));
+    }
+    localStorage.setItem(key, JSON.stringify(c));
+  });
+  await page.clock.setFixedTime(new Date("2027-02-22T18:00:00Z"));
   await page.reload();
   await page
     .getByRole("button", { name: "Objectives", exact: true })
     .first()
     .click();
-  await page.getByRole("button", { name: /Monthly adventures/ }).click();
   await page
-    .getByRole("button", { name: "View Monthly training plan", exact: true })
+    .getByRole("button", { name: "Taken", exact: false })
+    .first()
     .click();
+  await page.getByRole("button", { name: /^Monthly adventures/ }).click();
+  await page
+    .getByRole("button", {
+      name: "View Warrior training adventure",
+      exact: true,
+    })
+    .click();
+  await expect(page.getByRole("dialog")).toContainText("28 / 28 days");
+  await expect(page.getByRole("dialog")).toContainText("12 / 12 practice days");
   await expect(claim).toBeEnabled();
   await claim.click();
-  await page.getByRole("button", { name: "Guild Card", exact: true }).click();
-  await expect(page.locator(".engraved-experience>b")).toHaveText(
-    "62 / 362 XP",
+  const saved = await page.evaluate(() =>
+    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
   );
+  expect(saved.completions.at(-1).xp).toBe(6300);
+  expect(saved.completions.at(-1).gold).toBe(1260);
+  await page
+    .getByRole("button", {
+      name: "View Warrior training adventure",
+      exact: true,
+    })
+    .click();
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: "Take again", exact: true })
+    .click();
+  await expect(page.getByRole("dialog")).toContainText("0 / 28 days");
+  await expect(claim).toBeDisabled();
 });
+
 test("character backups export and restore after explicit confirmation", async ({
   page,
 }) => {
@@ -859,7 +897,25 @@ test("ranked board prices demanding work higher and hides irrelevant technical c
     has: page.getByRole("heading", { name: "Pullups · 5 × 20", exact: true }),
   });
   await expect(push).toContainText("150");
-  await expect(pull).toContainText("1800");
+  expect(
+    await page
+      .getByLabel("Request rank")
+      .locator("option")
+      .evaluateAll((options) =>
+        options.map((o) => (o as HTMLOptionElement).value),
+      ),
+  ).toEqual(["all", "F", "E", "D", "C"]);
+  await page.getByRole("button", { name: /^Weekly quests/ }).click();
+  expect(
+    await page
+      .getByLabel("Request rank")
+      .locator("option")
+      .evaluateAll((options) =>
+        options.map((o) => (o as HTMLOptionElement).value),
+      ),
+  ).toEqual(["all", "F", "E", "D", "C", "B", "A"]);
+  await page.getByRole("button", { name: /^Monthly adventures/ }).click();
+  await expect(pull).toContainText("32400");
   await expect(
     pull.getByRole("button", { name: "Take Pullups · 5 × 20", exact: true }),
   ).toBeDisabled();

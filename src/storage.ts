@@ -15,6 +15,7 @@ import {
   objectivePeriod,
   upgradeTraining,
   upgradeExams,
+  upgradeBalance,
 } from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
 const finite = (x: unknown) =>
@@ -47,6 +48,8 @@ export function validateCharacter(x: unknown): x is Character {
       (c.progressionVersion === undefined || c.progressionVersion === 2) &&
       (c.trainingVersion === undefined || c.trainingVersion === 3) &&
       (c.examVersion === undefined || c.examVersion === 1) &&
+      (c.balanceVersion === undefined || c.balanceVersion === 1) &&
+      (c.rankLegacyCredit === undefined || finite(c.rankLegacyCredit)) &&
       (c.assessmentFormsSeen === undefined ||
         (Array.isArray(c.assessmentFormsSeen) &&
           c.assessmentFormsSeen.every(validMentalFormId))) &&
@@ -127,6 +130,16 @@ export function validateCharacter(x: unknown): x is Character {
               date(r.takenAt) &&
               str(r.takenPeriod) &&
               r.takenPeriod === objectivePeriod(r, new Date(r.takenAt)) &&
+              (r.persistent === undefined ||
+                r.persistent === false ||
+                (r.persistent === true &&
+                  r.cadence === "monthly" &&
+                  r.taskVersion === 2 &&
+                  r.instanceId === r.takenPeriod)) &&
+              (r.instanceId === undefined ||
+                (r.persistent === true &&
+                  r.cadence === "monthly" &&
+                  r.instanceId === r.takenPeriod)) &&
               str(r.title) &&
               str(r.category) &&
               ["daily", "weekly", "monthly"].includes(r.cadence) &&
@@ -189,9 +202,9 @@ export function validateCharacter(x: unknown): x is Character {
           str(o.period) &&
           date(o.at) &&
           finite(o.xp) &&
-          o.xp <= 10000 &&
+          o.xp <= 180000 &&
           (o.gold === undefined ||
-            (finite(o.gold) && Number.isInteger(o.gold) && o.gold <= 2000)) &&
+            (finite(o.gold) && Number.isInteger(o.gold) && o.gold <= 36000)) &&
           (o.participants === undefined ||
             ["solo", "group"].includes(o.participants)) &&
           (o.trainingMix === undefined ||
@@ -284,7 +297,9 @@ export function loadCharacter(): Character | null {
     throw new Error(
       "Your saved character needs attention. Export or restore a valid backup; your existing data has been kept.",
     );
-  return upgradeExams(upgradeTraining(upgradeProgression(parsed)));
+  return upgradeBalance(
+    upgradeExams(upgradeTraining(upgradeProgression(parsed))),
+  );
 }
 export const saveCharacter = (c: Character) =>
   localStorage.setItem(STORAGE_KEY, JSON.stringify(c));
