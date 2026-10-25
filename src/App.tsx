@@ -556,6 +556,7 @@ export default function App() {
                     <Journey c={c} />
                   ) : page === "settings" ? (
                     <Settings
+                      initialTab={section}
                       c={c}
                       update={update}
                       notify={notify}

@@ -1,3 +1,4 @@
+import { findAppearance } from "./appearance-catalog";
 import { validWorld } from "./world-state";
 import { PLACES } from "./world-catalog";
 import { validMentalFormId } from "./exam-bank";
@@ -38,6 +39,7 @@ export function validateCharacter(x: unknown): x is Character {
       str(c.title) &&
       date(c.createdAt) &&
       !!path &&
+      (c.appearance === undefined || !!findAppearance(c.appearance)) &&
       (c.subclass === null ||
         CLASSES.some((p) => p.subclasses.some((s) => s.id === c.subclass))) &&
       PROFESSIONS.includes(c.profession as (typeof PROFESSIONS)[number]) &&
@@ -364,6 +366,7 @@ function validCampaign(input: unknown): boolean {
           str(u.id) &&
           str(u.name) &&
           str(u.sprite) &&
+          (u.appearance === undefined || !!findAppearance(u.appearance)) &&
           [
             "hp",
             "maxHp",

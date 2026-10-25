@@ -253,6 +253,7 @@ export interface Character {
   baseline: Baseline;
   baseStats: Stats;
   activeClass: string;
+  appearance?: string;
   subclass: string | null;
   profession: string;
   vocation?: string | null;
@@ -682,7 +683,7 @@ export const vocationXP = (c: Character, id = c.vocation) => {
       o.careerCategory === category
         ? o.xp
         : 0) +
-        (o.vocationCredit?.id === id ? o.vocationCredit?.xp || 0 : 0),
+      (o.vocationCredit?.id === id ? o.vocationCredit?.xp || 0 : 0),
     0,
   );
 };

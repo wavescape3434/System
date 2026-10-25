@@ -1,3 +1,5 @@
+import AppearancePicker from "./AppearancePicker";
+import { selectAppearance } from "./appearance";
 import WorldMap from "./WorldMap";
 import PixelScene from "./PixelScene";
 import {
@@ -54,6 +56,7 @@ export default function AdventureGame({
 }) {
   const data = campaign(c),
     [tab, setTab] = useState("map"),
+    [appearanceOpen, setAppearanceOpen] = useState(false),
     [enemyTarget, setEnemyTarget] = useState(0),
     [allyTarget, setAllyTarget] = useState(0),
     [actionError, setActionError] = useState(""),
@@ -533,69 +536,88 @@ export default function AdventureGame({
         <WorldMap c={c} update={update} mode={tab} />
       )}
       {tab === "party" && (
-        <div className="companion-grid">
-          {COMPANIONS.map((npc) => {
-            const recruited = data.roster.includes(npc.id),
-              eligible = !npc.requires || data.cleared.includes(npc.requires),
-              active = data.party.includes(npc.id);
-            const unit = {
-              id: npc.id,
-              name: npc.name,
-              sprite: npc.id,
-              hp: 1,
-              maxHp: 1,
-              mp: 1,
-              maxMp: 1,
-              attack: 1,
-              magic: 1,
-              defense: 1,
-              speed: 1,
-              guard: false,
-              abilities: [],
-            };
-            return (
-              <article className="panel companion-card" key={npc.id}>
-                <BattleSprite unit={unit} />
-                <h3>{npc.name}</h3>
-                <Tag>{npc.role}</Tag>
-                <p>{npc.description}</p>
-                <small>
-                  {npc.requires
-                    ? `Recruit after ${npc.requires.replaceAll("-", " ")}`
-                    : "Starting companion"}
-                </small>
-                <button
-                  className="button primary full"
-                  disabled={
-                    (!recruited && !eligible) ||
-                    (recruited && !active && data.party.length >= 2)
-                  }
-                  onClick={() => {
-                    if (!recruited) {
-                      change({ ...data, roster: [...data.roster, npc.id] });
-                    } else
-                      change({
-                        ...data,
-                        party: active
-                          ? data.party.filter((id) => id !== npc.id)
-                          : [...data.party, npc.id],
-                      });
-                  }}
-                >
-                  {!recruited
-                    ? eligible
-                      ? "Recruit"
-                      : "Locked"
-                    : active
-                      ? "Remove from party"
-                      : data.party.length >= 2
-                        ? "Party full"
-                        : "Add to party"}
-                </button>
-              </article>
-            );
-          })}
-        </div>
+        <>
+          <div className="party-appearance-action">
+            <h3>Companions</h3>
+            <button
+              className="button secondary"
+              onClick={() => setAppearanceOpen(true)}
+            >
+              Character appearance
+            </button>
+          </div>
+          {appearanceOpen && (
+            <AppearancePicker
+              value={c.appearance}
+              classId={c.activeClass}
+              onChoose={(id) => update(selectAppearance(c, id))}
+              onClose={() => setAppearanceOpen(false)}
+            />
+          )}
+          <div className="companion-grid">
+            {COMPANIONS.map((npc) => {
+              const recruited = data.roster.includes(npc.id),
+                eligible = !npc.requires || data.cleared.includes(npc.requires),
+                active = data.party.includes(npc.id);
+              const unit = {
+                id: npc.id,
+                name: npc.name,
+                sprite: npc.id,
+                hp: 1,
+                maxHp: 1,
+                mp: 1,
+                maxMp: 1,
+                attack: 1,
+                magic: 1,
+                defense: 1,
+                speed: 1,
+                guard: false,
+                abilities: [],
+              };
+              return (
+                <article className="panel companion-card" key={npc.id}>
+                  <BattleSprite unit={unit} />
+                  <h3>{npc.name}</h3>
+                  <Tag>{npc.role}</Tag>
+                  <p>{npc.description}</p>
+                  <small>
+                    {npc.requires
+                      ? `Recruit after ${npc.requires.replaceAll("-", " ")}`
+                      : "Starting companion"}
+                  </small>
+                  <button
+                    className="button primary full"
+                    disabled={
+                      (!recruited && !eligible) ||
+                      (recruited && !active && data.party.length >= 2)
+                    }
+                    onClick={() => {
+                      if (!recruited) {
+                        change({ ...data, roster: [...data.roster, npc.id] });
+                      } else
+                        change({
+                          ...data,
+                          party: active
+                            ? data.party.filter((id) => id !== npc.id)
+                            : [...data.party, npc.id],
+                        });
+                    }}
+                  >
+                    {!recruited
+                      ? eligible
+                        ? "Recruit"
+                        : "Locked"
+                      : active
+                        ? "Remove from party"
+                        : data.party.length >= 2
+                          ? "Party full"
+                          : "Add to party"}
+                  </button>
+                </article>
+              );
+            })}
+          </div>
+        </>
       )}
       {tab === "equipment" && (
         <>

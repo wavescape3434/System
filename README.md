@@ -29,11 +29,13 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
-## Version 1.8.0
+## Version 1.9.0
 
-Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 10. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.8.md).
+Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 11. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.9.md).
 
 Guild Cards follow the member's rank metal: **Tin, Copper, Bronze, Iron, Silver, Gold, Platinum, Mythril, Orichalcum** for F through SSS. Objectives are pinned parchment commissions on a timber board. The fixed header includes an in-app notification inbox. [View the screenshots](docs/screenshots/README.md).
+
+**24 original character appearances** are available in registration, Settings → Appearance, and Adventures → Party. They use slimmer silhouettes, detailed costumes, varied complexions and hairstyles, and a range of knight, dancer, scholar, rogue, minstrel, and traveler designs. A chosen look remains independent of class. [Roster and battle previews](docs/screenshots/README.md) · [Version 1.9 changes](docs/update-1.9.md).
 
 The Guild hub shows taken requests, login rewards, and card links to the relevant sections. Objectives use compact expandable cards. Battles have direct stage/exploration continuation, a new forest backdrop, a turn queue, party HUD, and attack feedback. Trees support pinch zoom, Fit, a searchable list, and more early choices. Android submission/deadline reminders are configurable in Settings, defaulting to 9pm local time. [Version 1.8 changes and reward values](docs/update-1.8.md).
 

@@ -1,0 +1,366 @@
+.character-sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+.profile-appearance-summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+  margin: 0 0 20px;
+  padding-bottom: 15px;
+}
+.profile-appearance-summary > .character-sprite {
+  width: 92px;
+  height: 112px;
+  flex-shrink: 0;
+  filter: drop-shadow(2px 5px 3px #10251a35);
+}
+.profile-appearance-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.profile-appearance-summary b {
+  font: 600 22px var(--serif);
+}
+.appearance-layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+  margin-top: 15px;
+}
+.appearance-settings > h2 {
+  margin: 0 0 20px;
+}
+.appearance-settings .appearance-layout {
+  grid-template-columns: 240px minmax(0, 1fr);
+}
+.appearance-preview {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  min-width: 0;
+}
+.appearance-stage {
+  position: relative;
+  isolation: isolate;
+  height: 290px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 75%, #ad955938, transparent 60%),
+    linear-gradient(#0d1d24, #253c3b);
+  border: 1px solid #b49c6660;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.appearance-stage > .character-sprite {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(2px 5px 2px #0008);
+}
+.appearance-floor {
+  position: absolute;
+  bottom: 8%;
+  width: 65%;
+  height: 7%;
+  background: #06101375;
+  border-radius: 50%;
+  filter: blur(3px);
+}
+.appearance-preview h3 {
+  font: 600 29px/1.1 var(--serif);
+  margin: 7px 0 12px;
+}
+.appearance-preview p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+.appearance-category,
+.appearance-cosmetic {
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.appearance-cosmetic {
+  display: block;
+  margin: 12px 0 0;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+}
+.appearance-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0 0 15px;
+}
+.appearance-search {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.appearance-search input {
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  outline: none;
+  min-width: 0;
+}
+.appearance-search svg {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.appearance-filters > label:not(.appearance-search) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.appearance-filters select {
+  border: 1px solid var(--line);
+  padding: 9px 10px;
+  min-width: 0;
+  flex: 1;
+  background: #faf6e9;
+  border-radius: 3px;
+  color: var(--text);
+}
+.appearance-roster {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+.appearance-choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 4px 12px;
+  border: 1px solid #c9b88770;
+  border-radius: 4px;
+  background:
+    radial-gradient(ellipse at 50% 60%, #b5aa8720, transparent 70%), #f7f1e4;
+  min-width: 0;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.appearance-choice > .character-sprite {
+  height: 142px;
+  width: 100%;
+  filter: drop-shadow(1px 3px 1px #12302840);
+}
+.appearance-choice b {
+  font: 600 15px/1.25 var(--serif);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.appearance-choice small {
+  font-size: 8px;
+  color: var(--muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.appearance-choice.selected {
+  border-color: #c39c46;
+  background: #eadba650;
+  box-shadow: inset 0 0 0 1px #c39c4660;
+}
+.appearance-choice:hover {
+  border-color: #ab8d48;
+  background: #eee3c6;
+}
+.appearance-choice:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+.appearance-check {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  color: #725c29;
+}
+.party-appearance-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0;
+}
+.party-appearance-action h3 {
+  margin: 0;
+}
+.pixel-adventure.polished-battle .humanoid-sprite {
+  filter: drop-shadow(1px 2px 0 #11201b60) drop-shadow(3px 6px 3px #0007);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.turn-queue .humanoid-sprite {
+  height: 43px;
+  width: 37px;
+  filter: none;
+}
+.pixel-adventure .companion-card > .humanoid-sprite {
+  height: 170px;
+  max-width: 180px;
+  margin: 0 auto 12px;
+}
+.pixel-adventure.polished-battle .party-line .sprite-area {
+  height: 145px;
+  width: 138px;
+  max-width: 140%;
+}
+.pixel-adventure.polished-battle .party-line .fighter {
+  overflow: visible;
+}
+.pixel-adventure.polished-battle .battle-sprite.humanoid-sprite.defeated {
+  transform: rotate(65deg) scale(0.7);
+  filter: grayscale(1);
+  opacity: 0.4;
+}
+@media (max-width: 1100px) {
+  .appearance-roster {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .appearance-layout,
+  .appearance-settings .appearance-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+@media (max-width: 700px) {
+  .appearance-layout,
+  .appearance-settings .appearance-layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .appearance-preview {
+    position: static;
+    display: grid;
+    grid-template-columns: 115px minmax(0, 1fr);
+    column-gap: 15px;
+    text-align: left;
+    align-content: center;
+  }
+  .appearance-stage {
+    grid-row: 1/6;
+    height: 180px;
+    margin: 0;
+  }
+  .appearance-category {
+    align-self: end;
+    margin-bottom: 7px;
+  }
+  .appearance-preview h3 {
+    font-size: 25px;
+    margin: 0 0 6px;
+  }
+  .appearance-preview p {
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+  }
+  .appearance-preview .button {
+    font-size: 11px;
+    padding: 10px;
+    min-height: 40px;
+  }
+  .appearance-cosmetic {
+    font-size: 8px;
+    margin-top: 8px;
+  }
+  .appearance-roster {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+  .appearance-choice > .character-sprite {
+    height: 119px;
+  }
+  .appearance-choice b {
+    font-size: 13px;
+  }
+  .appearance-filters {
+    gap: 8px;
+  }
+  .appearance-filters > label:not(.appearance-search) {
+    display: block;
+    font-size: 10px;
+  }
+  .appearance-filters select {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 9px;
+    font-size: 11px;
+  }
+  .profile-appearance-summary > .character-sprite {
+    width: 80px;
+    height: 100px;
+  }
+  .profile-appearance-summary b {
+    font-size: 21px;
+  }
+  .party-appearance-action .button {
+    font-size: 11px;
+    padding: 10px;
+  }
+  .pixel-adventure.polished-battle .party-line .sprite-area {
+    height: 111px;
+    width: 102px;
+    max-width: 155%;
+  }
+  .polished-battle .turn-queue .humanoid-sprite {
+    height: 35px;
+    width: 31px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .appearance-choice {
+    transition: none;
+  }
+}
+.pixel-adventure.polished-battle .battlefield .fighter:hover:not(:disabled),
+.pixel-adventure.polished-battle .battlefield .fighter:active {
+  background: transparent;
+  box-shadow: none;
+}
+.appearance-roster .appearance-choice {
+  background:
+    radial-gradient(ellipse at 50% 60%, #b5aa8720, transparent 70%), #f7f1e4;
+}
+.appearance-roster .appearance-choice.selected {
+  background: #eadba650;
+}
+.appearance-roster .appearance-choice:hover:not(:disabled) {
+  background: #eee3c6;
+}
+.appearance-roster .appearance-choice b {
+  color: #3e3525;
+}
+.appearance-options .appearance-filters input,
+.appearance-options .appearance-filters select {
+  font-family: var(--sans);
+}

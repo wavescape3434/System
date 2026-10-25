@@ -1,3 +1,6 @@
+import AppearancePicker from "./AppearancePicker";
+import CharacterSprite from "./CharacterSprite";
+import { findAppearance, classAppearance } from "./appearance-catalog";
 import AssessmentForm from "./AssessmentForm";
 import { EMPTY_ASSESSMENT } from "./metrics";
 import ClassBrowser from "./ClassBrowser";
@@ -26,6 +29,8 @@ export default function Onboarding({
   onHelp: () => void;
 }) {
   const [step, setStep] = useState(0),
+    [appearance, setAppearance] = useState<string | undefined>(),
+    [appearanceOpen, setAppearanceOpen] = useState(false),
     [name, setName] = useState(""),
     [baseline, setBaseline] = useState<Baseline>({
       ...EMPTY_BASELINE,
@@ -38,6 +43,17 @@ export default function Onboarding({
   const values = startingStats(baseline);
   return (
     <div className="onboarding">
+      {appearanceOpen && (
+        <AppearancePicker
+          value={appearance}
+          classId={classId}
+          onChoose={(id) => {
+            setAppearance(id);
+            return true;
+          }}
+          onClose={() => setAppearanceOpen(false)}
+        />
+      )}
       <div className="onboard-art">
         <div className="onboard-brand">
           <Crest small />
@@ -114,6 +130,27 @@ export default function Onboarding({
                     onChange={(e) => setName(e.target.value)}
                   />
                 </label>
+                <div className="profile-appearance-summary">
+                  <CharacterSprite
+                    appearance={
+                      findAppearance(appearance) || classAppearance(classId)
+                    }
+                  />
+                  <div>
+                    <b>
+                      {
+                        (findAppearance(appearance) || classAppearance(classId))
+                          .name
+                      }
+                    </b>
+                    <button
+                      className="button secondary"
+                      onClick={() => setAppearanceOpen(true)}
+                    >
+                      Choose appearance
+                    </button>
+                  </div>
+                </div>
                 <ProfessionPicker value={profession} onChange={setProfession} />
                 <button
                   className="button primary full"
@@ -193,6 +230,7 @@ export default function Onboarding({
                   onClick={() =>
                     onCreate({
                       ...createCharacter(name, baseline, classId, profession),
+                      ...(appearance ? { appearance } : {}),
                       assessmentFormsSeen: seenForms,
                       preferences: {
                         units,

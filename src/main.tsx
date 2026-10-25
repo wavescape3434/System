@@ -17,3 +17,5 @@ import "./guild-update.css";
 import "./world.css";
 
 import "./hub-update.css";
+
+import "./appearance.css";

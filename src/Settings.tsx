@@ -1,3 +1,7 @@
+import AppearancePicker from "./AppearancePicker";
+import CharacterSprite from "./CharacterSprite";
+import { characterAppearance } from "./appearance-catalog";
+import { selectAppearance } from "./appearance";
 import ReminderSettings from "./ReminderSettings";
 import { usedExamForms } from "./exams";
 import { useState } from "react";
@@ -18,13 +22,15 @@ export default function Settings({
   update,
   onAccount,
   notify,
+  initialTab,
 }: {
   c: Character;
   update: (c: Character) => boolean;
   onAccount: () => void;
   notify: (s: string) => void;
+  initialTab?: string;
 }) {
-  const [tab, setTab] = useState("general"),
+  const [tab, setTab] = useState(initialTab || "general"),
     [name, setName] = useState(c.name),
     [assessment, setAssessment] = useState(
       c.baseline.assessment || { ...EMPTY_ASSESSMENT },
@@ -73,6 +79,12 @@ export default function Settings({
           General
         </button>
         <button
+          className={tab === "appearance" ? "active" : ""}
+          onClick={() => setTab("appearance")}
+        >
+          Appearance
+        </button>
+        <button
           className={tab === "training" ? "active" : ""}
           onClick={() => setTab("training")}
         >
@@ -97,6 +109,18 @@ export default function Settings({
             <div className="section-heading">
               <h2>Profile</h2>
               <UserRound size={23} />
+            </div>
+            <div className="profile-appearance-summary">
+              <CharacterSprite appearance={characterAppearance(c)} />
+              <div>
+                <b>{characterAppearance(c).name}</b>
+                <button
+                  className="text-button"
+                  onClick={() => setTab("appearance")}
+                >
+                  Change appearance
+                </button>
+              </div>
             </div>
             <label className="field">
               Adventurer name
@@ -181,6 +205,18 @@ export default function Settings({
         </div>
       )}
       {tab === "general" && <ReminderSettings c={c} update={update} />}
+      {tab === "appearance" && (
+        <section className="panel appearance-settings">
+          <h2>Character appearance</h2>
+          <AppearancePicker
+            embedded
+            value={c.appearance}
+            classId={c.activeClass}
+            onChoose={(id) => update(selectAppearance(c, id))}
+            onClose={() => {}}
+          />
+        </section>
+      )}
       {tab === "training" && (
         <section className="panel">
           <div className="section-heading">
@@ -305,7 +341,7 @@ export default function Settings({
           </div>
           <div className="settings-record">
             <span>Version</span>
-            <Tag>1.8.0</Tag>
+            <Tag>1.9.0</Tag>
           </div>
           <button className="button primary" onClick={onAccount}>
             Account & backups

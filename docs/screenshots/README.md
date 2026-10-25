@@ -1,8 +1,18 @@
-# The Adventurers Guild 1.8.0 — screenshots
+# The Adventurers Guild 1.9.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
 
-## Current update
+## Character roster — version 1.9
+
+[Full roster](appearance-roster.png) · [Phone appearance picker](appearance-roster-mobile.png) · [Updated battle](character-battle.png) · [Battle on phone](character-battle-mobile.png)
+
+| Character picker | In battle |
+|---|---|
+| [<img src="appearance-roster-mobile.png" width="230" alt="Twenty-four original fantasy character designs">](appearance-roster-mobile.png) | [<img src="character-battle-mobile.png" width="230" alt="Slender detailed character sprites in battle">](character-battle-mobile.png) |
+
+[Character appearance rules](../update-1.9.md) · [Verification](../verification-1.9.md)
+
+## Guild hub — version 1.8
 
 | Guild hub | Compact board | Battle |
 |---|---|---|

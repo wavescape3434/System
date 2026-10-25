@@ -1,4 +1,8 @@
 import {
+  characterAppearance,
+  COMPANION_APPEARANCES,
+} from "./appearance-catalog";
+import {
   WORLD_REGIONS,
   WORLD_ENCOUNTERS,
   TOWN_GEAR,
@@ -257,6 +261,7 @@ export interface Unit {
   id: string;
   name: string;
   sprite: string;
+  appearance?: string;
   hp: number;
   maxHp: number;
   mp: number;
@@ -318,6 +323,7 @@ export function startBattle(c: Character, id: string): Character {
     id: "hero",
     name: c.name,
     sprite: c.activeClass,
+    appearance: characterAppearance(c).id,
     hp: maxHp,
     maxHp,
     mp: maxMp,
@@ -371,6 +377,7 @@ export function startBattle(c: Character, id: string): Character {
           id,
           name: npc.name,
           sprite: id,
+          appearance: COMPANION_APPEARANCES[id],
           hp,
           maxHp: hp,
           mp,
