@@ -1,3 +1,4 @@
+import { progressionLedger } from "./progression-ledger";
 import {
   characterAppearance,
   COMPANION_APPEARANCES,
@@ -212,7 +213,7 @@ export function newCampaign(): Campaign {
 }
 export const campaign = (c: Character): Campaign => {
   const data = c.campaign || newCampaign(),
-    earned = c.completions.reduce((n, o) => n + (o.gold || 0), 0);
+    earned = progressionLedger(c).gold;
   return {
     ...data,
     gold: data.gold + Math.max(0, earned - (data.trainingGoldAccrued || 0)),

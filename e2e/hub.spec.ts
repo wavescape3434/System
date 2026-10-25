@@ -152,7 +152,7 @@ test("winning continues straight to the next stage and pays once, exploration st
     page.getByRole("button", { name: "World map", exact: true }),
   ).toBeVisible();
 });
-test("phone tree fits initially, real two-touch pinch zooms out, controls and node inspection remain available", async ({
+test("phone tree starts readable, real two-touch pinch zooms out, Fit and node inspection remain available", async ({
   page,
   context,
 }) => {
@@ -162,8 +162,8 @@ test("phone tree fits initially, real two-touch pinch zooms out, controls and no
   await page.getByRole("button", { name: "Skill tree", exact: true }).click();
   await page.getByRole("tab", { name: "Class", exact: true }).click();
   const zoom = () => page.locator(".tree-zoom>span").innerText();
-  const fitted = Number.parseInt(await zoom());
-  expect(fitted).toBeLessThan(50);
+  const readable = Number.parseInt(await zoom());
+  expect(readable).toBeGreaterThanOrEqual(90);
   for (let i = 0; i < 4; i++)
     await page.getByLabel("Zoom in skill tree").click();
   const before = Number.parseInt(await zoom());
@@ -198,7 +198,7 @@ test("phone tree fits initially, real two-touch pinch zooms out, controls and no
     .toBeLessThan(before - 5);
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await page.getByLabel("Fit skill tree").click();
-  await expect.poll(async () => Number.parseInt(await zoom())).toBe(fitted);
+  await expect.poll(async () => Number.parseInt(await zoom())).toBeLessThan(50);
   await page
     .getByRole("button", { name: "Find Spearcraft", exact: true })
     .click();

@@ -1,3 +1,4 @@
+import { progressionChanged } from "./progression-ledger";
 import type { Character } from "./domain";
 import {
   ATTRIBUTES,
@@ -95,59 +96,61 @@ export function recordJourney(
     if (p && p.tier !== "Basic")
       add("unlock", `${p.name} unlocked`, p.tier, 1, id);
   }
-  for (const p of CLASSES) {
-    const a = classLevel(previous, p.id),
-      b = classLevel(next, p.id);
-    if (b > a)
+  if (progressionChanged(previous, next)) {
+    for (const p of CLASSES) {
+      const a = classLevel(previous, p.id),
+        b = classLevel(next, p.id);
+      if (b > a)
+        add(
+          "level",
+          `${p.name} reached level ${b}`,
+          `${a} → ${b}`,
+          b - a,
+          `class:${p.id}`,
+        );
+    }
+    for (const name of new Set(
+      next.completions.filter((o) => o.profession).map((o) => o.profession!),
+    )) {
+      const a = professionLevel(previous, name),
+        b = professionLevel(next, name);
+      if (b > a)
+        add(
+          "level",
+          `${name} reached level ${b}`,
+          `${a} → ${b}`,
+          b - a,
+          `profession:${name}`,
+        );
+    }
+    const oldLevel = level(adventurerXP(previous)),
+      newLevel = level(adventurerXP(next));
+    if (newLevel > oldLevel)
       add(
         "level",
-        `${p.name} reached level ${b}`,
-        `${a} → ${b}`,
-        b - a,
-        `class:${p.id}`,
+        `Adventurer level ${newLevel}`,
+        `${oldLevel} → ${newLevel}`,
+        newLevel - oldLevel,
+        "adventurer",
       );
-  }
-  for (const name of new Set(
-    next.completions.filter((o) => o.profession).map((o) => o.profession!),
-  )) {
-    const a = professionLevel(previous, name),
-      b = professionLevel(next, name);
-    if (b > a)
+    if (characterRank(previous).name !== characterRank(next).name)
       add(
-        "level",
-        `${name} reached level ${b}`,
-        `${a} → ${b}`,
-        b - a,
-        `profession:${name}`,
+        "rank",
+        `Promoted to ${characterRank(next).name} rank`,
+        `${characterRank(previous).name} → ${characterRank(next).name}`,
       );
+    const before = stats(previous),
+      after = stats(next);
+    for (const a of ATTRIBUTES)
+      if (after[a] > before[a])
+        add(
+          "stat",
+          `${a} +${after[a] - before[a]}`,
+          `${before[a]} → ${after[a]}`,
+          after[a] - before[a],
+          a,
+        );
   }
-  const oldLevel = level(adventurerXP(previous)),
-    newLevel = level(adventurerXP(next));
-  if (newLevel > oldLevel)
-    add(
-      "level",
-      `Adventurer level ${newLevel}`,
-      `${oldLevel} → ${newLevel}`,
-      newLevel - oldLevel,
-      "adventurer",
-    );
-  if (characterRank(previous).name !== characterRank(next).name)
-    add(
-      "rank",
-      `Promoted to ${characterRank(next).name} rank`,
-      `${characterRank(previous).name} → ${characterRank(next).name}`,
-    );
-  const before = stats(previous),
-    after = stats(next);
-  for (const a of ATTRIBUTES)
-    if (after[a] > before[a])
-      add(
-        "stat",
-        `${a} +${after[a] - before[a]}`,
-        `${before[a]} → ${after[a]}`,
-        after[a] - before[a],
-        a,
-      );
   const a = campaign(previous),
     b = campaign(next);
   // Continuing can settle a victory and replace its battle in a single update.

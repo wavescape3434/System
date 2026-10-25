@@ -1,3 +1,4 @@
+import { progressionLedger } from "./progression-ledger";
 import {
   calendarGoal,
   adventureConditionMet,
@@ -17,7 +18,7 @@ import {
   entryTrial,
   taskRequirements,
 } from "./training-tasks";
-import { checkpointUnits, milestonePoints, TASK_GOLD } from "./task-ranks";
+import { milestonePoints, TASK_GOLD } from "./task-ranks";
 import type { TaskRank } from "./task-ranks";
 import type { JourneyEvent } from "./journey-events";
 import { levelFromXP, xpForLevel, statMilestones } from "./progression";
@@ -363,22 +364,14 @@ export function startingRankFor(s: Stats): "F" | "E" | "D" {
     return "E";
   return "F";
 }
-export const totalXP = (c: Character) =>
-  c.completions.reduce((s, x) => s + x.xp, 0);
+export const totalXP = (c: Character) => progressionLedger(c).total;
 export const level = (xp: number) => levelFromXP(xp, 250);
 export const adventurerXP = (c: Character) =>
   totalXP(c) + (c.legacyProgress?.adventurerXP || 0);
 const ownClassXP = (c: Character, id: string) =>
-  c.completions
-    .filter(
-      (x) =>
-        x.classId === id &&
-        (!x.scope || x.scope === "class" || x.scope === "subclass"),
-    )
-    .reduce((n, x) => n + x.xp, 0);
+  progressionLedger(c).ownClasses.get(id) || 0;
 export const classXP = (c: Character, id: string) =>
-  ownClassXP(c, id) +
-  c.completions.reduce((n, o) => n + (o.classCredits?.[id] || 0), 0) +
+  (progressionLedger(c).classes.get(id) || 0) +
   (c.classEntries?.[id]?.credit || 0);
 export const classTrainingLevel = (c: Character, id: string) => {
   const raw = levelFromXP(
@@ -386,10 +379,7 @@ export const classTrainingLevel = (c: Character, id: string) => {
   );
   if (c.trainingVersion !== 3) return raw;
   const floor = c.trainingLegacy?.classLevels[id] || 1;
-  const work = c.completions
-    .slice(c.trainingLegacy?.count || 0)
-    .filter((o) => o.classId === id && o.scope === "class" && !o.trialClass)
-    .reduce((n, o) => n + checkpointUnits(o.rank), 0);
+  const work = progressionLedger(c).classWork.get(id) || 0;
   return Math.min(raw, floor + work);
 };
 export const classLevel = (c: Character, id: string) =>
@@ -412,22 +402,14 @@ export function classProgress(c: Character, id: string) {
   };
 }
 export const professionXP = (c: Character, name = c.profession) =>
-  c.completions
-    .filter((o) => o.scope === "profession" && o.profession === name)
-    .reduce((n, o) => n + o.xp, 0) +
-  c.completions
-    .filter((o) => o.professionCredit?.name === name)
-    .reduce((n, o) => n + (o.professionCredit?.xp || 0), 0);
+  progressionLedger(c).professions.get(name) || 0;
 export const professionTrainingLevel = (c: Character, name = c.profession) => {
   const raw = levelFromXP(
     professionXP(c, name) + (c.legacyProgress?.professions[name] || 0),
   );
   if (c.trainingVersion !== 3) return raw;
   const floor = c.trainingLegacy?.professionLevels[name] || 1;
-  const work = c.completions
-    .slice(c.trainingLegacy?.count || 0)
-    .filter((o) => o.scope === "profession" && o.profession === name)
-    .reduce((n, o) => n + checkpointUnits(o.rank), 0);
+  const work = progressionLedger(c).professionWork.get(name) || 0;
   return Math.min(raw, floor + work);
 };
 export const professionLevel = (c: Character, name = c.profession) =>
@@ -672,52 +654,12 @@ export function archetypeXP(c: Character, id: string) {
 }
 export const activeVocation = (c: Character) =>
   VOCATIONS.find((v) => v.id === c.vocation);
-export const vocationXP = (c: Character, id = c.vocation) => {
-  const category = VOCATIONS.find((v) => v.id === id)?.category;
-  if (!category) return 0;
-  return c.completions.reduce(
-    (n, o) =>
-      n +
-      (o.vocationId === id &&
-      o.scope === "profession" &&
-      o.careerCategory === category
-        ? o.xp
-        : 0) +
-      (o.vocationCredit?.id === id ? o.vocationCredit?.xp || 0 : 0),
-    0,
-  );
-};
+export const vocationXP = (c: Character, id = c.vocation) =>
+  id ? progressionLedger(c).vocations.get(id) || 0 : 0;
 export const vocationLevel = (c: Character, id = c.vocation) =>
   levelFromXP(vocationXP(c, id));
 export function careerXP(c: Character, id: string) {
-  return (
-    c.completions
-      .filter(
-        (o) =>
-          o.scope === "profession" &&
-          (o.careerCategory || legacyCareer(o)) === id,
-      )
-      .reduce((n, o) => n + o.xp, 0) +
-    c.completions
-      .filter((o) => o.professionCredit?.category === id)
-      .reduce((n, o) => n + (o.professionCredit?.xp || 0), 0) +
-    c.completions.reduce(
-      (n, o) =>
-        n +
-        (o.vocationCredit?.category === id &&
-        o.professionCredit?.category !== id
-          ? o.vocationCredit.xp
-          : 0),
-      0,
-    )
-  );
-}
-function legacyCareer(o: Completion) {
-  return o.id.startsWith("network-")
-    ? "technology"
-    : o.id.startsWith("analysis-")
-      ? "business"
-      : careerCategory(o.profession || "Undecided").id;
+  return progressionLedger(c).careers.get(id) || 0;
 }
 export const currentPath = (c: Character) =>
   CLASSES.find((p) => p.id === c.activeClass)!;
@@ -1777,23 +1719,11 @@ export function skillWallet(c: Character, s?: Skill): string {
   return `profession:${category}`;
 }
 export function walletXP(c: Character, wallet: string): number {
-  if (wallet === "combat")
-    return (
-      c.completions
-        .filter(
-          (o) => !o.scope || o.scope === "class" || o.scope === "subclass",
-        )
-        .reduce((n, o) => n + o.xp, 0) +
-      c.completions
-        .filter((o) => o.scope === "universal")
-        .reduce((n, o) => n + (o.classCredits?.[o.classId] || 0), 0)
-    );
+  if (wallet === "combat") return progressionLedger(c).combat;
   if (wallet.startsWith("class:")) return classXP(c, wallet.slice(6));
   if (wallet.startsWith("subclass:")) return subclassXP(c, wallet.slice(9));
   if (wallet.startsWith("profession:")) return careerXP(c, wallet.slice(11));
-  return c.completions
-    .filter((o) => o.scope === "universal")
-    .reduce((n, o) => n + o.xp, 0);
+  return progressionLedger(c).universal;
 }
 export const walletLevel = (c: Character, wallet: string) =>
   wallet === "universal"

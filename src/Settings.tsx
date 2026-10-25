@@ -10,6 +10,7 @@ import type { Character, Stats } from "./domain";
 import { ATTRIBUTES, startingStats } from "./domain";
 import { DEFAULT_PREFERENCES } from "./preferences";
 import type { Preferences } from "./preferences";
+import { localRecovery } from "./storage";
 import {
   EMPTY_ASSESSMENT,
   displayAssessmentResults,
@@ -23,12 +24,14 @@ export default function Settings({
   onAccount,
   notify,
   initialTab,
+  onRecovery,
 }: {
   c: Character;
   update: (c: Character) => boolean;
   onAccount: () => void;
   notify: (s: string) => void;
   initialTab?: string;
+  onRecovery: () => void;
 }) {
   const [tab, setTab] = useState(initialTab || "general"),
     [name, setName] = useState(c.name),
@@ -341,11 +344,20 @@ export default function Settings({
           </div>
           <div className="settings-record">
             <span>Version</span>
-            <Tag>1.10.0</Tag>
+            <Tag>1.11.0</Tag>
           </div>
           <button className="button primary" onClick={onAccount}>
             Account & backups
           </button>
+          {localRecovery()?.character.id === c.id && (
+            <div className="local-recovery-setting">
+              <b>Local recovery snapshot</b>
+              <span>{new Date(localRecovery()!.at).toLocaleString()}</span>
+              <button className="button secondary" onClick={onRecovery}>
+                Review recovery snapshot
+              </button>
+            </div>
+          )}
         </section>
       )}
       {confirm && (

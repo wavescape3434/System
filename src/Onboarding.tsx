@@ -4,7 +4,12 @@ import { findAppearance, classAppearance } from "./appearance-catalog";
 import AssessmentForm from "./AssessmentForm";
 import { EMPTY_ASSESSMENT } from "./metrics";
 import ClassBrowser from "./ClassBrowser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  loadRegistrationDraft,
+  saveRegistrationDraft,
+  clearRegistrationDraft,
+} from "./registration-draft";
 import { ArrowRight, ArrowLeft, Globe } from "lucide-react";
 import {
   CLASSES,
@@ -19,27 +24,51 @@ import {
 import type { Character, Baseline } from "./domain";
 import { Crest, Tag } from "./ui";
 import ProfessionPicker from "./ProfessionPicker";
+import { googleConfigured } from "./auth";
 export default function Onboarding({
   onCreate,
   onGoogle,
   onHelp,
 }: {
-  onCreate: (c: Character) => void;
+  onCreate: (c: Character) => boolean;
   onGoogle: () => void;
   onHelp: () => void;
 }) {
-  const [step, setStep] = useState(0),
-    [appearance, setAppearance] = useState<string | undefined>(),
+  const [draft] = useState(loadRegistrationDraft);
+  const [step, setStep] = useState(draft?.step || 0),
+    [appearance, setAppearance] = useState<string | undefined>(
+      draft?.appearance,
+    ),
     [appearanceOpen, setAppearanceOpen] = useState(false),
-    [name, setName] = useState(""),
-    [baseline, setBaseline] = useState<Baseline>({
-      ...EMPTY_BASELINE,
-      assessment: { ...EMPTY_ASSESSMENT },
-    }),
-    [seenForms, setSeenForms] = useState<string[]>([]),
-    [units, setUnits] = useState<"metric" | "imperial">("metric"),
-    [classId, setClassId] = useState("disciple"),
-    [profession, setProfession] = useState("Analyst");
+    [name, setName] = useState(draft?.name || ""),
+    [baseline, setBaseline] = useState<Baseline>(
+      draft?.baseline || {
+        ...EMPTY_BASELINE,
+        assessment: { ...EMPTY_ASSESSMENT },
+      },
+    ),
+    [seenForms, setSeenForms] = useState<string[]>(draft?.seenForms || []),
+    [units, setUnits] = useState<"metric" | "imperial">(
+      draft?.units || "metric",
+    ),
+    [classId, setClassId] = useState(draft?.classId || "disciple"),
+    [profession, setProfession] = useState(draft?.profession || "Analyst");
+  useEffect(() => {
+    if (step > 0)
+      saveRegistrationDraft({
+        step,
+        appearance,
+        name,
+        baseline,
+        seenForms,
+        units,
+        classId,
+        profession,
+      });
+  }, [step, appearance, name, baseline, seenForms, units, classId, profession]);
+  const finish = (c: Character) => {
+    if (onCreate(c)) clearRegistrationDraft();
+  };
   const values = startingStats(baseline);
   return (
     <div className="onboarding">
@@ -86,12 +115,19 @@ export default function Onboarding({
             <button className="button primary full" onClick={() => setStep(1)}>
               Register character <ArrowRight size={18} />
             </button>
-            <button className="button secondary full" onClick={onGoogle}>
-              <Globe size={17} /> Link Google account
+            <button
+              className="button secondary full"
+              disabled={!googleConfigured}
+              onClick={onGoogle}
+            >
+              <Globe size={17} />{" "}
+              {googleConfigured
+                ? "Link Google account"
+                : "Google sign-in unavailable in this build"}
             </button>
             <button
               className="text-button full"
-              onClick={() => onCreate(demoCharacter())}
+              onClick={() => finish(demoCharacter())}
             >
               Try a sample character <ArrowRight size={15} />
             </button>
@@ -229,7 +265,7 @@ export default function Onboarding({
                 <button
                   className="button primary full"
                   onClick={() =>
-                    onCreate({
+                    finish({
                       ...createCharacter(name, baseline, classId, profession),
                       ...(appearance ? { appearance } : {}),
                       assessmentFormsSeen: seenForms,

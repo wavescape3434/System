@@ -10,7 +10,7 @@ import type { Assessment } from "./metrics";
 import type { MentalResult, MentalStat, MentalForm } from "./exam-bank";
 import { validMentalFormId } from "./exam-bank";
 import { nextExamLevel, physicalPass, mentalPass } from "./exam-rules";
-import type { ExamRecord, ExamScope } from "./exam-rules";
+import type { ExamRecord, ExamScope, ExamRoute } from "./exam-rules";
 export interface ExamTarget {
   scope: ExamScope;
   owner: string;
@@ -197,6 +197,43 @@ function ownerRecords(c: Character, t: ExamTarget) {
     (e) => e.scope === t.scope && e.owner === t.owner,
   );
 }
+export function masteryStandard(
+  c: Character,
+  t: ExamTarget,
+  protocol?: string,
+) {
+  const records = ownerRecords(c, t).filter(
+    (e) =>
+      e.status === "passed" &&
+      e.milestone < t.milestone &&
+      (protocol
+        ? e.protocol === protocol && e.value !== undefined
+        : !!e.mental),
+  );
+  const improvements = new Set(
+    records.filter((e) => e.route !== "mastery").map((e) => e.milestone),
+  ).size;
+  const lower = FITNESS_PROTOCOLS.find((p) => p.id === protocol)?.lower;
+  const values = records.map((e) =>
+    protocol
+      ? e.value!
+      : checkScore(t.stat as MentalStat, e.mental!.answers, e.mental!.formId),
+  );
+  return {
+    eligible: improvements >= 2,
+    improvements,
+    value: values.length
+      ? lower
+        ? Math.min(...values)
+        : Math.max(...values)
+      : 0,
+    challenge: Math.max(1, ...records.map((e) => e.mental?.challenge || 1)),
+    at: records
+      .map((e) => e.at)
+      .sort()
+      .at(-1),
+  };
+}
 export function previousFitness(
   c: Character,
   t: ExamTarget,
@@ -283,6 +320,7 @@ export function submitFitnessExam(
   value: number,
   note: string,
   now = new Date(),
+  route: ExamRoute = "improvement",
 ): Character {
   const actual = examTargets(c).find(
       (x) =>
@@ -309,6 +347,8 @@ export function submitFitnessExam(
   )
     return c;
   const measure = p || { id: protocolId, initial: () => null };
+  const mastery = masteryStandard(c, t, protocolId);
+  if (route === "mastery" && !mastery.eligible) return c;
   const before = p
     ? previousFitness(c, t, p)
     : [...ownerRecords(c, t)]
@@ -321,9 +361,17 @@ export function submitFitnessExam(
     return c;
   const status = !before
     ? "baseline"
-    : anotherDay(before.at, now) && physicalPass(value, before.value!, p?.lower)
-      ? "passed"
-      : "failed";
+    : route === "mastery"
+      ? mastery.at &&
+        anotherDay(mastery.at, now) &&
+        value > 0 &&
+        (p?.lower ? value <= mastery.value : value >= mastery.value)
+        ? "passed"
+        : "failed"
+      : anotherDay(before.at, now) &&
+          physicalPass(value, before.value!, p?.lower)
+        ? "passed"
+        : "failed";
   return {
     ...c,
     exams: [
@@ -340,6 +388,7 @@ export function submitFitnessExam(
         baseline: before?.value,
         note: note.trim(),
         status,
+        route,
       },
     ],
   };
@@ -349,6 +398,7 @@ export function submitMentalExam(
   t: ExamTarget,
   result: MentalResult,
   now = new Date(),
+  route: ExamRoute = "improvement",
 ): Character {
   const actual = examTargets(c).find(
     (x) =>
@@ -378,17 +428,26 @@ export function submitMentalExam(
   const previous = previousMental(c, t),
     score = (r: MentalResult) =>
       checkScore(t.stat as MentalStat, r.answers, r.formId);
+  const mastery = masteryStandard(c, t);
+  if (route === "mastery" && !mastery.eligible) return c;
   const status = !previous
     ? "baseline"
-    : anotherDay(previous.completedAt, now) &&
-        mentalPass(result, previous, score)
-      ? "passed"
-      : "failed";
+    : route === "mastery"
+      ? mastery.at &&
+        anotherDay(mastery.at, now) &&
+        score(result) >= Math.max(4, mastery.value) &&
+        (result.challenge || 1) >= mastery.challenge
+        ? "passed"
+        : "failed"
+      : anotherDay(previous.completedAt, now) &&
+          mentalPass(result, previous, score)
+        ? "passed"
+        : "failed";
   return {
     ...c,
     exams: (c.exams || []).map((e) =>
       e.id === started.id
-        ? { ...e, status, mental: result, at: now.toISOString() }
+        ? { ...e, status, route, mental: result, at: now.toISOString() }
         : e,
     ),
   };
@@ -405,6 +464,7 @@ export function validExam(e: ExamRecord): boolean {
     ["STR", "DEX", "CON", "INT", "WIS", "CHA"].includes(e.stat) &&
     Number.isFinite(Date.parse(e.at)) &&
     ["started", "baseline", "failed", "passed"].includes(e.status) &&
+    (e.route === undefined || ["improvement", "mastery"].includes(e.route)) &&
     (e.status === "started"
       ? validMentalFormId(e.formId)
       : !!e.mental ||

@@ -2,7 +2,7 @@
 :root {
   --cream: #eee9d8;
   --border: #d8cdb2;
-  --gold: #a98443;
+  --gold: #806029;
   background: #eee9d8;
   color: #302f26;
 }
@@ -1404,4 +1404,34 @@ p {
 }
 .skill-tree-world {
   min-width: 0;
+}
+
+/* Utility labels remain readable on parchment; the engraved card keeps its palette. */
+.page-heading .date-block,
+.main-content .demo-banner,
+.main-content .demo-banner > span,
+.tabs button:not(.active),
+.field > span,
+.objective-filter,
+.class-browser .eyebrow,
+.class-browser .class-pagination,
+.class-browser .class-inspect small,
+.settings-page .eyebrow,
+.assessment-field > span,
+.assessment-units,
+.main-content .page-section-heading .tag,
+.main-content .tree-info p {
+  color: #62573e;
+}
+.main-content .tag {
+  color: #496035;
+}
+.main-content .tag.gold {
+  color: #715323;
+}
+.pixel-adventure .tag {
+  color: #f4e3b3;
+}
+.sidebar {
+  --gold: #d8bc78;
 }

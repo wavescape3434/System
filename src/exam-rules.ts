@@ -1,6 +1,7 @@
 import type { Character, Attribute } from "./domain";
 import type { MentalResult } from "./exam-bank";
 export type ExamScope = "class" | "profession";
+export type ExamRoute = "improvement" | "mastery";
 export interface ExamRecord {
   id: string;
   scope: ExamScope;
@@ -15,6 +16,7 @@ export interface ExamRecord {
   mental?: MentalResult;
   note?: string;
   formId?: string;
+  route?: ExamRoute;
 }
 export function certifiedLevel(
   c: Character,

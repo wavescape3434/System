@@ -22,6 +22,8 @@ import {
   Plus,
   Trophy,
   Award,
+  Target,
+  Compass,
 } from "lucide-react";
 import type { Character, Objective, Stats } from "./domain";
 import {
@@ -141,6 +143,63 @@ export function Guild({ c, navigate, openObjective, update }: ScreenProps) {
         : navigate("skills", section === "profession" ? "profession" : section);
   return (
     <>
+      <div className="guild-action-strip" aria-label="Guild actions">
+        <button
+          onClick={() =>
+            navigate(
+              "objectives",
+              requests.length ? "taken:all" : "board:daily",
+            )
+          }
+        >
+          <Target size={19} />
+          <span>
+            <b>
+              {requests.length
+                ? `${requests.length} taken requests`
+                : "Take a request"}
+            </b>
+            <small>
+              {requests.some((o) => o.cadence !== "daily")
+                ? "Daily · Weekly · Monthly"
+                : "Today's work"}
+            </small>
+          </span>
+          <ArrowRight size={16} />
+        </button>
+        <button
+          onClick={() =>
+            exams.length
+              ? navigate("paths", "exams")
+              : navigate("skills", "skills")
+          }
+        >
+          <Award size={19} />
+          <span>
+            <b>
+              {exams.length ? `${exams.length} exams ready` : "Skill trees"}
+            </b>
+            <small>
+              {exams.length
+                ? "Banked XP retained"
+                : `${currentPath(c).name} · Lv. ${classLevel(c, c.activeClass)}`}
+            </small>
+          </span>
+          <ArrowRight size={16} />
+        </button>
+        <button onClick={() => navigate("adventures")}>
+          <Compass size={19} />
+          <span>
+            <b>
+              {data.battle || data.world?.expedition
+                ? "Resume expedition"
+                : "Adventures"}
+            </b>
+            <small>{data.gold.toLocaleString()} gold</small>
+          </span>
+          <ArrowRight size={16} />
+        </button>
+      </div>
       <div className="dashboard-top guild-hub-top">
         <GuildCard
           c={c}
@@ -211,7 +270,7 @@ export function Guild({ c, navigate, openObjective, update }: ScreenProps) {
           </h3>
           <button
             className="text-button"
-            onClick={() => navigate("objectives", "taken:daily")}
+            onClick={() => navigate("objectives", "taken:all")}
           >
             Open requests <ArrowRight size={14} />
           </button>
@@ -371,6 +430,7 @@ export function Paths({
 }: ScreenProps) {
   const [view, setView] = useState(section || "all");
   const p = currentPath(c);
+  const progress = classProgress(c, p.id);
   return (
     <>
       <div className="intro-banner class-current-banner">
@@ -386,6 +446,42 @@ export function Paths({
           <p>{p.goal}</p>
         </div>
       </div>
+      <section className="class-next-step panel">
+        <div>
+          <b>
+            {progress.examRequired
+              ? `Level ${classLevel(c, p.id) + 1} exam ready`
+              : progress.waiting
+                ? "Class commission required"
+                : `Next: ${p.name} level ${classLevel(c, p.id) + 1}`}
+          </b>
+          <span>
+            {progress.current.toLocaleString()} /{" "}
+            {progress.needed.toLocaleString()} XP
+            {progress.banked > 0
+              ? ` · ${progress.banked.toLocaleString()} XP banked`
+              : ""}
+          </span>
+        </div>
+        <button
+          className="button primary"
+          onClick={() => {
+            if (progress.examRequired) setView("exams");
+            else {
+              const commission = objectives(c).find(
+                (o) =>
+                  o.scope === "class" &&
+                  o.cadence === "daily" &&
+                  o.kind !== "class-trial",
+              );
+              if (commission) openObjective(commission);
+            }
+          }}
+        >
+          {progress.examRequired ? "Open examination" : "Open class commission"}
+          <ArrowRight size={16} />
+        </button>
+      </section>
       <div className="tabs">
         <button
           className={view === "all" ? "active" : ""}

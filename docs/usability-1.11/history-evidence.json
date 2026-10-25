@@ -1,0 +1,132 @@
+{
+  "environment": "Desktop Linux Chromium; function timings use dev module imports, warmed five-run medians. 4x CPU figures are single-run diagnostics, not Android measurements.",
+  "histories": [
+    {
+      "days": 30,
+      "completions": 180,
+      "bytes": 38711,
+      "valid": true,
+      "medianMs": {
+        "stats": 0.2,
+        "objectives": 2,
+        "recordJourney": 0,
+        "journeyReport30": 2.9,
+        "journeyReportAll": 3.1,
+        "validate": 0.3,
+        "serializeAndWrite": 0.2
+      }
+    },
+    {
+      "days": 365,
+      "completions": 2190,
+      "bytes": 458801,
+      "valid": true,
+      "medianMs": {
+        "stats": 0.3,
+        "objectives": 2,
+        "recordJourney": 0,
+        "journeyReport30": 9.5,
+        "journeyReportAll": 14.6,
+        "validate": 1.7,
+        "serializeAndWrite": 2.2
+      }
+    },
+    {
+      "days": 1095,
+      "completions": 6570,
+      "bytes": 1374221,
+      "valid": true,
+      "medianMs": {
+        "stats": 0.8,
+        "objectives": 2.5,
+        "recordJourney": 0,
+        "journeyReport30": 12.1,
+        "journeyReportAll": 32.4,
+        "validate": 3.4,
+        "serializeAndWrite": 15.7
+      }
+    }
+  ],
+  "firstPlaceAttackOnly": [
+    {
+      "companions": 0,
+      "stages": [
+        {
+          "phase": "won",
+          "rounds": 4,
+          "actions": 4,
+          "heroHp": 87
+        },
+        {
+          "phase": "won",
+          "rounds": 4,
+          "actions": 4,
+          "heroHp": 87
+        },
+        {
+          "phase": "won",
+          "rounds": 4,
+          "actions": 4,
+          "heroHp": 66
+        },
+        {
+          "phase": "won",
+          "rounds": 4,
+          "actions": 4,
+          "heroHp": 87
+        }
+      ]
+    },
+    {
+      "companions": 2,
+      "stages": [
+        {
+          "phase": "won",
+          "rounds": 2,
+          "actions": 4,
+          "heroHp": 95
+        },
+        {
+          "phase": "won",
+          "rounds": 2,
+          "actions": 4,
+          "heroHp": 95
+        },
+        {
+          "phase": "won",
+          "rounds": 2,
+          "actions": 6,
+          "heroHp": 95
+        },
+        {
+          "phase": "won",
+          "rounds": 2,
+          "actions": 4,
+          "heroHp": 95
+        }
+      ]
+    }
+  ],
+  "examCeilings": {
+    "balanceStartingAt30": [
+      31.5, 33.1, 34.7, 36.5, 38.3, 40.2, 42.2, 44.3, 46.5, 48.9
+    ],
+    "protocolLimit": 45,
+    "mentalPerfectScorePassAtEqualTime": false,
+    "physicalMustImprove": false
+  },
+  "throttled4x": [
+    {
+      "completions": 180,
+      "recordJourneyMs": 0
+    },
+    {
+      "completions": 2190,
+      "recordJourneyMs": 0
+    },
+    {
+      "completions": 6570,
+      "recordJourneyMs": 0
+    }
+  ]
+}

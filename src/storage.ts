@@ -22,6 +22,7 @@ import {
   upgradeCalendar,
 } from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
+export const RECOVERY_KEY = "the-guild.recovery.v1";
 const finite = (x: unknown) =>
   typeof x === "number" && Number.isFinite(x) && x >= 0;
 const str = (x: unknown) => typeof x === "string";
@@ -326,8 +327,36 @@ export function loadCharacter(): Character | null {
     upgradeBalance(upgradeExams(upgradeTraining(upgradeProgression(parsed)))),
   );
 }
-export const saveCharacter = (c: Character) =>
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(c));
+export function localRecovery(): { at: string; character: Character } | null {
+  try {
+    const data = JSON.parse(localStorage.getItem(RECOVERY_KEY) || "null");
+    return data && date(data.at) && validateCharacter(data.character)
+      ? data
+      : null;
+  } catch {
+    return null;
+  }
+}
+export function saveCharacter(c: Character) {
+  const data = JSON.stringify(c);
+  // Commit the primary record first. Optional recovery cannot make a successful save fail.
+  localStorage.setItem(STORAGE_KEY, data);
+  try {
+    const saved = localStorage.getItem(RECOVERY_KEY);
+    const snapshot = saved ? JSON.parse(saved) : null;
+    if (
+      !snapshot ||
+      snapshot.character?.id !== c.id ||
+      Date.now() - Date.parse(snapshot.at) >= 86400000
+    )
+      localStorage.setItem(
+        RECOVERY_KEY,
+        JSON.stringify({ at: new Date().toISOString(), character: c }),
+      );
+  } catch {
+    /* Manual export remains available when extra device storage is unavailable. */
+  }
+}
 
 function validCampaign(input: unknown): boolean {
   try {

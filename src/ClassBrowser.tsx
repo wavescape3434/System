@@ -45,6 +45,10 @@ export default function ClassBrowser({
   const s = c ? stats(c) : baseline!,
     xp = c ? totalXP(c) : 0;
   const eligible = (p: ClassPath) => available(p, s, xp, c);
+  const trialAvailable = (p: ClassPath) =>
+    !!c &&
+    !eligible(p) &&
+    qualificationRequirements(p, s, xp, c).every((r) => r.met);
   const filtered = CLASSES.filter(
     (p) =>
       (tier === "all" || p.tier === tier) &&
@@ -165,6 +169,11 @@ export default function ClassBrowser({
             {CLASSES.length} classes · {CLASSES.filter(eligible).length}{" "}
             available
           </h3>
+          {c && (
+            <span className="class-trial-count">
+              {CLASSES.filter(trialAvailable).length} entry trials available
+            </span>
+          )}
         </div>
         <button
           className="button secondary"
@@ -255,6 +264,17 @@ export default function ClassBrowser({
                     ? ` · Lv. ${classLevel(c, p.id)}`
                     : ""}
                 </small>
+                {c && (
+                  <small className="class-entry-status">
+                    {selected === p.id
+                      ? "Active"
+                      : eligible(p)
+                        ? "Unlocked"
+                        : trialAvailable(p)
+                          ? "Entry trial available"
+                          : "Requirements unmet"}
+                  </small>
+                )}
               </span>
               {selected === p.id ? (
                 <Check size={15} />

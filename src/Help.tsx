@@ -153,6 +153,10 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     page: "paths",
     sections: [
       [
+        "Maintaining mastery",
+        "After two passed improvement milestones using the same physical test or repeatable work sample, Maintain mastery unlocks for that test. Match or exceed your best certified performance on a later day. For mental checks, two passed improvement milestones unlock a new-form mastery attempt at your best score (at least 4/5), without a speed requirement. Alternate tests start their own comparison history; XP and previous progress remain retained.",
+      ],
+      [
         "Level 5, 10, 15…",
         "Open Class Paths → Examinations. Both training XP and class/profession work must qualify first. Pending exams hold the milestone level and stat reward; XP is retained. Earlier earned levels are preserved on update.",
       ],

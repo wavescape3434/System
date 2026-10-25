@@ -57,11 +57,30 @@ export function reminderPlan(c: Character, now = new Date()) {
     if (!p[cadence]) continue;
     const requests = pending.filter((o) => o.cadence === cadence);
     if (!requests.length) continue;
-    const at = deadlineReminder(cadence, p.time, now);
-    if (at <= now) continue;
+    let at = deadlineReminder(cadence, p.time, now);
+    let late = false;
+    if (at <= now) {
+      const accepted = (c.takenRequests || []).filter(
+        (r) => requests.some((o) => o.id === r.id) && new Date(r.takenAt) > at,
+      );
+      if (!accepted.length) continue;
+      // A late acceptance still gets a deadline reminder; use its fixed acceptance
+      // time so ordinary app updates cannot keep postponing the notification.
+      const takenAt = Math.max(...accepted.map((r) => Date.parse(r.takenAt)));
+      const preferred = new Date(takenAt);
+      preferred.setHours(hour, minute, 0, 0);
+      at =
+        preferred.getTime() > takenAt
+          ? preferred
+          : new Date(takenAt + 30 * 60000);
+      const end = periodEnd(cadence, now).getTime();
+      if (at.getTime() >= end) at = new Date(end - 5 * 60000);
+      if (at <= now) continue;
+      late = true;
+    }
     plan.push({
       id: cadence === "weekly" ? 71001 : 71002,
-      title: `${cadence === "weekly" ? "Weekly quests" : "Monthly adventures"} end tomorrow`,
+      title: `${cadence === "weekly" ? "Weekly quests" : "Monthly adventures"} ${late && at.toDateString() === new Date(periodEnd(cadence, now).getTime() - 1).toDateString() ? "end today" : "end tomorrow"}`,
       body: `${requests.length} taken request${requests.length === 1 ? "" : "s"} remaining. ${requests[0].title}${requests.length > 1 ? ` and ${requests.length - 1} more.` : "."}`,
       at,
       cadence,

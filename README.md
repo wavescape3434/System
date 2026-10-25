@@ -4,7 +4,7 @@ An Android app for real-world objectives, class and profession progression, bran
 
 ## Try it
 
-Download the prebuilt [Android APK](downloads/the-guild-debug.apk?raw=true), or open the [download instructions](downloads/README.md). Browse the [phone hub](docs/screenshots/guild-hub-mobile.png), [battle preview](docs/screenshots/battle-polished.png), and [screenshot gallery](docs/screenshots/README.md).
+Download the prebuilt [Android APK](downloads/the-guild-debug.apk?raw=true), or open the [download instructions](downloads/README.md). Browse the [phone hub](docs/screenshots/guild-actions-mobile.png), [battle preview](docs/screenshots/battle-polished.png), and [screenshot gallery](docs/screenshots/README.md).
 
 The APK requires Android 7.0 or newer. This is a development build, not a Play Store release. A device may ask you to allow installation from the app used to open the APK. Local builds produce `android/app/build/outputs/apk/debug/app-debug.apk`.
 
@@ -28,6 +28,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 ```
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
+
+## Version 1.11.0
+
+This update fixes exam typing/focus and cross-cadence Taken navigation, brings Guild actions forward, streamlines phone filters, opens readable skill trees, adds earned mastery exams and raw-performance reports, and indexes long histories. Local recovery snapshots and segmented cloud backups improve data recovery. [Changes](docs/update-1.11.md) · [Verification](docs/verification-1.11.md) · [New previews](docs/screenshots/README.md).
+
+Install over the existing app to retain its character: version code **13**, package `com.theguild.personal`, and the same signing certificate. Google login still needs Firebase/OAuth configuration; deploy the updated `firestore.rules` before using the new cloud snapshot format. Live sign-in, deployed cloud rules, and native reminders require project/device verification.
 
 ## Version 1.10.0
 
@@ -65,7 +71,7 @@ Request rewards account for rank and duration. Floor pushups 3×20 remain a C da
 
 Universal work awards player XP once and partial related class, profession, and vocation credit. New class entry requires a trial, banks 25% of relevant earlier work, and starts that class at level 1. Class-specific work certifies further levels while retaining banked XP. Player and class levels remain separate. Technical requests follow the selected profession/vocation; Networking and Data Analysis are absent from global category filters.
 
-**Settings** has General, Training, Assessment, and Account & data pages. Name, units, text size, reduced motion, opening screen, equipment, and locked-request visibility persist. **Gym equipment** enables weighted and pullup-bar requests. Assessment has its own unit selector: cm or separate feet and inches for height. Its bottom button advances Body → INT → WIS → CHA → Results. Performance checks save raw results without automatically changing base stats; baseline recalibration requires a separate confirmation and retains earned points. Account sign-in, export, and restore remain under Settings → Account & data → Account & backups.
+**Settings** has General, Appearance, Training, Assessment, and Account & data pages. Name, units, text size, reduced motion, opening screen, equipment, and locked-request visibility persist. **Gym equipment** enables weighted and pullup-bar requests. Assessment has its own unit selector: cm or separate feet and inches for height. Its bottom button advances Body → INT → WIS → CHA → Results. Performance checks save raw results without automatically changing base stats; baseline recalibration requires a separate confirmation and retains earned points. Account sign-in, export, and restore remain under Settings → Account & data → Account & backups.
 
 ### Help, commitments, and Journey
 
@@ -160,7 +166,7 @@ In this cloud workspace, `scripts/cloud-android.sh` activates the prepared JDK, 
 
 Progress is stored locally in the WebView/browser's private `localStorage`. Clearing app storage or uninstalling can erase it. Export a backup or upload a cloud copy before doing so. Backups contain personal reflections; keep them private. Cloud copies can be removed in your Firebase console. This first version does not offer multi-device merging or automatic background sync.
 
-Objectives and credentials rely on honest self-reporting. The application is personal motivation software and does not validate exercise form, certification authenticity, or health outcomes. Fitness descriptions support gentle and equipment-free alternatives. Notifications are an in-app inbox; there are no push reminders, wearable integrations, automatic certification checks, real-money purchases, or live multiplayer systems in this version.
+Objectives and credentials rely on honest self-reporting. The application is personal motivation software and does not validate exercise form, certification authenticity, or health outcomes. Fitness descriptions support gentle and equipment-free alternatives. Notifications include an attention inbox and configurable Android local reminders. There are no remote push notifications, wearable integrations, automatic certification checks, real-money purchases, or live multiplayer systems in this version.
 
 The current project has progression, combat, and browser workflow tests plus a compiled Android APK. It has not been run on a physical Android device or emulator. Test Google authentication, native backup sharing/import, keyboard and system-bar behavior, and app upgrades on your device before relying on it daily.
 
@@ -181,7 +187,10 @@ The current project has progression, combat, and browser workflow tests plus a c
 - `src/Settings.tsx`, `src/preferences.ts`: persisted display/training preferences and performance checks.
 - `src/Journey.tsx`, `src/journey-events.ts`: automatic history and reports.
 - `src/App.tsx`: navigation, persistence, dialogs, backup flows, native sharing/back button.
-- `src/auth.ts`: Google/Firebase authentication and owner-scoped cloud snapshots.
+- `src/auth.ts`, `src/cloud-backup.ts`: deferred Google/Firebase authentication and owner-scoped segmented cloud snapshots.
+- `src/progression-ledger.ts`: indexed history totals and progression-change detection.
+- `src/performance-history.ts`: protocol-specific raw-performance trends.
+- `src/registration-draft.ts`: recoverable unfinished applications.
 - `android/`: native Android shell and build configuration.
 - `public/`: original guild artwork. Fonts are supplied by Fontsource and retain their packaged licenses.
 

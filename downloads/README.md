@@ -1,4 +1,4 @@
-# Install The Adventurers Guild 1.10.0 on Android
+# Install The Adventurers Guild 1.11.0 on Android
 
 Open `the-guild-debug.apk` in this folder on GitHub, then select **Download raw file** (the download arrow). Open the downloaded APK on your Android phone. Android may ask you to allow installations from your browser or file manager.
 
@@ -19,3 +19,5 @@ For Android reminders, open Settings → General → Request reminders and selec
 [Version 1.9 character roster](../docs/update-1.9.md) · [Build verification](../docs/verification-1.9.md). Choose a sprite in **Settings → Appearance**.
 
 [Version 1.10 pixel art and portraits](../docs/update-1.10.md) · [Verification](../docs/verification-1.10.md).
+
+[Version 1.11 daily-use and progression improvements](../docs/update-1.11.md) · [Verification](../docs/verification-1.11.md).

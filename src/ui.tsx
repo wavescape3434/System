@@ -162,22 +162,55 @@ export function Modal({
   onClose: () => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const closeRef = useRef(onClose);
+  closeRef.current = onClose;
   useEffect(() => {
     const previous = document.activeElement as HTMLElement;
+    const overflow = document.body.style.overflow;
+    const background: { element: HTMLElement; inert: boolean }[] = [];
+    let current: HTMLElement | null = ref.current?.parentElement || null;
+    while (current && current !== document.body) {
+      for (const sibling of current.parentElement?.children || []) {
+        if (sibling !== current && sibling instanceof HTMLElement) {
+          background.push({ element: sibling, inert: sibling.inert });
+          sibling.inert = true;
+        }
+      }
+      current = current.parentElement;
+    }
     ref.current?.focus();
     const listener = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      const dialogs = document.querySelectorAll('[role="dialog"]');
+      if (dialogs[dialogs.length - 1] !== ref.current) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeRef.current();
+      }
       if (e.key === "Tab") {
-        const items = ref.current?.querySelectorAll<HTMLElement>(
-          "button:not(:disabled),input,select,textarea,a[href]",
+        const items = Array.from(
+          ref.current?.querySelectorAll<HTMLElement>(
+            'button:not(:disabled),input:not(:disabled):not([type="hidden"]),select:not(:disabled),textarea:not(:disabled),a[href],[tabindex="0"]',
+          ) || [],
+        ).filter(
+          (el) => el.getClientRects().length && !el.closest("[hidden],[inert]"),
         );
-        if (!items?.length) return;
+        if (!items.length) {
+          e.preventDefault();
+          ref.current?.focus();
+          return;
+        }
         const first = items[0],
           last = items[items.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
+        const initial =
+          document.activeElement === ref.current ||
+          !ref.current?.contains(document.activeElement);
+        if (e.shiftKey && (document.activeElement === first || initial)) {
           e.preventDefault();
           last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
+        } else if (
+          !e.shiftKey &&
+          (document.activeElement === last || initial)
+        ) {
           e.preventDefault();
           first.focus();
         }
@@ -187,10 +220,11 @@ export function Modal({
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", listener);
-      document.body.style.overflow = "";
-      previous?.focus();
+      document.body.style.overflow = overflow;
+      for (const { element, inert } of background) element.inert = inert;
+      if (previous?.isConnected) previous.focus();
     };
-  }, [onClose]);
+  }, []);
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div

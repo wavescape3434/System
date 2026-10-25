@@ -125,10 +125,17 @@ export default function AdventureGame({
         className={`fighter ${unit.hp === 0 ? "down" : ""} ${enemy && index === target ? "targeted" : ""} ${!enemy && index === battle.actor ? "acting" : ""} ${!enemy && index === ally ? "ally-targeted" : ""}`}
         key={unit.id}
         onClick={() => (enemy ? setEnemyTarget(index) : setAllyTarget(index))}
+        aria-pressed={enemy ? index === target : index === ally}
         aria-label={`Target ${unit.name}, ${unit.hp} HP`}
       >
         <div className="fighter-label">
           <b>{unit.name}</b>
+          {enemy &&
+            unit.boss &&
+            battle.phase === "player" &&
+            battle.round % 3 === 0 && (
+              <span className="enemy-intent">Heavy strike</span>
+            )}
           {unit.guard && <Shield size={12} />}
         </div>
         <Progress value={unit.hp} max={unit.maxHp} label={`${unit.name} HP`} />
@@ -267,6 +274,7 @@ export default function AdventureGame({
               {actor.abilities.map((skill) => (
                 <button
                   key={skill.id}
+                  title={COMBAT_EFFECTS[skill.type]?.description}
                   disabled={actor.mp < skill.cost}
                   onClick={() =>
                     command({

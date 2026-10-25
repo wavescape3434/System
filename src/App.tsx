@@ -1,3 +1,4 @@
+import { progressionChanged } from "./progression-ledger";
 import {
   syncReminders,
   forgetReminderSchedule,
@@ -23,7 +24,6 @@ import Help from "./Help";
 import Journey from "./Journey";
 import { recordJourney } from "./journey-events";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 import {
   Bell,
@@ -75,9 +75,10 @@ import {
   saveCharacter,
   validateCharacter,
   STORAGE_KEY,
+  localRecovery,
 } from "./storage";
 import {
-  auth,
+  watchGoogleAccount,
   loginGoogle,
   logoutGoogle,
   uploadCharacter,
@@ -244,10 +245,15 @@ export default function App() {
     setCloudCandidate(null);
     setImportCandidate(null);
   }, []);
-  useEffect(() => {
-    if (!auth) return;
-    return onAuthStateChanged(auth, setUser);
-  }, []);
+  useEffect(
+    () =>
+      watchGoogleAccount(setUser, () =>
+        notify(
+          "Google account status could not be refreshed. Your local character is saved.",
+        ),
+      ),
+    [notify],
+  );
   useEffect(() => {
     const t = setInterval(() => tick((n) => n + 1), 30000);
     return () => clearInterval(t);
@@ -274,9 +280,12 @@ export default function App() {
   const update = useCallback(
     (next: Character, track = true) => {
       try {
-        const prepared = awardSkills(
-          upgradeCalendar(upgradeBalance(upgradeExams(upgradeTraining(next)))),
+        const migrated = upgradeCalendar(
+          upgradeBalance(upgradeExams(upgradeTraining(next))),
         );
+        const prepared = progressionChanged(characterRef.current, migrated)
+          ? awardSkills(migrated)
+          : migrated;
         const awarded = track
           ? recordJourney(characterRef.current, prepared)
           : prepared;
@@ -332,6 +341,15 @@ export default function App() {
       );
       notify("Backup exported.");
     });
+  const offerLocalRecovery = () => {
+    const snapshot = localRecovery();
+    if (!snapshot) {
+      notify("No valid local recovery snapshot is available.");
+      return;
+    }
+    setDialog(null);
+    setImportCandidate(snapshot.character);
+  };
   const props = c
     ? { c, update, navigate, openObjective, notify, section }
     : null;
@@ -363,6 +381,11 @@ export default function App() {
           >
             Restore a valid backup
           </button>
+          {localRecovery() && (
+            <button className="button secondary" onClick={offerLocalRecovery}>
+              Restore local recovery snapshot
+            </button>
+          )}
           <button className="text-button" onClick={() => setDialog("reset")}>
             Create a new character
           </button>
@@ -382,8 +405,9 @@ export default function App() {
         <Onboarding
           onHelp={() => navigate("help")}
           onCreate={(next) => {
-            update(next);
-            navigate("guild");
+            const saved = update(next);
+            if (saved) navigate("guild");
+            return saved;
           }}
           onGoogle={() => setDialog("account")}
         />
@@ -561,6 +585,7 @@ export default function App() {
                       update={update}
                       notify={notify}
                       onAccount={() => setDialog("account")}
+                      onRecovery={offerLocalRecovery}
                     />
                   ) : (
                     <Help navigate={navigate} />
@@ -721,9 +746,7 @@ export default function App() {
           <div className="objective-modal-meta">
             <Tag>{objective.category}</Tag>
             {objective.rank && <Tag tone="gold">{objective.rank} rank</Tag>}
-            <Tag tone="gold">
-              +{objective.xp} {objective.scope || "class"} XP
-            </Tag>
+            <Tag tone="gold">+{objective.xp} player XP</Tag>
             {objective.gold !== undefined && (
               <Tag tone="gold">+{objective.gold} gold</Tag>
             )}
@@ -767,47 +790,52 @@ export default function App() {
               );
             })()}
           {objective.taskVersion === 2 && (
-            <div className="request-credit-preview">
-              <Tag>Player +{objective.xp} XP</Tag>
-              {Object.entries(
-                classCreditRewards(
-                  c,
-                  objective,
-                  objective.targetClass ||
-                    c.takenRequests?.find((r) => r.id === objective.id)
-                      ?.classId ||
-                    c.activeClass,
-                ),
-              ).map(([id, xp]) => (
-                <Tag key={id}>
-                  {id.replaceAll("-", " ")} +{xp} XP
+            <details className="request-credit-distribution">
+              <summary>Progression credit</summary>
+              <div className="request-credit-preview">
+                <Tag>
+                  {objective.scope || "class"} +{objective.xp} XP
                 </Tag>
-              ))}
-              {(() => {
-                const request = c.takenRequests?.find(
-                  (r) => r.id === objective.id,
-                );
-                const credit = universalCareerCredits(
-                  c,
-                  objective,
-                  request?.profession || c.profession,
-                  request ? request.vocationId : c.vocation,
-                );
-                return (
-                  <>
-                    {credit.professionCredit && (
-                      <Tag>
-                        {credit.professionCredit.name} +
-                        {credit.professionCredit.xp} XP
-                      </Tag>
-                    )}
-                    {credit.vocationCredit && (
-                      <Tag>Vocation +{credit.vocationCredit.xp} XP</Tag>
-                    )}
-                  </>
-                );
-              })()}
-            </div>
+                {Object.entries(
+                  classCreditRewards(
+                    c,
+                    objective,
+                    objective.targetClass ||
+                      c.takenRequests?.find((r) => r.id === objective.id)
+                        ?.classId ||
+                      c.activeClass,
+                  ),
+                ).map(([id, xp]) => (
+                  <Tag key={id}>
+                    {id.replaceAll("-", " ")} +{xp} XP
+                  </Tag>
+                ))}
+                {(() => {
+                  const request = c.takenRequests?.find(
+                    (r) => r.id === objective.id,
+                  );
+                  const credit = universalCareerCredits(
+                    c,
+                    objective,
+                    request?.profession || c.profession,
+                    request ? request.vocationId : c.vocation,
+                  );
+                  return (
+                    <>
+                      {credit.professionCredit && (
+                        <Tag>
+                          {credit.professionCredit.name} +
+                          {credit.professionCredit.xp} XP
+                        </Tag>
+                      )}
+                      {credit.vocationCredit && (
+                        <Tag>Vocation +{credit.vocationCredit.xp} XP</Tag>
+                      )}
+                    </>
+                  );
+                })()}
+              </div>
+            </details>
           )}
           {objective.taskVersion === 2 &&
             taskRequirements(c, objective).length > 0 && (
@@ -935,7 +963,7 @@ export default function App() {
             <>
               <button
                 className="button secondary full"
-                disabled={busy}
+                disabled={busy || !googleConfigured}
                 onClick={() =>
                   run(async () => {
                     await loginGoogle();

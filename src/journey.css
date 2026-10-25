@@ -580,7 +580,7 @@
 .attribute-report > div:not(.section-heading) > span {
   text-align: right;
   font-size: 10px;
-  color: #8f7d56;
+  color: #625435;
 }
 .attribute-report strong {
   color: #5c7b4e;
@@ -775,4 +775,62 @@
   .calendar-scroll {
     justify-content: flex-start;
   }
+}
+
+.calendar-days {
+  grid-template-rows: repeat(7, 44px);
+  grid-auto-columns: 44px;
+  gap: 4px;
+  width: max-content;
+}
+.calendar-days > button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 3px;
+}
+.calendar-scroll {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding-bottom: 12px;
+}
+.journey-page,
+.journey-chart-grid,
+.performance-report,
+.performance-series,
+.activity-calendar,
+.progress-chart {
+  min-width: 0;
+  max-width: 100%;
+}
+.chart-readout > span,
+.heatmap-legend,
+.path-report-row b {
+  color: #715c36;
+}
+.progress-chart svg text {
+  font-size: 20px;
+  fill: #675436;
+}
+.chart-data > summary {
+  color: #69552f;
+  font-size: 12px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.journey-record-totals span,
+.attribute-report .tag,
+.report-class small {
+  color: #675436;
+}
+.report-class > b,
+.attribute-report > div > span,
+.attribute-report strong,
+.journey-record-totals small {
+  color: #526238;
 }

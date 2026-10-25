@@ -1,4 +1,5 @@
 import { ARCHETYPES } from "./class-catalog";
+import { useViewState } from "./useViewState";
 import { CAREER_CATEGORIES, careerCategory } from "./careers";
 import { levelFromXP } from "./progression";
 import { COMBAT_EFFECTS } from "./class-roles";
@@ -36,14 +37,20 @@ export default function SkillTree({
   update: (c: Character) => boolean;
   onCertificate: () => void;
 }) {
-  const [category, setCategory] = useState("universal"),
-    [listMode, setListMode] = useState(false),
-    [search, setSearch] = useState(""),
-    [branch, setBranch] = useState("current"),
+  const key = `${c.id}.${c.activeClass}.tree`;
+  const [category, setCategory] = useViewState<string>(
+      `${key}.category`,
+      "universal",
+      false,
+      ["universal", "class", "profession"],
+    ),
+    [listMode, setListMode] = useViewState<boolean>(`${key}.list`, false),
+    [search, setSearch] = useViewState<string>(`${key}.search`, ""),
+    [branch, setBranch] = useViewState<string>(`${key}.branch`, "current"),
     [selected, setSelected] = useState<Skill | null>(null),
-    [zoom, setZoom] = useState(0.4);
+    [zoom, setZoom] = useState(1);
   const treeRef = useRef<HTMLDivElement>(null),
-    zoomRef = useRef(0.4),
+    zoomRef = useRef(1),
     pointers = useRef(new Map<number, { x: number; y: number }>()),
     gesture = useRef<{
       distance: number;
@@ -110,8 +117,49 @@ export default function SkillTree({
     setZoom(next);
     requestAnimationFrame(() => el.scrollTo({ left: 0, top: 0 }));
   };
+  const centerAvailable = () => {
+    const el = treeRef.current;
+    if (!el) return;
+    const next = el.clientWidth < 700 ? 1 : 0.9;
+    const node =
+      [...list]
+        .filter((s) => !hasSkill(c, s))
+        .sort(
+          (a, b) =>
+            skillRequirements(c, a).length - skillRequirements(c, b).length ||
+            skillTier(a) - skillTier(b) ||
+            a.cost - b.cost,
+        )[0] || list[0];
+    zoomRef.current = next;
+    setZoom(next);
+    requestAnimationFrame(() =>
+      el.scrollTo({
+        left: Math.max(0, (node?.x || 0) * next - el.clientWidth / 2),
+        top: Math.max(0, (node?.y || 0) * next - el.clientHeight / 2),
+      }),
+    );
+  };
+  const positionKey = `guild.view.${key}.position.${category}.${branch}`;
   useEffect(() => {
-    fitTree();
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(positionKey) || "null");
+      if (
+        saved &&
+        [saved.zoom, saved.left, saved.top].every(Number.isFinite) &&
+        saved.zoom >= 0.12 &&
+        saved.zoom <= 1.6
+      ) {
+        zoomRef.current = saved.zoom;
+        setZoom(saved.zoom);
+        requestAnimationFrame(() =>
+          treeRef.current?.scrollTo({ left: saved.left, top: saved.top }),
+        );
+        return;
+      }
+    } catch {
+      /* A fresh readable view is always available. */
+    }
+    centerAvailable();
   }, [category, branch, worldHeight, worldWidth]);
   useEffect(() => {
     const el = treeRef.current;
@@ -176,9 +224,13 @@ export default function SkillTree({
             </button>
           ))}
         </div>
-        <button className="button secondary" onClick={onCertificate}>
+        <button
+          className="button secondary tree-credential"
+          aria-label="Record credential"
+          onClick={onCertificate}
+        >
           <Plus size={15} />
-          Record credential
+          <span>Record credential</span>
         </button>
       </div>
       <div className="tree-info">
@@ -265,6 +317,7 @@ export default function SkillTree({
           ].map(([id, name]) => (
             <button
               key={id}
+              aria-label={`Find ${name}`}
               onClick={() => {
                 const node = list.find((s) => s.id === `martial-${id}-1`),
                   el = treeRef.current;
@@ -276,12 +329,20 @@ export default function SkillTree({
                   });
               }}
             >
-              Find {name}
+              {name}
             </button>
           ))}
         </div>
       )}
       <div className="tree-view-switch">
+        <button
+          onClick={() => {
+            setListMode(false);
+            centerAvailable();
+          }}
+        >
+          Available skills
+        </button>
         <button aria-pressed={!listMode} onClick={() => setListMode(false)}>
           Tree
         </button>
@@ -332,6 +393,20 @@ export default function SkillTree({
       <div
         style={listMode ? { display: "none" } : undefined}
         ref={treeRef}
+        onScroll={(e) => {
+          try {
+            sessionStorage.setItem(
+              positionKey,
+              JSON.stringify({
+                zoom: zoomRef.current,
+                left: e.currentTarget.scrollLeft,
+                top: e.currentTarget.scrollTop,
+              }),
+            );
+          } catch {
+            /* Optional view state. */
+          }
+        }}
         onClickCapture={(e) => {
           if (moved.current) {
             e.preventDefault();

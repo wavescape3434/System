@@ -4,8 +4,19 @@ service cloud.firestore {
     match /characters/{userId} {
       allow read, delete: if request.auth != null && request.auth.uid == userId;
       allow create, update: if request.auth != null && request.auth.uid == userId
-        && request.resource.data.keys().hasOnly(['character', 'updatedAt'])
-        && request.resource.data.character.version == 1;
+        && ((request.resource.data.keys().hasOnly(['character', 'updatedAt'])
+          && request.resource.data.character.version == 1)
+        || (request.resource.data.keys().hasOnly(['snapshot', 'updatedAt'])
+          && request.resource.data.snapshot.format == 2
+          && request.resource.data.snapshot.chunks > 0
+          && request.resource.data.snapshot.chunks <= 2048));
+      match /snapshots/{generation}/chunks/{chunkId} {
+        allow read, delete: if request.auth != null && request.auth.uid == userId;
+        allow create: if request.auth != null && request.auth.uid == userId
+          && request.resource.data.keys().hasOnly(['data'])
+          && request.resource.data.data is string
+          && request.resource.data.data.size() <= 80000;
+      }
     }
   }
 }

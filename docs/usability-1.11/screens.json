@@ -1,0 +1,56 @@
+{
+  "version": "1.11.0",
+  "timezone": "America/Denver",
+  "errors": [],
+  "screens": [
+    {
+      "name": "guild-actions-mobile",
+      "width": 390,
+      "overflow": false,
+      "visibleWholeCards": 0,
+      "violations": []
+    },
+    {
+      "name": "requests-streamlined-mobile",
+      "width": 390,
+      "overflow": false,
+      "visibleWholeCards": 4,
+      "violations": []
+    },
+    {
+      "name": "requests-all-taken-mobile",
+      "width": 390,
+      "overflow": false,
+      "visibleWholeCards": 4,
+      "violations": []
+    },
+    {
+      "name": "readable-tree-mobile",
+      "width": 390,
+      "overflow": false,
+      "visibleWholeCards": 0,
+      "violations": []
+    },
+    {
+      "name": "performance-reports-mobile",
+      "width": 390,
+      "overflow": false,
+      "visibleWholeCards": 0,
+      "violations": []
+    },
+    {
+      "name": "class-next-step-mobile",
+      "width": 390,
+      "overflow": false,
+      "visibleWholeCards": 0,
+      "violations": []
+    },
+    {
+      "name": "mastery-exam-mobile",
+      "width": 390,
+      "overflow": false,
+      "visibleWholeCards": 0,
+      "violations": []
+    }
+  ]
+}

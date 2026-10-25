@@ -1,3 +1,4 @@
+import { classPractice } from "./class-practice";
 import { periodStart, adventureConditionMet } from "./calendar-goals";
 import { habitRequests, balanceRequest } from "./adventure-requests";
 import { requestReward } from "./request-balance";
@@ -771,9 +772,11 @@ export function rankedObjectives(
       o.title = o.id.endsWith("technique-daily")
         ? `${CLASSES.find((p) => p.id === c.activeClass)!.name} technique check`
         : `${CLASSES.find((p) => p.id === c.activeClass)!.name} commission`;
-      o.description = o.id.endsWith("technique-daily")
-        ? "Independently review one technique using a recording, worked example, or self-check rubric. Make and document one correction."
-        : `Complete individual practice toward this class goal: ${CLASSES.find((p) => p.id === c.activeClass)!.goal} Use a recording, simulation, or checked example to demonstrate a correction or application; choose the next progression.`;
+      o.description = classPractice(
+        CLASSES.find((p) => p.id === c.activeClass)!,
+        c,
+        o.id.endsWith("technique-daily"),
+      );
       o.kind = undefined;
     }
   const filtered = list.filter(

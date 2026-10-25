@@ -1,0 +1,14 @@
+{
+  "version": "1.11.0",
+  "versionCode": 13,
+  "package": "com.theguild.personal",
+  "bytes": 12441266,
+  "sha256": "35cc33f82b383d1a85cb5a0d4b46739096e25f1a95ae20bd95129882dcdd4d58",
+  "matchingWebFiles": 37,
+  "selectableAppearances": 24,
+  "unitChecks": 169,
+  "browserWorkflows": 47,
+  "focusedUIRegressions": 7,
+  "classViewRegressions": 4,
+  "scannedPhoneViews": 7
+}

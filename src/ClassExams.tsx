@@ -11,7 +11,9 @@ import {
   submitMentalExam,
   usedExamForms,
   workProtocolId,
+  masteryStandard,
 } from "./exams";
+import type { ExamRoute } from "./exam-rules";
 import type { ExamTarget } from "./exams";
 import type { MentalStat } from "./exam-bank";
 import MentalCheck from "./MentalCheck";
@@ -27,7 +29,8 @@ export default function ClassExams({
     [protocol, setProtocol] = useState(""),
     [raw, setRaw] = useState(""),
     [note, setNote] = useState(""),
-    [mode, setMode] = useState("quiz");
+    [mode, setMode] = useState("quiz"),
+    [route, setRoute] = useState<ExamRoute>("improvement");
   const targets = examTargets(c),
     physical = !!target && ["STR", "DEX", "CON"].includes(target.stat),
     p = FITNESS_PROTOCOLS.find((p) => p.id === protocol),
@@ -59,6 +62,19 @@ export default function ClassExams({
       : imperial && p?.unit === "metres"
         ? "yards"
         : p?.unit || "correct outcomes / 10 minutes";
+  const mastery = target
+    ? masteryStandard(
+        c,
+        target,
+        physical
+          ? protocol
+          : mode === "work"
+            ? workProtocolId(target.stat, note)
+            : undefined,
+      )
+    : null;
+  const activeRoute =
+    route === "mastery" && mastery?.eligible ? "mastery" : "improvement";
   const last = target
     ? (c.exams || [])
         .filter(
@@ -96,6 +112,7 @@ export default function ClassExams({
                 setRaw("");
                 setNote("");
                 setMode("quiz");
+                setRoute("improvement");
               }}
             >
               Open {t.name} exam
@@ -135,6 +152,37 @@ export default function ClassExams({
           onClose={() => setTarget(null)}
         >
           <Tag>Stat milestone · {target.stat}</Tag>
+          {mastery?.eligible && (
+            <div
+              className="exam-route"
+              role="group"
+              aria-label="Examination route"
+            >
+              <button
+                className="button secondary"
+                aria-pressed={activeRoute === "improvement"}
+                onClick={() => setRoute("improvement")}
+              >
+                Improvement
+              </button>
+              <button
+                className="button secondary"
+                aria-pressed={activeRoute === "mastery"}
+                onClick={() => setRoute("mastery")}
+              >
+                Maintain mastery
+              </button>
+            </div>
+          )}
+          {activeRoute === "mastery" && mastery && (
+            <p className="notice">
+              Maintain{" "}
+              {physical || mode === "work"
+                ? `${Math.round(mastery.value * factor * 10) / 10} ${unit}${p?.lower ? " or less" : " or more"}`
+                : `${Math.max(4, mastery.value)}/5 on a new form`}
+              . Submit on a later day than your last passed exam.
+            </p>
+          )}
           {last && (
             <div role="status" className={`notice exam-result ${last.status}`}>
               <b>
@@ -149,8 +197,10 @@ export default function ClassExams({
               )}
               {last.status === "failed" && (
                 <p>
-                  The new result must improve on the previous baseline. XP is
-                  retained.
+                  {last.route === "mastery"
+                    ? "The mastery standard must be met on a later day."
+                    : "The new result must improve on the previous baseline."}{" "}
+                  XP is retained.
                 </p>
               )}
             </div>
@@ -204,11 +254,13 @@ export default function ClassExams({
                               ? ` · ${Math.round(old.durationMs / 1000)} seconds`
                               : ""}
                           </b>
-                          <p>
-                            Score at least 4/5 and improve accuracy, or retain
-                            accuracy and finish at least 5% faster. Use a
-                            later-day attempt.
-                          </p>
+                          {activeRoute === "improvement" && (
+                            <p>
+                              Score at least 4/5 and improve accuracy, or retain
+                              accuracy and finish at least 5% faster. Use a
+                              later-day attempt.
+                            </p>
+                          )}
                         </>
                       ) : (
                         <p>This first check records the comparison baseline.</p>
@@ -219,8 +271,13 @@ export default function ClassExams({
                     key={`${target.owner}-${target.milestone}`}
                     stat={target.stat as MentalStat}
                     usedForms={usedExamForms(c)}
+                    challenge={mastery?.challenge || 1}
                     onStart={(f) => update(beginExam(c, target, f))}
-                    onFinish={(r) => update(submitMentalExam(c, target, r))}
+                    onFinish={(r) =>
+                      update(
+                        submitMentalExam(c, target, r, new Date(), activeRoute),
+                      )
+                    }
                   />
                 </>
               ) : (
@@ -234,6 +291,7 @@ export default function ClassExams({
                         onChange={(e) => {
                           setProtocol(e.target.value);
                           setRaw("");
+                          setRoute("improvement");
                         }}
                       >
                         {FITNESS_PROTOCOLS.filter(
@@ -251,7 +309,7 @@ export default function ClassExams({
                       ? p?.instructions
                       : "Choose a repeatable solo work sample: verified correct problems for INT, evidence-based decisions for WIS, or clearly conveyed points in a recorded explanation for CHA. Use a fixed ten-minute window and a documented marking guide."}
                   </p>
-                  {before && (
+                  {before && activeRoute === "improvement" && (
                     <div className="exam-comparison">
                       <b>
                         Baseline: {Math.round(before.value! * factor * 10) / 10}{" "}
@@ -339,6 +397,8 @@ export default function ClassExams({
                             : workProtocolId(target.stat, note),
                           Number(raw) / factor,
                           note,
+                          new Date(),
+                          activeRoute,
                         ),
                       )
                     }

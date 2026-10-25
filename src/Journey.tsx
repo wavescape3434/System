@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { performanceHistory } from "./performance-history";
 import {
   Check,
   TrendingUp,
@@ -54,6 +55,10 @@ export default function Journey({ c }: { c: Character }) {
     group.set(key, [...(group.get(key) || []), i]);
   }
   const calendar = useMemo(() => activityCalendar(c), [c, day]);
+  const performance = useMemo(
+    () => performanceHistory(c, report.start),
+    [c, range, day],
+  );
   const max = Math.max(1, ...calendar.map((d) => d.count));
   return (
     <div className="journey-page">
@@ -277,6 +282,42 @@ export default function Journey({ c }: { c: Character }) {
         </>
       ) : (
         <>
+          <section
+            className="performance-report"
+            aria-label="Real-world performance"
+          >
+            <div className="section-heading">
+              <h2>Real-world performance</h2>
+              <Tag>{performance.length} recorded tests</Tag>
+            </div>
+            {performance.length ? (
+              <div className="journey-chart-grid">
+                {performance.map((series) => (
+                  <div key={series.id} className="performance-series">
+                    <div className="performance-change">
+                      <b>
+                        {series.points[0].value} → {series.points.at(-1)!.value}{" "}
+                        {series.unit}
+                      </b>
+                      <span>
+                        {series.points.length} checks
+                        {series.lower ? " · Lower is better" : ""}
+                      </span>
+                    </div>
+                    <ProgressChart
+                      title={series.title}
+                      unit={series.unit}
+                      points={series.points}
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <section className="panel">
+                <p>No performance checks in this timeframe.</p>
+              </section>
+            )}
+          </section>
           <div className="journey-chart-grid">
             <ProgressChart
               title="Experience over time"
@@ -474,7 +515,7 @@ function ProgressChart({
       </div>
       <svg
         viewBox={`0 0 ${width} ${height}`}
-        role="img"
+        role="group"
         aria-label={`${title}, ${points.length} periods`}
       >
         <defs>
@@ -526,10 +567,20 @@ function ProgressChart({
             onMouseEnter={() => setSelected(p.key)}
             onClick={() => setSelected(p.key)}
             onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") setSelected(p.key);
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setSelected(p.key);
+              }
             }}
           >
             <circle cx={x(i)} cy={y(p.value)} r="14" fill="transparent" />
+            <circle
+              cx={x(i)}
+              cy={y(p.value)}
+              r="3"
+              fill="#416b4e"
+              pointerEvents="none"
+            />
             {selected === p.key && (
               <>
                 <line

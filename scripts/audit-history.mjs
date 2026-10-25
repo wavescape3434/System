@@ -4,7 +4,7 @@ const browser = await chromium.launch({
   executablePath: "/usr/bin/chromium",
   args: ["--no-sandbox"],
 });
-const out = "docs/reviews/2026-10-24";
+const out = process.env.AUDIT_OUTPUT || "docs/reviews/2026-10-24";
 await mkdir(out, { recursive: true });
 try {
   const page = await browser.newPage({ timezoneId: "America/Denver" });

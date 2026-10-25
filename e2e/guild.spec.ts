@@ -231,7 +231,7 @@ test("monthly requests include earlier logged practice and expire at the calenda
   await page.getByRole("button", { name: /^Taken/ }).click();
   await page.getByRole("button", { name: /^Monthly adventures/ }).click();
   await expect(
-    page.getByRole("heading", { name: "No taken requests", exact: true }),
+    page.getByRole("heading", { name: "No monthly requests", exact: true }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Guild board", exact: true }).click();
   await page

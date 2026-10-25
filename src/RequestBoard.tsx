@@ -1,3 +1,4 @@
+import { useViewState } from "./useViewState";
 import { careerCategory } from "./careers";
 import { useState, useEffect, useMemo } from "react";
 import {
@@ -10,6 +11,7 @@ import {
   Compass,
   Shield,
   Users,
+  SlidersHorizontal,
 } from "lucide-react";
 import type { Character, Objective, Cadence } from "./domain";
 import {
@@ -25,7 +27,7 @@ import {
 } from "./domain";
 import { groupRequests } from "./objective-catalog";
 import { allowedRanks } from "./request-balance";
-import { TASK_NAMES } from "./task-ranks";
+import { TASK_RANKS, TASK_NAMES } from "./task-ranks";
 import { periodStart, periodEnd } from "./calendar-goals";
 import { Tag } from "./ui";
 export default function RequestBoard({
@@ -40,15 +42,46 @@ export default function RequestBoard({
   notify: (s: string) => void;
   section?: string;
 }) {
-  const [view, setView] = useState(section?.split(":")[0] || "board"),
-    [tab, setTab] = useState<Cadence>(
-      (section?.split(":")[1] as Cadence) || "daily",
+  const key = `${c.id}.requests`;
+  const [view, setView] = useViewState<string>(
+      `${key}.view`,
+      section?.split(":")[0] || "board",
+      !!section,
+      ["board", "taken", "pinned", "suggested"],
     ),
-    [category, setCategory] = useState("all"),
-    [rank, setRank] = useState("all"),
-    [query, setQuery] = useState(""),
-    [focus, setFocus] = useState("all"),
-    [sort, setSort] = useState("relevant");
+    [tab, setTab] = useViewState<Cadence | "all">(
+      `${key}.cadence`,
+      (section?.split(":")[1] as Cadence | "all") ||
+        (section?.startsWith("taken") ? "all" : "daily"),
+      !!section,
+      ["all", "daily", "weekly", "monthly"],
+    ),
+    [category, setCategory] = useViewState<string>(
+      `${key}.category`,
+      "all",
+      !!section,
+    ),
+    [rank, setRank] = useViewState<string>(`${key}.rank`, "all", !!section),
+    [query, setQuery] = useViewState<string>(`${key}.query`, "", !!section),
+    [focus, setFocus] = useViewState<string>(`${key}.focus`, "all", !!section),
+    [sort, setSort] = useViewState<string>(
+      `${key}.sort`,
+      "relevant",
+      !!section,
+    ),
+    [filtersOpen, setFiltersOpen] = useState(false);
+  const cadence = view === "taken" ? tab : tab === "all" ? "daily" : tab;
+  const ranks = cadence === "all" ? TASK_RANKS : allowedRanks(cadence);
+  const filterCount =
+    [category, rank, focus].filter((v) => v !== "all").length +
+    Number(sort !== "relevant");
+  const resetFilters = () => {
+    setCategory("all");
+    setRank("all");
+    setFocus("all");
+    setQuery("");
+    setSort("relevant");
+  };
   const [limit, setLimit] = useState(30);
   useEffect(
     () => setLimit(30),
@@ -78,10 +111,12 @@ export default function RequestBoard({
       : o.scope || "class";
   const filtered = source.filter(
     (o) =>
-      o.cadence === tab &&
-      (category === "trials"
-        ? o.kind === "class-trial"
-        : o.kind !== "class-trial") &&
+      (cadence === "all" || o.cadence === cadence) &&
+      (view === "taken" && category === "all"
+        ? true
+        : category === "trials"
+          ? o.kind === "class-trial"
+          : o.kind !== "class-trial") &&
       (rank === "all" || o.rank === rank) &&
       (focus === "all" || o.stat === focus) &&
       (category === "all" ||
@@ -125,7 +160,8 @@ export default function RequestBoard({
         ? pins.filter((p) => p !== id)
         : [...pins, id],
     });
-  const end = new Date(periodEnd(tab).getTime() - 1),
+  const periodCadence = cadence === "all" ? "daily" : cadence;
+  const end = new Date(periodEnd(periodCadence).getTime() - 1),
     fmt = (d: Date) =>
       d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
   return (
@@ -140,17 +176,31 @@ export default function RequestBoard({
           <button
             key={id}
             className={view === id ? "active" : ""}
-            onClick={() => setView(id)}
+            onClick={() => {
+              setView(id);
+              if (id === "taken") {
+                setTab("all");
+                resetFilters();
+              }
+            }}
           >
             {title}
           </button>
         ))}
       </div>
-      <div className="tabs">
+      <div className="tabs request-cadence-tabs">
+        {view === "taken" && (
+          <button
+            className={tab === "all" ? "active" : ""}
+            onClick={() => setTab("all")}
+          >
+            All taken <span>{taken.length}</span>
+          </button>
+        )}
         {(["daily", "weekly", "monthly"] as Cadence[]).map((t) => (
           <button
             key={t}
-            className={tab === t ? "active" : ""}
+            className={cadence === t ? "active" : ""}
             onClick={() => {
               setTab(t);
               setRank("all");
@@ -167,7 +217,7 @@ export default function RequestBoard({
           </button>
         ))}
       </div>
-      <div className="request-tools">
+      <div className="request-discovery">
         <label className="request-search">
           <Search size={18} />
           <input
@@ -178,6 +228,20 @@ export default function RequestBoard({
             onChange={(e) => setQuery(e.target.value)}
           />
         </label>
+        <button
+          className="button secondary request-filter-toggle"
+          aria-expanded={filtersOpen}
+          aria-controls="request-filters"
+          onClick={() => setFiltersOpen(!filtersOpen)}
+        >
+          <SlidersHorizontal size={17} /> Filters
+          {filterCount ? ` (${filterCount})` : ""}
+        </button>
+      </div>
+      <div
+        id="request-filters"
+        className={`request-tools request-filter-fields ${filtersOpen ? "open" : ""}`}
+      >
         <label className="objective-filter">
           Category
           <select
@@ -207,10 +271,8 @@ export default function RequestBoard({
             value={rank}
             onChange={(e) => setRank(e.target.value)}
           >
-            <option value="all">
-              F–{allowedRanks(tab).at(-1)} · All ranks
-            </option>
-            {allowedRanks(tab).map((r) => (
+            <option value="all">F–{ranks.at(-1)} · All ranks</option>
+            {ranks.map((r) => (
               <option key={r} value={r}>
                 {r} · {TASK_NAMES[r]}
               </option>
@@ -244,6 +306,11 @@ export default function RequestBoard({
           </select>
         </label>
       </div>
+      {(filterCount > 0 || query) && (
+        <button className="text-button request-clear" onClick={resetFilters}>
+          Clear filters
+        </button>
+      )}
       <div className="section-heading page-section-heading">
         <h3>
           {view === "taken"
@@ -252,15 +319,17 @@ export default function RequestBoard({
               ? "Pinned requests"
               : view === "suggested"
                 ? "Suggested requests"
-                : tab === "daily"
+                : cadence === "daily"
                   ? "Daily tasks"
-                  : tab === "weekly"
+                  : cadence === "weekly"
                     ? "Weekly quests"
                     : "Monthly adventures"}
         </h3>
         <Tag>
-          {groups.length} requests · {fmt(periodStart(tab))}
-          {tab !== "daily" ? ` – ${fmt(end)}` : ""}
+          {groups.length} requests
+          {cadence === "all"
+            ? " · All taken"
+            : ` · ${fmt(periodStart(cadence))}${cadence !== "daily" ? ` – ${fmt(end)}` : ""}`}
         </Tag>
       </div>
       <div className="guild-request-board">
@@ -298,6 +367,7 @@ export default function RequestBoard({
                 className={`panel objective-card guild-request-paper compact-request ${done ? "completed" : ""} ${accepted ? "accepted" : ""}`}
               >
                 <span
+                  role="img"
                   className="request-scope-icon"
                   title={scope}
                   aria-label={`${scope} request`}
@@ -305,6 +375,7 @@ export default function RequestBoard({
                   <Scope size={18} />
                 </span>
                 <span
+                  role="img"
                   className="request-realm-icon"
                   title={hybrid ? "Real world + adventure" : "Real world"}
                   aria-label={
@@ -328,6 +399,9 @@ export default function RequestBoard({
                     ? chosen.rank
                     : `${g.variants[0].rank}–${g.variants.at(-1)!.rank}`}
                 </span>
+                <span className="request-state">
+                  {done ? "Completed" : accepted ? "Taken" : ""}
+                </span>
                 <button
                   className="compact-details"
                   aria-label={`Show details for ${g.title}`}
@@ -338,6 +412,7 @@ export default function RequestBoard({
                 <button
                   className={`request-pin-toggle ${pins.includes(g.id) ? "pinned" : ""}`}
                   aria-label={`${pins.includes(g.id) ? "Unpin" : "Pin"} ${g.title}`}
+                  aria-pressed={pins.includes(g.id)}
                   onClick={() => pin(g.id)}
                 >
                   <Star
@@ -352,8 +427,23 @@ export default function RequestBoard({
         {!groups.length && (
           <div className="empty-request-board">
             <h3>
-              {view === "taken" ? "No taken requests" : "No matching requests"}
+              {view === "taken"
+                ? cadence === "all"
+                  ? "No taken requests"
+                  : `No ${cadence} requests`
+                : "No matching requests"}
             </h3>
+            {view === "taken" && cadence !== "all" && taken.length > 0 && (
+              <button
+                className="button secondary"
+                onClick={() => {
+                  setTab("all");
+                  resetFilters();
+                }}
+              >
+                Show all taken requests
+              </button>
+            )}
           </div>
         )}
       </div>
@@ -362,7 +452,7 @@ export default function RequestBoard({
           className="button secondary request-load-more"
           onClick={() => setLimit((n) => n + 30)}
         >
-          Show {Math.min(12, groups.length - limit)} more
+          Show {Math.min(30, groups.length - limit)} more
         </button>
       )}
     </>
