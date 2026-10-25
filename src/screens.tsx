@@ -1,3 +1,8 @@
+import { loginReward, claimLoginReward, LOGIN_REWARDS } from "./login-rewards";
+import { campaign } from "./rpg";
+import { examTargets } from "./exams";
+import { periodEnd } from "./calendar-goals";
+import { requestProgress } from "./training-tasks";
 import RequestBoard from "./RequestBoard";
 import ClassExams from "./ClassExams";
 import { displayAssessmentResults } from "./metrics";
@@ -15,9 +20,7 @@ import {
   ChevronRight,
   Clock3,
   Plus,
-  Sparkles,
   Trophy,
-  Flag,
   Award,
 } from "lucide-react";
 import type { Character, Objective, Stats } from "./domain";
@@ -28,7 +31,6 @@ import {
   RANKS,
   stats,
   currentPath,
-  totalXP,
   rankXP,
   characterRank,
   professionLevel,
@@ -59,7 +61,8 @@ export type Page =
 interface ScreenProps {
   c: Character;
   update: (c: Character) => boolean;
-  navigate: (p: Page) => void;
+  navigate: (p: Page, section?: string) => void;
+  section?: string;
   openObjective: (o: Objective) => void;
   notify: (s: string) => void;
 }
@@ -114,171 +117,203 @@ function Attributes({ s }: { s: Stats }) {
     </div>
   );
 }
-export function Guild({ c, navigate, openObjective }: ScreenProps) {
-  const xp = totalXP(c),
-    s = stats(c),
+export function Guild({ c, navigate, openObjective, update }: ScreenProps) {
+  const requests = takenObjectives(c).filter((o) => !isComplete(c, o)),
+    reward = loginReward(c),
+    data = campaign(c),
+    exams = examTargets(c).filter((t) => t.ready),
+    history = CLASSES.filter(
+      (p) => classXP(c, p.id) > 0 || p.id === c.activeClass,
+    ),
+    week = activity(c),
     offers = objectives(c).filter(
       (o) =>
         o.cadence === "daily" &&
+        o.scope === "class" &&
         o.kind !== "class-trial" &&
         !taskRequirements(c, o).length,
-    ),
-    dailies = takenObjectives(c).filter((o) => o.cadence === "daily"),
-    done = dailies.filter((o) => isComplete(c, o)).length,
-    week = activity(c),
-    nextRank = RANKS.find((r) => r.xp > rankXP(c));
-  const history = CLASSES.filter(
-    (p) => classXP(c, p.id) > 0 || p.id === c.activeClass,
-  );
+    );
+  const cardSection = (section: string) =>
+    section === "class"
+      ? navigate("paths", "all")
+      : section === "vocation"
+        ? navigate("paths", "vocation")
+        : navigate("skills", section === "profession" ? "profession" : section);
   return (
     <>
-      <div className="dashboard-top">
-        <GuildCard c={c} onSkills={() => navigate("skills")} />
-        <section className="panel rank-panel">
+      <div className="dashboard-top guild-hub-top">
+        <GuildCard
+          c={c}
+          onSkills={() => navigate("skills", "skills")}
+          onSection={cardSection}
+        />
+        <section className="panel login-panel">
           <div className="section-heading">
-            <h3>Adventurer rank</h3>
-            <Trophy size={17} />
-          </div>
-          <div className="rank-emblem">
-            <span>{characterRank(c).metal.toUpperCase()} · GUILD RANK</span>
-            <strong>{characterRank(c).name}</strong>
-            <span>{xp === 0 ? "REGISTERED" : "ACTIVE"}</span>
-          </div>
-          <div className="small-progress-label">
-            <span>
-              {nextRank ? `Toward ${nextRank.name} rank` : "Highest guild rank"}
+            <h3>Guild allowance</h3>
+            <span className="gold-balance">
+              {data.gold.toLocaleString()} gold
             </span>
-            <b>
-              {rankXP(c).toLocaleString()} /{" "}
-              {(nextRank?.xp || RANKS.at(-1)!.xp).toLocaleString()} XP
-            </b>
           </div>
-          <Progress value={rankXP(c)} max={nextRank?.xp || RANKS.at(-1)!.xp} />
-          <button className="text-button" onClick={() => navigate("skills")}>
-            View your progression <ArrowRight size={14} />
+          <div className="login-days">
+            {LOGIN_REWARDS.map((r, i) => (
+              <div
+                key={i}
+                className={i + 1 === reward.cycleDay ? "current" : ""}
+              >
+                <small>DAY {i + 1}</small>
+                <b>{r.gold}</b>
+                <span>gold</span>
+                <small>
+                  {r.potion ? `${r.potion} potion` : "1 ether"}
+                  {r.potion && r.ether ? " + ether" : ""}
+                </small>
+              </div>
+            ))}
+          </div>
+          <button
+            className="button primary full"
+            disabled={reward.claimed}
+            onClick={() => update(claimLoginReward(c))}
+          >
+            {reward.claimed
+              ? "Claimed today"
+              : `Claim day ${reward.cycleDay} reward`}
           </button>
-        </section>
-      </div>
-      <div className="metrics-row">
-        <div>
-          <span className="metric-icon">
-            <Flag size={20} />
-          </span>
-          <span>
-            <b>
-              {done}
-              {dailies.length > 0 && <small> / {dailies.length}</small>}
-            </b>
-            <small>Taken today</small>
-          </span>
-        </div>
-        <div>
-          <span className="metric-icon gold">
-            <Sparkles size={20} />
-          </span>
-          <span>
-            <b>{xp.toLocaleString()}</b>
-            <small>Total experience</small>
-          </span>
-        </div>
-        <div>
-          <span className="metric-icon blue">
-            <Award size={20} />
-          </span>
-          <span>
-            <b>{SKILLS.filter((s) => hasSkill(c, s)).length}</b>
-            <small>Skills earned</small>
-          </span>
-        </div>
-        <div>
-          <span className="metric-icon rust">
-            <Icon name="sword" />
-          </span>
-          <span>
-            <b>{history.length}</b>
-            <small>Paths explored</small>
-          </span>
-        </div>
-      </div>
-      <div className="dashboard-bottom">
-        <section className="panel daily-panel">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">DAILY TASKS</span>
-              <h3>{dailies.length ? "Taken today" : "Available requests"}</h3>
-            </div>
-            <button
-              className="text-button"
-              onClick={() => navigate("objectives")}
-            >
-              All objectives <ArrowRight size={14} />
+          <div className="hub-shortcuts">
+            <button onClick={() => navigate("adventures")}>
+              {" "}
+              {data.battle || data.world?.expedition
+                ? "Resume expedition"
+                : "Adventures"}{" "}
+              <ArrowRight size={15} />
+            </button>
+            <button onClick={() => navigate("skills", "skills")}>
+              Skill trees <ArrowRight size={15} />
             </button>
           </div>
-          <div className="objective-list">
-            {[
-              ...takenObjectives(c).filter(
-                (o) => o.cadence === "daily" && !isComplete(c, o),
-              ),
-              ...offers.filter((o) => o.scope === "class"),
-              ...offers.filter((o) => o.scope === "profession"),
-              ...offers,
-            ]
-              .filter(
-                (o, i, list) =>
-                  list.findIndex(
-                    (x) => (x.family || x.id) === (o.family || o.id),
-                  ) === i,
-              )
-              .slice(0, 3)
-              .map((o) => (
+          {exams.map((t) => (
+            <button
+              className="hub-exam"
+              key={`${t.scope}-${t.owner}`}
+              onClick={() => navigate("paths", "exams")}
+            >
+              <Award size={18} />
+              {t.name} · Lv. {t.milestone} exam ready
+              <ArrowRight size={15} />
+            </button>
+          ))}
+        </section>
+      </div>
+      <section className="panel hub-requests">
+        <div className="section-heading">
+          <h3>
+            Taken requests <span className="tag">{requests.length}</span>
+          </h3>
+          <button
+            className="text-button"
+            onClick={() => navigate("objectives", "taken:daily")}
+          >
+            Open requests <ArrowRight size={14} />
+          </button>
+        </div>
+        {requests.length ? (
+          <div className="hub-request-grid">
+            {(["daily", "weekly", "monthly"] as const).map((cadence) => {
+              const list = requests.filter((o) => o.cadence === cadence);
+              return (
+                <div className="hub-cadence" key={cadence}>
+                  <h4>
+                    {cadence === "daily"
+                      ? "Today"
+                      : cadence === "weekly"
+                        ? "This week"
+                        : "This month"}{" "}
+                    <span>{list.length}</span>
+                  </h4>
+                  {list.slice(0, 4).map((o) => {
+                    const progress = requestProgress(c, o);
+                    return (
+                      <button
+                        key={o.id}
+                        className="hub-request"
+                        onClick={() => openObjective(o)}
+                      >
+                        <Icon name={o.stat} size={18} />
+                        <span>
+                          <b>{o.title}</b>
+                          <small>
+                            {o.rank} · {o.xp} XP · {o.gold || 0} gold
+                            {cadence !== "daily"
+                              ? ` · Due ${new Date(periodEnd(cadence).getTime() - 1).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`
+                              : ""}
+                          </small>
+                          {o.minimumSessions && (
+                            <Progress
+                              value={progress.sessions}
+                              max={o.minimumSessions}
+                            />
+                          )}
+                        </span>
+                        <ChevronRight size={16} />
+                      </button>
+                    );
+                  })}
+                  {list.length > 4 && (
+                    <button
+                      className="text-button"
+                      onClick={() => navigate("objectives", `taken:${cadence}`)}
+                    >
+                      View all {list.length}
+                    </button>
+                  )}
+                  {!list.length && (
+                    <button
+                      className="hub-empty"
+                      onClick={() => navigate("objectives", `board:${cadence}`)}
+                    >
+                      Take a{" "}
+                      {cadence === "daily"
+                        ? "task"
+                        : cadence === "weekly"
+                          ? "quest"
+                          : "monthly adventure"}{" "}
+                      <Plus size={16} />
+                    </button>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="hub-no-requests">
+            <p>No requests taken.</p>
+            <div className="objective-list">
+              {offers.slice(0, 3).map((o) => (
                 <ObjectiveRow
                   key={o.id}
-                  o={o}
                   c={c}
+                  o={o}
                   onClick={() => openObjective(o)}
                 />
               ))}
-          </div>
-          <div className="daily-footer">
-            <span>
-              {dailies.length
-                ? `${done} of ${dailies.length} taken requests complete`
-                : "No requests taken today"}
-            </span>
-          </div>
-        </section>
-        <section className="panel attributes-panel">
-          <div className="section-heading">
-            <h3>Your attributes</h3>
+            </div>
             <button
-              className="icon-button"
-              aria-label="View skills and stats"
-              onClick={() => navigate("skills")}
+              className="button secondary"
+              onClick={() => navigate("objectives")}
             >
-              <ArrowRight size={17} />
+              Browse guild board <ArrowRight size={16} />
             </button>
           </div>
-          <div className="attribute-overview">
-            <StatRadar values={s} />
-            <div className="compact-stats">
-              {ATTRIBUTES.map((a) => (
-                <div key={a}>
-                  <span>{a}</span>
-                  <b>{s[a]}</b>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
+        )}
+      </section>
       <section className="panel legacy-panel">
         <div className="section-heading">
-          <div>
-            <span className="eyebrow">CLASS & SKILL HISTORY</span>
-            <h3>Character record</h3>
-          </div>
-          <button className="text-button" onClick={() => navigate("paths")}>
-            Explore paths <ArrowRight size={14} />
+          <h3>Character record</h3>
+          <button
+            className="text-button"
+            onClick={() => navigate("paths", "history")}
+          >
+            Class history <ArrowRight size={14} />
           </button>
         </div>
         <div className="legacy-badges">
@@ -300,45 +335,41 @@ export function Guild({ c, navigate, openObjective }: ScreenProps) {
           ))}
         </div>
       </section>
-      <div className="dashboard-low">
-        <section className="panel weekly-panel">
-          <div>
-            <span className="eyebrow">ACTIVITY</span>
-            <h3>Last 7 days</h3>
-            <p>
-              {week.filter((x) => x.count > 0).length} active days in the last
-              seven.
-            </p>
-          </div>
-          <div className="week-dots">
-            {week.map((d) => (
-              <div key={d.key}>
-                <span className={d.count ? "active" : ""}>
-                  {d.count ? <Check size={15} /> : <span />}
-                </span>
-                <small>{d.label}</small>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section className="quote-panel">
-          <span>✦</span>
-          <blockquote>
-            “Let us not become weary
-            <br />
-            in doing good.”
-          </blockquote>
-          <small>GALATIANS 6:9</small>
-        </section>
-      </div>
+      <section className="panel hub-activity">
+        <div>
+          <h3>Last 7 days</h3>
+          <span>
+            {week.reduce((n, d) => n + d.count, 0)} requests completed
+          </span>
+        </div>
+        <div className="week-dots">
+          {week.map((d) => (
+            <div key={d.key}>
+              <span className={d.count ? "active" : ""}>
+                {d.count ? <Check size={15} /> : <span />}
+              </span>
+              <small>{d.label}</small>
+            </div>
+          ))}
+        </div>
+        <button className="text-button" onClick={() => navigate("journey")}>
+          Journey & reports <ArrowRight size={15} />
+        </button>
+      </section>
     </>
   );
 }
 export function Objectives(props: ScreenProps) {
   return <RequestBoard {...props} />;
 }
-export function Paths({ c, update, notify, openObjective }: ScreenProps) {
-  const [view, setView] = useState("all");
+export function Paths({
+  c,
+  update,
+  notify,
+  openObjective,
+  section,
+}: ScreenProps) {
+  const [view, setView] = useState(section || "all");
   const p = currentPath(c);
   return (
     <>
@@ -445,12 +476,14 @@ export function Skills({
   c,
   update,
   onCertificate,
+  initialTab,
 }: {
   c: Character;
   update: (c: Character) => boolean;
   onCertificate: () => void;
+  initialTab?: string;
 }) {
-  const [tab, setTab] = useState("attributes"),
+  const [tab, setTab] = useState(initialTab || "attributes"),
     s = stats(c);
   return (
     <>

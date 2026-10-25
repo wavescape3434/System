@@ -62,6 +62,18 @@ export function validateCharacter(x: unknown): x is Character {
         (Array.isArray(c.assessmentFormsSeen) &&
           c.assessmentFormsSeen.every(validMentalFormId))) &&
       (c.notificationsReadAt === undefined || date(c.notificationsReadAt)) &&
+      (c.loginRewards === undefined ||
+        (Array.isArray(c.loginRewards) &&
+          new Set(c.loginRewards.map((r) => r.day)).size ===
+            c.loginRewards.length &&
+          c.loginRewards.every(
+            (r, i, records) =>
+              !!r &&
+              /^\d{4}-\d{2}-\d{2}$/.test(r.day) &&
+              date(r.at) &&
+              r.cycleDay === (i ? (records[i - 1].cycleDay % 7) + 1 : 1) &&
+              (!i || r.day > records[i - 1].day),
+          ))) &&
       (c.notificationReads === undefined ||
         (Array.isArray(c.notificationReads) &&
           c.notificationReads.length <= 500 &&
@@ -438,6 +450,12 @@ function validPreferences(p: NonNullable<Character["preferences"]>) {
     ["metric", "imperial"].includes(p.units) &&
     ["standard", "large"].includes(p.textSize) &&
     typeof p.reduceMotion === "boolean" &&
+    (p.reminders === undefined ||
+      (!!p.reminders &&
+        [p.reminders.daily, p.reminders.weekly, p.reminders.monthly].every(
+          (x) => typeof x === "boolean",
+        ) &&
+        /^([01]\d|2[0-3]):[0-5]\d$/.test(p.reminders.time))) &&
     typeof p.showLockedRequests === "boolean" &&
     ["guild", "objectives", "journey"].includes(p.defaultPage) &&
     Array.isArray(p.equipment) &&

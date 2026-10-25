@@ -8,6 +8,7 @@ import {
   Check,
   ZoomIn,
   ZoomOut,
+  Scan,
   Plus,
   Sparkles,
 } from "lucide-react";
@@ -36,13 +37,40 @@ export default function SkillTree({
   onCertificate: () => void;
 }) {
   const [category, setCategory] = useState("universal"),
+    [listMode, setListMode] = useState(false),
+    [search, setSearch] = useState(""),
     [branch, setBranch] = useState("current"),
     [selected, setSelected] = useState<Skill | null>(null),
-    [zoom, setZoom] = useState(0.75);
+    [zoom, setZoom] = useState(0.4);
   const treeRef = useRef<HTMLDivElement>(null),
+    zoomRef = useRef(0.4),
+    pointers = useRef(new Map<number, { x: number; y: number }>()),
+    gesture = useRef<{
+      distance: number;
+      zoom: number;
+      wx: number;
+      wy: number;
+    } | null>(null),
     drag = useRef<{ x: number; y: number; left: number; top: number } | null>(
       null,
-    );
+    ),
+    moved = useRef(false);
+  const zoomAt = (value: number, clientX?: number, clientY?: number) => {
+    const el = treeRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect(),
+      x = clientX === undefined ? el.clientWidth / 2 : clientX - rect.left,
+      y = clientY === undefined ? el.clientHeight / 2 : clientY - rect.top;
+    const wx = (el.scrollLeft + x) / zoomRef.current,
+      wy = (el.scrollTop + y) / zoomRef.current,
+      next = Math.max(0.12, Math.min(1.6, value));
+    zoomRef.current = next;
+    setZoom(next);
+    requestAnimationFrame(() => {
+      el.scrollLeft = wx * next - x;
+      el.scrollTop = wy * next - y;
+    });
+  };
   const p = currentPath(c),
     primary = Object.entries(p.mix).sort((a, b) => b[1]! - a[1]!)[0][0];
   const owner =
@@ -67,23 +95,40 @@ export default function SkillTree({
   );
   const worldHeight = Math.max(810, ...list.map((s) => s.y + 125)),
     worldWidth = Math.max(1100, ...list.map((s) => s.x + 170));
+  const fitTree = () => {
+    const el = treeRef.current;
+    if (!el) return;
+    const next = Math.max(
+      0.12,
+      Math.min(
+        0.65,
+        (el.clientWidth - 24) / worldWidth,
+        (el.clientHeight - 24) / worldHeight,
+      ),
+    );
+    zoomRef.current = next;
+    setZoom(next);
+    requestAnimationFrame(() => el.scrollTo({ left: 0, top: 0 }));
+  };
+  useEffect(() => {
+    fitTree();
+  }, [category, branch, worldHeight, worldWidth]);
   useEffect(() => {
     const el = treeRef.current;
-    if (el) {
-      const root =
-        list.find((s) => !s.parents.length && !s.anyParents?.length) || list[0];
-      el.scrollTo({
-        left: Math.max(
-          0,
-          (root?.x || worldWidth / 2) * zoom - el.clientWidth / 2,
-        ),
-        top: Math.max(
-          0,
-          (root?.y || worldHeight) * zoom - el.clientHeight * 0.55,
-        ),
-      });
-    }
-  }, [category, branch, zoom, worldHeight, worldWidth]);
+    if (!el) return;
+    const wheel = (e: WheelEvent) => {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        zoomAt(
+          zoomRef.current * Math.exp(-e.deltaY * 0.005),
+          e.clientX,
+          e.clientY,
+        );
+      }
+    };
+    el.addEventListener("wheel", wheel, { passive: false });
+    return () => el.removeEventListener("wheel", wheel);
+  }, []);
   const wallet =
     category === "universal"
       ? "universal"
@@ -193,14 +238,18 @@ export default function SkillTree({
         <div className="tree-zoom">
           <button
             aria-label="Zoom out skill tree"
-            onClick={() => setZoom(Math.max(0.5, zoom - 0.15))}
+            onClick={() => zoomAt(zoomRef.current / 1.25)}
           >
             <ZoomOut size={18} />
           </button>
-          <span>{Math.round(zoom * 100)}%</span>
+          <button aria-label="Fit skill tree" onClick={fitTree}>
+            <Scan size={18} />
+            Fit
+          </button>
+          <span aria-live="polite">{Math.round(zoom * 100)}%</span>
           <button
             aria-label="Zoom in skill tree"
-            onClick={() => setZoom(Math.min(1.3, zoom + 0.15))}
+            onClick={() => zoomAt(zoomRef.current * 1.25)}
           >
             <ZoomIn size={18} />
           </button>
@@ -232,30 +281,144 @@ export default function SkillTree({
           ))}
         </div>
       )}
+      <div className="tree-view-switch">
+        <button aria-pressed={!listMode} onClick={() => setListMode(false)}>
+          Tree
+        </button>
+        <button aria-pressed={listMode} onClick={() => setListMode(true)}>
+          Skill list
+        </button>
+        {listMode && (
+          <input
+            type="search"
+            aria-label="Search skills"
+            placeholder="Search skills"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        )}
+      </div>
+      {listMode && (
+        <div className="accessible-skill-list">
+          {[...list]
+            .filter(
+              (s) =>
+                !search ||
+                `${s.name} ${s.description}`
+                  .toLowerCase()
+                  .includes(search.toLowerCase()),
+            )
+            .sort((a, b) => skillTier(a) - skillTier(b) || a.cost - b.cost)
+            .map((s) => (
+              <button key={s.id} onClick={() => setSelected(s)}>
+                <Icon name={s.stat} size={20} />
+                <span>
+                  <b>{s.name}</b>
+                  <small>
+                    Lv. {skillTier(s)} · {s.cost} point{s.cost === 1 ? "" : "s"}{" "}
+                    ·{" "}
+                    {hasSkill(c, s)
+                      ? "Learned"
+                      : skillRequirements(c, s).length
+                        ? "Locked"
+                        : "Available"}
+                  </small>
+                </span>
+                {hasSkill(c, s) ? <Check size={16} /> : <Plus size={16} />}
+              </button>
+            ))}
+        </div>
+      )}
       <div
+        style={listMode ? { display: "none" } : undefined}
         ref={treeRef}
+        onClickCapture={(e) => {
+          if (moved.current) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }}
         onPointerDown={(e) => {
-          if ((e.target as HTMLElement).closest("button")) return;
           const el = treeRef.current!;
-          drag.current = {
-            x: e.clientX,
-            y: e.clientY,
-            left: el.scrollLeft,
-            top: el.scrollTop,
-          };
-          el.setPointerCapture(e.pointerId);
+          pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+          if (pointers.current.size === 1) {
+            moved.current = false;
+            drag.current = {
+              x: e.clientX,
+              y: e.clientY,
+              left: el.scrollLeft,
+              top: el.scrollTop,
+            };
+          }
+          if (pointers.current.size === 2) {
+            const [a, b] = [...pointers.current.values()],
+              r = el.getBoundingClientRect();
+            gesture.current = {
+              distance: Math.hypot(a.x - b.x, a.y - b.y),
+              zoom: zoomRef.current,
+              wx: (el.scrollLeft + (a.x + b.x) / 2 - r.left) / zoomRef.current,
+              wy: (el.scrollTop + (a.y + b.y) / 2 - r.top) / zoomRef.current,
+            };
+            moved.current = true;
+            for (const id of pointers.current.keys()) el.setPointerCapture(id);
+          }
         }}
         onPointerMove={(e) => {
-          if (!drag.current) return;
+          if (!pointers.current.has(e.pointerId)) return;
+          pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
           const el = treeRef.current!;
-          el.scrollLeft = drag.current.left - (e.clientX - drag.current.x);
-          el.scrollTop = drag.current.top - (e.clientY - drag.current.y);
+          if (pointers.current.size >= 2 && gesture.current) {
+            const [a, b] = [...pointers.current.values()],
+              g = gesture.current,
+              r = el.getBoundingClientRect(),
+              next = Math.max(
+                0.12,
+                Math.min(
+                  1.6,
+                  (g.zoom * Math.hypot(a.x - b.x, a.y - b.y)) /
+                    Math.max(1, g.distance),
+                ),
+              );
+            zoomRef.current = next;
+            setZoom(next);
+            requestAnimationFrame(() => {
+              el.scrollLeft = g.wx * next - ((a.x + b.x) / 2 - r.left);
+              el.scrollTop = g.wy * next - ((a.y + b.y) / 2 - r.top);
+            });
+          } else if (drag.current) {
+            const d = drag.current;
+            if (Math.hypot(e.clientX - d.x, e.clientY - d.y) > 5) {
+              moved.current = true;
+              el.setPointerCapture(e.pointerId);
+            }
+            if (moved.current) {
+              el.scrollLeft = d.left - (e.clientX - d.x);
+              el.scrollTop = d.top - (e.clientY - d.y);
+            }
+          }
         }}
-        onPointerUp={() => (drag.current = null)}
-        onPointerCancel={() => (drag.current = null)}
+        onPointerUp={(e) => {
+          pointers.current.delete(e.pointerId);
+          gesture.current = null;
+          const remaining = [...pointers.current.values()][0],
+            el = treeRef.current!;
+          drag.current = remaining
+            ? {
+                x: remaining.x,
+                y: remaining.y,
+                left: el.scrollLeft,
+                top: el.scrollTop,
+              }
+            : null;
+        }}
+        onPointerCancel={(e) => {
+          pointers.current.delete(e.pointerId);
+          gesture.current = null;
+          drag.current = null;
+        }}
         className="skill-tree-window"
         tabIndex={0}
-        aria-label={`${treeName} branching skill tree. Scroll to pan.`}
+        aria-label={`${treeName} branching skill tree. Drag to pan. Pinch or use zoom controls.`}
       >
         <div
           className="skill-tree-world"
@@ -356,7 +519,7 @@ export default function SkillTree({
           <i />
           Locked
         </span>
-        <span>Scroll to pan · Select a node to inspect</span>
+        <span>Drag to pan · Pinch to zoom</span>
       </div>
       <div className="tree-ranks">
         <h3>Tree sections</h3>

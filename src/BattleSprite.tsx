@@ -2,20 +2,28 @@ import { CLASSES } from "./class-catalog";
 import type { Unit } from "./rpg";
 const sprites: Record<string, string[]> = {
   hero: [
-    "........4444........",
-    ".......444444.......",
-    ".......4SSSS4.......",
-    ".......SWSWS........",
+    "........44444.......",
+    ".......4444444......",
+    "......444444444.....",
+    "......44SSSS444.....",
+    "......4SSSSSS44.....",
+    "......SS3SS3S4......",
+    ".......STSSSS.......",
     "........SSSS........",
-    ".......111111.......",
-    "......11111111......",
-    ".....S1122211S......",
-    ".....S1122211S......",
+    "......22666622......",
+    ".....2617711622.....",
+    "....26111111162.....",
+    "....22117171122.....",
+    "....S211111112S.....",
+    "....SS1111111SS.....",
+    ".....T1117111T......",
+    "......2226222.......",
+    "......1112111.......",
     "......1122211.......",
-    "......1111111.......",
-    ".......22222........",
-    ".......22.22........",
-    "......333.333.......",
+    "......22..122.......",
+    "......22..122.......",
+    ".....333..3333......",
+    ".....333..3333......",
   ],
   slime: [
     ".........111........",
@@ -189,20 +197,30 @@ export default function BattleSprite({ unit }: { unit: Unit }) {
     "2": "#474c68",
     "3": "#34374d",
     "4": hero ? "#6c4c45" : "#e6e0bc",
+    "6": "#d9cda6",
+    "7": "#c8d4cd",
+    T: "#b28a70",
     S: "#edcba6",
     W: "#f8f5df",
   };
   const rows = sprites[shape];
   return (
     <svg
-      viewBox="0 0 24 22"
+      viewBox={hero ? "0 0 24 28" : "0 0 24 22"}
       className={`battle-sprite pixel-sprite ${unit.boss ? "boss-sprite" : ""} ${unit.hp === 0 ? "defeated" : ""}`}
       shapeRendering="crispEdges"
       role="img"
       aria-label={unit.name}
     >
-      <rect x="3" y="20" width="18" height="2" fill="#080f33" opacity=".5" />
-      <g transform={`translate(2 ${20 - rows.length})`}>
+      <rect
+        x="3"
+        y={hero ? 26 : 20}
+        width="18"
+        height="2"
+        fill="#080f33"
+        opacity=".5"
+      />
+      <g transform={`translate(2 ${(hero ? 26 : 20) - rows.length})`}>
         {rows.flatMap((row, y) =>
           [...row].flatMap((value, x) =>
             palette[value]

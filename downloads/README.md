@@ -1,4 +1,4 @@
-# Install The Adventurers Guild 1.7.1 on Android
+# Install The Adventurers Guild 1.8.0 on Android
 
 Open `the-guild-debug.apk` in this folder on GitHub, then select **Download raw file** (the download arrow). Open the downloaded APK on your Android phone. Android may ask you to allow installations from your browser or file manager.
 
@@ -11,3 +11,7 @@ The APK is included directly in this repository, so you do not need Android Stud
 [Request balance and 7-/30-day simulation report](../docs/balance-report-1.6.md).
 
 [Version 1.7 content and calendar changes](../docs/update-1.7.md).
+
+[Version 1.8 changes and rewards](../docs/update-1.8.md) · [Build verification](../docs/verification-1.8.md).
+
+For Android reminders, open Settings → General → Request reminders and select **Enable Android notifications**. The default local reminder time is 9pm.

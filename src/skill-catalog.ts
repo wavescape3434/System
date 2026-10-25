@@ -119,6 +119,16 @@ universal.forEach(([stat, a, b, d, description], i) => {
     current: (c) => count(c, stat),
     proof: `Complete 1 ${stat} objective`,
     tier: "I",
+    combat: (
+      {
+        STR: "power",
+        DEX: "pierce",
+        CON: "guard",
+        INT: "scan",
+        WIS: "heal",
+        CHA: "rally",
+      } as const
+    )[stat],
   });
   add({
     id: oldId,

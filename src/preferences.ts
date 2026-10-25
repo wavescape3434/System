@@ -5,6 +5,12 @@ export interface Preferences {
   equipment: ("bodyweight" | "pullup-bar" | "weights" | "gym")[];
   showLockedRequests: boolean;
   defaultPage: "guild" | "objectives" | "journey";
+  reminders?: {
+    daily: boolean;
+    weekly: boolean;
+    monthly: boolean;
+    time: string;
+  };
 }
 export const DEFAULT_PREFERENCES: Preferences = {
   units: "metric",

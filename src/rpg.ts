@@ -452,6 +452,7 @@ export function startBattle(c: Character, id: string): Character {
               ...data.world,
               townId: REGIONS.find((r) => r.id === e.region)!.town,
               placeId: e.placeId,
+              expedition: e.placeId,
             },
           }
         : {}),

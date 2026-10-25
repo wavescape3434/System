@@ -66,7 +66,7 @@ test("onboarding supports an untested beginner and persists the F-rank character
   await expect(
     page.getByRole("heading", { name: "Vincent", exact: true }),
   ).toBeVisible();
-  await expect(page.locator(".rank-emblem strong")).toHaveText("F");
+  await expect(page.locator(".engraved-rank strong")).toHaveText("F");
 });
 test("objectives cannot award twice and the reward survives reload", async ({
   page,
@@ -121,7 +121,7 @@ test("class changes update objectives and keep the previous class record", async
     .first()
     .click();
   await expect(
-    page.getByRole("heading", { name: "Bard commission" }),
+    page.getByRole("button", { name: "View Bard commission", exact: true }),
   ).toBeVisible();
 });
 test("CCNA unlocks its milestone and appears in the automatic Journey", async ({
@@ -355,7 +355,7 @@ test("phone navigation fits and all main screens render without page errors", as
     "Journey",
     "Help",
     "Settings",
-    "Guild Card",
+    "Guild",
   ]) {
     await page.getByRole("button", { name: "Open navigation" }).click();
     await page
@@ -441,8 +441,7 @@ test("class skill purchases require multiple points and locked sections block sk
     .click();
   for (const title of ["Warrior commission"]) {
     await page
-      .getByRole("button")
-      .filter({ has: page.getByRole("heading", { name: title, exact: true }) })
+      .getByRole("button", { name: `View ${title}`, exact: true })
       .click();
     await takeOpen(page);
     await page
@@ -465,9 +464,9 @@ test("class skill purchases require multiple points and locked sections block sk
     }),
   ).toBeVisible();
   await page
-    .getByRole("button", { name: "Shield Breaker: locked", exact: true })
+    .getByRole("button", { name: "Steel Tempest: locked", exact: true })
     .click();
-  await expect(page.getByText(/Archetype level 5/)).toBeVisible();
+  await expect(page.getByText(/Archetype level 6/)).toBeVisible();
   await expect(
     page.getByRole("button", { name: /Purchase skill/ }),
   ).toBeDisabled();
@@ -577,8 +576,10 @@ test("Taken requests persist and keep their original class credit after a class 
     .first()
     .click();
   await page
-    .getByRole("button", { name: "Take Warrior commission", exact: true })
+    .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
+  await takeOpen(page);
+  await page.getByRole("button", { name: "Close dialog", exact: true }).click();
   await page
     .locator(".request-view-tabs")
     .getByRole("button", { name: /^Taken/ })
@@ -650,7 +651,7 @@ test("recurring requests return as suggestions and require another manual accept
   ).toBeVisible();
   await page.getByRole("button", { name: /^Suggested/ }).click();
   await expect(
-    page.getByRole("button", { name: "Take Warrior commission", exact: true }),
+    page.getByRole("button", { name: "View Warrior commission", exact: true }),
   ).toBeVisible();
   await page
     .getByRole("button", { name: "View Warrior commission", exact: true })
@@ -882,12 +883,21 @@ test("grouped board offers cadence rank limits and prices demanding adventure pr
     .first()
     .click();
   await page.getByLabel("Search requests").fill("Pushup");
-  const push = page
-    .locator(".guild-request-paper")
-    .filter({
-      has: page.getByRole("heading", { name: "Pushup practice", exact: true }),
-    });
-  await expect(push).toContainText("150");
+  const push = page.locator(".guild-request-paper").filter({
+    has: page.getByRole("button", {
+      name: "View Pushup practice",
+      exact: true,
+    }),
+  });
+  await push
+    .getByRole("button", {
+      name: "Show details for Pushup practice",
+      exact: true,
+    })
+    .click();
+  await page.getByLabel("Choose request rank").selectOption("u-floor-push-20");
+  await expect(page.getByRole("dialog")).toContainText("150 XP");
+  await page.getByRole("button", { name: "Close dialog", exact: true }).click();
   expect(
     await page
       .getByLabel("Request rank")
@@ -908,15 +918,25 @@ test("grouped board offers cadence rank limits and prices demanding adventure pr
   await page.getByRole("button", { name: /^Monthly adventures/ }).click();
   await page.getByLabel("Search requests").fill("Pullups");
   await page.getByLabel("Request rank").selectOption("S");
-  const pull = page
-    .locator(".guild-request-paper")
-    .filter({
-      has: page.getByRole("heading", { name: "Pullups · 5 × 20", exact: true }),
-    });
-  await expect(pull).toContainText("32400");
+  const pull = page.locator(".guild-request-paper").filter({
+    has: page.getByRole("button", {
+      name: "View Pullups · 5 × 20",
+      exact: true,
+    }),
+  });
+  await pull
+    .getByRole("button", {
+      name: "Show details for Pullups · 5 × 20",
+      exact: true,
+    })
+    .click();
+  await expect(page.getByRole("dialog")).toContainText("32400 XP");
   await expect(
-    pull.getByRole("button", { name: "Take Pullups · 5 × 20", exact: true }),
+    page
+      .getByRole("dialog")
+      .getByRole("button", { name: "Take request", exact: true }),
   ).toBeDisabled();
+  await page.getByRole("button", { name: "Close dialog", exact: true }).click();
   const categories = await page
     .getByLabel("Objective category")
     .locator("option")

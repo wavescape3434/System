@@ -1,3 +1,9 @@
+import {
+  syncReminders,
+  forgetReminderSchedule,
+  cancelReminders,
+} from "./reminders";
+import { LocalNotifications } from "@capacitor/local-notifications";
 import { groupRequests } from "./objective-catalog";
 import {
   periodStart,
@@ -87,9 +93,9 @@ import { App as NativeApp } from "@capacitor/app";
 const PAGES = [
   {
     id: "guild",
-    name: "Guild Card",
+    name: "Guild",
     icon: CreditCard,
-    title: "Guild Card",
+    title: "Guild",
   },
   {
     id: "objectives",
@@ -171,6 +177,7 @@ export default function App() {
     [page, setPage] = useState<Page>(
       initial.character?.preferences?.defaultPage || "guild",
     ),
+    [section, setSection] = useState<string | undefined>(),
     [notificationsOpen, setNotificationsOpen] = useState(false),
     [dialog, setDialog] = useState<Dialog>(null),
     [objective, setObjective] = useState<Objective | null>(null),
@@ -182,6 +189,40 @@ export default function App() {
     [cloudCandidate, setCloudCandidate] = useState<Character | null>(null),
     [importCandidate, setImportCandidate] = useState<Character | null>(null);
   const preferences = { ...DEFAULT_PREFERENCES, ...c?.preferences };
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+    let disposed = false;
+    const action = LocalNotifications.addListener(
+      "localNotificationActionPerformed",
+      (event) => {
+        const extra = event.notification.extra;
+        setPage("objectives");
+        setSection(`taken:${extra?.cadence || "daily"}`);
+        setMenu(false);
+      },
+    );
+    const resume = NativeApp.addListener("appStateChange", ({ isActive }) => {
+      if (isActive) {
+        forgetReminderSchedule();
+        if (characterRef.current)
+          void syncReminders(characterRef.current).catch(() => {
+            if (!disposed)
+              notify("Could not refresh Android reminders. Check Settings.");
+          });
+      }
+    });
+    return () => {
+      disposed = true;
+      void action.then((h) => h.remove());
+      void resume.then((h) => h.remove());
+    };
+  }, []);
+  useEffect(() => {
+    void (c ? syncReminders(c) : cancelReminders()).catch(() =>
+      notify("Could not update Android reminders. Check Settings."),
+    );
+  }, [c]);
+
   useEffect(() => {
     document.documentElement.dataset.textSize = preferences.textSize;
     document.documentElement.dataset.motion = preferences.reduceMotion
@@ -252,7 +293,8 @@ export default function App() {
     },
     [notify],
   );
-  const navigate = (p: Page) => {
+  const navigate = (p: Page, target?: string) => {
+    setSection(target);
     setPage(p);
     setMenu(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -290,7 +332,9 @@ export default function App() {
       );
       notify("Backup exported.");
     });
-  const props = c ? { c, update, navigate, openObjective, notify } : null;
+  const props = c
+    ? { c, update, navigate, openObjective, notify, section }
+    : null;
   const active = PAGES.find((p) => p.id === page)!;
   return (
     <>
@@ -492,7 +536,7 @@ export default function App() {
                 </div>
               )}
               {props && (
-                <div className="page-content" key={page}>
+                <div className="page-content" key={`${page}:${section || ""}`}>
                   {page === "guild" ? (
                     <Guild {...props} />
                   ) : page === "objectives" ? (
@@ -504,6 +548,7 @@ export default function App() {
                       c={c}
                       update={update}
                       onCertificate={() => setDialog("certificate")}
+                      initialTab={section}
                     />
                   ) : page === "adventures" ? (
                     <Adventures {...props} />
@@ -523,7 +568,6 @@ export default function App() {
               )}
               <footer className="main-footer">
                 <span>✦ &nbsp; THE ADVENTURERS GUILD</span>
-                <span>BODY. MIND. HEART.</span>
               </footer>
             </main>
           </div>
@@ -579,7 +623,15 @@ export default function App() {
         }}
       />
       {notificationsOpen && c && (
-        <Notifications c={c} onClose={() => setNotificationsOpen(false)} />
+        <Notifications
+          c={c}
+          update={update}
+          navigate={(p, target) => {
+            setNotificationsOpen(false);
+            navigate(p, target);
+          }}
+          onClose={() => setNotificationsOpen(false)}
+        />
       )}
       {objective && c && (
         <Modal title={objective.groupTitle || objective.title} onClose={close}>

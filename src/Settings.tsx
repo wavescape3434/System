@@ -1,3 +1,4 @@
+import ReminderSettings from "./ReminderSettings";
 import { usedExamForms } from "./exams";
 import { useState } from "react";
 import { Settings2, UserRound, Shield, Activity, Save } from "lucide-react";
@@ -179,6 +180,7 @@ export default function Settings({
           </section>
         </div>
       )}
+      {tab === "general" && <ReminderSettings c={c} update={update} />}
       {tab === "training" && (
         <section className="panel">
           <div className="section-heading">
@@ -303,7 +305,7 @@ export default function Settings({
           </div>
           <div className="settings-record">
             <span>Version</span>
-            <Tag>1.7.1</Tag>
+            <Tag>1.8.0</Tag>
           </div>
           <button className="button primary" onClick={onAccount}>
             Account & backups

@@ -1,0 +1,9 @@
+{
+  "version": "1.8.0",
+  "versionCode": 10,
+  "package": "com.theguild.personal",
+  "bytes": 9611597,
+  "sha256": "aa39e69516d6034dc11bfdf45f0108b54f339f54aecd065dbb80b298a3322d9e",
+  "matchingWebFiles": 31,
+  "nativeLocalNotificationsBundled": true
+}

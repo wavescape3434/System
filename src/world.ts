@@ -1,5 +1,5 @@
 import type { Character } from "./domain";
-import { campaign, startBattle } from "./rpg";
+import { campaign, startBattle, claimVictory, ENCOUNTERS } from "./rpg";
 import {
   PLACES,
   TOWNS,
@@ -29,7 +29,12 @@ function save(
 export function travelTown(c: Character, id: string): Character {
   const town = TOWNS.find((t) => t.id === id);
   if (!town || !regionOpen(campaign(c), town.region) || !ready(c)) return c;
-  return save(c, { ...worldOf(c), townId: id, placeId: undefined });
+  return save(c, {
+    ...worldOf(c),
+    townId: id,
+    placeId: undefined,
+    expedition: undefined,
+  });
 }
 export function explore(
   c: Character,
@@ -124,6 +129,7 @@ export function explore(
   world = {
     ...world,
     placeId: id,
+    expedition: id,
     areas: { ...world.areas, [id]: old },
     journal: [event, ...world.journal].slice(0, 120),
   };
@@ -199,6 +205,32 @@ export function leaveBattle(c: Character): Character {
     };
   }
   return { ...c, campaign: next };
+}
+// Claim exactly once, then stay on the same expedition until the player leaves.
+export function continueAdventure(
+  c: Character,
+  random = Math.random,
+  now = new Date(),
+): Character {
+  const battle = campaign(c).battle;
+  if (!battle || battle.phase !== "won") return c;
+  const encounter = ENCOUNTERS.find((e) => e.id === battle.encounterId);
+  if (!encounter) return c;
+  const paid = battle.claimed ? c : claimVictory(c);
+  const next = leaveBattle(paid),
+    data = campaign(next),
+    place = PLACES.find((p) => p.id === encounter.placeId)!;
+  const stage = place.stages.find((id) => !data.cleared.includes(id));
+  return stage
+    ? startBattle(next, stage)
+    : explore(next, place.id, random, now);
+}
+export function returnToMap(c: Character): Character {
+  const battle = campaign(c).battle;
+  if (battle?.phase === "player") return c;
+  const paid = battle?.phase === "won" && !battle.claimed ? claimVictory(c) : c;
+  const next = campaign(paid).battle ? leaveBattle(paid) : paid;
+  return save(next, { ...worldOf(next), expedition: undefined });
 }
 export function contractProgress(c: Character, id: string): number {
   const contract = WORLD_CONTRACTS.find((x) => x.id === id);

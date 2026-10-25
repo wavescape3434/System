@@ -98,7 +98,7 @@ test("reassessment remembers started forms and rotates questions even after leav
     .getByRole("button", { name: "Start WIS check", exact: true })
     .click();
   const first = await page.locator(".mind-check>h3").textContent();
-  await nav(page, "Guild Card");
+  await nav(page, "Guild");
   await nav(page, "Settings");
   await page.getByRole("button", { name: "Assessment", exact: true }).click();
   await page.getByRole("button", { name: "WIS", exact: true }).click();
@@ -163,7 +163,7 @@ test("a class examination holds the stat milestone until the measured result imp
     .click();
   await expect(page.locator(".exam-result")).toContainText("Passed");
   await page.getByRole("button", { name: "Close dialog", exact: true }).click();
-  await nav(page, "Guild Card");
+  await nav(page, "Guild");
   await expect(page.locator(".engraved-line").first()).toContainText("Lv. 9");
   const c = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
@@ -173,7 +173,7 @@ test("a class examination holds the stat milestone until the measured result imp
   ).toBe(1800);
   expect(c.exams.at(-1).status).toBe("passed");
 });
-test("phone header remains fixed while scrolling and notifications show real task gold", async ({
+test("phone header remains fixed while scrolling and notifications offer rewards without repeating actions", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -192,7 +192,10 @@ test("phone header remains fixed while scrolling and notifications show real tas
     .click();
   await expect(
     page.getByRole("dialog", { name: "Notifications", exact: true }),
-  ).toContainText("+12 gold");
+  ).toContainText("Login reward ready");
+  await expect(page.getByRole("dialog")).not.toContainText(
+    "Warrior commission",
+  );
   await page.getByRole("button", { name: "Close dialog", exact: true }).click();
   await expect(page.locator(".notification-count")).toHaveCount(0);
   await nav(page, "Adventures");
@@ -229,7 +232,7 @@ test("gym access persists, the guild card follows its metal, and fighter weapon 
   await nav(page, "Objectives");
   await expect(
     page.getByRole("button", {
-      name: "Take Progressive resistance session",
+      name: "View Progressive resistance session",
       exact: true,
     }),
   ).toBeEnabled();
@@ -243,6 +246,6 @@ test("gym access persists, the guild card follows its metal, and fighter weapon 
     .getByRole("button", { name: "Spear Reach: locked", exact: true })
     .click();
   const dialog = page.getByRole("dialog");
-  await expect(dialog).toContainText("Learn Weapon Discipline");
+  await expect(dialog).toContainText("Complete 1 Fighter class requests");
   await expect(dialog).not.toContainText("Learn Sword Guard");
 });

@@ -1,12 +1,25 @@
 import WorldMap from "./WorldMap";
 import PixelScene from "./PixelScene";
-import { leaveBattle } from "./world";
+import {
+  continueAdventure,
+  returnToMap,
+  explore,
+  challengeBoss,
+  declineBoss,
+} from "./world";
+import {
+  placeProgress,
+  placeCleared,
+  bossChance,
+  ambushChance,
+} from "./world-state";
+import { startBattle } from "./rpg";
 import { RESOURCE_NAMES, PLACES } from "./world-catalog";
 import { currentPath } from "./domain";
 import { classPower } from "./class-catalog";
 import { COMBAT_EFFECTS } from "./class-roles";
 import { CLASS_ROLES } from "./class-roles";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Sword,
   Shield,
@@ -43,7 +56,17 @@ export default function AdventureGame({
     [tab, setTab] = useState("map"),
     [enemyTarget, setEnemyTarget] = useState(0),
     [allyTarget, setAllyTarget] = useState(0),
-    [actionError, setActionError] = useState("");
+    [actionError, setActionError] = useState(""),
+    [impact, setImpact] = useState<{
+      key: number;
+      name: string;
+      units: { id: string; amount: number }[];
+    } | null>(null);
+  useEffect(() => {
+    if (!impact) return;
+    const timer = setTimeout(() => setImpact(null), 1300);
+    return () => clearTimeout(timer);
+  }, [impact]);
   const change = (next: Campaign) => update({ ...c, campaign: next });
   const battle = data.battle;
   const command = (action: Action) => {
@@ -54,7 +77,24 @@ export default function AdventureGame({
       return;
     }
     setActionError("");
-    update(next);
+    const after = campaign(next).battle!;
+    const name =
+      action.kind === "ability"
+        ? battle.party[battle.actor].abilities.find(
+            (a) => a.id === action.abilityId,
+          )?.name || "Skill"
+        : action.kind[0].toUpperCase() + action.kind.slice(1);
+    if (update(next))
+      setImpact({
+        key: Date.now(),
+        name,
+        units: [...battle.party, ...battle.enemies].flatMap((u) => {
+          const v = [...after.party, ...after.enemies].find(
+            (v) => v.id === u.id,
+          );
+          return v && v.hp !== u.hp ? [{ id: u.id, amount: v.hp - u.hp }] : [];
+        }),
+      });
   };
   const skills = SKILLS.filter(
     (s) =>
@@ -92,13 +132,27 @@ export default function AdventureGame({
         <small>
           {unit.hp}/{unit.maxHp} HP{!enemy && ` · ${unit.mp}/${unit.maxMp} MP`}
         </small>
-        <div className="sprite-area" key={`${unit.id}-${unit.hp}`}>
+        {impact?.units
+          .filter((u) => u.id === unit.id)
+          .map((u) => (
+            <span
+              key={`${impact.key}-${u.id}`}
+              className={`battle-number ${u.amount > 0 ? "healing" : "damage"}`}
+            >
+              {u.amount > 0 ? "+" : ""}
+              {u.amount}
+            </span>
+          ))}
+        <div
+          className={`sprite-area ${impact?.units.some((u) => u.id === unit.id && u.amount < 0) ? "hit" : ""}`}
+          key={`${unit.id}-${unit.hp}`}
+        >
           <BattleSprite unit={unit} />
         </div>
       </button>
     );
     return (
-      <section className="jrpg-battle pixel-adventure">
+      <section className="jrpg-battle pixel-adventure polished-battle">
         <div className="battle-title">
           <div>
             <Tag tone="gold">ROUND {battle.round}</Tag>
@@ -114,13 +168,80 @@ export default function AdventureGame({
                   : "Retreated"}
           </span>
         </div>
-        <div className={`battlefield biome-${biome}`}>
-          <PixelScene biome={biome} />
+        <div className="turn-queue" aria-label="Turn order">
+          <small>NEXT TURN</small>
+          {[
+            ...battle.party.slice(battle.actor),
+            ...battle.enemies,
+            ...battle.party.slice(0, battle.actor),
+          ]
+            .filter((u) => u.hp > 0)
+            .map((u, i) => (
+              <span
+                key={u.id}
+                className={i === 0 ? "next-actor" : ""}
+                title={u.name}
+              >
+                <BattleSprite unit={u} />
+                <small>{u.name}</small>
+              </span>
+            ))}
+        </div>
+        <div
+          className={`battlefield biome-${biome} ${impact ? "battle-impact" : ""}`}
+        >
+          {["forest", "ruins", "swamp"].includes(biome) && (
+            <img
+              className="battle-backdrop"
+              src="/art/forest-battle.png"
+              alt=""
+            />
+          )}
+          <div className="battle-atmosphere" aria-hidden="true" />
+          {impact && (
+            <div className="battle-action-banner" key={impact.key}>
+              {impact.name}
+            </div>
+          )}
+          {!["forest", "ruins", "swamp"].includes(biome) && (
+            <PixelScene biome={biome} />
+          )}
           <div className="enemy-line">
             {battle.enemies.map((unit, i) => fighter(unit, i, true))}
           </div>
           <div className="party-line">
             {battle.party.map((unit, i) => fighter(unit, i, false))}
+          </div>
+          <div className="battle-party-hud">
+            {battle.party.map((u, i) => (
+              <button
+                key={u.id}
+                className={
+                  i === battle.actor && battle.phase === "player"
+                    ? "active"
+                    : ""
+                }
+                onClick={() => setAllyTarget(i)}
+                aria-label={`Select ally ${u.name}`}
+              >
+                <b>
+                  {u.name}
+                  {u.guard && <Shield size={12} />}
+                </b>
+                <span>
+                  <small>HP</small>
+                  {u.hp}
+                  <i>/{u.maxHp}</i>
+                </span>
+                <Progress value={u.hp} max={u.maxHp} />
+                <span>
+                  <small>MP</small>
+                  {u.mp}
+                  <i>/{u.maxMp}</i>
+                </span>
+                <Progress value={u.mp} max={u.maxMp} />
+              </button>
+            ))}
           </div>
         </div>
         {battle.phase === "player" ? (
@@ -196,26 +317,53 @@ export default function AdventureGame({
                     )}${encounter.recruit ? " · Companion recruitment unlocked" : ""}`
                 : ""}
             </p>
-            {battle.phase === "won" && !battle.claimed ? (
+            <div className="battle-result-actions">
+              {battle.phase === "won" && (
+                <button
+                  className="button primary"
+                  onClick={() => {
+                    setImpact(null);
+                    setEnemyTarget(0);
+                    setAllyTarget(0);
+                    update(continueAdventure(c));
+                  }}
+                >
+                  {PLACES.find((p) => p.id === encounter.placeId)!.stages.some(
+                    (id) => !data.cleared.includes(id) && id !== encounter.id,
+                  )
+                    ? "Continue adventure"
+                    : "Continue exploring"}{" "}
+                  <ArrowLeft size={16} className="continue-arrow" />
+                </button>
+              )}
+              {battle.phase === "won" && !battle.claimed && (
+                <button
+                  className="button secondary"
+                  onClick={() => update(claimVictory(c))}
+                >
+                  Claim rewards <Coins size={16} />
+                </button>
+              )}
+              {battle.phase === "lost" && (
+                <button
+                  className="button primary"
+                  onClick={() =>
+                    update(startBattle(returnToMap(c), encounter.id))
+                  }
+                >
+                  Retry battle
+                </button>
+              )}
               <button
-                className="button primary"
-                onClick={() => update(claimVictory(c))}
-              >
-                Claim rewards <Coins size={16} />
-              </button>
-            ) : (
-              <button
-                className="button primary"
-                onClick={() => {
-                  update(leaveBattle(c));
-                }}
+                className="button secondary"
+                onClick={() => update(returnToMap(c))}
               >
                 Return to map <Map size={16} />
               </button>
-            )}
+            </div>
           </div>
         )}
-        <details className="combat-log" open>
+        <details className="combat-log">
           <summary>Combat log</summary>
           <div role="log" aria-live="polite">
             {battle.log.slice(-8).map((line, i) => (
@@ -223,6 +371,103 @@ export default function AdventureGame({
             ))}
           </div>
         </details>
+      </section>
+    );
+  }
+  const place = PLACES.find((p) => p.id === data.world?.expedition);
+  if (place && data.world) {
+    const area = placeProgress(data.world, place.id),
+      cleared = placeCleared(data, place.id),
+      nextStage = place.stages.find((id) => !data.cleared.includes(id));
+    return (
+      <section className="pixel-adventure expedition-view">
+        <div className="expedition-heading">
+          <div>
+            <small>EXPEDITION</small>
+            <h2>{place.name}</h2>
+          </div>
+          <button
+            className="button secondary"
+            onClick={() => update(returnToMap(c))}
+          >
+            <Map size={16} />
+            Return to map
+          </button>
+        </div>
+        <div className={`expedition-scene biome-${place.biome}`}>
+          <PixelScene biome={place.biome} />
+          {place.biome === "forest" && (
+            <img src="/art/forest-battle.png" alt="Forest clearing" />
+          )}
+          <div className="expedition-position">
+            <span>
+              {place.stages.filter((id) => data.cleared.includes(id)).length}/
+              {place.stages.length} stages
+            </span>
+            <span>{area.visits} explorations</span>
+          </div>
+        </div>
+        <div className="expedition-event pixel-window">
+          <h3>
+            {area.last?.kind === "gather"
+              ? "Gathering"
+              : area.last?.kind === "cache"
+                ? "Treasure found"
+                : area.pendingBoss
+                  ? "Roaming boss nearby"
+                  : "Expedition"}
+          </h3>
+          <p>{area.last?.text || "The trail continues."}</p>
+          {area.pendingBoss && (
+            <p>
+              Ambush chance:{" "}
+              {Math.round(ambushChance(place.id, area.ignored) * 100)}%
+            </p>
+          )}
+          <div className="expedition-actions">
+            {area.pendingBoss && (
+              <>
+                <button
+                  className="button primary"
+                  onClick={() => update(challengeBoss(c, place.id))}
+                >
+                  Challenge boss
+                </button>
+                {!area.last?.declined && (
+                  <button
+                    className="button secondary"
+                    onClick={() => update(declineBoss(c, place.id))}
+                  >
+                    Leave the boss
+                  </button>
+                )}
+              </>
+            )}
+            {cleared ? (
+              <button
+                className="button primary"
+                onClick={() => update(explore(c, place.id))}
+              >
+                Continue exploring
+              </button>
+            ) : (
+              nextStage && (
+                <button
+                  className="button primary"
+                  onClick={() => update(startBattle(c, nextStage))}
+                >
+                  Continue adventure
+                </button>
+              )
+            )}
+          </div>
+          {cleared && !area.pendingBoss && (
+            <small>
+              Boss discovery chance:{" "}
+              {Math.round(bossChance(place.id, area.sinceBoss) * 100)}%
+            </small>
+          )}
+        </div>
       </section>
     );
   }

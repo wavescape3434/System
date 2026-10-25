@@ -13,6 +13,7 @@ import {
 } from "./domain";
 import { VOCATIONS } from "./careers";
 import { campaign, ENCOUNTERS, COMPANIONS, EQUIPMENT } from "./rpg";
+import { RESOURCE_NAMES } from "./world-catalog";
 export type JourneyKind =
   | "class"
   | "profession"
@@ -149,13 +150,30 @@ export function recordJourney(
       );
   const a = campaign(previous),
     b = campaign(next);
-  if (b.battle?.claimed && !a.battle?.claimed) {
-    const e = ENCOUNTERS.find((e) => e.id === b.battle!.encounterId);
+  // Continuing can settle a victory and replace its battle in a single update.
+  const settled =
+    a.battle?.phase === "won" &&
+    !a.battle.claimed &&
+    (!b.battle || b.battle.claimed || b.battle.phase !== "won")
+      ? a.battle
+      : b.battle?.claimed && !a.battle?.claimed
+        ? b.battle
+        : undefined;
+  if (settled) {
+    const e = ENCOUNTERS.find((e) => e.id === settled.encounterId);
     if (e)
       add(
         "adventure",
         `${e.name} cleared`,
-        `${e.gold} gold · 1 potion`,
+        `${e.gold} gold · ${
+          b.world
+            ? Object.entries(e.loot)
+                .map(
+                  ([id, quantity]) => `${quantity} ${RESOURCE_NAMES[id] || id}`,
+                )
+                .join(" · ")
+            : "1 potion"
+        }`,
         e.gold,
         e.id,
       );

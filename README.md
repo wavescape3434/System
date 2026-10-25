@@ -4,7 +4,7 @@ An Android app for real-world objectives, class and profession progression, bran
 
 ## Try it
 
-Download the prebuilt [Android APK](downloads/the-guild-debug.apk?raw=true), or open the [download instructions](downloads/README.md). Browse the [phone preview](docs/screenshots/guild-android.png), [desktop overview](docs/screenshots/guild-desktop.png), and [skill tree](docs/screenshots/skill-tree.png).
+Download the prebuilt [Android APK](downloads/the-guild-debug.apk?raw=true), or open the [download instructions](downloads/README.md). Browse the [phone hub](docs/screenshots/guild-hub-mobile.png), [battle preview](docs/screenshots/battle-polished.png), and [screenshot gallery](docs/screenshots/README.md).
 
 The APK requires Android 7.0 or newer. This is a development build, not a Play Store release. A device may ask you to allow installation from the app used to open the APK. Local builds produce `android/app/build/outputs/apk/debug/app-debug.apk`.
 
@@ -29,11 +29,13 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
-## Version 1.7.1
+## Version 1.8.0
 
-Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 9. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.7.md).
+Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 10. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.8.md).
 
 Guild Cards follow the member's rank metal: **Tin, Copper, Bronze, Iron, Silver, Gold, Platinum, Mythril, Orichalcum** for F through SSS. Objectives are pinned parchment commissions on a timber board. The fixed header includes an in-app notification inbox. [View the screenshots](docs/screenshots/README.md).
+
+The Guild hub shows taken requests, login rewards, and card links to the relevant sections. Objectives use compact expandable cards. Battles have direct stage/exploration continuation, a new forest backdrop, a turn queue, party HUD, and attack feedback. Trees support pinch zoom, Fit, a searchable list, and more early choices. Android submission/deadline reminders are configurable in Settings, defaulting to 9pm local time. [Version 1.8 changes and reward values](docs/update-1.8.md).
 
 ### Request balance and simulation report
 
@@ -41,7 +43,7 @@ Related objective ranks now share one request card. Choose a rank before accepti
 
 Weekly goals use Monday–Sunday and monthly goals use the calendar month. They include relevant work already logged earlier in that period. Acceptance and checklist progress expire at the boundary; earned activity and history remain. Daily tasks retain F–C limits, weekly quests F–A, and monthly adventures F–SSS. Expert achievements check prior preparation before rewarding a current-month outcome.
 
-Adventures now has **eight regions, 24 places, 96 stage battles, six towns, 60 guild commissions, seven companions, and 30 town-crafted items**. Clear a place's four stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use classic blue command windows.
+Adventures now has **eight regions, 24 places, 96 stage battles, six towns, 60 guild commissions, seven companions, and 30 town-crafted items**. Clear a place's four stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use command windows and a separate party HUD.
 
 Hybrid requests either require a named adventure commission or pay an optional bonus when it is completed. Ordinary requests remain available. [Content, calendar, exploration, and shop rules](docs/update-1.7.md) · [New screenshots](docs/screenshots/README.md).
 

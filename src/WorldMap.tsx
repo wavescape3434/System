@@ -1,3 +1,4 @@
+import { Swords } from "lucide-react";
 import { useState } from "react";
 import type { Character } from "./domain";
 import { campaign, startBattle, buy, equip, EQUIPMENT } from "./rpg";
@@ -231,6 +232,7 @@ export default function WorldMap({
             return (
               <article className="pixel-window" key={r.id}>
                 <span>
+                  <Swords size={14} aria-label="Adventure only" />{" "}
                   {r.kind.toUpperCase()} · {town.name}
                 </span>
                 <h3>{r.title}</h3>

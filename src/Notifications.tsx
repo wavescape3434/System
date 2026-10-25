@@ -1,33 +1,60 @@
 import type { Character } from "./domain";
+import { takenObjectives, isComplete } from "./domain";
 import { examTargets } from "./exams";
-import { Modal, Icon, Tag } from "./ui";
-export function notificationFeed(c: Character) {
-  const events = (c.journeyEvents || []).map((e) => ({
-    id: e.id,
-    at: e.at,
-    title: e.title,
-    detail: e.detail || "",
-    icon: e.kind === "skill" ? "INT" : "CON",
-  }));
-  const completed = c.completions.map((o) => ({
-    id: `request-${o.id}-${o.period}`,
-    at: o.at,
-    title: o.title,
-    detail: `+${o.xp} XP${o.gold !== undefined ? ` · +${o.gold} gold` : ""}`,
-    icon: o.stat,
-  }));
-  const due = examTargets(c)
+import { loginReward, claimLoginReward } from "./login-rewards";
+import { periodEnd } from "./calendar-goals";
+import type { Page } from "./screens";
+import { Modal, Icon } from "./ui";
+export function notificationFeed(c: Character, now = new Date()) {
+  const reward = loginReward(c, now);
+  const feed = examTargets(c)
     .filter((t) => t.ready)
     .map((t) => ({
       id: `exam-${t.scope}-${t.owner}-${t.milestone}`,
       at: c.completions.at(-1)?.at || c.createdAt,
       title: `${t.name} examination ready`,
-      detail: `Level ${t.milestone} · Class Paths → Examinations`,
-      icon: t.stat,
+      detail: `Level ${t.milestone}`,
+      icon: t.stat as string,
+      page: "paths" as Page,
+      section: "exams",
+      reward: false,
     }));
-  return [...due, ...events, ...completed]
-    .sort((a, b) => Date.parse(b.at) - Date.parse(a.at))
-    .slice(0, 60);
+  if (!reward.claimed)
+    feed.push({
+      id: `login-${reward.day}`,
+      at: new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+      ).toISOString(),
+      title: "Login reward ready",
+      detail: `Day ${reward.cycleDay} · ${reward.gold} gold${reward.potion ? ` · ${reward.potion} potion` : ""}${reward.ether ? ` · ${reward.ether} ether` : ""}`,
+      icon: "CON",
+      page: "guild",
+      section: "",
+      reward: true,
+    });
+  for (const o of takenObjectives(c, now)) {
+    if (o.cadence === "daily" || isComplete(c, o, now)) continue;
+    const end = periodEnd(o.cadence, now),
+      remaining = end.getTime() - now.getTime();
+    if (remaining > 48 * 3600000 || remaining <= 0) continue;
+    feed.push({
+      id: `due-${o.id}-${end.toISOString()}`,
+      at: new Date(end.getTime() - 48 * 3600000).toISOString(),
+      title: `${o.title} · deadline approaching`,
+      detail: `Due ${new Date(end.getTime() - 1).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
+      icon: o.stat,
+      page: "objectives",
+      section: `taken:${o.cadence}`,
+      reward: false,
+    });
+  }
+  return feed.sort(
+    (a, b) =>
+      Number(b.reward) - Number(a.reward) ||
+      Date.parse(b.at) - Date.parse(a.at),
+  );
 }
 export const notificationUnread = (c: Character) =>
   notificationFeed(c).filter((n) =>
@@ -39,9 +66,13 @@ export const notificationUnread = (c: Character) =>
 export default function Notifications({
   c,
   onClose,
+  update,
+  navigate,
 }: {
   c: Character;
   onClose: () => void;
+  update: (c: Character) => boolean;
+  navigate: (p: Page, section?: string) => void;
 }) {
   const feed = notificationFeed(c);
   return (
@@ -56,9 +87,17 @@ export default function Notifications({
               <div>
                 <b>{n.title}</b>
                 <p>{n.detail}</p>
-                <small>{new Date(n.at).toLocaleString()}</small>
               </div>
-              <Tag>Guild</Tag>
+              <button
+                className="button secondary"
+                onClick={() =>
+                  n.reward
+                    ? update(claimLoginReward(c))
+                    : navigate(n.page, n.section)
+                }
+              >
+                {n.reward ? "Claim" : "Open"}
+              </button>
             </article>
           ))
         )}

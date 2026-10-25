@@ -272,6 +272,7 @@ export interface Character {
   assessmentFormsSeen?: string[];
   notificationsReadAt?: string;
   notificationReads?: string[];
+  loginRewards?: { day: string; at: string; cycleDay: number }[];
   preferences?: Preferences;
   classEntries?: Record<string, { at: string; credit: number }>;
   trainingLegacy?: {
@@ -670,6 +671,23 @@ export function archetypeXP(c: Character, id: string) {
 }
 export const activeVocation = (c: Character) =>
   VOCATIONS.find((v) => v.id === c.vocation);
+export const vocationXP = (c: Character, id = c.vocation) => {
+  const category = VOCATIONS.find((v) => v.id === id)?.category;
+  if (!category) return 0;
+  return c.completions.reduce(
+    (n, o) =>
+      n +
+      (o.vocationId === id &&
+      o.scope === "profession" &&
+      o.careerCategory === category
+        ? o.xp
+        : 0) +
+        (o.vocationCredit?.id === id ? o.vocationCredit?.xp || 0 : 0),
+    0,
+  );
+};
+export const vocationLevel = (c: Character, id = c.vocation) =>
+  levelFromXP(vocationXP(c, id));
 export function careerXP(c: Character, id: string) {
   return (
     c.completions

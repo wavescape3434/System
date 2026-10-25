@@ -32,6 +32,7 @@ export interface WorldState {
   version: 1;
   townId: string;
   placeId?: string;
+  expedition?: string;
   areas: Record<string, PlaceProgress>;
   kills: Record<string, number>;
   taken: { id: string; at: string; baseline: number }[];
@@ -131,6 +132,8 @@ export function validWorld(w: WorldState): boolean {
       w.version === 1 &&
       TOWNS.some((t) => t.id === w.townId) &&
       (w.placeId === undefined || PLACES.some((p) => p.id === w.placeId)) &&
+      (w.expedition === undefined ||
+        PLACES.some((p) => p.id === w.expedition)) &&
       !!w.areas &&
       Object.entries(w.areas).every(
         ([id, p]) =>

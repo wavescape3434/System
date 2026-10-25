@@ -6,6 +6,8 @@ import {
   currentPath,
   stats,
   classLevel,
+  professionLevel,
+  vocationLevel,
   characterRank,
   level,
   adventurerXP,
@@ -83,9 +85,11 @@ export function GuildSigil() {
 export default function GuildCard({
   c,
   onSkills,
+  onSection,
 }: {
   c: Character;
   onSkills: () => void;
+  onSection?: (section: string) => void;
 }) {
   const p = currentPath(c),
     s = stats(c),
@@ -110,30 +114,49 @@ export default function GuildCard({
             <small>REGISTERED NAME</small>
             <h2>{c.name}</h2>
           </div>
-          <div className="engraved-line">
+          <button
+            className="engraved-line engraved-link"
+            onClick={() => onSection?.("class")}
+            aria-label="Open class register"
+          >
             <small>CLASS</small>
             <b>
               <Icon name={p.icon} size={15} />
               {p.name}
             </b>
             <span>Lv. {classLevel(c, p.id)}</span>
-          </div>
-          <div className="engraved-line">
+          </button>
+          <button
+            className="engraved-line engraved-link"
+            onClick={() => onSection?.("profession")}
+            aria-label="Open profession"
+          >
             <small>PROFESSION</small>
             <b>{c.profession}</b>
-          </div>
-          <div className="engraved-line">
+            <span>Lv. {professionLevel(c)}</span>
+          </button>
+          <button
+            className="engraved-line engraved-link"
+            onClick={() => onSection?.("vocation")}
+            aria-label="Open vocation"
+          >
             <small>VOCATION</small>
             <b>{v?.name || "Undeclared"}</b>
-          </div>
+            {v && <span>Lv. {vocationLevel(c)}</span>}
+          </button>
           <div className="engraved-stats">
             {ATTRIBUTES.map((a) => (
-              <div key={a}>
+              <button
+                className="engraved-link"
+                key={a}
+                onClick={() => onSection?.("attributes")}
+                aria-label={`Open ${a} stats`}
+              >
                 <Icon name={a} size={13} />
                 <span>{a}</span>
                 <b>{s[a]}</b>
                 <i>✧</i>
-              </div>
+              </button>
             ))}
           </div>
           <button className="engraved-skills-link" onClick={onSkills}>
@@ -142,15 +165,23 @@ export default function GuildCard({
         </div>
         <div className="engraved-seal-column">
           <GuildSigil />
-          <div className="engraved-rank">
+          <button
+            className="engraved-rank engraved-link"
+            onClick={() => onSection?.("rank")}
+            aria-label="Open guild rank progression"
+          >
             <small>GUILD RANK</small>
             <strong>{characterRank(c).name}</strong>
             <span>{characterRank(c).metal.toUpperCase()}</span>
-          </div>
-          <div className="engraved-level">
+          </button>
+          <button
+            className="engraved-level engraved-link"
+            onClick={() => onSection?.("rank")}
+            aria-label="Open player progression"
+          >
             <small>PLAYER LEVEL</small>
             <strong>{level(adventurerXP(c))}</strong>
-          </div>
+          </button>
         </div>
       </div>
       <div className="engraved-experience">

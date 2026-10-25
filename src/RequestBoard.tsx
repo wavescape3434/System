@@ -1,5 +1,16 @@
+import { careerCategory } from "./careers";
 import { useState, useEffect, useMemo } from "react";
-import { Search, Star, Clock3, Check, Plus } from "lucide-react";
+import {
+  Search,
+  Star,
+  Plus,
+  Globe,
+  Blend,
+  BriefcaseBusiness,
+  Compass,
+  Shield,
+  Users,
+} from "lucide-react";
 import type { Character, Objective, Cadence } from "./domain";
 import {
   objectives,
@@ -7,38 +18,40 @@ import {
   suggestedObjectives,
   isTaken,
   isComplete,
-  takeRequest,
   taskRequirements,
   ATTRIBUTES,
   currentPath,
+  activeVocation,
 } from "./domain";
 import { groupRequests } from "./objective-catalog";
 import { allowedRanks } from "./request-balance";
 import { TASK_NAMES } from "./task-ranks";
-import { requestProgress } from "./training-tasks";
 import { periodStart, periodEnd } from "./calendar-goals";
-import { Tag, Icon } from "./ui";
+import { Tag } from "./ui";
 export default function RequestBoard({
   c,
   openObjective,
   update,
-  notify,
+  section,
 }: {
   c: Character;
   openObjective: (o: Objective) => void;
   update: (c: Character) => boolean;
   notify: (s: string) => void;
+  section?: string;
 }) {
-  const [view, setView] = useState("board"),
-    [tab, setTab] = useState<Cadence>("daily"),
+  const [view, setView] = useState(section?.split(":")[0] || "board"),
+    [tab, setTab] = useState<Cadence>(
+      (section?.split(":")[1] as Cadence) || "daily",
+    ),
     [category, setCategory] = useState("all"),
     [rank, setRank] = useState("all"),
     [query, setQuery] = useState(""),
     [focus, setFocus] = useState("all"),
     [sort, setSort] = useState("relevant");
-  const [limit, setLimit] = useState(12);
+  const [limit, setLimit] = useState(30);
   useEffect(
-    () => setLimit(12),
+    () => setLimit(30),
     [view, tab, category, rank, query, focus, sort],
   );
   const taken = useMemo(() => takenObjectives(c), [c]),
@@ -56,6 +69,13 @@ export default function RequestBoard({
         : view === "pinned"
           ? all.filter((o) => pins.includes(o.requestGroup || o.id))
           : all;
+  const scopeOf = (o: Objective) =>
+    o.scope === "profession" &&
+    (o.id.startsWith("vocation-") ||
+      (o.careerCategory === activeVocation(c)?.category &&
+        o.careerCategory !== careerCategory(c.profession).id))
+      ? "vocation"
+      : o.scope || "class";
   const filtered = source.filter(
     (o) =>
       o.cadence === tab &&
@@ -65,8 +85,7 @@ export default function RequestBoard({
       (rank === "all" || o.rank === rank) &&
       (focus === "all" || o.stat === focus) &&
       (category === "all" ||
-        o.scope === category ||
-        (category === "vocation" && o.id.startsWith("vocation-")) ||
+        scopeOf(o) === category ||
         (category === "hybrid" &&
           (o.adventureRequirement || o.adventureBonus)) ||
         category === "trials") &&
@@ -171,7 +190,7 @@ export default function RequestBoard({
               ["universal", "Universal"],
               ["class", "Class"],
               ["vocation", "Vocation"],
-              ["profession", "Profession & technical practice"],
+              ["profession", "Profession"],
               ["hybrid", "Hybrid"],
               ["trials", "Class trials"],
             ].map(([id, t]) => (
@@ -250,7 +269,7 @@ export default function RequestBoard({
           {view === "taken" ? "ACCEPTED COMMISSIONS" : "THE ADVENTURERS GUILD"}
           <span>✦</span>
         </div>
-        <div className="objectives-grid request-papers">
+        <div className="objectives-grid request-papers compact-papers">
           {groups.slice(0, limit).map((g) => {
             const chosen =
                 g.variants.find((o) => isTaken(c, o)) ||
@@ -261,155 +280,71 @@ export default function RequestBoard({
                 g.variants[0],
               done = isComplete(c, chosen),
               accepted = isTaken(c, chosen),
-              progress = requestProgress(c, chosen),
               multi = g.variants.length > 1;
+            const scope = scopeOf(chosen),
+              Scope =
+                scope === "universal"
+                  ? Users
+                  : scope === "profession"
+                    ? BriefcaseBusiness
+                    : scope === "vocation"
+                      ? Compass
+                      : Shield,
+              hybrid = !!(chosen.adventureRequirement || chosen.adventureBonus),
+              Realm = hybrid ? Blend : Globe;
             return (
               <article
                 key={g.id}
-                className={`panel objective-card guild-request-paper ${done ? "completed" : ""}`}
+                className={`panel objective-card guild-request-paper compact-request ${done ? "completed" : ""} ${accepted ? "accepted" : ""}`}
               >
+                <span
+                  className="request-scope-icon"
+                  title={scope}
+                  aria-label={`${scope} request`}
+                >
+                  <Scope size={18} />
+                </span>
+                <span
+                  className="request-realm-icon"
+                  title={hybrid ? "Real world + adventure" : "Real world"}
+                  aria-label={
+                    hybrid ? "Real world and adventure" : "Real world"
+                  }
+                >
+                  <Realm size={17} />
+                </span>
+                <button
+                  className="request-compact-name"
+                  aria-label={`View ${g.title}`}
+                  onClick={() => openObjective(chosen)}
+                >
+                  {g.title}
+                </button>
+                <span
+                  className="compact-rank"
+                  title={accepted ? "Taken" : done ? "Completed" : "Available"}
+                >
+                  {accepted || done || !multi
+                    ? chosen.rank
+                    : `${g.variants[0].rank}–${g.variants.at(-1)!.rank}`}
+                </span>
+                <button
+                  className="compact-details"
+                  aria-label={`Show details for ${g.title}`}
+                  onClick={() => openObjective(chosen)}
+                >
+                  <Plus size={18} />
+                </button>
                 <button
                   className={`request-pin-toggle ${pins.includes(g.id) ? "pinned" : ""}`}
                   aria-label={`${pins.includes(g.id) ? "Unpin" : "Pin"} ${g.title}`}
                   onClick={() => pin(g.id)}
                 >
                   <Star
-                    size={16}
+                    size={13}
                     fill={pins.includes(g.id) ? "currentColor" : "none"}
                   />
                 </button>
-                <button
-                  className="request-details"
-                  aria-label={`View ${g.title}`}
-                  onClick={() => openObjective(chosen)}
-                >
-                  <span className="request-pin" aria-hidden="true" />
-                  <small className="request-number">
-                    {tab === "daily"
-                      ? "GUILD TASK"
-                      : tab === "weekly"
-                        ? "QUEST COMMISSION"
-                        : "MONTHLY ADVENTURE"}
-                  </small>
-                  <div className="objective-card-top">
-                    <span
-                      className={`objective-icon ${chosen.stat.toLowerCase()}`}
-                    >
-                      <Icon name={chosen.stat} size={23} />
-                    </span>
-                    <Tag tone="gold">
-                      {accepted || done || !multi
-                        ? `${chosen.rank} rank`
-                        : `${g.variants[0].rank}–${g.variants.at(-1)!.rank}`}
-                    </Tag>
-                    <Tag>{done ? "Completed" : chosen.category}</Tag>
-                  </div>
-                  <h3>{g.title}</h3>
-                  {multi && !accepted && !done && (
-                    <div className="rank-choice-preview">
-                      {g.variants.map((o) => (
-                        <span key={o.id}>{o.rank}</span>
-                      ))}
-                    </div>
-                  )}
-                  {(chosen.adventureRequirement || chosen.adventureBonus) && (
-                    <Tag tone="gold">
-                      {chosen.adventureRequirement
-                        ? "Adventure required"
-                        : "Adventure bonus"}
-                    </Tag>
-                  )}
-                  {chosen.participants === "group" && <Tag>Group quest</Tag>}
-                  <p>{chosen.description}</p>
-                  {accepted &&
-                    (chosen.minimumDays || chosen.minimumSessions) && (
-                      <div className="request-mix">
-                        <Tag>
-                          {Math.min(
-                            progress.sessions,
-                            chosen.minimumSessions || 0,
-                          )}{" "}
-                          / {chosen.minimumSessions || 0} practice days
-                        </Tag>
-                        {chosen.calendarBound && (
-                          <Tag>
-                            {tab === "weekly" ? "This week" : "This month"}
-                          </Tag>
-                        )}
-                      </div>
-                    )}
-                  {chosen.statReward && (
-                    <Tag tone="gold">
-                      +{chosen.statReward.amount} base {chosen.statReward.stat}
-                    </Tag>
-                  )}
-                </button>
-                <div className="objective-card-bottom">
-                  <span>
-                    <Clock3 size={13} />
-                    {accepted || !multi
-                      ? chosen.minutes
-                      : `${g.variants.length} rank options`}
-                  </span>
-                  <span className="request-rewards">
-                    <b>
-                      {multi && !accepted && !done
-                        ? `${g.variants[0].xp}–${g.variants.at(-1)!.xp}`
-                        : `+${chosen.xp}`}{" "}
-                      XP
-                    </b>
-                    <b>
-                      {multi && !accepted && !done
-                        ? `${g.variants[0].gold}–${g.variants.at(-1)!.gold}`
-                        : `+${chosen.gold}`}{" "}
-                      gold
-                    </b>
-                  </span>
-                </div>
-                <div className="request-actions">
-                  {done ? (
-                    <button onClick={() => openObjective(chosen)}>
-                      <Check size={15} />
-                      Completed
-                    </button>
-                  ) : accepted ? (
-                    <button
-                      className="taken-request-action"
-                      onClick={() => openObjective(chosen)}
-                    >
-                      <Check size={15} />
-                      Taken · Open
-                    </button>
-                  ) : multi ? (
-                    <button
-                      aria-label={`Choose rank for ${g.title}`}
-                      onClick={() => openObjective(chosen)}
-                    >
-                      Choose rank
-                    </button>
-                  ) : (
-                    <button
-                      aria-label={`Take ${g.title}`}
-                      disabled={
-                        !!taskRequirements(c, chosen, new Date(), "accept")
-                          .length
-                      }
-                      title={taskRequirements(
-                        c,
-                        chosen,
-                        new Date(),
-                        "accept",
-                      ).join(" · ")}
-                      onClick={() => {
-                        if (update(takeRequest(c, chosen.id)))
-                          notify("Request taken.");
-                      }}
-                    >
-                      <Plus size={15} />
-                      Take request
-                    </button>
-                  )}
-                </div>
               </article>
             );
           })}
@@ -425,7 +360,7 @@ export default function RequestBoard({
       {groups.length > limit && (
         <button
           className="button secondary request-load-more"
-          onClick={() => setLimit((n) => n + 12)}
+          onClick={() => setLimit((n) => n + 30)}
         >
           Show {Math.min(12, groups.length - limit)} more
         </button>

@@ -52,14 +52,14 @@ test("one request card chooses a rank and pins the group across reload", async (
   await nav(page, "Objectives");
   await page.getByLabel("Search requests").fill("Pushup");
   await expect(
-    page.getByRole("heading", { name: "Pushup practice", exact: true }),
+    page.getByRole("button", { name: "View Pushup practice", exact: true }),
   ).toHaveCount(1);
   await page
     .getByRole("button", { name: "Pin Pushup practice", exact: true })
     .click();
   await page
     .getByRole("button", {
-      name: "Choose rank for Pushup practice",
+      name: "View Pushup practice",
       exact: true,
     })
     .click();
@@ -75,7 +75,7 @@ test("one request card chooses a rank and pins the group across reload", async (
   await nav(page, "Objectives");
   await page.getByRole("button", { name: /^Pinned/ }).click();
   await expect(
-    page.getByRole("heading", { name: "Pushup practice", exact: true }),
+    page.getByRole("button", { name: "View Pushup practice", exact: true }),
   ).toBeVisible();
   const c = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
@@ -111,7 +111,7 @@ test("weekly rank selection counts walking before acceptance in the same week", 
   await page.getByRole("button", { name: /^Weekly quests/ }).click();
   await page.getByLabel("Search requests").fill("Walking week");
   await page
-    .getByRole("button", { name: "Choose rank for Walking week", exact: true })
+    .getByRole("button", { name: "View Walking week", exact: true })
     .click();
   await page
     .getByLabel("Choose request rank")
@@ -144,19 +144,20 @@ test("boss discovery, leaving, persisted danger and a true ambush work through t
     .getByRole("button", { name: "Explore Briar Road", exact: true })
     .click();
   await expect(
-    page.getByRole("button", { name: "Challenge roaming boss", exact: true }),
+    page.getByRole("button", { name: "Challenge boss", exact: true }),
   ).toBeVisible();
   await page
     .getByRole("button", { name: "Leave the boss", exact: true })
     .click();
   await expect(
-    page.getByText("Ambush danger: 16%", { exact: true }),
+    page.getByText("Ambush chance: 16%", { exact: true }),
   ).toBeVisible();
   await page.reload();
   await nav(page, "Adventures");
   await page
-    .getByRole("button", { name: "Explore Briar Road", exact: true })
+    .getByRole("button", { name: "Continue exploring", exact: true })
     .click();
+  await page.getByText("Combat log", { exact: true }).click();
   await expect(page.getByRole("log")).toContainText("Ambush!");
   const ambushed = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
@@ -210,9 +211,15 @@ test("gathering herbs and turning in a commission replenishes an empty town stor
       Math.random = () => values[i++ % values.length];
     });
     await page
-      .getByRole("button", { name: "Explore Briar Road", exact: true })
+      .getByRole("button", {
+        name: i === 0 ? "Explore Briar Road" : "Continue exploring",
+        exact: true,
+      })
       .click();
   }
+  await page
+    .getByRole("button", { name: "Return to map", exact: false })
+    .click();
   await page
     .getByRole("button", { name: "Guild requests", exact: true })
     .click();
@@ -361,8 +368,8 @@ test("pixel map, town shops and commissions fit a phone", async ({ page }) => {
     }),
   }));
   expect(boxes.party).toHaveLength(3);
-  expect(Math.min(...boxes.party.map((r) => r.top))).toBeGreaterThan(
-    Math.max(...boxes.enemies.map((r) => r.bottom)),
+  expect(Math.min(...boxes.party.map((r) => r.left))).toBeGreaterThan(
+    Math.max(...boxes.enemies.map((r) => r.right)),
   );
   for (const box of [...boxes.party, ...boxes.enemies]) {
     expect(box.left).toBeGreaterThanOrEqual(0);

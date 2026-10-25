@@ -205,9 +205,9 @@ describe("class and career catalogs", () => {
       const skills = SKILLS.filter(
         (s) => !s.legacy && s.owner === g.id && s.category === "profession",
       );
-      expect(skills).toHaveLength(10);
+      expect(skills).toHaveLength(12);
       expect(skills.every((s) => s.nonCombat && !s.combat)).toBe(true);
-      expect(new Set(skills.map((s) => s.description)).size).toBe(10);
+      expect(new Set(skills.map((s) => s.description)).size).toBe(12);
     }
     expect(careerCategory("Analyst").id).toBe(
       careerCategory("Business Analyst").id,
@@ -217,7 +217,7 @@ describe("class and career catalogs", () => {
       skillWallet({ ...c, profession: "Business Analyst" }, a),
     );
   });
-  it("requires multi-point purchases, charges shared combat points once, and leaves base stats unchanged", () => {
+  it("makes entry skills inexpensive, charges shared combat points once, and leaves base stats unchanged", () => {
     const c = training(demoCharacter(), "warrior", 600),
       base = stats(c),
       before = skillPointsAvailable(c, "combat");
@@ -225,7 +225,7 @@ describe("class and career catalogs", () => {
     expect(learnSkill(untrained, "arc-fighter-1")).toBe(untrained);
     const next = learnSkill(c, "arc-fighter-1");
     expect(next).not.toBe(c);
-    expect(skillPointsAvailable(next, "combat")).toBe(before - 4);
+    expect(skillPointsAvailable(next, "combat")).toBe(before - 1);
     expect(stats(next)).toEqual(base);
     expect(learnSkill(next, "arc-fighter-1")).toBe(next);
   });

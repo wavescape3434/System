@@ -121,8 +121,8 @@ const techniques: Record<string, [string, string, string][]> = {
     ["Perpetual Circuit", "focus-all", "Sustain the party’s MP supply."],
   ],
 };
-const levels = [1, 5, 5, 10, 10, 15, 25, 25, 40, 60, 80, 100],
-  costs = [4, 6, 6, 8, 8, 10, 12, 12, 16, 20, 24, 30];
+const levels = [1, 2, 2, 4, 4, 6, 12, 12, 25, 50, 80, 100],
+  costs = [1, 2, 2, 3, 3, 5, 8, 8, 14, 20, 24, 30];
 const parents = [[], [0], [0], [1], [2], [0], [3], [4], [5], [6], [7], [8]];
 const positions = [
   [540, 1040],
@@ -178,8 +178,8 @@ for (const a of ARCHETYPES) {
       x: (a.id === "fighter" ? fighterPositions : positions)[i][0],
       y: (a.id === "fighter" ? fighterPositions : positions)[i][1],
       cost: costs[i],
-      target: [2, 5, 5, 10, 10, 20, 30, 30, 50, 75, 100, 150][i],
-      proof: `Complete ${[2, 5, 5, 10, 10, 20, 30, 30, 50, 75, 100, 150][i]} requests with a class that trains ${a.name}`,
+      target: [1, 2, 2, 4, 4, 8, 20, 20, 40, 75, 100, 150][i],
+      proof: `Complete ${[1, 2, 2, 4, 4, 8, 20, 20, 40, 75, 100, 150][i]} requests with a class that trains ${a.name}`,
       current: practice,
       tier: "I",
       requiredLevel: levels[i],
@@ -187,6 +187,86 @@ for (const a of ARCHETYPES) {
     }),
   );
 }
+const openings: Record<string, [string, string][]> = {
+  fighter: [
+    ["Measured Thrust", "pierce"],
+    ["Brawler’s Rhythm", "flurry"],
+    ["Shield Footwork", "counter"],
+  ],
+  guardian: [
+    ["Interpose", "ward"],
+    ["Challenge", "taunt"],
+    ["Shield Feint", "bash"],
+  ],
+  ranger: [
+    ["Opening Shot", "pierce"],
+    ["Herbal Dressing", "heal"],
+    ["Tracking Eye", "scan"],
+  ],
+  rogue: [
+    ["Twin Knives", "flurry"],
+    ["Distracting Step", "scan"],
+    ["Slip Guard", "counter"],
+  ],
+  mage: [
+    ["Spark", "fire"],
+    ["Arcane Reading", "scan"],
+    ["Lesser Barrier", "ward"],
+  ],
+  cleric: [
+    ["Helping Hand", "heal"],
+    ["Protective Prayer", "ward"],
+    ["Words of Courage", "rally"],
+  ],
+  bard: [
+    ["Rousing Beat", "rally"],
+    ["Soothing Refrain", "heal"],
+    ["Clear Signal", "scan"],
+  ],
+  artificer: [
+    ["Repair Kit", "heal"],
+    ["Pocket Coil", "fire"],
+    ["Calibration", "scan"],
+  ],
+};
+for (const a of ARCHETYPES)
+  for (let branch = 0; branch < 3; branch++)
+    for (let tier = 0; tier < 3; tier++) {
+      const [name, effect] = openings[a.id][branch],
+        root = `opening-${a.id}-${branch}`;
+      EXPANDED_SKILLS.push({
+        id: `${root}-${tier}`,
+        name:
+          tier === 0
+            ? name
+            : tier === 1
+              ? `${name}: Control`
+              : `${name}: Refinement`,
+        description: `${name}. ${techniques[a.id].find((t) => t[1] === effect)?.[2] || "An adventure combat technique."}`,
+        stat: a.stat,
+        category: "class",
+        branch: a.name,
+        owner: a.id,
+        archetype: a.id,
+        parents: tier === 0 ? [] : [`${root}-${tier - 1}`],
+        anyParents:
+          tier === 2 ? [`opening-${a.id}-${(branch + 1) % 3}-1`] : undefined,
+        x: (a.id === "fighter" ? 1700 : 1200) + branch * 230,
+        y: 1000 - tier * 280,
+        cost: [1, 3, 6][tier],
+        target: [1, 4, 10][tier],
+        proof: `Complete ${[1, 4, 10][tier]} ${a.name} class requests`,
+        current: (c) =>
+          c.completions.filter(
+            (o) =>
+              (!o.scope || o.scope === "class" || o.scope === "subclass") &&
+              CLASSES.find((p) => p.id === o.classId)?.mix[a.id],
+          ).length,
+        tier: "I",
+        requiredLevel: [1, 3, 7][tier],
+        combat: effect,
+      });
+    }
 // Four independent weapon disciplines share the foundation and offer optional cross-training routes.
 const martialBranches: [
   string,
@@ -268,15 +348,14 @@ for (const [branch, title, names, effects, coordinates] of martialBranches)
       branch: title,
       owner: "fighter",
       archetype: "fighter",
-      parents:
-        i === 0 ? ["arc-fighter-1"] : i === 2 ? [] : [`martial-${branch}-${i}`],
+      parents: i === 0 ? [] : i === 2 ? [] : [`martial-${branch}-${i}`],
       anyParents:
         i === 2 ? [`martial-${branch}-2`, `martial-${alternate}-2`] : undefined,
       x: coordinates[i][0],
       y: coordinates[i][1],
-      cost: [4, 8, 14, 24][i],
-      target: [2, 8, 20, 50][i],
-      proof: `Complete ${[2, 8, 20, 50][i]} Fighter class requests`,
+      cost: [1, 3, 10, 24][i],
+      target: [1, 4, 20, 50][i],
+      proof: `Complete ${[1, 4, 20, 50][i]} Fighter class requests`,
       current: (c) =>
         c.completions.filter(
           (o) =>
@@ -284,7 +363,7 @@ for (const [branch, title, names, effects, coordinates] of martialBranches)
             !!CLASSES.find((p) => p.id === o.classId)?.mix.fighter,
         ).length,
       tier: "I",
-      requiredLevel: [1, 5, 15, 30][i],
+      requiredLevel: [1, 3, 15, 30][i],
       combat: effects[i],
     });
   });
@@ -318,12 +397,12 @@ for (const p of CLASSES) {
       anyParents: i === 3 ? [`focus-${p.id}-1`, `focus-${p.id}-2`] : undefined,
       x: [540, 320, 760, 540][i],
       y: [680, 450, 450, 160][i],
-      cost: [4, 8, 14, 24][i],
-      target: [2, 10, 30, 75][i],
+      cost: [1, 3, 14, 24][i],
+      target: [1, 4, 30, 75][i],
       current,
-      proof: `Complete ${[2, 10, 30, 75][i]} ${p.name} class requests`,
+      proof: `Complete ${[1, 4, 30, 75][i]} ${p.name} class requests`,
       tier: "I",
-      requiredLevel: [1, 10, 25, 50][i],
+      requiredLevel: [1, 3, 25, 50][i],
       combat: i ? p.signature.effect : undefined,
     }),
   );
@@ -340,6 +419,27 @@ for (const g of CAREER_CATEGORIES) {
               ? "business"
               : careerCategory(o.profession || c.profession).id)) === g.id,
     ).length;
+  [1, 2].forEach((index, i) =>
+    EXPANDED_SKILLS.push({
+      id: `career-opening-${g.id}-${i}`,
+      name: `${g.nodes[index]}: Primer`,
+      description: `First practice: ${CAREER_GUIDES[g.id][index]} Keep a checked example for later reference.`,
+      stat: g.stat,
+      category: "profession",
+      branch: g.name,
+      owner: g.id,
+      parents: [],
+      x: 220 + i * 640,
+      y: 1120,
+      cost: 1,
+      target: 1,
+      current,
+      proof: `Complete 1 ${g.name} career request`,
+      tier: "I",
+      requiredLevel: 1,
+      nonCombat: true,
+    }),
+  );
   g.nodes.forEach((name, i) =>
     EXPANDED_SKILLS.push({
       id: `profession-${g.id}-${i}`,
@@ -366,12 +466,12 @@ for (const g of CAREER_CATEGORIES) {
           : undefined,
       x: [540, 220, 540, 860, 150, 540, 930, 220, 540, 860][i],
       y: [900, 700, 650, 700, 480, 430, 480, 220, 140, 220][i],
-      cost: [4, 6, 6, 8, 8, 10, 10, 14, 18, 24][i],
-      target: [2, 5, 5, 10, 10, 20, 20, 35, 55, 80][i],
+      cost: [1, 2, 2, 3, 5, 8, 8, 14, 18, 24][i],
+      target: [1, 2, 2, 4, 8, 15, 15, 35, 55, 80][i],
       current,
-      proof: `Complete ${[2, 5, 5, 10, 10, 20, 20, 35, 55, 80][i]} ${g.name} career requests`,
+      proof: `Complete ${[1, 2, 2, 4, 8, 15, 15, 35, 55, 80][i]} ${g.name} career requests`,
       tier: "I",
-      requiredLevel: [1, 5, 5, 10, 10, 15, 15, 25, 40, 60][i],
+      requiredLevel: [1, 2, 2, 3, 5, 12, 12, 25, 40, 60][i],
       nonCombat: true,
     }),
   );

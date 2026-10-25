@@ -4,6 +4,62 @@ import { METRIC_SOURCES } from "./metrics";
 import type { Page } from "./screens";
 const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
   {
+    title: "Continuing an expedition",
+    page: "adventures",
+    sections: [
+      [
+        "Victory and continuation",
+        "Continue adventure claims rewards once and begins the next uncleared stage in that place. After the fourth stage, Continue exploring enters repeatable exploration. Discoveries and boss choices stay in the field; Return to map ends the expedition view. It also claims any outstanding victory reward.",
+      ],
+      [
+        "Battle turns",
+        "The turn queue follows the current combat rules: living party members act, then living enemies. Select an enemy for attacks or an ally for healing. HP and MP stay visible in the party panel. Skills learned in the tree must be equipped in the adventure loadout; the active class signature is always available.",
+      ],
+      [
+        "Recovery",
+        "Each new encounter currently restores party HP and MP. Consumable use, gold, gathered materials, stage progress, and boss danger persist between encounters. Defeat awards no rewards.",
+      ],
+    ],
+  },
+
+  {
+    title: "Guild hub & rewards",
+    page: "guild",
+    sections: [
+      [
+        "Guild card links",
+        "Select class, profession, vocation, attributes, rank, or the skill register on your Guild Card to open that section. Profession and vocation levels are independent of player level. Vocation XP comes from requests and related universal practice credited to that vocation.",
+      ],
+      [
+        "Login allowance",
+        "Claim gold and supplies once per local calendar day. Seven claims complete a reward cycle. A missed day pauses the cycle without resetting it. Login rewards never increase XP, base stats, or guild rank. Gold and supplies can be used in Adventures.",
+      ],
+      [
+        "Taken requests",
+        "The Guild shows unfinished taken requests for today, this week, and this month. Select a request to review progress and submit completed work.",
+      ],
+    ],
+  },
+  {
+    title: "Notifications & reminders",
+    page: "settings",
+    sections: [
+      [
+        "Notification bell",
+        "The bell shows claimable login rewards, ready examinations, and approaching weekly or monthly deadlines. Completed requests and recent actions belong in Journey.",
+      ],
+      [
+        "Android reminders",
+        "Enable Android notifications under Settings, then choose a local reminder time (9pm by default). Evening reminders prompt request submission. Pending weekly and monthly requests receive a consolidated deadline reminder the evening before the final calendar day. Completion, release, or changed settings refresh the schedule. Android may delay delivery during battery saving. Permission is required; browser previews do not send device notifications.",
+      ],
+      [
+        "Request icons",
+        "A group icon means universal, a shield means class, a briefcase means profession, and a compass means vocation. A globe means real-world work, linked circles mean real-world work with adventure requirements or bonuses, and crossed swords on Adventure guild requests mean adventure-only activity. Expand a request to inspect its rewards and requirements.",
+      ],
+    ],
+  },
+
+  {
     title: "Requests & Taken",
     page: "objectives",
     sections: [
@@ -177,11 +233,11 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "Learning skills",
-        "Every 100 source path XP earns a point. Class points pool across combat classes, career points pool by discipline, and universal points use universal requests. Nodes cost multiple points and require level, practice, and prerequisites.",
+        "Every 100 source path XP earns a point. Class points pool across combat classes, career points pool by discipline, and universal points use universal requests. Entry nodes cost one point and offer early combat choices; advanced nodes cost more points and require higher levels, practice, and prerequisites. Earlier purchases retain their original recorded cost.",
       ],
       [
         "Using the tree",
-        "Drag or scroll to pan, use zoom controls, and select a node for its exact requirements and effect. Shared archetype levels include training from all contributing classes. Learned skills remain yours after switching paths.",
+        "Drag to pan, pinch with two fingers to zoom, or use the zoom controls. Fit shows the whole tree. Select a node for its requirements and effect. Shared archetype levels include training from all contributing classes. Learned skills remain yours after switching paths.",
       ],
       [
         "Combat loadout",
