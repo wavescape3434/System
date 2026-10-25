@@ -102,7 +102,7 @@ test("winning continues straight to the next stage and pays once, exploration st
   await page
     .getByRole("button", { name: "Continue adventure", exact: false })
     .click();
-  await expect(page.locator(".battle-title")).toContainText("Patrol");
+  await expect(page.locator(".battle-title")).toContainText("Waystone patrol");
   const c = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
   );

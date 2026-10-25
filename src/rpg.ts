@@ -12,7 +12,7 @@ import {
   BOSS_KINDS,
 } from "./world-catalog";
 import {
-  newWorld,
+  upgradeWorldStages,
   worldEncounterOpen,
   placeProgress,
   regionOpen,
@@ -218,7 +218,7 @@ export const campaign = (c: Character): Campaign => {
     ...data,
     gold: data.gold + Math.max(0, earned - (data.trainingGoldAccrued || 0)),
     trainingGoldAccrued: earned,
-    ...(c.calendarVersion === 1 ? { world: data.world || newWorld() } : {}),
+    ...(c.calendarVersion === 1 ? { world: upgradeWorldStages(data) } : {}),
   };
 };
 export function combatAttributes(c: Character): Stats {

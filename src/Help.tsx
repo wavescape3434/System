@@ -28,7 +28,11 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "Victory and continuation",
-        "Continue adventure claims rewards once and begins the next uncleared stage in that place. After the fourth stage, Continue exploring enters repeatable exploration. Discoveries and boss choices stay in the field; Return to map ends the expedition view. It also claims any outstanding victory reward.",
+        "Continue adventure claims rewards once and begins the next uncleared stage in that place. After the tenth stage, Continue exploring enters repeatable exploration. Discoveries and boss choices stay in the field; Return to map ends the expedition view. It also claims any outstanding victory reward.",
+      ],
+      [
+        "Expanded routes and existing saves",
+        "Every place now has ten stages. Only the next uncleared encounter is shown in its route panel. Older character saves retain cleared encounter IDs, companions, regional access and already-unlocked exploration. The newly added stages remain available to complete; they are not marked cleared automatically.",
       ],
       [
         "Battle turns",
@@ -274,7 +278,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "World and stages",
-        "Eight regions contain 24 places: outer fields, remote wilds, and dungeons. Each place has four stages. Clear them to unlock repeatable exploration there. Later places and regions have stage requirements. The map shows local materials, towns, and cleared stages.",
+        "Eight regions contain 24 places: outer fields, remote wilds, and dungeons. Each place has ten stages. The map shows only the next uncleared stage, with its enemies, loot and route progress. Clear them to unlock repeatable exploration there. Later places and regions have stage requirements. The map shows local materials, towns, and cleared stages.",
       ],
       [
         "Exploration",

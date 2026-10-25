@@ -80,7 +80,7 @@ export function Progress({
 export function Crest({ small = false }: { small?: boolean }) {
   return (
     <div className={`crest ${small ? "small" : ""}`}>
-      <img src="/crest.svg" alt="The Adventurers Guild crest" />
+      <img src="/art/guild-crest.png" alt="The Adventurers Guild crest" />
     </div>
   );
 }
@@ -155,8 +155,10 @@ export function Modal({
   children,
   onClose,
   wide = false,
+  className = "",
 }: {
   wide?: boolean;
+  className?: string;
   title: string;
   children: ReactNode;
   onClose: () => void;
@@ -226,9 +228,12 @@ export function Modal({
     };
   }, []);
   return (
-    <div className="modal-backdrop" onClick={onClose}>
+    <div
+      className={`modal-backdrop ${className ? `${className}-backdrop` : ""}`}
+      onClick={onClose}
+    >
       <div
-        className={`modal ${wide ? "modal-wide" : ""}`}
+        className={`modal ${wide ? "modal-wide" : ""} ${className}`}
         role="dialog"
         aria-modal="true"
         aria-label={title}

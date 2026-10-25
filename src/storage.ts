@@ -1,5 +1,5 @@
 import { findAppearance } from "./appearance-catalog";
-import { validWorld } from "./world-state";
+import { validWorld, upgradeAdventureStages } from "./world-state";
 import { PLACES } from "./world-catalog";
 import { validMentalFormId } from "./exam-bank";
 import { validExam } from "./exams";
@@ -323,8 +323,10 @@ export function loadCharacter(): Character | null {
     throw new Error(
       "Your saved character needs attention. Export or restore a valid backup; your existing data has been kept.",
     );
-  return upgradeCalendar(
-    upgradeBalance(upgradeExams(upgradeTraining(upgradeProgression(parsed)))),
+  return upgradeAdventureStages(
+    upgradeCalendar(
+      upgradeBalance(upgradeExams(upgradeTraining(upgradeProgression(parsed)))),
+    ),
   );
 }
 export function localRecovery(): { at: string; character: Character } | null {

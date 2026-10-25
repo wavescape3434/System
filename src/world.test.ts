@@ -65,9 +65,11 @@ function win(c: Character) {
   return claimVictory(c);
 }
 describe("exploration world", () => {
-  it("has 8 regions, 24 places, 96 stages, 6 towns and 60 commissions with unique IDs", () => {
+  it("has 8 regions, 24 places, 240 stages, 6 towns and 60 commissions with unique IDs", () => {
     expect(PLACES).toHaveLength(24);
-    expect(WORLD_ENCOUNTERS.filter((e) => e.kind === "stage")).toHaveLength(96);
+    expect(WORLD_ENCOUNTERS.filter((e) => e.kind === "stage")).toHaveLength(
+      240,
+    );
     expect(TOWNS).toHaveLength(6);
     expect(WORLD_CONTRACTS).toHaveLength(60);
     expect(new Set(WORLD_ENCOUNTERS.map((e) => e.id)).size).toBe(

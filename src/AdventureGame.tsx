@@ -339,7 +339,8 @@ export default function AdventureGame({
                     update(continueAdventure(c));
                   }}
                 >
-                  {PLACES.find((p) => p.id === encounter.placeId)!.stages.some(
+                  {encounter.kind === "stage" &&
+                  PLACES.find((p) => p.id === encounter.placeId)!.stages.some(
                     (id) => !data.cleared.includes(id) && id !== encounter.id,
                   )
                     ? "Continue adventure"
@@ -492,7 +493,7 @@ export default function AdventureGame({
               (id) => ENCOUNTERS.find((e) => e.id === id)?.kind === "stage",
             ).length
           }
-          /96 stages cleared
+          /{PLACES.reduce((n, p) => n + p.stages.length, 0)} stages cleared
         </span>
         <span>
           <Coins size={18} />

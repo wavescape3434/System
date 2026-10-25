@@ -1,4 +1,7 @@
 import { progressionChanged } from "./progression-ledger";
+import { upgradeAdventureStages } from "./world-state";
+import RequestInstructions from "./RequestInstructions";
+import GuildMark from "./GuildMark";
 import {
   syncReminders,
   forgetReminderSchedule,
@@ -27,7 +30,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { User } from "firebase/auth";
 import {
   Bell,
-  CreditCard,
   Target,
   Route,
   Sparkles,
@@ -85,7 +87,7 @@ import {
   downloadCharacter,
   googleConfigured,
 } from "./auth";
-import { Crest, Modal, Tag, CheckList } from "./ui";
+import { Crest, Modal, Tag, CheckList, Icon, STAT_NAMES } from "./ui";
 import Onboarding from "./Onboarding";
 import { Guild, Objectives, Paths, Skills, Adventures } from "./screens";
 import type { Page } from "./screens";
@@ -95,7 +97,7 @@ const PAGES = [
   {
     id: "guild",
     name: "Guild",
-    icon: CreditCard,
+    icon: GuildMark,
     title: "Guild",
   },
   {
@@ -280,8 +282,8 @@ export default function App() {
   const update = useCallback(
     (next: Character, track = true) => {
       try {
-        const migrated = upgradeCalendar(
-          upgradeBalance(upgradeExams(upgradeTraining(next))),
+        const migrated = upgradeAdventureStages(
+          upgradeCalendar(upgradeBalance(upgradeExams(upgradeTraining(next)))),
         );
         const prepared = progressionChanged(characterRef.current, migrated)
           ? awardSkills(migrated)
@@ -660,7 +662,28 @@ export default function App() {
         />
       )}
       {objective && c && (
-        <Modal title={objective.groupTitle || objective.title} onClose={close}>
+        <Modal
+          className="request-paper"
+          title={objective.groupTitle || objective.title}
+          onClose={close}
+        >
+          <div className="request-paper-heading">
+            <Crest small />
+            <span>
+              {objective.cadence === "daily"
+                ? "DAILY TASK"
+                : objective.cadence === "weekly"
+                  ? "WEEKLY QUEST"
+                  : "MONTHLY ADVENTURE"}
+              <b>{objective.category}</b>
+            </span>
+            <span className="request-wax-seal" aria-hidden="true">
+              {objective.rank || "F"}
+            </span>
+          </div>
+          {objective.groupTitle && objective.groupTitle !== objective.title && (
+            <p className="request-variant-title">{objective.title}</p>
+          )}
           {(() => {
             const variants =
               groupRequests(objectives(c)).find(
@@ -744,6 +767,10 @@ export default function App() {
             );
           })()}
           <div className="objective-modal-meta">
+            <Tag>
+              <Icon name={objective.stat} size={16} /> {objective.stat} ·{" "}
+              {STAT_NAMES[objective.stat]}
+            </Tag>
             <Tag>{objective.category}</Tag>
             {objective.rank && <Tag tone="gold">{objective.rank} rank</Tag>}
             <Tag tone="gold">+{objective.xp} player XP</Tag>
@@ -752,7 +779,7 @@ export default function App() {
             )}
             <span>{objective.minutes}</span>
           </div>
-          <p>{objective.description}</p>
+          <RequestInstructions objective={objective} c={c} />
           {isTaken(c, objective) &&
             (objective.minimumDays || objective.minimumSessions) &&
             (() => {

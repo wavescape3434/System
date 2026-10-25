@@ -29,6 +29,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.12.0
+
+Requests open as detailed parchment commissions, and compact board icons identify their training attribute. Every adventure area now has ten stages, displayed through one current-stage panel. The new guild emblem combines a sword, staff and shield. Existing area unlocks and exploration remain available when upgrading. [Changes](docs/update-1.12.md) · [Verification](docs/verification-1.12.md) · [Previews](docs/screenshots/README.md).
+
+Install over the existing app to retain its character: version code **14**, package `com.theguild.personal`, and the same signing certificate.
+
 ## Version 1.11.0
 
 This update fixes exam typing/focus and cross-cadence Taken navigation, brings Guild actions forward, streamlines phone filters, opens readable skill trees, adds earned mastery exams and raw-performance reports, and indexes long histories. Local recovery snapshots and segmented cloud backups improve data recovery. [Changes](docs/update-1.11.md) · [Verification](docs/verification-1.11.md) · [New previews](docs/screenshots/README.md).
@@ -55,7 +61,7 @@ Related objective ranks now share one request card. Choose a rank before accepti
 
 Weekly goals use Monday–Sunday and monthly goals use the calendar month. They include relevant work already logged earlier in that period. Acceptance and checklist progress expire at the boundary; earned activity and history remain. Daily tasks retain F–C limits, weekly quests F–A, and monthly adventures F–SSS. Expert achievements check prior preparation before rewarding a current-month outcome.
 
-Adventures now has **eight regions, 24 places, 96 stage battles, six towns, 60 guild commissions, seven companions, and 30 town-crafted items**. Clear a place's four stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use command windows and a separate party HUD.
+Adventures now has **eight regions, 24 places, 240 stage battles, six towns, 60 guild commissions, seven companions, and 30 town-crafted items**. Clear a place's ten stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use command windows and a separate party HUD.
 
 Hybrid requests either require a named adventure commission or pay an optional bonus when it is completed. Ordinary requests remain available. [Content, calendar, exploration, and shop rules](docs/update-1.7.md) · [New screenshots](docs/screenshots/README.md).
 
@@ -123,7 +129,7 @@ Older saves receive one-time progression credits that retain their earned levels
 - Request content follows the current class and its secondary archetype, profession, and vocation. Daily tasks are individual; weekly quests can involve other people. Group hikes split training credit between CON and CHA, while player XP is paid once. Category filters select a focus. Daily rewards refresh at local midnight and weekly on Monday. Monthly adventures reset on the first and include relevant activity already logged that month.
 - Base rank gold is **2 / 5 / 12 / 30 / 70 / 160 / 360 / 840 / 2,000**, subject to cadence ceilings and the 1× / 4× / 18× duration multipliers. Earned gold joins the adventure wallet for supplies and equipment. Previous completions are not paid retroactively. Adventures → Guild requests contains delivery, patrol, named-monster, dungeon, and roaming-boss commissions.
 - Assessment inputs remain clearable, with no forced leading zero. Walking records distance over six minutes, balance uses seconds, and bench estimates require body mass. Bodyweight registration needs no gym equipment. Baselines use reference-centered indexes with no upper ceiling; supported age/sex references and provisional anchors are explicitly distinguished.
-- JRPG expeditions have eight regions, 24 places with four stages each, repeatable exploration, bosses, and individual party turns. Your character can bring two of seven recruitable companions. Commands include attacks, guard, class signatures, equipped skills, potions, and ether.
+- JRPG expeditions have eight regions, 24 places with ten stages each, repeatable exploration, bosses, and individual party turns. Your character can bring two of seven recruitable companions. Commands include attacks, guard, class signatures, equipped skills, potions, and ether.
 - Combat includes armor piercing, multi-hit and area attacks, stun, taunt, counters, party barriers, healing, MP recovery, coordinated attacks, and burning. Victories grant combat gold and supplies, encounter access, and recruitment; they never grant real-world XP or base attributes.
 - Eleven legacy gear items and 30 town-crafted items, town-specific general stores and smiths, saved battle state, character backup sharing, validated restore, Journey, archived notes, and completion history remain available.
 - Faith-related real-world content uses Christian Scripture, prayer, comprehension, and service. Monk training is physical bodyweight practice.

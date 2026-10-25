@@ -221,7 +221,7 @@ export function continueAdventure(
     data = campaign(next),
     place = PLACES.find((p) => p.id === encounter.placeId)!;
   const stage = place.stages.find((id) => !data.cleared.includes(id));
-  return stage
+  return encounter.kind === "stage" && stage
     ? startBattle(next, stage)
     : explore(next, place.id, random, now);
 }

@@ -29,7 +29,7 @@ import { groupRequests } from "./objective-catalog";
 import { allowedRanks } from "./request-balance";
 import { TASK_RANKS, TASK_NAMES } from "./task-ranks";
 import { periodStart, periodEnd } from "./calendar-goals";
-import { Tag } from "./ui";
+import { Tag, Icon, STAT_NAMES } from "./ui";
 export default function RequestBoard({
   c,
   openObjective,
@@ -368,11 +368,16 @@ export default function RequestBoard({
               >
                 <span
                   role="img"
-                  className="request-scope-icon"
-                  title={scope}
-                  aria-label={`${scope} request`}
+                  className={`request-scope-icon request-focus-icon focus-${chosen.stat.toLowerCase()}`}
+                  title={`${STAT_NAMES[chosen.stat]} · ${scope} request`}
+                  aria-label={`${STAT_NAMES[chosen.stat]} (${chosen.stat}) · ${scope} request`}
+                  data-stat={chosen.stat}
                 >
-                  <Scope size={18} />
+                  <Icon name={chosen.stat} size={20} />
+                  <small aria-hidden="true">{chosen.stat}</small>
+                  <span className="request-type-badge" aria-hidden="true">
+                    <Scope size={9} />
+                  </span>
                 </span>
                 <span
                   role="img"

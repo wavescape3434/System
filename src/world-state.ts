@@ -1,4 +1,5 @@
 import type { Campaign } from "./rpg";
+import type { Character } from "./domain";
 import {
   PLACES,
   WORLD_REGIONS,
@@ -30,6 +31,9 @@ export interface PlaceProgress {
 }
 export interface WorldState {
   version: 1;
+  stageVersion?: 2;
+  preservedPlaces?: string[];
+  preservedExploration?: string[];
   townId: string;
   placeId?: string;
   expedition?: string;
@@ -43,6 +47,7 @@ export interface WorldState {
 export function newWorld(): WorldState {
   return {
     version: 1,
+    stageVersion: 2,
     townId: "alderhaven",
     areas: {},
     kills: {},
@@ -54,6 +59,36 @@ export function newWorld(): WorldState {
 }
 export const placeProgress = (w: WorldState, id: string): PlaceProgress =>
   w.areas[id] || { visits: 0, sinceBoss: 0, ignored: 0, bossVictories: 0 };
+export function upgradeWorldStages(data: Campaign): WorldState {
+  const world = data.world || newWorld();
+  if (world.stageVersion === 2) return world;
+  const oldStages = (p: (typeof PLACES)[number]) =>
+    p.kind === "field"
+      ? [
+          `${p.region}-1`,
+          `${p.region}-2`,
+          `${p.region}-boss`,
+          `${p.region}-path-4`,
+        ]
+      : Array.from({ length: 4 }, (_, i) => `${p.id}-${i + 1}`);
+  const preservedPlaces = PLACES.filter((p) => {
+    if (!regionOpen(data, p.region)) return false;
+    const siblings = PLACES.filter((x) => x.region === p.region),
+      i = siblings.indexOf(p);
+    return i === 0 || data.cleared.includes(oldStages(siblings[i - 1])[3]);
+  }).map((p) => p.id);
+  const preservedExploration = PLACES.filter((p) =>
+    oldStages(p).every((id) => data.cleared.includes(id)),
+  ).map((p) => p.id);
+  return { ...world, stageVersion: 2, preservedPlaces, preservedExploration };
+}
+export function upgradeAdventureStages(c: Character): Character {
+  if (!c.campaign?.world || c.campaign.world.stageVersion === 2) return c;
+  return {
+    ...c,
+    campaign: { ...c.campaign, world: upgradeWorldStages(c.campaign) },
+  };
+}
 export function regionOpen(data: Campaign, id: string) {
   const index = WORLD_REGIONS.findIndex((r) => r.id === id);
   return (
@@ -66,9 +101,14 @@ export function placeOpen(data: Campaign, id: string): boolean {
   if (!p || !regionOpen(data, p.region)) return false;
   const siblings = PLACES.filter((x) => x.region === p.region),
     i = siblings.indexOf(p);
-  return i === 0 || data.cleared.includes(siblings[i - 1].stages[3]);
+  return (
+    !!data.world?.preservedPlaces?.includes(id) ||
+    i === 0 ||
+    data.cleared.includes(siblings[i - 1].stages.at(-1)!)
+  );
 }
 export const placeCleared = (data: Campaign, id: string) =>
+  !!data.world?.preservedExploration?.includes(id) ||
   !!PLACES.find((p) => p.id === id)?.stages.every((s) =>
     data.cleared.includes(s),
   );
@@ -130,6 +170,13 @@ export function validWorld(w: WorldState): boolean {
     return (
       !!w &&
       w.version === 1 &&
+      (w.stageVersion === undefined || w.stageVersion === 2) &&
+      [w.preservedPlaces, w.preservedExploration].every(
+        (ids) =>
+          ids === undefined ||
+          (Array.isArray(ids) &&
+            ids.every((id) => PLACES.some((p) => p.id === id))),
+      ) &&
       TOWNS.some((t) => t.id === w.townId) &&
       (w.placeId === undefined || PLACES.some((p) => p.id === w.placeId)) &&
       (w.expedition === undefined ||

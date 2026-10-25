@@ -27,10 +27,10 @@ const won = (c = demoCharacter(), id = PLACES[0].stages[0]) => {
 };
 afterEach(() => vi.useRealTimers());
 describe("expedition continuity", () => {
-  it("claims exactly once, continues all four stages, then explores without opening the map", () => {
+  it("claims exactly once, continues all ten stages, then explores without opening the map", () => {
     let c = demoCharacter();
     const initial = campaign(c).gold;
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < PLACES[0].stages.length; i++) {
       c = won(c, PLACES[0].stages[i]);
       const paid = campaign(claimVictory(c)).gold;
       c = recordJourney(
@@ -38,13 +38,15 @@ describe("expedition continuity", () => {
         continueAdventure(c, () => 0.9, now),
         now,
       );
-      expect(c.campaign!.gold).toBe(paid + (i === 3 ? 15 : 0));
+      expect(c.campaign!.gold).toBe(
+        paid + (i === PLACES[0].stages.length - 1 ? 15 : 0),
+      );
       expect(
         c.journeyEvents?.filter((e) => e.kind === "adventure"),
       ).toHaveLength(i + 1);
       expect(c.campaign!.world!.expedition).toBe(PLACES[0].id);
       expect(c.campaign!.cleared).toContain(PLACES[0].stages[i]);
-      if (i < 3)
+      if (i < PLACES[0].stages.length - 1)
         expect(c.campaign!.battle!.encounterId).toBe(PLACES[0].stages[i + 1]);
       else {
         expect(c.campaign!.battle).toBeUndefined();

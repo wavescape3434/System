@@ -1,7 +1,14 @@
 import { Swords } from "lucide-react";
 import { useState } from "react";
 import type { Character } from "./domain";
-import { campaign, startBattle, buy, equip, EQUIPMENT } from "./rpg";
+import {
+  campaign,
+  startBattle,
+  buy,
+  equip,
+  EQUIPMENT,
+  ENCOUNTERS,
+} from "./rpg";
 import {
   WORLD_REGIONS,
   PLACES,
@@ -9,6 +16,7 @@ import {
   TOWN_GEAR,
   WORLD_CONTRACTS,
   RESOURCE_NAMES,
+  MONSTER_NAMES,
 } from "./world-catalog";
 import {
   placeOpen,
@@ -27,7 +35,7 @@ import {
   completeWorldContract,
   contractProgress,
 } from "./world";
-import { Tag } from "./ui";
+import { Tag, Progress } from "./ui";
 import PixelScene from "./PixelScene";
 export default function WorldMap({
   c,
@@ -55,6 +63,14 @@ export default function WorldMap({
       PLACES.find((p) => p.region === regionId)!,
     area = placeProgress(world, place.id),
     cleared = placeCleared(data, place.id),
+    nextStageIndex = place.stages.findIndex((id) => !data.cleared.includes(id)),
+    nextStage =
+      nextStageIndex >= 0
+        ? ENCOUNTERS.find((e) => e.id === place.stages[nextStageIndex])
+        : undefined,
+    clearedStages = place.stages.filter((id) =>
+      data.cleared.includes(id),
+    ).length,
     percent = (n: number) => `${Math.round(n * 100)}%`;
   const towns = (
     <div className="pixel-town-strip" aria-label="Towns">
@@ -354,8 +370,8 @@ export default function WorldMap({
             <span>{p.kind.toUpperCase()}</span>
             <b>{p.name}</b>
             <small>
-              {p.stages.filter((id) => data.cleared.includes(id)).length} / 4
-              stages
+              {p.stages.filter((id) => data.cleared.includes(id)).length} /{" "}
+              {p.stages.length} stages
             </small>
             <small>
               {p.resources.map((id) => RESOURCE_NAMES[id]).join(" · ")}
@@ -370,30 +386,55 @@ export default function WorldMap({
             {place.kind === "dungeon" ? "DUNGEON" : "EXPLORATION AREA"}
           </span>
         </div>
-        <div className="pixel-stages">
-          {place.stages.map((id, i) => {
-            const open =
-              i === 0
-                ? placeOpen(data, place.id)
-                : data.cleared.includes(place.stages[i - 1]);
-            return (
-              <button
-                key={id}
-                disabled={!open}
-                onClick={() => update(startBattle(c, id))}
-              >
-                <span>STAGE {i + 1}</span>
-                <b>{["Approach", "Patrol", "Guardian", "Sanctum"][i]}</b>
-                <small>
-                  {data.cleared.includes(id)
-                    ? "Cleared"
-                    : open
-                      ? "Enter battle"
-                      : "Locked"}
-                </small>
-              </button>
-            );
-          })}
+        <div className="pixel-current-stage">
+          <div className="stage-progress-heading">
+            <span>
+              {clearedStages} / {place.stages.length} stages cleared
+            </span>
+            <span>
+              {place.kind === "dungeon" ? "DUNGEON ROUTE" : "AREA ROUTE"}
+            </span>
+          </div>
+          <Progress
+            value={clearedStages}
+            max={place.stages.length}
+            label={`${place.name} stage progress`}
+          />
+          {nextStage ? (
+            <button
+              className="pixel-stage-enter"
+              disabled={!placeOpen(data, place.id)}
+              onClick={() => update(startBattle(c, nextStage.id))}
+            >
+              <span>
+                STAGE {nextStageIndex + 1} / {place.stages.length}
+              </span>
+              <b>{nextStage.name.slice(place.name.length + 2)}</b>
+              <small>
+                {nextStage.enemies
+                  .map((id) => MONSTER_NAMES[id] || id)
+                  .join(" · ")}
+              </small>
+              <span className="stage-payout">
+                {nextStage.gold} gold ·{" "}
+                {Object.entries(nextStage.loot)
+                  .map(([id, n]) => `${n} ${RESOURCE_NAMES[id]}`)
+                  .join(" · ")}
+              </span>
+              <strong>
+                {placeOpen(data, place.id)
+                  ? "Enter battle"
+                  : "Complete the previous area"}
+              </strong>
+            </button>
+          ) : (
+            <div className="stage-route-complete">
+              <b>Area route complete</b>
+              <span>
+                {place.stages.length} / {place.stages.length} cleared
+              </span>
+            </div>
+          )}
         </div>
         {cleared ? (
           <div className="pixel-exploration">
@@ -442,7 +483,7 @@ export default function WorldMap({
           </div>
         ) : (
           <p className="pixel-stage-lock">
-            Clear all four stages to unlock free exploration.
+            Clear all {place.stages.length} stages to unlock free exploration.
           </p>
         )}
       </section>

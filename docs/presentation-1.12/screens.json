@@ -1,0 +1,117 @@
+{
+  "version": "1.12.0",
+  "timezone": "America/Denver",
+  "errors": [],
+  "screens": [
+    {
+      "name": "guild-emblem-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 0,
+      "statIcons": [],
+      "violations": []
+    },
+    {
+      "name": "request-stat-icons-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 0,
+      "statIcons": [
+        "STR",
+        "INT",
+        "DEX",
+        "WIS",
+        "CON",
+        "CHA"
+      ],
+      "violations": []
+    },
+    {
+      "name": "parchment-request-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 0,
+      "statIcons": [
+        "STR"
+      ],
+      "violations": []
+    },
+    {
+      "name": "parchment-request-instructions-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 0,
+      "statIcons": [
+        "STR"
+      ],
+      "violations": []
+    },
+    {
+      "name": "current-stage-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 1,
+      "statIcons": [],
+      "violations": []
+    },
+    {
+      "name": "current-stage-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 1,
+      "statIcons": [],
+      "violations": []
+    },
+    {
+      "name": "request-stat-icons-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 0,
+      "statIcons": [
+        "STR",
+        "INT",
+        "DEX",
+        "WIS",
+        "CON",
+        "CHA"
+      ],
+      "violations": []
+    },
+    {
+      "name": "parchment-request-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 0,
+      "statIcons": [
+        "STR"
+      ],
+      "violations": []
+    },
+    {
+      "name": "current-stage-guardian",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "dialogOverflow": false,
+      "currentStagePanels": 1,
+      "statIcons": [],
+      "violations": []
+    }
+  ]
+}

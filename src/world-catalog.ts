@@ -153,13 +153,15 @@ export const PLACES: Place[] = WORLD_REGIONS.flatMap((r) =>
         : j === 1
           ? `The remote interior of ${r.name}.`
           : `An enclosed dungeon in ${r.name}.`,
-    stages:
+    stages: Array.from({ length: 10 }, (_, i) =>
       j === 0
-        ? [`${r.id}-1`, `${r.id}-2`, `${r.id}-boss`, `${r.id}-path-4`]
-        : Array.from(
-            { length: 4 },
-            (_, i) => `${r.id}-${j === 1 ? "wilds" : "dungeon"}-${i + 1}`,
-          ),
+        ? i < 2
+          ? `${r.id}-${i + 1}`
+          : i === 9
+            ? `${r.id}-boss`
+            : `${r.id}-path-${i + 1}`
+        : `${r.id}-${j === 1 ? "wilds" : "dungeon"}-${i + 1}`,
+    ),
     resources: [r.resources[j], r.resources[(j + 1) % 3]],
     bossBase: [0.04, 0.07, 0.1][j],
     bossStep: [0.025, 0.03, 0.04][j],
@@ -181,6 +183,45 @@ export interface WorldEncounter {
   kind: "stage" | "wild" | "roaming-boss";
   loot: Record<string, number>;
 }
+export const STAGE_NAMES: Record<Place["kind"], string[]> = {
+  field: [
+    "Approach",
+    "Waystone patrol",
+    "River crossing",
+    "Old camp",
+    "Watchpost",
+    "Broken bridge",
+    "Hidden trail",
+    "Rival patrol",
+    "Guardian's gate",
+    "Area guardian",
+  ],
+  wilds: [
+    "Wild fringe",
+    "Hunter's trail",
+    "Guardian",
+    "Sanctum",
+    "Lost waymarker",
+    "Beast den",
+    "Deep thicket",
+    "Forgotten shrine",
+    "Ancient hollow",
+    "Heart of the wilds",
+  ],
+  dungeon: [
+    "Entrance",
+    "Outer hall",
+    "Guardian",
+    "Sanctum",
+    "Sealed gallery",
+    "Lower chambers",
+    "Broken stair",
+    "Inner vault",
+    "Warden's passage",
+    "Dungeon lord",
+  ],
+};
+export const TOTAL_STAGES = PLACES.reduce((n, p) => n + p.stages.length, 0);
 export const WORLD_ENCOUNTERS: WorldEncounter[] = PLACES.flatMap((p) => {
   const r = WORLD_REGIONS.find((r) => r.id === p.region)!,
     ri = WORLD_REGIONS.indexOf(r),
@@ -188,16 +229,25 @@ export const WORLD_ENCOUNTERS: WorldEncounter[] = PLACES.flatMap((p) => {
     tier = ri + 1 + pi;
   const stages = p.stages.map((id, i) => ({
     id,
-    name: `${p.name}: ${["Approach", "Patrol", "Guardian", "Sanctum"][i]}`,
+    name: `${p.name}: ${STAGE_NAMES[p.kind][i]}`,
     region: r.id,
     placeId: p.id,
-    tier,
+    tier: tier + (i >= 7 ? 1 : 0),
     enemies:
-      i === 2 || (i === 3 && p.kind === "dungeon")
+      i === 9 || (pi > 0 && i === 2) || (i === 3 && p.kind === "dungeon")
         ? [r.boss]
         : [r.enemies[(i + pi) % 3], r.enemies[(i + pi + 1) % 3]],
-    gold: (i === 2 ? 60 : i === 0 ? 20 : 30) + ri * 20 + pi * 15,
-    recruit: pi === 0 && i === 2 ? r.recruit : undefined,
+    gold:
+      (i === 9
+        ? 90
+        : i === 2
+          ? 60
+          : i === 0
+            ? 20
+            : 30 + Math.floor(i / 3) * 5) +
+      ri * 20 +
+      pi * 15,
+    recruit: pi === 0 && i === 9 ? r.recruit : undefined,
     kind: "stage" as const,
     loot: { [p.resources[i % p.resources.length]]: i === 2 ? 2 : 1 },
   }));
@@ -488,10 +538,10 @@ export const WORLD_CONTRACTS: WorldContract[] = TOWNS.flatMap(
         id: `${t.id}-dungeon`,
         town: t.id,
         title: `Clear ${d.name}`,
-        description: `Complete all four stages of ${d.name}, then report to the guild.`,
+        description: `Complete all ${d.stages.length} stages of ${d.name}, then report to the guild.`,
         kind: "dungeon" as const,
         placeId: d.id,
-        quantity: 4,
+        quantity: d.stages.length,
         gold: 250 * t.smith,
       },
       {
@@ -562,10 +612,10 @@ for (const r of WORLD_REGIONS.filter(
       id: `${r.id}-dungeon`,
       town: town.id,
       title: `Clear ${dungeon.name}`,
-      description: `Complete all four stages of ${dungeon.name}, then report to ${town.name}.`,
+      description: `Complete all ${dungeon.stages.length} stages of ${dungeon.name}, then report to ${town.name}.`,
       kind: "dungeon",
       placeId: dungeon.id,
-      quantity: 4,
+      quantity: dungeon.stages.length,
       gold: 300 * town.smith,
     },
     {

@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.11.0 — screenshots
+# The Adventurers Guild 1.12.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Parchment requests and ten-stage routes — version 1.12
+
+| Request details | Attribute icons | Current stage |
+| --- | --- | --- |
+| [<img src="parchment-request-mobile.png" width="230" alt="Parchment commission with wax rank seal and guild crest">](parchment-request-mobile.png) | [<img src="request-stat-icons-mobile.png" width="230" alt="Compact requests with distinct STR, CON, INT and other attribute symbols">](request-stat-icons-mobile.png) | [<img src="current-stage-mobile.png" width="230" alt="One current-stage encounter instead of ten separate stage cards">](current-stage-mobile.png) |
+
+[Full instructions and completion](parchment-request-instructions-mobile.png) · [Desktop parchment](parchment-request-desktop.png) · [Desktop board](request-stat-icons-desktop.png) · [Desktop area](current-stage-desktop.png) · [Tenth-stage guardian](current-stage-guardian.png) · [Guild navigation](guild-emblem-mobile.png) · [Full emblem](../../public/art/guild-crest.png)
+
+[Changes](../update-1.12.md) · [Verification](../verification-1.12.md)
 
 ## Daily use and progression — version 1.11
 
@@ -56,7 +66,7 @@ These are browser previews using sample characters. Exploration results, prior a
 
 ## Retained feature previews
 
-These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots may reflect the release in which they were captured; the 1.8 previews above show the current update.
+These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.12 previews above show the current update.
 
 [Guild Card on phone](guild-android.png) · [Guild Card detail](guild-card-detail.png) · [Rank metals](rank-metals.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Full Fighter skill web](fighter-web.png) · [Career tree](profession-tree.png) · [Vocation](vocation.png)
 
