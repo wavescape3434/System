@@ -8,7 +8,7 @@ from PIL import Image
 import numpy as np
 from scipy.ndimage import label, find_objects, binary_dilation
 
-atlas=Path('public/art/adventurer-roster.png')
+atlas=Path('public/art/adventurer-roster-pixel.png')
 a=np.array(Image.open(atlas))[:,:,3]
 labels,_=label(a>100)
 sizes=np.bincount(labels.ravel());sizes[0]=0

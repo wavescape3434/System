@@ -185,7 +185,7 @@ export default function AdventureGame({
                 className={i === 0 ? "next-actor" : ""}
                 title={u.name}
               >
-                <BattleSprite unit={u} />
+                <BattleSprite unit={u} portrait />
                 <small>{u.name}</small>
               </span>
             ))}

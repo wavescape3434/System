@@ -367,6 +367,26 @@ test("pixel map, town shops and commissions fit a phone", async ({ page }) => {
       return { top: r.top, bottom: r.bottom, left: r.left, right: r.right };
     }),
   }));
+  const spriteBounds = await page.evaluate(() => {
+    const stage = document
+      .querySelector(".battlefield")!
+      .getBoundingClientRect();
+    return {
+      left: stage.left,
+      right: stage.right,
+      sprites: [
+        ...document.querySelectorAll(".party-line .humanoid-sprite"),
+      ].map((n) => {
+        const r = n.getBoundingClientRect();
+        return { left: r.left, right: r.right };
+      }),
+    };
+  });
+  expect(spriteBounds.sprites).toHaveLength(3);
+  for (const sprite of spriteBounds.sprites) {
+    expect(sprite.left).toBeGreaterThanOrEqual(spriteBounds.left);
+    expect(sprite.right).toBeLessThanOrEqual(spriteBounds.right);
+  }
   expect(boxes.party).toHaveLength(3);
   expect(Math.min(...boxes.party.map((r) => r.left))).toBeGreaterThan(
     Math.max(...boxes.enemies.map((r) => r.right)),

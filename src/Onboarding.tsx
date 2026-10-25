@@ -132,6 +132,7 @@ export default function Onboarding({
                 </label>
                 <div className="profile-appearance-summary">
                   <CharacterSprite
+                    portrait
                     appearance={
                       findAppearance(appearance) || classAppearance(classId)
                     }

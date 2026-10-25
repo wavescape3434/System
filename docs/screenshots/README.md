@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.9.0 — screenshots
+# The Adventurers Guild 1.10.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Pixel art and portraits — version 1.10
+
+[Full sprite roster](pixel-roster.png) · [Close-up portraits](portrait-roster.png) · [Portraits on phone](portrait-roster-mobile.png) · [Seven companions](companions-pixel.png) · [Battle](pixel-battle.png) · [Three-member phone battle](pixel-battle-mobile.png)
+
+| Portrait choices | Three-member battle |
+|---|---|
+| [<img src="portrait-roster-mobile.png" width="230" alt="Pixel character portrait selection">](portrait-roster-mobile.png) | [<img src="pixel-battle-mobile.png" width="230" alt="Three complete party sprites with close-up turn portraits">](pixel-battle-mobile.png) |
+
+[Refinements](../update-1.10.md) · [Verification](../verification-1.10.md)
 
 ## Character roster — version 1.9
 

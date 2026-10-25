@@ -9,11 +9,11 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     sections: [
       [
         "Choosing a look",
-        "Choose one of 24 original adult character designs during registration, in Settings → Appearance, or in Adventures → Party → Character appearance. Filter by style or silhouette, preview a design, then press Use to save it. All appearances are available without a cost or class requirement.",
+        "Choose one of 24 original adult character designs during registration, in Settings → Appearance, or in Adventures → Party → Character appearance. Filter by style or silhouette, switch between Full sprites and Portraits, preview a design, then press Use to save it. All appearances are available without a cost or class requirement.",
       ],
       [
         "Class and appearance",
-        "A chosen appearance stays with you when you change class. It changes your battle sprite and turn-order portrait, including an ongoing battle. It does not change base stats, combat stats, equipment, class signatures, skills, or the assessment reference group. Existing characters without a saved choice use a design matching their class family.",
+        "A chosen appearance stays with you when you change class. It changes your full-body battle sprite and close-up turn-order portrait, including an ongoing battle. It does not change base stats, combat stats, equipment, class signatures, skills, or the assessment reference group. Existing characters without a saved choice use a design matching their class family.",
       ],
       [
         "Sprite poses",

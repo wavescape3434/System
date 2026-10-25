@@ -107,12 +107,19 @@ const sprites: Record<string, string[]> = {
     ".........22.........",
   ],
 };
-export default function BattleSprite({ unit }: { unit: Unit }) {
+export default function BattleSprite({
+  unit,
+  portrait = false,
+}: {
+  unit: Unit;
+  portrait?: boolean;
+}) {
   const appearance = unitAppearance(unit);
   if (appearance)
     return (
       <CharacterSprite
         appearance={appearance}
+        portrait={portrait}
         label={unit.name}
         className={`battle-sprite pixel-sprite humanoid-sprite ${unit.hp === 0 ? "defeated" : ""}`}
       />

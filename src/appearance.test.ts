@@ -5,6 +5,7 @@ import {
   unitAppearance,
   COMPANION_APPEARANCES,
   findAppearance,
+  spriteViewport,
 } from "./appearance-catalog";
 import { selectAppearance } from "./appearance";
 import { demoCharacter, stats, totalXP, switchClass } from "./domain";
@@ -99,5 +100,24 @@ describe("character appearances", () => {
     const fighting = startBattle(c, "mossfall-1");
     fighting.campaign!.battle!.party[0].appearance = "no-such-design";
     expect(validateCharacter(fighting)).toBe(false);
+  });
+  it("keeps every close-up inside its sprite frame and preserves the full-body viewport", () => {
+    for (const appearance of CHARACTER_APPEARANCES) {
+      const frame = atlas.frames[appearance.cell],
+        portrait = spriteViewport(appearance, frame, true),
+        full = spriteViewport(appearance, frame);
+      expect(full).toEqual({
+        x: 0,
+        y: 0,
+        width: frame.width,
+        height: frame.height,
+      });
+      expect(portrait.width).toBe(portrait.height);
+      expect(portrait.width).toBeLessThan(frame.height / 2);
+      expect(portrait.x).toBeGreaterThanOrEqual(0);
+      expect(portrait.y).toBeGreaterThanOrEqual(0);
+      expect(portrait.x + portrait.width).toBeLessThanOrEqual(frame.width);
+      expect(portrait.y + portrait.height).toBeLessThanOrEqual(frame.height);
+    }
   });
 });

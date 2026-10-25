@@ -35,6 +35,17 @@ test("24 appearances preview without committing, filters work, and an alluring l
   await expect(
     page.locator('.appearance-preview [data-appearance="moonsilk-dancer"]'),
   ).toBeVisible();
+  await page.getByRole("button", { name: "Portraits", exact: true }).click();
+  await expect(
+    page.locator('.appearance-roster [data-portrait="true"]'),
+  ).toHaveCount(24);
+  await expect(
+    page.locator('.appearance-preview [data-portrait="true"]'),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Full sprites", exact: true }).click();
+  await expect(
+    page.locator('.appearance-roster [data-portrait="true"]'),
+  ).toHaveCount(0);
   await page.getByLabel("Appearance silhouette").selectOption("Feminine");
   await page.getByLabel("Search appearances").fill("velvet");
   await expect(page.locator(".appearance-choice")).toHaveCount(1);
@@ -64,6 +75,12 @@ test("24 appearances preview without committing, filters work, and an alluring l
     page.locator('.turn-queue [data-appearance="moonsilk-dancer"]'),
   ).toBeVisible();
   await expect(page.getByRole("button", { name: /Iron Cleave/ })).toBeVisible();
+  await expect(page.locator('.turn-queue [data-portrait="true"]')).toHaveCount(
+    2,
+  );
+  await expect(page.locator('.party-line [data-portrait="true"]')).toHaveCount(
+    0,
+  );
 });
 test("registration saves a selected character and closes the appearance chooser without progressing assessment", async ({
   page,

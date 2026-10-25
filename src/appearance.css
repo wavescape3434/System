@@ -364,3 +364,80 @@
 .appearance-options .appearance-filters select {
   font-family: var(--sans);
 }
+.appearance-preview-mode {
+  display: flex;
+  gap: 6px;
+  margin: 0 0 13px;
+}
+.appearance-preview-mode button {
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  border-radius: 3px;
+  font-size: 11px;
+  color: var(--text);
+}
+.appearance-preview-mode button[aria-pressed="true"] {
+  background: var(--green);
+  border-color: var(--green);
+  color: #f6eedb;
+}
+.appearance-choice > .character-portrait {
+  width: 108px;
+  max-width: 95%;
+  height: 108px;
+  margin: 8px 0 18px;
+  border-radius: 3px;
+  background: #c7c0a32b;
+}
+.appearance-stage > .character-portrait {
+  height: 100%;
+  width: 100%;
+  image-rendering: pixelated;
+}
+.profile-appearance-summary > .character-portrait {
+  width: 86px;
+  height: 86px;
+  border: 1px solid #ad986e60;
+  border-radius: 5px;
+  background: linear-gradient(#223b3c, #14292c);
+  filter: none;
+}
+.polished-battle .turn-queue .character-portrait {
+  height: 42px;
+  width: 42px;
+  align-self: flex-start;
+  background: #31454b;
+  filter: none;
+  border-radius: 1px;
+}
+.polished-battle .turn-queue > span:has(.character-portrait) {
+  justify-content: center;
+}
+.polished-battle .turn-queue .character-portrait image {
+  image-rendering: pixelated;
+}
+@media (max-width: 700px) {
+  .appearance-choice > .character-portrait {
+    height: 82px;
+    width: 82px;
+    margin: 7px 0 14px;
+  }
+  .polished-battle .turn-queue .character-portrait {
+    height: 33px;
+    width: 33px;
+  }
+  .profile-appearance-summary > .character-portrait {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 700px) {
+  .pixel-adventure.polished-battle .party-line {
+    right: 5%;
+    width: 47%;
+  }
+  .pixel-adventure.polished-battle .enemy-line {
+    left: 2%;
+    width: 40%;
+  }
+}

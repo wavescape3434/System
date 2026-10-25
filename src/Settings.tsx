@@ -111,7 +111,7 @@ export default function Settings({
               <UserRound size={23} />
             </div>
             <div className="profile-appearance-summary">
-              <CharacterSprite appearance={characterAppearance(c)} />
+              <CharacterSprite appearance={characterAppearance(c)} portrait />
               <div>
                 <b>{characterAppearance(c).name}</b>
                 <button
@@ -341,7 +341,7 @@ export default function Settings({
           </div>
           <div className="settings-record">
             <span>Version</span>
-            <Tag>1.9.0</Tag>
+            <Tag>1.10.0</Tag>
           </div>
           <button className="button primary" onClick={onAccount}>
             Account & backups

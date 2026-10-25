@@ -25,7 +25,8 @@ export default function AppearancePicker({
   const [selected, setSelected] = useState(current.id),
     [group, setGroup] = useState("All"),
     [silhouette, setSilhouette] = useState("All"),
-    [query, setQuery] = useState("");
+    [query, setQuery] = useState(""),
+    [portraitView, setPortraitView] = useState(false);
   const preview = findAppearance(selected)!;
   const list = CHARACTER_APPEARANCES.filter(
     (a) =>
@@ -38,7 +39,7 @@ export default function AppearancePicker({
     <div className="appearance-layout">
       <section className="appearance-preview">
         <div className="appearance-stage">
-          <CharacterSprite appearance={preview} />
+          <CharacterSprite appearance={preview} portrait={portraitView} />
           <span className="appearance-floor" />
         </div>
         <span className="appearance-category">{preview.group}</span>
@@ -56,6 +57,24 @@ export default function AppearancePicker({
         <span className="appearance-cosmetic">Cosmetic</span>
       </section>
       <section className="appearance-options">
+        <div
+          className="appearance-preview-mode"
+          role="group"
+          aria-label="Appearance preview mode"
+        >
+          <button
+            aria-pressed={!portraitView}
+            onClick={() => setPortraitView(false)}
+          >
+            Full sprites
+          </button>
+          <button
+            aria-pressed={portraitView}
+            onClick={() => setPortraitView(true)}
+          >
+            Portraits
+          </button>
+        </div>
         <div className="appearance-filters">
           <label className="appearance-search">
             <Search size={16} />
@@ -101,7 +120,7 @@ export default function AppearancePicker({
               aria-pressed={a.id === selected}
               onClick={() => setSelected(a.id)}
             >
-              <CharacterSprite appearance={a} />
+              <CharacterSprite appearance={a} portrait={portraitView} />
               <b>{a.name}</b>
               {a.id === current.id && <small>Current</small>}
               {a.id === selected && (
