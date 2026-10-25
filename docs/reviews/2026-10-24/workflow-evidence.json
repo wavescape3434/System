@@ -1,0 +1,116 @@
+{
+  "errors": [],
+  "realCharacterHub": {
+    "takenTop": 1036.46875,
+    "allowanceTop": 663.90625
+  },
+  "realCharacterBoard": {
+    "firstCardTop": 585.4375,
+    "visibleWholeCards": 2
+  },
+  "pagination": {
+    "label": "Show 12 more",
+    "before": 30,
+    "after": 60
+  },
+  "filterAfterPageReturn": "",
+  "examKeyboard": {
+    "value": "4",
+    "focused": false
+  },
+  "modalReverseTab": {
+    "inside": false,
+    "active": "<summary>Examination record · 0</summary>"
+  },
+  "weeklyFromHub": {
+    "takenLabel": "Taken (1)",
+    "cardCount": 0,
+    "empty": true
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "page": "Guild",
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "page": "Objectives",
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "page": "Skills & Stats",
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "page": "Adventures",
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "Guild",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "Objectives",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "Skills & Stats",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "Adventures",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "overflow": false
+    },
+    {
+      "width": 600,
+      "page": "Guild",
+      "scrollWidth": 600,
+      "innerWidth": 600,
+      "overflow": false
+    },
+    {
+      "width": 600,
+      "page": "Objectives",
+      "scrollWidth": 600,
+      "innerWidth": 600,
+      "overflow": false
+    },
+    {
+      "width": 600,
+      "page": "Skills & Stats",
+      "scrollWidth": 600,
+      "innerWidth": 600,
+      "overflow": false
+    },
+    {
+      "width": 600,
+      "page": "Adventures",
+      "scrollWidth": 600,
+      "innerWidth": 600,
+      "overflow": false
+    }
+  ]
+}

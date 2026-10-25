@@ -31,6 +31,8 @@ Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Ch
 
 ## Version 1.10.0
 
+[Full UI, UX, performance, and product review — 24 October 2026](docs/reviews/2026-10-24/README.md), including reproduced issues, screen notes, screenshots, and long-history measurements.
+
 Install the updated APK over the existing app to retain its character. Package `com.theguild.personal` and the signing certificate are unchanged; version code is 12. Export a backup before upgrading. The APK is compiled and signature-verified; it has not been exercised on a physical Android device in this environment. [Verification details](docs/verification-1.10.md).
 
 Guild Cards follow the member's rank metal: **Tin, Copper, Bronze, Iron, Silver, Gold, Platinum, Mythril, Orichalcum** for F through SSS. Objectives are pinned parchment commissions on a timber board. The fixed header includes an in-app notification inbox. [View the screenshots](docs/screenshots/README.md).
