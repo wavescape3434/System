@@ -29,6 +29,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.13.0
+
+Universal objectives now have six stat boards, while class/career requests stay directly accessible. Skill trees use connected constellations, named combat-style filters, prerequisite navigation, a selected-skill panel and direct adventure loadout actions. [Changes](docs/update-1.13.md) · [Verification](docs/verification-1.13.md) · [Previews](docs/screenshots/README.md).
+
+Install over the existing app to retain its character: version code **15**, package `com.theguild.personal`, and the same signing certificate.
+
 ## Version 1.12.0
 
 Requests open as detailed parchment commissions, and compact board icons identify their training attribute. Every adventure area now has ten stages, displayed through one current-stage panel. The new guild emblem combines a sword, staff and shield. Existing area unlocks and exploration remain available when upgrading. [Changes](docs/update-1.12.md) · [Verification](docs/verification-1.12.md) · [Previews](docs/screenshots/README.md).

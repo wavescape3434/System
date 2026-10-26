@@ -101,14 +101,10 @@ test("phone board surfaces more work, filters are optional, pins have real hit a
   await sample(page);
   await nav(page, "Objectives");
   await expect(page.getByLabel("Objective category")).toBeHidden();
-  const visible = await page.locator(".compact-request").evaluateAll(
-    (nodes) =>
-      nodes.filter((n) => {
-        const r = n.getBoundingClientRect();
-        return r.top >= 80 && r.bottom < innerHeight - 64;
-      }).length,
-  );
-  expect(visible).toBeGreaterThanOrEqual(3);
+  await expect(page.locator(".stat-board-door")).toHaveCount(6);
+  await expect(
+    page.locator('.compact-request[data-scope="universal"]'),
+  ).toHaveCount(0);
   const box = await page
     .getByRole("button", { name: "Pin Warrior commission", exact: true })
     .boundingBox();
@@ -120,6 +116,9 @@ test("phone board surfaces more work, filters are optional, pins have real hit a
     .getByRole("button", { name: "Clear filters", exact: true })
     .click();
   await page.getByLabel("Search requests").fill("Pushup");
+  await page
+    .getByRole("button", { name: "Open Strength board", exact: true })
+    .click();
   await nav(page, "Journey");
   await nav(page, "Objectives");
   await expect(page.getByLabel("Search requests")).toHaveValue("Pushup");

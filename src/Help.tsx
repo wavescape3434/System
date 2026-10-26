@@ -77,7 +77,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Request icons",
-        "A group icon means universal, a shield means class, a briefcase means profession, and a compass means vocation. A globe means real-world work, linked circles mean real-world work with adventure requirements or bonuses, and crossed swords on Adventure guild requests mean adventure-only activity. Expand a request to inspect its rewards and requirements.",
+        "The large icon and STR/DEX/CON/INT/WIS/CHA code identify a request's primary attribute. The small badge identifies universal (group), class (shield), profession (briefcase), or vocation (compass). A globe means real-world work, linked circles mean real-world work with adventure requirements or bonuses, and crossed swords on Adventure guild requests mean adventure-only activity. Expand a request to inspect its rewards and requirements.",
       ],
     ],
   },
@@ -86,6 +86,10 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     title: "Requests & Taken",
     page: "objectives",
     sections: [
+      [
+        "Universal boards",
+        "Choose Strength, Dexterity, Constitution, Intelligence, Wisdom or Charisma to browse universal requests. Search and cadence filters update each board's count. All boards returns to the hall. Class, profession and vocation requests stay directly listed. Taken shows accepted requests together without the board-selection step; Pinned and Suggested group their universal options into stat boards.",
+      ],
       [
         "Taking a request",
         "Search by activity or topic, filter by focus and rank, and pin useful requests. Related difficulty variants share one card. Choose rank, inspect its work and reward, then press Take request. Only one rank of a group can reward each period. Release removes an unfinished commitment; completed rewards stay in your history.",
@@ -264,11 +268,15 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Using the tree",
-        "Drag to pan, pinch with two fingers to zoom, or use the zoom controls. Fit shows the whole tree. Select a node for its requirements and effect. Shared archetype levels include training from all contributing classes. Learned skills remain yours after switching paths.",
+        "Constellations show connected skill paths. Choose a named style to focus its skills and prerequisite routes. Solid connections require the parent skill; dashed connections are alternatives where one qualifies. Select a star for its effects, MP cost, practice, point cost and requirements. Select a prerequisite name to inspect it. Drag to pan, pinch to zoom, use Fit for an overview or Available skills for a readable starting point. Search and status controls highlight map matches and filter the skill list. Shared archetype levels include training from all contributing classes. Learned skills remain yours after switching paths.",
+      ],
+      [
+        "Skill goals",
+        "Set skill goal highlights that skill and its prerequisite network, including alternative routes. A goal does not purchase skills or reserve points. Goals and viewport preferences survive reload within the current session and are separate from character backups.",
       ],
       [
         "Combat loadout",
-        "Equip up to four purchased combat skills in Adventures → Skill loadout. The active class signature uses no slot and is available automatically. Prestige signatures have greater potency.",
+        "Equip up to four purchased combat skills from the selected-skill panel or Adventures → Skill loadout. Combat modifiers apply while equipped, with no change to base stats. Loadout changes are blocked during an active fight. The active class signature uses no slot and is available automatically. Prestige signatures have greater potency.",
       ],
     ],
   },

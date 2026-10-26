@@ -2,7 +2,13 @@ import { ARCHETYPES } from "./class-catalog";
 import { useViewState } from "./useViewState";
 import { CAREER_CATEGORIES, careerCategory } from "./careers";
 import { levelFromXP } from "./progression";
-import { COMBAT_EFFECTS } from "./class-roles";
+import SkillInspector from "./SkillInspector";
+import {
+  constellation,
+  skillStyle,
+  styleSkills,
+  skillAncestors,
+} from "./skill-atlas";
 import { useState, useEffect, useRef } from "react";
 import {
   LockKeyhole,
@@ -11,7 +17,8 @@ import {
   ZoomOut,
   Scan,
   Plus,
-  Sparkles,
+  Star,
+  X,
 } from "lucide-react";
 import type { Character, Skill } from "./domain";
 import {
@@ -20,14 +27,12 @@ import {
   archetypeXP,
   activeVocation,
   hasSkill,
-  learnSkill,
   skillRequirements,
-  skillWallet,
   skillPointsAvailable,
   walletLevel,
   skillTier,
 } from "./domain";
-import { Icon, Modal, Progress, Tag } from "./ui";
+import { Icon } from "./ui";
 export default function SkillTree({
   c,
   update,
@@ -40,7 +45,7 @@ export default function SkillTree({
   const key = `${c.id}.${c.activeClass}.tree`;
   const [category, setCategory] = useViewState<string>(
       `${key}.category`,
-      "universal",
+      "class",
       false,
       ["universal", "class", "profession"],
     ),
@@ -49,6 +54,9 @@ export default function SkillTree({
     [branch, setBranch] = useViewState<string>(`${key}.branch`, "current"),
     [selected, setSelected] = useState<Skill | null>(null),
     [zoom, setZoom] = useState(1);
+  const [style, setStyle] = useState("all"),
+    [status, setStatus] = useState("all"),
+    [goal, setGoal] = useViewState<string>(`${key}.goal`, "");
   const treeRef = useRef<HTMLDivElement>(null),
     zoomRef = useRef(1),
     pointers = useRef(new Map<number, { x: number; y: number }>()),
@@ -100,8 +108,66 @@ export default function SkillTree({
             : s.archetype === owner)
         : s.owner === owner),
   );
-  const worldHeight = Math.max(810, ...list.map((s) => s.y + 125)),
-    worldWidth = Math.max(1100, ...list.map((s) => s.x + 170));
+  const styles = [...new Set(list.map((s) => skillStyle(s, list)))],
+    focused = styleSkills(list, style),
+    atlas = constellation(focused),
+    worldHeight = atlas.height,
+    worldWidth = atlas.width,
+    goalSkill = list.find((s) => s.id === goal),
+    route = new Set(
+      goalSkill && !hasSkill(c, goalSkill)
+        ? [goal, ...skillAncestors(goal, list)]
+        : [],
+    );
+  const matches = (s: Skill) =>
+    (!search ||
+      `${s.name} ${s.description} ${skillStyle(s, list)}`
+        .toLowerCase()
+        .includes(search.toLowerCase())) &&
+    (status === "all" ||
+      (status === "learned"
+        ? hasSkill(c, s)
+        : status === "available"
+          ? !s.automatic && !hasSkill(c, s) && !skillRequirements(c, s).length
+          : !hasSkill(c, s) && !!skillRequirements(c, s).length));
+  const locate = (s: Skill) => {
+    const node = atlas.nodes.find((n) => n.skill.id === s.id),
+      el = treeRef.current;
+    if (node && el)
+      el.scrollTo({
+        left: Math.max(0, node.x * zoomRef.current - el.clientWidth / 2),
+        top: Math.max(0, node.y * zoomRef.current - el.clientHeight / 2),
+        behavior: "smooth",
+      });
+  };
+  const inspect = (s: Skill) => {
+    setSelected(s);
+    locate(s);
+    if (innerWidth <= 800 && !listMode)
+      treeRef.current?.scrollIntoView({ block: "start", behavior: "instant" });
+  };
+  const closeInspector = () => {
+    setSelected(null);
+    treeRef.current?.focus({ preventScroll: true });
+  };
+  useEffect(() => {
+    const close = (e: KeyboardEvent) => {
+      if (
+        selected &&
+        e.key === "Escape" &&
+        !document.querySelector('[role="dialog"]')
+      )
+        closeInspector();
+    };
+    document.addEventListener("keydown", close);
+    return () => document.removeEventListener("keydown", close);
+  }, [selected]);
+  useEffect(() => {
+    if (selected)
+      document
+        .querySelector<HTMLElement>(".skill-inspector")
+        ?.focus({ preventScroll: true });
+  }, [selected?.id]);
   const fitTree = () => {
     const el = treeRef.current;
     if (!el) return;
@@ -122,7 +188,7 @@ export default function SkillTree({
     if (!el) return;
     const next = el.clientWidth < 700 ? 1 : 0.9;
     const node =
-      [...list]
+      [...focused]
         .filter((s) => !hasSkill(c, s))
         .sort(
           (a, b) =>
@@ -134,12 +200,26 @@ export default function SkillTree({
     setZoom(next);
     requestAnimationFrame(() =>
       el.scrollTo({
-        left: Math.max(0, (node?.x || 0) * next - el.clientWidth / 2),
-        top: Math.max(0, (node?.y || 0) * next - el.clientHeight / 2),
+        left: Math.max(
+          0,
+          (atlas.nodes.find((n) => n.skill.id === node?.id)?.x || 0) * next -
+            el.clientWidth / 2,
+        ),
+        top: Math.max(
+          0,
+          (atlas.nodes.find((n) => n.skill.id === node?.id)?.y || 0) * next -
+            el.clientHeight / 2,
+        ),
       }),
     );
   };
-  const positionKey = `guild.view.${key}.position.${category}.${branch}`;
+  useEffect(() => {
+    setStyle("all");
+    setSelected(null);
+    setSearch("");
+    setStatus("all");
+  }, [category, branch]);
+  const positionKey = `guild.view.${key}.constellation-position.${category}.${branch}.${style}`;
   useEffect(() => {
     try {
       const saved = JSON.parse(sessionStorage.getItem(positionKey) || "null");
@@ -160,7 +240,7 @@ export default function SkillTree({
       /* A fresh readable view is always available. */
     }
     centerAvailable();
-  }, [category, branch, worldHeight, worldWidth]);
+  }, [category, branch, style, worldHeight, worldWidth]);
   useEffect(() => {
     const el = treeRef.current;
     if (!el) return;
@@ -202,7 +282,7 @@ export default function SkillTree({
             : CAREER_CATEGORIES.find((g) => g.id === owner)?.name ||
               c.profession;
   return (
-    <>
+    <section className="skill-atlas">
       <div className="tree-toolbar">
         <div
           className="tree-categories"
@@ -307,31 +387,69 @@ export default function SkillTree({
           </button>
         </div>
       </div>
-      {category === "class" && owner === "fighter" && (
-        <div className="tree-specializations">
-          {[
-            ["sword", "Swordsmanship"],
-            ["spear", "Spearcraft"],
-            ["axe", "Axe Fighting"],
-            ["unarmed", "Unarmed Combat"],
-          ].map(([id, name]) => (
-            <button
-              key={id}
-              aria-label={`Find ${name}`}
-              onClick={() => {
-                const node = list.find((s) => s.id === `martial-${id}-1`),
-                  el = treeRef.current;
-                if (node && el)
-                  el.scrollTo({
-                    left: Math.max(0, node.x * zoom - el.clientWidth / 2),
-                    top: Math.max(0, node.y * zoom - el.clientHeight / 2),
-                    behavior: "smooth",
-                  });
-              }}
-            >
-              {name}
-            </button>
-          ))}
+      <div className="atlas-progress">
+        <span>
+          {list.filter((s) => hasSkill(c, s)).length} / {list.length} learned
+        </span>
+        <span>
+          {
+            list.filter(
+              (s) =>
+                !s.automatic &&
+                !hasSkill(c, s) &&
+                !skillRequirements(c, s).length,
+            ).length
+          }{" "}
+          available
+        </span>
+        <span>
+          Lv. {lv} · {shards} points
+        </span>
+      </div>
+      <div className="atlas-styles" aria-label="Skill styles">
+        <button aria-pressed={style === "all"} onClick={() => setStyle("all")}>
+          All paths
+        </button>
+        {styles.map((name) => (
+          <button
+            key={name}
+            aria-label={`Find ${name}`}
+            aria-pressed={style === name}
+            onClick={() => setStyle(name)}
+          >
+            {name}
+            <small>
+              {
+                list.filter(
+                  (s) => skillStyle(s, list) === name && hasSkill(c, s),
+                ).length
+              }
+              /{list.filter((s) => skillStyle(s, list) === name).length}
+            </small>
+          </button>
+        ))}
+      </div>
+      {goalSkill && !hasSkill(c, goalSkill) && (
+        <div className="atlas-goal">
+          <Star size={17} />
+          <button
+            onClick={() => {
+              setStyle("all");
+              setSelected(goalSkill);
+            }}
+          >
+            <b>Goal: {goalSkill.name}</b>
+            <small>
+              Lv. {skillTier(goalSkill)} · {goalSkill.cost} points
+            </small>
+          </button>
+          <button
+            className="icon-button"
+            aria-label="Clear skill goal"
+            onClick={() => setGoal("")}
+          >
+            <X size={18} />
+          </button>
         </div>
       )}
       <div className="tree-view-switch">
@@ -349,275 +467,343 @@ export default function SkillTree({
         <button aria-pressed={listMode} onClick={() => setListMode(true)}>
           Skill list
         </button>
-        {listMode && (
-          <input
-            type="search"
-            aria-label="Search skills"
-            placeholder="Search skills"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        )}
-      </div>
-      {listMode && (
-        <div className="accessible-skill-list">
-          {[...list]
-            .filter(
-              (s) =>
-                !search ||
-                `${s.name} ${s.description}`
-                  .toLowerCase()
-                  .includes(search.toLowerCase()),
-            )
-            .sort((a, b) => skillTier(a) - skillTier(b) || a.cost - b.cost)
-            .map((s) => (
-              <button key={s.id} onClick={() => setSelected(s)}>
-                <Icon name={s.stat} size={20} />
-                <span>
-                  <b>{s.name}</b>
-                  <small>
-                    Lv. {skillTier(s)} · {s.cost} point{s.cost === 1 ? "" : "s"}{" "}
-                    ·{" "}
-                    {hasSkill(c, s)
-                      ? "Learned"
-                      : skillRequirements(c, s).length
-                        ? "Locked"
-                        : "Available"}
-                  </small>
-                </span>
-                {hasSkill(c, s) ? <Check size={16} /> : <Plus size={16} />}
-              </button>
-            ))}
-        </div>
-      )}
-      <div
-        style={listMode ? { display: "none" } : undefined}
-        ref={treeRef}
-        onScroll={(e) => {
-          try {
-            sessionStorage.setItem(
-              positionKey,
-              JSON.stringify({
-                zoom: zoomRef.current,
-                left: e.currentTarget.scrollLeft,
-                top: e.currentTarget.scrollTop,
-              }),
-            );
-          } catch {
-            /* Optional view state. */
-          }
-        }}
-        onClickCapture={(e) => {
-          if (moved.current) {
-            e.preventDefault();
-            e.stopPropagation();
-          }
-        }}
-        onPointerDown={(e) => {
-          const el = treeRef.current!;
-          pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
-          if (pointers.current.size === 1) {
-            moved.current = false;
-            drag.current = {
-              x: e.clientX,
-              y: e.clientY,
-              left: el.scrollLeft,
-              top: el.scrollTop,
-            };
-          }
-          if (pointers.current.size === 2) {
-            const [a, b] = [...pointers.current.values()],
-              r = el.getBoundingClientRect();
-            gesture.current = {
-              distance: Math.hypot(a.x - b.x, a.y - b.y),
-              zoom: zoomRef.current,
-              wx: (el.scrollLeft + (a.x + b.x) / 2 - r.left) / zoomRef.current,
-              wy: (el.scrollTop + (a.y + b.y) / 2 - r.top) / zoomRef.current,
-            };
-            moved.current = true;
-            for (const id of pointers.current.keys()) el.setPointerCapture(id);
-          }
-        }}
-        onPointerMove={(e) => {
-          if (!pointers.current.has(e.pointerId)) return;
-          pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
-          const el = treeRef.current!;
-          if (pointers.current.size >= 2 && gesture.current) {
-            const [a, b] = [...pointers.current.values()],
-              g = gesture.current,
-              r = el.getBoundingClientRect(),
-              next = Math.max(
-                0.12,
-                Math.min(
-                  1.6,
-                  (g.zoom * Math.hypot(a.x - b.x, a.y - b.y)) /
-                    Math.max(1, g.distance),
-                ),
-              );
-            zoomRef.current = next;
-            setZoom(next);
-            requestAnimationFrame(() => {
-              el.scrollLeft = g.wx * next - ((a.x + b.x) / 2 - r.left);
-              el.scrollTop = g.wy * next - ((a.y + b.y) / 2 - r.top);
-            });
-          } else if (drag.current) {
-            const d = drag.current;
-            if (Math.hypot(e.clientX - d.x, e.clientY - d.y) > 5) {
-              moved.current = true;
-              el.setPointerCapture(e.pointerId);
-            }
-            if (moved.current) {
-              el.scrollLeft = d.left - (e.clientX - d.x);
-              el.scrollTop = d.top - (e.clientY - d.y);
-            }
-          }
-        }}
-        onPointerUp={(e) => {
-          pointers.current.delete(e.pointerId);
-          gesture.current = null;
-          const remaining = [...pointers.current.values()][0],
-            el = treeRef.current!;
-          drag.current = remaining
-            ? {
-                x: remaining.x,
-                y: remaining.y,
-                left: el.scrollLeft,
-                top: el.scrollTop,
-              }
-            : null;
-        }}
-        onPointerCancel={(e) => {
-          pointers.current.delete(e.pointerId);
-          gesture.current = null;
-          drag.current = null;
-        }}
-        className="skill-tree-window"
-        tabIndex={0}
-        aria-label={`${treeName} branching skill tree. Drag to pan. Pinch or use zoom controls.`}
-      >
-        <div
-          className="skill-tree-world"
-          style={{ width: worldWidth * zoom, height: worldHeight * zoom }}
+        <input
+          type="search"
+          aria-label="Search skills"
+          placeholder="Search skills"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <select
+          aria-label="Skill status"
+          value={status}
+          onChange={(e) => setStatus(e.target.value)}
         >
+          <option value="all">All skills</option>
+          <option value="available">Available</option>
+          <option value="learned">Learned</option>
+          <option value="locked">Locked</option>
+        </select>
+      </div>
+      <div className="skill-atlas-layout">
+        <div className="atlas-main">
+          {listMode && (
+            <div className="accessible-skill-list">
+              {[...focused]
+                .filter(matches)
+                .sort((a, b) => skillTier(a) - skillTier(b) || a.cost - b.cost)
+                .map((s) => (
+                  <button key={s.id} onClick={() => inspect(s)}>
+                    <Icon name={s.stat} size={20} />
+                    <span>
+                      <b>{s.name}</b>
+                      <small>
+                        Lv. {skillTier(s)} · {s.cost} point
+                        {s.cost === 1 ? "" : "s"} ·{" "}
+                        {hasSkill(c, s)
+                          ? "Learned"
+                          : skillRequirements(c, s).length
+                            ? "Locked"
+                            : "Available"}
+                      </small>
+                    </span>
+                    {hasSkill(c, s) ? <Check size={16} /> : <Plus size={16} />}
+                  </button>
+                ))}
+            </div>
+          )}
           <div
-            className="skill-tree-canvas"
-            style={{
-              transform: `scale(${zoom})`,
-              height: worldHeight,
-              width: worldWidth,
+            style={listMode ? { display: "none" } : undefined}
+            ref={treeRef}
+            onScroll={(e) => {
+              try {
+                sessionStorage.setItem(
+                  positionKey,
+                  JSON.stringify({
+                    zoom: zoomRef.current,
+                    left: e.currentTarget.scrollLeft,
+                    top: e.currentTarget.scrollTop,
+                  }),
+                );
+              } catch {
+                /* Optional view state. */
+              }
             }}
+            onClickCapture={(e) => {
+              if (moved.current) {
+                e.preventDefault();
+                e.stopPropagation();
+              }
+            }}
+            onPointerDown={(e) => {
+              const el = treeRef.current!;
+              pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+              if (pointers.current.size === 1) {
+                moved.current = false;
+                drag.current = {
+                  x: e.clientX,
+                  y: e.clientY,
+                  left: el.scrollLeft,
+                  top: el.scrollTop,
+                };
+              }
+              if (pointers.current.size === 2) {
+                const [a, b] = [...pointers.current.values()],
+                  r = el.getBoundingClientRect();
+                gesture.current = {
+                  distance: Math.hypot(a.x - b.x, a.y - b.y),
+                  zoom: zoomRef.current,
+                  wx:
+                    (el.scrollLeft + (a.x + b.x) / 2 - r.left) /
+                    zoomRef.current,
+                  wy:
+                    (el.scrollTop + (a.y + b.y) / 2 - r.top) / zoomRef.current,
+                };
+                moved.current = true;
+                for (const id of pointers.current.keys())
+                  el.setPointerCapture(id);
+              }
+            }}
+            onPointerMove={(e) => {
+              if (!pointers.current.has(e.pointerId)) return;
+              pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+              const el = treeRef.current!;
+              if (pointers.current.size >= 2 && gesture.current) {
+                const [a, b] = [...pointers.current.values()],
+                  g = gesture.current,
+                  r = el.getBoundingClientRect(),
+                  next = Math.max(
+                    0.12,
+                    Math.min(
+                      1.6,
+                      (g.zoom * Math.hypot(a.x - b.x, a.y - b.y)) /
+                        Math.max(1, g.distance),
+                    ),
+                  );
+                zoomRef.current = next;
+                setZoom(next);
+                requestAnimationFrame(() => {
+                  el.scrollLeft = g.wx * next - ((a.x + b.x) / 2 - r.left);
+                  el.scrollTop = g.wy * next - ((a.y + b.y) / 2 - r.top);
+                });
+              } else if (drag.current) {
+                const d = drag.current;
+                if (Math.hypot(e.clientX - d.x, e.clientY - d.y) > 5) {
+                  moved.current = true;
+                  el.setPointerCapture(e.pointerId);
+                }
+                if (moved.current) {
+                  el.scrollLeft = d.left - (e.clientX - d.x);
+                  el.scrollTop = d.top - (e.clientY - d.y);
+                }
+              }
+            }}
+            onPointerUp={(e) => {
+              pointers.current.delete(e.pointerId);
+              gesture.current = null;
+              const remaining = [...pointers.current.values()][0],
+                el = treeRef.current!;
+              drag.current = remaining
+                ? {
+                    x: remaining.x,
+                    y: remaining.y,
+                    left: el.scrollLeft,
+                    top: el.scrollTop,
+                  }
+                : null;
+            }}
+            onPointerCancel={(e) => {
+              pointers.current.delete(e.pointerId);
+              gesture.current = null;
+              drag.current = null;
+            }}
+            className="skill-tree-window"
+            tabIndex={0}
+            aria-label={`${treeName} branching skill tree. Drag to pan. Pinch or use zoom controls.`}
           >
-            <svg
-              className="skill-connections"
-              viewBox={`0 0 ${worldWidth} ${worldHeight}`}
-              style={{ height: worldHeight, width: worldWidth }}
-              aria-hidden="true"
+            <div
+              className="skill-tree-world"
+              style={{ width: worldWidth * zoom, height: worldHeight * zoom }}
             >
-              <defs>
-                <pattern
-                  id="starfield"
-                  width="110"
-                  height="90"
-                  patternUnits="userSpaceOnUse"
+              <div
+                className="skill-tree-canvas"
+                style={{
+                  transform: `scale(${zoom})`,
+                  height: worldHeight,
+                  width: worldWidth,
+                }}
+              >
+                <svg
+                  className="skill-connections"
+                  viewBox={`0 0 ${worldWidth} ${worldHeight}`}
+                  style={{ height: worldHeight, width: worldWidth }}
+                  aria-hidden="true"
                 >
-                  <circle cx="14" cy="20" r="1" fill="#b9c89a" opacity=".28" />
-                  <circle cx="78" cy="63" r=".7" fill="#c8c4a2" opacity=".35" />
-                </pattern>
-              </defs>
-              <rect
-                width={worldWidth}
-                height={worldHeight}
-                fill="url(#starfield)"
-              />
-              {list.flatMap((s) =>
-                [...s.parents, ...(s.anyParents || [])].map((id) => {
-                  const parent = list.find((p) => p.id === id);
-                  return parent ? (
-                    <path
-                      key={`${s.id}-${id}`}
-                      d={`M ${parent.x} ${parent.y} C ${parent.x} ${(parent.y + s.y) / 2}, ${s.x} ${(parent.y + s.y) / 2}, ${s.x} ${s.y}`}
-                      className={
-                        hasSkill(c, s)
-                          ? "learned"
-                          : hasSkill(c, parent)
-                            ? "open"
-                            : ""
+                  <defs>
+                    <pattern
+                      id="starfield"
+                      width="110"
+                      height="90"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <circle
+                        cx="14"
+                        cy="20"
+                        r="1"
+                        fill="#b9c89a"
+                        opacity=".28"
+                      />
+                      <circle
+                        cx="78"
+                        cy="63"
+                        r=".7"
+                        fill="#c8c4a2"
+                        opacity=".35"
+                      />
+                    </pattern>
+                  </defs>
+                  <rect
+                    width={worldWidth}
+                    height={worldHeight}
+                    fill="url(#starfield)"
+                  />
+                  {atlas.nodes.flatMap(({ skill: s, x, y }) =>
+                    [...s.parents, ...(s.anyParents || [])].map((id) => {
+                      const parent = atlas.nodes.find((n) => n.skill.id === id);
+                      return parent ? (
+                        <path
+                          key={`${s.id}-${id}`}
+                          data-parent={id}
+                          data-child={s.id}
+                          d={`M ${parent.x} ${parent.y} Q ${(parent.x + x) / 2 + 45} ${(parent.y + y) / 2 - 45}, ${x} ${y}`}
+                          className={`${hasSkill(c, s) && hasSkill(c, parent.skill) ? "learned" : hasSkill(c, parent.skill) ? "open" : ""} ${s.anyParents?.includes(id) ? "alternative" : ""} ${route.has(s.id) && route.has(id) ? "goal-route" : ""}`}
+                        />
+                      ) : null;
+                    }),
+                  )}
+                </svg>
+                {atlas.nodes.map(({ skill: s, x, y, color }) => {
+                  const learned = hasSkill(c, s),
+                    missing = skillRequirements(c, s),
+                    tierLocked = lv < skillTier(s) && !s.automatic;
+                  return (
+                    <button
+                      key={s.id}
+                      className={`skill-node ${learned ? "learned" : missing.length ? "locked" : "available"} ${tierLocked ? "tier-locked" : ""} ${selected?.id === s.id ? "selected" : ""} ${route.has(s.id) ? "on-route" : ""} ${matches(s) ? "" : "dimmed"}`}
+                      style={
+                        {
+                          left: x - 65,
+                          top: y - 35,
+                          "--node-color": color,
+                        } as React.CSSProperties
                       }
-                    />
-                  ) : null;
-                }),
-              )}
-            </svg>
-            {list.map((s) => {
-              const learned = hasSkill(c, s),
-                missing = skillRequirements(c, s),
-                tierLocked = lv < skillTier(s) && !s.automatic;
-              return (
-                <button
-                  key={s.id}
-                  className={`skill-node ${learned ? "learned" : missing.length ? "locked" : "available"} ${tierLocked ? "tier-locked" : ""}`}
-                  style={{ left: s.x - 65, top: s.y - 35 }}
-                  onClick={() => setSelected(s)}
-                  aria-label={`${s.name}: ${learned ? "learned" : missing.length ? "locked" : "available"}`}
-                >
-                  <span className="skill-star">
-                    {learned ? (
-                      <Check size={24} />
-                    ) : tierLocked ? (
-                      <LockKeyhole size={21} />
-                    ) : (
-                      <Icon name={s.stat} size={25} />
-                    )}
-                  </span>
-                  <strong>{s.name}</strong>
-                  <small>
-                    {s.automatic
-                      ? "Credential"
-                      : `Lv ${skillTier(s)} · ${s.cost} point${s.cost === 1 ? "" : "s"}`}
-                  </small>
-                </button>
-              );
-            })}
+                      onClick={() => inspect(s)}
+                      aria-label={`${s.name}: ${learned ? "learned" : missing.length ? "locked" : "available"}`}
+                    >
+                      <span className="skill-star">
+                        {learned ? (
+                          <Check size={24} />
+                        ) : tierLocked ? (
+                          <LockKeyhole size={21} />
+                        ) : (
+                          <Icon name={s.stat} size={25} />
+                        )}
+                      </span>
+                      <strong>{s.name}</strong>
+                      <small>
+                        {s.automatic
+                          ? "Credential"
+                          : `Lv ${skillTier(s)} · ${s.cost} point${s.cost === 1 ? "" : "s"}`}
+                      </small>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <div className="tree-legend">
+            <span>
+              <i className="learned" />
+              Learned
+            </span>
+            <span>
+              <i className="available" />
+              Available
+            </span>
+            <span>
+              <i />
+              Locked
+            </span>
+            <span>
+              <i className="alternative" />
+              One-of prerequisite
+            </span>
+            <span>Drag to pan · Pinch to zoom</span>
           </div>
         </div>
-      </div>
-      <div className="tree-legend">
-        <span>
-          <i className="learned" />
-          Learned
-        </span>
-        <span>
-          <i className="available" />
-          Available
-        </span>
-        <span>
-          <i />
-          Locked
-        </span>
-        <span>Drag to pan · Pinch to zoom</span>
-      </div>
-      <div className="tree-ranks">
-        <h3>Tree sections</h3>
-        {[...new Set(list.filter((s) => !s.automatic).map(skillTier))]
-          .sort((a, b) => a - b)
-          .map((required) => (
-            <div key={required}>
-              <span className={lv >= required ? "open" : ""}>
-                {lv >= required ? (
-                  <Check size={14} />
-                ) : (
-                  <LockKeyhole size={14} />
-                )}
-              </span>
-              <b>Level {required}</b>
-              <small>
-                {lv >= required
-                  ? "Section unlocked"
-                  : `Requires ${category === "class" && !focus ? "archetype" : category} level ${required}`}
-              </small>
+        {selected ? (
+          <SkillInspector
+            c={c}
+            skill={selected}
+            style={skillStyle(selected, list)}
+            update={update}
+            onSelect={inspect}
+            onClose={closeInspector}
+            onCertificate={() => {
+              setSelected(null);
+              onCertificate();
+            }}
+            goal={goal}
+            setGoal={setGoal}
+          />
+        ) : (
+          <aside className="atlas-empty-inspector">
+            <Star size={30} />
+            <h3>Select a skill</h3>
+            <div>
+              {[...focused]
+                .filter(
+                  (s) =>
+                    !hasSkill(c, s) &&
+                    !skillRequirements(c, s).length &&
+                    !s.automatic,
+                )
+                .slice(0, 3)
+                .map((s) => (
+                  <button key={s.id} onClick={() => inspect(s)}>
+                    {s.name}
+                    <small>{s.cost} points · Available</small>
+                  </button>
+                ))}
             </div>
-          ))}
+          </aside>
+        )}
       </div>
+      <details className="atlas-level-gates">
+        <summary>Level gates</summary>
+        <div className="tree-ranks">
+          <h3>Tree sections</h3>
+          {[...new Set(list.filter((s) => !s.automatic).map(skillTier))]
+            .sort((a, b) => a - b)
+            .map((required) => (
+              <div key={required}>
+                <span className={lv >= required ? "open" : ""}>
+                  {lv >= required ? (
+                    <Check size={14} />
+                  ) : (
+                    <LockKeyhole size={14} />
+                  )}
+                </span>
+                <b>Level {required}</b>
+                <small>
+                  {lv >= required
+                    ? "Section unlocked"
+                    : `Requires ${category === "class" && !focus ? "archetype" : category} level ${required}`}
+                </small>
+              </div>
+            ))}
+        </div>
+      </details>
       {c.earnedSkills.some((id) => SKILLS.find((s) => s.id === id)?.legacy) && (
         <details className="legacy-skill-record">
           <summary>Earlier earned skills</summary>
@@ -630,76 +816,6 @@ export default function SkillTree({
           </div>
         </details>
       )}
-      {selected && (
-        <Modal title={selected.name} onClose={() => setSelected(null)}>
-          <div className="skill-detail-meta">
-            <Tag>{selected.category}</Tag>
-            <Tag tone="gold">
-              {selected.automatic
-                ? "Credential milestone"
-                : `${selected.cost} points`}
-            </Tag>
-          </div>
-          <p>{selected.description}</p>
-          {selected.nonCombat && <Tag>Non-combat</Tag>}
-          {!selected.automatic &&
-            selected.id !== "universal-root" &&
-            !selected.nonCombat && (
-              <div className="notice">
-                Equipped: +{selected.cost >= 2 ? 2 : 1} {selected.stat}.
-                {selected.combat && COMBAT_EFFECTS[selected.combat] && (
-                  <>
-                    <br />
-                    {COMBAT_EFFECTS[selected.combat].description} MP cost:{" "}
-                    {COMBAT_EFFECTS[selected.combat].mp}.
-                  </>
-                )}
-              </div>
-            )}
-          <Progress
-            value={Math.min(selected.current(c), selected.target)}
-            max={Math.max(1, selected.target)}
-          />
-          <p className="helper">{selected.proof}</p>
-          {!hasSkill(c, selected) && (
-            <ul className="skill-requirements">
-              {skillRequirements(c, selected).map((text) => (
-                <li key={text}>
-                  <LockKeyhole size={13} />
-                  {text}
-                </li>
-              ))}
-            </ul>
-          )}
-          <button
-            className="button primary full"
-            disabled={
-              hasSkill(c, selected) ||
-              selected.automatic ||
-              skillRequirements(c, selected).length > 0
-            }
-            onClick={() => {
-              const next = learnSkill(c, selected.id);
-              if (next !== c && update(next)) setSelected(null);
-            }}
-          >
-            {hasSkill(c, selected) ? (
-              <>
-                <Check size={16} />
-                Learned
-              </>
-            ) : selected.automatic ? (
-              "Record the required credential"
-            ) : (
-              <>
-                Purchase skill ·{" "}
-                {skillPointsAvailable(c, skillWallet(c, selected))} points
-                available <Sparkles size={16} />
-              </>
-            )}
-          </button>
-        </Modal>
-      )}
-    </>
+    </section>
   );
 }

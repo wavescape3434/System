@@ -1,0 +1,63 @@
+{
+  "version": "1.13.0",
+  "timezone": "America/Denver",
+  "errors": [],
+  "screens": [
+    {
+      "name": "universal-boards-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "wisdom-board-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "constellation-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "skill-inspector-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "constellation-desktop",
+      "width": 1600,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "skill-inspector-desktop",
+      "width": 1600,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "universal-constellation",
+      "width": 1600,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "career-constellation",
+      "width": 1600,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    }
+  ]
+}

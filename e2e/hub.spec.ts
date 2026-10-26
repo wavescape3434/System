@@ -22,7 +22,7 @@ test("compact requests expose icons and rank, with work and rewards inside detai
   await sample(page);
   await nav(page, "Objectives");
   const cards = page.locator(".compact-request");
-  expect(await cards.count()).toBeGreaterThan(12);
+  expect(await cards.count()).toBeGreaterThan(0);
   expect((await cards.first().boundingBox())!.height).toBeLessThan(100);
   await expect(cards.first()).not.toContainText("XP");
   await expect(cards.first().getByLabel("class request")).toBeVisible();
@@ -30,6 +30,9 @@ test("compact requests expose icons and rank, with work and rewards inside detai
     cards.first().getByLabel("Real world", { exact: true }),
   ).toBeVisible();
   await page.getByLabel("Search requests").fill("Pushup");
+  await page
+    .getByRole("button", { name: "Open Strength board", exact: true })
+    .click();
   await page
     .getByRole("button", {
       name: "Show details for Pushup practice",
@@ -205,7 +208,9 @@ test("phone tree starts readable, real two-touch pinch zooms out, Fit and node i
   await page
     .getByRole("button", { name: "Spear Reach: locked", exact: true })
     .click();
-  await expect(page.getByRole("dialog")).toContainText("1 points");
+  await expect(
+    page.getByRole("complementary", { name: "Selected skill" }),
+  ).toContainText("1 point");
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,

@@ -221,6 +221,30 @@ export const campaign = (c: Character): Campaign => {
     ...(c.calendarVersion === 1 ? { world: upgradeWorldStages(data) } : {}),
   };
 };
+export function toggleEquippedSkill(c: Character, id: string): Character {
+  const data = campaign(c),
+    s = SKILLS.find((s) => s.id === id);
+  if (
+    !s ||
+    !c.earnedSkills.includes(id) ||
+    s.automatic ||
+    s.nonCombat ||
+    id === "universal-root" ||
+    data.battle?.phase === "player"
+  )
+    return c;
+  const equipped = data.equippedSkills.includes(id);
+  if (!equipped && data.equippedSkills.length >= 4) return c;
+  return {
+    ...c,
+    campaign: {
+      ...data,
+      equippedSkills: equipped
+        ? data.equippedSkills.filter((key) => key !== id)
+        : [...data.equippedSkills, id],
+    },
+  };
+}
 export function combatAttributes(c: Character): Stats {
   const result = { ...stats(c) };
   result[currentPath(c).stat] += 2;

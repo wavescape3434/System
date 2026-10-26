@@ -43,6 +43,7 @@ import {
   combatAttributes,
   act,
   claimVictory,
+  toggleEquippedSkill,
 } from "./rpg";
 import type { Unit, Action, Campaign } from "./rpg";
 import { Progress, Tag, Icon } from "./ui";
@@ -709,14 +710,7 @@ export default function AdventureGame({
                     !data.equippedSkills.includes(s.id) &&
                     data.equippedSkills.length >= 4
                   }
-                  onClick={() =>
-                    change({
-                      ...data,
-                      equippedSkills: data.equippedSkills.includes(s.id)
-                        ? data.equippedSkills.filter((id) => id !== s.id)
-                        : [...data.equippedSkills, s.id],
-                    })
-                  }
+                  onClick={() => update(toggleEquippedSkill(c, s.id))}
                 >
                   {data.equippedSkills.includes(s.id) ? "Unequip" : "Equip"}
                 </button>

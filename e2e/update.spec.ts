@@ -230,6 +230,9 @@ test("gym access persists, the guild card follows its metal, and fighter weapon 
   await page.getByLabel("Gym equipment", { exact: true }).check();
   await page.reload();
   await nav(page, "Objectives");
+  await page
+    .getByRole("button", { name: "Open Strength board", exact: true })
+    .click();
   await expect(
     page.getByRole("button", {
       name: "View Progressive resistance session",
@@ -245,7 +248,7 @@ test("gym access persists, the guild card follows its metal, and fighter weapon 
   await page
     .getByRole("button", { name: "Spear Reach: locked", exact: true })
     .click();
-  const dialog = page.getByRole("dialog");
+  const dialog = page.getByRole("complementary", { name: "Selected skill" });
   await expect(dialog).toContainText("Complete 1 Fighter class requests");
   await expect(dialog).not.toContainText("Learn Sword Guard");
 });

@@ -470,7 +470,7 @@ test("class skill purchases require multiple points and locked sections block sk
   await expect(
     page.getByRole("button", { name: /Purchase skill/ }),
   ).toBeDisabled();
-  await page.getByRole("button", { name: "Close dialog" }).click();
+  await page.getByRole("button", { name: "Close skill details" }).click();
   await page.reload();
   await page
     .getByRole("button", { name: "Skills & Stats", exact: true })
@@ -883,6 +883,9 @@ test("grouped board offers cadence rank limits and prices demanding adventure pr
     .first()
     .click();
   await page.getByLabel("Search requests").fill("Pushup");
+  await page
+    .getByRole("button", { name: "Open Strength board", exact: true })
+    .click();
   const push = page.locator(".guild-request-paper").filter({
     has: page.getByRole("button", {
       name: "View Pushup practice",

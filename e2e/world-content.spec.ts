@@ -51,6 +51,9 @@ test("one request card chooses a rank and pins the group across reload", async (
   await sample(page);
   await nav(page, "Objectives");
   await page.getByLabel("Search requests").fill("Pushup");
+  await page
+    .getByRole("button", { name: "Open Strength board", exact: true })
+    .click();
   await expect(
     page.getByRole("button", { name: "View Pushup practice", exact: true }),
   ).toHaveCount(1);
@@ -74,6 +77,9 @@ test("one request card chooses a rank and pins the group across reload", async (
   await page.reload();
   await nav(page, "Objectives");
   await page.getByRole("button", { name: /^Pinned/ }).click();
+  await page
+    .getByRole("button", { name: "Open Strength board", exact: true })
+    .click();
   await expect(
     page.getByRole("button", { name: "View Pushup practice", exact: true }),
   ).toBeVisible();
@@ -110,6 +116,9 @@ test("weekly rank selection counts walking before acceptance in the same week", 
   await nav(page, "Objectives");
   await page.getByRole("button", { name: /^Weekly quests/ }).click();
   await page.getByLabel("Search requests").fill("Walking week");
+  await page
+    .getByRole("button", { name: "Open Constitution board", exact: true })
+    .click();
   await page
     .getByRole("button", { name: "View Walking week", exact: true })
     .click();
@@ -271,6 +280,9 @@ test("required hybrid objectives unlock after the actual adventure delivery", as
     await page.getByRole("button", { name: /^Weekly quests/ }).click();
     await page.getByLabel("Objective category").selectOption("hybrid");
     await page.getByLabel("Search requests").fill("Chapel");
+    await page
+      .getByRole("button", { name: "Open Wisdom board", exact: true })
+      .click();
     await page
       .getByRole("button", { name: "View Chapel supplies", exact: true })
       .click();

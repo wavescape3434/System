@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.12.0 — screenshots
+# The Adventurers Guild 1.13.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Stat boards and skill constellations — version 1.13
+
+| Universal boards | Selected skill | Full constellation |
+| --- | --- | --- |
+| [<img src="universal-boards-mobile.png" width="210" alt="Six universal request boards grouped by attribute">](universal-boards-mobile.png) | [<img src="skill-inspector-mobile.png" width="230" alt="Spearcraft skill details and alternate prerequisites on a phone">](skill-inspector-mobile.png) | [<img src="constellation-desktop.png" width="330" alt="Connected Fighter constellation with combat style filters">](constellation-desktop.png) |
+
+[Wisdom requests](wisdom-board-mobile.png) · [Phone constellation overview](constellation-mobile.png) · [Desktop skill panel](skill-inspector-desktop.png) · [Universal constellation](universal-constellation.png) · [Career constellation](career-constellation.png)
+
+[Changes](../update-1.13.md) · [Verification](../verification-1.13.md)
 
 ## Parchment requests and ten-stage routes — version 1.12
 
@@ -66,7 +76,7 @@ These are browser previews using sample characters. Exploration results, prior a
 
 ## Retained feature previews
 
-These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.12 previews above show the current update.
+These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.13 previews above show the current update.
 
 [Guild Card on phone](guild-android.png) · [Guild Card detail](guild-card-detail.png) · [Rank metals](rank-metals.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Full Fighter skill web](fighter-web.png) · [Career tree](profession-tree.png) · [Vocation](vocation.png)
 

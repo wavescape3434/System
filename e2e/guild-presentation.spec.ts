@@ -17,13 +17,11 @@ test("paper requests show precise rank instructions, keep stat icons distinct an
     .getByRole("button", { name: "Objectives", exact: true })
     .last()
     .click();
-  const stats = await page
-    .locator(".request-focus-icon")
-    .evaluateAll((nodes) => [
-      ...new Set(nodes.map((n) => n.getAttribute("data-stat"))),
-    ]);
-  expect(stats.length).toBeGreaterThanOrEqual(4);
+  await expect(page.locator(".stat-board-door")).toHaveCount(6);
   await page.getByLabel("Search requests").fill("Pushup");
+  await page
+    .getByRole("button", { name: "Open Strength board", exact: true })
+    .click();
   await expect(
     page.locator('.request-focus-icon[data-stat="STR"]').first(),
   ).toBeVisible();
