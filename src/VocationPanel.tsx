@@ -9,7 +9,7 @@ export default function VocationPanel({
   update,
 }: {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
 }) {
   const current = activeVocation(c),
     [category, setCategory] = useState(

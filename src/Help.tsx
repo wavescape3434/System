@@ -369,7 +369,11 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Local saves",
-        "Progress saves on this device after each change. Export a character in Guild settings to keep a separate JSON backup. A backup includes activity and archived personal notes.",
+        "Progress is confirmed after its device database transaction commits. Histories are stored in chunks. A failed write returns to the previous committed record and shows an error; repeat the action after resolving storage issues. Export in Account & backups for a separate JSON copy. File imports accept up to 25 MB. A backup includes activity and archived personal notes.",
+      ],
+      [
+        "Career work and field competencies",
+        "Optional Completed work / outcome entries on profession and vocation requests form the Career work record under Skills & Stats → Profession & credentials. Export includes all disciplines. These are self-reported work samples, separate from certifications. Learned Question Framing or Spreadsheet Craft: Primer unlocks the Quartermaster’s Ledger in Adventures; System Foundations or Command Line: Primer unlocks Warden’s Diagnostics. These provide supply routes and enemy information without changing base stats, XP, gold or HP/MP. Other career utilities are still planned.",
       ],
       [
         "Google & cloud copies",

@@ -16,9 +16,9 @@ This is the working backlog from the version 1.13 product review. Update the sta
 | P02 | High | Adventures demonstrate class identity | **Opening pass shipped — 1.14.0**; other regions and role tuning remain | Readable enemy patterns reward guarding, class signatures and learned skills. Opening encounters remain accessible to different basic classes. Expand enemy families after this first regional pass. |
 | P03 | High | Faster daily request flow | **Delivered — 1.15.0** | Current commitments and class/career requests are easy to reach on a phone; parchment Take/Submit actions stay accessible without reading through the whole sheet again. |
 | P04 | High | Record actual improvement | **Submission logging delivered — 1.15.0**; independent entry/editing/imports remain future work | Optional quick inputs for sets/reps, duration/distance and completed work feed existing Journey trends. No compulsory journal writing. One activity can feed legitimate accepted goals under explicit stacking rules. |
-| P05 | Before wider release | Accounts, recovery and device reliability | **Recovery/session hardening shipped — 1.16.0**; asynchronous primary saves and Android runtime checks remain. Google setup deferred by owner. | Verify Google linking, backup recovery, upgrades, reminders and keyboards on Android. Evolve primary storage beyond a whole-character synchronous record as histories grow. |
+| P05 | Before wider release | Accounts, recovery and device reliability | **Primary-save migration shipped — 1.17.0**, following recovery/session hardening in 1.16. Android runtime/live service checks remain; Google setup deferred by owner. | Verify Google linking, backup recovery, upgrades, reminders and keyboards on Android. Evolve primary storage beyond a whole-character synchronous record as histories grow. |
 | P06 | Medium | Durable plans | **Delivered — 1.16.0** | Skill goals and relevant planning preferences survive app restarts and character backup/restore. Independent goals for each shared, focused, career and universal tree. |
-| P07 | Medium | Career progression payoffs | Planned | Career requests produce useful deliverables; non-combat competencies gain meaningful exploration, information or town uses without granting automatic base stats. |
+| P07 | Medium | Career progression payoffs | **First pass shipped — 1.17.0**; broader profession utilities next | Career requests produce useful deliverables; non-combat competencies gain meaningful exploration, information or town uses without granting automatic base stats. |
 | P08 | Medium | Economy and long-term challenge | Planned | Model gold sources, spending and consumable use together. Add challenges for high-stat characters while preserving earned power and unrestricted exploration. |
 
 ## Batch 1 scope
@@ -45,7 +45,14 @@ This is the working backlog from the version 1.13 product review. Update the sta
 - **Owner direction, 26 October 2026 (America/Denver):** leave Google/Firebase setup for later. No project is configured in this build and no live account or rules deployment is claimed.
 - **Still open in P05:** primary progress uses synchronous whole-character localStorage; file import remains capped at 5 MB. IndexedDB recovery supports larger copies but does not remove the primary-save limit. Physical Android runtime/upgrade checks remain separate. [Readiness record](docs/readiness-1.16.md).
 
-**Next:** P05 primary-save migration and P07 career payoffs. P08 supply/build economy remains important after the reserve change. Google setup stays deferred until the owner resumes it.
+## Batch 4 — 1.17.0
+
+- **P05 storage:** asynchronous primary saves with separate 100-entry history chunks, atomic commit receipts, serialized writes, rollback of dependent unsaved changes, stale-window protection, safe legacy migration, explicit empty-record resets and a 25 MB file-import limit. Legacy source removal happens only after commit. Normal exports remain portable character JSON.
+- **P07 first pass:** career work records from optional request outcomes across all twenty disciplines, a complete text export and a next-work-sample brief. Learned Business and Computing skills unlock current-town supply routes and next-stage diagnostics; information uses do not grant stats or progression/resources.
+- **Owner direction:** the next P07 pass should cover **more profession categories**, rather than deepen only Networking/Analysis. Build useful discipline-specific field utilities and deliverable guidance around the maintained twenty-tree structure. Do not treat the two initial utility families as a completed career system.
+- **P05 remains open:** physical Android upgrades/lifecycle/storage, reminders, keyboards, native file sharing, live Google/cloud/rules checks. Google setup stays deferred. The full character still loads into memory and validation/reports still scan history; profile these separately from write amplification.
+
+**Next:** broader P07 profession coverage; P08 supply/build economy. P05 device/live-service checks remain a release gate, with Google setup deferred until the owner resumes it.
 
 ## Guardrails
 
@@ -68,3 +75,4 @@ The version 1.13 review found identical effects for 3-point Spark: Control and 6
 | 1 | **1.14.0** | Ranked technique effects, one-slot family upgrades, CHA support scaling, Briar Road shells/wind-ups/cleave, Mira's Glimmer. Broader combat identity, economy and regional tuning remain. | [185 unit checks, 55 browser workflows, 16 combat fixtures, seven screen scans](docs/verification-1.14.md) |
 | 2 | **1.15.0** | P03 current work/shortcuts/fixed parchment actions, P04 optional submission results/Journey charts/practice-credit preview, persistent HP/MP and midnight recovery. | [Verification](docs/verification-1.15.md) · [32 reserve fixtures](docs/combat-1.15/README.md) |
 | 3 | **1.16.0** | P06 durable multi-tree plans; P05 asynchronous recovery copies, replacement protection, recovery UI and account/session guards. Primary-save migration and physical Android checks remain; Google setup deferred. | [Verification](docs/verification-1.16.md) · [Readiness and remaining work](docs/readiness-1.16.md) |
+| 4 | **1.17.0** | Chunked asynchronous primary saves, safe migration/rollback/conflict handling, 25 MB imports; P07 work records and first two information utilities. More profession categories next; P05 runtime checks remain. | [Verification](docs/verification-1.17.md) · [Changes](docs/update-1.17.md) |

@@ -1,3 +1,4 @@
+import CareerFieldwork from "./CareerFieldwork";
 import { adventureParty } from "./rpg";
 import { Swords } from "lucide-react";
 import { useState } from "react";
@@ -44,7 +45,7 @@ export default function WorldMap({
   mode,
 }: {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
   mode: "map" | "requests" | "shop";
 }) {
   const data = campaign(c),
@@ -80,8 +81,8 @@ export default function WorldMap({
           key={t.id}
           disabled={!regionOpen(data, t.region)}
           className={t.id === world.townId ? "selected" : ""}
-          onClick={() => {
-            if (update(travelTown(c, t.id))) {
+          onClick={async () => {
+            if (await update(travelTown(c, t.id))) {
               setRegion(t.region);
               setPlace(`${t.region}-path`);
             }
@@ -380,6 +381,7 @@ export default function WorldMap({
           </button>
         ))}
       </div>
+      <CareerFieldwork c={c} placeId={place.id} />
       <section className="pixel-window">
         <div className="pixel-place-heading">
           <h2>{place.name}</h2>

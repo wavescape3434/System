@@ -98,10 +98,14 @@ test("one current-stage panel advances, persists, and reaches exploration after 
     // @ts-expect-error Vite imports this module in the browser.
     const { PLACES } = await import("/src/world-catalog.ts");
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.baseStats = { STR: 50, DEX: 50, CON: 50, INT: 50, WIS: 50, CHA: 50 };
     c.campaign.cleared = PLACES[0].stages.slice(0, 9);
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await page
@@ -128,8 +132,8 @@ test("one current-stage panel advances, persists, and reaches exploration after 
   await expect(
     page.getByRole("button", { name: "Continue exploring", exact: true }),
   ).toBeVisible();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.campaign.cleared).toHaveLength(10);
   expect(c.campaign.cleared).toContain("mossfall-boss");

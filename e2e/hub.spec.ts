@@ -6,6 +6,7 @@ const sample = async (page: Page) => {
     .click();
 };
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -106,8 +107,8 @@ test("winning continues straight to the next stage and pays once, exploration st
     .getByRole("button", { name: "Continue adventure", exact: false })
     .click();
   await expect(page.locator(".battle-title")).toContainText("Waystone patrol");
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.campaign.cleared).toHaveLength(1);
   expect(c.campaign.gold).toBeGreaterThan(0);
@@ -119,14 +120,18 @@ test("winning continues straight to the next stage and pays once, exploration st
     const { campaign } = await import("/src/rpg.ts"),
       { PLACES } = await import("/src/world-catalog.ts");
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.campaign = {
       ...campaign(c),
       battle: undefined,
       cleared: PLACES[0].stages,
     };
     c.campaign.world.expedition = PLACES[0].id;
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Adventures");
@@ -261,9 +266,11 @@ test("a first-point skill can be found in the accessible list, bought, equipped,
   page,
 }) => {
   await sample(page);
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.completions = [
       {
         id: "training",
@@ -276,7 +283,9 @@ test("a first-point skill can be found in the accessible list, bought, equipped,
         stat: "STR",
       },
     ];
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Skills & Stats");
@@ -301,8 +310,8 @@ test("a first-point skill can be found in the accessible list, bought, equipped,
   await page.getByRole("button", { name: "World map", exact: true }).click();
   await page.getByRole("button", { name: /STAGE 1/ }).click();
   await page.getByRole("button", { name: /Spear Reach/ }).click();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(
     c.skillPurchases.find((p: { id: string }) => p.id === "martial-spear-1")

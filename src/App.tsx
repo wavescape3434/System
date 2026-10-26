@@ -1,3 +1,11 @@
+import { exportData } from "./file-export";
+import {
+  loadPrimary,
+  commitPrimary,
+  primaryRevision,
+  exportOriginalPrimary,
+} from "./primary-store";
+import { SaveQueue } from "./save-queue";
 import DeviceRecovery from "./DeviceRecovery";
 import {
   preserveBeforeReplacement,
@@ -87,13 +95,7 @@ import {
   takenObjectives,
   objectives,
 } from "./domain";
-import {
-  loadCharacter,
-  saveCharacter,
-  validateCharacter,
-  STORAGE_KEY,
-  localRecovery,
-} from "./storage";
+import { validateCharacter, localRecovery } from "./storage";
 import {
   watchGoogleAccount,
   loginGoogle,
@@ -149,52 +151,13 @@ const PAGES = [
   { id: "help", name: "Help", title: "Help", icon: CircleHelp },
 ] as const;
 type Dialog = "account" | "certificate" | "reset" | "recovery" | null;
-async function exportData(data: string, name: string) {
-  if (Capacitor.isNativePlatform()) {
-    const { Filesystem, Directory } = await import("@capacitor/filesystem");
-    const { Share } = await import("@capacitor/share");
-    const { Encoding } = await import("@capacitor/filesystem");
-    const file = await Filesystem.writeFile({
-      path: name,
-      data,
-      directory: Directory.Cache,
-      encoding: Encoding.UTF8,
-    });
-    await Share.share({
-      title: "The Adventurers Guild character backup",
-      url: file.uri,
-      dialogTitle: "Save your guild character",
-    });
-  } else {
-    const url = URL.createObjectURL(
-        new Blob([data], { type: "application/json" }),
-      ),
-      a = document.createElement("a");
-    a.href = url;
-    a.download = name;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
-}
 export default function App() {
-  const [initial] = useState(() => {
-    try {
-      return { character: loadCharacter(), error: "" };
-    } catch (e) {
-      return {
-        character: null,
-        error:
-          e instanceof Error
-            ? e.message
-            : "Saved data could not be read. Your data has been kept.",
-      };
-    }
-  });
-  const [c, setC] = useState<Character | null>(initial.character),
-    [recovery, setRecovery] = useState(initial.error),
-    [page, setPage] = useState<Page>(
-      initial.character?.preferences?.defaultPage || "guild",
-    ),
+  const [c, setC] = useState<Character | null>(null),
+    [loading, setLoading] = useState(true),
+    [saving, setSaving] = useState(false),
+    [saveError, setSaveError] = useState(""),
+    [recovery, setRecovery] = useState(""),
+    [page, setPage] = useState<Page>("guild"),
     [section, setSection] = useState<string | undefined>(),
     [notificationsOpen, setNotificationsOpen] = useState(false),
     [dialog, setDialog] = useState<Dialog>(null),
@@ -210,6 +173,66 @@ export default function App() {
     [cloudUID, setCloudUID] = useState(""),
     [importCandidate, setImportCandidate] = useState<Character | null>(null);
   const accountRef = useRef<User | null>(null);
+  const revisionRef = useRef(0);
+  const saves = useRef<SaveQueue<Character | null> | null>(null);
+  useEffect(() => {
+    let disposed = false;
+    const start = async () => {
+      let character: Character | null = null,
+        revision = 0,
+        error = "";
+      try {
+        const loaded = await loadPrimary();
+        character = loaded.character;
+        revision = loaded.revision;
+      } catch (e) {
+        if (disposed) return;
+        revision = await primaryRevision().catch(() => 0);
+        error =
+          e instanceof Error
+            ? e.message
+            : "Saved data could not be read. The original has been kept.";
+      }
+      if (disposed) return;
+      revisionRef.current = revision;
+      setRecovery(error);
+      saves.current = new SaveQueue(
+        character,
+        async (next, previous) => {
+          revisionRef.current = await commitPrimary(
+            next,
+            revisionRef.current,
+            previous,
+          );
+          if (next) void queueDailySnapshot(next).catch(() => {});
+        },
+        (next, pending, error) => {
+          characterRef.current = next;
+          setC(next);
+          setSaving(pending);
+          if (error) setSaveError(error);
+          else if (!pending) setSaveError("");
+        },
+      );
+      characterRef.current = character;
+      setC(character);
+      setPage(character?.preferences?.defaultPage || "guild");
+      setLoading(false);
+    };
+    void start();
+    return () => {
+      disposed = true;
+    };
+  }, []);
+  useEffect(() => {
+    const prevent = (event: BeforeUnloadEvent) => {
+      if (!saves.current?.pending) return;
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", prevent);
+    return () => window.removeEventListener("beforeunload", prevent);
+  }, []);
   const preferences = { ...DEFAULT_PREFERENCES, ...c?.preferences };
   useEffect(() => {
     if (!Capacitor.isNativePlatform()) return;
@@ -321,18 +344,13 @@ export default function App() {
         const awarded = track
           ? recordJourney(characterRef.current, prepared)
           : prepared;
-        saveCharacter(awarded);
-        characterRef.current = awarded;
-        setC(awarded);
-        void queueDailySnapshot(awarded).catch(() => {
-          /* Primary progress is already saved. */
-        });
-        return true;
+        if (!saves.current) return Promise.resolve(false);
+        return saves.current.enqueue(awarded);
       } catch {
         notify(
           "Could not save progress. Device storage may be full. Your current character is unchanged; export a backup.",
         );
-        return false;
+        return Promise.resolve(false);
       }
     },
     [notify],
@@ -370,7 +388,7 @@ export default function App() {
       window.removeEventListener("focus", check);
       document.removeEventListener("visibilitychange", check);
     };
-  }, [update]);
+  }, [update, loading]);
   const navigate = (p: Page, target?: string) => {
     setSection(target);
     setPage(p);
@@ -409,8 +427,9 @@ export default function App() {
   };
   const exportBackup = () =>
     run(async () => {
+      await saves.current?.idle();
       await exportData(
-        JSON.stringify(c, null, 2),
+        JSON.stringify(saves.current?.committed ?? c, null, 2),
         `the-guild-${new Date().toISOString().slice(0, 10)}.json`,
       );
       notify("Backup exported.");
@@ -444,7 +463,26 @@ export default function App() {
   const goalCredits = c && objective ? creditedGoals(c, objective) : [];
   return (
     <>
-      {recovery ? (
+      {saving && (
+        <div className="save-state" role="status">
+          Saving…
+        </div>
+      )}
+      {saveError && (
+        <div className="save-failure" role="alert">
+          <span>
+            Last change wasn’t saved. Previous progress retained. {saveError}
+          </span>
+          <button onClick={() => window.location.reload()}>Reload</button>
+          <button onClick={() => setSaveError("")}>Dismiss</button>
+        </div>
+      )}
+      {loading ? (
+        <main className="recovery panel">
+          <Crest />
+          <h1>Opening guild record…</h1>
+        </main>
+      ) : recovery ? (
         <main className="recovery panel">
           <Crest />
           <h1>Saved data needs recovery.</h1>
@@ -460,7 +498,7 @@ export default function App() {
             onClick={() =>
               run(async () => {
                 await exportData(
-                  localStorage.getItem(STORAGE_KEY) || "",
+                  await exportOriginalPrimary(),
                   "the-guild-recovery.json",
                 );
                 notify("Recovery file prepared.");
@@ -506,9 +544,8 @@ export default function App() {
           onRestore={() => setDialog("recovery")}
           onHelp={() => navigate("help")}
           onCreate={(next) => {
-            const saved = update(next);
-            if (saved) navigate("guild");
-            return saved;
+            navigate("guild");
+            return update(next);
           }}
           onGoogle={() => setDialog("account")}
         />
@@ -729,8 +766,8 @@ export default function App() {
         onChange={(e) => {
           const file = e.target.files?.[0];
           if (!file) return;
-          if (file.size > 5_000_000) {
-            notify("Choose a character backup smaller than 5 MB.");
+          if (file.size > 25_000_000) {
+            notify("Choose a character backup smaller than 25 MB.");
             return;
           }
           void file
@@ -921,18 +958,16 @@ export default function App() {
               <CheckList
                 items={objective.checklist}
                 checked={checked}
-                setChecked={(items) => {
+                setChecked={async (items) => {
+                  const key = `${objective.id}:${objectivePeriod(objective)}`;
+                  setChecked(items);
                   if (
-                    update({
+                    !(await update({
                       ...c,
-                      milestones: {
-                        ...c.milestones,
-                        [`${objective.id}:${objectivePeriod(objective)}`]:
-                          items,
-                      },
-                    })
+                      milestones: { ...c.milestones, [key]: items },
+                    }))
                   )
-                    setChecked(items);
+                    setChecked(characterRef.current?.milestones[key] || []);
                 }}
               />
             )}
@@ -1067,9 +1102,9 @@ export default function App() {
                   taskRequirements(c, objective, new Date(), "accept").length >
                     0
                 }
-                onClick={() => {
+                onClick={async () => {
                   const next = takeRequest(c, objective.id);
-                  if (update(next)) {
+                  if (await update(next)) {
                     const accepted = takenObjectives(next).find(
                       (o) => o.id === objective.id,
                     );
@@ -1102,13 +1137,13 @@ export default function App() {
                   (!!objective.checklist &&
                     checked.length < objective.checklist.length)
                 }
-                onClick={() => {
+                onClick={async () => {
                   const next = completeWithResult(
                     c,
                     objective,
                     parsedResult.result,
                   );
-                  if (next === c || !update(next)) return;
+                  if (next === c || !(await update(next))) return;
                   const reward = next.completions.at(-1)!;
                   notify(
                     `+${reward.xp} XP · +${reward.gold || 0} gold. Progress saved.`,
@@ -1130,8 +1165,8 @@ export default function App() {
             {isTaken(c, objective) && !isComplete(c, objective) && (
               <button
                 className="text-button release-request"
-                onClick={() => {
-                  if (update(releaseRequest(c, objective.id))) close();
+                onClick={async () => {
+                  if (await update(releaseRequest(c, objective.id))) close();
                 }}
               >
                 Release request
@@ -1191,7 +1226,10 @@ export default function App() {
                   onClick={() =>
                     run(async () => {
                       if (c) {
-                        await uploadCharacter(c);
+                        await saves.current?.idle();
+                        if (!saves.current?.committed)
+                          throw Error("No saved character to upload.");
+                        await uploadCharacter(saves.current.committed);
                         notify(
                           "Cloud backup saved to your Google-linked account.",
                         );
@@ -1285,8 +1323,8 @@ export default function App() {
       {dialog === "certificate" && c && (
         <CertificateDialog
           c={c}
-          onSave={(next) => {
-            if (!update(next)) return;
+          onSave={async (next) => {
+            if (!(await update(next))) return;
             notify(
               "Credential recorded. Any qualifying skill is now part of your character.",
             );
@@ -1314,14 +1352,13 @@ export default function App() {
               disabled={busy}
               onClick={() =>
                 void run(async () => {
+                  await saves.current?.idle();
                   if (characterRef.current)
                     await preserveBeforeReplacement(
                       characterRef.current,
                       "before-new-character",
                     );
-                  localStorage.removeItem(STORAGE_KEY);
-                  characterRef.current = null;
-                  setC(null);
+                  if (!(await saves.current!.enqueue(null))) return;
                   setRecovery("");
                   setPage("guild");
                   close();
@@ -1396,6 +1433,7 @@ export default function App() {
                     throw Error(
                       "Your Google account changed. Reopen Account & backups and retry.",
                     );
+                  await saves.current?.idle();
                   if (characterRef.current)
                     await preserveBeforeReplacement(
                       characterRef.current,
@@ -1405,7 +1443,9 @@ export default function App() {
                     throw Error(
                       "Your Google account changed. Reopen Account & backups and retry.",
                     );
-                  if (!update((cloudCandidate || importCandidate)!, false))
+                  if (
+                    !(await update((cloudCandidate || importCandidate)!, false))
+                  )
                     return;
                   setRecovery("");
                   navigate("guild");

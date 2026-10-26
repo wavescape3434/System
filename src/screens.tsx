@@ -1,3 +1,4 @@
+import CareerWorkRecord from "./CareerWorkRecord";
 import GuildWork from "./GuildWork";
 import { loginReward, claimLoginReward, LOGIN_REWARDS } from "./login-rewards";
 import { campaign } from "./rpg";
@@ -60,7 +61,7 @@ export type Page =
   | "settings";
 interface ScreenProps {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
   navigate: (p: Page, section?: string) => void;
   section?: string;
   openObjective: (o: Objective) => void;
@@ -406,8 +407,8 @@ export function Paths({
             const trial = objectives(c).find((o) => o.targetClass === id);
             if (trial) openObjective(trial);
           }}
-          onSelect={(id) => {
-            if (update(switchClass(c, id)))
+          onSelect={async (id) => {
+            if (await update(switchClass(c, id)))
               notify(
                 `${CLASSES.find((p) => p.id === id)!.name} selected. Earlier class progress retained.`,
               );
@@ -465,7 +466,7 @@ export function Skills({
   initialTab,
 }: {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
   onCertificate: () => void;
   initialTab?: string;
 }) {
@@ -557,6 +558,7 @@ export function Skills({
       )}
       {tab === "profession" && (
         <div className="profession-layout">
+          <CareerWorkRecord c={c} />
           <section className="panel">
             <span className="eyebrow">PROFESSION</span>
             <h2>{c.profession}</h2>

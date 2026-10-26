@@ -27,7 +27,7 @@ export default function Settings({
   onRecovery,
 }: {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
   onAccount: () => void;
   notify: (s: string) => void;
   initialTab?: string;
@@ -45,7 +45,7 @@ export default function Settings({
     key: K,
     value: Preferences[K],
   ) => update({ ...c, preferences: { ...p, [key]: value } });
-  const saveAssessment = (rebase = false) => {
+  const saveAssessment = async (rebase = false) => {
     const baseline = {
       ...c.baseline,
       mode:
@@ -56,7 +56,7 @@ export default function Settings({
     };
     const result = startingStats(baseline);
     if (
-      update({
+      await update({
         ...c,
         baseline,
         ...(rebase ? { baseStats: result } : {}),
@@ -136,8 +136,8 @@ export default function Settings({
             <button
               className="button primary"
               disabled={!name.trim() || name.trim() === c.name}
-              onClick={() => {
-                if (update({ ...c, name: name.trim() }))
+              onClick={async () => {
+                if (await update({ ...c, name: name.trim() }))
                   notify("Profile saved.");
               }}
             >
@@ -344,7 +344,7 @@ export default function Settings({
           </div>
           <div className="settings-record">
             <span>Version</span>
-            <Tag>1.16.0</Tag>
+            <Tag>1.17.0</Tag>
           </div>
           <button className="button primary" onClick={onAccount}>
             Account & backups

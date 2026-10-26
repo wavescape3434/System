@@ -71,7 +71,7 @@ export default function Notifications({
 }: {
   c: Character;
   onClose: () => void;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
   navigate: (p: Page, section?: string) => void;
 }) {
   const feed = notificationFeed(c);

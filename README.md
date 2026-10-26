@@ -31,6 +31,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.17.0
+
+Primary progress now saves asynchronously in IndexedDB, with separate history chunks, safe legacy migration, transaction-confirmed success, rollback on failure and stale-window protection. File imports accept up to 25 MB. Career request outcomes form an exportable work record across twenty disciplines; learned Business and Computing skills unlock supply-route reports and next-stage diagnostics in Adventures. [Changes](docs/update-1.17.md) · [Verification](docs/verification-1.17.md) · [Previews](docs/screenshots/README.md) · [P05 readiness](docs/readiness-1.17.md).
+
+Install over the existing app to retain its character: version code **19**, package `com.theguild.personal`, and the same signing certificate. Google setup stays deferred. Physical Android checks remain open; the next career pass prioritizes **more profession categories**.
+
 ## Version 1.16.0
 
 Skill goals and tree/style/list preferences now travel with the character. Separate goals are retained for shared class, focused class, career and universal trees, including learned goals. Device recovery keeps dated copies and preserves the current character before a restore or new character, with a comparison before replacement. Cloud operations also stop when the account/session changes. [Changes](docs/update-1.16.md) · [Verification](docs/verification-1.16.md) · [Previews](docs/screenshots/README.md) · [P05 readiness and remaining work](docs/readiness-1.16.md).
@@ -196,7 +202,7 @@ In this cloud workspace, `scripts/cloud-android.sh` activates the prepared JDK, 
 
 ## Data and limitations
 
-Progress is stored locally in the WebView/browser's private `localStorage`. Clearing app storage or uninstalling can erase it. Export a backup or upload a cloud copy before doing so. Backups contain personal reflections; keep them private. Cloud copies can be removed in your Firebase console. This first version does not offer multi-device merging or automatic background sync.
+Primary progress is stored locally in the WebView/browser's private IndexedDB database, with histories split into chunks. Existing localStorage primary records migrate after a successful database commit; small preferences/drafts and earlier recovery fallbacks may still use localStorage. Clearing app storage or uninstalling can erase it. Export a backup or upload a cloud copy before doing so. Backups contain personal reflections; keep them private. Cloud copies can be removed in your Firebase console. This first version does not offer multi-device merging or automatic background sync.
 
 Objectives and credentials rely on honest self-reporting. The application is personal motivation software and does not validate exercise form, certification authenticity, or health outcomes. Fitness descriptions support gentle and equipment-free alternatives. Notifications include an attention inbox and configurable Android local reminders. There are no remote push notifications, wearable integrations, automatic certification checks, real-money purchases, or live multiplayer systems in this version.
 

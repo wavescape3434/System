@@ -6,6 +6,7 @@ const sample = async (page: Page) => {
     .click();
 };
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -21,9 +22,11 @@ test("buying a refinement improves one equipped technique without another slot o
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await sample(page);
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.activeClass = "scholar";
     c.examGrandfather = {
       classes: { ...c.examGrandfather?.classes, scholar: 7 },
@@ -63,7 +66,9 @@ test("buying a refinement improves one equipped technique without another slot o
       equipment: ["training-sword", "travel-clothes"],
       equippedSkills: ["opening-mage-0-0"],
     };
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Skills & Stats");
@@ -117,7 +122,9 @@ test("buying a refinement improves one equipped technique without another slot o
     .click();
   const evidence = await page.evaluate(async () => {
     const r = await import("/src/rpg.ts"),
-      c = JSON.parse(localStorage.getItem("the-guild.character.v1")!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     return {
       base: c.baseStats,
       purchases: c.skillPurchases,
@@ -140,9 +147,13 @@ test("a shell is visible, ordinary attacks chip it, and a class technique breaks
   await page.evaluate(async () => {
     const r = await import("/src/rpg.ts"),
       key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.campaign = { ...r.campaign(c), cleared: ["mossfall-1", "mossfall-2"] };
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Adventures");
@@ -152,9 +163,9 @@ test("a shell is visible, ordinary attacks chip it, and a class technique breaks
   await expect(page.locator(".battle-tactic-readout")).toContainText("Shell 1");
   await page.getByRole("button", { name: /^Guard/ }).click();
   const signature = await page.evaluate(
-    () =>
-      JSON.parse(localStorage.getItem("the-guild.character.v1")!).campaign
-        .battle.party[0].abilities[0].name,
+    async () =>
+      JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!)
+        .campaign.battle.party[0].abilities[0].name,
   );
   await page
     .locator(".battle-actions")
@@ -176,9 +187,13 @@ test("the guardian telegraphs a saved cleave and guarding protects both party me
     const r = await import("/src/rpg.ts"),
       { PLACES } = await import("/src/world-catalog.ts"),
       key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.campaign = { ...r.campaign(c), cleared: PLACES[0].stages.slice(0, 9) };
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Adventures");
@@ -197,9 +212,9 @@ test("the guardian telegraphs a saved cleave and guarding protects both party me
   for (let i = 0; i < 2; i++)
     await page.getByRole("button", { name: /^Guard/ }).click();
   const b = await page.evaluate(
-    () =>
-      JSON.parse(localStorage.getItem("the-guild.character.v1")!).campaign
-        .battle,
+    async () =>
+      JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!)
+        .campaign.battle,
   );
   expect(b.party.every((u: { hp: number }) => u.hp > 0)).toBe(true);
   expect(b.log.filter((s: string) => s.includes("Briar Cleave"))).toHaveLength(

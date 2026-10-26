@@ -1,3 +1,4 @@
+import { careerUtilityForSkill } from "./career-payoffs";
 import { Check, LockKeyhole, X, Star } from "lucide-react";
 import type { Character, Skill } from "./domain";
 import {
@@ -31,7 +32,7 @@ export default function SkillInspector({
   c: Character;
   skill: Skill;
   style: string;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
   onSelect: (s: Skill) => void;
   onClose: () => void;
   onCertificate: () => void;
@@ -110,7 +111,15 @@ export default function SkillInspector({
       <section className="inspector-effect">
         <h4>{s.nonCombat ? "Professional competency" : "Adventure effect"}</h4>
         {s.nonCombat ? (
-          <p>Non-combat skill · {s.proof}.</p>
+          <>
+            <p>Non-combat skill · {s.proof}.</p>
+            {careerUtilityForSkill(s.id) && (
+              <p>
+                <b>{careerUtilityForSkill(s.id)!.name}:</b>{" "}
+                {careerUtilityForSkill(s.id)!.effect}
+              </p>
+            )}
+          </>
         ) : combat ? (
           <>
             <p>

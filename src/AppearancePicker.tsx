@@ -17,7 +17,7 @@ export default function AppearancePicker({
 }: {
   value?: string;
   classId: string;
-  onChoose: (id: string) => boolean;
+  onChoose: (id: string) => boolean | Promise<boolean>;
   onClose: () => void;
   embedded?: boolean;
 }) {
@@ -47,8 +47,8 @@ export default function AppearancePicker({
         <p>{preview.detail}</p>
         <button
           className="button primary full"
-          onClick={() => {
-            if (onChoose(selected)) onClose();
+          onClick={async () => {
+            if (await onChoose(selected)) onClose();
           }}
         >
           Use {preview.name}

@@ -1,0 +1,47 @@
+{
+  "screens": [
+    {
+      "name": "career-work-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "career-work-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "career-fieldwork-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "career-fieldwork-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "save-failure-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "primary-recovery-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

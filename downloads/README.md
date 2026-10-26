@@ -1,10 +1,10 @@
-# Install The Adventurers Guild 1.16.0 on Android
+# Install The Adventurers Guild 1.17.0 on Android
 
 Open `the-guild-debug.apk` in this folder on GitHub, then select **Download raw file** (the download arrow). Open the downloaded APK on your Android phone. Android may ask you to allow installations from your browser or file manager.
 
 Requires Android 7.0 or newer. Install this update over your existing app to retain character data; export a backup first. This is a signed development build for personal testing, not a Play Store release. Google sign-in and cloud backups need the Firebase/OAuth configuration described in the main README; the local app works without it.
 
-Version **1.16.0 / code 18** adds saved skill plans, pre-replacement recovery copies and account/session guards. Google setup stays deferred. The APK is compiled, signature-checked and checked against the production web assets; installed-app behavior still needs physical Android testing. [Changes](../docs/update-1.16.md) · [Verification](../docs/verification-1.16.md) · [Remaining P05 work](../docs/readiness-1.16.md).
+Version **1.17.0 / code 19** adds chunked asynchronous primary saves, safe migration and failed-write handling, 25 MB imports, career work records and learned career field information. Google setup stays deferred. The APK is compiled, signature-checked and compared with the production web assets; installed-app behavior still needs physical Android testing. [Changes](../docs/update-1.17.md) · [Verification](../docs/verification-1.17.md) · [Remaining P05 work](../docs/readiness-1.17.md).
 
 The checksum is in `the-guild-debug.apk.sha256`. Browse the [screenshot gallery](../docs/screenshots/README.md) for the engraved guild card, request board, class comparison, skill trees, vocation, Journey reports, Taken requests, Help, and battle views. All screenshots use the sample character, not personal progress.
 

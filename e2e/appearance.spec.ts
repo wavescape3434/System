@@ -1,5 +1,6 @@
 import { test, expect, type Page } from "@playwright/test";
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -28,8 +29,10 @@ test("24 appearances preview without committing, filters work, and an alluring l
     .click();
   expect(
     await page.evaluate(
-      () =>
-        JSON.parse(localStorage.getItem("the-guild.character.v1")!).appearance,
+      async () =>
+        JSON.parse(
+          (await (await import("/e2e/browser-store.ts")).readString())!,
+        ).appearance,
     ),
   ).toBeUndefined();
   await expect(
@@ -119,8 +122,10 @@ test("registration saves a selected character and closes the appearance chooser 
     .click();
   expect(
     await page.evaluate(
-      () =>
-        JSON.parse(localStorage.getItem("the-guild.character.v1")!).appearance,
+      async () =>
+        JSON.parse(
+          (await (await import("/e2e/browser-store.ts")).readString())!,
+        ).appearance,
     ),
   ).toBe("dusk-ronin");
 });

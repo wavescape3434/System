@@ -186,14 +186,18 @@ test("monthly requests include earlier logged practice and expire at the calenda
   await page.evaluate(async () => {
     const d = await import("/src/domain.ts");
     const key = "the-guild.character.v1";
-    let c = JSON.parse(localStorage.getItem(key)!);
+    let c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     for (const day of [1, 3, 5, 8, 10, 12, 15, 17, 19, 22, 24, 26]) {
       const at = new Date(Date.UTC(2027, 1, day, 19));
       c = d.takeRequest(c, "warrior-daily", at);
       const o = d.takenObjectives(c, at).find((o) => o.id === "warrior-daily")!;
       c = d.awardSkills(d.completeTaken(c, o, at));
     }
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.clock.setFixedTime(new Date("2027-02-27T18:00:00Z"));
   await page.reload();
@@ -223,8 +227,8 @@ test("monthly requests include earlier logged practice and expire at the calenda
     await page.getByRole("button", { name, exact: true }).click();
   await expect(claim).toBeEnabled();
   await claim.click();
-  const saved = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const saved = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(saved.completions.at(-1).xp).toBe(6300);
   expect(saved.completions.at(-1).gold).toBe(1260);
@@ -263,8 +267,8 @@ test("character backups export and restore after explicit confirmation", async (
   const download = await downloadPromise;
   const path = await download.path();
   expect(path).toBeTruthy();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   c.name = "Restored Adventurer";
   await page.locator("input[type=file]").setInputFiles({
@@ -335,8 +339,8 @@ test("JRPG party battle persists, completes, and grants only combat rewards", as
   await page
     .getByRole("button", { name: "Return to map", exact: false })
     .click();
-  const data = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const data = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(data.completions).toHaveLength(0);
   expect(data.campaign.gold).toBe(20);
@@ -378,15 +382,20 @@ test("phone navigation fits and all main screens render without page errors", as
 });
 test("invalid saved data is preserved for recovery", async ({ page }) => {
   await page.goto("/");
-  await page.evaluate(() =>
-    localStorage.setItem("the-guild.character.v1", '{"broken":true}'),
+  await page.evaluate(
+    async () =>
+      await (
+        await import("/e2e/browser-store.ts")
+      ).replaceString('{"broken":true}'),
   );
   await page.reload();
   await expect(
     page.getByRole("heading", { name: "Saved data needs recovery." }),
   ).toBeVisible();
   expect(
-    await page.evaluate(() => localStorage.getItem("the-guild.character.v1")),
+    await page.evaluate(
+      async () => await (await import("/e2e/browser-store.ts")).readString(),
+    ),
   ).toBe('{"broken":true}');
 });
 
@@ -425,9 +434,11 @@ test("class skill purchases require multiple points and locked sections block sk
   page,
 }) => {
   await sample(page);
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.completions = Array.from({ length: 12 }, (_, i) => ({
       id: "warrior-daily",
       period: `2026-09-${String(i + 1).padStart(2, "0")}`,
@@ -438,7 +449,9 @@ test("class skill purchases require multiple points and locked sections block sk
       scope: "class",
       title: "Warrior commission",
     }));
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await page
@@ -539,8 +552,8 @@ test("class comparison exposes real goals and vocation remains independent", asy
   await expect(
     page.getByRole("heading", { name: "Prayer of Restoration", exact: true }),
   ).toBeVisible();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.activeClass).toBe("disciple");
   expect(c.vocation).toBe("business-analysis");
@@ -558,8 +571,8 @@ test("active class signature is usable in battle without a skill purchase", asyn
   await page.getByRole("button", { name: /Approach.*Enter battle/ }).click();
   await page.getByRole("button", { name: /Iron Cleave/ }).click();
   await expect(page.getByText("Mira's turn", { exact: true })).toBeVisible();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.skillPurchases).toHaveLength(0);
   expect(c.campaign.equippedSkills).toHaveLength(0);
@@ -610,8 +623,8 @@ test("Taken requests persist and keep their original class credit after a class 
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.activeClass).toBe("bard");
   expect(
@@ -677,8 +690,8 @@ test("recurring requests return as suggestions and require another manual accept
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.completions).toHaveLength(2);
   expect(
@@ -691,9 +704,11 @@ test("Journey reports show saved activity, interactive data, and archived notes 
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await sample(page);
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.title = "A story yet unwritten";
     const now = new Date();
     c.createdAt = new Date(now.getTime() - 28 * 86400000).toISOString();
@@ -718,7 +733,9 @@ test("Journey reports show saved activity, interactive data, and archived notes 
         text: "Saved notes from the earlier Journal.",
       },
     ];
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await expect(
@@ -831,8 +848,8 @@ test("mental checks save actual answers, distinguish unknown from zero, and pers
     .getByRole("button", { name: "Create character", exact: true })
     .click();
   await page.reload();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.baseStats.STR).toBe(1);
   expect(c.baseStats.INT).toBe(17);
@@ -865,8 +882,8 @@ test("settings persist display, units, equipment, opening screen, and separate a
   await page
     .getByRole("button", { name: "Save performance check", exact: true })
     .click();
-  const before = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const before = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(before.baseStats.STR).toBe(10);
   expect(before.baseline.assessment.pushups).toBe(40);

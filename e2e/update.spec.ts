@@ -6,6 +6,7 @@ const sample = async (page: import("@playwright/test").Page) => {
     .click();
 };
 const nav = async (page: import("@playwright/test").Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -79,8 +80,8 @@ test("registration has imperial feet and inches, explicit maxima, sequential tes
   await page
     .getByRole("button", { name: "Create character", exact: true })
     .click();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.baseline.assessment.heightCm).toBeCloseTo(180.34, 2);
   expect(c.preferences.units).toBe("imperial");
@@ -114,8 +115,8 @@ test("reassessment remembers started forms and rotates questions even after leav
   await page
     .getByRole("button", { name: "Start WIS check", exact: true })
     .click();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.assessmentFormsSeen).toEqual([
     "wis-v2-0-c1",
@@ -127,9 +128,11 @@ test("a class examination holds the stat milestone until the measured result imp
   page,
 }) => {
   await sample(page);
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.createdAt = "2026-09-01T12:00:00Z";
     c.completions = Array.from({ length: 12 }, (_, i) => ({
       id: "warrior-daily",
@@ -143,7 +146,9 @@ test("a class examination holds the stat milestone until the measured result imp
       rank: "C",
       title: "Warrior training",
     }));
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await expect(page.locator(".engraved-line").first()).toContainText("Lv. 4");
@@ -165,8 +170,8 @@ test("a class examination holds the stat milestone until the measured result imp
   await page.getByRole("button", { name: "Close dialog", exact: true }).click();
   await nav(page, "Guild");
   await expect(page.locator(".engraved-line").first()).toContainText("Lv. 9");
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(
     c.completions.reduce((n: number, o: { xp: number }) => n + o.xp, 0),

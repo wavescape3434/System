@@ -7,6 +7,7 @@ const sample = async (page: Page) => {
     .click();
 };
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -22,9 +23,13 @@ async function clearedFixture(page: Page) {
     const { campaign } = await import("/src/rpg.ts"),
       { PLACES } = await import("/src/world-catalog.ts");
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.campaign = { ...campaign(c), cleared: [...PLACES[0].stages], gold: 300 };
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
 }
@@ -83,8 +88,8 @@ test("one request card chooses a rank and pins the group across reload", async (
   await expect(
     page.getByRole("button", { name: "View Pushup practice", exact: true }),
   ).toBeVisible();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(
     c.takenRequests.find((r: { id: string }) => r.id === "u-floor-push-20")
@@ -100,7 +105,9 @@ test("weekly rank selection counts walking before acceptance in the same week", 
   await page.evaluate(async () => {
     const d = await import("/src/domain.ts");
     const key = "the-guild.character.v1";
-    let c = JSON.parse(localStorage.getItem(key)!);
+    let c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     for (const day of [1, 2, 3, 4, 5]) {
       const at = new Date(Date.UTC(2027, 1, day, 18));
       c = d.takeRequest(c, "u-walk-5", at);
@@ -110,7 +117,9 @@ test("weekly rank selection counts walking before acceptance in the same week", 
         at,
       );
     }
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Objectives");
@@ -133,8 +142,8 @@ test("weekly rank selection counts walking before acceptance in the same week", 
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.completions.at(-1).xp).toBe(100);
 });
@@ -168,8 +177,8 @@ test("boss discovery, leaving, persisted danger and a true ambush work through t
     .click();
   await page.getByText("Combat log", { exact: true }).click();
   await expect(page.getByRole("log")).toContainText("Ambush!");
-  const ambushed = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const ambushed = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(ambushed.campaign.battle.source.kind).toBe("ambush");
   expect(
@@ -178,8 +187,8 @@ test("boss discovery, leaving, persisted danger and a true ambush work through t
     ),
   ).toBe(true);
   await finishBattle(page);
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.campaign.world.areas["mossfall-path"].pendingBoss).toBe(false);
   expect(c.campaign.world.areas["mossfall-path"].bossVictories).toBe(1);
@@ -243,8 +252,8 @@ test("gathering herbs and turning in a commission replenishes an empty town stor
     .getByRole("button", { name: "Buy · 20 gold", exact: true })
     .click();
   await expect(potion).toContainText("Store stock: 7");
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.campaign.inventory.sunleaf).toBe(0);
   expect(c.campaign.world.receipts.at(-1).contractId).toBe("alderhaven-herbs");
@@ -258,7 +267,9 @@ test("required hybrid objectives unlock after the actual adventure delivery", as
     const d = await import("/src/domain.ts"),
       r = await import("/src/rpg.ts");
     const key = "the-guild.character.v1";
-    let c = JSON.parse(localStorage.getItem(key)!);
+    let c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     for (const day of [1, 2, 3]) {
       const at = new Date(Date.UTC(2027, 1, day, 18));
       c = d.takeRequest(c, "u-bible-recall", at);
@@ -272,7 +283,9 @@ test("required hybrid objectives unlock after the actual adventure delivery", as
       ...r.campaign(c),
       inventory: { ...r.campaign(c).inventory, sunleaf: 6 },
     };
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   const open = async () => {
@@ -330,8 +343,8 @@ test("required hybrid objectives unlock after the actual adventure delivery", as
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.completions.at(-1).id).toBe("hybrid-chapel");
   expect(c.completions.at(-1).xp).toBe(600);
@@ -357,7 +370,9 @@ test("pixel map, town shops and commissions fit a phone", async ({ page }) => {
   await page.evaluate(async () => {
     const r = await import("/src/rpg.ts");
     const key = "the-guild.character.v1";
-    let c = JSON.parse(localStorage.getItem(key)!);
+    let c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     c.campaign = {
       ...r.campaign(c),
       cleared: ["mossfall-boss"],
@@ -365,7 +380,9 @@ test("pixel map, town shops and commissions fit a phone", async ({ page }) => {
       party: ["mira", "orin"],
     };
     c = r.startBattle(c, "mossfall-1");
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Adventures");

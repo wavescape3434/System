@@ -39,7 +39,7 @@ export default function RequestBoard({
 }: {
   c: Character;
   openObjective: (o: Objective) => void;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
   notify: (s: string) => void;
   section?: string;
 }) {

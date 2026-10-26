@@ -1,5 +1,6 @@
 import { test, expect, type Page } from "@playwright/test";
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -109,15 +110,19 @@ test("constellation styles retain alternative paths, selected panel navigates pr
   await nav(page, "Skills & Stats");
   await page.getByRole("button", { name: "Skill tree", exact: true }).click();
   await expect(page.locator(".atlas-goal")).toContainText("Braced Point");
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.earnedSkills.push(
       "martial-spear-1",
       "martial-spear-2",
       "martial-spear-3",
     );
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Skills & Stats");
@@ -138,9 +143,11 @@ test("a skill can be learned and equipped from its phone panel without changing 
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await sample(page);
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     const key = "the-guild.character.v1",
-      c = JSON.parse(localStorage.getItem(key)!);
+      c = JSON.parse(
+        (await (await import("/e2e/browser-store.ts")).readString())!,
+      );
     c.completions = [
       {
         id: "warrior-daily",
@@ -153,7 +160,9 @@ test("a skill can be learned and equipped from its phone panel without changing 
         classId: "warrior",
       },
     ];
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Skills & Stats");
@@ -174,8 +183,8 @@ test("a skill can be learned and equipped from its phone panel without changing 
   await expect(
     panel.getByRole("button", { name: "Unequip skill", exact: true }),
   ).toBeVisible();
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(
     c.skillPurchases.filter((p: { id: string }) => p.id === "martial-spear-1"),

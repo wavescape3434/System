@@ -526,23 +526,10 @@ export function adventureParty(c: Character, now = new Date()): Unit[] {
       : u;
   });
 }
-export function startBattle(
-  c: Character,
-  id: string,
-  now = new Date(),
-): Character {
-  const data = campaign(c, now);
-  if (
-    !encounterAvailable(c, id) ||
-    data.battle?.phase === "player" ||
-    (data.battle?.phase === "won" && !data.battle.claimed)
-  )
-    return c;
-  const party = adventureParty(c, now);
-  const actor = party.findIndex((u) => u.hp > 0);
-  if (actor < 0) return c;
-  const e = ENCOUNTERS.find((x) => x.id === id)!;
-  const enemies = e.enemies.map((kind, i) => {
+export function encounterEnemies(id: string): Unit[] {
+  const e = ENCOUNTERS.find((e) => e.id === id);
+  if (!e) return [];
+  return e.enemies.map((kind, i) => {
     const boss = BOSS_KINDS.has(kind),
       hp = (boss ? 105 : 38) + e.tier * (boss ? 28 : 12);
     return {
@@ -563,6 +550,24 @@ export function startBattle(
       ...openingTactics(e.id, i),
     };
   });
+}
+export function startBattle(
+  c: Character,
+  id: string,
+  now = new Date(),
+): Character {
+  const data = campaign(c, now);
+  if (
+    !encounterAvailable(c, id) ||
+    data.battle?.phase === "player" ||
+    (data.battle?.phase === "won" && !data.battle.claimed)
+  )
+    return c;
+  const party = adventureParty(c, now);
+  const actor = party.findIndex((u) => u.hp > 0);
+  if (actor < 0) return c;
+  const e = ENCOUNTERS.find((x) => x.id === id)!;
+  const enemies = encounterEnemies(id);
   let battle: Battle = {
     encounterId: id,
     party,

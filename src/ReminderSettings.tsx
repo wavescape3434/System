@@ -13,7 +13,7 @@ export default function ReminderSettings({
   update,
 }: {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
 }) {
   const [permission, setPermission] = useState(""),
     [error, setError] = useState("");

@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.16.0 — screenshots
+# The Adventurers Guild 1.17.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Career work and save recovery — version 1.17
+
+| Career work record | Learned fieldwork | Failed save |
+| --- | --- | --- |
+| [<img src="career-work-mobile.png" width="230" alt="Recorded career request outcomes with discipline filters and export">](career-work-mobile.png) | [<img src="career-fieldwork-mobile.png" width="230" alt="Supply routes and enemy diagnostics unlocked by learned career skills">](career-fieldwork-mobile.png) | [<img src="save-failure-mobile.png" width="230" alt="Persistent write failure message while the previous saved record is retained">](save-failure-mobile.png) |
+
+[Desktop career record](career-work-desktop.png) · [Desktop fieldwork](career-fieldwork-desktop.png) · [Primary recovery options](primary-recovery-desktop.png)
+
+[Changes](../update-1.17.md) · [Verification](../verification-1.17.md) · [Capture fixtures and storage probe](../career-1.17/README.md). Outcomes and learned utilities are scripted sample records. Google setup remains deferred.
 
 ## Saved plans and device recovery — version 1.16
 
@@ -106,7 +116,7 @@ These are browser previews using sample characters. Exploration results, prior a
 
 ## Retained feature previews
 
-These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.16 previews above show the current update.
+These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.17 previews above show the current update.
 
 [Guild Card on phone](guild-android.png) · [Guild Card detail](guild-card-detail.png) · [Rank metals](rank-metals.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Full Fighter skill web](fighter-web.png) · [Career tree](profession-tree.png) · [Vocation](vocation.png)
 

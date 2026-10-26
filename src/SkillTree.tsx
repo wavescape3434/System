@@ -50,7 +50,7 @@ export default function SkillTree({
   onCertificate,
 }: {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
   onCertificate: () => void;
 }) {
   const key = `${c.id}.${c.activeClass}.tree`;

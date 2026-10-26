@@ -7,6 +7,7 @@ const sample = async (page: Page) => {
     .click();
 };
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -75,14 +76,18 @@ test("optional walk results survive reload, feed Journey and count once toward c
   await page.evaluate(async () => {
     const d = await import("/src/domain.ts"),
       key = "the-guild.character.v1";
-    let c = JSON.parse(localStorage.getItem(key)!);
+    let c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     for (const id of [
       "habit-walk-weekly-f",
       "habit-walk-monthly-f",
       "u-walk-5",
     ])
       c = d.takeRequest(c, id);
-    localStorage.setItem(key, JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await page
@@ -112,8 +117,8 @@ test("optional walk results survive reload, feed Journey and count once toward c
     .click();
   await expect(dialog).toHaveCount(0);
   await page.reload();
-  const stored = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const stored = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(stored.completions).toHaveLength(1);
   expect(stored.completions[0].xp).toBe(10);
@@ -172,8 +177,8 @@ test("blank results remain optional and invalid measured results cannot be submi
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
-  const stored = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const stored = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(stored.completions).toHaveLength(1);
   expect(stored.completions[0].result).toBeUndefined();
@@ -197,44 +202,45 @@ test("HP and MP carry through Continue and recover at local midnight while the a
     i++
   )
     await page.getByRole("button", { name: "Attack", exact: true }).click();
-  const before = await page.evaluate(() =>
+  const before = await page.evaluate(async () =>
     JSON.parse(
-      localStorage.getItem("the-guild.character.v1")!,
+      (await (await import("/e2e/browser-store.ts")).readString())!,
     ).campaign.battle.party.map((u: { hp: number; mp: number }) => [
       u.hp,
       u.mp,
     ]),
   );
   await page.getByRole("button", { name: /Continue adventure/ }).click();
-  const after = await page.evaluate(() =>
+  const after = await page.evaluate(async () =>
     JSON.parse(
-      localStorage.getItem("the-guild.character.v1")!,
+      (await (await import("/e2e/browser-store.ts")).readString())!,
     ).campaign.battle.party.map((u: { hp: number; mp: number }) => [
       u.hp,
       u.mp,
     ]),
   );
   expect(after).toEqual(before);
-  const enemies = await page.evaluate(() =>
+  const enemies = await page.evaluate(async () =>
     JSON.stringify(
-      JSON.parse(localStorage.getItem("the-guild.character.v1")!).campaign
-        .battle.enemies,
+      JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!)
+        .campaign.battle.enemies,
     ),
   );
   await page.clock.runFor(11000);
   await expect
     .poll(() =>
       page.evaluate(
-        () =>
-          JSON.parse(localStorage.getItem("the-guild.character.v1")!).campaign
-            .vitals.day,
+        async () =>
+          JSON.parse(
+            (await (await import("/e2e/browser-store.ts")).readString())!,
+          ).campaign.vitals.day,
       ),
     )
     .toBe("2027-02-11");
   const rested = await page.evaluate(
-    () =>
-      JSON.parse(localStorage.getItem("the-guild.character.v1")!).campaign
-        .battle,
+    async () =>
+      JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!)
+        .campaign.battle,
   );
   expect(
     rested.party.every(

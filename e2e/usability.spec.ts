@@ -1,5 +1,6 @@
 import { test, expect, type Page } from "@playwright/test";
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -21,8 +22,10 @@ test("exam typing retains all characters and focus, reverse Tab stays inside, Es
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await sample(page);
-  await page.evaluate(() => {
-    const c = JSON.parse(localStorage.getItem("the-guild.character.v1")!);
+  await page.evaluate(async () => {
+    const c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     c.completions = Array.from({ length: 20 }, (_, i) => ({
       id: "warrior-daily",
       period: `2026-09-${String(i + 1).padStart(2, "0")}`,
@@ -34,7 +37,9 @@ test("exam typing retains all characters and focus, reverse Tab stays inside, Es
       title: "Warrior commission",
       rank: "D",
     }));
-    localStorage.setItem("the-guild.character.v1", JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Class Paths");
@@ -69,7 +74,9 @@ test("Guild opens all accepted cadences and empty daily view links back to the w
   await page.evaluate(async () => {
     // @ts-expect-error Vite source import runs inside the browser.
     const d = await import("/src/domain.ts");
-    let c = JSON.parse(localStorage.getItem("the-guild.character.v1")!);
+    let c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     const o = d
       .objectives(c)
       .find(
@@ -77,7 +84,9 @@ test("Guild opens all accepted cadences and empty daily view links back to the w
           o.cadence === "weekly" && o.scope === "universal",
       );
     c = d.takeRequest(c, o.id);
-    localStorage.setItem("the-guild.character.v1", JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await page
@@ -156,8 +165,10 @@ test("a later milestone offers earned mastery and matching certified performance
   page,
 }) => {
   await sample(page);
-  await page.evaluate(() => {
-    const c = JSON.parse(localStorage.getItem("the-guild.character.v1")!);
+  await page.evaluate(async () => {
+    const c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     c.completions = Array.from({ length: 70 }, (_, i) => ({
       id: `practice-${i}`,
       period: `practice-${i}`,
@@ -181,7 +192,9 @@ test("a later milestone offers earned mastery and matching certified performance
       value: 22 + i * 2,
       baseline: 20 + i * 2,
     }));
-    localStorage.setItem("the-guild.character.v1", JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
   });
   await page.reload();
   await nav(page, "Class Paths");
@@ -202,8 +215,8 @@ test("a later milestone offers earned mastery and matching certified performance
     .getByRole("button", { name: "Submit measured result", exact: true })
     .click();
   await expect(page.locator(".exam-result")).toContainText("Passed");
-  const c = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const c = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.exams.at(-1).route).toBe("mastery");
   expect(c.exams.at(-1).status).toBe("passed");
@@ -212,15 +225,22 @@ test("reports show comparable raw results and local recovery can be reviewed aft
   page,
 }) => {
   await sample(page);
-  await page.evaluate(() => {
-    const c = JSON.parse(localStorage.getItem("the-guild.character.v1")!);
+  await page.evaluate(async () => {
+    const c = JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    );
     c.createdAt = "2026-10-01T12:00:00Z";
     c.assessmentHistory = [20, 30].map((pushups, i) => ({
       at: `2026-10-${i ? "20" : "01"}T12:00:00Z`,
       assessment: { ...c.baseline.assessment, pushups },
       stats: c.baseStats,
     }));
-    localStorage.setItem("the-guild.character.v1", JSON.stringify(c));
+    await (
+      await import("/e2e/browser-store.ts")
+    ).replaceString(JSON.stringify(c));
+    await (
+      await import("/src/device-backups.ts")
+    ).saveDeviceSnapshot(c, "before-restore");
   });
   await page.reload();
   await nav(page, "Journey");
@@ -231,15 +251,21 @@ test("reports show comparable raw results and local recovery can be reviewed aft
   await expect(page.locator(".performance-series").first()).toContainText(
     "20 → 30 repetitions",
   );
-  await page.evaluate(() =>
-    localStorage.setItem("the-guild.character.v1", "broken"),
+  await page.evaluate(
+    async () =>
+      await (await import("/e2e/browser-store.ts")).replaceString("broken"),
   );
   await page.reload();
   await page
     .getByRole("button", {
-      name: "Restore local recovery snapshot",
+      name: "Browse device recovery copies",
       exact: true,
     })
+    .click();
+  await page
+    .locator(".device-recovery article")
+    .filter({ has: page.getByText("Before restore", { exact: true }) })
+    .getByRole("button", { name: "Review copy", exact: true })
     .click();
   await expect(
     page.getByRole("button", { name: "Restore character", exact: true }),

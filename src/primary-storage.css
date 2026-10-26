@@ -1,0 +1,108 @@
+.save-state {
+  position: fixed;
+  right: 18px;
+  top: 78px;
+  z-index: 500;
+  padding: 8px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  pointer-events: none;
+}
+.save-failure {
+  position: fixed;
+  top: 72px;
+  left: 18px;
+  right: 18px;
+  z-index: 501;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px;
+  background: #fff1d3;
+  color: #573d17;
+  border: 1px solid #9d6e29;
+  box-shadow: 0 4px 16px #0003;
+}
+.save-failure span {
+  flex: 1;
+  min-width: 180px;
+}
+.save-failure button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #9d6e29;
+}
+
+.career-work-record {
+  grid-column: 1 / -1;
+}
+.career-work-record details,
+.career-fieldwork details {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+.career-work-record summary,
+.career-fieldwork summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: list-item;
+  padding: 10px 0;
+}
+.career-record-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+.career-record-list article,
+.career-fieldwork article {
+  padding: 14px;
+  border: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.career-record-list small,
+.career-record-list span,
+.career-fieldwork small,
+.career-competency small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.career-record-list h4 {
+  margin: 8px 0;
+}
+.career-record-list p {
+  white-space: pre-wrap;
+}
+.career-competency {
+  padding: 12px 0;
+}
+.career-fieldwork h3 {
+  margin: 0;
+}
+.career-fieldwork article {
+  margin-bottom: 10px;
+}
+@media (max-width: 700px) {
+  .career-record-list {
+    grid-template-columns: 1fr;
+  }
+  .career-work-record > .section-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+/* Contrast on parchment career forms and blue command windows. */
+.profession-layout .eyebrow {
+  color: #766035;
+}
+.profession-layout .profession-count,
+.profession-layout .profession-history summary {
+  color: #526247;
+}
+.settings-page .reminder-settings .helper {
+  color: #615a49;
+}
+.career-fieldwork small {
+  color: #cad9ee;
+}

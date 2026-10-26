@@ -8,6 +8,7 @@ const sample = async (page: Page) => {
     .click();
 };
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor({ state: "visible" });
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -81,11 +82,11 @@ test("skill goals and tree preferences survive a fresh browser session and a fil
     await page.getByLabel("Close skill details", { exact: true }).click();
   }
   await page.getByRole("tab", { name: "Class", exact: true }).click();
-  const stored = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const stored = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   const fresh = await browser.newContext({
-    storageState: await context.storageState(),
+    storageState: await context.storageState({ indexedDB: true }),
     viewport: { width: 390, height: 844 },
   });
   try {
@@ -120,8 +121,8 @@ test("restoring an older file preserves the exact replaced character and can rec
   page,
 }) => {
   await sample(page);
-  const older = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const older = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   await page
     .getByRole("button", { name: "Warrior requests", exact: true })
@@ -143,8 +144,8 @@ test("restoring an older file preserves the exact replaced character and can rec
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
-  const original = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const original = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   await restoreFile(page, older);
   await expect(page.getByLabel("Restore comparison")).toContainText(
@@ -156,14 +157,18 @@ test("restoring an older file preserves the exact replaced character and can rec
   await expect
     .poll(() =>
       page.evaluate(
-        () =>
-          JSON.parse(localStorage.getItem("the-guild.character.v1")!)
-            .completions.length,
+        async () =>
+          JSON.parse(
+            (await (await import("/e2e/browser-store.ts")).readString())!,
+          ).completions.length,
       ),
     )
     .toBe(0);
-  await page.evaluate(() =>
-    localStorage.setItem("the-guild.character.v1", "damaged primary"),
+  await page.evaluate(
+    async () =>
+      await (
+        await import("/e2e/browser-store.ts")
+      ).replaceString("damaged primary"),
   );
   await page.reload();
   await page
@@ -183,14 +188,15 @@ test("restoring an older file preserves the exact replaced character and can rec
   await expect
     .poll(() =>
       page.evaluate(
-        () =>
-          JSON.parse(localStorage.getItem("the-guild.character.v1")!)
-            .completions.length,
+        async () =>
+          JSON.parse(
+            (await (await import("/e2e/browser-store.ts")).readString())!,
+          ).completions.length,
       ),
     )
     .toBe(1);
-  const recovered = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const recovered = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(recovered.completions).toEqual(original.completions);
   expect(recovered.skillPlans).toEqual(original.skillPlans);
@@ -265,7 +271,7 @@ test("IndexedDB recovery is bounded, atomic on clone failure, detects corruption
       corruptionRejected,
       size: JSON.stringify(restored).length,
       notes: restored.journal.length,
-      primary: localStorage.getItem("the-guild.character.v1"),
+      primary: await (await import("/e2e/browser-store.ts")).readString(),
     };
   });
   expect(result).toMatchObject({
@@ -285,8 +291,10 @@ test("replacement uses a local fallback and refuses to overwrite if both recover
   page,
 }) => {
   await sample(page);
-  const older = await page.evaluate(() => ({
-    ...JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const older = await page.evaluate(async () => ({
+    ...JSON.parse(
+      (await (await import("/e2e/browser-store.ts")).readString())!,
+    ),
     name: "Older copy",
   }));
   await page.evaluate(() => {
@@ -316,7 +324,10 @@ test("replacement uses a local fallback and refuses to overwrite if both recover
   ).toBeVisible();
   expect(
     await page.evaluate(
-      () => JSON.parse(localStorage.getItem("the-guild.character.v1")!).name,
+      async () =>
+        JSON.parse(
+          (await (await import("/e2e/browser-store.ts")).readString())!,
+        ).name,
     ),
   ).toBe("Rowan");
   await page.evaluate(() =>
@@ -328,7 +339,10 @@ test("replacement uses a local fallback and refuses to overwrite if both recover
   await expect
     .poll(() =>
       page.evaluate(
-        () => JSON.parse(localStorage.getItem("the-guild.character.v1")!).name,
+        async () =>
+          JSON.parse(
+            (await (await import("/e2e/browser-store.ts")).readString())!,
+          ).name,
       ),
     )
     .toBe("Older copy");
@@ -342,8 +356,8 @@ test("starting a new character keeps a recoverable record available from registr
   page,
 }) => {
   await sample(page);
-  const original = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("the-guild.character.v1")!),
+  const original = await page.evaluate(async () =>
+    JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   await page.getByLabel("Open account settings", { exact: true }).click();
   await page
@@ -368,7 +382,10 @@ test("starting a new character keeps a recoverable record available from registr
   await expect
     .poll(() =>
       page.evaluate(
-        () => JSON.parse(localStorage.getItem("the-guild.character.v1")!).id,
+        async () =>
+          JSON.parse(
+            (await (await import("/e2e/browser-store.ts")).readString())!,
+          ).id,
       ),
     )
     .toBe(original.id);

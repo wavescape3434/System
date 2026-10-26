@@ -14,29 +14,40 @@ export default function MentalCheck({
   saved?: MentalResult;
   usedForms?: string[];
   challenge?: number;
-  onStart?: (form: MentalForm) => void;
-  onFinish: (result: MentalResult) => void;
+  onStart?: (form: MentalForm) => void | boolean | Promise<void | boolean>;
+  onFinish: (result: MentalResult) => void | boolean | Promise<void | boolean>;
 }) {
   const [form, setForm] = useState<MentalForm | null>(null),
     [answers, setAnswers] = useState<number[]>([]),
     [index, setIndex] = useState(0),
     [done, setDone] = useState(false),
+    [pending, setPending] = useState(false),
+    [error, setError] = useState(""),
     [used, setUsed] = useState<string[]>([]);
   const startedAt = useRef(0);
   const title = mentalForm(stat).name;
-  const start = () => {
+  const start = async () => {
     const next = nextMentalForm(
       stat,
       [...usedForms, ...used, ...(saved?.formId ? [saved.formId] : [])],
       challenge,
     );
+    setPending(true);
+    try {
+      if ((await onStart?.(next)) === false) return;
+    } catch {
+      setError("Check could not be started. Retry when storage is available.");
+      return;
+    } finally {
+      setPending(false);
+    }
+    setError("");
     startedAt.current = performance.now();
     setForm(next);
     setAnswers([]);
     setIndex(0);
     setDone(false);
     setUsed([...used, next.id]);
-    onStart?.(next);
   };
   if (!form)
     return (
@@ -55,7 +66,12 @@ export default function MentalCheck({
             {new Date(saved.completedAt).toLocaleDateString()}
           </p>
         )}
-        <button className="button primary full" onClick={start}>
+        {error && <p role="alert">{error}</p>}
+        <button
+          className="button primary full"
+          disabled={pending}
+          onClick={start}
+        >
           Start {stat} check
         </button>
       </section>
@@ -106,23 +122,36 @@ export default function MentalCheck({
           </button>
         ))}
       </div>
+      {error && <p role="alert">{error}</p>}
       <button
         className="button primary full"
-        disabled={answers[index] === undefined}
-        onClick={() => {
+        disabled={pending || answers[index] === undefined}
+        onClick={async () => {
           if (index < 4) setIndex(index + 1);
           else {
-            onFinish({
-              answers,
-              formId: form.id,
-              challenge: form.challenge,
-              completedAt: new Date().toISOString(),
-              durationMs: Math.max(
-                1000,
-                Math.round(performance.now() - startedAt.current),
-              ),
-            });
-            setDone(true);
+            setPending(true);
+            try {
+              const saved = await onFinish({
+                answers,
+                formId: form.id,
+                challenge: form.challenge,
+                completedAt: new Date().toISOString(),
+                durationMs: Math.max(
+                  1000,
+                  Math.round(performance.now() - startedAt.current),
+                ),
+              });
+              if (saved !== false) {
+                setDone(true);
+                setError("");
+              }
+            } catch {
+              setError(
+                "Result could not be saved. Your answers are kept; retry.",
+              );
+            } finally {
+              setPending(false);
+            }
           }
         }}
       >

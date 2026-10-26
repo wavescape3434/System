@@ -57,7 +57,7 @@ export default function AdventureGame({
   update,
 }: {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
 }) {
   const data = campaign(c),
     [tab, setTab] = useState("map"),
@@ -77,7 +77,7 @@ export default function AdventureGame({
   }, [impact]);
   const change = (next: Campaign) => update({ ...c, campaign: next });
   const battle = data.battle;
-  const command = (action: Action) => {
+  const command = async (action: Action) => {
     if (!battle) return;
     const next = act(c, action);
     if (next === c) {
@@ -92,7 +92,7 @@ export default function AdventureGame({
             (a) => a.id === action.abilityId,
           )?.name || "Skill"
         : action.kind[0].toUpperCase() + action.kind.slice(1);
-    if (update(next))
+    if (await update(next))
       setImpact({
         key: Date.now(),
         name,

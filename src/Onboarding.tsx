@@ -31,7 +31,7 @@ export default function Onboarding({
   onHelp,
   onRestore,
 }: {
-  onCreate: (c: Character) => boolean;
+  onCreate: (c: Character) => Promise<boolean>;
   onGoogle: () => void;
   onHelp: () => void;
   onRestore: () => void;
@@ -68,8 +68,8 @@ export default function Onboarding({
         profession,
       });
   }, [step, appearance, name, baseline, seenForms, units, classId, profession]);
-  const finish = (c: Character) => {
-    if (onCreate(c)) clearRegistrationDraft();
+  const finish = async (c: Character) => {
+    if (await onCreate(c)) clearRegistrationDraft();
   };
   const values = startingStats(baseline);
   return (

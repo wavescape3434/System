@@ -328,6 +328,9 @@ export function loadCharacter(): Character | null {
     throw new Error(
       "Your saved character needs attention. Export or restore a valid backup; your existing data has been kept.",
     );
+  return upgradeSavedCharacter(parsed);
+}
+export function upgradeSavedCharacter(parsed: Character): Character {
   return upgradeAdventureStages(
     upgradeCalendar(
       upgradeBalance(upgradeExams(upgradeTraining(upgradeProgression(parsed)))),
@@ -371,6 +374,7 @@ export function saveReplacementRecovery(c: Character) {
     JSON.stringify({ at: new Date().toISOString(), character: c }),
   );
 }
+/** Legacy localStorage writer retained for compatibility checks; the app uses primary-store. */
 export function saveCharacter(c: Character) {
   const data = JSON.stringify(c);
   // Commit the primary record first. Optional recovery cannot make a successful save fail.

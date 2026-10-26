@@ -23,7 +23,7 @@ export default function ClassExams({
   update,
 }: {
   c: Character;
-  update: (c: Character) => boolean;
+  update: (c: Character) => Promise<boolean>;
 }) {
   const [target, setTarget] = useState<ExamTarget | null>(null),
     [protocol, setProtocol] = useState(""),
