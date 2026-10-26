@@ -1,0 +1,15 @@
+{
+  "version": "1.14.0",
+  "versionCode": 16,
+  "package": "com.theguild.personal",
+  "bytes": 14320531,
+  "sha256": "5af844973952df215baa7e1a99b4f39e16bb3cbf498c20dc5f6291b731de48bc",
+  "matchingWebFiles": 38,
+  "generatedCordovaStubs": 2,
+  "unitChecks": 185,
+  "browserWorkflows": 55,
+  "focusedUIRegressions": 7,
+  "scannedViews": 7,
+  "combatFixtures": 16,
+  "basicClassesClearingOpeningTactically": 8
+}

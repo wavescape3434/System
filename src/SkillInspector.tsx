@@ -9,7 +9,11 @@ import {
   skillPointsAvailable,
   skillTier,
 } from "./domain";
-import { COMBAT_EFFECTS } from "./class-roles";
+import {
+  combatProfile,
+  combatFamily,
+  bestCombatSkills,
+} from "./combat-progression";
 import { campaign, toggleEquippedSkill } from "./rpg";
 import { Icon, Progress, Tag } from "./ui";
 
@@ -38,9 +42,15 @@ export default function SkillInspector({
     missing = skillRequirements(c, s),
     points = skillPointsAvailable(c, skillWallet(c, s)),
     data = campaign(c),
-    equipped = data.equippedSkills.includes(s.id),
+    equipped = data.equippedSkills.some(
+      (id) =>
+        combatFamily(SKILLS.find((n) => n.id === id)!) === combatFamily(s),
+    ),
     combat = !s.nonCombat && !s.automatic && s.id !== "universal-root",
-    effect = s.combat ? COMBAT_EFFECTS[s.combat] : undefined;
+    effect = s.combat ? combatProfile(s) : undefined,
+    upgrade = bestCombatSkills(c.earnedSkills, SKILLS).find(
+      (n) => combatFamily(n) === combatFamily(s),
+    );
   const parents = (ids: string[]) =>
     ids
       .map((id) => SKILLS.find((n) => n.id === id))
@@ -104,11 +114,11 @@ export default function SkillInspector({
         ) : combat ? (
           <>
             <p>
-              While equipped: +{s.cost >= 2 ? 2 : 1} combat {s.stat}.
+              While equipped: +{combatProfile(s).statBonus} combat {s.stat}.
             </p>
             {effect && (
               <p>
-                {effect.description} <b>{effect.mp} MP</b>
+                Rank {effect.rank} · {effect.description} <b>{effect.mp} MP</b>
               </p>
             )}
           </>
@@ -120,6 +130,17 @@ export default function SkillInspector({
           </p>
         )}
       </section>
+      {upgrade && upgrade.id !== s.id && (
+        <p className="technique-upgrade">
+          {combatProfile(upgrade).rank < combatProfile(s).rank
+            ? "Upgrades"
+            : "Stronger owned version:"}{" "}
+          <b>{upgrade.name}</b> · one loadout slot
+          <button className="text-button" onClick={() => onSelect(upgrade)}>
+            View technique
+          </button>
+        </p>
+      )}
       {(s.parents.length > 0 || !!s.anyParents?.length) && (
         <section className="inspector-parents">
           {s.parents.length > 0 && (

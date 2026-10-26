@@ -136,15 +136,32 @@ export default function SkillTree({
     if (node && el)
       el.scrollTo({
         left: Math.max(0, node.x * zoomRef.current - el.clientWidth / 2),
-        top: Math.max(0, node.y * zoomRef.current - el.clientHeight / 2),
-        behavior: "smooth",
+        top: Math.max(
+          0,
+          node.y * zoomRef.current -
+            (innerWidth <= 800
+              ? Math.max(
+                  120,
+                  Math.min(
+                    el.clientHeight,
+                    (document
+                      .querySelector(".skill-inspector")
+                      ?.getBoundingClientRect().top ||
+                      innerHeight * 0.47 - 70) -
+                      el.getBoundingClientRect().top -
+                      12,
+                  ),
+                ) / 2
+              : el.clientHeight / 2),
+        ),
+        behavior: innerWidth <= 800 ? "instant" : "smooth",
       });
   };
   const inspect = (s: Skill) => {
     setSelected(s);
-    locate(s);
     if (innerWidth <= 800 && !listMode)
       treeRef.current?.scrollIntoView({ block: "start", behavior: "instant" });
+    requestAnimationFrame(() => locate(s));
   };
   const closeInspector = () => {
     setSelected(null);

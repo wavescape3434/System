@@ -20,6 +20,8 @@ import { RESOURCE_NAMES, PLACES } from "./world-catalog";
 import { currentPath } from "./domain";
 import { classPower } from "./class-catalog";
 import { COMBAT_EFFECTS } from "./class-roles";
+import { bestCombatSkills, combatProfile } from "./combat-progression";
+import { enemyIntent } from "./enemy-tactics";
 import { CLASS_ROLES } from "./class-roles";
 import { useState, useEffect } from "react";
 import {
@@ -35,7 +37,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import type { Character } from "./domain";
-import { stats, SKILLS, hasSkill } from "./domain";
+import { stats, SKILLS } from "./domain";
 import {
   campaign,
   ENCOUNTERS,
@@ -100,13 +102,7 @@ export default function AdventureGame({
         }),
       });
   };
-  const skills = SKILLS.filter(
-    (s) =>
-      hasSkill(c, s) &&
-      !s.automatic &&
-      !s.nonCombat &&
-      s.id !== "universal-root",
-  );
+  const skills = bestCombatSkills(c.earnedSkills, SKILLS);
   const base = stats(c),
     combat = combatAttributes(c);
   if (battle) {
@@ -127,15 +123,16 @@ export default function AdventureGame({
         key={unit.id}
         onClick={() => (enemy ? setEnemyTarget(index) : setAllyTarget(index))}
         aria-pressed={enemy ? index === target : index === ally}
-        aria-label={`Target ${unit.name}, ${unit.hp} HP`}
+        aria-label={`Target ${unit.name}, ${unit.hp} HP${enemy && enemyIntent(unit, battle.round) ? `, ${enemyIntent(unit, battle.round)}` : ""}`}
       >
         <div className="fighter-label">
           <b>{unit.name}</b>
           {enemy &&
-            unit.boss &&
             battle.phase === "player" &&
-            battle.round % 3 === 0 && (
-              <span className="enemy-intent">Heavy strike</span>
+            enemyIntent(unit, battle.round) && (
+              <span className="enemy-intent">
+                {enemyIntent(unit, battle.round)}
+              </span>
             )}
           {unit.guard && <Shield size={12} />}
         </div>
@@ -255,6 +252,12 @@ export default function AdventureGame({
             ))}
           </div>
         </div>
+        {battle.phase === "player" && !!battle.enemies[target]?.shell && (
+          <div className="battle-tactic-readout">
+            <Shield size={16} /> Shell {battle.enemies[target].shell} · Break:
+            techniques, magic or analysis
+          </div>
+        )}
         {battle.phase === "player" ? (
           <div className="battle-controls">
             <div className="turn-status">
@@ -275,7 +278,9 @@ export default function AdventureGame({
               {actor.abilities.map((skill) => (
                 <button
                   key={skill.id}
-                  title={COMBAT_EFFECTS[skill.type]?.description}
+                  title={
+                    skill.description || COMBAT_EFFECTS[skill.type]?.description
+                  }
                   disabled={actor.mp < skill.cost}
                   onClick={() =>
                     command({
@@ -287,7 +292,10 @@ export default function AdventureGame({
                 >
                   <Sparkles size={18} />
                   {skill.name}
-                  <small>{skill.cost} MP</small>
+                  <small>
+                    {skill.rank ? `Rank ${skill.rank} · ` : ""}
+                    {skill.cost} MP
+                  </small>
                 </button>
               ))}
               <button
@@ -701,9 +709,15 @@ export default function AdventureGame({
                 <Icon name={s.stat} size={25} />
                 <h3>{s.name}</h3>
                 <p>
-                  +{s.cost >= 2 ? 2 : 1} combat {s.stat}
+                  +{combatProfile(s).statBonus} combat {s.stat}
                   {s.combat ? ` · Action: ${s.name}` : ""}
                 </p>
+                {s.combat && (
+                  <p>
+                    Rank {combatProfile(s).rank} · {combatProfile(s).mp} MP ·{" "}
+                    {combatProfile(s).description}
+                  </p>
+                )}
                 <button
                   className="button primary"
                   disabled={

@@ -23,6 +23,12 @@ import { COMBAT_EFFECTS } from "./class-roles";
 import type { Character, Stats } from "./domain";
 import { stats, currentPath, adventurerXP, level } from "./domain";
 import { SKILLS } from "./skill-catalog";
+import {
+  combatFamily,
+  combatProfile,
+  resolvedLoadout,
+} from "./combat-progression";
+import { openingTactics, chargedAttack } from "./enemy-tactics";
 export interface Campaign {
   cleared: string[];
   gold: number;
@@ -43,7 +49,8 @@ export const COMPANIONS = [
     id: "mira",
     name: "Mira",
     role: "Medic",
-    description: "Restoration and support. Assigned to your first expedition.",
+    description:
+      "Restoration and light magic. Assigned to your first expedition.",
     skill: "heal",
     requires: "",
   },
@@ -216,6 +223,11 @@ export const campaign = (c: Character): Campaign => {
     earned = progressionLedger(c).gold;
   return {
     ...data,
+    equippedSkills: resolvedLoadout(
+      c.earnedSkills,
+      data.equippedSkills,
+      SKILLS,
+    ),
     gold: data.gold + Math.max(0, earned - (data.trainingGoldAccrued || 0)),
     trainingGoldAccrued: earned,
     ...(c.calendarVersion === 1 ? { world: upgradeWorldStages(data) } : {}),
@@ -233,15 +245,21 @@ export function toggleEquippedSkill(c: Character, id: string): Character {
     data.battle?.phase === "player"
   )
     return c;
-  const equipped = data.equippedSkills.includes(id);
+  const upgraded = resolvedLoadout(c.earnedSkills, [id], SKILLS)[0];
+  const family = combatFamily(s);
+  const equipped = data.equippedSkills.some(
+    (key) => combatFamily(SKILLS.find((s) => s.id === key)!) === family,
+  );
   if (!equipped && data.equippedSkills.length >= 4) return c;
   return {
     ...c,
     campaign: {
       ...data,
       equippedSkills: equipped
-        ? data.equippedSkills.filter((key) => key !== id)
-        : [...data.equippedSkills, id],
+        ? data.equippedSkills.filter(
+            (key) => combatFamily(SKILLS.find((s) => s.id === key)!) !== family,
+          )
+        : [...data.equippedSkills, upgraded],
     },
   };
 }
@@ -263,7 +281,7 @@ export function combatAttributes(c: Character): Stats {
       !s.nonCombat &&
       s.id !== "universal-root"
     )
-      result[s.stat] += s.cost >= 2 ? 2 : 1;
+      result[s.stat] += combatProfile(s).statBonus;
   }
   return result;
 }
@@ -274,6 +292,8 @@ export interface Ability {
   cost: number;
   power: number;
   potency?: number;
+  description?: string;
+  rank?: number;
 }
 const ability = (id: string, name: string, type: string): Ability => ({
   id,
@@ -301,9 +321,15 @@ export interface Unit {
   boss?: boolean;
   penetration?: number;
   healing?: number;
+  support?: number;
   stun?: number;
   taunt?: number;
   counter?: boolean;
+  counterPower?: number;
+  shell?: number;
+  chargeEvery?: number;
+  chargeMultiplier?: number;
+  cleave?: boolean;
   burn?: number;
   burnDamage?: number;
 }
@@ -369,6 +395,7 @@ export function startBattle(c: Character, id: string): Character {
       (4 * (mix.rogue || 0) + 2 * (mix.ranger || 0)) / 100,
     ),
     healing: 1 + (0.25 * (mix.cleric || 0)) / 100,
+    support: 1 + Math.max(0, s.CHA - 10) / 20,
     abilities: [
       {
         ...ability(
@@ -381,7 +408,15 @@ export function startBattle(c: Character, id: string): Character {
       ...campaign(c).equippedSkills.flatMap((id) => {
         const skill = SKILLS.find((s) => s.id === id);
         return skill?.combat && !skill.nonCombat && c.earnedSkills.includes(id)
-          ? [ability(id, skill.name, skill.combat)]
+          ? [
+              {
+                ...ability(id, skill.name, skill.combat),
+                cost: combatProfile(skill).mp,
+                potency: combatProfile(skill).potency,
+                rank: combatProfile(skill).rank,
+                description: combatProfile(skill).description,
+              },
+            ]
           : [];
       }),
     ],
@@ -428,6 +463,9 @@ export function startBattle(c: Character, id: string): Character {
               )[npc.skill],
               npc.skill,
             ),
+            ...(id === "mira"
+              ? [ability("mira-glimmer", "Glimmer", "fire")]
+              : []),
           ],
         },
       ];
@@ -450,6 +488,7 @@ export function startBattle(c: Character, id: string): Character {
       guard: false,
       abilities: [],
       boss,
+      ...openingTactics(e.id, i),
     };
   });
   let battle: Battle = {
@@ -501,12 +540,18 @@ export function takeAction(input: Battle, action: Action): Battle {
   const b = structuredClone(input),
     actor = b.party[b.actor];
   let potency = 1;
+  let breaksShell = false;
   if (!actor || actor.hp <= 0) return input;
   const hit = (target: Unit, raw: number) => {
+    const shielded = (target.shell || 0) > 0;
+    if (shielded) {
+      target.shell = breaksShell ? 0 : Math.max(0, target.shell! - 1);
+      if (!target.shell) b.log.push(`${target.name}'s shell breaks.`);
+    }
     const damage = Math.max(
       1,
       Math.round(
-        (raw * potency -
+        (raw * potency * (shielded && !breaksShell ? 0.55 : 1) -
           Math.max(0, target.defense - (actor.penetration || 0))) *
           (target.guard ? 0.45 / (target.guardPower || 1) : 1),
       ),
@@ -544,6 +589,17 @@ export function takeAction(input: Battle, action: Action): Battle {
     if (!target || target.hp <= 0) return input;
     actor.mp -= skill.cost;
     potency = skill.potency || 1;
+    breaksShell = [
+      "power",
+      "quick",
+      "fire",
+      "area",
+      "burn",
+      "pierce",
+      "bash",
+      "hybrid",
+      "coordinated",
+    ].includes(skill.type);
     b.log.push(`${actor.name} uses ${skill.name}.`);
     const restore = (ally: Unit, scale: number) => {
       const amount = Math.round(
@@ -569,22 +625,28 @@ export function takeAction(input: Battle, action: Action): Battle {
     } else if (skill.type === "counter") {
       actor.guard = true;
       actor.counter = true;
+      actor.counterPower = potency;
       actor.guardPower = potency;
     } else if (skill.type === "rally" || skill.type === "formation")
       for (const ally of b.party.filter((p) => p.hp > 0)) {
         ally.attack += Math.round(
-          (skill.type === "formation" ? 3 : 2) * potency,
+          (skill.type === "formation" ? 3 : 2) * potency * (actor.support || 1),
         );
-        ally.magic += Math.round(2 * potency);
+        ally.magic += Math.round(2 * potency * (actor.support || 1));
         if (skill.type === "formation") {
-          ally.defense += Math.round(2 * potency);
+          ally.defense += Math.round(2 * potency * (actor.support || 1));
           ally.guard = true;
           ally.guardPower = potency;
         }
       }
     else if (skill.type === "scan") {
-      target.defense = Math.max(0, target.defense - Math.round(3 * potency));
-      b.log.push(`${target.name}: defense -3.`);
+      const reduction = Math.round(3 * potency);
+      target.defense = Math.max(0, target.defense - reduction);
+      if (target.shell) {
+        target.shell = 0;
+        b.log.push(`${target.name}'s shell breaks.`);
+      }
+      b.log.push(`${target.name}: defense -${reduction}.`);
     } else if (skill.type === "focus" || skill.type === "focus-all") {
       for (const ally of skill.type === "focus"
         ? [actor]
@@ -662,31 +724,44 @@ export function enemyVolley(b: Battle): Battle {
     }
     const living = b.party.filter((x) => x.hp > 0);
     if (!living.length) break;
-    const target =
-        living.find((p) => (p.taunt || 0) > 0) ||
-        living[(b.round + i) % living.length],
-      charged = enemy.boss && b.round % 3 === 0;
-    const damage = Math.max(
-      1,
-      Math.round(
-        (enemy.attack * (charged ? 1.6 : 1) - target.defense) *
-          (target.guard ? 0.45 / (target.guardPower || 1) : 1),
-      ),
-    );
-    target.hp = Math.max(0, target.hp - damage);
-    b.log.push(
-      `${enemy.name}${charged ? " uses Heavy Strike on" : " attacks"} ${target.name}: ${damage} damage.`,
-    );
-    if (target.counter && target.hp > 0) {
-      const amount = Math.max(1, target.attack - enemy.defense);
-      enemy.hp = Math.max(0, enemy.hp - amount);
-      b.log.push(`${target.name} counters: ${amount} damage.`);
+    const charged = chargedAttack(enemy, b.round);
+    const targets =
+      charged && enemy.cleave
+        ? living
+        : [
+            living.find((p) => (p.taunt || 0) > 0) ||
+              living[(b.round + i) % living.length],
+          ];
+    for (const target of targets) {
+      const damage = Math.max(
+        1,
+        Math.round(
+          (enemy.attack * (charged ? enemy.chargeMultiplier || 1.6 : 1) -
+            target.defense) *
+            (target.guard ? 0.45 / (target.guardPower || 1) : 1),
+        ),
+      );
+      target.hp = Math.max(0, target.hp - damage);
+      b.log.push(
+        `${enemy.name}${charged ? (enemy.cleave ? " uses Briar Cleave on" : " uses Heavy Strike on") : " attacks"} ${target.name}: ${damage} damage.`,
+      );
+      if (target.counter && target.hp > 0) {
+        const amount = Math.max(
+          1,
+          Math.round(target.attack * (target.counterPower || 1)) -
+            enemy.defense,
+        );
+        enemy.hp = Math.max(0, enemy.hp - amount);
+        b.log.push(`${target.name} counters: ${amount} damage.`);
+        if (enemy.hp === 0) break;
+      }
     }
   }
   for (const ally of b.party) {
     ally.guard = false;
     ally.guardPower = 1;
     ally.counter = false;
+    ally.counterPower = 1;
     if ((ally.taunt || 0) > 0) ally.taunt!--;
   }
   if (b.enemies.every((x) => x.hp === 0) && b.party.some((p) => p.hp > 0)) {

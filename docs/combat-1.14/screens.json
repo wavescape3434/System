@@ -1,0 +1,56 @@
+{
+  "version": "1.14.0",
+  "timezone": "America/Denver",
+  "errors": [],
+  "screens": [
+    {
+      "name": "ranked-spark-control",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "ranked-spark-refinement-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "upgraded-loadout-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "ranked-skill-battle-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "briar-shell-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "guardian-windup-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "guardian-cleave",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    }
+  ]
+}

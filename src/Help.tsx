@@ -39,6 +39,10 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
         "The turn queue follows the current combat rules: living party members act, then living enemies. Select an enemy for attacks or an ally for healing. HP and MP stay visible in the party panel. Skills learned in the tree must be equipped in the adventure loadout; the active class signature is always available.",
       ],
       [
+        "Briar Road enemy tactics",
+        "The first two stages stay simple. Later stages introduce shells and winding-up attacks. Ordinary hits wear a shell down and deal reduced damage; power attacks, sweeping techniques, magic, piercing attacks and shield bashes break it immediately. Analysis also breaks a shell. A winding-up enemy telegraphs a heavy strike. The area guardian prepares a cleave that hits all living allies every third round: guard, use a party barrier, heal or use a supply before it lands. Mira can heal or cast Glimmer. Other regions retain their current encounters while further tactics are developed.",
+      ],
+      [
         "Recovery",
         "Each new encounter currently restores party HP and MP. Consumable use, gold, gathered materials, stage progress, and boss danger persist between encounters. Defeat awards no rewards.",
       ],
@@ -277,6 +281,10 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       [
         "Combat loadout",
         "Equip up to four purchased combat skills from the selected-skill panel or Adventures → Skill loadout. Combat modifiers apply while equipped, with no change to base stats. Loadout changes are blocked during an active fight. The active class signature uses no slot and is available automatically. Prestige signatures have greater potency.",
+      ],
+      [
+        "Technique upgrades",
+        "Repeated ranks of a combat technique share one loadout slot. If a lower rank is equipped, learning a stronger rank automatically uses the strongest owned version. Earlier skill IDs and point-spending records stay in the skill history; no points are refunded or charged by the upgrade itself. The selected-skill panel and loadout show rank, MP, strength and equipped combat modifiers. Ranked damage, healing, barriers, counters and utility effects scale. Existing active battles keep their saved abilities until the next encounter.",
       ],
     ],
   },

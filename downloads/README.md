@@ -1,4 +1,4 @@
-# Install The Adventurers Guild 1.13.0 on Android
+# Install The Adventurers Guild 1.14.0 on Android
 
 Open `the-guild-debug.apk` in this folder on GitHub, then select **Download raw file** (the download arrow). Open the downloaded APK on your Android phone. Android may ask you to allow installations from your browser or file manager.
 
@@ -25,3 +25,5 @@ For Android reminders, open Settings → General → Request reminders and selec
 [Version 1.12 parchment requests, attribute icons and ten-stage routes](../docs/update-1.12.md) · [Verification](../docs/verification-1.12.md).
 
 [Version 1.13 universal boards and skill constellations](../docs/update-1.13.md) · [Verification](../docs/verification-1.13.md).
+
+[Version 1.14 skill ranks and opening tactics](../docs/update-1.14.md) · [Verification](../docs/verification-1.14.md) · [Working roadmap](../ROADMAP.md).

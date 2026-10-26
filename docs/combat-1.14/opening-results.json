@@ -1,0 +1,1250 @@
+[
+  {
+    "class": "Warrior",
+    "style": "attack",
+    "cleared": 9,
+    "actions": 58,
+    "skills": 0,
+    "guards": 0,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "lost",
+      "actions": 8,
+      "heroHp": 0
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 57
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "lost",
+        "actions": 8,
+        "heroHp": 0
+      }
+    ]
+  },
+  {
+    "class": "Warrior",
+    "style": "tactical",
+    "cleared": 10,
+    "actions": 45,
+    "skills": 24,
+    "guards": 6,
+    "potionsUsed": 2,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "won",
+      "actions": 16,
+      "heroHp": 65
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 93
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 88
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 88
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "won",
+        "actions": 16,
+        "heroHp": 65
+      }
+    ]
+  },
+  {
+    "class": "Sentinel",
+    "style": "attack",
+    "cleared": 9,
+    "actions": 70,
+    "skills": 0,
+    "guards": 0,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "lost",
+      "actions": 9,
+      "heroHp": 0
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 119
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 107
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 124
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "lost",
+        "actions": 9,
+        "heroHp": 0
+      }
+    ]
+  },
+  {
+    "class": "Sentinel",
+    "style": "tactical",
+    "cleared": 10,
+    "actions": 64,
+    "skills": 23,
+    "guards": 12,
+    "potionsUsed": 2,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "won",
+      "actions": 15,
+      "heroHp": 85
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 129
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 125
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 119
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 125
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "won",
+        "actions": 15,
+        "heroHp": 85
+      }
+    ]
+  },
+  {
+    "class": "Ranger",
+    "style": "attack",
+    "cleared": 9,
+    "actions": 57,
+    "skills": 0,
+    "guards": 0,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "lost",
+      "actions": 7,
+      "heroHp": 0
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 51
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 68
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "lost",
+        "actions": 7,
+        "heroHp": 0
+      }
+    ]
+  },
+  {
+    "class": "Ranger",
+    "style": "tactical",
+    "cleared": 10,
+    "actions": 46,
+    "skills": 38,
+    "guards": 6,
+    "potionsUsed": 2,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "won",
+      "actions": 15,
+      "heroHp": 59
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 86
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 86
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "won",
+        "actions": 15,
+        "heroHp": 59
+      }
+    ]
+  },
+  {
+    "class": "Rogue",
+    "style": "attack",
+    "cleared": 9,
+    "actions": 52,
+    "skills": 0,
+    "guards": 0,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "lost",
+      "actions": 7,
+      "heroHp": 0
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 60
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 77
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "lost",
+        "actions": 7,
+        "heroHp": 0
+      }
+    ]
+  },
+  {
+    "class": "Rogue",
+    "style": "tactical",
+    "cleared": 10,
+    "actions": 59,
+    "skills": 23,
+    "guards": 10,
+    "potionsUsed": 2,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "won",
+      "actions": 15,
+      "heroHp": 59
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 73
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "won",
+        "actions": 15,
+        "heroHp": 59
+      }
+    ]
+  },
+  {
+    "class": "Scholar",
+    "style": "attack",
+    "cleared": 9,
+    "actions": 68,
+    "skills": 0,
+    "guards": 0,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "lost",
+      "actions": 7,
+      "heroHp": 0
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 51
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 68
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "lost",
+        "actions": 7,
+        "heroHp": 0
+      }
+    ]
+  },
+  {
+    "class": "Scholar",
+    "style": "tactical",
+    "cleared": 10,
+    "actions": 41,
+    "skills": 36,
+    "guards": 4,
+    "potionsUsed": 1,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "won",
+      "actions": 10,
+      "heroHp": 56
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 3,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 86
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 86
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "won",
+        "actions": 10,
+        "heroHp": 56
+      }
+    ]
+  },
+  {
+    "class": "Disciple",
+    "style": "attack",
+    "cleared": 9,
+    "actions": 68,
+    "skills": 0,
+    "guards": 0,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "lost",
+      "actions": 7,
+      "heroHp": 0
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 51
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 68
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "lost",
+        "actions": 7,
+        "heroHp": 0
+      }
+    ]
+  },
+  {
+    "class": "Disciple",
+    "style": "tactical",
+    "cleared": 10,
+    "actions": 69,
+    "skills": 28,
+    "guards": 14,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "won",
+      "actions": 16,
+      "heroHp": 59
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 84
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 13,
+        "heroHp": 64
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "won",
+        "actions": 16,
+        "heroHp": 59
+      }
+    ]
+  },
+  {
+    "class": "Bard",
+    "style": "attack",
+    "cleared": 9,
+    "actions": 68,
+    "skills": 0,
+    "guards": 0,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "lost",
+      "actions": 7,
+      "heroHp": 0
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 51
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 68
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "lost",
+        "actions": 7,
+        "heroHp": 0
+      }
+    ]
+  },
+  {
+    "class": "Bard",
+    "style": "tactical",
+    "cleared": 10,
+    "actions": 74,
+    "skills": 35,
+    "guards": 14,
+    "potionsUsed": 3,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "won",
+      "actions": 21,
+      "heroHp": 45
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 84
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 73
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "won",
+        "actions": 21,
+        "heroHp": 45
+      }
+    ]
+  },
+  {
+    "class": "Artificer",
+    "style": "attack",
+    "cleared": 9,
+    "actions": 68,
+    "skills": 0,
+    "guards": 0,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "lost",
+      "actions": 7,
+      "heroHp": 0
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 6,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 51
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 9,
+        "heroHp": 68
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "lost",
+        "actions": 7,
+        "heroHp": 0
+      }
+    ]
+  },
+  {
+    "class": "Artificer",
+    "style": "tactical",
+    "cleared": 10,
+    "actions": 69,
+    "skills": 28,
+    "guards": 14,
+    "potionsUsed": 0,
+    "last": {
+      "id": "mossfall-boss",
+      "phase": "won",
+      "actions": 16,
+      "heroHp": 59
+    },
+    "realXp": 0,
+    "stages": [
+      {
+        "id": "mossfall-1",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-2",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-3",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-4",
+        "phase": "won",
+        "actions": 5,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-5",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-6",
+        "phase": "won",
+        "actions": 4,
+        "heroHp": 91
+      },
+      {
+        "id": "mossfall-path-7",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 84
+      },
+      {
+        "id": "mossfall-path-8",
+        "phase": "won",
+        "actions": 7,
+        "heroHp": 74
+      },
+      {
+        "id": "mossfall-path-9",
+        "phase": "won",
+        "actions": 13,
+        "heroHp": 64
+      },
+      {
+        "id": "mossfall-boss",
+        "phase": "won",
+        "actions": 16,
+        "heroHp": 59
+      }
+    ]
+  }
+]

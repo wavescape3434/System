@@ -2,6 +2,8 @@
 
 An Android app for real-world objectives, class and profession progression, branching skill trees, and turn-based party combat. Built with React, TypeScript, Vite, and Capacitor. Fonts and artwork are bundled for offline use.
 
+[Working product roadmap and priorities](ROADMAP.md)
+
 ## Try it
 
 Download the prebuilt [Android APK](downloads/the-guild-debug.apk?raw=true), or open the [download instructions](downloads/README.md). Browse the [phone hub](docs/screenshots/guild-actions-mobile.png), [battle preview](docs/screenshots/battle-polished.png), and [screenshot gallery](docs/screenshots/README.md).
@@ -28,6 +30,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 ```
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
+
+## Version 1.14.0
+
+The [working roadmap](ROADMAP.md) tracks the product review priorities. Batch 1 adds meaningful combat technique ranks, automatic upgrades within one loadout slot, and a first Briar Road tactics pass with shells, telegraphed attacks and a guardian cleave. [Changes](docs/update-1.14.md) · [Opening combat simulations](docs/combat-1.14/README.md) · [Verification](docs/verification-1.14.md) · [Previews](docs/screenshots/README.md).
+
+Install over the existing app to retain its character: version code **16**, package `com.theguild.personal`, and the same signing certificate.
 
 ## Version 1.13.0
 

@@ -210,7 +210,8 @@ export const COMBAT_EFFECTS: Record<
   fire: { description: "High magic damage to one enemy.", mp: 5 },
   area: { description: "Magic damage to all living enemies.", mp: 8 },
   rally: {
-    description: "Raise party attack and magic by 2 for this battle.",
+    description:
+      "Raise party attack and magic for this battle; strength scales with combat CHA above 10.",
     mp: 6,
   },
   scan: {
@@ -242,7 +243,8 @@ export const COMBAT_EFFECTS: Record<
     mp: 7,
   },
   formation: {
-    description: "Raise party attack by 3, defense by 2, and guard this round.",
+    description:
+      "Raise party attack, magic and defense with combat CHA scaling; guard this round.",
     mp: 10,
   },
   focus: {

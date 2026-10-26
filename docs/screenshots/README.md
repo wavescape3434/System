@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.13.0 — screenshots
+# The Adventurers Guild 1.14.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Ranked techniques and enemy tactics — version 1.14
+
+| Skill refinement | Enemy shell | Guardian wind-up |
+| --- | --- | --- |
+| [<img src="ranked-spark-refinement-mobile.png" width="230" alt="Spark refinement with stronger effect and one upgraded technique slot">](ranked-spark-refinement-mobile.png) | [<img src="briar-shell-mobile.png" width="230" alt="Breakable shell with a battle tactic readout">](briar-shell-mobile.png) | [<img src="guardian-windup-mobile.png" width="230" alt="Guardian preparing its party-wide cleave">](guardian-windup-mobile.png) |
+
+[Control rank](ranked-spark-control.png) · [Upgraded loadout](upgraded-loadout-mobile.png) · [Ranked skill in battle](ranked-skill-battle-mobile.png) · [Guardian cleave](guardian-cleave.png)
+
+[Changes](../update-1.14.md) · [Combat probe report](../combat-1.14/README.md) · [Verification](../verification-1.14.md)
 
 ## Stat boards and skill constellations — version 1.13
 
@@ -76,7 +86,7 @@ These are browser previews using sample characters. Exploration results, prior a
 
 ## Retained feature previews
 
-These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.13 previews above show the current update.
+These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.14 previews above show the current update.
 
 [Guild Card on phone](guild-android.png) · [Guild Card detail](guild-card-detail.png) · [Rank metals](rank-metals.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Full Fighter skill web](fighter-web.png) · [Career tree](profession-tree.png) · [Vocation](vocation.png)
 

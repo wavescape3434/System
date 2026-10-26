@@ -415,12 +415,25 @@ function validCampaign(input: unknown): boolean {
             "guardPower",
             "penetration",
             "healing",
+            "support",
             "stun",
             "taunt",
             "burn",
             "burnDamage",
+            "counterPower",
           ].every((k) => u[k] === undefined || finite(u[k])) &&
           (u.counter === undefined || typeof u.counter === "boolean") &&
+          (u.cleave === undefined || typeof u.cleave === "boolean") &&
+          (u.shell === undefined ||
+            (Number.isInteger(u.shell) && u.shell >= 0 && u.shell <= 9)) &&
+          (u.chargeEvery === undefined ||
+            (Number.isInteger(u.chargeEvery) &&
+              u.chargeEvery >= 1 &&
+              u.chargeEvery <= 10)) &&
+          (u.chargeMultiplier === undefined ||
+            (finite(u.chargeMultiplier) &&
+              u.chargeMultiplier >= 1 &&
+              u.chargeMultiplier <= 4)) &&
           Array.isArray(u.abilities) &&
           u.abilities.every(
             (a: Record<string, unknown>) =>
@@ -429,7 +442,12 @@ function validCampaign(input: unknown): boolean {
               str(a.type) &&
               finite(a.cost) &&
               finite(a.power) &&
-              (a.potency === undefined || finite(a.potency)),
+              (a.potency === undefined || finite(a.potency)) &&
+              (a.rank === undefined ||
+                (typeof a.rank === "number" &&
+                  Number.isInteger(a.rank) &&
+                  a.rank >= 1)) &&
+              (a.description === undefined || str(a.description)),
           ),
       );
     return (

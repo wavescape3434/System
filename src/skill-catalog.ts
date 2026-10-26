@@ -22,6 +22,8 @@ export interface Skill {
   current: (c: Character) => number;
   automatic?: boolean;
   combat?: string;
+  combatFamily?: string;
+  combatRank?: number;
   archetype?: string;
   requiredLevel?: number;
   legacy?: boolean;
@@ -809,3 +811,46 @@ for (const s of SKILLS) {
   }
 }
 SKILLS.push(...EXPANDED_SKILLS);
+
+// Repeated effects in a shared path are upgrades of the same technique.
+const combatFamilies = new Map<string, Skill[]>();
+const COMBAT_LEVELS: Record<string, number> = {
+  I: 1,
+  II: 5,
+  III: 15,
+  IV: 25,
+  V: 40,
+};
+for (const s of SKILLS.filter(
+  (s) => !s.legacy && !!s.combat && !s.nonCombat && !s.automatic,
+)) {
+  const opening = /^(opening-[a-z]+-\d+)-\d+$/.exec(s.id);
+  s.combatFamily =
+    opening?.[1] ||
+    (s.archetype && s.id.startsWith("arc-")
+      ? `arc:${s.archetype}:${s.combat}`
+      : s.id.startsWith("focus-")
+        ? `focus:${s.owner}:${s.combat}`
+        : s.category === "universal"
+          ? `universal:${s.stat}:${s.combat}`
+          : s.id);
+  combatFamilies.set(s.combatFamily, [
+    ...(combatFamilies.get(s.combatFamily) || []),
+    s,
+  ]);
+}
+for (const list of combatFamilies.values()) {
+  list.sort(
+    (a, b) =>
+      (a.requiredLevel || COMBAT_LEVELS[a.tier] || 1) -
+        (b.requiredLevel || COMBAT_LEVELS[b.tier] || 1) || a.cost - b.cost,
+  );
+  let previous = 0;
+  for (const s of list) {
+    const lv = s.requiredLevel || COMBAT_LEVELS[s.tier] || 1;
+    const baseline =
+      lv >= 80 ? 5 : lv >= 25 ? 4 : lv >= 12 ? 3 : lv >= 3 ? 2 : 1;
+    s.combatRank = Math.max(baseline, previous + 1);
+    previous = s.combatRank;
+  }
+}

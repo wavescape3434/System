@@ -1,0 +1,47 @@
+.battle-tactic-readout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border: 1px solid #bca25b;
+  background: #182947;
+  color: #ffe4a0;
+  font: 500 13px var(--sans);
+}
+.battle-tactic-readout svg {
+  flex-shrink: 0;
+}
+.polished-battle .fighter-label {
+  flex-wrap: wrap;
+}
+.polished-battle .fighter-label .enemy-intent {
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: normal;
+}
+.technique-upgrade {
+  padding: 12px;
+  border-left: 3px solid #9b7a40;
+  background: #dac58e33;
+}
+.technique-upgrade button {
+  display: block;
+  min-height: 44px;
+  color: #3d573c;
+}
+.sidebar.open {
+  z-index: 90;
+}
+.nav-scrim {
+  z-index: 80;
+}
+.polished-battle .tag.gold {
+  color: #ffe5a5;
+}
+.polished-battle .battle-actions button small {
+  color: #fff5d8;
+}
+.signature-loadout .eyebrow {
+  color: #f5e3b7;
+}
