@@ -131,7 +131,7 @@ test("weekly rank selection counts walking before acceptance in the same week", 
     .click();
   await expect(page.getByRole("dialog")).toContainText("5 / 5 practice days");
   await page
-    .getByRole("button", { name: "I completed this objective", exact: true })
+    .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
   const c = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
@@ -299,7 +299,7 @@ test("required hybrid objectives unlock after the actual adventure delivery", as
     await page.getByRole("button", { name: title, exact: true }).click();
   await expect(
     page.getByRole("button", {
-      name: "I completed this objective",
+      name: "Submit completed request",
       exact: true,
     }),
   ).toBeDisabled();
@@ -323,12 +323,12 @@ test("required hybrid objectives unlock after the actual adventure delivery", as
   await open();
   await expect(
     page.getByRole("button", {
-      name: "I completed this objective",
+      name: "Submit completed request",
       exact: true,
     }),
   ).toBeEnabled();
   await page
-    .getByRole("button", { name: "I completed this objective", exact: true })
+    .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
   const c = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),

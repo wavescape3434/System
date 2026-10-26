@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.14.0 — screenshots
+# The Adventurers Guild 1.15.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Current work, results and reserves — version 1.15
+
+| Current work | Parchment actions | Optional results |
+| --- | --- | --- |
+| [<img src="daily-hub-mobile.png" width="230" alt="First-screen class and career shortcuts with taken requests">](daily-hub-mobile.png) | [<img src="request-actions-mobile.png" width="230" alt="Parchment request with its Submit action always within reach">](request-actions-mobile.png) | [<img src="request-results-mobile.png" width="230" alt="Optional activity results on parchment with a visible Submit button">](request-results-mobile.png) |
+
+[Practice charts on desktop](practice-results-desktop.png) · [Practice charts on phone](practice-results-mobile.png) · [Party reserves](party-reserves-mobile.png) · [Exhausted party](party-exhausted-mobile.png)
+
+[Changes](../update-1.15.md) · [Reserve probes](../combat-1.15/README.md) · [Verification](../verification-1.15.md). Earlier sections show previous releases; current HP/MP recover at midnight rather than between encounters.
 
 ## Ranked techniques and enemy tactics — version 1.14
 

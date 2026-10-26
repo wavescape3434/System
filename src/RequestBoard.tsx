@@ -59,7 +59,7 @@ export default function RequestBoard({
     ),
     [category, setCategory] = useViewState<string>(
       `${key}.category`,
-      "all",
+      section?.split(":")[2] || "all",
       !!section,
     ),
     [rank, setRank] = useViewState<string>(`${key}.rank`, "all", !!section),
@@ -129,6 +129,8 @@ export default function RequestBoard({
       (focus === "all" || o.stat === focus) &&
       (category === "all" ||
         scopeOf(o) === category ||
+        (category === "career" &&
+          ["vocation", "profession"].includes(scopeOf(o))) ||
         (category === "hybrid" &&
           (o.adventureRequirement || o.adventureBonus)) ||
         category === "trials") &&
@@ -246,6 +248,26 @@ export default function RequestBoard({
           </button>
         ))}
       </div>
+      <nav className="request-shortcuts" aria-label="Request boards">
+        {[
+          ["all", "All boards"],
+          ["class", currentPath(c).name],
+          ["profession", c.profession],
+          ...(activeVocation(c) ? [["vocation", activeVocation(c)!.name]] : []),
+        ].map(([id, label]) => (
+          <button
+            key={id}
+            className={category === id && !universalBoard ? "active" : ""}
+            onClick={() => {
+              resetFilters();
+              setCategory(id);
+              setView("board");
+            }}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
       <div className="request-discovery">
         <label className="request-search">
           <Search size={18} />
@@ -287,6 +309,7 @@ export default function RequestBoard({
               ["class", "Class"],
               ["vocation", "Vocation"],
               ["profession", "Profession"],
+              ["career", "All career"],
               ["hybrid", "Hybrid"],
               ["trials", "Class trials"],
             ].map(([id, t]) => (

@@ -1,3 +1,5 @@
+import PartyResources from "./PartyResources";
+import { adventureParty } from "./rpg";
 import AppearancePicker from "./AppearancePicker";
 import { selectAppearance } from "./appearance";
 import WorldMap from "./WorldMap";
@@ -337,6 +339,7 @@ export default function AdventureGame({
                     )}${encounter.recruit ? " · Companion recruitment unlocked" : ""}`
                 : ""}
             </p>
+            <PartyResources c={c} />
             <div className="battle-result-actions">
               {battle.phase === "won" && (
                 <button
@@ -368,6 +371,7 @@ export default function AdventureGame({
               {battle.phase === "lost" && (
                 <button
                   className="button primary"
+                  disabled={adventureParty(c).every((u) => u.hp === 0)}
                   onClick={() =>
                     update(startBattle(returnToMap(c), encounter.id))
                   }
@@ -415,6 +419,7 @@ export default function AdventureGame({
             Return to map
           </button>
         </div>
+        <PartyResources c={c} />
         <div className={`expedition-scene biome-${place.biome}`}>
           <PixelScene biome={place.biome} />
           {place.biome === "forest" && (
@@ -467,6 +472,7 @@ export default function AdventureGame({
             {cleared ? (
               <button
                 className="button primary"
+                disabled={adventureParty(c).every((u) => u.hp === 0)}
                 onClick={() => update(explore(c, place.id))}
               >
                 Continue exploring
@@ -475,6 +481,7 @@ export default function AdventureGame({
               nextStage && (
                 <button
                   className="button primary"
+                  disabled={adventureParty(c).every((u) => u.hp === 0)}
                   onClick={() => update(startBattle(c, nextStage))}
                 >
                   Continue adventure
@@ -513,6 +520,7 @@ export default function AdventureGame({
           {data.party.length + 1}/3 party members
         </span>
       </div>
+      <PartyResources c={c} />
       <div className="tabs">
         <button
           className={tab === "map" ? "active" : ""}

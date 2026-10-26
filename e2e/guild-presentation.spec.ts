@@ -47,7 +47,7 @@ test("paper requests show precise rank instructions, keep stat icons distinct an
     .click();
   await expect(
     paper.getByRole("button", {
-      name: "I completed this objective",
+      name: "Submit completed request",
       exact: true,
     }),
   ).toBeVisible();

@@ -1,0 +1,15 @@
+{
+  "version": "1.15.0",
+  "versionCode": 17,
+  "package": "com.theguild.personal",
+  "bytes": 13999951,
+  "sha256": "856a0b43a88773febd170615d4fa9cf7e4ae14525a6a3162265e607783319fd3",
+  "matchingWebFiles": 38,
+  "generatedCordovaStubs": 2,
+  "unitChecks": 194,
+  "browserWorkflows": 59,
+  "scannedViews": 7,
+  "combatFixtures": 32,
+  "certificateSHA256": "f6c745055e1d566d935ce766c749393e4936eca36f7e1d85c26d5176a65181e5",
+  "physicalAndroidVerified": false
+}

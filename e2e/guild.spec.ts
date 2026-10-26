@@ -22,7 +22,7 @@ async function enterClass(page: import("@playwright/test").Page, name: string) {
     for (const item of await page.locator(".checklist button").all())
       await item.click();
     await page
-      .getByRole("button", { name: "I completed this objective", exact: true })
+      .getByRole("button", { name: "Submit completed request", exact: true })
       .click();
     await page
       .getByRole("button", { name: "Inspect " + name, exact: true })
@@ -72,11 +72,14 @@ test("objectives cannot award twice and the reward survives reload", async ({
   page,
 }) => {
   await sample(page);
-  await page.getByRole("button", { name: /Warrior commission/ }).click();
-  await takeOpen(page);
   await page
-    .getByRole("button", { name: "I completed this objective" })
+    .getByRole("button", { name: "Warrior requests", exact: true })
     .click();
+  await page
+    .getByRole("button", { name: "View Warrior commission", exact: true })
+    .click();
+  await takeOpen(page);
+  await page.getByRole("button", { name: "Submit completed request" }).click();
   await page
     .getByRole("button", { name: "Objectives", exact: true })
     .first()
@@ -97,11 +100,14 @@ test("class changes update objectives and keep the previous class record", async
   page,
 }) => {
   await sample(page);
-  await page.getByRole("button", { name: /Warrior commission/ }).click();
-  await takeOpen(page);
   await page
-    .getByRole("button", { name: "I completed this objective" })
+    .getByRole("button", { name: "Warrior requests", exact: true })
     .click();
+  await page
+    .getByRole("button", { name: "View Warrior commission", exact: true })
+    .click();
+  await takeOpen(page);
+  await page.getByRole("button", { name: "Submit completed request" }).click();
   await page.getByRole("button", { name: "Class Paths", exact: true }).click();
   await enterClass(page, "Bard");
   await page.getByRole("button", { name: "Your class record" }).click();
@@ -204,7 +210,7 @@ test("monthly requests include earlier logged practice and expire at the calenda
     .click();
   await takeOpen(page);
   const claim = page.getByRole("button", {
-    name: "I completed this objective",
+    name: "Submit completed request",
     exact: true,
   });
   await expect(page.getByRole("dialog")).toContainText("12 / 12 practice days");
@@ -445,7 +451,7 @@ test("class skill purchases require multiple points and locked sections block sk
       .click();
     await takeOpen(page);
     await page
-      .getByRole("button", { name: "I completed this objective" })
+      .getByRole("button", { name: "Submit completed request" })
       .click();
   }
   await page
@@ -602,7 +608,7 @@ test("Taken requests persist and keep their original class credit after a class 
     .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
   await page
-    .getByRole("button", { name: "I completed this objective", exact: true })
+    .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
   const c = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),
@@ -631,10 +637,15 @@ test("recurring requests return as suggestions and require another manual accept
 }) => {
   await page.clock.install({ time: new Date("2026-10-20T12:00:00Z") });
   await sample(page);
-  await page.getByRole("button", { name: /Warrior commission/ }).click();
+  await page
+    .getByRole("button", { name: "Warrior requests", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "View Warrior commission", exact: true })
+    .click();
   await takeOpen(page);
   await page
-    .getByRole("button", { name: "I completed this objective", exact: true })
+    .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
   await page.clock.setSystemTime(new Date("2026-10-21T12:00:00Z"));
   await page.reload();
@@ -658,13 +669,13 @@ test("recurring requests return as suggestions and require another manual accept
     .click();
   await expect(
     page.getByRole("button", {
-      name: "I completed this objective",
+      name: "Submit completed request",
       exact: true,
     }),
   ).toHaveCount(0);
   await takeOpen(page);
   await page
-    .getByRole("button", { name: "I completed this objective", exact: true })
+    .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
   const c = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("the-guild.character.v1")!),

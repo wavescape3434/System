@@ -1,3 +1,4 @@
+import { adventureParty } from "./rpg";
 import { Swords } from "lucide-react";
 import { useState } from "react";
 import type { Character } from "./domain";
@@ -403,7 +404,10 @@ export default function WorldMap({
           {nextStage ? (
             <button
               className="pixel-stage-enter"
-              disabled={!placeOpen(data, place.id)}
+              disabled={
+                !placeOpen(data, place.id) ||
+                adventureParty(c).every((u) => u.hp === 0)
+              }
               onClick={() => update(startBattle(c, nextStage.id))}
             >
               <span>
@@ -445,6 +449,7 @@ export default function WorldMap({
             </p>
             <button
               className="pixel-primary"
+              disabled={adventureParty(c).every((u) => u.hp === 0)}
               onClick={() => update(explore(c, place.id))}
             >
               Explore {place.name}

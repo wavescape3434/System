@@ -1,3 +1,4 @@
+import { validActivityResult } from "./activity-results";
 import { findAppearance } from "./appearance-catalog";
 import { validWorld, upgradeAdventureStages } from "./world-state";
 import { PLACES } from "./world-catalog";
@@ -220,6 +221,7 @@ export function validateCharacter(x: unknown): x is Character {
         (o) =>
           (o.cadence === undefined ||
             ["daily", "weekly", "monthly"].includes(o.cadence)) &&
+          (o.result === undefined || validActivityResult(o.result)) &&
           str(o.id) &&
           str(o.title) &&
           str(o.period) &&
@@ -368,6 +370,21 @@ function validCampaign(input: unknown): boolean {
     const inv = (x: unknown) =>
       !!x && typeof x === "object" && Object.values(x).every((n) => finite(n));
     if (
+      (c.vitals !== undefined &&
+        (!c.vitals ||
+          !/^\d{4}-\d{2}-\d{2}$/.test(c.vitals.day) ||
+          !date(c.vitals.day) ||
+          !c.vitals.members ||
+          Array.isArray(c.vitals.members) ||
+          typeof c.vitals.members !== "object" ||
+          !Object.entries(c.vitals.members).every(
+            ([id, u]) =>
+              (id === "hero" || COMPANIONS.some((n) => n.id === id)) &&
+              u &&
+              [u.hp, u.mp, u.maxHp, u.maxMp].every(finite) &&
+              u.hp <= u.maxHp &&
+              u.mp <= u.maxMp,
+          ))) ||
       (c.world !== undefined && !validWorld(c.world)) ||
       !strings(c.cleared) ||
       !finite(c.gold) ||

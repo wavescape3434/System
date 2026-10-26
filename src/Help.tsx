@@ -44,7 +44,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Recovery",
-        "Each new encounter currently restores party HP and MP. Consumable use, gold, gathered materials, stage progress, and boss danger persist between encounters. Defeat awards no rewards.",
+        "HP and MP carry between encounters, retreats, retries and party changes. All party members recover at 12:00 AM in your device’s local time, including when you next reopen the app. Healing skills and supplies still work. A defeated member stays down until midnight; a rested companion can join. Defeat awards no rewards.",
       ],
     ],
   },
@@ -153,6 +153,14 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       [
         "Stat milestones",
         "Every fifth class or profession level awards increasing game stat points: 2 at level 5, 3 at level 10, 4 at level 15, and so on. Hybrid classes divide these points by their focus. Game growth rewards sustained practice and exceeds real-world change; it does not predict extra kilograms lifted or a medical improvement. Actual performance checks remain visible separately.",
+      ],
+      [
+        "Recording results",
+        "After taking a request, choose Add results (optional). Record sets and reps per set, or total reps without sets, plus exercise/variation, load, duration or distance. Mental and career work can record minutes, completed items and a short outcome. Blank fields are allowed. Results are saved with the submitted request and appear in Journey’s chronicle and separate Practice results charts. They do not add XP, change the request’s rank, update starting stats or pass a class exam. Keep different exercise variations named consistently for comparison. Repetition totals describe work volume, not maximum strength. Results are included in character backups.",
+      ],
+      [
+        "Practice credit and stacking",
+        "A completed daily request can add one qualifying practice day to each matching accepted weekly/monthly goal. Family, class or career requirements still apply. Several sessions on one day count as one practice day per goal. Calendar goals can also include earlier qualifying submissions in the same week/month, but must be taken and submitted manually before their own deadline and meet their full outcome/checklist. Adding measurements creates no extra completion or payout. Alternate ranks of one request group still pay once per period.",
       ],
       [
         "Training groups and recovery",

@@ -1,8 +1,7 @@
+import GuildWork from "./GuildWork";
 import { loginReward, claimLoginReward, LOGIN_REWARDS } from "./login-rewards";
 import { campaign } from "./rpg";
 import { examTargets } from "./exams";
-import { periodEnd } from "./calendar-goals";
-import { requestProgress } from "./training-tasks";
 import RequestBoard from "./RequestBoard";
 import ClassExams from "./ClassExams";
 import { displayAssessmentResults } from "./metrics";
@@ -48,7 +47,6 @@ import {
   activity,
   switchClass,
   hasSkill,
-  taskRequirements,
 } from "./domain";
 import { Icon, Progress, StatRadar, Tag, Empty, STAT_NAMES } from "./ui";
 export type Page =
@@ -127,14 +125,7 @@ export function Guild({ c, navigate, openObjective, update }: ScreenProps) {
     history = CLASSES.filter(
       (p) => classXP(c, p.id) > 0 || p.id === c.activeClass,
     ),
-    week = activity(c),
-    offers = objectives(c).filter(
-      (o) =>
-        o.cadence === "daily" &&
-        o.scope === "class" &&
-        o.kind !== "class-trial" &&
-        !taskRequirements(c, o).length,
-    );
+    week = activity(c);
   const cardSection = (section: string) =>
     section === "class"
       ? navigate("paths", "all")
@@ -200,6 +191,7 @@ export function Guild({ c, navigate, openObjective, update }: ScreenProps) {
           <ArrowRight size={16} />
         </button>
       </div>
+      <GuildWork c={c} navigate={navigate} openObjective={openObjective} />
       <div className="dashboard-top guild-hub-top">
         <GuildCard
           c={c}
@@ -263,108 +255,6 @@ export function Guild({ c, navigate, openObjective, update }: ScreenProps) {
           ))}
         </section>
       </div>
-      <section className="panel hub-requests">
-        <div className="section-heading">
-          <h3>
-            Taken requests <span className="tag">{requests.length}</span>
-          </h3>
-          <button
-            className="text-button"
-            onClick={() => navigate("objectives", "taken:all")}
-          >
-            Open requests <ArrowRight size={14} />
-          </button>
-        </div>
-        {requests.length ? (
-          <div className="hub-request-grid">
-            {(["daily", "weekly", "monthly"] as const).map((cadence) => {
-              const list = requests.filter((o) => o.cadence === cadence);
-              return (
-                <div className="hub-cadence" key={cadence}>
-                  <h4>
-                    {cadence === "daily"
-                      ? "Today"
-                      : cadence === "weekly"
-                        ? "This week"
-                        : "This month"}{" "}
-                    <span>{list.length}</span>
-                  </h4>
-                  {list.slice(0, 4).map((o) => {
-                    const progress = requestProgress(c, o);
-                    return (
-                      <button
-                        key={o.id}
-                        className="hub-request"
-                        onClick={() => openObjective(o)}
-                      >
-                        <Icon name={o.stat} size={18} />
-                        <span>
-                          <b>{o.title}</b>
-                          <small>
-                            {o.rank} · {o.xp} XP · {o.gold || 0} gold
-                            {cadence !== "daily"
-                              ? ` · Due ${new Date(periodEnd(cadence).getTime() - 1).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`
-                              : ""}
-                          </small>
-                          {o.minimumSessions && (
-                            <Progress
-                              value={progress.sessions}
-                              max={o.minimumSessions}
-                            />
-                          )}
-                        </span>
-                        <ChevronRight size={16} />
-                      </button>
-                    );
-                  })}
-                  {list.length > 4 && (
-                    <button
-                      className="text-button"
-                      onClick={() => navigate("objectives", `taken:${cadence}`)}
-                    >
-                      View all {list.length}
-                    </button>
-                  )}
-                  {!list.length && (
-                    <button
-                      className="hub-empty"
-                      onClick={() => navigate("objectives", `board:${cadence}`)}
-                    >
-                      Take a{" "}
-                      {cadence === "daily"
-                        ? "task"
-                        : cadence === "weekly"
-                          ? "quest"
-                          : "monthly adventure"}{" "}
-                      <Plus size={16} />
-                    </button>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <div className="hub-no-requests">
-            <p>No requests taken.</p>
-            <div className="objective-list">
-              {offers.slice(0, 3).map((o) => (
-                <ObjectiveRow
-                  key={o.id}
-                  c={c}
-                  o={o}
-                  onClick={() => openObjective(o)}
-                />
-              ))}
-            </div>
-            <button
-              className="button secondary"
-              onClick={() => navigate("objectives")}
-            >
-              Browse guild board <ArrowRight size={16} />
-            </button>
-          </div>
-        )}
-      </section>
       <section className="panel legacy-panel">
         <div className="section-heading">
           <h3>Character record</h3>

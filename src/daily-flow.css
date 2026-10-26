@@ -1,0 +1,265 @@
+.guild-work {
+  margin: 18px 0 24px;
+  padding: 18px 22px;
+}
+.guild-work-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.guild-work-links button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  text-align: left;
+  color: var(--text);
+}
+.guild-work-links button span {
+  flex: 1;
+}
+.guild-work .section-heading {
+  margin-bottom: 6px;
+}
+.guild-work .section-heading h3 {
+  margin: 0;
+}
+.guild-work-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.guild-work-row > span:first-of-type {
+  flex: 1;
+  min-width: 0;
+}
+.guild-work-row b {
+  display: block;
+  font-size: 13px;
+}
+.guild-work-row small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 4px;
+}
+.work-state {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.work-state.ready {
+  color: var(--gold);
+}
+.guild-work-empty {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.guild-work-empty svg:last-child {
+  margin-left: auto;
+}
+.request-shortcuts {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.request-shortcuts button {
+  min-height: 44px;
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+.request-shortcuts button.active {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.modal.request-paper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 18px;
+}
+.request-paper > .modal-header {
+  flex-shrink: 0;
+}
+.request-scroll {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 4px 18px;
+  scrollbar-color: #8b7049 #e8d8b3;
+}
+.request-actions {
+  flex-shrink: 0;
+  border-top: 1px solid #9d805b;
+  padding-top: 10px;
+  background: #f5e7c4;
+}
+.request-actions .button {
+  min-height: 46px;
+}
+.request-action-status {
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  color: #534024;
+}
+.request-actions .release-request {
+  min-height: 38px;
+  margin: 4px 0 0;
+}
+.activity-results {
+  margin: 12px 0 18px;
+  padding: 14px;
+  border: 1px solid #a58b65;
+  background: #fff8df66;
+  scroll-margin-top: 8px;
+}
+.activity-results h3 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+.activity-results h3 small {
+  font: 12px var(--sans);
+  margin-left: 6px;
+}
+.result-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.result-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  min-width: 0;
+}
+.result-fields input,
+.result-fields textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  color: #332718;
+  background: #fff8e7;
+  border: 1px solid #9d805b;
+  padding: 10px;
+  border-radius: 3px;
+}
+.result-fields input::placeholder,
+.result-fields textarea::placeholder {
+  color: #786748;
+}
+.result-wide {
+  grid-column: 1 / -1;
+}
+.request-paper .result-toggle {
+  color: #534024;
+  min-height: 44px;
+  text-decoration: underline;
+}
+.practice-credit {
+  padding: 12px;
+  border: 1px solid #a58b65;
+  font-size: 12px;
+}
+.practice-credit ul {
+  margin: 7px 0 0;
+  padding-left: 18px;
+}
+.party-resources {
+  border: 1px solid #66768a;
+  background: #101c45;
+  color: #f3eed8;
+  padding: 14px;
+  margin: 12px 0 18px;
+}
+.resource-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 15px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.resource-heading span {
+  color: #c6d4d5;
+  font-size: 11px;
+}
+.resource-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.resource-members > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 10px;
+  font-size: 11px;
+}
+.resource-members b {
+  grid-column: 1 / -1;
+  color: #f3d68c;
+  font-size: 12px;
+}
+.resource-down {
+  color: #f4a6a3;
+}
+.party-resources p {
+  color: #d8e0df;
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .guild-work {
+    padding: 14px;
+    margin-top: 12px;
+  }
+  .guild-work-links {
+    gap: 6px;
+  }
+  .guild-work-links button {
+    font-size: 11px;
+    padding: 8px;
+  }
+  .guild-work-row b {
+    font-size: 12px;
+  }
+  .modal.request-paper {
+    padding: 22px 18px 12px;
+    max-height: calc(100dvh - 24px);
+  }
+  .request-paper .modal-header h2 {
+    font-size: 28px;
+  }
+  .request-paper .modal-header {
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+  }
+  .request-action-status {
+    font-size: 11px;
+  }
+  .activity-results {
+    padding: 10px;
+  }
+  .resource-members {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+
+.saved-result p {
+  overflow-wrap: anywhere;
+}

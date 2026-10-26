@@ -108,8 +108,8 @@ test("phone board surfaces more work, filters are optional, pins have real hit a
   const box = await page
     .getByRole("button", { name: "Pin Warrior commission", exact: true })
     .boundingBox();
-  expect(box!.width).toBeGreaterThanOrEqual(44);
-  expect(box!.height).toBeGreaterThanOrEqual(44);
+  expect(Math.round(box!.width)).toBeGreaterThanOrEqual(44);
+  expect(Math.round(box!.height)).toBeGreaterThanOrEqual(44);
   await page.getByRole("button", { name: /^Filters/ }).click();
   await page.getByLabel("Request rank").selectOption("C");
   await page

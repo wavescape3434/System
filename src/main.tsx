@@ -22,3 +22,5 @@ import "./appearance.css";
 import "./request-presentation.css";
 import "./atlas-update.css";
 import "./combat-update.css";
+
+import "./daily-flow.css";

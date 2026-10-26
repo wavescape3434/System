@@ -1,5 +1,11 @@
 import type { Character } from "./domain";
-import { campaign, startBattle, claimVictory, ENCOUNTERS } from "./rpg";
+import {
+  campaign,
+  startBattle,
+  claimVictory,
+  ENCOUNTERS,
+  adventureParty,
+} from "./rpg";
 import {
   PLACES,
   TOWNS,
@@ -44,7 +50,13 @@ export function explore(
 ): Character {
   const data = campaign(c),
     p = PLACES.find((p) => p.id === id);
-  if (!p || !placeOpen(data, id) || !placeCleared(data, id) || !ready(c))
+  if (
+    !p ||
+    !placeOpen(data, id) ||
+    !placeCleared(data, id) ||
+    !ready(c) ||
+    adventureParty(c, now).every((u) => u.hp === 0)
+  )
     return c;
   let world = worldOf(c);
   const before = placeProgress(world, id),
@@ -135,7 +147,7 @@ export function explore(
   };
   const next = save(c, world, inventory, gold);
   return event.kind === "encounter" || event.kind === "ambush"
-    ? startBattle(next, event.encounterId!)
+    ? startBattle(next, event.encounterId!, now)
     : next;
 }
 export function declineBoss(c: Character, id: string): Character {
@@ -162,7 +174,12 @@ export function declineBoss(c: Character, id: string): Character {
 export function challengeBoss(c: Character, id: string): Character {
   const world = worldOf(c),
     area = placeProgress(world, id);
-  if (!ready(c) || !area.pendingBoss) return c;
+  if (
+    !ready(c) ||
+    !area.pendingBoss ||
+    adventureParty(c).every((u) => u.hp === 0)
+  )
+    return c;
   const event: ExplorationEvent = {
     id: crypto.randomUUID(),
     at: new Date().toISOString(),
@@ -222,7 +239,7 @@ export function continueAdventure(
     place = PLACES.find((p) => p.id === encounter.placeId)!;
   const stage = place.stages.find((id) => !data.cleared.includes(id));
   return encounter.kind === "stage" && stage
-    ? startBattle(next, stage)
+    ? startBattle(next, stage, now)
     : explore(next, place.id, random, now);
 }
 export function returnToMap(c: Character): Character {

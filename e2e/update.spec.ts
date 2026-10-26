@@ -178,10 +178,15 @@ test("phone header remains fixed while scrolling and notifications offer rewards
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await sample(page);
-  await page.getByRole("button", { name: /Warrior commission/ }).click();
+  await page
+    .getByRole("button", { name: "Warrior requests", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "View Warrior commission", exact: true })
+    .click();
   await page.getByRole("button", { name: "Take request", exact: true }).click();
   await page
-    .getByRole("button", { name: "I completed this objective", exact: true })
+    .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
   await page.evaluate(() => window.scrollTo(0, 900));
   const box = await page.locator(".topbar").boundingBox();

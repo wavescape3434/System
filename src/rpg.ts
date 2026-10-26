@@ -21,7 +21,7 @@ import type { WorldState } from "./world-state";
 import { classPower } from "./class-catalog";
 import { COMBAT_EFFECTS } from "./class-roles";
 import type { Character, Stats } from "./domain";
-import { stats, currentPath, adventurerXP, level } from "./domain";
+import { stats, currentPath, adventurerXP, level, period } from "./domain";
 import { SKILLS } from "./skill-catalog";
 import {
   combatFamily,
@@ -29,7 +29,15 @@ import {
   resolvedLoadout,
 } from "./combat-progression";
 import { openingTactics, chargedAttack } from "./enemy-tactics";
+export interface AdventureVitals {
+  day: string;
+  members: Record<
+    string,
+    { hp: number; mp: number; maxHp: number; maxMp: number }
+  >;
+}
 export interface Campaign {
+  vitals?: AdventureVitals;
   cleared: string[];
   gold: number;
   trainingGoldAccrued?: number;
@@ -218,9 +226,32 @@ export function newCampaign(): Campaign {
     equippedSkills: [],
   };
 }
-export const campaign = (c: Character): Campaign => {
-  const data = c.campaign || newCampaign(),
-    earned = progressionLedger(c).gold;
+export const campaign = (c: Character, now = new Date()): Campaign => {
+  let data = c.campaign || newCampaign();
+  const day = period("daily", now);
+  const old = data.vitals || {
+    day,
+    members: Object.fromEntries(
+      (data.battle?.party || []).map((u) => [u.id, vitalRecord(u)]),
+    ),
+  };
+  if (day > old.day) {
+    const members: AdventureVitals["members"] = {};
+    const battle = data.battle
+      ? {
+          ...data.battle,
+          party: data.battle.party.map((u) => ({
+            ...u,
+            hp: u.maxHp,
+            mp: u.maxMp,
+          })),
+        }
+      : undefined;
+    if (battle?.phase === "player" && data.battle!.party[battle.actor].hp === 0)
+      battle.actor = 0;
+    data = { ...data, vitals: { day, members }, ...(battle ? { battle } : {}) };
+  } else if (!data.vitals) data = { ...data, vitals: old };
+  const earned = progressionLedger(c).gold;
   return {
     ...data,
     equippedSkills: resolvedLoadout(
@@ -352,14 +383,28 @@ const enemyNames = MONSTER_NAMES;
 export function encounterAvailable(c: Character, id: string): boolean {
   return worldEncounterOpen(campaign(c), id);
 }
-export function startBattle(c: Character, id: string): Character {
+function vitalRecord(u: Unit) {
+  return { hp: u.hp, mp: u.mp, maxHp: u.maxHp, maxMp: u.maxMp };
+}
+function storeVitals(data: Campaign, party: Unit[]): AdventureVitals {
+  return {
+    day: data.vitals!.day,
+    members: {
+      ...data.vitals!.members,
+      ...Object.fromEntries(party.map((u) => [u.id, vitalRecord(u)])),
+    },
+  };
+}
+export function refreshAdventure(c: Character, now = new Date()): Character {
   if (
-    !encounterAvailable(c, id) ||
-    campaign(c).battle?.phase === "player" ||
-    (campaign(c).battle?.phase === "won" && !campaign(c).battle?.claimed)
+    !c.campaign ||
+    (c.campaign.vitals && c.campaign.vitals.day >= period("daily", now))
   )
     return c;
-  const e = ENCOUNTERS.find((x) => x.id === id)!,
+  return { ...c, campaign: campaign(c, now) };
+}
+export function adventureParty(c: Character, now = new Date()): Unit[] {
+  const data = campaign(c, now),
     s = combatAttributes(c),
     lv = level(adventurerXP(c)),
     path = currentPath(c),
@@ -470,6 +515,33 @@ export function startBattle(c: Character, id: string): Character {
         },
       ];
     });
+  return [hero, ...companions].map((u) => {
+    const saved = data.vitals!.members[u.id];
+    return saved
+      ? {
+          ...u,
+          hp: Math.min(u.maxHp, saved.hp),
+          mp: Math.min(u.maxMp, saved.mp),
+        }
+      : u;
+  });
+}
+export function startBattle(
+  c: Character,
+  id: string,
+  now = new Date(),
+): Character {
+  const data = campaign(c, now);
+  if (
+    !encounterAvailable(c, id) ||
+    data.battle?.phase === "player" ||
+    (data.battle?.phase === "won" && !data.battle.claimed)
+  )
+    return c;
+  const party = adventureParty(c, now);
+  const actor = party.findIndex((u) => u.hp > 0);
+  if (actor < 0) return c;
+  const e = ENCOUNTERS.find((x) => x.id === id)!;
   const enemies = e.enemies.map((kind, i) => {
     const boss = BOSS_KINDS.has(kind),
       hp = (boss ? 105 : 38) + e.tier * (boss ? 28 : 12);
@@ -493,9 +565,9 @@ export function startBattle(c: Character, id: string): Character {
   });
   let battle: Battle = {
     encounterId: id,
-    party: [hero, ...companions],
+    party,
     enemies,
-    actor: 0,
+    actor,
     round: 1,
     phase: "player",
     log: [`Battle started: ${e.name}.`],
@@ -503,7 +575,6 @@ export function startBattle(c: Character, id: string): Character {
     claimed: false,
     source: { placeId: e.placeId, kind: e.kind },
   };
-  const data = campaign(c);
   if (
     data.world?.areas[e.placeId]?.last?.kind === "ambush" &&
     data.world.areas[e.placeId].last?.encounterId === id
@@ -517,6 +588,7 @@ export function startBattle(c: Character, id: string): Character {
     campaign: {
       ...data,
       battle,
+      vitals: storeVitals(data, battle.party),
       ...(data.world
         ? {
             world: {
@@ -778,14 +850,20 @@ export function enemyVolley(b: Battle): Battle {
   b.log = b.log.slice(-30);
   return b;
 }
-export function act(c: Character, action: Action): Character {
-  const old = campaign(c).battle;
+export function act(c: Character, action: Action, now = new Date()): Character {
+  const data = campaign(c, now);
+  const old = data.battle;
   if (!old) return c;
   const battle = takeAction(old, action);
   if (old === battle) return c;
   return {
     ...c,
-    campaign: { ...campaign(c), battle, inventory: { ...battle.items } },
+    campaign: {
+      ...data,
+      battle,
+      vitals: storeVitals(data, battle.party),
+      inventory: { ...battle.items },
+    },
   };
 }
 export function claimVictory(c: Character): Character {

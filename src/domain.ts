@@ -205,6 +205,7 @@ export interface TakenRequest extends Objective {
   vocationId?: string;
 }
 export interface Completion {
+  result?: import("./activity-results").ActivityResult;
   gold?: number;
   requestGroup?: string;
   bonusXP?: number;

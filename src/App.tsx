@@ -1,3 +1,13 @@
+import { refreshAdventure } from "./rpg";
+import ActivityResultForm from "./ActivityResultForm";
+import {
+  EMPTY_RESULT,
+  parseResult,
+  resultDraft,
+  resultSummary,
+  completeWithResult,
+  creditedGoals,
+} from "./activity-results";
 import { progressionChanged } from "./progression-ledger";
 import { upgradeAdventureStages } from "./world-state";
 import RequestInstructions from "./RequestInstructions";
@@ -52,7 +62,6 @@ import {
 } from "lucide-react";
 import type { Character, Objective } from "./domain";
 import {
-  completeTaken,
   takeRequest,
   releaseRequest,
   isTaken,
@@ -185,6 +194,8 @@ export default function App() {
     [dialog, setDialog] = useState<Dialog>(null),
     [objective, setObjective] = useState<Objective | null>(null),
     [checked, setChecked] = useState<number[]>([]),
+    [resultsOpen, setResultsOpen] = useState(false),
+    [draft, setDraft] = useState({ ...EMPTY_RESULT }),
     [toast, setToast] = useState(""),
     [user, setUser] = useState<User | null>(null),
     [menu, setMenu] = useState(false),
@@ -206,6 +217,7 @@ export default function App() {
     );
     const resume = NativeApp.addListener("appStateChange", ({ isActive }) => {
       if (isActive) {
+        window.dispatchEvent(new Event("focus"));
         forgetReminderSchedule();
         if (characterRef.current)
           void syncReminders(characterRef.current).catch(() => {
@@ -285,9 +297,10 @@ export default function App() {
         const migrated = upgradeAdventureStages(
           upgradeCalendar(upgradeBalance(upgradeExams(upgradeTraining(next)))),
         );
-        const prepared = progressionChanged(characterRef.current, migrated)
-          ? awardSkills(migrated)
-          : migrated;
+        const rested = refreshAdventure(migrated);
+        const prepared = progressionChanged(characterRef.current, rested)
+          ? awardSkills(rested)
+          : rested;
         const awarded = track
           ? recordJourney(characterRef.current, prepared)
           : prepared;
@@ -304,6 +317,39 @@ export default function App() {
     },
     [notify],
   );
+  useEffect(() => {
+    const check = () => {
+      const current = characterRef.current;
+      if (!current) return;
+      const refreshed = refreshAdventure(current);
+      if (refreshed !== current) update(refreshed, false);
+      tick((n) => n + 1);
+    };
+    const schedule = () => {
+      const now = new Date(),
+        midnight = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() + 1,
+        );
+      return setTimeout(
+        () => {
+          check();
+          timer = schedule();
+        },
+        midnight.getTime() - now.getTime() + 50,
+      );
+    };
+    check();
+    let timer = schedule();
+    window.addEventListener("focus", check);
+    document.addEventListener("visibilitychange", check);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("focus", check);
+      document.removeEventListener("visibilitychange", check);
+    };
+  }, [update]);
   const navigate = (p: Page, target?: string) => {
     setSection(target);
     setPage(p);
@@ -320,6 +366,11 @@ export default function App() {
       : input;
     setChecked(c?.milestones[`${o.id}:${objectivePeriod(o)}`] || []);
     setObjective(o);
+    const saved = c?.completions.find(
+      (x) => x.id === o.id && x.period === objectivePeriod(o),
+    )?.result;
+    setDraft(resultDraft(saved, c?.preferences?.units === "imperial"));
+    setResultsOpen(!!saved);
   };
   const run = async (fn: () => Promise<void>) => {
     setBusy(true);
@@ -356,6 +407,22 @@ export default function App() {
     ? { c, update, navigate, openObjective, notify, section }
     : null;
   const active = PAGES.find((p) => p.id === page)!;
+  const parsedResult = parseResult(draft, preferences.units === "imperial");
+  const objectiveDone = !!(c && objective && isComplete(c, objective));
+  const objectiveTaken = !!(c && objective && isTaken(c, objective));
+  const objectiveBlocks =
+    c && objective && !objectiveDone
+      ? taskRequirements(
+          c,
+          objective,
+          new Date(),
+          objectiveTaken ? "complete" : "accept",
+        )
+      : [];
+  const checklistRemaining = objective?.checklist
+    ? objective.checklist.length - checked.length
+    : 0;
+  const goalCredits = c && objective ? creditedGoals(c, objective) : [];
   return (
     <>
       {recovery ? (
@@ -667,308 +734,377 @@ export default function App() {
           title={objective.groupTitle || objective.title}
           onClose={close}
         >
-          <div className="request-paper-heading">
-            <Crest small />
-            <span>
-              {objective.cadence === "daily"
-                ? "DAILY TASK"
-                : objective.cadence === "weekly"
-                  ? "WEEKLY QUEST"
-                  : "MONTHLY ADVENTURE"}
-              <b>{objective.category}</b>
-            </span>
-            <span className="request-wax-seal" aria-hidden="true">
-              {objective.rank || "F"}
-            </span>
-          </div>
-          {objective.groupTitle && objective.groupTitle !== objective.title && (
-            <p className="request-variant-title">{objective.title}</p>
-          )}
-          {(() => {
-            const variants =
-              groupRequests(objectives(c)).find(
-                (g) => g.id === objective.requestGroup,
-              )?.variants || [];
-            return variants.length > 1 ? (
-              <div className="request-rank-picker">
-                <label>
-                  Rank
-                  <select
-                    aria-label="Choose request rank"
-                    value={objective.id}
-                    disabled={isTaken(c, objective) || isComplete(c, objective)}
-                    onChange={(e) => {
-                      const o = variants.find((o) => o.id === e.target.value)!;
-                      setObjective(o);
-                      setChecked(
-                        c.milestones[`${o.id}:${objectivePeriod(o)}`] || [],
-                      );
-                    }}
-                  >
-                    {variants.map((o) => (
-                      <option key={o.id} value={o.id}>
-                        {o.rank} · {o.xp} XP · {o.gold} gold · {o.minutes}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <div className="rank-picker-names">
-                  {variants.map((o) => (
-                    <span
-                      key={o.id}
-                      className={o.id === objective.id ? "selected" : ""}
+          <div className="request-scroll">
+            <div className="request-paper-heading">
+              <Crest small />
+              <span>
+                {objective.cadence === "daily"
+                  ? "DAILY TASK"
+                  : objective.cadence === "weekly"
+                    ? "WEEKLY QUEST"
+                    : "MONTHLY ADVENTURE"}
+                <b>{objective.category}</b>
+              </span>
+              <span className="request-wax-seal" aria-hidden="true">
+                {objective.rank || "F"}
+              </span>
+            </div>
+            {objective.groupTitle &&
+              objective.groupTitle !== objective.title && (
+                <p className="request-variant-title">{objective.title}</p>
+              )}
+            {(() => {
+              const variants =
+                groupRequests(objectives(c)).find(
+                  (g) => g.id === objective.requestGroup,
+                )?.variants || [];
+              return variants.length > 1 ? (
+                <div className="request-rank-picker">
+                  <label>
+                    Rank
+                    <select
+                      aria-label="Choose request rank"
+                      value={objective.id}
+                      disabled={
+                        isTaken(c, objective) || isComplete(c, objective)
+                      }
+                      onChange={(e) => {
+                        const o = variants.find(
+                          (o) => o.id === e.target.value,
+                        )!;
+                        setObjective(o);
+                        setChecked(
+                          c.milestones[`${o.id}:${objectivePeriod(o)}`] || [],
+                        );
+                        setDraft({ ...EMPTY_RESULT });
+                        setResultsOpen(false);
+                      }}
                     >
-                      {o.rank} · {o.title}
-                    </span>
-                  ))}
+                      {variants.map((o) => (
+                        <option key={o.id} value={o.id}>
+                          {o.rank} · {o.xp} XP · {o.gold} gold · {o.minutes}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
                 </div>
-              </div>
-            ) : null;
-          })()}
-          {objective.calendarBound && (
-            <Tag>
-              {periodStart(objective.cadence).toLocaleDateString()} –{" "}
-              {new Date(
-                periodEnd(objective.cadence).getTime() - 1,
-              ).toLocaleDateString()}
-            </Tag>
-          )}
-          {(() => {
-            const id =
-                objective.adventureRequirement ||
-                objective.adventureBonus?.contractId,
-              contract = WORLD_CONTRACTS.find((r) => r.id === id);
-            if (!contract) return null;
-            const done = adventureConditionMet(
-              c,
-              contract.id,
-              objective.cadence,
-            );
-            return (
-              <div className="hybrid-requirement">
-                <b>
-                  {objective.adventureRequirement
-                    ? "Required adventure request"
-                    : "Adventure bonus"}{" "}
-                  · {done ? "Complete" : "Pending"}
-                </b>
-                <p>
-                  {contract.title} ·{" "}
-                  {TOWNS.find((t) => t.id === contract.town)!.name}
-                </p>
-                {objective.adventureBonus && (
-                  <Tag>
-                    +{objective.adventureBonus.xp} XP · +
-                    {objective.adventureBonus.gold} gold
-                    {adventureBonus(c, objective) ? " · Ready" : ""}
-                  </Tag>
-                )}
-              </div>
-            );
-          })()}
-          <div className="objective-modal-meta">
-            <Tag>
-              <Icon name={objective.stat} size={16} /> {objective.stat} ·{" "}
-              {STAT_NAMES[objective.stat]}
-            </Tag>
-            <Tag>{objective.category}</Tag>
-            {objective.rank && <Tag tone="gold">{objective.rank} rank</Tag>}
-            <Tag tone="gold">+{objective.xp} player XP</Tag>
-            {objective.gold !== undefined && (
-              <Tag tone="gold">+{objective.gold} gold</Tag>
+              ) : null;
+            })()}
+            {objective.calendarBound && (
+              <Tag>
+                {periodStart(objective.cadence).toLocaleDateString()} –{" "}
+                {new Date(
+                  periodEnd(objective.cadence).getTime() - 1,
+                ).toLocaleDateString()}
+              </Tag>
             )}
-            <span>{objective.minutes}</span>
-          </div>
-          <RequestInstructions objective={objective} c={c} />
-          {isTaken(c, objective) &&
-            (objective.minimumDays || objective.minimumSessions) &&
-            (() => {
-              const progress = requestProgress(c, objective);
+            {(() => {
+              const id =
+                  objective.adventureRequirement ||
+                  objective.adventureBonus?.contractId,
+                contract = WORLD_CONTRACTS.find((r) => r.id === id);
+              if (!contract) return null;
+              const done = adventureConditionMet(
+                c,
+                contract.id,
+                objective.cadence,
+              );
               return (
-                <div className="request-credit-preview">
-                  {progress.startedAt && (
+                <div className="hybrid-requirement">
+                  <b>
+                    {objective.adventureRequirement
+                      ? "Required adventure request"
+                      : "Adventure bonus"}{" "}
+                    · {done ? "Complete" : "Pending"}
+                  </b>
+                  <p>
+                    {contract.title} ·{" "}
+                    {TOWNS.find((t) => t.id === contract.town)!.name}
+                  </p>
+                  {objective.adventureBonus && (
                     <Tag>
-                      {objective.calendarBound ? "Period start " : "Started "}{" "}
-                      {new Date(progress.startedAt).toLocaleDateString()}
+                      +{objective.adventureBonus.xp} XP · +
+                      {objective.adventureBonus.gold} gold
+                      {adventureBonus(c, objective) ? " · Ready" : ""}
                     </Tag>
-                  )}
-                  {objective.minimumDays && (
-                    <Tag>
-                      {Math.min(progress.days, objective.minimumDays)} /{" "}
-                      {objective.minimumDays} days
-                    </Tag>
-                  )}
-                  {objective.minimumSessions && (
-                    <Tag>
-                      {Math.min(progress.sessions, objective.minimumSessions)} /{" "}
-                      {objective.minimumSessions} practice days
-                    </Tag>
-                  )}
-                  {objective.calendarBound ? (
-                    <Tag>
-                      {objective.cadence === "weekly"
-                        ? "This week"
-                        : "This month"}
-                    </Tag>
-                  ) : (
-                    objective.persistent && <Tag>Saved across months</Tag>
                   )}
                 </div>
               );
             })()}
-          {objective.taskVersion === 2 && (
-            <details className="request-credit-distribution">
-              <summary>Progression credit</summary>
-              <div className="request-credit-preview">
-                <Tag>
-                  {objective.scope || "class"} +{objective.xp} XP
-                </Tag>
-                {Object.entries(
-                  classCreditRewards(
-                    c,
-                    objective,
-                    objective.targetClass ||
-                      c.takenRequests?.find((r) => r.id === objective.id)
-                        ?.classId ||
-                      c.activeClass,
-                  ),
-                ).map(([id, xp]) => (
-                  <Tag key={id}>
-                    {id.replaceAll("-", " ")} +{xp} XP
-                  </Tag>
-                ))}
-                {(() => {
-                  const request = c.takenRequests?.find(
-                    (r) => r.id === objective.id,
-                  );
-                  const credit = universalCareerCredits(
-                    c,
-                    objective,
-                    request?.profession || c.profession,
-                    request ? request.vocationId : c.vocation,
-                  );
-                  return (
-                    <>
-                      {credit.professionCredit && (
-                        <Tag>
-                          {credit.professionCredit.name} +
-                          {credit.professionCredit.xp} XP
-                        </Tag>
-                      )}
-                      {credit.vocationCredit && (
-                        <Tag>Vocation +{credit.vocationCredit.xp} XP</Tag>
-                      )}
-                    </>
-                  );
-                })()}
-              </div>
-            </details>
-          )}
-          {objective.taskVersion === 2 &&
-            taskRequirements(c, objective).length > 0 && (
-              <ul className="skill-requirements">
-                {taskRequirements(c, objective).map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-            )}
-          {objective.statReward && (
-            <div className="notice">
-              Special reward: +{objective.statReward.amount} base{" "}
-              {objective.statReward.stat} on completion.
-            </div>
-          )}
-          {!isComplete(c, objective) && objective.checklist && (
-            <CheckList
-              items={objective.checklist}
-              checked={checked}
-              setChecked={(items) => {
-                if (
-                  update({
-                    ...c,
-                    milestones: {
-                      ...c.milestones,
-                      [`${objective.id}:${objectivePeriod(objective)}`]: items,
-                    },
-                  })
-                )
-                  setChecked(items);
-              }}
-            />
-          )}
-          {((!isTaken(c, objective) && !isComplete(c, objective)) ||
-            (objective.persistent && isComplete(c, objective))) && (
-            <button
-              className="button primary full"
-              disabled={
-                objective.taskVersion === 2 &&
-                taskRequirements(c, objective, new Date(), "accept").length > 0
-              }
-              onClick={() => {
-                const next = takeRequest(c, objective.id);
-                if (update(next)) {
-                  const accepted = takenObjectives(next).find(
-                    (o) => o.id === objective.id,
-                  );
-                  if (accepted) {
-                    setObjective(accepted);
-                    setChecked(
-                      next.milestones[
-                        `${accepted.id}:${objectivePeriod(accepted)}`
-                      ] || [],
-                    );
-                  }
-                  notify("Request taken.");
-                }
-              }}
-            >
-              <BookmarkPlus size={17} />
-              {objective.persistent && isComplete(c, objective)
-                ? "Take again"
-                : "Take request"}
-            </button>
-          )}
-          {(isTaken(c, objective) || isComplete(c, objective)) && (
-            <button
-              className="button primary full"
-              disabled={
-                (objective.taskVersion === 2 &&
-                  taskRequirements(c, objective).length > 0) ||
-                isComplete(c, objective) ||
-                (!!objective.checklist &&
-                  checked.length < objective.checklist.length)
-              }
-              onClick={() => {
-                const next = completeTaken(c, objective);
-                if (next === c || !update(next)) return;
-                const reward = next.completions.at(-1)!;
-                notify(
-                  `+${reward.xp} XP · +${reward.gold || 0} gold. Progress saved.`,
-                );
-                close();
-              }}
-            >
-              {isComplete(c, objective) ? (
-                <>
-                  <CheckCircle2 size={18} /> Already completed this period
-                </>
-              ) : (
-                <>
-                  I completed this objective <Check size={18} />
-                </>
+            <div className="objective-modal-meta">
+              <Tag>
+                <Icon name={objective.stat} size={16} /> {objective.stat} ·{" "}
+                {STAT_NAMES[objective.stat]}
+              </Tag>
+              <Tag>{objective.category}</Tag>
+              {objective.rank && <Tag tone="gold">{objective.rank} rank</Tag>}
+              <Tag tone="gold">+{objective.xp} player XP</Tag>
+              {objective.gold !== undefined && (
+                <Tag tone="gold">+{objective.gold} gold</Tag>
               )}
-            </button>
-          )}
-          {isTaken(c, objective) && !isComplete(c, objective) && (
-            <button
-              className="text-button release-request"
-              onClick={() => {
-                if (update(releaseRequest(c, objective.id))) close();
-              }}
-            >
-              Release request
-            </button>
-          )}
+              <span>{objective.minutes}</span>
+            </div>
+            {objectiveTaken && !objectiveDone && (
+              <>
+                <button
+                  className="text-button result-toggle"
+                  aria-expanded={resultsOpen}
+                  onClick={() => setResultsOpen(!resultsOpen)}
+                >
+                  {resultsOpen ? "Hide results" : "Add results (optional)"}
+                </button>
+                {resultsOpen && (
+                  <ActivityResultForm
+                    o={objective}
+                    draft={draft}
+                    onChange={setDraft}
+                    imperial={preferences.units === "imperial"}
+                    error={parsedResult.error}
+                  />
+                )}
+              </>
+            )}
+            {objectiveDone &&
+              c.completions.find(
+                (x) =>
+                  x.id === objective.id &&
+                  x.period === objectivePeriod(objective),
+              )?.result && (
+                <div className="saved-result">
+                  <b>Recorded results</b>
+                  <p>
+                    {resultSummary(
+                      c.completions.find(
+                        (x) =>
+                          x.id === objective.id &&
+                          x.period === objectivePeriod(objective),
+                      )?.result,
+                      preferences.units === "imperial",
+                    )}
+                  </p>
+                </div>
+              )}
+            {!isComplete(c, objective) && objective.checklist && (
+              <CheckList
+                items={objective.checklist}
+                checked={checked}
+                setChecked={(items) => {
+                  if (
+                    update({
+                      ...c,
+                      milestones: {
+                        ...c.milestones,
+                        [`${objective.id}:${objectivePeriod(objective)}`]:
+                          items,
+                      },
+                    })
+                  )
+                    setChecked(items);
+                }}
+              />
+            )}
+            <RequestInstructions objective={objective} c={c} />
+            {isTaken(c, objective) &&
+              (objective.minimumDays || objective.minimumSessions) &&
+              (() => {
+                const progress = requestProgress(c, objective);
+                return (
+                  <div className="request-credit-preview">
+                    {progress.startedAt && (
+                      <Tag>
+                        {objective.calendarBound ? "Period start " : "Started "}{" "}
+                        {new Date(progress.startedAt).toLocaleDateString()}
+                      </Tag>
+                    )}
+                    {objective.minimumDays && (
+                      <Tag>
+                        {Math.min(progress.days, objective.minimumDays)} /{" "}
+                        {objective.minimumDays} days
+                      </Tag>
+                    )}
+                    {objective.minimumSessions && (
+                      <Tag>
+                        {Math.min(progress.sessions, objective.minimumSessions)}{" "}
+                        / {objective.minimumSessions} practice days
+                      </Tag>
+                    )}
+                    {objective.calendarBound ? (
+                      <Tag>
+                        {objective.cadence === "weekly"
+                          ? "This week"
+                          : "This month"}
+                      </Tag>
+                    ) : (
+                      objective.persistent && <Tag>Saved across months</Tag>
+                    )}
+                  </div>
+                );
+              })()}
+            {objective.taskVersion === 2 && (
+              <details className="request-credit-distribution">
+                <summary>Progression credit</summary>
+                <div className="request-credit-preview">
+                  <Tag>
+                    {objective.scope || "class"} +{objective.xp} XP
+                  </Tag>
+                  {Object.entries(
+                    classCreditRewards(
+                      c,
+                      objective,
+                      objective.targetClass ||
+                        c.takenRequests?.find((r) => r.id === objective.id)
+                          ?.classId ||
+                        c.activeClass,
+                    ),
+                  ).map(([id, xp]) => (
+                    <Tag key={id}>
+                      {id.replaceAll("-", " ")} +{xp} XP
+                    </Tag>
+                  ))}
+                  {(() => {
+                    const request = c.takenRequests?.find(
+                      (r) => r.id === objective.id,
+                    );
+                    const credit = universalCareerCredits(
+                      c,
+                      objective,
+                      request?.profession || c.profession,
+                      request ? request.vocationId : c.vocation,
+                    );
+                    return (
+                      <>
+                        {credit.professionCredit && (
+                          <Tag>
+                            {credit.professionCredit.name} +
+                            {credit.professionCredit.xp} XP
+                          </Tag>
+                        )}
+                        {credit.vocationCredit && (
+                          <Tag>Vocation +{credit.vocationCredit.xp} XP</Tag>
+                        )}
+                      </>
+                    );
+                  })()}
+                </div>
+              </details>
+            )}
+            {objective.taskVersion === 2 &&
+              taskRequirements(c, objective).length > 0 && (
+                <ul className="skill-requirements">
+                  {taskRequirements(c, objective).map((s) => (
+                    <li key={s}>{s}</li>
+                  ))}
+                </ul>
+              )}
+            {objective.statReward && (
+              <div className="notice">
+                Special reward: +{objective.statReward.amount} base{" "}
+                {objective.statReward.stat} on completion.
+              </div>
+            )}
+            {goalCredits.length > 0 && (
+              <div className="practice-credit">
+                <b>Practice credit</b>
+                <ul>
+                  {goalCredits.map((goal) => (
+                    <li key={goal.id}>{goal.title} · +1 practice day</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+          <footer className="request-actions" aria-label="Request actions">
+            {!objectiveDone && (
+              <div className="request-action-status" role="status">
+                {objectiveTaken
+                  ? objectiveBlocks[0] ||
+                    (checklistRemaining > 0
+                      ? `Checklist: ${checked.length}/${objective.checklist!.length}`
+                      : parsedResult.error || "Ready to submit")
+                  : objectiveBlocks[0] ||
+                    `${objective.xp} XP · ${objective.gold || 0} gold`}
+              </div>
+            )}
+            {((!isTaken(c, objective) && !isComplete(c, objective)) ||
+              (objective.persistent && isComplete(c, objective))) && (
+              <button
+                className="button primary full"
+                disabled={
+                  objective.taskVersion === 2 &&
+                  taskRequirements(c, objective, new Date(), "accept").length >
+                    0
+                }
+                onClick={() => {
+                  const next = takeRequest(c, objective.id);
+                  if (update(next)) {
+                    const accepted = takenObjectives(next).find(
+                      (o) => o.id === objective.id,
+                    );
+                    if (accepted) {
+                      setObjective(accepted);
+                      setChecked(
+                        next.milestones[
+                          `${accepted.id}:${objectivePeriod(accepted)}`
+                        ] || [],
+                      );
+                    }
+                    notify("Request taken.");
+                  }
+                }}
+              >
+                <BookmarkPlus size={17} />
+                {objective.persistent && isComplete(c, objective)
+                  ? "Take again"
+                  : "Take request"}
+              </button>
+            )}
+            {(isTaken(c, objective) || isComplete(c, objective)) && (
+              <button
+                className="button primary full"
+                disabled={
+                  (objective.taskVersion === 2 &&
+                    taskRequirements(c, objective).length > 0) ||
+                  isComplete(c, objective) ||
+                  !!parsedResult.error ||
+                  (!!objective.checklist &&
+                    checked.length < objective.checklist.length)
+                }
+                onClick={() => {
+                  const next = completeWithResult(
+                    c,
+                    objective,
+                    parsedResult.result,
+                  );
+                  if (next === c || !update(next)) return;
+                  const reward = next.completions.at(-1)!;
+                  notify(
+                    `+${reward.xp} XP · +${reward.gold || 0} gold. Progress saved.`,
+                  );
+                  close();
+                }}
+              >
+                {isComplete(c, objective) ? (
+                  <>
+                    <CheckCircle2 size={18} /> Already completed this period
+                  </>
+                ) : (
+                  <>
+                    Submit completed request <Check size={18} />
+                  </>
+                )}
+              </button>
+            )}
+            {isTaken(c, objective) && !isComplete(c, objective) && (
+              <button
+                className="text-button release-request"
+                onClick={() => {
+                  if (update(releaseRequest(c, objective.id))) close();
+                }}
+              >
+                Release request
+              </button>
+            )}
+          </footer>
         </Modal>
       )}
       {dialog === "account" && (

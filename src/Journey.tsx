@@ -1,3 +1,4 @@
+import { activityResultHistory } from "./activity-results";
 import { useMemo, useState } from "react";
 import { performanceHistory } from "./performance-history";
 import {
@@ -57,6 +58,10 @@ export default function Journey({ c }: { c: Character }) {
   const calendar = useMemo(() => activityCalendar(c), [c, day]);
   const performance = useMemo(
     () => performanceHistory(c, report.start),
+    [c, range, day],
+  );
+  const practice = useMemo(
+    () => activityResultHistory(c, report.start),
     [c, range, day],
   );
   const max = Math.max(1, ...calendar.map((d) => d.count));
@@ -282,6 +287,35 @@ export default function Journey({ c }: { c: Character }) {
         </>
       ) : (
         <>
+          {practice.length > 0 && (
+            <section
+              className="performance-report"
+              aria-label="Practice results"
+            >
+              <div className="section-heading">
+                <h2>Practice results</h2>
+                <Tag>Recorded work</Tag>
+              </div>
+              <div className="journey-chart-grid">
+                {practice.map((series) => (
+                  <div key={series.id} className="performance-series">
+                    <div className="performance-change">
+                      <b>
+                        {series.points[0].value} → {series.points.at(-1)!.value}{" "}
+                        {series.unit}
+                      </b>
+                      <span>{series.points.length} sessions</span>
+                    </div>
+                    <ProgressChart
+                      title={series.title}
+                      unit={series.unit}
+                      points={series.points}
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
           <section
             className="performance-report"
             aria-label="Real-world performance"

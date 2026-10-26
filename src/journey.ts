@@ -1,3 +1,4 @@
+import { resultSummary } from "./activity-results";
 import type { Character } from "./domain";
 import {
   ATTRIBUTES,
@@ -62,12 +63,16 @@ export function journeyItems(c: Character): JourneyItem[] {
       kind: "completion" as const,
       title: o.title,
       xp: o.xp,
-      detail:
+      detail: [
         o.scope === "profession"
           ? o.profession
           : o.scope === "universal"
             ? "Universal"
             : CLASSES.find((p) => p.id === o.classId)?.name,
+        resultSummary(o.result, c.preferences?.units === "imperial"),
+      ]
+        .filter(Boolean)
+        .join(" · "),
     })),
     ...(c.journeyEvents || []),
     ...c.certificates.map((cert) => ({

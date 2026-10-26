@@ -221,10 +221,15 @@ test("reminder preferences persist and the notification bell does not repeat a c
   page,
 }) => {
   await sample(page);
-  await page.getByRole("button", { name: /Warrior commission/ }).click();
+  await page
+    .getByRole("button", { name: "Warrior requests", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "View Warrior commission", exact: true })
+    .click();
   await page.getByRole("button", { name: "Take request", exact: true }).click();
   await page
-    .getByRole("button", { name: "I completed this objective", exact: true })
+    .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
   await page.getByLabel("Notifications", { exact: true }).click();
   await expect(page.getByRole("dialog")).not.toContainText(

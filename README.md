@@ -6,7 +6,7 @@ An Android app for real-world objectives, class and profession progression, bran
 
 ## Try it
 
-Download the prebuilt [Android APK](downloads/the-guild-debug.apk?raw=true), or open the [download instructions](downloads/README.md). Browse the [phone hub](docs/screenshots/guild-actions-mobile.png), [battle preview](docs/screenshots/battle-polished.png), and [screenshot gallery](docs/screenshots/README.md).
+Download the prebuilt [Android APK](downloads/the-guild-debug.apk?raw=true), or open the [download instructions](downloads/README.md). Browse the [phone hub](docs/screenshots/daily-hub-mobile.png), [battle preview](docs/screenshots/battle-polished.png), and [screenshot gallery](docs/screenshots/README.md).
 
 The APK requires Android 7.0 or newer. This is a development build, not a Play Store release. A device may ask you to allow installation from the app used to open the APK. Local builds produce `android/app/build/outputs/apk/debug/app-debug.apk`.
 
@@ -30,6 +30,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 ```
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
+
+## Version 1.15.0
+
+HP and MP now persist between encounters and recover at local midnight. P03 adds first-screen current work, direct class/career boards and persistent parchment actions. P04 adds optional measured results and separate Journey practice charts. [Changes](docs/update-1.15.md) · [Reserve simulations](docs/combat-1.15/README.md) · [Verification](docs/verification-1.15.md) · [Previews](docs/screenshots/README.md).
+
+Install over the existing app to retain its character: version code **17**, package `com.theguild.personal`, and the same signing certificate.
 
 ## Version 1.14.0
 
