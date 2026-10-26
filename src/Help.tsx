@@ -284,7 +284,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Skill goals",
-        "Set skill goal highlights that skill and its prerequisite network, including alternative routes. A goal does not purchase skills or reserve points. Goals and viewport preferences survive reload within the current session and are separate from character backups.",
+        "Set one goal per shared class tree, unique class focus, career tree or universal tree. Planned skills lists them together and opens the relevant tree without changing your active combat class. A goal highlights its prerequisite network without purchasing skills or reserving points. Learned goals show Goal reached until cleared. Goals, tree choices, styles and tree/list preferences survive app restarts and travel with character backups. Panning, zoom and temporary searches remain view controls.",
       ],
       [
         "Combat loadout",
@@ -363,6 +363,10 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
   {
     title: "Accounts & backups",
     sections: [
+      [
+        "Device recovery copies",
+        "Account & backups → Device recovery copies lists up to three daily copies and two copies from before a restore or new character. Review a copy, compare it with your current character, then confirm Restore. A local replacement copy is used if device recovery is unavailable. If neither can preserve your current record, replacement is cancelled. Older local snapshots remain available. These copies use this app’s device storage; uninstalling or clearing app data can erase them. Export a file or upload a cloud copy to keep a separate backup.",
+      ],
       [
         "Local saves",
         "Progress saves on this device after each change. Export a character in Guild settings to keep a separate JSON backup. A backup includes activity and archived personal notes.",

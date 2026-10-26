@@ -1,3 +1,4 @@
+import { validSkillPlans } from "./skill-plans";
 import { validActivityResult } from "./activity-results";
 import { findAppearance } from "./appearance-catalog";
 import { validWorld, upgradeAdventureStages } from "./world-state";
@@ -24,6 +25,7 @@ import {
 } from "./domain";
 export const STORAGE_KEY = "the-guild.character.v1";
 export const RECOVERY_KEY = "the-guild.recovery.v1";
+export const REPLACEMENT_KEY = "the-guild.before-replace.v1";
 const finite = (x: unknown) =>
   typeof x === "number" && Number.isFinite(x) && x >= 0;
 const str = (x: unknown) => typeof x === "string";
@@ -35,6 +37,7 @@ export function validateCharacter(x: unknown): x is Character {
     const path = CLASSES.find((p) => p.id === c.activeClass);
     return (
       c.version === 1 &&
+      (c.skillPlans === undefined || validSkillPlans(c.skillPlans)) &&
       str(c.id) &&
       str(c.name) &&
       c.name.length <= 32 &&
@@ -331,23 +334,49 @@ export function loadCharacter(): Character | null {
     ),
   );
 }
+let recoveryCache:
+  | { raw: string | null; value: { at: string; character: Character } | null }
+  | undefined;
 export function localRecovery(): { at: string; character: Character } | null {
   try {
-    const data = JSON.parse(localStorage.getItem(RECOVERY_KEY) || "null");
-    return data && date(data.at) && validateCharacter(data.character)
-      ? data
+    const raw = localStorage.getItem(RECOVERY_KEY);
+    if (recoveryCache?.raw === raw) return recoveryCache.value;
+    const data = JSON.parse(raw || "null");
+    const value =
+      data && date(data.at) && validateCharacter(data.character) ? data : null;
+    recoveryCache = { raw, value };
+    return value;
+  } catch {
+    return null;
+  }
+}
+export function localReplacementRecovery(): {
+  at: string;
+  character: Character;
+} | null {
+  try {
+    const value = JSON.parse(localStorage.getItem(REPLACEMENT_KEY) || "null");
+    return value && date(value.at) && validateCharacter(value.character)
+      ? value
       : null;
   } catch {
     return null;
   }
+}
+export function saveReplacementRecovery(c: Character) {
+  if (!validateCharacter(c))
+    throw Error("The current character could not be preserved.");
+  localStorage.setItem(
+    REPLACEMENT_KEY,
+    JSON.stringify({ at: new Date().toISOString(), character: c }),
+  );
 }
 export function saveCharacter(c: Character) {
   const data = JSON.stringify(c);
   // Commit the primary record first. Optional recovery cannot make a successful save fail.
   localStorage.setItem(STORAGE_KEY, data);
   try {
-    const saved = localStorage.getItem(RECOVERY_KEY);
-    const snapshot = saved ? JSON.parse(saved) : null;
+    const snapshot = localRecovery();
     if (
       !snapshot ||
       snapshot.character?.id !== c.id ||
@@ -355,7 +384,7 @@ export function saveCharacter(c: Character) {
     )
       localStorage.setItem(
         RECOVERY_KEY,
-        JSON.stringify({ at: new Date().toISOString(), character: c }),
+        `{"at":${JSON.stringify(new Date().toISOString())},"character":${data}}`,
       );
   } catch {
     /* Manual export remains available when extra device storage is unavailable. */

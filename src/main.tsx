@@ -24,3 +24,5 @@ import "./atlas-update.css";
 import "./combat-update.css";
 
 import "./daily-flow.css";
+
+import "./planning-recovery.css";

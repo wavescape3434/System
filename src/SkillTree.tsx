@@ -1,3 +1,13 @@
+import {
+  planLocation,
+  activeTreeKey,
+  setPlanLocation,
+  setPlanGoal,
+  setPlanView,
+  skillTreeKey,
+} from "./skill-plans";
+import type { TreeCategory } from "./skill-plans";
+import { CLASSES } from "./class-catalog";
 import { ARCHETYPES } from "./class-catalog";
 import { useViewState } from "./useViewState";
 import { CAREER_CATEGORIES, careerCategory } from "./careers";
@@ -30,6 +40,7 @@ import {
   skillRequirements,
   skillPointsAvailable,
   walletLevel,
+  classLevel,
   skillTier,
 } from "./domain";
 import { Icon } from "./ui";
@@ -43,20 +54,24 @@ export default function SkillTree({
   onCertificate: () => void;
 }) {
   const key = `${c.id}.${c.activeClass}.tree`;
-  const [category, setCategory] = useViewState<string>(
-      `${key}.category`,
-      "class",
-      false,
-      ["universal", "class", "profession"],
-    ),
-    [listMode, setListMode] = useViewState<boolean>(`${key}.list`, false),
-    [search, setSearch] = useViewState<string>(`${key}.search`, ""),
-    [branch, setBranch] = useViewState<string>(`${key}.branch`, "current"),
-    [selected, setSelected] = useState<Skill | null>(null),
-    [zoom, setZoom] = useState(1);
-  const [style, setStyle] = useState("all"),
-    [status, setStatus] = useState("all"),
-    [goal, setGoal] = useViewState<string>(`${key}.goal`, "");
+  const location = planLocation(c),
+    { category, branch } = location,
+    treeKey = activeTreeKey(c);
+  const view = c.skillPlans?.views[treeKey];
+  const listMode = view?.listMode || false,
+    style = view?.style || "all",
+    goal = c.skillPlans?.goals[treeKey] || "";
+  const setLocation = (category: TreeCategory, branch: string) =>
+    update(setPlanLocation(c, { category, branch }));
+  const setListMode = (listMode: boolean) =>
+    update(setPlanView(c, treeKey, { listMode }));
+  const setStyle = (style: string) =>
+    update(setPlanView(c, treeKey, { style }));
+  const setGoal = (id: string) => update(setPlanGoal(c, treeKey, id));
+  const [search, setSearch] = useViewState<string>(`${key}.search`, "");
+  const [selected, setSelected] = useState<Skill | null>(null),
+    [zoom, setZoom] = useState(1),
+    [status, setStatus] = useState("all");
   const treeRef = useRef<HTMLDivElement>(null),
     zoomRef = useRef(1),
     pointers = useRef(new Map<number, { x: number; y: number }>()),
@@ -89,23 +104,18 @@ export default function SkillTree({
   const p = currentPath(c),
     primary = Object.entries(p.mix).sort((a, b) => b[1]! - a[1]!)[0][0];
   const owner =
-    category === "class"
-      ? branch === "current"
-        ? primary
-        : branch
-      : branch === "current"
-        ? careerCategory(c.profession).id
-        : branch;
-  const focus = owner === "focus";
+    treeKey === "universal"
+      ? "universal"
+      : treeKey.slice(treeKey.indexOf(":") + 1);
+  const focus = treeKey.startsWith("focus:"),
+    treePath = focus ? CLASSES.find((p) => p.id === owner)! : p;
   const list = SKILLS.filter(
     (s) =>
       !s.legacy &&
       s.category === category &&
       (category === "universal" || category === "class"
         ? category === "universal" ||
-          (focus
-            ? s.owner === c.activeClass && !s.archetype
-            : s.archetype === owner)
+          (focus ? s.owner === owner && !s.archetype : s.archetype === owner)
         : s.owner === owner),
   );
   const styles = [...new Set(list.map((s) => skillStyle(s, list)))],
@@ -231,7 +241,6 @@ export default function SkillTree({
     );
   };
   useEffect(() => {
-    setStyle("all");
     setSelected(null);
     setSearch("");
     setStatus("all");
@@ -281,8 +290,10 @@ export default function SkillTree({
         ? "combat"
         : `profession:${owner === "networking" ? "technology" : owner === "analysis" ? "business" : owner}`;
   const lv =
-      category === "class" && !focus
-        ? levelFromXP(archetypeXP(c, owner))
+      category === "class"
+        ? focus
+          ? classLevel(c, owner)
+          : levelFromXP(archetypeXP(c, owner))
         : walletLevel(c, wallet),
     shards = skillPointsAvailable(c, wallet);
   const treeName =
@@ -290,7 +301,7 @@ export default function SkillTree({
       ? "Universal skills"
       : category === "class"
         ? focus
-          ? `${p.name} Focus`
+          ? `${treePath.name} Focus`
           : `${ARCHETYPES.find((a) => a.id === owner)?.name} Arts`
         : owner === "networking"
           ? "Networking · Credential Path"
@@ -300,6 +311,49 @@ export default function SkillTree({
               c.profession;
   return (
     <section className="skill-atlas">
+      {Object.keys(c.skillPlans?.goals || {}).length > 0 && (
+        <details className="planner-goals">
+          <summary>
+            Planned skills ({Object.keys(c.skillPlans!.goals).length})
+          </summary>
+          <div>
+            {Object.values(c.skillPlans!.goals).map((id) => {
+              const skill = SKILLS.find((s) => s.id === id)!;
+              return (
+                <button
+                  key={id}
+                  onClick={() => {
+                    const key = skillTreeKey(skill);
+                    setLocation(
+                      skill.category as TreeCategory,
+                      key.startsWith("focus:")
+                        ? key
+                        : key === "universal"
+                          ? "current"
+                          : key.slice(key.indexOf(":") + 1),
+                    );
+                  }}
+                >
+                  <Star size={16} />
+                  <span>
+                    <b>{skill.name}</b>
+                    <small>
+                      {hasSkill(c, skill) ? "Learned" : "Planned"} ·{" "}
+                      {skill.category === "class"
+                        ? skill.archetype ||
+                          CLASSES.find((p) => p.id === skill.owner)?.name
+                        : skill.category === "universal"
+                          ? "Universal"
+                          : CAREER_CATEGORIES.find((g) => g.id === skill.owner)
+                              ?.name || skill.owner}
+                    </small>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </details>
+      )}
       <div className="tree-toolbar">
         <div
           className="tree-categories"
@@ -313,8 +367,7 @@ export default function SkillTree({
               aria-selected={category === id}
               className={category === id ? "active" : ""}
               onClick={() => {
-                setCategory(id);
-                setBranch("current");
+                setLocation(id as TreeCategory, "current");
               }}
             >
               {id[0].toUpperCase() + id.slice(1)}
@@ -344,19 +397,32 @@ export default function SkillTree({
             <select
               aria-label="Class tree"
               value={branch}
-              onChange={(e) => setBranch(e.target.value)}
+              onChange={(e) => setLocation(category, e.target.value)}
             >
               <option value="current">
                 {ARCHETYPES.find((a) => a.id === primary)?.name} · Primary
               </option>
-              {Object.entries(p.mix)
-                .filter(([id]) => id !== primary)
-                .map(([id, weight]) => (
-                  <option key={id} value={id}>
-                    {ARCHETYPES.find((a) => a.id === id)?.name} · {weight}%
-                  </option>
-                ))}
+              {ARCHETYPES.filter((a) => a.id !== primary).map((a) => (
+                <option key={a.id} value={a.id}>
+                  {a.name}
+                  {p.mix[a.id as keyof typeof p.mix]
+                    ? ` · ${p.mix[a.id as keyof typeof p.mix]}%`
+                    : ""}
+                </option>
+              ))}
               <option value="focus">{p.name} · Unique focus</option>
+              {CLASSES.filter(
+                (path) =>
+                  path.id !== p.id &&
+                  ((c.unlockedClasses || []).includes(path.id) ||
+                    Object.keys(c.skillPlans?.goals || {}).includes(
+                      `focus:${path.id}`,
+                    )),
+              ).map((path) => (
+                <option key={path.id} value={`focus:${path.id}`}>
+                  {path.name} · Unique focus
+                </option>
+              ))}
             </select>
           </label>
         )}
@@ -366,7 +432,7 @@ export default function SkillTree({
             <select
               aria-label="Profession tree"
               value={branch}
-              onChange={(e) => setBranch(e.target.value)}
+              onChange={(e) => setLocation(category, e.target.value)}
             >
               <option value="current">
                 {careerCategory(c.profession).name} · Current profession
@@ -446,7 +512,7 @@ export default function SkillTree({
           </button>
         ))}
       </div>
-      {goalSkill && !hasSkill(c, goalSkill) && (
+      {goalSkill && (
         <div className="atlas-goal">
           <Star size={17} />
           <button
@@ -455,9 +521,14 @@ export default function SkillTree({
               setSelected(goalSkill);
             }}
           >
-            <b>Goal: {goalSkill.name}</b>
+            <b>
+              {hasSkill(c, goalSkill) ? "Goal reached" : "Goal"}:{" "}
+              {goalSkill.name}
+            </b>
             <small>
-              Lv. {skillTier(goalSkill)} · {goalSkill.cost} points
+              {hasSkill(c, goalSkill)
+                ? "Learned"
+                : `Lv. ${skillTier(goalSkill)} · ${goalSkill.cost} points`}
             </small>
           </button>
           <button

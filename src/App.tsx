@@ -1,3 +1,9 @@
+import DeviceRecovery from "./DeviceRecovery";
+import {
+  preserveBeforeReplacement,
+  queueDailySnapshot,
+} from "./device-backups";
+import { migrateSkillPlans } from "./skill-plans";
 import { refreshAdventure } from "./rpg";
 import ActivityResultForm from "./ActivityResultForm";
 import {
@@ -142,7 +148,7 @@ const PAGES = [
   { id: "settings", name: "Settings", title: "Settings", icon: Settings2 },
   { id: "help", name: "Help", title: "Help", icon: CircleHelp },
 ] as const;
-type Dialog = "account" | "certificate" | "reset" | null;
+type Dialog = "account" | "certificate" | "reset" | "recovery" | null;
 async function exportData(data: string, name: string) {
   if (Capacitor.isNativePlatform()) {
     const { Filesystem, Directory } = await import("@capacitor/filesystem");
@@ -201,7 +207,9 @@ export default function App() {
     [menu, setMenu] = useState(false),
     [busy, setBusy] = useState(false),
     [cloudCandidate, setCloudCandidate] = useState<Character | null>(null),
+    [cloudUID, setCloudUID] = useState(""),
     [importCandidate, setImportCandidate] = useState<Character | null>(null);
+  const accountRef = useRef<User | null>(null);
   const preferences = { ...DEFAULT_PREFERENCES, ...c?.preferences };
   useEffect(() => {
     if (!Capacitor.isNativePlatform()) return;
@@ -261,10 +269,19 @@ export default function App() {
   }, []);
   useEffect(
     () =>
-      watchGoogleAccount(setUser, () =>
-        notify(
-          "Google account status could not be refreshed. Your local character is saved.",
-        ),
+      watchGoogleAccount(
+        (next) => {
+          if (accountRef.current?.uid !== next?.uid) {
+            setCloudCandidate(null);
+            setCloudUID("");
+          }
+          accountRef.current = next;
+          setUser(next);
+        },
+        () =>
+          notify(
+            "Google account status could not be refreshed. Your local character is saved.",
+          ),
       ),
     [notify],
   );
@@ -297,7 +314,7 @@ export default function App() {
         const migrated = upgradeAdventureStages(
           upgradeCalendar(upgradeBalance(upgradeExams(upgradeTraining(next)))),
         );
-        const rested = refreshAdventure(migrated);
+        const rested = refreshAdventure(migrateSkillPlans(migrated));
         const prepared = progressionChanged(characterRef.current, rested)
           ? awardSkills(rested)
           : rested;
@@ -307,6 +324,9 @@ export default function App() {
         saveCharacter(awarded);
         characterRef.current = awarded;
         setC(awarded);
+        void queueDailySnapshot(awarded).catch(() => {
+          /* Primary progress is already saved. */
+        });
         return true;
       } catch {
         notify(
@@ -321,8 +341,9 @@ export default function App() {
     const check = () => {
       const current = characterRef.current;
       if (!current) return;
-      const refreshed = refreshAdventure(current);
+      const refreshed = refreshAdventure(migrateSkillPlans(current));
       if (refreshed !== current) update(refreshed, false);
+      else void queueDailySnapshot(current).catch(() => {});
       tick((n) => n + 1);
     };
     const schedule = () => {
@@ -396,12 +417,10 @@ export default function App() {
     });
   const offerLocalRecovery = () => {
     const snapshot = localRecovery();
-    if (!snapshot) {
-      notify("No valid local recovery snapshot is available.");
-      return;
-    }
-    setDialog(null);
-    setImportCandidate(snapshot.character);
+    if (snapshot) {
+      setDialog(null);
+      setImportCandidate(snapshot.character);
+    } else setDialog("recovery");
   };
   const props = c
     ? { c, update, navigate, openObjective, notify, section }
@@ -431,6 +450,12 @@ export default function App() {
           <h1>Saved data needs recovery.</h1>
           <p>{recovery}</p>
           <button
+            className="button secondary"
+            onClick={() => setDialog("account")}
+          >
+            Account & cloud backups
+          </button>
+          <button
             className="button primary"
             onClick={() =>
               run(async () => {
@@ -449,6 +474,12 @@ export default function App() {
             onClick={() => inputRef.current?.click()}
           >
             Restore a valid backup
+          </button>
+          <button
+            className="button secondary"
+            onClick={() => setDialog("recovery")}
+          >
+            Browse device recovery copies
           </button>
           {localRecovery() && (
             <button className="button secondary" onClick={offerLocalRecovery}>
@@ -472,6 +503,7 @@ export default function App() {
         </main>
       ) : !c ? (
         <Onboarding
+          onRestore={() => setDialog("recovery")}
           onHelp={() => navigate("help")}
           onCreate={(next) => {
             const saved = update(next);
@@ -709,6 +741,7 @@ export default function App() {
                 throw new Error(
                   "This file is not a valid Guild character backup. Your character is unchanged.",
                 );
+              setDialog(null);
               setImportCandidate(data);
             })
             .catch((e) =>
@@ -1122,6 +1155,12 @@ export default function App() {
               <p>{user ? user.email : "Saved on this device"}</p>
             </div>
           </div>
+          <button
+            className="button secondary full"
+            onClick={() => setDialog("recovery")}
+          >
+            Device recovery copies
+          </button>
           {!user ? (
             <>
               <button
@@ -1167,9 +1206,17 @@ export default function App() {
                   className="button secondary"
                   disabled={busy}
                   onClick={() =>
-                    run(async () =>
-                      setCloudCandidate(await downloadCharacter()),
-                    )
+                    run(async () => {
+                      const uid = accountRef.current?.uid;
+                      const candidate = await downloadCharacter();
+                      if (!uid || uid !== accountRef.current?.uid)
+                        throw Error(
+                          "Your Google account changed. Reopen Account & backups and retry.",
+                        );
+                      setCloudUID(uid);
+                      setDialog(null);
+                      setCloudCandidate(candidate);
+                    })
                   }
                 >
                   <Download size={16} />
@@ -1253,7 +1300,7 @@ export default function App() {
           <p>
             {c?.demo
               ? "Your sample character will be replaced with your own guild application."
-              : "Starting a new character replaces the progress and reflections on this device. Export a backup first if you want to keep this character."}
+              : "Starting a new character replaces this device’s record. A recovery copy is saved first."}
           </p>
           <div className="account-actions">
             {c && !c.demo && (
@@ -1264,27 +1311,76 @@ export default function App() {
             )}
             <button
               className="button primary"
-              onClick={() => {
-                localStorage.removeItem(STORAGE_KEY);
-                setC(null);
-                setRecovery("");
-                setPage("guild");
-                close();
-              }}
+              disabled={busy}
+              onClick={() =>
+                void run(async () => {
+                  if (characterRef.current)
+                    await preserveBeforeReplacement(
+                      characterRef.current,
+                      "before-new-character",
+                    );
+                  localStorage.removeItem(STORAGE_KEY);
+                  characterRef.current = null;
+                  setC(null);
+                  setRecovery("");
+                  setPage("guild");
+                  close();
+                })
+              }
             >
               Create character <ArrowRight size={16} />
             </button>
           </div>
         </Modal>
       )}
+      {dialog === "recovery" && (
+        <Modal title="Device recovery copies" onClose={close}>
+          <button
+            className="button secondary full"
+            onClick={() => inputRef.current?.click()}
+          >
+            Import backup file
+          </button>
+          <DeviceRecovery
+            onReview={(candidate) => {
+              setDialog(null);
+              setImportCandidate(candidate);
+            }}
+          />
+        </Modal>
+      )}
       {(cloudCandidate || importCandidate) && (
         <Modal title="Restore this character?" onClose={close}>
           <p>
-            You’re about to replace the character on this device with{" "}
-            <strong>{(cloudCandidate || importCandidate)!.name}</strong>, with{" "}
-            {totalXP((cloudCandidate || importCandidate)!)} lifetime XP. Export
-            your current character first if you want to keep both.
+            Restoring replaces this device’s character. A recovery copy is saved
+            first.
           </p>
+          <div className="restore-comparison" aria-label="Restore comparison">
+            {[
+              ["Current", c],
+              [
+                cloudCandidate ? "Cloud copy" : "Selected copy",
+                cloudCandidate || importCandidate,
+              ],
+            ].map(([label, character]) => {
+              const record = character as Character | null;
+              return (
+                <div key={String(label)}>
+                  <small>{String(label)}</small>
+                  <strong>{record?.name || "No character"}</strong>
+                  <span>
+                    {record
+                      ? `${totalXP(record).toLocaleString()} XP · ${record.completions.length} request${record.completions.length === 1 ? "" : "s"}`
+                      : "—"}
+                  </span>
+                  <span>
+                    {Object.keys(record?.skillPlans?.goals || {}).length} skill
+                    goals
+                  </span>
+                </div>
+              );
+            })}
+          </div>
           <div className="account-actions">
             {c && (
               <button className="button secondary" onClick={exportBackup}>
@@ -1293,14 +1389,30 @@ export default function App() {
             )}
             <button
               className="button primary"
-              onClick={() => {
-                if (!update((cloudCandidate || importCandidate)!, false))
-                  return;
-                setRecovery("");
-                navigate("guild");
-                close();
-                notify("Character restored.");
-              }}
+              disabled={busy}
+              onClick={() =>
+                void run(async () => {
+                  if (cloudCandidate && cloudUID !== accountRef.current?.uid)
+                    throw Error(
+                      "Your Google account changed. Reopen Account & backups and retry.",
+                    );
+                  if (characterRef.current)
+                    await preserveBeforeReplacement(
+                      characterRef.current,
+                      "before-restore",
+                    );
+                  if (cloudCandidate && cloudUID !== accountRef.current?.uid)
+                    throw Error(
+                      "Your Google account changed. Reopen Account & backups and retry.",
+                    );
+                  if (!update((cloudCandidate || importCandidate)!, false))
+                    return;
+                  setRecovery("");
+                  navigate("guild");
+                  close();
+                  notify("Character restored.");
+                })
+              }
             >
               Restore character
             </button>

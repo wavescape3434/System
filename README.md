@@ -31,6 +31,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.16.0
+
+Skill goals and tree/style/list preferences now travel with the character. Separate goals are retained for shared class, focused class, career and universal trees, including learned goals. Device recovery keeps dated copies and preserves the current character before a restore or new character, with a comparison before replacement. Cloud operations also stop when the account/session changes. [Changes](docs/update-1.16.md) · [Verification](docs/verification-1.16.md) · [Previews](docs/screenshots/README.md) · [P05 readiness and remaining work](docs/readiness-1.16.md).
+
+Install over the existing app to retain its character: version code **18**, package `com.theguild.personal`, and the same signing certificate. Google/Firebase setup is deferred at the owner's request. Primary saves still use synchronous localStorage; their migration and physical Android checks remain on the roadmap.
+
 ## Version 1.15.0
 
 HP and MP now persist between encounters and recover at local midnight. P03 adds first-screen current work, direct class/career boards and persistent parchment actions. P04 adds optional measured results and separate Journey practice charts. [Changes](docs/update-1.15.md) · [Reserve simulations](docs/combat-1.15/README.md) · [Verification](docs/verification-1.15.md) · [Previews](docs/screenshots/README.md).

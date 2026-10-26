@@ -1,3 +1,4 @@
+import { accountGuard } from "./account-session";
 import type { FirebaseApp } from "firebase/app";
 import type { Auth, User } from "firebase/auth";
 import { Capacitor } from "@capacitor/core";
@@ -18,6 +19,8 @@ export const googleConfigured =
   Object.values(config).every(Boolean) &&
   (!Capacitor.isNativePlatform() ||
     !!import.meta.env.VITE_GOOGLE_WEB_CLIENT_ID);
+let accountGeneration = 0;
+let observedUID: string | null | undefined;
 let app: FirebaseApp | null = null;
 let authPromise: Promise<Auth | null> | null = null;
 async function guildAuth() {
@@ -48,7 +51,17 @@ export function watchGoogleAccount(
         if (!auth || disposed) return;
         const { onAuthStateChanged } = await import("firebase/auth");
         if (disposed) return;
-        unsubscribe = onAuthStateChanged(auth, onChange, onError);
+        unsubscribe = onAuthStateChanged(
+          auth,
+          (user) => {
+            if (observedUID !== (user?.uid || null)) {
+              observedUID = user?.uid || null;
+              accountGeneration++;
+            }
+            onChange(user);
+          },
+          onError,
+        );
       })
       .catch(() => {
         if (!disposed) onError();
@@ -59,6 +72,7 @@ export function watchGoogleAccount(
   };
 }
 export async function loginGoogle() {
+  accountGeneration++;
   const auth = await guildAuth();
   if (!auth)
     throw new Error(
@@ -90,27 +104,40 @@ export async function loginGoogle() {
   return signInWithPopup(auth, new GoogleAuthProvider());
 }
 export async function logoutGoogle() {
+  accountGeneration++;
   const auth = await guildAuth();
-  if (Capacitor.isNativePlatform()) {
-    const { SocialLogin } = await import("@capgo/capacitor-social-login");
-    await SocialLogin.logout({ provider: "google" });
-  }
-  if (auth) {
-    const { signOut } = await import("firebase/auth");
-    await signOut(auth);
-  }
+  const actions: Promise<unknown>[] = [];
+  if (auth)
+    actions.push(import("firebase/auth").then(({ signOut }) => signOut(auth)));
+  if (Capacitor.isNativePlatform())
+    actions.push(
+      import("@capgo/capacitor-social-login").then(({ SocialLogin }) =>
+        SocialLogin.logout({ provider: "google" }),
+      ),
+    );
+  const results = await Promise.allSettled(actions);
+  if (results.some((r) => r.status === "rejected"))
+    throw Error(
+      "Google sign-out did not fully finish. Reopen Account & backups to check the connection.",
+    );
 }
 export async function uploadCharacter(c: Character) {
   const auth = await guildAuth();
   if (!app || !auth?.currentUser)
     throw new Error("Link your Google account first.");
+  if (!validateCharacter(c) || c.demo)
+    throw Error(
+      "Create a valid personal character before uploading a cloud backup.",
+    );
+  const session = accountGuard(auth, () => accountGeneration);
   const { getFirestore, doc, setDoc, writeBatch, serverTimestamp } =
     await import("firebase/firestore");
   const db = getFirestore(app),
-    uid = auth.currentUser.uid;
+    uid = session.uid;
   const { manifest, chunks } = await packCloudSnapshot(c);
   // Publish the pointer only after every immutable chunk has committed.
   for (let offset = 0; offset < chunks.length; offset += 40) {
+    session.check();
     const batch = writeBatch(db);
     chunks
       .slice(offset, offset + 40)
@@ -130,19 +157,24 @@ export async function uploadCharacter(c: Character) {
       );
     await batch.commit();
   }
+  session.check();
   await setDoc(doc(db, "characters", uid), {
     snapshot: manifest,
     updatedAt: serverTimestamp(),
   });
+  session.check();
 }
 export async function downloadCharacter(): Promise<Character> {
   const auth = await guildAuth();
   if (!app || !auth?.currentUser)
     throw new Error("Link your Google account first.");
+  const session = accountGuard(auth, () => accountGeneration);
   const { getFirestore, doc, getDoc } = await import("firebase/firestore");
+  session.check();
   const result = await getDoc(
-    doc(getFirestore(app), "characters", auth.currentUser.uid),
+    doc(getFirestore(app), "characters", session.uid),
   );
+  session.check();
   if (!result.exists())
     throw new Error(
       "No cloud character yet. Upload this character to save it to your account.",
@@ -156,9 +188,10 @@ export async function downloadCharacter(): Promise<Character> {
       );
     const snapshot = saved.snapshot,
       db = getFirestore(app),
-      uid = auth.currentUser.uid;
+      uid = session.uid;
     const chunks: unknown[] = [];
     for (let offset = 0; offset < snapshot.chunks; offset += 20) {
+      session.check();
       const records = await Promise.all(
         Array.from({ length: Math.min(20, snapshot.chunks - offset) }, (_, i) =>
           getDoc(
@@ -182,5 +215,6 @@ export async function downloadCharacter(): Promise<Character> {
     throw new Error(
       "The cloud character format is invalid. Your local character is unchanged.",
     );
+  session.check();
   return c;
 }

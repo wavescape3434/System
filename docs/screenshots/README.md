@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.15.0 — screenshots
+# The Adventurers Guild 1.16.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Saved plans and device recovery — version 1.16
+
+| Planned skills | Restore comparison | Device recovery |
+| --- | --- | --- |
+| [<img src="saved-plans-mobile.png" width="230" alt="Independent combat, career and universal goals retained on a phone">](saved-plans-mobile.png) | [<img src="restore-comparison-mobile.png" width="230" alt="Current and selected character progress compared before restore">](restore-comparison-mobile.png) | [<img src="device-recovery-mobile.png" width="230" alt="Daily and pre-replacement recovery copies with review actions">](device-recovery-mobile.png) |
+
+[Desktop plans](saved-plans-desktop.png) · [Goal reached](goal-reached-mobile.png) · [Restore from registration](registration-restore-mobile.png) · [Damaged-save recovery options](recovery-options-desktop.png)
+
+[Changes](../update-1.16.md) · [Verification](../verification-1.16.md) · [Capture method and scan results](../planning-1.16/README.md). Goals and completed requests in these images are scripted sample records. Google setup remains deferred.
 
 ## Current work, results and reserves — version 1.15
 
@@ -96,7 +106,7 @@ These are browser previews using sample characters. Exploration results, prior a
 
 ## Retained feature previews
 
-These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.14 previews above show the current update.
+These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.16 previews above show the current update.
 
 [Guild Card on phone](guild-android.png) · [Guild Card detail](guild-card-detail.png) · [Rank metals](rank-metals.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Full Fighter skill web](fighter-web.png) · [Career tree](profession-tree.png) · [Vocation](vocation.png)
 

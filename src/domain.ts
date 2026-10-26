@@ -247,6 +247,7 @@ export interface JournalEntry {
   text: string;
 }
 export interface Character {
+  skillPlans?: import("./skill-plans").SkillPlans;
   version: 1;
   id: string;
   name: string;

@@ -29,10 +29,12 @@ export default function Onboarding({
   onCreate,
   onGoogle,
   onHelp,
+  onRestore,
 }: {
   onCreate: (c: Character) => boolean;
   onGoogle: () => void;
   onHelp: () => void;
+  onRestore: () => void;
 }) {
   const [draft] = useState(loadRegistrationDraft);
   const [step, setStep] = useState(draft?.step || 0),
@@ -130,6 +132,9 @@ export default function Onboarding({
               onClick={() => finish(demoCharacter())}
             >
               Try a sample character <ArrowRight size={15} />
+            </button>
+            <button className="button secondary full" onClick={onRestore}>
+              Restore a character
             </button>
             <button className="text-button full" onClick={onHelp}>
               Help
