@@ -325,6 +325,14 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
         "Your character and up to two companions act before the enemy round. Select an enemy for attacks and an ally for healing or items. Guard restores 3 MP and reduces incoming damage.",
       ],
       [
+        "Supplies and purchases",
+        "Adventures → Supplies uses one carried potion or ether on a selected living party member between battles. Potions restore up to 50 HP; ethers up to 20 MP. Full and fallen targets cannot consume them. Recovery and item use are saved; closing Supplies keeps the expedition. The store accepts whole purchase quantities from 1 to 99 and charges the full batch only when both gold and local stock cover it. Battles still spend a turn on valid items. Full recovery remains local midnight.",
+      ],
+      [
+        "Delivery trade-offs and seals",
+        "Delivery cards show the material cost and remaining stock before turn-in. Expand Smith recipes affected to see unowned recipes that would lose material coverage. No materials are automatically reserved. Town seals are CHA accessories with the same gold/material recipe scale as other town gear. Equip one to affect combat support; it does not increase base CHA. Shopping, item use and forging never grant real-world XP.",
+      ],
+      [
         "Effects",
         "Skills can pierce armor, hit groups, stun regular enemies, taunt, counter, guard allies, heal, restore MP, or inflict burning. Bosses resist stun and use a heavy strike every third round.",
       ],

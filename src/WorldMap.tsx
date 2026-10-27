@@ -1,3 +1,5 @@
+import SupplyShop from "./SupplyShop";
+import DeliveryCost from "./DeliveryCost";
 import { CAREER_UTILITIES, hasCareerUtility } from "./career-payoffs";
 import CareerFieldwork from "./CareerFieldwork";
 import { adventureParty } from "./rpg";
@@ -10,7 +12,6 @@ import {
   buy,
   equip,
   EQUIPMENT,
-  SUPPLY_PRICES,
   ENCOUNTERS,
 } from "./rpg";
 import {
@@ -39,7 +40,7 @@ import {
   completeWorldContract,
   contractProgress,
 } from "./world";
-import { Tag, Progress } from "./ui";
+import { Progress } from "./ui";
 import PixelScene from "./PixelScene";
 export default function WorldMap({
   c,
@@ -168,30 +169,7 @@ export default function WorldMap({
           </div>
         </section>
         <h3 className="pixel-section-title">General store</h3>
-        <div className="pixel-shop-grid">
-          {["potion", "ether"].map((id) => (
-            <article className="pixel-window" key={id}>
-              <h3>{id === "potion" ? "Healing potion" : "Ether"}</h3>
-              <p>{id === "potion" ? "Restore 50 HP." : "Restore 20 MP."}</p>
-              <p>
-                Store stock: {world.stock[currentTown.id][id]} · Carried:{" "}
-                {data.inventory[id] || 0}
-              </p>
-              {world.stock[currentTown.id][id] === 0 && (
-                <Tag>Out of stock · Guild supplies needed</Tag>
-              )}
-              <button
-                disabled={
-                  data.gold < SUPPLY_PRICES[id as keyof typeof SUPPLY_PRICES] ||
-                  !world.stock[currentTown.id][id]
-                }
-                onClick={() => update(buy(c, id))}
-              >
-                Buy · {SUPPLY_PRICES[id as keyof typeof SUPPLY_PRICES]} gold
-              </button>
-            </article>
-          ))}
-        </div>
+        <SupplyShop c={c} update={update} />
         <h3 className="pixel-section-title">
           Blacksmith ·{" "}
           {
@@ -200,7 +178,11 @@ export default function WorldMap({
             ]
           }
         </h3>
-        <div className="pixel-shop-grid">
+        <div
+          className="pixel-shop-grid"
+          role="group"
+          aria-label="Blacksmith recipes"
+        >
           {TOWN_GEAR.filter((g) => g.town === currentTown.id).map((g) => (
             <article key={g.id} className="pixel-window">
               <span>{g.slot.toUpperCase()}</span>
@@ -234,7 +216,11 @@ export default function WorldMap({
           ))}
         </div>
         <h3 className="pixel-section-title">Equipment bag</h3>
-        <div className="pixel-shop-grid">
+        <div
+          className="pixel-shop-grid"
+          role="group"
+          aria-label="Equipment bag"
+        >
           {EQUIPMENT.filter((g) => data.inventory[g.id]).map((g) => (
             <article className="pixel-window" key={g.id}>
               <h3>{g.name}</h3>
@@ -320,6 +306,7 @@ export default function WorldMap({
                       : " completed"}
                   </p>
                 )}
+                {r.kind === "delivery" && <DeliveryCost c={c} id={r.id} />}
                 <p className="pixel-gold">
                   {r.gold} gold
                   {r.restock

@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.20.0 — screenshots
+# The Adventurers Guild 1.21.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Supplies and economy — version 1.21
+
+| Between-battle supplies | Quantity purchases | Delivery trade-offs |
+| --- | --- | --- |
+| [<img src="supply-satchel-mobile.png" width="230" alt="Supply dialog previews exact HP and MP recovery for one party member">](supply-satchel-mobile.png) | [<img src="bulk-supplies-mobile.png" width="230" alt="Local stock and full cost for a three-potion batch">](bulk-supplies-mobile.png) | [<img src="delivery-tradeoff-mobile.png" width="230" alt="Materials left after delivery and unowned smith recipes affected">](delivery-tradeoff-mobile.png) |
+
+[Fallen target](fallen-supplies-mobile.png) · [CHA seal](cha-seal-mobile.png) · [Desktop supplies](supply-satchel-desktop.png) · [Desktop shop](bulk-supplies-desktop.png) · [Expedition supplies](expedition-supplies-mobile.png)
+
+[Economy report and figures](../economy-1.21/README.md) · [Changes](../update-1.21.md) · [Verification](../verification-1.21.md) · [Capture fixtures and scans](../economy-1.21/screens/README.md). These use scripted sample reserves, stock and materials.
 
 ## Town and preparation tools — version 1.20
 

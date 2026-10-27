@@ -1,5 +1,7 @@
 import { CAREER_UTILITIES, hasCareerUtility } from "./career-payoffs";
 import CareerFieldwork from "./CareerFieldwork";
+import SupplySatchel from "./SupplySatchel";
+import { supplyRecovery } from "./supplies";
 import PartyResources from "./PartyResources";
 import { adventureParty } from "./rpg";
 import AppearancePicker from "./AppearancePicker";
@@ -311,7 +313,11 @@ export default function AdventureGame({
                 </button>
               ))}
               <button
-                disabled={!battle.items.potion}
+                disabled={
+                  !battle.items.potion ||
+                  !battle.party[ally] ||
+                  !supplyRecovery(battle.party[ally], "potion")
+                }
                 onClick={() => command({ kind: "potion", target: ally })}
               >
                 <FlaskConical size={18} />
@@ -319,7 +325,11 @@ export default function AdventureGame({
                 <small>Ally: {battle.party[ally]?.name}</small>
               </button>
               <button
-                disabled={!battle.items.ether}
+                disabled={
+                  !battle.items.ether ||
+                  !battle.party[ally] ||
+                  !supplyRecovery(battle.party[ally], "ether")
+                }
                 onClick={() => command({ kind: "ether", target: ally })}
               >
                 <FlaskConical size={18} />
@@ -496,6 +506,7 @@ export default function AdventureGame({
           </Modal>
         )}
         <PartyResources c={c} />
+        <SupplySatchel c={c} update={update} />
         <div className={`expedition-scene biome-${place.biome}`}>
           <PixelScene biome={place.biome} />
           {place.biome === "forest" && (
@@ -597,6 +608,7 @@ export default function AdventureGame({
         </span>
       </div>
       <PartyResources c={c} />
+      <SupplySatchel c={c} update={update} />
       <div className="tabs">
         <button
           className={tab === "map" ? "active" : ""}

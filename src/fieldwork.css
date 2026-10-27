@@ -245,3 +245,78 @@
     bottom: -20px;
   }
 }
+.supply-satchel-button {
+  margin: 12px 0 20px;
+}
+.satchel-reserves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0;
+}
+.satchel-reserves span {
+  padding: 12px;
+  border: 1px solid var(--line);
+}
+.satchel-reserves b {
+  display: block;
+  margin-top: 6px;
+}
+.satchel-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.satchel-items article {
+  padding: 14px;
+  border: 1px solid var(--line);
+}
+.supply-purchase {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+.supply-purchase input {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  background: #102353;
+  border: 1px solid #91aacd;
+  color: #f0f4ff;
+}
+.delivery-cost {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #91aacd;
+}
+.delivery-cost small {
+  display: block;
+  margin-top: 8px;
+  color: #cad9ee;
+}
+@media (max-width: 400px) {
+  .satchel-items {
+    grid-template-columns: 1fr;
+  }
+}
+.pixel-adventure .satchel-panel {
+  color: #283a2d;
+  --line: #9b8b69;
+}
+.pixel-adventure .satchel-panel :is(b, p, label, span) {
+  color: #283a2d;
+}
+.pixel-adventure .satchel-panel .helper {
+  color: #615a49;
+}
+.satchel-panel > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.satchel-panel select {
+  width: 100%;
+  min-height: 44px;
+}

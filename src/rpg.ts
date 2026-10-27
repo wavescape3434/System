@@ -1,3 +1,11 @@
+import {
+  SUPPLY_RESTORE,
+  SUPPLY_PRICES,
+  supplyRecovery,
+  supplyQuote,
+} from "./supplies";
+import type { SupplyId } from "./supplies";
+export { SUPPLY_RESTORE, SUPPLY_PRICES } from "./supplies";
 import { progressionLedger } from "./progression-ledger";
 import {
   characterAppearance,
@@ -607,7 +615,6 @@ export function startBattle(
     },
   };
 }
-export const SUPPLY_RESTORE = { potion: 50, ether: 20 } as const;
 export const SHELL_BREAK_EFFECTS = [
   "power",
   "quick",
@@ -666,7 +673,13 @@ export function takeAction(input: Battle, action: Action): Battle {
     b.log.push(`${actor.name} guards and restores 3 MP.`);
   } else if (action.kind === "potion" || action.kind === "ether") {
     const target = b.party[action.target];
-    if (!target || target.hp <= 0 || !(b.items[action.kind] > 0)) return input;
+    if (
+      !target ||
+      target.hp <= 0 ||
+      !(b.items[action.kind] > 0) ||
+      !supplyRecovery(target, action.kind)
+    )
+      return input;
     b.items[action.kind]--;
     if (action.kind === "potion")
       target.hp = Math.min(target.maxHp, target.hp + SUPPLY_RESTORE.potion);
@@ -949,16 +962,19 @@ export function claimVictory(c: Character): Character {
   };
 }
 
-export const SUPPLY_PRICES = { potion: 20, ether: 25 } as const;
-export function buy(c: Character, id: string): Character {
+export function buy(c: Character, id: string, quantity = 1): Character {
   const data = campaign(c),
     item = EQUIPMENT.find((x) => x.id === id),
     price =
       item?.price ??
       (id === "potion" || id === "ether" ? SUPPLY_PRICES[id] : Infinity);
   if (
-    data.battle?.phase === "player" ||
-    data.gold < price ||
+    !Number.isSafeInteger(quantity) ||
+    quantity < 1 ||
+    quantity > 99 ||
+    (item && quantity !== 1) ||
+    !!data.battle ||
+    data.gold < price * quantity ||
     (item && data.inventory[id])
   )
     return c;
@@ -976,14 +992,18 @@ export function buy(c: Character, id: string): Character {
         return c;
       inventory[gear.material] -= gear.quantity;
     } else if (id === "potion" || id === "ether") {
-      if (!(world.stock[town.id]?.[id] > 0)) return c;
+      if (
+        !supplyQuote(data.gold, world.stock[town.id]?.[id] || 0, id, quantity)
+          .canBuy
+      )
+        return c;
       world = {
         ...world,
         stock: {
           ...world.stock,
           [town.id]: {
             ...world.stock[town.id],
-            [id]: world.stock[town.id][id] - 1,
+            [id]: world.stock[town.id][id] - quantity,
           },
         },
       };
@@ -993,9 +1013,39 @@ export function buy(c: Character, id: string): Character {
     ...c,
     campaign: {
       ...data,
-      gold: data.gold - price,
-      inventory: { ...inventory, [id]: (inventory[id] || 0) + 1 },
+      gold: data.gold - price * quantity,
+      inventory: { ...inventory, [id]: (inventory[id] || 0) + quantity },
       ...(world ? { world } : {}),
+    },
+  };
+}
+export function useSupply(
+  c: Character,
+  targetId: string,
+  id: SupplyId,
+): Character {
+  if (id !== "potion" && id !== "ether") return c;
+  const data = campaign(c);
+  if (data.battle || !(data.inventory[id] > 0)) return c;
+  const party = adventureParty(c),
+    target = party.find((u) => u.id === targetId);
+  if (!target || !supplyRecovery(target, id)) return c;
+  const changed = party.map((u) =>
+    u.id !== targetId
+      ? u
+      : {
+          ...u,
+          ...(id === "potion"
+            ? { hp: u.hp + supplyRecovery(u, id) }
+            : { mp: u.mp + supplyRecovery(u, id) }),
+        },
+  );
+  return {
+    ...c,
+    campaign: {
+      ...data,
+      inventory: { ...data.inventory, [id]: data.inventory[id] - 1 },
+      vitals: storeVitals(data, changed),
     },
   };
 }

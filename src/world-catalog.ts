@@ -391,30 +391,35 @@ export interface TownGear {
   quantity: number;
 }
 export const TOWN_GEAR: TownGear[] = TOWNS.flatMap((t) =>
-  (["blade", "staff", "bow", "armor", "charm"] as const).map((kind, i) => {
-    const power = 2 ** t.smith + 1,
-      stat =
-        i === 1
-          ? "INT"
-          : i === 2
-            ? "DEX"
-            : i === 3
-              ? "CON"
-              : i === 4
-                ? "WIS"
-                : "STR";
-    return {
-      id: `${t.id}-${kind}`,
-      town: t.id,
-      name: `${({ alderhaven: "Woodland", brassford: "Brassforged", embermere: "Emberglass", greywatch: "Stormforged", tidecross: "Pearlguard", frostholm: "Frostbound" } as Record<string, string>)[t.id]} ${kind[0].toUpperCase() + kind.slice(1)}`,
-      slot: i === 3 ? "armor" : i === 4 ? "accessory" : "weapon",
-      price: 150 * 3 ** (t.smith - 1),
-      mod: { [stat]: power },
-      description: `+${power} combat ${stat}`,
-      material: t.ore,
-      quantity: t.smith + 1,
-    };
-  }),
+  (["blade", "staff", "bow", "armor", "charm", "seal"] as const).map(
+    (kind, i) => {
+      const power = 2 ** t.smith + 1,
+        stat =
+          i === 1
+            ? "INT"
+            : i === 2
+              ? "DEX"
+              : i === 3
+                ? "CON"
+                : i === 4
+                  ? "WIS"
+                  : i === 5
+                    ? "CHA"
+                    : "STR";
+      const modifier = power;
+      return {
+        id: `${t.id}-${kind}`,
+        town: t.id,
+        name: `${({ alderhaven: "Woodland", brassford: "Brassforged", embermere: "Emberglass", greywatch: "Stormforged", tidecross: "Pearlguard", frostholm: "Frostbound" } as Record<string, string>)[t.id]} ${kind[0].toUpperCase() + kind.slice(1)}`,
+        slot: i === 3 ? "armor" : i >= 4 ? "accessory" : "weapon",
+        price: 150 * 3 ** (t.smith - 1),
+        mod: { [stat]: modifier },
+        description: `+${modifier} combat ${stat}`,
+        material: t.ore,
+        quantity: t.smith + 1,
+      };
+    },
+  ),
 );
 export interface WorldContract {
   id: string;

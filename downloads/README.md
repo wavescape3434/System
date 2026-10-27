@@ -1,10 +1,10 @@
-# Install The Adventurers Guild 1.20.0 on Android
+# Install The Adventurers Guild 1.21.0 on Android
 
 Open `the-guild-debug.apk` in this folder on GitHub, then select **Download raw file** (the download arrow). Open the downloaded APK on your Android phone. Android may ask you to allow installations from your browser or file manager.
 
 Requires Android 7.0 or newer. Install this update over your existing app to retain character data; export a backup first. This is a signed development build for personal testing, not a Play Store release. Google sign-in and cloud backups need the Firebase/OAuth configuration described in the main README; the local app works without it.
 
-Version **1.20.0 / code 22** adds Creative, Sales, Administration, Hospitality, Manufacturing and General Practice tools. All twenty categories now have an initial Fieldwork utility: visual routes, offer comparison, receipt exports, town services, combined crafting costs and departure checks join the earlier tools. Deeper career uses remain open. Google setup stays deferred. The APK is compiled, signature-checked and compared with production web assets; installed-app behavior still needs physical Android testing. [Changes](../docs/update-1.20.md) · [Verification](../docs/verification-1.20.md) · [Remaining P05 work](../docs/readiness-1.17.md).
+Version **1.21.0 / code 23** adds deliberate between-battle supply use, atomic quantity purchases, delivery material previews and town CHA seals. Midnight recovery, reward rates and guild-rank thresholds remain. The [economy report](../docs/economy-1.21/README.md) compares 160 simulated accounts. Google setup remains deferred. The APK is compiled, signature-checked and compared with production web assets; installed-app behavior still needs physical Android testing. [Changes](../docs/update-1.21.md) · [Verification](../docs/verification-1.21.md) · [Remaining P05 work](../docs/readiness-1.17.md).
 
 The checksum is in `the-guild-debug.apk.sha256`. Browse the [screenshot gallery](../docs/screenshots/README.md) for the engraved guild card, request board, class comparison, skill trees, vocation, Journey reports, Taken requests, Help, and battle views. All screenshots use the sample character, not personal progress.
 

@@ -31,6 +31,14 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.21.0
+
+Use carried supplies deliberately between battles, buy whole batches from town stock, and review delivery materials against smith recipes. Every town also gains a CHA seal accessory. **Midnight remains the automatic full recovery.** [Changes](docs/update-1.21.md) · [Verification](docs/verification-1.21.md) · [Previews](docs/screenshots/README.md).
+
+The [P08 economy report](docs/economy-1.21/README.md) compares 160 thirty-day simulated accounts with seven-day checkpoints, figures and raw daily data. The owner’s target is 3–5 encounters a day, keeping both gold sources and tuning spending/material demand. Current reward rates, prices and guild-rank thresholds remain; surplus gold and higher-stat challenge remain on the roadmap.
+
+Android version **1.21.0 / code 23** keeps the package and signing certificate. Google setup remains deferred; physical Android runtime checks remain open.
+
 ## Version 1.20.0
 
 All **twenty profession categories** now have an initial learned Fieldwork tool. Creative adds a visual route folio; Sales compares delivery offers; Administration reconciles and exports commission receipts; Hospitality compares and visits town services; Manufacturing combines crafting costs; General Practice checks departure readiness. [Changes](docs/update-1.20.md) · [Verification](docs/verification-1.20.md) · [Previews](docs/screenshots/README.md).
@@ -111,7 +119,7 @@ Related objective ranks now share one request card. Choose a rank before accepti
 
 Weekly goals use Monday–Sunday and monthly goals use the calendar month. They include relevant work already logged earlier in that period. Acceptance and checklist progress expire at the boundary; earned activity and history remain. Daily tasks retain F–C limits, weekly quests F–A, and monthly adventures F–SSS. Expert achievements check prior preparation before rewarding a current-month outcome.
 
-Adventures now has **eight regions, 24 places, 240 stage battles, six towns, 60 guild commissions, seven companions, and 30 town-crafted items**. Clear a place's ten stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use command windows and a separate party HUD.
+Adventures now has **eight regions, 24 places, 240 stage battles, six towns, 60 guild commissions, seven companions, and 36 town-crafted items**. Clear a place's ten stages for repeatable exploration, gathering, caches, and roaming bosses. Boss appearances and ambush danger have separate rising probability curves. Town stocks respond to guild deliveries; smiths differ in power, materials, and prices. Original pixel scenes and sprites use command windows and a separate party HUD.
 
 Hybrid requests either require a named adventure commission or pay an optional bonus when it is completed. Ordinary requests remain available. [Content, calendar, exploration, and shop rules](docs/update-1.7.md) · [New screenshots](docs/screenshots/README.md).
 
@@ -181,7 +189,7 @@ Older saves receive one-time progression credits that retain their earned levels
 - Assessment inputs remain clearable, with no forced leading zero. Walking records distance over six minutes, balance uses seconds, and bench estimates require body mass. Bodyweight registration needs no gym equipment. Baselines use reference-centered indexes with no upper ceiling; supported age/sex references and provisional anchors are explicitly distinguished.
 - JRPG expeditions have eight regions, 24 places with ten stages each, repeatable exploration, bosses, and individual party turns. Your character can bring two of seven recruitable companions. Commands include attacks, guard, class signatures, equipped skills, potions, and ether.
 - Combat includes armor piercing, multi-hit and area attacks, stun, taunt, counters, party barriers, healing, MP recovery, coordinated attacks, and burning. Victories grant combat gold and supplies, encounter access, and recruitment; they never grant real-world XP or base attributes.
-- Eleven legacy gear items and 30 town-crafted items, town-specific general stores and smiths, saved battle state, character backup sharing, validated restore, Journey, archived notes, and completion history remain available.
+- Eleven legacy gear items and 36 town-crafted items, town-specific general stores and smiths, saved battle state, character backup sharing, validated restore, Journey, archived notes, and completion history remain available.
 - Faith-related real-world content uses Christian Scripture, prayer, comprehension, and service. Monk training is physical bodyweight practice.
 
 ## Google accounts and cloud backups
