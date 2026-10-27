@@ -1,5 +1,6 @@
 import { CAREER_UTILITIES, hasCareerUtility } from "./career-payoffs";
 import CareerFieldwork from "./CareerFieldwork";
+import { SUPPLY_IDS, SUPPLIES } from "./supplies";
 import SupplySatchel from "./SupplySatchel";
 import { supplyRecovery } from "./supplies";
 import PartyResources from "./PartyResources";
@@ -277,7 +278,8 @@ export default function AdventureGame({
             <div className="turn-status">
               <b>{actor.name}</b>
               <span>
-                {actor.mp} MP · Target: {battle.enemies[target]?.name}
+                {actor.mp} MP · Target: {battle.enemies[target]?.name} · Ally:{" "}
+                {battle.party[ally]?.name}
               </span>
             </div>
             <div className="battle-actions">
@@ -312,29 +314,24 @@ export default function AdventureGame({
                   </small>
                 </button>
               ))}
-              <button
-                disabled={
-                  !battle.items.potion ||
-                  !battle.party[ally] ||
-                  !supplyRecovery(battle.party[ally], "potion")
-                }
-                onClick={() => command({ kind: "potion", target: ally })}
-              >
-                <FlaskConical size={18} />
-                Potion ×{battle.items.potion || 0}
-                <small>Ally: {battle.party[ally]?.name}</small>
-              </button>
-              <button
-                disabled={
-                  !battle.items.ether ||
-                  !battle.party[ally] ||
-                  !supplyRecovery(battle.party[ally], "ether")
-                }
-                onClick={() => command({ kind: "ether", target: ally })}
-              >
-                <FlaskConical size={18} />
-                Ether ×{battle.items.ether || 0}
-              </button>
+              {SUPPLY_IDS.filter(
+                (id) =>
+                  id === "potion" || id === "ether" || battle.items[id] > 0,
+              ).map((id) => (
+                <button
+                  key={id}
+                  disabled={
+                    !battle.items[id] ||
+                    !battle.party[ally] ||
+                    !supplyRecovery(battle.party[ally], id)
+                  }
+                  onClick={() => command({ kind: id, target: ally })}
+                >
+                  <FlaskConical size={16} />{" "}
+                  {id === "potion" ? "Potion" : SUPPLIES[id].name} ×
+                  {battle.items[id] || 0}
+                </button>
+              ))}
               <button onClick={() => command({ kind: "flee", target: 0 })}>
                 Retreat
               </button>

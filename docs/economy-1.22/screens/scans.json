@@ -1,0 +1,61 @@
+{
+  "screens": [
+    {
+      "name": "tempering-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "tempering-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "apothecary-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "apothecary-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "royal-brew-locked-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "brewed-supplies-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "brewed-battle-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "brewed-battle-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

@@ -1,3 +1,5 @@
+import { TOWN_GEAR } from "./world-catalog";
+import { MAX_TEMPER } from "./equipment-progression";
 import { validSkillPlans } from "./skill-plans";
 import { validActivityResult } from "./activity-results";
 import { findAppearance } from "./appearance-catalog";
@@ -423,6 +425,18 @@ function validCampaign(input: unknown): boolean {
       !finite(c.gold) ||
       (c.trainingGoldAccrued !== undefined && !finite(c.trainingGoldAccrued)) ||
       !inv(c.inventory) ||
+      (c.gearUpgrades !== undefined &&
+        (!c.gearUpgrades ||
+          Array.isArray(c.gearUpgrades) ||
+          typeof c.gearUpgrades !== "object" ||
+          !Object.entries(c.gearUpgrades).every(
+            ([id, n]) =>
+              TOWN_GEAR.some((g) => g.id === id) &&
+              c.inventory[id] > 0 &&
+              Number.isSafeInteger(n) &&
+              n >= 1 &&
+              n <= MAX_TEMPER,
+          ))) ||
       !strings(c.roster) ||
       !c.roster.every((id) => COMPANIONS.some((n) => n.id === id)) ||
       !strings(c.party) ||

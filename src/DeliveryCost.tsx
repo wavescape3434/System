@@ -23,6 +23,18 @@ export default function DeliveryCost({ c, id }: { c: Character; id: string }) {
           ))}
         </details>
       )}
+      {cost.workshopAffected.length > 0 && (
+        <details>
+          <summary>
+            Workshop uses affected · {cost.workshopAffected.length}
+          </summary>
+          {cost.workshopAffected.map((g) => (
+            <small key={g.id}>
+              {g.name} · {g.quantity} {RESOURCE_NAMES[cost.resource]} required
+            </small>
+          ))}
+        </details>
+      )}
     </div>
   );
 }

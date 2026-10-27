@@ -74,7 +74,51 @@ export function economyCharacter(classId: string, statFixture = 10) {
   c.campaign = campaign(c);
   return c;
 }
-export function economyAction(c: Character): Action {
+export interface WorkshopPolicy {
+  temper: (c: Character, id: string) => Character;
+  quote: (
+    c: Character,
+    id: string,
+  ) => { rank: number; gold: number; quantity: number } | null;
+  brew: (c: Character, id: string) => Character;
+  use: (c: Character, target: string, id: string) => Character;
+  modifiers: (
+    c: Character,
+    item: { id: string; mod: Partial<Stats> },
+  ) => Partial<Stats>;
+  supplies: Record<
+    string,
+    { resource: string; restore: number; fraction: number }
+  >;
+}
+function selectSupply(
+  c: Character,
+  unit: { hp: number; mp: number; maxHp: number; maxMp: number },
+  resource: "hp" | "mp",
+  workshop?: WorkshopPolicy,
+) {
+  const candidates = workshop
+    ? Object.entries(workshop.supplies)
+    : ([
+        ["potion", { resource: "hp", restore: 50, fraction: 0 }],
+        ["ether", { resource: "mp", restore: 20, fraction: 0 }],
+      ] as [string, { resource: string; restore: number; fraction: number }][]);
+  const maximum = resource === "hp" ? unit.maxHp : unit.maxMp,
+    missing = maximum - unit[resource];
+  return candidates
+    .filter(
+      ([id, item]) =>
+        item.resource === resource && (campaign(c).inventory[id] || 0) > 0,
+    )
+    .map(([id, item]) => ({
+      id,
+      power: Math.max(item.restore, Math.floor(maximum * item.fraction)),
+    }))
+    .sort(
+      (a, b) => Math.abs(a.power - missing) - Math.abs(b.power - missing),
+    )[0]?.id;
+}
+export function economyAction(c: Character, workshop?: WorkshopPolicy): Action {
   const b = campaign(c).battle!,
     actor = b.party[b.actor],
     target = b.enemies.findIndex((e) => e.hp > 0),
@@ -104,8 +148,12 @@ export function economyAction(c: Character): Action {
       ].includes(a.type),
     ),
     buff = abilities.find((a) => ["rally", "formation"].includes(a.type));
-  if (low.hp / low.maxHp < 0.35 && b.items.potion > 0)
-    return { kind: "potion", target: b.party.indexOf(low) };
+  const healingItem = selectSupply(c, low, "hp", workshop);
+  if (low.hp / low.maxHp < 0.35 && healingItem)
+    return {
+      kind: healingItem as Action["kind"],
+      target: b.party.indexOf(low),
+    };
   if (charged)
     return ward
       ? { kind: "ability", abilityId: ward.id, target }
@@ -119,8 +167,9 @@ export function economyAction(c: Character): Action {
   if (buff && b.round === 1)
     return { kind: "ability", abilityId: buff.id, target };
   if (offense) return { kind: "ability", abilityId: offense.id, target };
-  if (actor.mp < 5 && actor.mp < actor.maxMp && b.items.ether > 0)
-    return { kind: "ether", target: b.actor };
+  const magicItem = selectSupply(c, actor, "mp", workshop);
+  if (actor.mp < 5 && actor.mp < actor.maxMp && magicItem)
+    return { kind: magicItem as Action["kind"], target: b.actor };
   return { kind: "attack", target };
 }
 export function simulateEconomy(
@@ -131,6 +180,7 @@ export function simulateEconomy(
     target: string,
     id: "potion" | "ether",
   ) => Character,
+  workshop?: WorkshopPolicy,
 ) {
   let c = economyCharacter(options.classId, options.statFixture),
     seed = options.seed,
@@ -146,9 +196,15 @@ export function simulateEconomy(
       exploration: 0,
       commissions: 0,
     },
-    spent = { supplies: 0, equipment: 0 },
-    itemsUsed = { potion: 0, ether: 0 },
+    spent = { supplies: 0, equipment: 0, tempering: 0, brewing: 0 },
+    itemsUsed: Record<string, number> = Object.fromEntries(
+      Object.keys(workshop?.supplies || { potion: 0, ether: 0 }).map((id) => [
+        id,
+        0,
+      ]),
+    ),
     purchased = { potion: 0, ether: 0 },
+    materialsSpent: Record<string, number> = {},
     history = [];
   let wins = 0,
     losses = 0,
@@ -169,7 +225,11 @@ export function simulateEconomy(
           .map((id) => EQUIPMENT.find((e) => e.id === id))
           .find((e) => e?.slot === gear.slot),
         gain = Object.entries(gear.mod).some(
-          ([s, n]) => (n || 0) > (old?.mod[s as keyof Stats] || 0),
+          ([s, n]) =>
+            (n || 0) >
+            (old
+              ? (workshop?.modifiers(c, old) || old.mod)[s as keyof Stats] || 0
+              : 0),
         );
       if (
         !data.inventory[gear.id] &&
@@ -182,6 +242,46 @@ export function simulateEconomy(
         c = equip(next, gear.id);
         data = campaign(c);
       }
+    }
+    if (workshop) {
+      for (const gear of desired.filter((g) =>
+        campaign(c).equipment.includes(g.id),
+      )) {
+        let q = workshop.quote(c, gear.id);
+        // A conservative bot invests at most two ranks before moving to better regional gear.
+        while (q && q.rank < 2 && campaign(c).gold >= q.gold + 65) {
+          const before = campaign(c),
+            next = workshop.temper(c, gear.id);
+          if (next === c) break;
+          spent.tempering += before.gold - campaign(next).gold;
+          materialsSpent[gear.material] =
+            (materialsSpent[gear.material] || 0) +
+            before.inventory[gear.material] -
+            campaign(next).inventory[gear.material];
+          c = next;
+          q = workshop.quote(c, gear.id);
+        }
+      }
+      for (const u of adventureParty(c).filter((u) => u.hp > 0))
+        for (const resource of ["hp", "mp"] as const) {
+          const missing = (resource === "hp" ? u.maxHp : u.maxMp) - u[resource];
+          const id = `${missing > (resource === "hp" ? 300 : 120) ? "royal" : "greater"}-${resource === "hp" ? "potion" : "ether"}`;
+          if (
+            missing < (resource === "hp" ? 100 : 40) ||
+            campaign(c).inventory[id]
+          )
+            continue;
+          const before = campaign(c),
+            next = workshop.brew(c, id);
+          if (next === c) continue;
+          spent.brewing += before.gold - campaign(next).gold;
+          for (const [key, n] of Object.entries(before.inventory)) {
+            const used = n - (campaign(next).inventory[key] || 0);
+            if (used > 0)
+              materialsSpent[key] = (materialsSpent[key] || 0) + used;
+          }
+          c = next;
+        }
     }
     for (const id of ["potion", "ether"] as const)
       while ((campaign(c).inventory[id] || 0) < (id === "potion" ? 2 : 1)) {
@@ -241,14 +341,27 @@ export function simulateEconomy(
       if (options.priority === "equipment") shop();
       for (const q of WORLD_CONTRACTS.filter((q) => q.town === town)) {
         const path = CLASSES.find((p) => p.id === options.classId)!;
-        const reserved = TOWN_GEAR.filter(
-          (g) =>
-            g.town === town &&
-            !campaign(c).inventory[g.id] &&
-            (g.slot === "armor" || g.mod[path.stat]),
-        )
-          .filter((g) => g.material === q.resource)
-          .reduce((n, g) => n + g.quantity, 0);
+        const upgradeReserve = workshop
+          ? TOWN_GEAR.filter(
+              (g) =>
+                g.town === town &&
+                campaign(c).equipment.includes(g.id) &&
+                g.material === q.resource,
+            ).reduce((n, g) => {
+              const t = workshop.quote(c, g.id);
+              return n + (t && t.rank < 2 ? t.quantity : 0);
+            }, 0)
+          : 0;
+        const reserved =
+          upgradeReserve +
+          TOWN_GEAR.filter(
+            (g) =>
+              g.town === town &&
+              !campaign(c).inventory[g.id] &&
+              (g.slot === "armor" || g.mod[path.stat]),
+          )
+            .filter((g) => g.material === q.resource)
+            .reduce((n, g) => n + g.quantity, 0);
         if (
           options.priority === "equipment" &&
           q.kind === "delivery" &&
@@ -268,25 +381,26 @@ export function simulateEconomy(
       if (options.priority !== "equipment") shop();
       if (manualUse)
         for (const u of adventureParty(c)) {
-          while (
-            adventureParty(c).find((p) => p.id === u.id)!.hp / u.maxHp < 0.55 &&
-            (campaign(c).inventory.potion || 0) > 0
-          ) {
-            const before = campaign(c).inventory.potion,
-              next = manualUse(c, u.id, "potion");
-            if (next === c) break;
-            c = next;
-            itemsUsed.potion += before - campaign(c).inventory.potion;
-          }
-          const current = adventureParty(c).find((p) => p.id === u.id)!;
-          if (
-            current.hp > 0 &&
-            current.mp < 5 &&
-            (campaign(c).inventory.ether || 0) > 0
-          ) {
-            const before = campaign(c).inventory.ether;
-            c = manualUse(c, u.id, "ether");
-            itemsUsed.ether += before - campaign(c).inventory.ether;
+          for (const resource of ["hp", "mp"] as const) {
+            let current = adventureParty(c).find((p) => p.id === u.id)!;
+            let id = selectSupply(c, current, resource, workshop);
+            while (
+              current.hp > 0 &&
+              id &&
+              (resource === "hp"
+                ? current.hp / current.maxHp < 0.55
+                : current.mp < 5)
+            ) {
+              const before = campaign(c).inventory[id] || 0;
+              const next = workshop
+                ? workshop.use(c, u.id, id)
+                : manualUse(c, u.id, id as "potion" | "ether");
+              if (next === c) break;
+              c = next;
+              itemsUsed[id] += before - (campaign(c).inventory[id] || 0);
+              current = adventureParty(c).find((p) => p.id === u.id)!;
+              id = selectSupply(c, current, resource, workshop);
+            }
           }
         }
       const places = PLACES.filter(
@@ -317,8 +431,8 @@ export function simulateEconomy(
       let turn = 0;
       while (campaign(c).battle?.phase === "player" && turn++ < 160) {
         const before = campaign(c).inventory;
-        c = act(c, economyAction(c), now);
-        for (const id of ["potion", "ether"] as const)
+        c = act(c, economyAction(c, workshop), now);
+        for (const id of Object.keys(itemsUsed))
           itemsUsed[id] += Math.max(
             0,
             (before[id] || 0) - (campaign(c).inventory[id] || 0),
@@ -349,6 +463,10 @@ export function simulateEconomy(
     if (!validateCharacter(saved))
       throw Error(`Invalid economy fixture day ${day + 1}`);
     c = saved;
+    const earnedToday = Object.values(income).reduce((a, b) => a + b, 0),
+      spentToday = Object.values(spent).reduce((a, b) => a + b, 0);
+    if (campaign(c).gold !== earnedToday - spentToday)
+      throw Error(`Unreconciled day ${day + 1}`);
     history.push({
       day: day + 1,
       gold: campaign(c).gold,
@@ -389,6 +507,8 @@ export function simulateEconomy(
     stockBlocks,
     failedPurchases,
     gold: balance,
+    materialsSpent,
+    gearUpgrades: campaign(c).gearUpgrades || {},
     equipment: campaign(c).equipment,
     history,
     character: c,

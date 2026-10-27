@@ -31,6 +31,14 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.22.0
+
+Brew stronger supplies from local materials and gold, and temper owned town gear with increasing costs. Preview each exchange and combat effect before spending. Carried brews work in battle and between encounters; full/fallen targets cannot waste them. **Automatic full recovery remains local midnight.** [Changes](docs/update-1.22.md) · [Verification](docs/verification-1.22.md) · [Previews](docs/screenshots/README.md).
+
+The [P08 workshop report](docs/economy-1.22/README.md) compares 160 thirty-day simulated accounts with seven-day checkpoints, figures and daily data. All eight moderate equipment-first classes sustain the three/five encounter scenario budgets. Both gold sources remain; surplus gold and high-stat challenge still need work. [Previous supply report](docs/economy-1.21/README.md).
+
+Android version **1.22.0 / code 24** keeps the package and signing certificate. Google setup remains deferred; physical Android runtime checks remain open.
+
 ## Version 1.21.0
 
 Use carried supplies deliberately between battles, buy whole batches from town stock, and review delivery materials against smith recipes. Every town also gains a CHA seal accessory. **Midnight remains the automatic full recovery.** [Changes](docs/update-1.21.md) · [Verification](docs/verification-1.21.md) · [Previews](docs/screenshots/README.md).
@@ -38,6 +46,7 @@ Use carried supplies deliberately between battles, buy whole batches from town s
 The [P08 economy report](docs/economy-1.21/README.md) compares 160 thirty-day simulated accounts with seven-day checkpoints, figures and raw daily data. The owner’s target is 3–5 encounters a day, keeping both gold sources and tuning spending/material demand. Current reward rates, prices and guild-rank thresholds remain; surplus gold and higher-stat challenge remain on the roadmap.
 
 Android version **1.21.0 / code 23** keeps the package and signing certificate. Google setup remains deferred; physical Android runtime checks remain open.
+
 
 ## Version 1.20.0
 

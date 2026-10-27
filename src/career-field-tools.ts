@@ -1,3 +1,4 @@
+import { gearModifiers } from "./equipment-progression";
 import type { Character, Attribute } from "./domain";
 import { ATTRIBUTES } from "./domain";
 import { campaign, EQUIPMENT, SUPPLY_PRICES } from "./rpg";
@@ -104,7 +105,8 @@ export function equipmentAppraisal(c: Character) {
       const changes = Object.fromEntries(
         ATTRIBUTES.map((stat) => [
           stat,
-          (g.mod[stat] || 0) - (old?.mod[stat] || 0),
+          (gearModifiers(c, g)[stat] || 0) -
+            (old ? gearModifiers(c, old)[stat] || 0 : 0),
         ]),
       ) as Record<Attribute, number>;
       return {

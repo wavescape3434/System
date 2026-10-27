@@ -19,7 +19,7 @@ This is the working backlog from the version 1.13 product review. Update the sta
 | P05 | Before wider release | Accounts, recovery and device reliability | **Primary-save migration shipped — 1.17.0**, following recovery/session hardening in 1.16. Android runtime/live service checks remain; Google setup deferred by owner. | Verify Google linking, backup recovery, upgrades, reminders and keyboards on Android. Evolve primary storage beyond a whole-character synchronous record as histories grow. |
 | P06 | Medium | Durable plans | **Delivered — 1.16.0** | Skill goals and relevant planning preferences survive app restarts and character backup/restore. Independent goals for each shared, focused, career and universal tree. |
 | P07 | Medium | Career progression payoffs | **Initial utilities for all twenty disciplines — 1.20.0**; deeper skill uses and deliverable workflows remain | Career requests produce useful deliverables; non-combat competencies gain meaningful exploration, information or town uses without granting automatic base stats. |
-| P08 | Medium | Economy and long-term challenge | **Supply pass and simulations — 1.21.0**; gold surplus, later challenge and sinks remain | Model gold sources, spending and consumable use together. Add challenges for high-stat characters while preserving earned power and unrestricted exploration. |
+| P08 | Medium | Economy and long-term challenge | **Supply/workshop passes — 1.21.0–1.22.0**; gold surplus and later challenge remain | Model gold sources, spending and consumable use together. Add challenges for high-stat characters while preserving earned power and unrestricted exploration. |
 
 ## Batch 1 scope
 
@@ -79,7 +79,14 @@ This is the working backlog from the version 1.13 product review. Update the sta
 - **Owner direction, 27 October 2026 (America/Denver):** calibrate for roughly **3–5 encounters a day**, retain both real-world and adventure gold sources, and tune spending/material demand. The simulation budget is a scenario, not a hard player limit.
 - **Still open:** substantial gold surplus, finite campaign breadth, fixed-strength supplies at high stats, companion/player-level carry and broader late-region tactics. The controlled daily basket omits weekly/monthly/career rewards and is not an optimized routine for every class.
 
-**Next:** continue P08 with useful gold/material sinks, equipment and graded-supply demand, plus P02/P08 high-stat and companion scaling probes. Retain both currency sources, earned balances and the agreed guild-rank curve. P05 physical-device/live-service checks remain a release gate; Google setup remains deferred.
+## Batch 9 — 1.22.0
+
+- **P08 useful spending:** Greater/Royal brewing consumes gold and local materials; owned town gear gains persistent +1–+5 temper ranks at increasing costs. Live previews, delivery trade-offs, appraisals and triage reflect the new options. Recovery is deliberate; tempering cannot heal or raise base stats.
+- **P08 evidence:** 80 current-baseline and 80 updated thirty-day simulations with day-7 checkpoints and 4,800 daily gold reconciliations. Both phases use field supplies; the updated bot additionally tempers and brews. [Report and figures](docs/economy-1.22/README.md).
+- All eight moderate equipment-first classes sustain three/five daily encounter budgets. Five-budget wallets decline to 11,285–15,730 gold, but surplus remains. Material choices also reduce delivery income; do not attribute the whole wallet difference to spending.
+- **Still open:** Royal supply demand is not demonstrated in the moderate fixtures; synthetic high-stat characters still win every allowed attempt. Companion/player-level carry, regional tactics, repeatable high-stat challenges, long-term revisits and finite campaign breadth remain. No gold source, earned balance, reward/rank curve or midnight recovery rule is removed.
+
+**Next:** P02/P08 higher-stat challenges and companion/player-level carry probes, with useful rewards/material demand. Keep unrestricted exploration and earned power. Continue measuring workshop spending over longer routines rather than declaring the economy balanced. P05 physical-device/live-service checks remain a release gate; Google setup remains deferred.
 
 ## Guardrails
 
@@ -107,3 +114,4 @@ The version 1.13 review found identical effects for 3-point Spark: Control and 6
 | 6 | **1.19.0** | Six service/technical profession tools, observation export and party/loadout shortcuts. Fourteen of twenty disciplines covered; six remain. | [Verification](docs/verification-1.19.md) · [Changes](docs/update-1.19.md) |
 | 7 | **1.20.0** | Six remaining category utilities; initial Fieldwork coverage reaches all twenty disciplines. Town travel retains reserves; deeper career uses and P08 economy remain. | [Verification](docs/verification-1.20.md) · [Changes](docs/update-1.20.md) |
 | 8 | **1.21.0** | Manual supply use, safe batch shopping, delivery material trade-offs, CHA seals and 160 economy simulations. Surplus/sinks and higher-stat challenge remain. | [Report](docs/economy-1.21/README.md) · [Verification](docs/verification-1.21.md) · [Changes](docs/update-1.21.md) |
+| 9 | **1.22.0** | Graded material brewing, permanent combat-only tempering and 160 new comparisons. Gold surplus, Royal supply demand and high-stat challenge remain. | [Report](docs/economy-1.22/README.md) · [Verification](docs/verification-1.22.md) · [Changes](docs/update-1.22.md) |

@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.21.0 — screenshots
+# The Adventurers Guild 1.22.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Town workshops — version 1.22
+
+| Tempering | Apothecary | Brewed supplies |
+| --- | --- | --- |
+| [<img src="tempering-mobile.png" width="230" alt="Equipment temper rank, next combat modifier and exact upgrade cost">](tempering-mobile.png) | [<img src="apothecary-mobile.png" width="230" alt="Two Greater potions with gold and local herb cost">](apothecary-mobile.png) | [<img src="brewed-supplies-mobile.png" width="230" alt="Carried Greater supplies with exact missing-reserve recovery">](brewed-supplies-mobile.png) |
+
+[Desktop tempering](tempering-desktop.png) · [Desktop brewing](apothecary-desktop.png) · [Royal recipe requirement](royal-brew-locked-mobile.png) · [Phone battle](brewed-battle-mobile.png) · [Desktop battle](brewed-battle-desktop.png)
+
+[Economy report](../economy-1.22/README.md) · [Changes](../update-1.22.md) · [Verification](../verification-1.22.md) · [Fixtures and scans](../economy-1.22/screens/README.md).
 
 ## Supplies and economy — version 1.21
 

@@ -178,6 +178,11 @@ export default function CareerServicePanels({
           {report.inventory.potion} potions · {report.inventory.ether} ethers
           carried
         </p>
+        {report.brewed.map((item) => (
+          <p key={item.id}>
+            {item.name} ×{item.carried}
+          </p>
+        ))}
         <p>
           Next full rest:{" "}
           <time dateTime={report.nextRest}>
@@ -205,6 +210,12 @@ export default function CareerServicePanels({
                 <p>
                   One ether: +{u.ether} MP · {u.etherWaste} unused
                 </p>
+                {u.brewed.map((item) => (
+                  <p key={item.id}>
+                    {item.name}: +{item.recovery} {item.resource} ·{" "}
+                    {item.unused} unused
+                  </p>
+                ))}
               </>
             ) : (
               <p>Potions and ethers cannot revive. Recovers at midnight.</p>

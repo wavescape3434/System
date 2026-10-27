@@ -1,8 +1,10 @@
+import { gearModifiers } from "./equipment-progression";
 import {
-  SUPPLY_RESTORE,
   SUPPLY_PRICES,
   supplyRecovery,
   supplyQuote,
+  SUPPLIES,
+  isSupply,
 } from "./supplies";
 import type { SupplyId } from "./supplies";
 export { SUPPLY_RESTORE, SUPPLY_PRICES } from "./supplies";
@@ -50,6 +52,7 @@ export interface Campaign {
   gold: number;
   trainingGoldAccrued?: number;
   inventory: Record<string, number>;
+  gearUpgrades?: Record<string, number>;
   roster: string[];
   party: string[];
   equipment: string[];
@@ -308,7 +311,7 @@ export function combatAttributes(c: Character): Stats {
   for (const id of campaign(c).equipment) {
     const item = EQUIPMENT.find((x) => x.id === id);
     if (item)
-      for (const [a, n] of Object.entries(item.mod))
+      for (const [a, n] of Object.entries(gearModifiers(c, item)))
         result[a as keyof Stats] += n!;
   }
   for (const id of campaign(c).equippedSkills) {
@@ -629,7 +632,7 @@ export const SHELL_BREAK_EFFECTS = [
 export const breaksShellImmediately = (type: string) =>
   type === "scan" || (SHELL_BREAK_EFFECTS as readonly string[]).includes(type);
 export interface Action {
-  kind: "attack" | "guard" | "ability" | "potion" | "ether" | "flee";
+  kind: "attack" | "guard" | "ability" | SupplyId | "flee";
   target: number;
   abilityId?: string;
 }
@@ -671,7 +674,7 @@ export function takeAction(input: Battle, action: Action): Battle {
     actor.guardPower = 1;
     actor.mp = Math.min(actor.maxMp, actor.mp + 3);
     b.log.push(`${actor.name} guards and restores 3 MP.`);
-  } else if (action.kind === "potion" || action.kind === "ether") {
+  } else if (isSupply(action.kind)) {
     const target = b.party[action.target];
     if (
       !target ||
@@ -681,10 +684,12 @@ export function takeAction(input: Battle, action: Action): Battle {
     )
       return input;
     b.items[action.kind]--;
-    if (action.kind === "potion")
-      target.hp = Math.min(target.maxHp, target.hp + SUPPLY_RESTORE.potion);
-    else target.mp = Math.min(target.maxMp, target.mp + SUPPLY_RESTORE.ether);
-    b.log.push(`${actor.name} uses ${action.kind} on ${target.name}.`);
+    const restored = supplyRecovery(target, action.kind);
+    if (SUPPLIES[action.kind].resource === "hp") target.hp += restored;
+    else target.mp += restored;
+    b.log.push(
+      `${actor.name} uses ${SUPPLIES[action.kind].name} on ${target.name}: +${restored} ${SUPPLIES[action.kind].resource.toUpperCase()}.`,
+    );
   } else {
     const skill = actor.abilities.find((x) => x.id === action.abilityId);
     if (!skill || actor.mp < skill.cost) return input;
@@ -1024,7 +1029,7 @@ export function useSupply(
   targetId: string,
   id: SupplyId,
 ): Character {
-  if (id !== "potion" && id !== "ether") return c;
+  if (!isSupply(id)) return c;
   const data = campaign(c);
   if (data.battle || !(data.inventory[id] > 0)) return c;
   const party = adventureParty(c),
@@ -1035,7 +1040,7 @@ export function useSupply(
       ? u
       : {
           ...u,
-          ...(id === "potion"
+          ...(SUPPLIES[id].resource === "hp"
             ? { hp: u.hp + supplyRecovery(u, id) }
             : { mp: u.mp + supplyRecovery(u, id) }),
         },

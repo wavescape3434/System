@@ -1,3 +1,9 @@
+import { Apothecary, TemperBench } from "./Workshop";
+import {
+  gearModifiers,
+  modifierText,
+  temperRank,
+} from "./equipment-progression";
 import SupplyShop from "./SupplyShop";
 import DeliveryCost from "./DeliveryCost";
 import { CAREER_UTILITIES, hasCareerUtility } from "./career-payoffs";
@@ -187,7 +193,10 @@ export default function WorldMap({
             <article key={g.id} className="pixel-window">
               <span>{g.slot.toUpperCase()}</span>
               <h3>{g.name}</h3>
-              <p>{g.description}</p>
+              <p>
+                {modifierText(gearModifiers(c, g))}
+                {temperRank(c, g.id) ? ` · Temper +${temperRank(c, g.id)}` : ""}
+              </p>
               <p>
                 {g.quantity} {RESOURCE_NAMES[g.material]} · {g.price} gold
               </p>
@@ -215,6 +224,8 @@ export default function WorldMap({
             </article>
           ))}
         </div>
+        <TemperBench c={c} update={update} />
+        <Apothecary c={c} update={update} />
         <h3 className="pixel-section-title">Equipment bag</h3>
         <div
           className="pixel-shop-grid"
@@ -224,7 +235,10 @@ export default function WorldMap({
           {EQUIPMENT.filter((g) => data.inventory[g.id]).map((g) => (
             <article className="pixel-window" key={g.id}>
               <h3>{g.name}</h3>
-              <p>{g.description}</p>
+              <p>
+                {modifierText(gearModifiers(c, g))}
+                {temperRank(c, g.id) ? ` · Temper +${temperRank(c, g.id)}` : ""}
+              </p>
               <button
                 disabled={data.equipment.includes(g.id)}
                 onClick={() => update(equip(c, g.id))}

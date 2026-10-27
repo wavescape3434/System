@@ -12,9 +12,12 @@ import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 process.env.TZ = "America/Denver";
+const workshopPass = process.argv.includes("--workshop");
 const baseline = process.argv.includes("--baseline"),
   phase = baseline ? "baseline" : "candidate",
-  baseCommit = "76d9167dc198df8758f038b474cd64a4c3524007",
+  baseCommit = workshopPass
+    ? "f1d3ad850c91896c829831c9f7b53e048296c44f"
+    : "76d9167dc198df8758f038b474cd64a4c3524007",
   cwd = process.cwd(),
   RealDate = Date;
 let clock = new RealDate(2027, 1, 1, 12).getTime(),
@@ -67,6 +70,20 @@ try {
     ),
     { CLASSES } = await server.ssrLoadModule("/src/domain.ts"),
     api = await server.ssrLoadModule("/src/rpg.ts");
+  let workshop;
+  if (workshopPass && !baseline) {
+    const w = await server.ssrLoadModule("/src/workshop.ts"),
+      g = await server.ssrLoadModule("/src/equipment-progression.ts"),
+      s = await server.ssrLoadModule("/src/supplies.ts");
+    workshop = {
+      temper: w.temper,
+      quote: w.temperQuote,
+      brew: w.brew,
+      use: api.useSupply,
+      modifiers: g.gearModifiers,
+      supplies: s.SUPPLIES,
+    };
+  }
   const runs = [],
     matrix = [];
   for (const cls of CLASSES.filter((c) => c.tier === "Basic"))
@@ -112,7 +129,8 @@ try {
       (now) => {
         clock = now.getTime();
       },
-      baseline ? undefined : api.useSupply,
+      !baseline || workshopPass ? api.useSupply : undefined,
+      workshop,
     );
     runs.push(run);
     console.log(
@@ -129,7 +147,11 @@ try {
       }),
     );
   }
-  const out = resolve(cwd, "docs/economy-1.21", phase);
+  const out = resolve(
+    cwd,
+    workshopPass ? "docs/economy-1.22" : "docs/economy-1.21",
+    phase,
+  );
   await mkdir(out, { recursive: true });
   const sourceHashes = {};
   for (const file of [
@@ -138,6 +160,9 @@ try {
     "src/world-catalog.ts",
     "src/login-rewards.ts",
     "src/economy-simulation.ts",
+    ...(workshopPass && !baseline
+      ? ["src/workshop.ts", "src/equipment-progression.ts", "src/supplies.ts"]
+      : []),
   ])
     sourceHashes[file] = createHash("sha256")
       .update(await readFile(resolve(root, file)))
@@ -149,7 +174,8 @@ try {
         phase,
         baselineCommit: baseCommit,
         timezone: "America/Denver",
-        manualSupplyPolicy: !baseline,
+        manualSupplyPolicy: !baseline || workshopPass,
+        workshopPolicy: !!workshop,
         encounterBudgets: [3, 5],
         sourceHashes,
         runs: runs.map(({ character, ...r }) => r),

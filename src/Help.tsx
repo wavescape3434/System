@@ -326,7 +326,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Supplies and purchases",
-        "Adventures → Supplies uses one carried potion or ether on a selected living party member between battles. Potions restore up to 50 HP; ethers up to 20 MP. Full and fallen targets cannot consume them. Recovery and item use are saved; closing Supplies keeps the expedition. The store accepts whole purchase quantities from 1 to 99 and charges the full batch only when both gold and local stock cover it. Battles still spend a turn on valid items. Full recovery remains local midnight.",
+        "Adventures → Supplies uses one carried potion or ether on a selected living party member between battles. Potions restore up to 50 HP; ethers up to 20 MP. Full and fallen targets cannot consume them. Recovery and item use are saved; closing Supplies keeps the expedition. The store accepts whole purchase quantities from 1 to 99 and charges the full batch only when both gold and local stock cover it. Battles still spend a turn on valid items. Full recovery remains local midnight. Greater and Royal brews also appear in Supplies and battle commands when carried. Their recovery scales with maximum reserves; they never revive fallen allies.",
       ],
       [
         "Delivery trade-offs and seals",
@@ -342,7 +342,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Equipment",
-        "Every town has a general store and smith. Store stock is local; medicinal-herb deliveries replenish healing potions, and supply-route commissions replenish ether. Smith quality doubles in power by tier; forging needs gold and local materials. Equipment and equipped skill modifiers affect combat attributes only.",
+        "The Apothecary brews Greater supplies from local herbs and gold; Adept or better towns also offer Royal brews with herbs and local smith material. Greater supplies restore at least 150 HP / 60 MP or 25% of maximum; Royal supplies restore at least 450 HP / 180 MP or 50% of maximum. Only the missing amount is restored. Brewing does not spend general-store stock. Owned town gear can be tempered at its original smith up to +5. Each rank adds 15% of the original modifier, rounded up, to combat attributes only; the gold cost doubles each rank and material costs rise. Upgrades remain with the item after unequipping and through backups. Tempering does not restore reserves. Every town has a general store and smith. Store stock is local; medicinal-herb deliveries replenish healing potions, and supply-route commissions replenish ether. Smith quality doubles in power by tier; forging needs gold and local materials. Equipment and equipped skill modifiers affect combat attributes only.",
       ],
     ],
   },

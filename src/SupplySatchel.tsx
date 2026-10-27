@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FlaskConical } from "lucide-react";
 import type { Character } from "./domain";
 import { adventureParty, campaign, useSupply } from "./rpg";
-import { supplyRecovery } from "./supplies";
+import { supplyRecovery, SUPPLIES, SUPPLY_IDS } from "./supplies";
 import type { SupplyId } from "./supplies";
 import { Modal } from "./ui";
 export default function SupplySatchel({
@@ -40,6 +40,11 @@ export default function SupplySatchel({
         Supplies · {data.inventory.potion || 0} potion
         {data.inventory.potion === 1 ? "" : "s"} · {data.inventory.ether || 0}{" "}
         ether{data.inventory.ether === 1 ? "" : "s"}
+        {SUPPLY_IDS.filter((id) => id !== "potion" && id !== "ether").reduce(
+          (n, id) => n + (data.inventory[id] || 0),
+          0,
+        ) > 0 &&
+          ` · ${SUPPLY_IDS.filter((id) => id !== "potion" && id !== "ether").reduce((n, id) => n + (data.inventory[id] || 0), 0)} brewed`}
       </button>
       {open && (
         <Modal title="Supplies" onClose={() => setOpen(false)}>
@@ -77,16 +82,18 @@ export default function SupplySatchel({
               <p className="helper">Fallen · Full recovery at midnight.</p>
             )}
             <div className="satchel-items">
-              {(["potion", "ether"] as const).map((id) => {
+              {SUPPLY_IDS.filter(
+                (id) =>
+                  id === "potion" || id === "ether" || data.inventory[id] > 0,
+              ).map((id) => {
                 const restored = supplyRecovery(selected, id);
                 return (
                   <article key={id}>
                     <b>
-                      {id === "potion" ? "Healing potion" : "Ether"} ×
-                      {data.inventory[id] || 0}
+                      {SUPPLIES[id].name} ×{data.inventory[id] || 0}
                     </b>
                     <p>
-                      Restore {restored} {id === "potion" ? "HP" : "MP"}
+                      Restore {restored} {SUPPLIES[id].resource.toUpperCase()}
                     </p>
                     <button
                       className="button secondary"
@@ -98,7 +105,12 @@ export default function SupplySatchel({
                       }
                       onClick={() => void use(id)}
                     >
-                      Use {id === "potion" ? "potion" : "ether"}
+                      Use{" "}
+                      {id === "potion"
+                        ? "potion"
+                        : id === "ether"
+                          ? "ether"
+                          : SUPPLIES[id].name.toLowerCase()}
                     </button>
                   </article>
                 );

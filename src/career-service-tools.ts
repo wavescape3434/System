@@ -1,3 +1,4 @@
+import { SUPPLY_IDS, SUPPLIES, supplyRecovery, supplyPower } from "./supplies";
 import type { Character } from "./domain";
 import { objectives } from "./domain";
 import {
@@ -28,6 +29,13 @@ export function recoveryTriage(c: Character, now = new Date()) {
     next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
   return {
     nextRest: next.toISOString(),
+    brewed: SUPPLY_IDS.filter(
+      (id) => id !== "potion" && id !== "ether" && data.inventory[id] > 0,
+    ).map((id) => ({
+      id,
+      name: SUPPLIES[id].name,
+      carried: data.inventory[id],
+    })),
     inventory: {
       potion: data.inventory.potion || 0,
       ether: data.inventory.ether || 0,
@@ -52,6 +60,15 @@ export function recoveryTriage(c: Character, now = new Date()) {
           potionWaste: alive
             ? SUPPLY_RESTORE.potion - potion
             : SUPPLY_RESTORE.potion,
+          brewed: SUPPLY_IDS.filter(
+            (id) => id !== "potion" && id !== "ether" && data.inventory[id] > 0,
+          ).map((id) => ({
+            id,
+            name: SUPPLIES[id].name,
+            resource: SUPPLIES[id].resource.toUpperCase(),
+            recovery: supplyRecovery(u, id),
+            unused: supplyPower(u, id) - supplyRecovery(u, id),
+          })),
           etherWaste: alive
             ? SUPPLY_RESTORE.ether - ether
             : SUPPLY_RESTORE.ether,

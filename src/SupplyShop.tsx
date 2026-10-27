@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { Character } from "./domain";
 import { campaign, buy } from "./rpg";
 import { SUPPLY_RESTORE, supplyQuote } from "./supplies";
-import type { SupplyId } from "./supplies";
+import type { BasicSupplyId } from "./supplies";
 import { Tag } from "./ui";
 function Offer({
   c,
@@ -11,7 +11,7 @@ function Offer({
 }: {
   c: Character;
   update: (c: Character) => Promise<boolean>;
-  id: SupplyId;
+  id: BasicSupplyId;
 }) {
   const [quantity, setQuantity] = useState("1"),
     [busy, setBusy] = useState(false),

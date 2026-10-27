@@ -320,3 +320,22 @@
   width: 100%;
   min-height: 44px;
 }
+
+/* Town workshops use the same controls as stores, with phone-width labels. */
+.pixel-world .temper-bench {
+  margin: 14px 0;
+}
+.pixel-world .temper-bench select,
+.pixel-world section[aria-label="Apothecary"] select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  color: #f5e7bd;
+  background: #172536;
+  border: 1px solid #b6a06c;
+  padding: 10px;
+}
+.pixel-world .temper-bench .form-field,
+.pixel-world section[aria-label="Apothecary"] .form-field {
+  margin: 10px 0;
+}
