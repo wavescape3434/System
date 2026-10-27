@@ -1,3 +1,5 @@
+import { CAREER_UTILITIES, hasCareerUtility } from "./career-payoffs";
+import CareerFieldwork from "./CareerFieldwork";
 import PartyResources from "./PartyResources";
 import { adventureParty } from "./rpg";
 import AppearancePicker from "./AppearancePicker";
@@ -50,17 +52,24 @@ import {
   toggleEquippedSkill,
 } from "./rpg";
 import type { Unit, Action, Campaign } from "./rpg";
-import { Progress, Tag, Icon } from "./ui";
+import { Progress, Tag, Icon, Modal } from "./ui";
 import BattleSprite from "./BattleSprite";
 export default function AdventureGame({
   c,
   update,
+  initialTool,
 }: {
   c: Character;
   update: (c: Character) => Promise<boolean>;
+  initialTool?: string;
 }) {
   const data = campaign(c),
     [tab, setTab] = useState("map"),
+    [fieldworkOpen, setFieldworkOpen] = useState(
+      !!initialTool && !!data.world?.expedition,
+    ),
+    [mapPlace, setMapPlace] = useState<string>(),
+    [activeTool, setActiveTool] = useState(initialTool),
     [appearanceOpen, setAppearanceOpen] = useState(false),
     [enemyTarget, setEnemyTarget] = useState(0),
     [allyTarget, setAllyTarget] = useState(0),
@@ -381,7 +390,9 @@ export default function AdventureGame({
               )}
               <button
                 className="button secondary"
-                onClick={() => update(returnToMap(c))}
+                onClick={async () => {
+                  if (await update(returnToMap(c))) setActiveTool(undefined);
+                }}
               >
                 Return to map <Map size={16} />
               </button>
@@ -413,12 +424,53 @@ export default function AdventureGame({
           </div>
           <button
             className="button secondary"
-            onClick={() => update(returnToMap(c))}
+            onClick={async () => {
+              if (await update(returnToMap(c))) setActiveTool(undefined);
+            }}
           >
             <Map size={16} />
             Return to map
           </button>
         </div>
+        {CAREER_UTILITIES.some((u) => hasCareerUtility(c, u.id)) && (
+          <button
+            className="button secondary"
+            onClick={() => setFieldworkOpen(true)}
+          >
+            Fieldwork
+          </button>
+        )}
+        {fieldworkOpen && (
+          <Modal title="Fieldwork" onClose={() => setFieldworkOpen(false)} wide>
+            <CareerFieldwork
+              c={c}
+              placeId={place.id}
+              initialTool={initialTool}
+              onArea={async (id) => {
+                if (await update(returnToMap(c))) {
+                  setActiveTool(undefined);
+                  setMapPlace(id);
+                  setTab("map");
+                  setFieldworkOpen(false);
+                }
+              }}
+              onRequests={async () => {
+                if (await update(returnToMap(c))) {
+                  setActiveTool(undefined);
+                  setTab("requests");
+                  setFieldworkOpen(false);
+                }
+              }}
+              onShop={async () => {
+                if (await update(returnToMap(c))) {
+                  setActiveTool(undefined);
+                  setTab("equipment");
+                  setFieldworkOpen(false);
+                }
+              }}
+            />
+          </Modal>
+        )}
         <PartyResources c={c} />
         <div className={`expedition-scene biome-${place.biome}`}>
           <PixelScene biome={place.biome} />
@@ -524,7 +576,10 @@ export default function AdventureGame({
       <div className="tabs">
         <button
           className={tab === "map" ? "active" : ""}
-          onClick={() => setTab("map")}
+          onClick={() => {
+            setActiveTool(undefined);
+            setTab("map");
+          }}
         >
           <Map size={15} />
           World map
@@ -559,7 +614,18 @@ export default function AdventureGame({
         </button>
       </div>
       {(tab === "map" || tab === "requests") && (
-        <WorldMap c={c} update={update} mode={tab} />
+        <WorldMap
+          key={`${mapPlace || "current"}:${activeTool || "map"}`}
+          c={c}
+          update={update}
+          mode={tab}
+          initialTool={activeTool}
+          initialPlace={mapPlace}
+          onMode={(mode) => {
+            setActiveTool(undefined);
+            setTab(mode);
+          }}
+        />
       )}
       {tab === "party" && (
         <>

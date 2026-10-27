@@ -48,10 +48,12 @@ export default function SkillTree({
   c,
   update,
   onCertificate,
+  onFieldwork,
 }: {
   c: Character;
   update: (c: Character) => Promise<boolean>;
   onCertificate: () => void;
+  onFieldwork?: (id: string) => void;
 }) {
   const key = `${c.id}.${c.activeClass}.tree`;
   const location = planLocation(c),
@@ -835,6 +837,7 @@ export default function SkillTree({
             skill={selected}
             style={skillStyle(selected, list)}
             update={update}
+            onFieldwork={onFieldwork}
             onSelect={inspect}
             onClose={closeInspector}
             onCertificate={() => {

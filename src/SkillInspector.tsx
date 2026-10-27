@@ -28,6 +28,7 @@ export default function SkillInspector({
   onCertificate,
   goal,
   setGoal,
+  onFieldwork,
 }: {
   c: Character;
   skill: Skill;
@@ -38,6 +39,7 @@ export default function SkillInspector({
   onCertificate: () => void;
   goal: string;
   setGoal: (id: string) => void;
+  onFieldwork?: (id: string) => void;
 }) {
   const learned = hasSkill(c, s),
     missing = skillRequirements(c, s),
@@ -137,6 +139,15 @@ export default function SkillInspector({
               ? "Attack, guard, items and the active class signature."
               : s.proof}
           </p>
+        )}
+        {learned && careerUtilityForSkill(s.id) && onFieldwork && (
+          <button
+            className="button secondary full"
+            disabled={!!data.battle}
+            onClick={() => onFieldwork(careerUtilityForSkill(s.id)!.id)}
+          >
+            Use {careerUtilityForSkill(s.id)!.name}
+          </button>
         )}
       </section>
       {upgrade && upgrade.id !== s.id && (

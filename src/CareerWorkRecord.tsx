@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Character } from "./domain";
-import { careerCategory, VOCATIONS } from "./careers";
+import { careerCategory, VOCATIONS, CAREER_CATEGORIES } from "./careers";
 import {
   CAREER_UTILITIES,
   hasCareerUtility,
@@ -8,9 +8,16 @@ import {
   workRecordText,
 } from "./career-payoffs";
 import { exportData } from "./file-export";
-export default function CareerWorkRecord({ c }: { c: Character }) {
+export default function CareerWorkRecord({
+  c,
+  onFieldwork,
+}: {
+  c: Character;
+  onFieldwork?: (id: string) => void;
+}) {
   const [all, setAll] = useState(false),
-    [error, setError] = useState("");
+    [error, setError] = useState(""),
+    [allTools, setAllTools] = useState(false);
   const category = careerCategory(c.profession),
     work = careerWork(c),
     list = work.filter((o) => all || o.category === category.id),
@@ -80,19 +87,42 @@ export default function CareerWorkRecord({ c }: { c: Character }) {
       )}
       <details>
         <summary>Field competencies</summary>
-        {CAREER_UTILITIES.map((u) => (
-          <div className="career-competency" key={u.id}>
-            <b>
-              {u.name} · {hasCareerUtility(c, u.id) ? "Learned" : "Locked"}
-            </b>
-            <p>{u.effect}</p>
-            <small>
-              {u.id === "ledger"
-                ? "Learn Question Framing or Spreadsheet Craft: Primer."
-                : "Learn System Foundations or Command Line: Primer."}
-            </small>
-          </div>
-        ))}
+        <label className="competency-toggle">
+          <input
+            type="checkbox"
+            checked={allTools}
+            onChange={(e) => setAllTools(e.target.checked)}
+          />
+          All available disciplines
+        </label>
+        <div className="field-competency-grid">
+          {CAREER_UTILITIES.filter(
+            (u) =>
+              allTools ||
+              u.category === category.id ||
+              hasCareerUtility(c, u.id),
+          ).map((u) => (
+            <div className="career-competency" key={u.id}>
+              <b>
+                {u.name} · {hasCareerUtility(c, u.id) ? "Learned" : "Locked"}
+              </b>
+              <small>
+                {CAREER_CATEGORIES.find((g) => g.id === u.category)?.name}
+              </small>
+              <p>{u.effect}</p>
+              <small>Learn {u.learn}.</small>
+              {hasCareerUtility(c, u.id) && onFieldwork && (
+                <button
+                  className="button secondary"
+                  disabled={!!c.campaign?.battle}
+                  onClick={() => onFieldwork(u.id)}
+                >
+                  Use {u.name}
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
       </details>
     </section>
   );

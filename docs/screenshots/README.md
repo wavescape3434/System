@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.17.0 — screenshots
+# The Adventurers Guild 1.18.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Profession fieldwork — version 1.18
+
+| Resource atlas | Equipment comparison | Spending plan |
+| --- | --- | --- |
+| [<img src="resource-atlas-mobile.png" width="230" alt="Accessible resource routes and whether repeat exploration is ready">](resource-atlas-mobile.png) | [<img src="equipment-appraisal-mobile.png" width="230" alt="Selected weapon comparison showing both combat stat gains and losses">](equipment-appraisal-mobile.png) | [<img src="treasury-plan-mobile.png" width="230" alt="Potion and ether budget with separate money and stock checks">](treasury-plan-mobile.png) |
+
+[Guild docket](guild-docket-mobile.png) · [Delivery manifest](delivery-manifest-mobile.png) · [Danger watch](danger-watch-mobile.png) · [Eight-tool directory](field-tool-directory-desktop.png) · [Fieldwork during an expedition](expedition-fieldwork-mobile.png)
+
+[Changes](../update-1.18.md) · [Verification](../verification-1.18.md) · [Capture fixtures and scans](../fieldwork-1.18/README.md). Learned skills, inventory and exploration progress in these previews are scripted sample records.
 
 ## Career work and save recovery — version 1.17
 
@@ -116,7 +126,7 @@ These are browser previews using sample characters. Exploration results, prior a
 
 ## Retained feature previews
 
-These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.17 previews above show the current update.
+These show the existing guild, class, assessment, Settings, and Journey features. Older interface screenshots reflect the release in which they were captured; the 1.18 previews above show the current update.
 
 [Guild Card on phone](guild-android.png) · [Guild Card detail](guild-card-detail.png) · [Rank metals](rank-metals.png) · [Class register](class-paths.png) · [Class comparison](class-comparison.png) · [Full Fighter skill web](fighter-web.png) · [Career tree](profession-tree.png) · [Vocation](vocation.png)
 

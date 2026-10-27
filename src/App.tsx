@@ -711,6 +711,9 @@ export default function App() {
                       update={update}
                       onCertificate={() => setDialog("certificate")}
                       initialTab={section}
+                      onFieldwork={(id) =>
+                        navigate("adventures", `fieldwork:${id}`)
+                      }
                     />
                   ) : page === "adventures" ? (
                     <Adventures {...props} />

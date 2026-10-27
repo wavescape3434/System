@@ -464,11 +464,13 @@ export function Skills({
   update,
   onCertificate,
   initialTab,
+  onFieldwork,
 }: {
   c: Character;
   update: (c: Character) => Promise<boolean>;
   onCertificate: () => void;
   initialTab?: string;
+  onFieldwork?: (id: string) => void;
 }) {
   const [tab, setTab] = useState(initialTab || "attributes"),
     s = stats(c);
@@ -554,11 +556,16 @@ export function Skills({
         </>
       )}
       {tab === "skills" && (
-        <SkillTree c={c} update={update} onCertificate={onCertificate} />
+        <SkillTree
+          c={c}
+          update={update}
+          onCertificate={onCertificate}
+          onFieldwork={onFieldwork}
+        />
       )}
       {tab === "profession" && (
         <div className="profession-layout">
-          <CareerWorkRecord c={c} />
+          <CareerWorkRecord c={c} onFieldwork={onFieldwork} />
           <section className="panel">
             <span className="eyebrow">PROFESSION</span>
             <h2>{c.profession}</h2>
@@ -667,6 +674,14 @@ export function Skills({
     </>
   );
 }
-export function Adventures({ c, update }: ScreenProps) {
-  return <AdventureGame c={c} update={update} />;
+export function Adventures({ c, update, section }: ScreenProps) {
+  return (
+    <AdventureGame
+      c={c}
+      update={update}
+      initialTool={
+        section?.startsWith("fieldwork:") ? section.slice(10) : undefined
+      }
+    />
+  );
 }

@@ -1,29 +1,67 @@
+import { useState } from "react";
+import { careerCategory } from "./careers";
+import CareerToolPanels from "./CareerToolPanels";
+import type { FieldActions } from "./CareerToolPanels";
 import type { Character } from "./domain";
 import {
   supplyLedger,
   stageDiagnostics,
   hasCareerUtility,
+  CAREER_UTILITIES,
 } from "./career-payoffs";
 import { RESOURCE_NAMES } from "./world-catalog";
 export default function CareerFieldwork({
   c,
   placeId,
+  initialTool,
+  onArea,
+  onRequests,
+  onShop,
 }: {
   c: Character;
   placeId: string;
-}) {
-  const ledger = supplyLedger(c),
-    diagnostics = stageDiagnostics(c, placeId);
-  if (!ledger && !hasCareerUtility(c, "diagnostics")) return null;
+  initialTool?: string;
+} & FieldActions) {
+  const available = CAREER_UTILITIES.filter((u) => hasCareerUtility(c, u.id));
+  const [selection, setSelection] = useState(
+    initialTool ||
+      available.find((u) => u.category === careerCategory(c.profession).id)
+        ?.id ||
+      available[0]?.id ||
+      "",
+  );
+  const selected = available.find((u) => u.id === selection) || available[0];
+  if (!selected) return null;
+  const ledger = selected.id === "ledger" ? supplyLedger(c) : null,
+    diagnostics =
+      selected.id === "diagnostics" ? stageDiagnostics(c, placeId) : null;
   return (
     <section
       className="pixel-window career-fieldwork"
       aria-label="Career fieldwork"
     >
-      <h3>Fieldwork</h3>
+      <div className="field-desk-heading">
+        <h3>Fieldwork</h3>
+        <span>{available.length} learned</span>
+      </div>
+      <label className="field-tool-filter">
+        Competency
+        <select
+          aria-label="Field competency"
+          value={selected.id}
+          onChange={(e) => setSelection(e.target.value)}
+        >
+          {available.map((u) => (
+            <option key={u.id} value={u.id}>
+              {u.name}
+            </option>
+          ))}
+        </select>
+      </label>
+      <h4>{selected.name}</h4>
       {ledger && (
-        <details>
-          <summary>Quartermaster’s Ledger · {ledger.town}</summary>
+        <div className="field-tool-body">
+          <p>{ledger.town}</p>
           <p>
             Healing potions: {ledger.stock.potion || 0} · Ethers:{" "}
             {ledger.stock.ether || 0}
@@ -52,11 +90,10 @@ export default function CareerFieldwork({
               </small>
             </article>
           ))}
-        </details>
+        </div>
       )}
-      {hasCareerUtility(c, "diagnostics") && (
-        <details>
-          <summary>Warden’s Diagnostics</summary>
+      {selected.id === "diagnostics" && (
+        <div className="field-tool-body">
           {diagnostics ? (
             <div className="diagnostic-grid">
               {diagnostics.enemies.map((e) => (
@@ -82,8 +119,16 @@ export default function CareerFieldwork({
           ) : (
             <p>No uncleared stage available here.</p>
           )}
-        </details>
+        </div>
       )}
+      <CareerToolPanels
+        key={selected.id}
+        c={c}
+        tool={selected.id}
+        onArea={onArea}
+        onRequests={onRequests}
+        onShop={onShop}
+      />
     </section>
   );
 }

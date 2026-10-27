@@ -943,11 +943,13 @@ export function claimVictory(c: Character): Character {
   };
 }
 
+export const SUPPLY_PRICES = { potion: 20, ether: 25 } as const;
 export function buy(c: Character, id: string): Character {
   const data = campaign(c),
     item = EQUIPMENT.find((x) => x.id === id),
     price =
-      item?.price ?? (id === "potion" ? 20 : id === "ether" ? 25 : Infinity);
+      item?.price ??
+      (id === "potion" || id === "ether" ? SUPPLY_PRICES[id] : Infinity);
   if (
     data.battle?.phase === "player" ||
     data.gold < price ||

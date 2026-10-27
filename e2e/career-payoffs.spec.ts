@@ -93,13 +93,16 @@ test("learned career skills unlock field information without changing the charac
   });
   await page.reload();
   await nav(page, "Adventures");
+  await page.locator(".map-fieldwork > summary").click();
   await page
-    .getByText("Quartermaster’s Ledger · Alderhaven", { exact: true })
-    .click();
+    .getByLabel("Field competency", { exact: true })
+    .selectOption("ledger");
   await expect(page.getByLabel("Career fieldwork")).toContainText(
     "Gather at Briar Road",
   );
-  await page.getByText("Warden’s Diagnostics", { exact: true }).click();
+  await page
+    .getByLabel("Field competency", { exact: true })
+    .selectOption("diagnostics");
   await expect(page.getByLabel("Career fieldwork")).toContainText(
     "HP 50 · ATK 14 · DEF 4",
   );

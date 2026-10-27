@@ -31,6 +31,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.18.0
+
+Six more professions gain field tools: Management’s commission docket, Logistics’ delivery manifest, Land/Agriculture’s resource atlas, Trades’ equipment appraisal, Safety’s danger watch and Finance’s spending planner. Fieldwork shows one selected tool, with shortcuts from learned skills and a dialog usable during expeditions. **Eight of twenty** career disciplines now have field utilities; twelve remain on the roadmap. [Changes](docs/update-1.18.md) · [Verification](docs/verification-1.18.md) · [Previews](docs/screenshots/README.md).
+
+Install over the existing app to retain its character: version code **20**, package `com.theguild.personal`, and the same signing certificate. These tools inspect existing data; using the normal shop or guild board performs transactions. Google setup stays deferred and physical Android checks remain open.
+
 ## Version 1.17.0
 
 Primary progress now saves asynchronously in IndexedDB, with separate history chunks, safe legacy migration, transaction-confirmed success, rollback on failure and stale-window protection. File imports accept up to 25 MB. Career request outcomes form an exportable work record across twenty disciplines; learned Business and Computing skills unlock supply-route reports and next-stage diagnostics in Adventures. [Changes](docs/update-1.17.md) · [Verification](docs/verification-1.17.md) · [Previews](docs/screenshots/README.md) · [P05 readiness](docs/readiness-1.17.md).

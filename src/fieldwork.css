@@ -1,0 +1,141 @@
+.field-desk-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.field-desk-heading > span {
+  font-size: 12px;
+  color: #cad9ee;
+}
+.field-tool-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+  color: #f4da90;
+}
+.career-fieldwork select,
+.career-fieldwork input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  background: #102353;
+  border: 1px solid #91aacd;
+  color: #f0f4ff;
+  padding: 10px;
+  font: inherit;
+}
+.career-fieldwork > h4 {
+  color: #f4da90;
+  padding: 10px 0;
+  font-size: 18px;
+}
+.career-fieldwork p {
+  overflow-wrap: anywhere;
+}
+.career-fieldwork .field-action {
+  min-height: 44px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  border: 1px solid #b4c9ed;
+  color: #f4da90;
+  background: #102353;
+}
+.field-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid #6c85ad;
+  padding-top: 10px;
+  margin-top: 12px;
+}
+.field-route > span {
+  flex: 1;
+  min-width: 150px;
+}
+.field-route small,
+.field-line {
+  display: block;
+  margin-top: 6px;
+}
+.field-stat-deltas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #c7edc0;
+  margin: 12px 0;
+}
+.field-budget-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 18px 0;
+}
+.field-budget-inputs label {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.competency-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  margin-bottom: 14px;
+}
+.competency-toggle input {
+  width: 20px;
+  height: 20px;
+}
+.career-competency > .button {
+  display: block;
+  margin-top: 14px;
+}
+@media (max-width: 400px) {
+  .field-budget-inputs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field-stat-deltas .negative {
+  color: #ffbfc5;
+}
+
+.field-competency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.field-competency-grid .career-competency {
+  border: 1px solid var(--line);
+  padding: 16px;
+}
+.field-competency-grid small {
+  display: block;
+  margin-top: 8px;
+}
+@media (max-width: 700px) {
+  .field-competency-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.map-fieldwork > summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 0;
+  color: #f4da90;
+}
+.map-fieldwork > .career-fieldwork {
+  margin-top: 12px;
+}
+.topbar .breadcrumb {
+  color: #615a49;
+}
+.pixel-adventure .modal .modal-header h2 {
+  color: #283a2d;
+}

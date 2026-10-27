@@ -1,3 +1,4 @@
+import { CAREER_UTILITIES, hasCareerUtility } from "./career-payoffs";
 import CareerFieldwork from "./CareerFieldwork";
 import { adventureParty } from "./rpg";
 import { Swords } from "lucide-react";
@@ -9,6 +10,7 @@ import {
   buy,
   equip,
   EQUIPMENT,
+  SUPPLY_PRICES,
   ENCOUNTERS,
 } from "./rpg";
 import {
@@ -43,20 +45,28 @@ export default function WorldMap({
   c,
   update,
   mode,
+  initialTool,
+  initialPlace,
+  onMode,
 }: {
   c: Character;
   update: (c: Character) => Promise<boolean>;
   mode: "map" | "requests" | "shop";
+  initialTool?: string;
+  initialPlace?: string;
+  onMode?: (mode: "requests" | "equipment") => void;
 }) {
   const data = campaign(c),
     world = data.world!,
     currentTown = TOWNS.find((t) => t.id === world.townId)!;
   const [regionId, setRegion] = useState(
-      PLACES.find((p) => p.id === world.placeId)?.region || currentTown.region,
+      PLACES.find((p) => p.id === (initialPlace || world.placeId))?.region ||
+        currentTown.region,
     ),
     [placeId, setPlace] = useState(
-      world.placeId || `${currentTown.region}-path`,
+      initialPlace || world.placeId || `${currentTown.region}-path`,
     ),
+    [focusOnly, setFocusOnly] = useState(!!initialTool),
     [query, setQuery] = useState(""),
     [requestView, setRequestView] = useState("town");
   const region = WORLD_REGIONS.find((r) => r.id === regionId)!,
@@ -74,6 +84,40 @@ export default function WorldMap({
       data.cleared.includes(id),
     ).length,
     percent = (n: number) => `${Math.round(n * 100)}%`;
+  const fieldwork = (
+    <CareerFieldwork
+      c={c}
+      placeId={place.id}
+      initialTool={initialTool}
+      onArea={(id) => {
+        const p = PLACES.find((p) => p.id === id);
+        if (p && placeOpen(data, id)) {
+          setRegion(p.region);
+          setPlace(id);
+          setFocusOnly(false);
+          requestAnimationFrame(() =>
+            document
+              .querySelector(".pixel-place-heading")
+              ?.scrollIntoView({ block: "center" }),
+          );
+        }
+      }}
+      onRequests={() => onMode?.("requests")}
+      onShop={() => onMode?.("equipment")}
+    />
+  );
+  if (mode === "map" && focusOnly)
+    return (
+      <div className="pixel-world">
+        <button
+          className="button secondary"
+          onClick={() => setFocusOnly(false)}
+        >
+          World map
+        </button>
+        {fieldwork}
+      </div>
+    );
   const towns = (
     <div className="pixel-town-strip" aria-label="Towns">
       {TOWNS.map((t) => (
@@ -126,12 +170,12 @@ export default function WorldMap({
               )}
               <button
                 disabled={
-                  data.gold < (id === "potion" ? 20 : 25) ||
+                  data.gold < SUPPLY_PRICES[id as keyof typeof SUPPLY_PRICES] ||
                   !world.stock[currentTown.id][id]
                 }
                 onClick={() => update(buy(c, id))}
               >
-                Buy · {id === "potion" ? 20 : 25} gold
+                Buy · {SUPPLY_PRICES[id as keyof typeof SUPPLY_PRICES]} gold
               </button>
             </article>
           ))}
@@ -381,7 +425,12 @@ export default function WorldMap({
           </button>
         ))}
       </div>
-      <CareerFieldwork c={c} placeId={place.id} />
+      {CAREER_UTILITIES.some((u) => hasCareerUtility(c, u.id)) && (
+        <details className="pixel-window map-fieldwork">
+          <summary>Fieldwork</summary>
+          {fieldwork}
+        </details>
+      )}
       <section className="pixel-window">
         <div className="pixel-place-heading">
           <h2>{place.name}</h2>

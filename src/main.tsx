@@ -28,3 +28,5 @@ import "./daily-flow.css";
 import "./planning-recovery.css";
 
 import "./primary-storage.css";
+
+import "./fieldwork.css";
