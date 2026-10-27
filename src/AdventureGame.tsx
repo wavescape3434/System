@@ -9,6 +9,7 @@ import PixelScene from "./PixelScene";
 import {
   continueAdventure,
   returnToMap,
+  travelTown,
   explore,
   challengeBoss,
   declineBoss,
@@ -472,6 +473,15 @@ export default function AdventureGame({
                 if (await update(returnToMap(c))) {
                   setActiveTool(undefined);
                   setTab("loadout");
+                  setFieldworkOpen(false);
+                }
+              }}
+              onTown={async (id, destination = "equipment") => {
+                const next = travelTown(c, id);
+                if (next !== c && (await update(next))) {
+                  setActiveTool(undefined);
+                  setMapPlace(undefined);
+                  setTab(destination);
                   setFieldworkOpen(false);
                 }
               }}

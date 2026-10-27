@@ -104,6 +104,16 @@ export default function WorldMap({
       }}
       onRequests={() => onMode?.("requests")}
       onShop={() => onMode?.("equipment")}
+      onTown={async (id, destination = "equipment") => {
+        const town = TOWNS.find((t) => t.id === id),
+          next = travelTown(c, id);
+        if (town && next !== c && (await update(next))) {
+          setRegion(town.region);
+          setPlace(`${town.region}-path`);
+          setFocusOnly(false);
+          onMode?.(destination);
+        }
+      }}
       onParty={() => onMode?.("party")}
       onLoadout={() => onMode?.("loadout")}
     />

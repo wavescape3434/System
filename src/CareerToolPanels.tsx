@@ -13,6 +13,7 @@ export interface FieldActions {
   onArea?: (id: string) => void;
   onRequests?: () => void;
   onShop?: () => void;
+  onTown?: (id: string, destination?: "equipment" | "requests") => void;
   onParty?: () => void;
   onLoadout?: () => void;
 }

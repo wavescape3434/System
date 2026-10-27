@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.19.0 — screenshots
+# The Adventurers Guild 1.20.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Town and preparation tools — version 1.20
+
+| Route folio | Crafting basket | Town services |
+| --- | --- | --- |
+| [<img src="route-folio-mobile.png" width="230" alt="Connected route sketches with stage marks and open or locked areas">](route-folio-mobile.png) | [<img src="forge-order-mobile.png" width="230" alt="Combined crafting basket and material shortages">](forge-order-mobile.png) | [<img src="town-concierge-mobile.png" width="230" alt="Selected town stock, prices, smith tier and travel action">](town-concierge-mobile.png) |
+
+[Delivery offers](delivery-exchange-mobile.png) · [Commission receipts](receipt-register-mobile.png) · [Departure check](departure-check-mobile.png) · [Desktop folio](route-folio-desktop.png) · [Expedition concierge](expedition-concierge-mobile.png)
+
+[Changes](../update-1.20.md) · [Verification](../verification-1.20.md) · [Capture fixtures and scans](../town-1.20/README.md). These are scripted sample skills, receipts, route progress and reserves.
 
 ## Service profession tools — version 1.19
 

@@ -31,6 +31,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.20.0
+
+All **twenty profession categories** now have an initial learned Fieldwork tool. Creative adds a visual route folio; Sales compares delivery offers; Administration reconciles and exports commission receipts; Hospitality compares and visits town services; Manufacturing combines crafting costs; General Practice checks departure readiness. [Changes](docs/update-1.20.md) · [Verification](docs/verification-1.20.md) · [Previews](docs/screenshots/README.md).
+
+Version code **22** retains package `com.theguild.personal` and the existing signing certificate. Explicit travel preserves party reserves; viewing tools never awards or spends resources. Deeper career uses and P08 economy work remain on the [roadmap](ROADMAP.md). Google setup stays deferred and physical Android checks remain open.
+
 ## Version 1.19.0
 
 Engineering, Science, Healthcare, Education, Law and Community Services now have learned Fieldwork tools: route plans, observation records/export, party recovery estimates, battle preparation, commission terms and recruitment planning. **Fourteen of twenty** career disciplines have field utilities; six remain. [Changes](docs/update-1.19.md) · [Verification](docs/verification-1.19.md) · [Previews](docs/screenshots/README.md).

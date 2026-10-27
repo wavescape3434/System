@@ -344,7 +344,7 @@ export default function Settings({
           </div>
           <div className="settings-record">
             <span>Version</span>
-            <Tag>1.19.0</Tag>
+            <Tag>1.20.0</Tag>
           </div>
           <button className="button primary" onClick={onAccount}>
             Account & backups

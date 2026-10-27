@@ -18,7 +18,7 @@ This is the working backlog from the version 1.13 product review. Update the sta
 | P04 | High | Record actual improvement | **Submission logging delivered — 1.15.0**; independent entry/editing/imports remain future work | Optional quick inputs for sets/reps, duration/distance and completed work feed existing Journey trends. No compulsory journal writing. One activity can feed legitimate accepted goals under explicit stacking rules. |
 | P05 | Before wider release | Accounts, recovery and device reliability | **Primary-save migration shipped — 1.17.0**, following recovery/session hardening in 1.16. Android runtime/live service checks remain; Google setup deferred by owner. | Verify Google linking, backup recovery, upgrades, reminders and keyboards on Android. Evolve primary storage beyond a whole-character synchronous record as histories grow. |
 | P06 | Medium | Durable plans | **Delivered — 1.16.0** | Skill goals and relevant planning preferences survive app restarts and character backup/restore. Independent goals for each shared, focused, career and universal tree. |
-| P07 | Medium | Career progression payoffs | **Fourteen disciplines covered — 1.19.0**; six field toolkits remain | Career requests produce useful deliverables; non-combat competencies gain meaningful exploration, information or town uses without granting automatic base stats. |
+| P07 | Medium | Career progression payoffs | **Initial utilities for all twenty disciplines — 1.20.0**; deeper skill uses and deliverable workflows remain | Career requests produce useful deliverables; non-combat competencies gain meaningful exploration, information or town uses without granting automatic base stats. |
 | P08 | Medium | Economy and long-term challenge | Planned | Model gold sources, spending and consumable use together. Add challenges for high-stat characters while preserving earned power and unrestricted exploration. |
 
 ## Batch 1 scope
@@ -65,7 +65,13 @@ This is the working backlog from the version 1.13 product review. Update the sta
 - Use actual route locks, recorded events/defeat counters, reserve/item rules, equipped abilities, acceptance baselines, calendar receipts and recruitment requirements. Reports leave progression and campaign state unchanged. Shortcuts open existing area, party, loadout, shop and commission screens.
 - Six disciplines remain: Creative, Sales, Administration, Hospitality, Manufacturing and General Practice. Continue useful discipline-specific tools; coverage does not establish deeper skill mastery or real-world outcomes.
 
-**Next:** continue P07’s remaining profession categories and P08 supply/build economy. P05 device/live-service checks remain a release gate, with Google setup deferred until the owner resumes it.
+## Batch 7 — 1.20.0
+
+- **P07 initial category coverage:** Creative route folio, Sales delivery-offer comparison, Administration commission receipt register/export, Hospitality town-service guide/travel, Manufacturing combined crafting bill and General Practice departure checks. All twenty disciplines now have a learned field utility alongside requests, trees and work records.
+- Use actual access rules, saved progress, inventory, recorded receipt amounts/calendar windows, smith recipes and party reserves. Temporary crafting baskets do not purchase or persist as character plans. Explicit town travel uses the existing travel action and does not heal.
+- **P07 still open:** deeper uses for later career nodes, richer deliverable review, skill identity/mastery and owner/user feedback. One utility per category establishes initial coverage, not full career-system completion.
+
+**Next:** P08 supply/build economy. Simulate gold income, consumable use and equipment spending together across class routines and 7-/30-day windows before tuning prices or rewards. Keep the agreed long-term guild-rank curve. P05 device/live-service checks remain a release gate; Google setup is deferred until the owner resumes it.
 
 ## Guardrails
 
@@ -91,3 +97,4 @@ The version 1.13 review found identical effects for 3-point Spark: Control and 6
 | 4 | **1.17.0** | Chunked asynchronous primary saves, safe migration/rollback/conflict handling, 25 MB imports; P07 work records and first two information utilities. More profession categories next; P05 runtime checks remain. | [Verification](docs/verification-1.17.md) · [Changes](docs/update-1.17.md) |
 | 5 | **1.18.0** | Six more profession tools, single-tool desk/item appraisal, learned-tool shortcuts, expedition Fieldwork and category directory. Eight of twenty disciplines covered; twelve remain. | [Verification](docs/verification-1.18.md) · [Changes](docs/update-1.18.md) |
 | 6 | **1.19.0** | Six service/technical profession tools, observation export and party/loadout shortcuts. Fourteen of twenty disciplines covered; six remain. | [Verification](docs/verification-1.19.md) · [Changes](docs/update-1.19.md) |
+| 7 | **1.20.0** | Six remaining category utilities; initial Fieldwork coverage reaches all twenty disciplines. Town travel retains reserves; deeper career uses and P08 economy remain. | [Verification](docs/verification-1.20.md) · [Changes](docs/update-1.20.md) |

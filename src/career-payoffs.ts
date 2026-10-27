@@ -130,6 +130,60 @@ export const CAREER_UTILITIES = [
     effect:
       "In Adventures, review companion recruitment requirements and active-party coverage.",
   },
+  {
+    id: "folio",
+    name: "Cartographer’s Folio",
+    category: "creative",
+    learn: "Creative Brief or Composition: Primer",
+    skills: ["profession-creative-0", "career-opening-creative-0"],
+    effect:
+      "In Adventures, view a visual route folio with stage progress, exploration access and recorded landmarks.",
+  },
+  {
+    id: "exchange",
+    name: "Broker’s Exchange",
+    category: "sales",
+    learn: "Audience Research or Discovery Questions: Primer",
+    skills: ["profession-sales-0", "career-opening-sales-0"],
+    effect:
+      "In Adventures, compare reachable towns’ delivery offers, gold per material and current shortages before taking a commission.",
+  },
+  {
+    id: "register",
+    name: "Archivist’s Register",
+    category: "administration",
+    learn: "Records & Accuracy or Calendar Planning: Primer",
+    skills: ["profession-administration-0", "career-opening-administration-0"],
+    effect:
+      "In Adventures, reconcile and export adventure commission receipts by date and town, separately from other income.",
+  },
+  {
+    id: "concierge",
+    name: "Wayfarer’s Concierge",
+    category: "hospitality",
+    learn: "Service Standards or Guest Communication: Primer",
+    skills: ["profession-hospitality-0", "career-opening-hospitality-0"],
+    effect:
+      "In Adventures, compare town stores, smiths and restocking requests, then visit an unlocked town’s shops.",
+  },
+  {
+    id: "work-order",
+    name: "Forge Work Order",
+    category: "manufacturing",
+    learn: "Process Steps or Measurement Records: Primer",
+    skills: ["profession-manufacturing-0", "career-opening-manufacturing-0"],
+    effect:
+      "In Adventures, plan several current-town crafts against a combined gold and material bill before visiting the blacksmith.",
+  },
+  {
+    id: "departure",
+    name: "Adventurer’s Departure Check",
+    category: "general",
+    learn: "Goal Charter or Learning Log: Primer",
+    skills: ["profession-general-0", "career-opening-general-0"],
+    effect:
+      "In Adventures, review a route, current party reserves, equipped-skill count and accepted local commissions before departing.",
+  },
 ] as const;
 export function careerUtilityForSkill(id: string) {
   return CAREER_UTILITIES.find((u) =>

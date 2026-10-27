@@ -1,7 +1,7 @@
 import type { Character } from "./domain";
 import { describe, it, expect } from "vitest";
 import { demoCharacter, SKILLS, stats, totalXP } from "./domain";
-import { careerCategory } from "./careers";
+import { CAREER_CATEGORIES, careerCategory } from "./careers";
 import { CAREER_UTILITIES, hasCareerUtility } from "./career-payoffs";
 import {
   guildDocket,
@@ -28,9 +28,12 @@ const fixture = (): Character => {
   };
 };
 describe("profession fieldwork", () => {
-  it("maps fourteen disciplines to actual learnable non-combat skills", () => {
-    expect(CAREER_UTILITIES).toHaveLength(14);
-    expect(new Set(CAREER_UTILITIES.map((u) => u.category)).size).toBe(14);
+  it("maps all twenty disciplines to actual learnable non-combat skills", () => {
+    expect(CAREER_UTILITIES).toHaveLength(20);
+    expect(new Set(CAREER_UTILITIES.map((u) => u.category)).size).toBe(20);
+    expect(CAREER_UTILITIES.map((u) => u.category).sort()).toEqual(
+      CAREER_CATEGORIES.map((g) => g.id).sort(),
+    );
     for (const u of CAREER_UTILITIES)
       for (const id of u.skills) {
         const s = SKILLS.find((s) => s.id === id)!;
