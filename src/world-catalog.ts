@@ -180,7 +180,8 @@ export interface WorldEncounter {
   enemies: string[];
   gold: number;
   recruit?: string;
-  kind: "stage" | "wild" | "roaming-boss";
+  kind: "stage" | "wild" | "roaming-boss" | "elite-hunt";
+  huntGrade?: number;
   loot: Record<string, number>;
 }
 export const STAGE_NAMES: Record<Place["kind"], string[]> = {
@@ -222,7 +223,7 @@ export const STAGE_NAMES: Record<Place["kind"], string[]> = {
   ],
 };
 export const TOTAL_STAGES = PLACES.reduce((n, p) => n + p.stages.length, 0);
-export const WORLD_ENCOUNTERS: WorldEncounter[] = PLACES.flatMap((p) => {
+const STANDARD_ENCOUNTERS: WorldEncounter[] = PLACES.flatMap((p) => {
   const r = WORLD_REGIONS.find((r) => r.id === p.region)!,
     ri = WORLD_REGIONS.indexOf(r),
     pi = PLACES.filter((x) => x.region === r.id).indexOf(p),
@@ -652,3 +653,31 @@ for (const r of WORLD_REGIONS.filter(
     },
   );
 }
+
+export const HUNT_GRADES = [
+  { name: "Veteran", power: 6 },
+  { name: "Elite", power: 22 },
+  { name: "Mythic", power: 60 },
+  { name: "Calamity", power: 140 },
+] as const;
+export const ELITE_HUNTS: WorldEncounter[] = WORLD_REGIONS.flatMap((r, ri) =>
+  HUNT_GRADES.map((grade, i) => {
+    const town = TOWNS.find((t) => t.id === r.town)!;
+    return {
+      id: `${r.id}-hunt-${i + 1}`,
+      name: `${grade.name} ${MONSTER_NAMES[r.boss] || r.boss}`,
+      region: r.id,
+      placeId: `${r.id}-path`,
+      tier: grade.power + ri * 4,
+      enemies: [r.boss, r.enemies[(ri + i) % r.enemies.length]],
+      kind: "elite-hunt",
+      huntGrade: i + 1,
+      gold: 35 + ri * 10 + i * 15,
+      loot: { [town.herb]: 2 + i, [town.ore]: 2 + i },
+    };
+  }),
+);
+export const WORLD_ENCOUNTERS: WorldEncounter[] = [
+  ...STANDARD_ENCOUNTERS,
+  ...ELITE_HUNTS,
+];

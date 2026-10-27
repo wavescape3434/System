@@ -1,3 +1,4 @@
+import EliteHunts from "./EliteHunts";
 import { Apothecary, TemperBench } from "./Workshop";
 import {
   gearModifiers,
@@ -58,7 +59,7 @@ export default function WorldMap({
 }: {
   c: Character;
   update: (c: Character) => Promise<boolean>;
-  mode: "map" | "requests" | "shop";
+  mode: "map" | "requests" | "shop" | "hunts";
   initialTool?: string;
   initialPlace?: string;
   onMode?: (mode: "requests" | "equipment" | "party" | "loadout") => void;
@@ -262,6 +263,7 @@ export default function WorldMap({
         </details>
       </div>
     );
+  if (mode === "hunts") return <EliteHunts c={c} update={update} />;
   if (mode === "requests") {
     const contracts = WORLD_CONTRACTS.filter(
       (r) =>

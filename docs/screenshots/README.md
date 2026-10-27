@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.22.0 — screenshots
+# The Adventurers Guild 1.23.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Elite hunts — version 1.23
+
+| Hunt selection | Visible tactics | Victory actions |
+| --- | --- | --- |
+| [<img src="hunts-veteran-mobile.png" width="230" alt="A selected regional hunt with fixed difficulty, enemy reserves and attack patterns">](hunts-veteran-mobile.png) | [<img src="hunts-enrage-mobile.png" width="230" alt="Mythic enemies telegraph shell armor, cleave and a wounded phase">](hunts-enrage-mobile.png) | [<img src="hunts-victory-mobile.png" width="230" alt="Victory offers immediate replay or a return to the hunt board">](hunts-victory-mobile.png) |
+
+[Locked route](hunts-locked-mobile.png) · [Calamity inspection](hunts-calamity-mobile.png) · [Desktop board](hunts-veteran-desktop.png) · [Desktop battle](hunts-battle-desktop.png) · [Phone battle](hunts-battle-mobile.png)
+
+[Combat report](../hunts-1.23/README.md) · [Changes](../update-1.23.md) · [Verification](../verification-1.23.md) · [Fixtures and scans](../hunts-1.23/screens/README.md).
 
 ## Town workshops — version 1.22
 

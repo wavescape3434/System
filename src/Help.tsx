@@ -325,6 +325,10 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
         "Your character and up to two companions act before the enemy round. Select an enemy for attacks and an ally for healing or items. Guard restores 3 MP and reduces incoming damage.",
       ],
       [
+        "Elite hunts",
+        "Adventures → Guild requests → Elite hunts offers Veteran, Elite, Mythic and Calamity fights in each region. Clear that region’s ten-stage outer route first. Strength is fixed for the chosen region and grade; it does not scale automatically to your character. Inspect enemy reserves and tactics before entering. Hunts award gold and local brewing/smith materials, never real-world XP or base stats. Companions retain player-level growth. Orin can protect the party; Lyra pierces armor; Gideon breaks shells and lowers defense; Nessa heals living allies together; Toma inflicts burning; Elara can counter while guarding. Mira retains Restore and Glimmer. Recruited companions receive these commands in new battles; an existing saved battle keeps its original command list. Hunt again claims an unpaid victory once and immediately starts the same hunt with saved reserves. Hunt board claims an unpaid victory and returns to the hunt selection. Retreats and defeats keep spent items and damage. Normal exploration, boss discovery and local-midnight recovery remain separate.",
+      ],
+      [
         "Supplies and purchases",
         "Adventures → Supplies uses one carried potion or ether on a selected living party member between battles. Potions restore up to 50 HP; ethers up to 20 MP. Full and fallen targets cannot consume them. Recovery and item use are saved; closing Supplies keeps the expedition. The store accepts whole purchase quantities from 1 to 99 and charges the full batch only when both gold and local stock cover it. Battles still spend a turn on valid items. Full recovery remains local midnight. Greater and Royal brews also appear in Supplies and battle commands when carried. Their recovery scales with maximum reserves; they never revive fallen allies.",
       ],
@@ -334,7 +338,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Effects",
-        "Skills can pierce armor, hit groups, stun regular enemies, taunt, counter, guard allies, heal, restore MP, or inflict burning. Bosses resist stun and use a heavy strike every third round.",
+        "Skills can pierce armor, hit groups, stun regular enemies, taunt, counter, guard allies, heal, restore MP, or inflict burning. Bosses resist stun. Ordinary bosses use a heavy strike every third round; elite enemies show their separate attack and targeting patterns.",
       ],
       [
         "Rewards & recovery",

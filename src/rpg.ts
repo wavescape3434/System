@@ -1,3 +1,4 @@
+import { COMPANION_TACTICS } from "./companion-tactics";
 import { gearModifiers } from "./equipment-progression";
 import {
   SUPPLY_PRICES,
@@ -38,7 +39,14 @@ import {
   combatProfile,
   resolvedLoadout,
 } from "./combat-progression";
-import { openingTactics, chargedAttack } from "./enemy-tactics";
+import {
+  openingTactics,
+  chargedAttack,
+  huntTactics,
+  huntEnraged,
+  huntTarget,
+  TACTIC_NAMES,
+} from "./enemy-tactics";
 export interface AdventureVitals {
   day: string;
   members: Record<
@@ -77,7 +85,7 @@ export const COMPANIONS = [
     id: "orin",
     name: "Orin",
     role: "Guardian",
-    description: "High defense and a shield attack.",
+    description: "Shield attacks, party protection, and drawing enemy attacks.",
     skill: "power",
     requires: "mossfall-boss",
   },
@@ -85,7 +93,7 @@ export const COMPANIONS = [
     id: "lyra",
     name: "Lyra",
     role: "Ranger",
-    description: "Fast attacks and multi-target shots.",
+    description: "Fast multi-target shots and armor-piercing arrows.",
     skill: "quick",
     requires: "quarry-boss",
   },
@@ -93,7 +101,7 @@ export const COMPANIONS = [
     id: "gideon",
     name: "Gideon",
     role: "Scholar",
-    description: "Magic damage and enemy analysis.",
+    description: "Fire magic, shell breaking, and defense analysis.",
     skill: "fire",
     requires: "ruins-boss",
   },
@@ -101,7 +109,7 @@ export const COMPANIONS = [
     id: "nessa",
     name: "Nessa",
     role: "Tide Warden",
-    description: "Party barriers and steady support.",
+    description: "Party barriers and healing for all living allies.",
     skill: "ward",
     requires: "coast-boss",
   },
@@ -109,7 +117,7 @@ export const COMPANIONS = [
     id: "toma",
     name: "Toma",
     role: "Fen Scout",
-    description: "Armor-piercing attacks and quick positioning.",
+    description: "Armor-piercing strikes and lingering Fenfire damage.",
     skill: "pierce",
     requires: "fen-boss",
   },
@@ -117,7 +125,7 @@ export const COMPANIONS = [
     id: "elara",
     name: "Elara",
     role: "Winter Guardian",
-    description: "Draws enemy attacks away from vulnerable allies.",
+    description: "Draws enemy attacks and counters from a guarded stance.",
     skill: "taunt",
     requires: "frost-boss",
   },
@@ -369,6 +377,7 @@ export interface Unit {
   counter?: boolean;
   counterPower?: number;
   shell?: number;
+  tactic?: "bulwark" | "stalker" | "siphon" | "ravager";
   chargeEvery?: number;
   chargeMultiplier?: number;
   cleave?: boolean;
@@ -387,7 +396,7 @@ export interface Battle {
   claimed: boolean;
   source?: {
     placeId: string;
-    kind: "stage" | "wild" | "roaming-boss" | "ambush";
+    kind: "stage" | "wild" | "roaming-boss" | "ambush" | "elite-hunt";
   };
 }
 const enemyNames = MONSTER_NAMES;
@@ -519,9 +528,14 @@ export function adventureParty(c: Character, now = new Date()): Unit[] {
               )[npc.skill],
               npc.skill,
             ),
-            ...(id === "mira"
-              ? [ability("mira-glimmer", "Glimmer", "fire")]
-              : []),
+            {
+              ...ability(
+                COMPANION_TACTICS[id].id,
+                COMPANION_TACTICS[id].name,
+                COMPANION_TACTICS[id].effect,
+              ),
+              description: COMPANION_TACTICS[id].description,
+            },
           ],
         },
       ];
@@ -559,6 +573,7 @@ export function encounterEnemies(id: string): Unit[] {
       abilities: [],
       boss,
       ...openingTactics(e.id, i),
+      ...huntTactics(e, i),
     };
   });
 }
@@ -611,7 +626,8 @@ export function startBattle(
               ...data.world,
               townId: REGIONS.find((r) => r.id === e.region)!.town,
               placeId: e.placeId,
-              expedition: e.placeId,
+              expedition: e.kind === "elite-hunt" ? undefined : e.placeId,
+              ...(e.kind === "elite-hunt" ? { lastHunt: e.id } : {}),
             },
           }
         : {}),
@@ -831,21 +847,32 @@ export function enemyVolley(b: Battle): Battle {
         ? living
         : [
             living.find((p) => (p.taunt || 0) > 0) ||
+              huntTarget(enemy, living) ||
               living[(b.round + i) % living.length],
           ];
     for (const target of targets) {
       const damage = Math.max(
         1,
         Math.round(
-          (enemy.attack * (charged ? enemy.chargeMultiplier || 1.6 : 1) -
+          (enemy.attack *
+            (charged ? enemy.chargeMultiplier || 1.6 : 1) *
+            (huntEnraged(enemy) ? 1.3 : 1) -
             target.defense) *
             (target.guard ? 0.45 / (target.guardPower || 1) : 1),
         ),
       );
       target.hp = Math.max(0, target.hp - damage);
       b.log.push(
-        `${enemy.name}${charged ? (enemy.cleave ? " uses Briar Cleave on" : " uses Heavy Strike on") : " attacks"} ${target.name}: ${damage} damage.`,
+        `${enemy.name}${charged ? (enemy.cleave ? (enemy.tactic ? ` uses ${TACTIC_NAMES[enemy.tactic]} Cleave on` : " uses Briar Cleave on") : " uses Heavy Strike on") : " attacks"} ${target.name}: ${damage} damage.`,
       );
+      if (enemy.tactic === "siphon" && charged && target.hp > 0) {
+        const drained = Math.min(
+          target.mp,
+          Math.floor((8 + enemy.attack * 0.1) * (target.guard ? 0.25 : 1)),
+        );
+        target.mp -= drained;
+        b.log.push(`${enemy.name} siphons ${drained} MP from ${target.name}.`);
+      }
       if (target.counter && target.hp > 0) {
         const amount = Math.max(
           1,
@@ -858,6 +885,16 @@ export function enemyVolley(b: Battle): Battle {
       }
     }
   }
+  for (const enemy of b.enemies)
+    if (
+      enemy.hp > 0 &&
+      enemy.tactic === "bulwark" &&
+      b.round % 4 === 0 &&
+      !(enemy.stun || 0)
+    ) {
+      enemy.shell = Math.max(enemy.shell || 0, 2);
+      b.log.push(`${enemy.name} reforms its shell.`);
+    }
   for (const ally of b.party) {
     ally.guard = false;
     ally.guardPower = 1;
@@ -915,13 +952,14 @@ export function claimVictory(c: Character): Character {
       roaming = e.kind === "roaming-boss";
     world = {
       ...world,
-      journal: old.last
-        ? world.journal.map((event) =>
-            event.id === old.last!.id
-              ? { ...event, resolved: true, text: `Victory: ${e.name}` }
-              : event,
-          )
-        : world.journal,
+      journal:
+        e.kind !== "elite-hunt" && old.last
+          ? world.journal.map((event) =>
+              event.id === old.last!.id
+                ? { ...event, resolved: true, text: `Victory: ${e.name}` }
+                : event,
+            )
+          : world.journal,
       kills: {
         ...kills,
         [e.placeId]: (world.kills[e.placeId] || 0) + e.enemies.length,
@@ -938,7 +976,7 @@ export function claimVictory(c: Character): Character {
                 bossVictories: old.bossVictories + 1,
               }
             : {}),
-          ...(old.last
+          ...(e.kind !== "elite-hunt" && old.last
             ? {
                 last: {
                   ...old.last,

@@ -36,6 +36,7 @@ export interface WorldState {
   preservedExploration?: string[];
   townId: string;
   placeId?: string;
+  lastHunt?: string;
   expedition?: string;
   areas: Record<string, PlaceProgress>;
   kills: Record<string, number>;
@@ -116,6 +117,7 @@ export function worldEncounterOpen(data: Campaign, id: string): boolean {
   const e = WORLD_ENCOUNTERS.find((e) => e.id === id);
   if (!e || !placeOpen(data, e.placeId)) return false;
   const p = PLACES.find((p) => p.id === e.placeId)!;
+  if (e.kind === "elite-hunt") return !data.battle && placeCleared(data, p.id);
   if (e.kind === "stage") {
     const i = p.stages.indexOf(id);
     return i === 0 || data.cleared.includes(p.stages[i - 1]);
@@ -179,6 +181,10 @@ export function validWorld(w: WorldState): boolean {
       ) &&
       TOWNS.some((t) => t.id === w.townId) &&
       (w.placeId === undefined || PLACES.some((p) => p.id === w.placeId)) &&
+      (w.lastHunt === undefined ||
+        WORLD_ENCOUNTERS.some(
+          (e) => e.id === w.lastHunt && e.kind === "elite-hunt",
+        )) &&
       (w.expedition === undefined ||
         PLACES.some((p) => p.id === w.expedition)) &&
       !!w.areas &&

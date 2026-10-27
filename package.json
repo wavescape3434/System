@@ -1,7 +1,7 @@
 {
   "name": "the-guild",
   "private": true,
-  "version": "1.22.0",
+  "version": "1.23.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -13,7 +13,8 @@
     "test:e2e": "playwright test",
     "simulate:balance": "node scripts/simulate-balance.mjs",
     "simulate:combat": "node scripts/simulate-opening-combat.mjs",
-    "simulate:economy": "node scripts/simulate-economy.mjs"
+    "simulate:economy": "node scripts/simulate-economy.mjs",
+    "simulate:hunts": "node scripts/simulate-hunts.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.5.3",

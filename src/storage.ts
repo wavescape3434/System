@@ -488,6 +488,8 @@ function validCampaign(input: unknown): boolean {
           ].every((k) => u[k] === undefined || finite(u[k])) &&
           (u.counter === undefined || typeof u.counter === "boolean") &&
           (u.cleave === undefined || typeof u.cleave === "boolean") &&
+          (u.tactic === undefined ||
+            ["bulwark", "stalker", "siphon", "ravager"].includes(u.tactic)) &&
           (u.shell === undefined ||
             (Number.isInteger(u.shell) && u.shell >= 0 && u.shell <= 9)) &&
           (u.chargeEvery === undefined ||
@@ -517,7 +519,7 @@ function validCampaign(input: unknown): boolean {
     return (
       (b.source === undefined ||
         (PLACES.some((p) => p.id === b.source!.placeId) &&
-          ["stage", "wild", "roaming-boss", "ambush"].includes(
+          ["stage", "wild", "roaming-boss", "ambush", "elite-hunt"].includes(
             b.source.kind,
           ))) &&
       str(b.encounterId) &&

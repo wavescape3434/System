@@ -31,6 +31,14 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.23.0
+
+Choose optional Elite hunts in each region, inspect fixed difficulty and visible enemy tactics, and replay without restoring reserves. Companions keep their player-level growth and gain clearer tactical roles. **Companion-led builds remain valid; automatic full recovery remains local midnight.** [Changes](docs/update-1.23.md) · [Verification](docs/verification-1.23.md) · [Previews](docs/screenshots/README.md).
+
+The [combat report](docs/hunts-1.23/README.md) contains 1,568 synthetic probes across classes, regions, grades, tactics, supplies, learned loadouts and companion levels. These do not replace longer earned-account economy studies. Gold surplus, broader class/loadout tuning and authored world content remain on the [roadmap](ROADMAP.md).
+
+Android version **1.23.0 / code 25** keeps the package and signing certificate. Google setup stays deferred; physical Android runtime testing remains open.
+
 ## Version 1.22.0
 
 Brew stronger supplies from local materials and gold, and temper owned town gear with increasing costs. Preview each exchange and combat effect before spending. Carried brews work in battle and between encounters; full/fallen targets cannot waste them. **Automatic full recovery remains local midnight.** [Changes](docs/update-1.22.md) · [Verification](docs/verification-1.22.md) · [Previews](docs/screenshots/README.md).

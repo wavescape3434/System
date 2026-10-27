@@ -747,3 +747,62 @@
     min-height: 20px;
   }
 }
+
+.elite-hunts .hunt-region {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+}
+.elite-hunts select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  color: #f5e7bd;
+  background: #172536;
+  border: 1px solid #b6a06c;
+}
+.hunt-grades {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 14px 0;
+}
+.hunt-grades button {
+  min-width: 0;
+  padding: 10px 4px;
+  overflow-wrap: anywhere;
+}
+.hunt-grades button.selected {
+  border-color: #f5d77f;
+  background: #354c75;
+}
+.hunt-writ h2 {
+  color: #f5d77f;
+}
+.hunt-enemies {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+.hunt-enemies > div {
+  border: 1px solid #8c9bb5;
+  padding: 12px;
+}
+.hunt-enemies h3 {
+  margin-top: 0;
+}
+@media (max-width: 480px) {
+  .hunt-grades {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.hunt-enemy-sprite {
+  float: right;
+  width: 72px;
+  height: 64px;
+  margin: 0 0 8px 8px;
+}
+.hunt-enemy-sprite .battle-sprite {
+  width: 100%;
+  height: 100%;
+}

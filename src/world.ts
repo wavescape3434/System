@@ -204,7 +204,7 @@ export function leaveBattle(c: Character): Character {
   if (!b || b.phase === "player" || (b.phase === "won" && !b.claimed)) return c;
   const next = { ...data };
   delete next.battle;
-  if (next.world && b.source) {
+  if (next.world && b.source && b.source.kind !== "elite-hunt") {
     const area = placeProgress(next.world, b.source.placeId);
     next.world = {
       ...next.world,
@@ -238,6 +238,8 @@ export function continueAdventure(
     data = campaign(next),
     place = PLACES.find((p) => p.id === encounter.placeId)!;
   const stage = place.stages.find((id) => !data.cleared.includes(id));
+  if (encounter.kind === "elite-hunt")
+    return startBattle(next, encounter.id, now);
   return encounter.kind === "stage" && stage
     ? startBattle(next, stage, now)
     : explore(next, place.id, random, now);

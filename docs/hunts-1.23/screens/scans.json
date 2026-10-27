@@ -1,0 +1,61 @@
+{
+  "screens": [
+    {
+      "name": "hunts-locked-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "hunts-veteran-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "hunts-veteran-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "hunts-calamity-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "hunts-battle-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "hunts-battle-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "hunts-enrage-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "hunts-victory-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

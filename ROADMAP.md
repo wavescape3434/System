@@ -13,13 +13,13 @@ This is the working backlog from the version 1.13 product review. Update the sta
 | ID | Priority | Work | Status | Completion check |
 | --- | --- | --- | --- | --- |
 | P01 | Highest | Meaningful skill upgrades | **First pass shipped — 1.14.0**; broader skill identity/balance remains | Higher investment changes a skill's power, efficiency or utility. Repeated ranks improve one technique without consuming extra slots. Existing ownership and purchase costs survive. |
-| P02 | High | Adventures demonstrate class identity | **Opening pass shipped — 1.14.0**; other regions and role tuning remain | Readable enemy patterns reward guarding, class signatures and learned skills. Opening encounters remain accessible to different basic classes. Expand enemy families after this first regional pass. |
+| P02 | High | Adventures demonstrate class identity | **Opening pass 1.14.0; elite hunts/companion roles 1.23.0**; broader campaign/build tuning remains | Readable enemy patterns reward guarding, class signatures and learned skills. Opening encounters remain accessible to different basic classes. Expand enemy families after this first regional pass. |
 | P03 | High | Faster daily request flow | **Delivered — 1.15.0** | Current commitments and class/career requests are easy to reach on a phone; parchment Take/Submit actions stay accessible without reading through the whole sheet again. |
 | P04 | High | Record actual improvement | **Submission logging delivered — 1.15.0**; independent entry/editing/imports remain future work | Optional quick inputs for sets/reps, duration/distance and completed work feed existing Journey trends. No compulsory journal writing. One activity can feed legitimate accepted goals under explicit stacking rules. |
 | P05 | Before wider release | Accounts, recovery and device reliability | **Primary-save migration shipped — 1.17.0**, following recovery/session hardening in 1.16. Android runtime/live service checks remain; Google setup deferred by owner. | Verify Google linking, backup recovery, upgrades, reminders and keyboards on Android. Evolve primary storage beyond a whole-character synchronous record as histories grow. |
 | P06 | Medium | Durable plans | **Delivered — 1.16.0** | Skill goals and relevant planning preferences survive app restarts and character backup/restore. Independent goals for each shared, focused, career and universal tree. |
 | P07 | Medium | Career progression payoffs | **Initial utilities for all twenty disciplines — 1.20.0**; deeper skill uses and deliverable workflows remain | Career requests produce useful deliverables; non-combat competencies gain meaningful exploration, information or town uses without granting automatic base stats. |
-| P08 | Medium | Economy and long-term challenge | **Supply/workshop passes — 1.21.0–1.22.0**; gold surplus and later challenge remain | Model gold sources, spending and consumable use together. Add challenges for high-stat characters while preserving earned power and unrestricted exploration. |
+| P08 | Medium | Economy and long-term challenge | **Supply/workshop passes 1.21–1.22; elite challenge pass 1.23**; gold surplus and longer-term tuning remain | Model gold sources, spending and consumable use together. Add challenges for high-stat characters while preserving earned power and unrestricted exploration. |
 
 ## Batch 1 scope
 
@@ -86,7 +86,15 @@ This is the working backlog from the version 1.13 product review. Update the sta
 - All eight moderate equipment-first classes sustain three/five daily encounter budgets. Five-budget wallets decline to 11,285–15,730 gold, but surplus remains. Material choices also reduce delivery income; do not attribute the whole wallet difference to spending.
 - **Still open:** Royal supply demand is not demonstrated in the moderate fixtures; synthetic high-stat characters still win every allowed attempt. Companion/player-level carry, regional tactics, repeatable high-stat challenges, long-term revisits and finite campaign breadth remain. No gold source, earned balance, reward/rank curve or midnight recovery rule is removed.
 
-**Next:** P02/P08 higher-stat challenges and companion/player-level carry probes, with useful rewards/material demand. Keep unrestricted exploration and earned power. Continue measuring workshop spending over longer routines rather than declaring the economy balanced. P05 physical-device/live-service checks remain a release gate; Google setup remains deferred.
+## Batch 10 — 1.23.0
+
+- **P02/P08 optional challenge:** 32 fixed-strength hunts across eight regions and four grades, readable enemy patterns, inspected rewards, immediate replay and a return to the selected hunt. Normal stage enemies, discovery/ambush state and midnight recovery remain unchanged.
+- **P02 companion roles:** six new complementary commands alongside every retained signature; Mira keeps her existing second command. Party protection, piercing, analysis, group healing, burning and counters add choices without reducing companion stats or changing growth.
+- **Owner direction, 27 October 2026 (America/Denver):** high-level companions carrying a hero with low combat stats remains a **valid support/career-focused route**. Keep it valid and improve roles/tactics. Do not treat companion carry alone as a defect requiring a nerf.
+- **Evidence:** 1,568 deterministic synthetic fights across eight Basic classes, regions, grades, policies, supplies, focused/all-stat builds, learned loadouts and companion/player levels. [Report and figures](docs/hunts-1.23/README.md). These are not earned-account or daily-budget simulations.
+- **Still open:** prestige/build/weapon/element balance, broader normal-region tactics, authored world arcs, sustainable elite-hunt routines and calendar/career-inclusive long-term economy. Royal item use in preloaded combat fixtures does not establish purchase demand or solve gold surplus.
+
+**Next:** deepen P01/P02 class and learned-loadout identity using focused-stat and prestige fixtures, then longer P08 routines with actual supply/material purchases and weekly/monthly/career work. Preserve companion-led builds, earned power, both gold sources and unrestricted exploration. P05 physical Android/live-service checks remain a release gate; Google setup remains deferred.
 
 ## Guardrails
 
@@ -95,6 +103,7 @@ This is the working backlog from the version 1.13 product review. Update the sta
 - Combat never awards real-world progression XP or base stats. Preserve the current calendar-bound weekly/monthly design.
 - HP/MP persist between encounters and fully recover at 12:00 AM local time. Keep separate reserves for benched party members.
 - Keep Christian faith content explicit. Mental assessments remain game estimates; do not present them as validated IQ, character or spiritual-worth scores.
+- Keep companion-led support/career builds valid; companion progression remains tied to player level.
 - Keep the early experience approachable. Add depth through readable decisions, not required grinding or a specific mandatory class.
 - Keep the requested long-term guild-rank curve; combat changes do not rebalance real-world request rewards.
 
@@ -115,3 +124,4 @@ The version 1.13 review found identical effects for 3-point Spark: Control and 6
 | 7 | **1.20.0** | Six remaining category utilities; initial Fieldwork coverage reaches all twenty disciplines. Town travel retains reserves; deeper career uses and P08 economy remain. | [Verification](docs/verification-1.20.md) · [Changes](docs/update-1.20.md) |
 | 8 | **1.21.0** | Manual supply use, safe batch shopping, delivery material trade-offs, CHA seals and 160 economy simulations. Surplus/sinks and higher-stat challenge remain. | [Report](docs/economy-1.21/README.md) · [Verification](docs/verification-1.21.md) · [Changes](docs/update-1.21.md) |
 | 9 | **1.22.0** | Graded material brewing, permanent combat-only tempering and 160 new comparisons. Gold surplus, Royal supply demand and high-stat challenge remain. | [Report](docs/economy-1.22/README.md) · [Verification](docs/verification-1.22.md) · [Changes](docs/update-1.22.md) |
+| 10 | **1.23.0** | 32 optional Elite hunts, four readable patterns, complementary companion commands and 1,568 combat probes. Long-term economy, prestige/loadout tuning and device validation remain. | [Report](docs/hunts-1.23/README.md) · [Verification](docs/verification-1.23.md) · [Changes](docs/update-1.23.md) |

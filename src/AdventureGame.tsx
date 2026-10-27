@@ -368,12 +368,17 @@ export default function AdventureGame({
                     update(continueAdventure(c));
                   }}
                 >
-                  {encounter.kind === "stage" &&
-                  PLACES.find((p) => p.id === encounter.placeId)!.stages.some(
-                    (id) => !data.cleared.includes(id) && id !== encounter.id,
-                  )
-                    ? "Continue adventure"
-                    : "Continue exploring"}{" "}
+                  {encounter.kind === "elite-hunt"
+                    ? "Hunt again"
+                    : encounter.kind === "stage" &&
+                        PLACES.find(
+                          (p) => p.id === encounter.placeId,
+                        )!.stages.some(
+                          (id) =>
+                            !data.cleared.includes(id) && id !== encounter.id,
+                        )
+                      ? "Continue adventure"
+                      : "Continue exploring"}{" "}
                   <ArrowLeft size={16} className="continue-arrow" />
                 </button>
               )}
@@ -396,10 +401,26 @@ export default function AdventureGame({
                   Retry battle
                 </button>
               )}
+              {encounter.kind === "elite-hunt" && (
+                <button
+                  className="button secondary"
+                  onClick={async () => {
+                    if (await update(returnToMap(c))) {
+                      setActiveTool(undefined);
+                      setTab("hunts");
+                    }
+                  }}
+                >
+                  Hunt board
+                </button>
+              )}
               <button
                 className="button secondary"
                 onClick={async () => {
-                  if (await update(returnToMap(c))) setActiveTool(undefined);
+                  if (await update(returnToMap(c))) {
+                    setActiveTool(undefined);
+                    setTab("map");
+                  }
                 }}
               >
                 Return to map <Map size={16} />
@@ -618,7 +639,7 @@ export default function AdventureGame({
           World map
         </button>
         <button
-          className={tab === "requests" ? "active" : ""}
+          className={tab === "requests" || tab === "hunts" ? "active" : ""}
           onClick={() => setTab("requests")}
         >
           <Flag size={15} />
@@ -646,7 +667,23 @@ export default function AdventureGame({
           Skill loadout
         </button>
       </div>
-      {(tab === "map" || tab === "requests") && (
+      {(tab === "requests" || tab === "hunts") && (
+        <div className="tabs" role="group" aria-label="Guild request boards">
+          <button
+            aria-pressed={tab === "requests"}
+            onClick={() => setTab("requests")}
+          >
+            Commissions
+          </button>
+          <button
+            aria-pressed={tab === "hunts"}
+            onClick={() => setTab("hunts")}
+          >
+            Elite hunts
+          </button>
+        </div>
+      )}
+      {(tab === "map" || tab === "requests" || tab === "hunts") && (
         <WorldMap
           key={`${mapPlace || "current"}:${activeTool || "map"}`}
           c={c}
