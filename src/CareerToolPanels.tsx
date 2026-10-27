@@ -13,6 +13,8 @@ export interface FieldActions {
   onArea?: (id: string) => void;
   onRequests?: () => void;
   onShop?: () => void;
+  onParty?: () => void;
+  onLoadout?: () => void;
 }
 export default function CareerToolPanels({
   c,

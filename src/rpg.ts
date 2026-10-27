@@ -607,6 +607,20 @@ export function startBattle(
     },
   };
 }
+export const SUPPLY_RESTORE = { potion: 50, ether: 20 } as const;
+export const SHELL_BREAK_EFFECTS = [
+  "power",
+  "quick",
+  "fire",
+  "area",
+  "burn",
+  "pierce",
+  "bash",
+  "hybrid",
+  "coordinated",
+] as const;
+export const breaksShellImmediately = (type: string) =>
+  type === "scan" || (SHELL_BREAK_EFFECTS as readonly string[]).includes(type);
 export interface Action {
   kind: "attack" | "guard" | "ability" | "potion" | "ether" | "flee";
   target: number;
@@ -655,8 +669,8 @@ export function takeAction(input: Battle, action: Action): Battle {
     if (!target || target.hp <= 0 || !(b.items[action.kind] > 0)) return input;
     b.items[action.kind]--;
     if (action.kind === "potion")
-      target.hp = Math.min(target.maxHp, target.hp + 50);
-    else target.mp = Math.min(target.maxMp, target.mp + 20);
+      target.hp = Math.min(target.maxHp, target.hp + SUPPLY_RESTORE.potion);
+    else target.mp = Math.min(target.maxMp, target.mp + SUPPLY_RESTORE.ether);
     b.log.push(`${actor.name} uses ${action.kind} on ${target.name}.`);
   } else {
     const skill = actor.abilities.find((x) => x.id === action.abilityId);
@@ -666,17 +680,9 @@ export function takeAction(input: Battle, action: Action): Battle {
     if (!target || target.hp <= 0) return input;
     actor.mp -= skill.cost;
     potency = skill.potency || 1;
-    breaksShell = [
-      "power",
-      "quick",
-      "fire",
-      "area",
-      "burn",
-      "pierce",
-      "bash",
-      "hybrid",
-      "coordinated",
-    ].includes(skill.type);
+    breaksShell = (SHELL_BREAK_EFFECTS as readonly string[]).includes(
+      skill.type,
+    );
     b.log.push(`${actor.name} uses ${skill.name}.`);
     const restore = (ally: Unit, scale: number) => {
       const amount = Math.round(

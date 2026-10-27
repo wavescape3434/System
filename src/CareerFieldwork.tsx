@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { careerCategory } from "./careers";
+import CareerServicePanels from "./CareerServicePanels";
 import CareerToolPanels from "./CareerToolPanels";
 import type { FieldActions } from "./CareerToolPanels";
 import type { Character } from "./domain";
@@ -17,6 +18,8 @@ export default function CareerFieldwork({
   onArea,
   onRequests,
   onShop,
+  onParty,
+  onLoadout,
 }: {
   c: Character;
   placeId: string;
@@ -121,6 +124,17 @@ export default function CareerFieldwork({
           )}
         </div>
       )}
+      <CareerServicePanels
+        key={`service:${selected.id}`}
+        c={c}
+        tool={selected.id}
+        placeId={placeId}
+        onArea={onArea}
+        onRequests={onRequests}
+        onShop={onShop}
+        onParty={onParty}
+        onLoadout={onLoadout}
+      />
       <CareerToolPanels
         key={selected.id}
         c={c}

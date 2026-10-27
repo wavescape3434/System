@@ -461,6 +461,20 @@ export default function AdventureGame({
                   setFieldworkOpen(false);
                 }
               }}
+              onParty={async () => {
+                if (await update(returnToMap(c))) {
+                  setActiveTool(undefined);
+                  setTab("party");
+                  setFieldworkOpen(false);
+                }
+              }}
+              onLoadout={async () => {
+                if (await update(returnToMap(c))) {
+                  setActiveTool(undefined);
+                  setTab("loadout");
+                  setFieldworkOpen(false);
+                }
+              }}
               onShop={async () => {
                 if (await update(returnToMap(c))) {
                   setActiveTool(undefined);

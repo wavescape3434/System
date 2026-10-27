@@ -54,7 +54,7 @@ export default function WorldMap({
   mode: "map" | "requests" | "shop";
   initialTool?: string;
   initialPlace?: string;
-  onMode?: (mode: "requests" | "equipment") => void;
+  onMode?: (mode: "requests" | "equipment" | "party" | "loadout") => void;
 }) {
   const data = campaign(c),
     world = data.world!,
@@ -104,6 +104,8 @@ export default function WorldMap({
       }}
       onRequests={() => onMode?.("requests")}
       onShop={() => onMode?.("equipment")}
+      onParty={() => onMode?.("party")}
+      onLoadout={() => onMode?.("loadout")}
     />
   );
   if (mode === "map" && focusOnly)

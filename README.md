@@ -24,12 +24,18 @@ npm run dev
 ### Check the app
 
 ```sh
-npm test          # progression, recurrence, persistence validation
+npm test -- --maxWorkers=2 # progression, recurrence, persistence validation
 npm run build    # strict TypeScript check and production build
 npm run test:e2e # browser workflows at desktop and phone sizes
 ```
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
+
+## Version 1.19.0
+
+Engineering, Science, Healthcare, Education, Law and Community Services now have learned Fieldwork tools: route plans, observation records/export, party recovery estimates, battle preparation, commission terms and recruitment planning. **Fourteen of twenty** career disciplines have field utilities; six remain. [Changes](docs/update-1.19.md) · [Verification](docs/verification-1.19.md) · [Previews](docs/screenshots/README.md).
+
+Version code **21** keeps package `com.theguild.personal` and the existing signing certificate. These reports inspect existing game data and route to normal actions. Google setup remains deferred; physical Android runtime checks remain open.
 
 ## Version 1.18.0
 

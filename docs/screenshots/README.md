@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.18.0 — screenshots
+# The Adventurers Guild 1.19.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Service profession tools — version 1.19
+
+| Route plan | Party recovery | Recruitment |
+| --- | --- | --- |
+| [<img src="route-plan-mobile.png" width="230" alt="Locked destination with prerequisite stages and next reachable route">](route-plan-mobile.png) | [<img src="recovery-triage-mobile.png" width="230" alt="Saved HP and MP, fallen companion and capped item recovery">](recovery-triage-mobile.png) | [<img src="service-roster-mobile.png" width="230" alt="Companion recruitment requirement and party shortcut">](service-roster-mobile.png) |
+
+[Field observations](field-record-mobile.png) · [Battle preparation](battle-primer-mobile.png) · [Commission terms](commission-writ-mobile.png) · [Desktop battle preparation](battle-primer-desktop.png) · [Expedition triage](expedition-triage-mobile.png)
+
+[Changes](../update-1.19.md) · [Verification](../verification-1.19.md) · [Capture fixtures and scans](../service-1.19/README.md). These use scripted sample skills, reserves, stages and field records.
 
 ## Profession fieldwork — version 1.18
 

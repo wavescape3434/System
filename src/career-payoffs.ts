@@ -76,6 +76,60 @@ export const CAREER_UTILITIES = [
     effect:
       "In Adventures, plan a potion and ether purchase against live shop stock and your available gold.",
   },
+  {
+    id: "route-plan",
+    name: "Pathwright’s Route Plan",
+    category: "engineering",
+    learn: "Design Requirements or Technical Drawing: Primer",
+    skills: ["profession-engineering-0", "career-opening-engineering-0"],
+    effect:
+      "In Adventures, trace the stage prerequisites for a chosen area and open the next reachable route.",
+  },
+  {
+    id: "field-record",
+    name: "Naturalist’s Field Record",
+    category: "science",
+    learn: "Research Question or Literature Review: Primer",
+    skills: ["profession-science-0", "career-opening-science-0"],
+    effect:
+      "In Adventures, review recorded exploration outcomes and confirmed defeats, then export a field report.",
+  },
+  {
+    id: "triage",
+    name: "Chirurgeon’s Triage",
+    category: "healthcare",
+    learn: "Care Foundations or Clear Handoffs: Primer",
+    skills: ["profession-healthcare-0", "career-opening-healthcare-0"],
+    effect:
+      "In Adventures, compare party recovery needs with potion and ether effects before spending supplies.",
+  },
+  {
+    id: "battle-primer",
+    name: "Tutor’s Battle Primer",
+    category: "education",
+    learn: "Learning Objectives or Lesson Design: Primer",
+    skills: ["profession-education-0", "career-opening-education-0"],
+    effect:
+      "In Adventures, prepare for the next stage using enemy patterns and your currently equipped party abilities.",
+  },
+  {
+    id: "writ",
+    name: "Guild Advocate’s Writ",
+    category: "law",
+    learn: "Source Hierarchy or Issue Spotting: Primer",
+    skills: ["profession-law-0", "career-opening-law-0"],
+    effect:
+      "In Adventures, inspect commission terms, item costs, hunt credit and linked real-world request conditions.",
+  },
+  {
+    id: "service-roster",
+    name: "Companions’ Service Roster",
+    category: "community",
+    learn: "Needs Assessment or Active Listening: Primer",
+    skills: ["profession-community-0", "career-opening-community-0"],
+    effect:
+      "In Adventures, review companion recruitment requirements and active-party coverage.",
+  },
 ] as const;
 export function careerUtilityForSkill(id: string) {
   return CAREER_UTILITIES.find((u) =>

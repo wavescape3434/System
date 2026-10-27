@@ -28,9 +28,9 @@ const fixture = (): Character => {
   };
 };
 describe("profession fieldwork", () => {
-  it("maps eight disciplines to actual learnable non-combat skills", () => {
-    expect(CAREER_UTILITIES).toHaveLength(8);
-    expect(new Set(CAREER_UTILITIES.map((u) => u.category)).size).toBe(8);
+  it("maps fourteen disciplines to actual learnable non-combat skills", () => {
+    expect(CAREER_UTILITIES).toHaveLength(14);
+    expect(new Set(CAREER_UTILITIES.map((u) => u.category)).size).toBe(14);
     for (const u of CAREER_UTILITIES)
       for (const id of u.skills) {
         const s = SKILLS.find((s) => s.id === id)!;

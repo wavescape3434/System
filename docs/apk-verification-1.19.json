@@ -1,0 +1,25 @@
+{
+  "version": "1.19.0",
+  "versionCode": 21,
+  "package": "com.theguild.personal",
+  "bytes": 14019847,
+  "sha256": "08643e4da313cbf173212d4aaef4f041d8a8e103bf83c5c934f24367525a1dea",
+  "matchingWebFiles": 38,
+  "generatedCordovaStubs": 2,
+  "unitChecks": 234,
+  "browserWorkflows": 90,
+  "scannedViews": 8,
+  "careerUtilities": 14,
+  "careerDisciplines": 20,
+  "certificateSHA256": "f6c745055e1d566d935ce766c749393e4936eca36f7e1d85c26d5176a65181e5",
+  "primaryDatabase": "the-guild.primary.v1",
+  "physicalAndroidVerified": false,
+  "liveFirebaseVerified": false,
+  "browserRun": {
+    "passed": 90,
+    "failed": 0,
+    "duration": "6.9m",
+    "workers": 2,
+    "testTimeoutMilliseconds": 60000
+  }
+}
