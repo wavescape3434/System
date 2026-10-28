@@ -1,0 +1,11 @@
+{
+  "scenario": "leila",
+  "days": 365,
+  "caseJSONMatches": true,
+  "dailyCSVMatches": true,
+  "sha256": {
+    "json": "f964cfe34a0394dd33824fec586ad5d262dafc45cce88fa39e26976078c156b3",
+    "csv": "ac0e6e2cbdf77df2bb7a603ee90f9881833b57676a73d20b4025a748d85960a4"
+  },
+  "note": "Independent full-year replay; not counted as another customer or in the 12,775 main account-days."
+}

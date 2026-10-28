@@ -1,0 +1,3393 @@
+{
+  "id": "felix",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "felix",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "rogue",
+    "profession": "Cybersecurity Analyst",
+    "vocation": "security"
+  },
+  "final": {
+    "day": 365,
+    "active": 269,
+    "playerLevel": 66,
+    "guildRank": "A",
+    "xp": 177790,
+    "classId": "shadowblade",
+    "classLevel": 54,
+    "classPotential": 57,
+    "profession": "Cybersecurity Analyst",
+    "professionLevel": 81,
+    "professionPotential": 81,
+    "vocation": "security",
+    "vocationLevel": 81,
+    "stats": {
+      "STR": 22,
+      "DEX": 113,
+      "CON": 10,
+      "INT": 162,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 758,
+    "gold": 44907,
+    "skills": 74,
+    "careerUtilities": 1,
+    "examPasses": 34,
+    "stages": 147,
+    "wins": 180,
+    "losses": 0,
+    "minutes": 10034
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 5,
+      "playerLevel": 3,
+      "guildRank": "F",
+      "xp": 1070,
+      "classId": "rogue",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Cybersecurity Analyst",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "security",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 13,
+      "gold": 409,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 178
+    },
+    {
+      "day": 30,
+      "active": 24,
+      "playerLevel": 16,
+      "guildRank": "D",
+      "xp": 12240,
+      "classId": "rogue",
+      "classLevel": 9,
+      "classPotential": 9,
+      "profession": "Cybersecurity Analyst",
+      "professionLevel": 9,
+      "professionPotential": 23,
+      "vocation": "security",
+      "vocationLevel": 23,
+      "stats": {
+        "STR": 9,
+        "DEX": 12,
+        "CON": 10,
+        "INT": 12,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 66,
+      "gold": 3313,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 2,
+      "stages": 15,
+      "wins": 16,
+      "losses": 0,
+      "minutes": 881
+    },
+    {
+      "day": 90,
+      "active": 72,
+      "playerLevel": 35,
+      "guildRank": "C",
+      "xp": 53160,
+      "classId": "rogue",
+      "classLevel": 24,
+      "classPotential": 35,
+      "profession": "Cybersecurity Analyst",
+      "professionLevel": 29,
+      "professionPotential": 43,
+      "vocation": "security",
+      "vocationLevel": 43,
+      "stats": {
+        "STR": 9,
+        "DEX": 26,
+        "CON": 10,
+        "INT": 30,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 210,
+      "gold": 14937,
+      "skills": 32,
+      "careerUtilities": 1,
+      "examPasses": 9,
+      "stages": 43,
+      "wins": 50,
+      "losses": 0,
+      "minutes": 2737
+    },
+    {
+      "day": 180,
+      "active": 125,
+      "playerLevel": 45,
+      "guildRank": "B",
+      "xp": 85930,
+      "classId": "shadowblade",
+      "classLevel": 9,
+      "classPotential": 30,
+      "profession": "Cybersecurity Analyst",
+      "professionLevel": 49,
+      "professionPotential": 56,
+      "vocation": "security",
+      "vocationLevel": 56,
+      "stats": {
+        "STR": 9,
+        "DEX": 42,
+        "CON": 10,
+        "INT": 64,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 358,
+      "gold": 24791,
+      "skills": 53,
+      "careerUtilities": 1,
+      "examPasses": 16,
+      "stages": 74,
+      "wins": 86,
+      "losses": 0,
+      "minutes": 4752
+    },
+    {
+      "day": 365,
+      "active": 269,
+      "playerLevel": 66,
+      "guildRank": "A",
+      "xp": 177790,
+      "classId": "shadowblade",
+      "classLevel": 54,
+      "classPotential": 57,
+      "profession": "Cybersecurity Analyst",
+      "professionLevel": 81,
+      "professionPotential": 81,
+      "vocation": "security",
+      "vocationLevel": 81,
+      "stats": {
+        "STR": 22,
+        "DEX": 113,
+        "CON": 10,
+        "INT": 162,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 758,
+      "gold": 44907,
+      "skills": 74,
+      "careerUtilities": 1,
+      "examPasses": 34,
+      "stages": 147,
+      "wins": 180,
+      "losses": 0,
+      "minutes": 10034
+    }
+  ],
+  "income": {
+    "requests": 35558,
+    "login": 5930,
+    "battles": 17215,
+    "exploration": 84,
+    "commissions": 15570
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 11550,
+    "tempering": 17400,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 180,
+    "wins": 180,
+    "losses": 0,
+    "actions": 357,
+    "bounds": 0,
+    "explorations": 52,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 177,
+    "companionAbilities": 172,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 669,
+    "weekly": 72,
+    "monthly": 17
+  },
+  "requestsByScope": {
+    "universal": 269,
+    "class": 168,
+    "profession": 321
+  },
+  "classHistory": [
+    {
+      "id": "rogue",
+      "level": 44,
+      "potential": 45,
+      "xp": 34520
+    },
+    {
+      "id": "shadowblade",
+      "level": 54,
+      "potential": 57,
+      "xp": 52808
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Cybersecurity Analyst",
+      "level": 81,
+      "xp": 104340
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "security",
+      "level": 81,
+      "xp": 104340
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "DEX 34",
+      "met": true
+    },
+    {
+      "label": "Rogue Lv. 25",
+      "met": true
+    },
+    {
+      "label": "Skill: Veil Guard",
+      "met": true
+    }
+  ],
+  "activeDays": 269,
+  "minutes": 10034,
+  "partialWorkouts": 0,
+  "expiredCommitments": 21,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 185,
+  "finalGoal": "shadowblade",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 16,
+  "profession4Days": 15,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 262,
+    "weekly: #-day commitment: #/# days": 310,
+    "monthly: Dated practice days: #/#": 352,
+    "monthly: #-day commitment: #/# days": 337
+  },
+  "examDays": 38,
+  "events": [
+    {
+      "day": 2,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 2,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 2,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 2,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "arc-rogue-1",
+      "name": "Knife Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "profession-technology-0",
+      "name": "System Foundations",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "career-opening-technology-0",
+      "name": "Command Line: Primer",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 31
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "arc-rogue-2",
+      "name": "Feint",
+      "wallet": "combat"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "arc-rogue-4",
+      "name": "Veil Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "focus-rogue-0",
+      "name": "Rogue Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "focus-rogue-1",
+      "name": "Opening Gambit: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "career-opening-technology-1",
+      "name": "Network Models: Primer",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-technology-1",
+      "name": "Command Line",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 32
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-technology-2",
+      "name": "Network Models",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-technology-3",
+      "name": "Automation",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-technology-4",
+      "name": "Routing & Services",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "profession-technology-5",
+      "name": "Fault Isolation",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "profession-technology-6",
+      "name": "Security Boundaries",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "profession-technology-7",
+      "name": "Verified Lab",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 34
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-rogue-0-0",
+      "name": "Twin Knives",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-rogue-1-0",
+      "name": "Distracting Step",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-rogue-2-0",
+      "name": "Slip Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "arc-rogue-3",
+      "name": "Quicksteel",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "arc-rogue-5",
+      "name": "Escape Step",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "opening-rogue-0-1",
+      "name": "Twin Knives: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "rogue-monthly",
+      "title": "Rogue training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-rogue-1-1",
+      "name": "Distracting Step: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-rogue-2-1",
+      "name": "Slip Guard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "universal-dex-1",
+      "name": "Mobility Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 35
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "arc-rogue-6",
+      "name": "Precision Finish",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "opening-rogue-0-2",
+      "name": "Twin Knives: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "opening-rogue-1-2",
+      "name": "Distracting Step: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "opening-rogue-2-2",
+      "name": "Slip Guard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "arc-rogue-7",
+      "name": "Ambush Orders",
+      "wallet": "combat"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "arc-rogue-8",
+      "name": "Rogue’s Reserve",
+      "wallet": "combat"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 36
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 87,
+      "type": "request",
+      "id": "rogue-monthly",
+      "title": "Rogue training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "profession-technology-8",
+      "name": "System Design",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 37
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "focus-rogue-2",
+      "name": "Opening Gambit: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "arc-rogue-9",
+      "name": "Shadow Sweep",
+      "wallet": "combat"
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 128,
+      "type": "skill",
+      "id": "universal-dex-2",
+      "name": "Sure Footing",
+      "wallet": "universal"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 38
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 136,
+      "type": "request",
+      "id": "trial-shadowblade-entry",
+      "title": "Shadowblade entry trial",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 136,
+      "type": "class-change",
+      "from": "rogue",
+      "to": "shadowblade",
+      "playerLevel": 37,
+      "classLevel": 1
+    },
+    {
+      "day": 138,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 138,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "trial-shadowblade-entry",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 142,
+      "type": "skill",
+      "id": "focus-shadowblade-0",
+      "name": "Shadowblade Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 142,
+      "type": "skill",
+      "id": "martial-sword-1",
+      "name": "Sword Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 142,
+      "type": "skill",
+      "id": "arc-fighter-1",
+      "name": "Weapon Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 38
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 150,
+      "type": "skill",
+      "id": "focus-shadowblade-1",
+      "name": "Nightglass Thrust: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 150,
+      "type": "skill",
+      "id": "martial-sword-2",
+      "name": "Measured Cut",
+      "wallet": "combat"
+    },
+    {
+      "day": 150,
+      "type": "skill",
+      "id": "opening-fighter-0-0",
+      "name": "Measured Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 157,
+      "type": "skill",
+      "id": "opening-fighter-1-0",
+      "name": "Brawler’s Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 157,
+      "type": "skill",
+      "id": "opening-fighter-2-0",
+      "name": "Shield Footwork",
+      "wallet": "combat"
+    },
+    {
+      "day": 157,
+      "type": "skill",
+      "id": "martial-spear-1",
+      "name": "Spear Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 164,
+      "type": "skill",
+      "id": "martial-axe-1",
+      "name": "Axe Leverage",
+      "wallet": "combat"
+    },
+    {
+      "day": 164,
+      "type": "skill",
+      "id": "martial-unarmed-1",
+      "name": "Open-Hand Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 164,
+      "type": "skill",
+      "id": "arc-fighter-2",
+      "name": "Shield Breaker",
+      "wallet": "combat"
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 39
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 171,
+      "type": "skill",
+      "id": "arc-fighter-3",
+      "name": "Sweeping Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 171,
+      "type": "skill",
+      "id": "opening-fighter-0-1",
+      "name": "Measured Thrust: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 171,
+      "type": "skill",
+      "id": "opening-fighter-1-1",
+      "name": "Brawler’s Rhythm: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 178,
+      "type": "request",
+      "id": "shadowblade-monthly",
+      "title": "Shadowblade training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 178,
+      "type": "skill",
+      "id": "opening-fighter-2-1",
+      "name": "Shield Footwork: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 178,
+      "type": "skill",
+      "id": "martial-spear-2",
+      "name": "Line Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 178,
+      "type": "skill",
+      "id": "martial-axe-2",
+      "name": "Hooking Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 39
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 185,
+      "type": "skill",
+      "id": "martial-unarmed-2",
+      "name": "Combination Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 185,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 40
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 199,
+      "type": "skill",
+      "id": "arc-fighter-4",
+      "name": "Armor Splitter",
+      "wallet": "combat"
+    },
+    {
+      "day": 199,
+      "type": "skill",
+      "id": "arc-fighter-5",
+      "name": "Battle Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 206,
+      "type": "skill",
+      "id": "profession-technology-9",
+      "name": "Reliable Systems",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "request",
+      "id": "shadowblade-monthly",
+      "title": "Shadowblade training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "skill",
+      "id": "arc-fighter-6",
+      "name": "Steel Tempest",
+      "wallet": "combat"
+    },
+    {
+      "day": 213,
+      "type": "skill",
+      "id": "opening-fighter-0-2",
+      "name": "Measured Thrust: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 213,
+      "type": "skill",
+      "id": "opening-fighter-1-2",
+      "name": "Brawler’s Rhythm: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 220,
+      "type": "skill",
+      "id": "opening-fighter-2-2",
+      "name": "Shield Footwork: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 227,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 230,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 232,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 241,
+      "type": "request",
+      "id": "shadowblade-monthly",
+      "title": "Shadowblade training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 241,
+      "type": "skill",
+      "id": "focus-shadowblade-2",
+      "name": "Nightglass Thrust: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 241,
+      "type": "skill",
+      "id": "arc-fighter-7",
+      "name": "Duelist’s Answer",
+      "wallet": "combat"
+    },
+    {
+      "day": 241,
+      "type": "skill",
+      "id": "arc-fighter-8",
+      "name": "Vanguard Charge",
+      "wallet": "combat"
+    },
+    {
+      "day": 244,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 244,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 244,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 262,
+      "type": "skill",
+      "id": "arc-rogue-10",
+      "name": "Nightglass Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 270,
+      "type": "skill",
+      "id": "martial-sword-3",
+      "name": "Riposte Line",
+      "wallet": "combat"
+    },
+    {
+      "day": 270,
+      "type": "skill",
+      "id": "martial-spear-3",
+      "name": "Braced Point",
+      "wallet": "combat"
+    },
+    {
+      "day": 270,
+      "type": "skill",
+      "id": "martial-axe-3",
+      "name": "Sundering Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 277,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 277,
+      "type": "skill",
+      "id": "martial-unarmed-3",
+      "name": "Counterstep",
+      "wallet": "combat"
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 281,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 289,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 289,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 332,
+      "type": "request",
+      "id": "shadowblade-monthly",
+      "title": "Shadowblade training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 333,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-security-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 340,
+      "type": "skill",
+      "id": "focus-shadowblade-3",
+      "name": "Shadowblade Legacy",
+      "wallet": "combat"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-security-monthly",
+      "title": "Cybersecurity portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "vocation-security-weekly",
+      "title": "Cybersecurity field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Cybersecurity Analyst",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-security-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "request",
+      "id": "shadowblade-monthly",
+      "title": "Shadowblade training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "arc-rogue-1",
+    "profession-technology-0",
+    "career-opening-technology-0",
+    "arc-rogue-2",
+    "arc-rogue-4",
+    "focus-rogue-0",
+    "focus-rogue-1",
+    "career-opening-technology-1",
+    "profession-technology-1",
+    "profession-technology-2",
+    "profession-technology-3",
+    "profession-technology-4",
+    "profession-technology-5",
+    "profession-technology-6",
+    "profession-technology-7",
+    "opening-rogue-0-0",
+    "opening-rogue-1-0",
+    "opening-rogue-2-0",
+    "arc-rogue-3",
+    "arc-rogue-5",
+    "opening-rogue-0-1",
+    "opening-rogue-1-1",
+    "opening-rogue-2-1",
+    "universal-dex-1",
+    "arc-rogue-6",
+    "opening-rogue-0-2",
+    "opening-rogue-1-2",
+    "opening-rogue-2-2",
+    "arc-rogue-7",
+    "arc-rogue-8",
+    "profession-technology-8",
+    "focus-rogue-2",
+    "arc-rogue-9",
+    "universal-dex-2",
+    "focus-shadowblade-0",
+    "martial-sword-1",
+    "arc-fighter-1",
+    "focus-shadowblade-1",
+    "martial-sword-2",
+    "opening-fighter-0-0",
+    "opening-fighter-1-0",
+    "opening-fighter-2-0",
+    "martial-spear-1",
+    "martial-axe-1",
+    "martial-unarmed-1",
+    "arc-fighter-2",
+    "arc-fighter-3",
+    "opening-fighter-0-1",
+    "opening-fighter-1-1",
+    "opening-fighter-2-1",
+    "martial-spear-2",
+    "martial-axe-2",
+    "martial-unarmed-2",
+    "universal-con-1",
+    "arc-fighter-4",
+    "arc-fighter-5",
+    "profession-technology-9",
+    "arc-fighter-6",
+    "opening-fighter-0-2",
+    "opening-fighter-1-2",
+    "opening-fighter-2-2",
+    "universal-con-2",
+    "focus-shadowblade-2",
+    "arc-fighter-7",
+    "arc-fighter-8",
+    "arc-rogue-10",
+    "martial-sword-3",
+    "martial-spear-3",
+    "martial-axe-3",
+    "universal-int-1",
+    "martial-unarmed-3",
+    "universal-int-2",
+    "focus-shadowblade-3"
+  ],
+  "skillPurchases": [
+    {
+      "id": "arc-rogue-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-technology-0",
+      "wallet": "profession:technology",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-technology-0",
+      "wallet": "profession:technology",
+      "cost": 1
+    },
+    {
+      "id": "arc-rogue-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-rogue-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "focus-rogue-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-rogue-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-technology-1",
+      "wallet": "profession:technology",
+      "cost": 1
+    },
+    {
+      "id": "profession-technology-1",
+      "wallet": "profession:technology",
+      "cost": 2
+    },
+    {
+      "id": "profession-technology-2",
+      "wallet": "profession:technology",
+      "cost": 2
+    },
+    {
+      "id": "profession-technology-3",
+      "wallet": "profession:technology",
+      "cost": 3
+    },
+    {
+      "id": "profession-technology-4",
+      "wallet": "profession:technology",
+      "cost": 5
+    },
+    {
+      "id": "profession-technology-5",
+      "wallet": "profession:technology",
+      "cost": 8
+    },
+    {
+      "id": "profession-technology-6",
+      "wallet": "profession:technology",
+      "cost": 8
+    },
+    {
+      "id": "profession-technology-7",
+      "wallet": "profession:technology",
+      "cost": 14
+    },
+    {
+      "id": "opening-rogue-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-rogue-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-rogue-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-rogue-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-rogue-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-rogue-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-rogue-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-rogue-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-dex-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-rogue-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-rogue-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-rogue-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-rogue-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-rogue-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-rogue-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "profession-technology-8",
+      "wallet": "profession:technology",
+      "cost": 18
+    },
+    {
+      "id": "focus-rogue-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-rogue-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "universal-dex-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-shadowblade-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-sword-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-shadowblade-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-sword-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-spear-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-axe-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-unarmed-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-fighter-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "opening-fighter-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-spear-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-axe-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-unarmed-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-fighter-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-fighter-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-technology-9",
+      "wallet": "profession:technology",
+      "cost": 24
+    },
+    {
+      "id": "arc-fighter-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-fighter-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-fighter-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-fighter-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-shadowblade-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-fighter-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-fighter-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-rogue-10",
+      "wallet": "combat",
+      "cost": 20
+    },
+    {
+      "id": "martial-sword-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "martial-spear-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "martial-axe-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "martial-unarmed-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-shadowblade-3",
+      "wallet": "combat",
+      "cost": 24
+    }
+  ],
+  "utilities": [
+    {
+      "id": "diagnostics",
+      "name": "Warden’s Diagnostics",
+      "category": "technology",
+      "learn": "System Foundations or Command Line: Primer",
+      "skills": [
+        "profession-technology-0",
+        "career-opening-technology-0"
+      ],
+      "effect": "In Adventures, inspect the next stage’s enemy HP, attack, defense and known tactics before entering."
+    }
+  ],
+  "firstGoldDay": 348,
+  "firstPrestigeDay": 136,
+  "finalCharacterBytes": 481637
+}

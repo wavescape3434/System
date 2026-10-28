@@ -1,0 +1,3057 @@
+{
+  "id": "mei",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "mei",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 17,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "scholar",
+    "profession": "Financial Analyst",
+    "vocation": "financial-analysis"
+  },
+  "final": {
+    "day": 365,
+    "active": 272,
+    "playerLevel": 67,
+    "guildRank": "A",
+    "xp": 184400,
+    "classId": "elementalist",
+    "classLevel": 66,
+    "classPotential": 66,
+    "profession": "Financial Analyst",
+    "professionLevel": 83,
+    "professionPotential": 83,
+    "vocation": "financial-analysis",
+    "vocationLevel": 83,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 280,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 771,
+    "gold": 60019,
+    "skills": 50,
+    "careerUtilities": 1,
+    "examPasses": 29,
+    "stages": 149,
+    "wins": 182,
+    "losses": 0,
+    "minutes": 10128
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 6,
+      "playerLevel": 5,
+      "guildRank": "F",
+      "xp": 1800,
+      "classId": "elementalist",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "Financial Analyst",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "financial-analysis",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 17,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 17,
+      "gold": 580,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 231
+    },
+    {
+      "day": 30,
+      "active": 20,
+      "playerLevel": 15,
+      "guildRank": "D",
+      "xp": 11240,
+      "classId": "elementalist",
+      "classLevel": 4,
+      "classPotential": 8,
+      "profession": "Financial Analyst",
+      "professionLevel": 9,
+      "professionPotential": 22,
+      "vocation": "financial-analysis",
+      "vocationLevel": 22,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 19,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 55,
+      "gold": 2948,
+      "skills": 10,
+      "careerUtilities": 1,
+      "examPasses": 1,
+      "stages": 14,
+      "wins": 14,
+      "losses": 0,
+      "minutes": 743
+    },
+    {
+      "day": 90,
+      "active": 68,
+      "playerLevel": 34,
+      "guildRank": "C",
+      "xp": 50300,
+      "classId": "elementalist",
+      "classLevel": 24,
+      "classPotential": 34,
+      "profession": "Financial Analyst",
+      "professionLevel": 24,
+      "professionPotential": 42,
+      "vocation": "financial-analysis",
+      "vocationLevel": 42,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 47,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 195,
+      "gold": 13568,
+      "skills": 37,
+      "careerUtilities": 1,
+      "examPasses": 8,
+      "stages": 39,
+      "wins": 46,
+      "losses": 0,
+      "minutes": 2580
+    },
+    {
+      "day": 180,
+      "active": 134,
+      "playerLevel": 49,
+      "guildRank": "B",
+      "xp": 100400,
+      "classId": "elementalist",
+      "classLevel": 44,
+      "classPotential": 49,
+      "profession": "Financial Analyst",
+      "professionLevel": 49,
+      "professionPotential": 60,
+      "vocation": "financial-analysis",
+      "vocationLevel": 60,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 119,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 385,
+      "gold": 30556,
+      "skills": 46,
+      "careerUtilities": 1,
+      "examPasses": 17,
+      "stages": 76,
+      "wins": 90,
+      "losses": 0,
+      "minutes": 5055
+    },
+    {
+      "day": 365,
+      "active": 272,
+      "playerLevel": 67,
+      "guildRank": "A",
+      "xp": 184400,
+      "classId": "elementalist",
+      "classLevel": 66,
+      "classPotential": 66,
+      "profession": "Financial Analyst",
+      "professionLevel": 83,
+      "professionPotential": 83,
+      "vocation": "financial-analysis",
+      "vocationLevel": 83,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 280,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 771,
+      "gold": 60019,
+      "skills": 50,
+      "careerUtilities": 1,
+      "examPasses": 29,
+      "stages": 149,
+      "wins": 182,
+      "losses": 0,
+      "minutes": 10128
+    }
+  ],
+  "income": {
+    "requests": 36880,
+    "login": 5995,
+    "battles": 17350,
+    "exploration": 234,
+    "commissions": 18360
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 11100,
+    "tempering": 7200,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 182,
+    "wins": 182,
+    "losses": 0,
+    "actions": 194,
+    "bounds": 0,
+    "explorations": 57,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 183,
+    "companionAbilities": 11,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 680,
+    "weekly": 73,
+    "monthly": 18
+  },
+  "requestsByScope": {
+    "universal": 272,
+    "class": 173,
+    "profession": 326
+  },
+  "classHistory": [
+    {
+      "id": "scholar",
+      "level": 1,
+      "potential": 1,
+      "xp": 17565
+    },
+    {
+      "id": "elementalist",
+      "level": 66,
+      "potential": 66,
+      "xp": 70260
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Financial Analyst",
+      "level": 83,
+      "xp": 111420
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "financial-analysis",
+      "level": 83,
+      "xp": 111420
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "INT 15",
+      "met": true
+    }
+  ],
+  "activeDays": 272,
+  "minutes": 10128,
+  "partialWorkouts": 0,
+  "expiredCommitments": 20,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 190,
+  "finalGoal": "elementalist",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 29,
+  "profession4Days": 22,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 266,
+    "weekly: #-day commitment: #/# days": 307,
+    "monthly: Dated practice days: #/#": 366,
+    "monthly: #-day commitment: #/# days": 353
+  },
+  "examDays": 33,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "request",
+      "id": "trial-elementalist-entry",
+      "title": "Elementalist entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 1,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "elementalist",
+      "playerLevel": 1,
+      "classLevel": 1
+    },
+    {
+      "day": 2,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 2,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 51
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "profession-finance-0",
+      "name": "Ledger Foundations",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "focus-elementalist-0",
+      "name": "Elementalist Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "focus-elementalist-1",
+      "name": "Emberfall: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "element-fire-1",
+      "name": "Ember Needle: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "career-opening-finance-0",
+      "name": "Reconciliation: Primer",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 24,
+      "type": "skill",
+      "id": "career-opening-finance-1",
+      "name": "Budget Models: Primer",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 24,
+      "type": "skill",
+      "id": "profession-finance-1",
+      "name": "Reconciliation",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 24,
+      "type": "skill",
+      "id": "profession-finance-2",
+      "name": "Budget Models",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 31,
+      "type": "skill",
+      "id": "profession-finance-3",
+      "name": "Financial Statements",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 31,
+      "type": "skill",
+      "id": "profession-finance-4",
+      "name": "Variance Analysis",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 31,
+      "type": "skill",
+      "id": "profession-finance-5",
+      "name": "Controls & Evidence",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "element-fire-2",
+      "name": "Ember Needle: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "profession-finance-6",
+      "name": "Forecasting",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 45,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 45,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 45,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 48,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "profession-finance-7",
+      "name": "Audit Trail",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "elementalist-monthly",
+      "title": "Elementalist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 67,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 67,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 67,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 74,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 74,
+      "type": "skill",
+      "id": "element-ice-1",
+      "name": "Rime Shard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 74,
+      "type": "skill",
+      "id": "element-storm-1",
+      "name": "Storm Chain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 60
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 82,
+      "type": "skill",
+      "id": "profession-finance-8",
+      "name": "Financial Case",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 82,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 82,
+      "type": "skill",
+      "id": "arc-mage-6",
+      "name": "Cinder Seal",
+      "wallet": "combat"
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 87,
+      "type": "request",
+      "id": "elementalist-monthly",
+      "title": "Elementalist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "skill",
+      "id": "opening-mage-0-2",
+      "name": "Spark: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 89,
+      "type": "skill",
+      "id": "opening-mage-1-2",
+      "name": "Arcane Reading: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 89,
+      "type": "skill",
+      "id": "opening-mage-2-2",
+      "name": "Lesser Barrier: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 96,
+      "type": "skill",
+      "id": "element-ice-2",
+      "name": "Rime Shard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "skill",
+      "id": "element-storm-2",
+      "name": "Storm Chain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "skill",
+      "id": "arc-mage-7",
+      "name": "Confluence",
+      "wallet": "combat"
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 100,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 100,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 104,
+      "type": "skill",
+      "id": "focus-elementalist-2",
+      "name": "Emberfall: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 104,
+      "type": "skill",
+      "id": "arc-mage-8",
+      "name": "Shared Reservoir",
+      "wallet": "combat"
+    },
+    {
+      "day": 104,
+      "type": "skill",
+      "id": "arc-mage-9",
+      "name": "Starfall",
+      "wallet": "combat"
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 107,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 107,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 113,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 143,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 150,
+      "type": "request",
+      "id": "elementalist-monthly",
+      "title": "Elementalist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 160,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 169,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "skill",
+      "id": "profession-finance-9",
+      "name": "Capital Steward",
+      "wallet": "profession:finance"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "elementalist-monthly",
+      "title": "Elementalist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 190,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 219,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 219,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 226,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 240,
+      "type": "skill",
+      "id": "focus-elementalist-3",
+      "name": "Elementalist Legacy",
+      "wallet": "combat"
+    },
+    {
+      "day": 240,
+      "type": "skill",
+      "id": "arc-mage-10",
+      "name": "Astral Focus",
+      "wallet": "combat"
+    },
+    {
+      "day": 241,
+      "type": "request",
+      "id": "elementalist-monthly",
+      "title": "Elementalist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 269,
+      "type": "request",
+      "id": "elementalist-monthly",
+      "title": "Elementalist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 325,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 331,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 331,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 332,
+      "type": "request",
+      "id": "elementalist-monthly",
+      "title": "Elementalist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "elementalist-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-financial-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "class",
+      "owner": "elementalist",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Financial Analyst",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "elementalist-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-financial-analysis-monthly",
+      "title": "Financial Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 359,
+      "type": "take",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 359,
+      "type": "take",
+      "id": "vocation-financial-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "vocation-financial-analysis-weekly",
+      "title": "Financial Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "elementalist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-finance-0",
+    "focus-elementalist-0",
+    "focus-elementalist-1",
+    "element-fire-0",
+    "element-fire-1",
+    "career-opening-finance-0",
+    "career-opening-finance-1",
+    "profession-finance-1",
+    "profession-finance-2",
+    "profession-finance-3",
+    "profession-finance-4",
+    "profession-finance-5",
+    "element-fire-2",
+    "profession-finance-6",
+    "arc-mage-1",
+    "opening-mage-0-0",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "profession-finance-7",
+    "element-ice-0",
+    "element-storm-0",
+    "arc-mage-2",
+    "arc-mage-3",
+    "arc-mage-4",
+    "arc-mage-5",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1",
+    "element-ice-1",
+    "element-storm-1",
+    "profession-finance-8",
+    "universal-con-1",
+    "arc-mage-6",
+    "opening-mage-0-2",
+    "opening-mage-1-2",
+    "opening-mage-2-2",
+    "element-ice-2",
+    "element-storm-2",
+    "arc-mage-7",
+    "focus-elementalist-2",
+    "arc-mage-8",
+    "arc-mage-9",
+    "universal-con-2",
+    "universal-int-1",
+    "profession-finance-9",
+    "universal-int-2",
+    "focus-elementalist-3",
+    "arc-mage-10",
+    "universal-con-3"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-finance-0",
+      "wallet": "profession:finance",
+      "cost": 1
+    },
+    {
+      "id": "focus-elementalist-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-elementalist-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-fire-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-finance-0",
+      "wallet": "profession:finance",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-finance-1",
+      "wallet": "profession:finance",
+      "cost": 1
+    },
+    {
+      "id": "profession-finance-1",
+      "wallet": "profession:finance",
+      "cost": 2
+    },
+    {
+      "id": "profession-finance-2",
+      "wallet": "profession:finance",
+      "cost": 2
+    },
+    {
+      "id": "profession-finance-3",
+      "wallet": "profession:finance",
+      "cost": 3
+    },
+    {
+      "id": "profession-finance-4",
+      "wallet": "profession:finance",
+      "cost": 5
+    },
+    {
+      "id": "profession-finance-5",
+      "wallet": "profession:finance",
+      "cost": 8
+    },
+    {
+      "id": "element-fire-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "profession-finance-6",
+      "wallet": "profession:finance",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-finance-7",
+      "wallet": "profession:finance",
+      "cost": 14
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-ice-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-storm-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-finance-8",
+      "wallet": "profession:finance",
+      "cost": 18
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-mage-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-ice-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-storm-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-mage-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "focus-elementalist-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-mage-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-finance-9",
+      "wallet": "profession:finance",
+      "cost": 24
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-elementalist-3",
+      "wallet": "combat",
+      "cost": 24
+    },
+    {
+      "id": "arc-mage-10",
+      "wallet": "combat",
+      "cost": 20
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    }
+  ],
+  "utilities": [
+    {
+      "id": "treasury",
+      "name": "Treasurer’s Plan",
+      "category": "finance",
+      "learn": "Ledger Foundations or Reconciliation: Primer",
+      "skills": [
+        "profession-finance-0",
+        "career-opening-finance-0"
+      ],
+      "effect": "In Adventures, plan a potion and ether purchase against live shop stock and your available gold."
+    }
+  ],
+  "firstGoldDay": 325,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 495544
+}

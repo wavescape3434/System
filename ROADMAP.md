@@ -110,7 +110,16 @@ This is the working backlog from the version 1.13 product review. Update the sta
 - **Evidence:** 24 sixty-day ledger cases and a task-family efficacy review. Scripted exercise inputs verify software/rewards, not human fitness gains. [Review and limits](docs/training-1.25/README.md) · [Verification](docs/verification-1.25.md).
 - **P09 still open:** qualified exercise review; substitutions, equipment-specific loading and independent partial-session logs; verified B–SSS sport/discipline standards; parallel subject-specific knowledge checks; real-user adherence and efficacy. Public guideline retrieval was proxy-blocked; references are established sources rather than freshly verified 2026 editions.
 
-**Next:** collect feedback on the two-day regimen and improve substitutions/partial logging before making stronger efficacy claims. Continue P01/P02 focused-loadout/prestige and normal-region tuning, and P08 procurement/material/service policies over 180–365 days. Gold surplus remains open. Preserve companion-led builds and earned power. Physical Android/runtime validation remains P05 work; Google setup stays deferred.
+## Usage study — current 1.25.0
+
+- **32 fictional customers / 35 annual scenarios / 12,775 account-days**, covering 32 job titles, all 20 profession categories, all 25 vocations and 28 classes. Day-7/30/90/180/365 checkpoints, complete backgrounds, retained histories, work samples and experience assessments. [Study](docs/personas-1.25/README.md) · [All profiles](docs/personas-1.25/CUSTOMERS.md).
+- **Confirmed U01 defect:** Network Weaver commissions are classified as profession work; the earned class remains level 1. Scope inference and technical filters must distinguish class IDs from career-request prefixes.
+- **P03/P04/P09:** explain banked XP, required class work and ready exams as distinct states. Theo's matched review choice changes Scholar 4 / Data Analyst 4 to Scholar 20 / Data Analyst 104 with the same player XP and receipts. Keep independent partial-work records and alternate assessment support open.
+- **P01/P07:** advanced-class lineage can require returning to a named basic class despite many advanced levels. Review profession/request stat consistency, cross-category vocation credit, profession-only class gates and later useful career competencies. All 20 utilities are reachable; sampled completed career trees leave hundreds of points unused.
+- **P08/P09:** 12/32 primary profiles reach Gold on days 258–348; 11/32 enter prestige classes. Mixed schedules have uneven calendar eligibility and reward yield. Ordinary encounters remain accessible with companions under this study's limited encounter policy. These are modeled outcomes, not retention/efficacy evidence or a class-balance ranking.
+- Ranked follow-ups are maintained as [U01–U10](docs/personas-1.25/PRIORITIES.md). This study changes no app rules, rewards, owned progress or APK.
+
+**Next:** fix U01 first; then improve progression-state actions and review advanced-class lineage, schedule feasibility and career depth using U02–U08. Run matched effort/frequency studies before changing rewards. Continue the broader P01/P02 and P08 work, retain companion-led play and both gold sources, and preserve local-midnight recovery. Physical Android/runtime validation remains P05 work; Google setup stays deferred.
 
 ## Guardrails
 

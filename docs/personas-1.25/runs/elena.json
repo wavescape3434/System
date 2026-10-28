@@ -1,0 +1,3651 @@
+{
+  "id": "elena",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "elena",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "warrior",
+    "profession": "Baker",
+    "vocation": "hospitality-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 271,
+    "playerLevel": 57,
+    "guildRank": "B",
+    "xp": 133405,
+    "classId": "warrior",
+    "classLevel": 22,
+    "classPotential": 22,
+    "profession": "Graphic Designer",
+    "professionLevel": 54,
+    "professionPotential": 59,
+    "vocation": "creative-practice",
+    "vocationLevel": 59,
+    "stats": {
+      "STR": 25,
+      "DEX": 87,
+      "CON": 10,
+      "INT": 31,
+      "WIS": 10,
+      "CHA": 75
+    },
+    "requests": 700,
+    "gold": 29992,
+    "skills": 87,
+    "careerUtilities": 2,
+    "examPasses": 30,
+    "stages": 154,
+    "wins": 180,
+    "losses": 0,
+    "minutes": 9718
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 4,
+      "playerLevel": 3,
+      "guildRank": "F",
+      "xp": 890,
+      "classId": "warrior",
+      "classLevel": 1,
+      "classPotential": 1,
+      "profession": "Baker",
+      "professionLevel": 4,
+      "professionPotential": 5,
+      "vocation": "hospitality-practice",
+      "vocationLevel": 5,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 10,
+      "gold": 263,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 2,
+      "wins": 2,
+      "losses": 0,
+      "minutes": 128
+    },
+    {
+      "day": 30,
+      "active": 24,
+      "playerLevel": 14,
+      "guildRank": "D",
+      "xp": 10580,
+      "classId": "warrior",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Baker",
+      "professionLevel": 9,
+      "professionPotential": 23,
+      "vocation": "hospitality-practice",
+      "vocationLevel": 23,
+      "stats": {
+        "STR": 9,
+        "DEX": 12,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 64,
+      "gold": 3106,
+      "skills": 12,
+      "careerUtilities": 1,
+      "examPasses": 1,
+      "stages": 12,
+      "wins": 14,
+      "losses": 0,
+      "minutes": 764
+    },
+    {
+      "day": 90,
+      "active": 70,
+      "playerLevel": 24,
+      "guildRank": "C",
+      "xp": 25645,
+      "classId": "warrior",
+      "classLevel": 6,
+      "classPotential": 6,
+      "profession": "Baker",
+      "professionLevel": 24,
+      "professionPotential": 37,
+      "vocation": "hospitality-practice",
+      "vocationLevel": 37,
+      "stats": {
+        "STR": 12,
+        "DEX": 24,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 185,
+      "gold": 9179,
+      "skills": 21,
+      "careerUtilities": 1,
+      "examPasses": 5,
+      "stages": 43,
+      "wins": 48,
+      "losses": 0,
+      "minutes": 2314
+    },
+    {
+      "day": 180,
+      "active": 137,
+      "playerLevel": 37,
+      "guildRank": "C",
+      "xp": 57755,
+      "classId": "warrior",
+      "classLevel": 13,
+      "classPotential": 13,
+      "profession": "Graphic Designer",
+      "professionLevel": 1,
+      "professionPotential": 1,
+      "vocation": "creative-practice",
+      "vocationLevel": 1,
+      "stats": {
+        "STR": 16,
+        "DEX": 75,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 357,
+      "gold": 22907,
+      "skills": 33,
+      "careerUtilities": 1,
+      "examPasses": 12,
+      "stages": 88,
+      "wins": 96,
+      "losses": 0,
+      "minutes": 4849
+    },
+    {
+      "day": 365,
+      "active": 271,
+      "playerLevel": 57,
+      "guildRank": "B",
+      "xp": 133405,
+      "classId": "warrior",
+      "classLevel": 22,
+      "classPotential": 22,
+      "profession": "Graphic Designer",
+      "professionLevel": 54,
+      "professionPotential": 59,
+      "vocation": "creative-practice",
+      "vocationLevel": 59,
+      "stats": {
+        "STR": 25,
+        "DEX": 87,
+        "CON": 10,
+        "INT": 31,
+        "WIS": 10,
+        "CHA": 75
+      },
+      "requests": 700,
+      "gold": 29992,
+      "skills": 87,
+      "careerUtilities": 2,
+      "examPasses": 30,
+      "stages": 154,
+      "wins": 180,
+      "losses": 0,
+      "minutes": 9718
+    }
+  ],
+  "income": {
+    "requests": 26681,
+    "login": 5970,
+    "battles": 17650,
+    "exploration": 36,
+    "commissions": 17330
+  },
+  "spent": {
+    "supplies": 25,
+    "equipment": 11100,
+    "tempering": 26100,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 180,
+    "wins": 180,
+    "losses": 0,
+    "actions": 377,
+    "bounds": 0,
+    "explorations": 44,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 191,
+    "companionAbilities": 182,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 619,
+    "weekly": 67,
+    "monthly": 14
+  },
+  "requestsByScope": {
+    "universal": 271,
+    "class": 123,
+    "profession": 306
+  },
+  "classHistory": [
+    {
+      "id": "warrior",
+      "level": 22,
+      "potential": 22,
+      "xp": 8835
+    },
+    {
+      "id": "scholar",
+      "level": 26,
+      "potential": 26,
+      "xp": 12720
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Baker",
+      "level": 57,
+      "xp": 53012
+    },
+    {
+      "name": "Graphic Designer",
+      "level": 54,
+      "xp": 56400
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "hospitality-practice",
+      "level": 57,
+      "xp": 53012
+    },
+    {
+      "id": "creative-practice",
+      "level": 59,
+      "xp": 56400
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "STR 28",
+      "met": false
+    },
+    {
+      "label": "INT 25",
+      "met": true
+    },
+    {
+      "label": "Warrior Lv. 15",
+      "met": true
+    },
+    {
+      "label": "Scholar Lv. 10",
+      "met": true
+    },
+    {
+      "label": "Eldritch Knight entry trial",
+      "met": false
+    }
+  ],
+  "activeDays": 271,
+  "minutes": 9718,
+  "partialWorkouts": 0,
+  "expiredCommitments": 33,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 175,
+  "finalGoal": "eldritch-knight",
+  "failedAttempts": 0,
+  "duplicateGuards": 14,
+  "level4Days": 24,
+  "profession4Days": 30,
+  "careerChangeDone": true,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 271,
+    "weekly: #-day commitment: #/# days": 265,
+    "monthly: Dated practice days: #/#": 383,
+    "monthly: #-day commitment: #/# days": 289,
+    "Time budget": 25
+  },
+  "examDays": 35,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 31
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-hospitality-0",
+      "name": "Service Standards",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-hospitality-0",
+      "name": "Guest Communication: Primer",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-hospitality-1",
+      "name": "Food Safety Study: Primer",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 11,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-hospitality-1",
+      "name": "Guest Communication",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-hospitality-2",
+      "name": "Food Safety Study",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-hospitality-3",
+      "name": "Preparation Workflow",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 18,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 32
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "focus-warrior-0",
+      "name": "Warrior Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-hospitality-4",
+      "name": "Service Recovery",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-hospitality-5",
+      "name": "Cost & Inventory",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 25,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "martial-sword-1",
+      "name": "Sword Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-hospitality-6",
+      "name": "Quality Checks",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 32,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 34
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "profession-hospitality-7",
+      "name": "Service Review",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 46,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "arc-fighter-1",
+      "name": "Weapon Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "universal-str-1",
+      "name": "Strength Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 53,
+      "type": "request",
+      "id": "warrior-monthly",
+      "title": "Warrior training adventure",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 53,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 35
+    },
+    {
+      "day": 58,
+      "type": "training-rank",
+      "from": "F",
+      "to": "E"
+    },
+    {
+      "day": 58,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-fighter-0-0",
+      "name": "Measured Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-fighter-1-0",
+      "name": "Brawler’s Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "opening-fighter-2-0",
+      "name": "Shield Footwork",
+      "wallet": "combat"
+    },
+    {
+      "day": 67,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 21
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "martial-spear-1",
+      "name": "Spear Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 37
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 86,
+      "type": "skill",
+      "id": "martial-axe-1",
+      "name": "Axe Leverage",
+      "wallet": "combat"
+    },
+    {
+      "day": 86,
+      "type": "skill",
+      "id": "martial-unarmed-1",
+      "name": "Open-Hand Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 95,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 37
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 100,
+      "type": "skill",
+      "id": "arc-fighter-2",
+      "name": "Shield Breaker",
+      "wallet": "combat"
+    },
+    {
+      "day": 102,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "strength",
+      "name": "Iron Resolve",
+      "wallet": "universal"
+    },
+    {
+      "day": 109,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 38
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 113,
+      "type": "training-rank",
+      "from": "E",
+      "to": "D"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 115,
+      "type": "skill",
+      "id": "focus-warrior-1",
+      "name": "Iron Cleave: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 115,
+      "type": "skill",
+      "id": "profession-hospitality-8",
+      "name": "Service Portfolio",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "warrior-monthly",
+      "title": "Warrior training adventure",
+      "cadence": "monthly",
+      "xp": 450,
+      "gold": 90
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 22
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 122,
+      "type": "skill",
+      "id": "martial-sword-2",
+      "name": "Measured Cut",
+      "wallet": "combat"
+    },
+    {
+      "day": 122,
+      "type": "skill",
+      "id": "arc-fighter-3",
+      "name": "Sweeping Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 122,
+      "type": "skill",
+      "id": "arc-fighter-4",
+      "name": "Armor Splitter",
+      "wallet": "combat"
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 23
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 137,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 137,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "arc-fighter-5",
+      "name": "Battle Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 156,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 156,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 158,
+      "type": "skill",
+      "id": "opening-fighter-0-1",
+      "name": "Measured Thrust: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 165,
+      "type": "skill",
+      "id": "universal-dex-1",
+      "name": "Mobility Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 169,
+      "type": "training-rank",
+      "from": "D",
+      "to": "C"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 172,
+      "type": "skill",
+      "id": "opening-fighter-1-1",
+      "name": "Brawler’s Rhythm: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 172,
+      "type": "skill",
+      "id": "opening-fighter-2-1",
+      "name": "Shield Footwork: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 180,
+      "type": "career-change",
+      "from": "Baker",
+      "to": "Graphic Designer",
+      "vocation": "creative-practice"
+    },
+    {
+      "day": 180,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 180,
+      "type": "take",
+      "id": "vocation-creative-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Baker",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "vocation-creative-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 184,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 184,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 184,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 184,
+      "type": "take",
+      "id": "vocation-creative-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 186,
+      "type": "skill",
+      "id": "profession-creative-0",
+      "name": "Creative Brief",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 186,
+      "type": "skill",
+      "id": "career-opening-creative-0",
+      "name": "Composition: Primer",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 186,
+      "type": "skill",
+      "id": "career-opening-creative-1",
+      "name": "Story Structure: Primer",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 190,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 193,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 193,
+      "type": "skill",
+      "id": "profession-creative-1",
+      "name": "Composition",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 193,
+      "type": "skill",
+      "id": "profession-creative-2",
+      "name": "Story Structure",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 193,
+      "type": "skill",
+      "id": "profession-creative-3",
+      "name": "Visual Hierarchy",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 23
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "request",
+      "id": "trial-scholar-entry",
+      "title": "Scholar entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 197,
+      "type": "class-change",
+      "from": "warrior",
+      "to": "scholar",
+      "playerLevel": 38,
+      "classLevel": 1
+    },
+    {
+      "day": 198,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 198,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 200,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 200,
+      "type": "skill",
+      "id": "profession-creative-4",
+      "name": "Production Workflow",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 200,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "vocation-creative-practice-monthly",
+      "title": "Arts, Design portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 207,
+      "type": "skill",
+      "id": "profession-creative-5",
+      "name": "Editing",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 207,
+      "type": "skill",
+      "id": "profession-creative-6",
+      "name": "Audience Feedback",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 207,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "vocation-creative-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 214,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 214,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "skill",
+      "id": "profession-creative-7",
+      "name": "Critique & Revision",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 222,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 222,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 225,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 229,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 229,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-creative-practice-monthly",
+      "title": "Arts, Design portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-creative-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 243,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 243,
+      "type": "skill",
+      "id": "element-fire-1",
+      "name": "Ember Needle: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "skill",
+      "id": "element-ice-1",
+      "name": "Rime Shard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 250,
+      "type": "skill",
+      "id": "element-storm-1",
+      "name": "Storm Chain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 250,
+      "type": "skill",
+      "id": "universal-dex-2",
+      "name": "Sure Footing",
+      "wallet": "universal"
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 257,
+      "type": "skill",
+      "id": "arc-mage-6",
+      "name": "Cinder Seal",
+      "wallet": "combat"
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-creative-practice-monthly",
+      "title": "Arts, Design portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "skill",
+      "id": "profession-creative-8",
+      "name": "Creative Portfolio",
+      "wallet": "profession:creative"
+    },
+    {
+      "day": 264,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 264,
+      "type": "skill",
+      "id": "opening-mage-0-2",
+      "name": "Spark: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 269,
+      "type": "request",
+      "id": "scholar-monthly",
+      "title": "Scholar training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 271,
+      "type": "skill",
+      "id": "opening-mage-1-2",
+      "name": "Arcane Reading: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 271,
+      "type": "skill",
+      "id": "opening-mage-2-2",
+      "name": "Lesser Barrier: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 271,
+      "type": "skill",
+      "id": "element-fire-2",
+      "name": "Ember Needle: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-creative-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "skill",
+      "id": "element-ice-2",
+      "name": "Rime Shard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 279,
+      "type": "skill",
+      "id": "element-storm-2",
+      "name": "Storm Chain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 281,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 286,
+      "type": "skill",
+      "id": "arc-mage-7",
+      "name": "Confluence",
+      "wallet": "combat"
+    },
+    {
+      "day": 286,
+      "type": "skill",
+      "id": "arc-mage-8",
+      "name": "Shared Reservoir",
+      "wallet": "combat"
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-creative-practice-monthly",
+      "title": "Arts, Design portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "warrior",
+      "playerLevel": 52,
+      "classLevel": 15
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "vocation-creative-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 305,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 307,
+      "type": "skill",
+      "id": "martial-sword-3",
+      "name": "Riposte Line",
+      "wallet": "combat"
+    },
+    {
+      "day": 307,
+      "type": "skill",
+      "id": "martial-spear-2",
+      "name": "Line Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 307,
+      "type": "skill",
+      "id": "martial-axe-2",
+      "name": "Hooking Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 314,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 314,
+      "type": "skill",
+      "id": "martial-unarmed-2",
+      "name": "Combination Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 314,
+      "type": "skill",
+      "id": "arc-fighter-6",
+      "name": "Steel Tempest",
+      "wallet": "combat"
+    },
+    {
+      "day": 314,
+      "type": "skill",
+      "id": "opening-fighter-0-2",
+      "name": "Measured Thrust: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 319,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 321,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 321,
+      "type": "skill",
+      "id": "opening-fighter-1-2",
+      "name": "Brawler’s Rhythm: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 321,
+      "type": "skill",
+      "id": "opening-fighter-2-2",
+      "name": "Shield Footwork: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-creative-practice-monthly",
+      "title": "Arts, Design portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 328,
+      "type": "skill",
+      "id": "arc-fighter-7",
+      "name": "Duelist’s Answer",
+      "wallet": "combat"
+    },
+    {
+      "day": 328,
+      "type": "skill",
+      "id": "arc-fighter-8",
+      "name": "Vanguard Charge",
+      "wallet": "combat"
+    },
+    {
+      "day": 332,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 332,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-creative-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 347,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 24
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "skill",
+      "id": "martial-spear-3",
+      "name": "Braced Point",
+      "wallet": "combat"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Graphic Designer",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-creative-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "skill",
+      "id": "martial-axe-3",
+      "name": "Sundering Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 359,
+      "type": "request",
+      "id": "vocation-creative-practice-monthly",
+      "title": "Arts, Design portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 361,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "vocation-creative-practice-weekly",
+      "title": "Arts, Design field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-hospitality-0",
+    "career-opening-hospitality-0",
+    "career-opening-hospitality-1",
+    "profession-hospitality-1",
+    "profession-hospitality-2",
+    "profession-hospitality-3",
+    "focus-warrior-0",
+    "profession-hospitality-4",
+    "profession-hospitality-5",
+    "martial-sword-1",
+    "profession-hospitality-6",
+    "profession-hospitality-7",
+    "arc-fighter-1",
+    "universal-str-1",
+    "opening-fighter-0-0",
+    "opening-fighter-1-0",
+    "opening-fighter-2-0",
+    "martial-spear-1",
+    "martial-axe-1",
+    "martial-unarmed-1",
+    "arc-fighter-2",
+    "strength",
+    "focus-warrior-1",
+    "profession-hospitality-8",
+    "martial-sword-2",
+    "arc-fighter-3",
+    "arc-fighter-4",
+    "arc-fighter-5",
+    "opening-fighter-0-1",
+    "universal-dex-1",
+    "opening-fighter-1-1",
+    "opening-fighter-2-1",
+    "profession-creative-0",
+    "career-opening-creative-0",
+    "career-opening-creative-1",
+    "profession-creative-1",
+    "profession-creative-2",
+    "profession-creative-3",
+    "focus-scholar-0",
+    "profession-creative-4",
+    "arc-mage-1",
+    "profession-creative-5",
+    "profession-creative-6",
+    "opening-mage-0-0",
+    "focus-scholar-1",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "profession-creative-7",
+    "element-fire-0",
+    "element-ice-0",
+    "element-storm-0",
+    "arc-mage-2",
+    "arc-mage-3",
+    "arc-mage-4",
+    "arc-mage-5",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1",
+    "element-fire-1",
+    "element-ice-1",
+    "element-storm-1",
+    "universal-dex-2",
+    "arc-mage-6",
+    "profession-creative-8",
+    "universal-con-1",
+    "opening-mage-0-2",
+    "opening-mage-1-2",
+    "opening-mage-2-2",
+    "element-fire-2",
+    "element-ice-2",
+    "element-storm-2",
+    "arc-mage-7",
+    "arc-mage-8",
+    "martial-sword-3",
+    "martial-spear-2",
+    "martial-axe-2",
+    "martial-unarmed-2",
+    "arc-fighter-6",
+    "opening-fighter-0-2",
+    "universal-con-2",
+    "opening-fighter-1-2",
+    "opening-fighter-2-2",
+    "arc-fighter-7",
+    "arc-fighter-8",
+    "martial-spear-3",
+    "martial-axe-3"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-hospitality-0",
+      "wallet": "profession:hospitality",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-hospitality-0",
+      "wallet": "profession:hospitality",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-hospitality-1",
+      "wallet": "profession:hospitality",
+      "cost": 1
+    },
+    {
+      "id": "profession-hospitality-1",
+      "wallet": "profession:hospitality",
+      "cost": 2
+    },
+    {
+      "id": "profession-hospitality-2",
+      "wallet": "profession:hospitality",
+      "cost": 2
+    },
+    {
+      "id": "profession-hospitality-3",
+      "wallet": "profession:hospitality",
+      "cost": 3
+    },
+    {
+      "id": "focus-warrior-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-hospitality-4",
+      "wallet": "profession:hospitality",
+      "cost": 5
+    },
+    {
+      "id": "profession-hospitality-5",
+      "wallet": "profession:hospitality",
+      "cost": 8
+    },
+    {
+      "id": "martial-sword-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-hospitality-6",
+      "wallet": "profession:hospitality",
+      "cost": 8
+    },
+    {
+      "id": "profession-hospitality-7",
+      "wallet": "profession:hospitality",
+      "cost": 14
+    },
+    {
+      "id": "arc-fighter-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-str-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-fighter-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-spear-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-axe-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-unarmed-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "strength",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-warrior-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-hospitality-8",
+      "wallet": "profession:hospitality",
+      "cost": 18
+    },
+    {
+      "id": "martial-sword-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-fighter-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-fighter-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-fighter-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-dex-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-fighter-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-creative-0",
+      "wallet": "profession:creative",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-creative-0",
+      "wallet": "profession:creative",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-creative-1",
+      "wallet": "profession:creative",
+      "cost": 1
+    },
+    {
+      "id": "profession-creative-1",
+      "wallet": "profession:creative",
+      "cost": 2
+    },
+    {
+      "id": "profession-creative-2",
+      "wallet": "profession:creative",
+      "cost": 2
+    },
+    {
+      "id": "profession-creative-3",
+      "wallet": "profession:creative",
+      "cost": 3
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-creative-4",
+      "wallet": "profession:creative",
+      "cost": 5
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-creative-5",
+      "wallet": "profession:creative",
+      "cost": 8
+    },
+    {
+      "id": "profession-creative-6",
+      "wallet": "profession:creative",
+      "cost": 8
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-creative-7",
+      "wallet": "profession:creative",
+      "cost": 14
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-fire-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-ice-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-storm-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-dex-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "profession-creative-8",
+      "wallet": "profession:creative",
+      "cost": 18
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-mage-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-fire-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-ice-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-storm-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-mage-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "martial-sword-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "martial-spear-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-axe-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-unarmed-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-fighter-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-fighter-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-fighter-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-fighter-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-fighter-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-fighter-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "martial-spear-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "martial-axe-3",
+      "wallet": "combat",
+      "cost": 10
+    }
+  ],
+  "utilities": [
+    {
+      "id": "folio",
+      "name": "Cartographer’s Folio",
+      "category": "creative",
+      "learn": "Creative Brief or Composition: Primer",
+      "skills": [
+        "profession-creative-0",
+        "career-opening-creative-0"
+      ],
+      "effect": "In Adventures, view a visual route folio with stage progress, exploration access and recorded landmarks."
+    },
+    {
+      "id": "concierge",
+      "name": "Wayfarer’s Concierge",
+      "category": "hospitality",
+      "learn": "Service Standards or Guest Communication: Primer",
+      "skills": [
+        "profession-hospitality-0",
+        "career-opening-hospitality-0"
+      ],
+      "effect": "In Adventures, compare town stores, smiths and restocking requests, then visit an unlocked town’s shops."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 728889
+}

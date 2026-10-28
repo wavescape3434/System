@@ -1,0 +1,3550 @@
+{
+  "id": "sofia",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "sofia",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "rogue",
+    "profession": "Paralegal",
+    "vocation": "law-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 283,
+    "playerLevel": 62,
+    "guildRank": "B",
+    "xp": 155710,
+    "classId": "tactician",
+    "classLevel": 51,
+    "classPotential": 51,
+    "profession": "Paralegal",
+    "professionLevel": 79,
+    "professionPotential": 79,
+    "vocation": "law-practice",
+    "vocationLevel": 79,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 183,
+      "WIS": 10,
+      "CHA": 45
+    },
+    "requests": 795,
+    "gold": 43195,
+    "skills": 72,
+    "careerUtilities": 1,
+    "examPasses": 27,
+    "stages": 167,
+    "wins": 196,
+    "losses": 0,
+    "minutes": 10647
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 5,
+      "playerLevel": 4,
+      "guildRank": "F",
+      "xp": 1130,
+      "classId": "scholar",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Paralegal",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "law-practice",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 14,
+      "gold": 306,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 2,
+      "wins": 2,
+      "losses": 0,
+      "minutes": 193
+    },
+    {
+      "day": 30,
+      "active": 23,
+      "playerLevel": 15,
+      "guildRank": "D",
+      "xp": 11570,
+      "classId": "scholar",
+      "classLevel": 4,
+      "classPotential": 7,
+      "profession": "Paralegal",
+      "professionLevel": 4,
+      "professionPotential": 23,
+      "vocation": "law-practice",
+      "vocationLevel": 23,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 63,
+      "gold": 3089,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 14,
+      "wins": 14,
+      "losses": 0,
+      "minutes": 848
+    },
+    {
+      "day": 90,
+      "active": 71,
+      "playerLevel": 28,
+      "guildRank": "C",
+      "xp": 35510,
+      "classId": "bard",
+      "classLevel": 9,
+      "classPotential": 22,
+      "profession": "Paralegal",
+      "professionLevel": 24,
+      "professionPotential": 37,
+      "vocation": "law-practice",
+      "vocationLevel": 37,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 26,
+        "WIS": 10,
+        "CHA": 13
+      },
+      "requests": 195,
+      "gold": 10906,
+      "skills": 31,
+      "careerUtilities": 1,
+      "examPasses": 6,
+      "stages": 44,
+      "wins": 50,
+      "losses": 0,
+      "minutes": 2632
+    },
+    {
+      "day": 180,
+      "active": 136,
+      "playerLevel": 43,
+      "guildRank": "B",
+      "xp": 79960,
+      "classId": "tactician",
+      "classLevel": 14,
+      "classPotential": 30,
+      "profession": "Paralegal",
+      "professionLevel": 54,
+      "professionPotential": 56,
+      "vocation": "law-practice",
+      "vocationLevel": 56,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 81,
+        "WIS": 10,
+        "CHA": 15
+      },
+      "requests": 385,
+      "gold": 23818,
+      "skills": 64,
+      "careerUtilities": 1,
+      "examPasses": 14,
+      "stages": 87,
+      "wins": 96,
+      "losses": 0,
+      "minutes": 5147
+    },
+    {
+      "day": 365,
+      "active": 283,
+      "playerLevel": 62,
+      "guildRank": "B",
+      "xp": 155710,
+      "classId": "tactician",
+      "classLevel": 51,
+      "classPotential": 51,
+      "profession": "Paralegal",
+      "professionLevel": 79,
+      "professionPotential": 79,
+      "vocation": "law-practice",
+      "vocationLevel": 79,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 183,
+        "WIS": 10,
+        "CHA": 45
+      },
+      "requests": 795,
+      "gold": 43195,
+      "skills": 72,
+      "careerUtilities": 1,
+      "examPasses": 27,
+      "stages": 167,
+      "wins": 196,
+      "losses": 0,
+      "minutes": 10647
+    }
+  ],
+  "income": {
+    "requests": 31142,
+    "login": 6240,
+    "battles": 19950,
+    "exploration": 153,
+    "commissions": 18460
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 12150,
+    "tempering": 20100,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 196,
+    "wins": 196,
+    "losses": 0,
+    "actions": 544,
+    "bounds": 0,
+    "explorations": 52,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 199,
+    "companionAbilities": 345,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 706,
+    "weekly": 76,
+    "monthly": 13
+  },
+  "requestsByScope": {
+    "universal": 283,
+    "class": 177,
+    "profession": 335
+  },
+  "classHistory": [
+    {
+      "id": "rogue",
+      "level": 1,
+      "potential": 1,
+      "xp": 0
+    },
+    {
+      "id": "scholar",
+      "level": 9,
+      "potential": 19,
+      "xp": 12615
+    },
+    {
+      "id": "bard",
+      "level": 9,
+      "potential": 22,
+      "xp": 9240
+    },
+    {
+      "id": "tactician",
+      "level": 51,
+      "potential": 51,
+      "xp": 43477
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Paralegal",
+      "level": 79,
+      "xp": 99480
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "law-practice",
+      "level": 79,
+      "xp": 99480
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "INT 14",
+      "met": true
+    },
+    {
+      "label": "CHA 12",
+      "met": true
+    }
+  ],
+  "activeDays": 283,
+  "minutes": 10647,
+  "partialWorkouts": 0,
+  "expiredCommitments": 22,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 192,
+  "finalGoal": "tactician",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 100,
+  "profession4Days": 29,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 277,
+    "weekly: #-day commitment: #/# days": 330,
+    "monthly: Dated practice days: #/#": 337,
+    "monthly: #-day commitment: #/# days": 321,
+    "Time budget": 35
+  },
+  "examDays": 49,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "request",
+      "id": "trial-scholar-entry",
+      "title": "Scholar entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 1,
+      "type": "class-change",
+      "from": "rogue",
+      "to": "scholar",
+      "playerLevel": 1,
+      "classLevel": 1
+    },
+    {
+      "day": 2,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 2,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-law-0",
+      "name": "Source Hierarchy",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-law-0",
+      "name": "Issue Spotting: Primer",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 13,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "career-opening-law-1",
+      "name": "Case Reading: Primer",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-law-1",
+      "name": "Issue Spotting",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-law-2",
+      "name": "Case Reading",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-law-3",
+      "name": "Evidence Organization",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-law-4",
+      "name": "Policy Mapping",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-law-5",
+      "name": "Compliance Checklist",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-law-6",
+      "name": "Clear Drafting",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 38,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 38,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 43,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 43,
+      "type": "request",
+      "id": "trial-bard-entry",
+      "title": "Bard entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 43,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "bard",
+      "playerLevel": 17,
+      "classLevel": 1
+    },
+    {
+      "day": 45,
+      "type": "skill",
+      "id": "focus-bard-0",
+      "name": "Bard Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 45,
+      "type": "skill",
+      "id": "profession-law-7",
+      "name": "Reasoned Brief",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 45,
+      "type": "skill",
+      "id": "arc-bard-1",
+      "name": "Battle Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 51,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "opening-bard-0-0",
+      "name": "Rousing Beat",
+      "wallet": "combat"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "opening-bard-1-0",
+      "name": "Soothing Refrain",
+      "wallet": "combat"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "opening-bard-2-0",
+      "name": "Clear Signal",
+      "wallet": "combat"
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 63
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "focus-bard-1",
+      "name": "Traveler’s Refrain: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "arc-bard-2",
+      "name": "Ballad of Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "arc-bard-3",
+      "name": "Distracting Verse",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "bard-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "arc-bard-4",
+      "name": "Refrain of Clarity",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "arc-bard-5",
+      "name": "Warning Call",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "opening-bard-0-1",
+      "name": "Rousing Beat: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 69,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 71,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "opening-bard-1-1",
+      "name": "Soothing Refrain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "opening-bard-2-1",
+      "name": "Clear Signal: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "bard-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "bard-monthly",
+      "title": "Bard training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "bard-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "request",
+      "id": "trial-tactician-entry",
+      "title": "Tactician entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 92,
+      "type": "class-change",
+      "from": "bard",
+      "to": "tactician",
+      "playerLevel": 28,
+      "classLevel": 1
+    },
+    {
+      "day": 93,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 93,
+      "type": "take",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "focus-tactician-0",
+      "name": "Tactician Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 97,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "focus-tactician-1",
+      "name": "Calculated Assault: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 115,
+      "type": "skill",
+      "id": "profession-law-8",
+      "name": "Compliance Portfolio",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 115,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 115,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 123,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 123,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 123,
+      "type": "take",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 123,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 123,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 123,
+      "type": "skill",
+      "id": "element-fire-1",
+      "name": "Ember Needle: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 123,
+      "type": "skill",
+      "id": "element-ice-1",
+      "name": "Rime Shard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 130,
+      "type": "skill",
+      "id": "element-storm-1",
+      "name": "Storm Chain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 130,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 130,
+      "type": "skill",
+      "id": "arc-mage-6",
+      "name": "Cinder Seal",
+      "wallet": "combat"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 132,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "arc-bard-6",
+      "name": "Conductor’s Cue",
+      "wallet": "combat"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "opening-mage-0-2",
+      "name": "Spark: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "opening-mage-1-2",
+      "name": "Arcane Reading: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 143,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 145,
+      "type": "skill",
+      "id": "opening-mage-2-2",
+      "name": "Lesser Barrier: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 145,
+      "type": "skill",
+      "id": "opening-bard-0-2",
+      "name": "Rousing Beat: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 145,
+      "type": "skill",
+      "id": "opening-bard-1-2",
+      "name": "Soothing Refrain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 146,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 152,
+      "type": "take",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "opening-bard-2-2",
+      "name": "Clear Signal: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "element-fire-2",
+      "name": "Ember Needle: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "element-ice-2",
+      "name": "Rime Shard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "skill",
+      "id": "element-storm-2",
+      "name": "Storm Chain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 159,
+      "type": "skill",
+      "id": "arc-mage-7",
+      "name": "Confluence",
+      "wallet": "combat"
+    },
+    {
+      "day": 159,
+      "type": "skill",
+      "id": "arc-mage-8",
+      "name": "Shared Reservoir",
+      "wallet": "combat"
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "arc-bard-7",
+      "name": "March of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "arc-bard-8",
+      "name": "Restful Chorus",
+      "wallet": "combat"
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 178,
+      "type": "request",
+      "id": "tactician-monthly",
+      "title": "Tactician training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 181,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "expired",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 198,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 198,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 209,
+      "type": "skill",
+      "id": "focus-tactician-2",
+      "name": "Calculated Assault: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 209,
+      "type": "skill",
+      "id": "profession-law-9",
+      "name": "Governance Counsel",
+      "wallet": "profession:law"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 216,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "skill",
+      "id": "arc-mage-9",
+      "name": "Starfall",
+      "wallet": "combat"
+    },
+    {
+      "day": 223,
+      "type": "skill",
+      "id": "arc-bard-9",
+      "name": "Resonant Note",
+      "wallet": "combat"
+    },
+    {
+      "day": 230,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 241,
+      "type": "request",
+      "id": "tactician-monthly",
+      "title": "Tactician training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 244,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "skill",
+      "id": "universal-cha-1",
+      "name": "Conversation",
+      "wallet": "universal"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 293,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 307,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 314,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "skill",
+      "id": "connection",
+      "name": "Voice of Encouragement",
+      "wallet": "universal"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 330,
+      "type": "request",
+      "id": "tactician-monthly",
+      "title": "Tactician training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "tactician-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-law-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "class",
+      "owner": "tactician",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 335,
+      "type": "skill",
+      "id": "focus-tactician-3",
+      "name": "Tactician Legacy",
+      "wallet": "combat"
+    },
+    {
+      "day": 338,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 338,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Paralegal",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 349,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-law-practice-monthly",
+      "title": "Law portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "tactician-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-law-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "tactician-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 363,
+      "type": "request",
+      "id": "vocation-law-practice-weekly",
+      "title": "Law field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-law-0",
+    "focus-scholar-0",
+    "career-opening-law-0",
+    "focus-scholar-1",
+    "career-opening-law-1",
+    "profession-law-1",
+    "profession-law-2",
+    "profession-law-3",
+    "profession-law-4",
+    "profession-law-5",
+    "profession-law-6",
+    "arc-mage-1",
+    "opening-mage-0-0",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "focus-bard-0",
+    "profession-law-7",
+    "arc-bard-1",
+    "opening-bard-0-0",
+    "opening-bard-1-0",
+    "opening-bard-2-0",
+    "focus-bard-1",
+    "arc-bard-2",
+    "arc-bard-3",
+    "arc-bard-4",
+    "arc-bard-5",
+    "opening-bard-0-1",
+    "opening-bard-1-1",
+    "universal-con-1",
+    "opening-bard-2-1",
+    "focus-tactician-0",
+    "element-fire-0",
+    "element-ice-0",
+    "focus-tactician-1",
+    "element-storm-0",
+    "arc-mage-2",
+    "arc-mage-3",
+    "arc-mage-4",
+    "arc-mage-5",
+    "profession-law-8",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1",
+    "element-fire-1",
+    "element-ice-1",
+    "element-storm-1",
+    "universal-con-2",
+    "arc-mage-6",
+    "arc-bard-6",
+    "opening-mage-0-2",
+    "opening-mage-1-2",
+    "opening-mage-2-2",
+    "opening-bard-0-2",
+    "opening-bard-1-2",
+    "opening-bard-2-2",
+    "element-fire-2",
+    "element-ice-2",
+    "element-storm-2",
+    "arc-mage-7",
+    "arc-mage-8",
+    "universal-int-1",
+    "arc-bard-7",
+    "arc-bard-8",
+    "focus-tactician-2",
+    "profession-law-9",
+    "universal-int-2",
+    "arc-mage-9",
+    "arc-bard-9",
+    "universal-cha-1",
+    "connection",
+    "focus-tactician-3"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-law-0",
+      "wallet": "profession:law",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-law-0",
+      "wallet": "profession:law",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-law-1",
+      "wallet": "profession:law",
+      "cost": 1
+    },
+    {
+      "id": "profession-law-1",
+      "wallet": "profession:law",
+      "cost": 2
+    },
+    {
+      "id": "profession-law-2",
+      "wallet": "profession:law",
+      "cost": 2
+    },
+    {
+      "id": "profession-law-3",
+      "wallet": "profession:law",
+      "cost": 3
+    },
+    {
+      "id": "profession-law-4",
+      "wallet": "profession:law",
+      "cost": 5
+    },
+    {
+      "id": "profession-law-5",
+      "wallet": "profession:law",
+      "cost": 8
+    },
+    {
+      "id": "profession-law-6",
+      "wallet": "profession:law",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-bard-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-law-7",
+      "wallet": "profession:law",
+      "cost": 14
+    },
+    {
+      "id": "arc-bard-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-bard-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-bard-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "focus-tactician-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-tactician-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-law-8",
+      "wallet": "profession:law",
+      "cost": 18
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-fire-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-ice-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-storm-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "arc-bard-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-mage-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-bard-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-bard-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-bard-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-fire-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-ice-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-storm-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-mage-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-bard-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-bard-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "focus-tactician-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "profession-law-9",
+      "wallet": "profession:law",
+      "cost": 24
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-bard-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "universal-cha-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "connection",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-tactician-3",
+      "wallet": "combat",
+      "cost": 24
+    }
+  ],
+  "utilities": [
+    {
+      "id": "writ",
+      "name": "Guild Advocate’s Writ",
+      "category": "law",
+      "learn": "Source Hierarchy or Issue Spotting: Primer",
+      "skills": [
+        "profession-law-0",
+        "career-opening-law-0"
+      ],
+      "effect": "In Adventures, inspect commission terms, item costs, hunt credit and linked real-world request conditions."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 491933
+}

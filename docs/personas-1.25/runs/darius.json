@@ -1,0 +1,3433 @@
+{
+  "id": "darius",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "darius",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "rogue",
+    "profession": "CNC Operator",
+    "vocation": "manufacturing-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 280,
+    "playerLevel": 61,
+    "guildRank": "B",
+    "xp": 152820,
+    "classId": "shadowblade",
+    "classLevel": 40,
+    "classPotential": 40,
+    "profession": "CNC Operator",
+    "professionLevel": 84,
+    "professionPotential": 84,
+    "vocation": "manufacturing-practice",
+    "vocationLevel": 84,
+    "stats": {
+      "STR": 18,
+      "DEX": 226,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 776,
+    "gold": 50929,
+    "skills": 72,
+    "careerUtilities": 1,
+    "examPasses": 30,
+    "stages": 234,
+    "wins": 279,
+    "losses": 0,
+    "minutes": 10284
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 6,
+      "playerLevel": 5,
+      "guildRank": "F",
+      "xp": 1800,
+      "classId": "rogue",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "CNC Operator",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "manufacturing-practice",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 17,
+      "gold": 540,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 6,
+      "wins": 6,
+      "losses": 0,
+      "minutes": 216
+    },
+    {
+      "day": 30,
+      "active": 22,
+      "playerLevel": 14,
+      "guildRank": "D",
+      "xp": 10840,
+      "classId": "rogue",
+      "classLevel": 7,
+      "classPotential": 7,
+      "profession": "CNC Operator",
+      "professionLevel": 9,
+      "professionPotential": 23,
+      "vocation": "manufacturing-practice",
+      "vocationLevel": 23,
+      "stats": {
+        "STR": 9,
+        "DEX": 14,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 59,
+      "gold": 2698,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 2,
+      "stages": 17,
+      "wins": 18,
+      "losses": 0,
+      "minutes": 785
+    },
+    {
+      "day": 90,
+      "active": 71,
+      "playerLevel": 31,
+      "guildRank": "C",
+      "xp": 43610,
+      "classId": "rogue",
+      "classLevel": 26,
+      "classPotential": 26,
+      "profession": "CNC Operator",
+      "professionLevel": 29,
+      "professionPotential": 42,
+      "vocation": "manufacturing-practice",
+      "vocationLevel": 42,
+      "stats": {
+        "STR": 9,
+        "DEX": 51,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 199,
+      "gold": 16042,
+      "skills": 32,
+      "careerUtilities": 1,
+      "examPasses": 10,
+      "stages": 60,
+      "wins": 72,
+      "losses": 0,
+      "minutes": 2624
+    },
+    {
+      "day": 180,
+      "active": 140,
+      "playerLevel": 43,
+      "guildRank": "B",
+      "xp": 79660,
+      "classId": "shadowblade",
+      "classLevel": 9,
+      "classPotential": 22,
+      "profession": "CNC Operator",
+      "professionLevel": 54,
+      "professionPotential": 60,
+      "vocation": "manufacturing-practice",
+      "vocationLevel": 60,
+      "stats": {
+        "STR": 9,
+        "DEX": 98,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 388,
+      "gold": 26326,
+      "skills": 56,
+      "careerUtilities": 1,
+      "examPasses": 16,
+      "stages": 118,
+      "wins": 141,
+      "losses": 0,
+      "minutes": 5198
+    },
+    {
+      "day": 365,
+      "active": 280,
+      "playerLevel": 61,
+      "guildRank": "B",
+      "xp": 152820,
+      "classId": "shadowblade",
+      "classLevel": 40,
+      "classPotential": 40,
+      "profession": "CNC Operator",
+      "professionLevel": 84,
+      "professionPotential": 84,
+      "vocation": "manufacturing-practice",
+      "vocationLevel": 84,
+      "stats": {
+        "STR": 18,
+        "DEX": 226,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 776,
+      "gold": 50929,
+      "skills": 72,
+      "careerUtilities": 1,
+      "examPasses": 30,
+      "stages": 234,
+      "wins": 279,
+      "losses": 0,
+      "minutes": 10284
+    }
+  ],
+  "income": {
+    "requests": 30564,
+    "login": 6200,
+    "battles": 34145,
+    "exploration": 330,
+    "commissions": 28190
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 35400,
+    "tempering": 12600,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 279,
+    "wins": 279,
+    "losses": 0,
+    "actions": 532,
+    "bounds": 0,
+    "explorations": 73,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 274,
+    "companionAbilities": 246,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 692,
+    "weekly": 71,
+    "monthly": 13
+  },
+  "requestsByScope": {
+    "universal": 280,
+    "class": 161,
+    "profession": 335
+  },
+  "classHistory": [
+    {
+      "id": "rogue",
+      "level": 33,
+      "potential": 33,
+      "xp": 18785
+    },
+    {
+      "id": "shadowblade",
+      "level": 40,
+      "potential": 40,
+      "xp": 27488
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "CNC Operator",
+      "level": 84,
+      "xp": 113060
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "manufacturing-practice",
+      "level": 84,
+      "xp": 113060
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "DEX 34",
+      "met": true
+    },
+    {
+      "label": "Rogue Lv. 25",
+      "met": true
+    },
+    {
+      "label": "Skill: Veil Guard",
+      "met": true
+    }
+  ],
+  "activeDays": 280,
+  "minutes": 10284,
+  "partialWorkouts": 0,
+  "expiredCommitments": 33,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 188,
+  "finalGoal": "shadowblade",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 8,
+  "profession4Days": 14,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 293,
+    "weekly: #-day commitment: #/# days": 332,
+    "monthly: Dated practice days: #/#": 391,
+    "monthly: #-day commitment: #/# days": 368,
+    "Time budget": 76
+  },
+  "examDays": 35,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 6,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "arc-rogue-1",
+      "name": "Knife Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-manufacturing-0",
+      "name": "Process Steps",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "arc-rogue-2",
+      "name": "Feint",
+      "wallet": "combat"
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 32
+    },
+    {
+      "day": 13,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "arc-rogue-4",
+      "name": "Veil Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "focus-rogue-0",
+      "name": "Rogue Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "career-opening-manufacturing-0",
+      "name": "Measurement Records: Primer",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 33
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "focus-rogue-1",
+      "name": "Opening Gambit: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "career-opening-manufacturing-1",
+      "name": "Standard Work: Primer",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-manufacturing-1",
+      "name": "Measurement Records",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 25,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-manufacturing-2",
+      "name": "Standard Work",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-manufacturing-3",
+      "name": "Quality Sampling",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-manufacturing-4",
+      "name": "Root Cause",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 35
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "profession-manufacturing-5",
+      "name": "Process Capability",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "profession-manufacturing-6",
+      "name": "Improvement Trial",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "opening-rogue-0-0",
+      "name": "Twin Knives",
+      "wallet": "combat"
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "profession-manufacturing-7",
+      "name": "Quality Review",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-rogue-1-0",
+      "name": "Distracting Step",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-rogue-2-0",
+      "name": "Slip Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 48,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 37
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 51,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "arc-rogue-3",
+      "name": "Quicksteel",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "arc-rogue-5",
+      "name": "Escape Step",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "opening-rogue-0-1",
+      "name": "Twin Knives: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 37
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "request",
+      "id": "rogue-monthly",
+      "title": "Rogue training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-rogue-1-1",
+      "name": "Distracting Step: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-rogue-2-1",
+      "name": "Slip Guard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "universal-dex-1",
+      "name": "Mobility Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 38
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "arc-rogue-6",
+      "name": "Precision Finish",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "opening-rogue-0-2",
+      "name": "Twin Knives: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "opening-rogue-1-2",
+      "name": "Distracting Step: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 69,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "opening-rogue-2-2",
+      "name": "Slip Guard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "arc-rogue-7",
+      "name": "Ambush Orders",
+      "wallet": "combat"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "arc-rogue-8",
+      "name": "Rogue’s Reserve",
+      "wallet": "combat"
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 86,
+      "type": "skill",
+      "id": "profession-manufacturing-8",
+      "name": "Process Portfolio",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "rogue-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 93,
+      "type": "take",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 93,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 93,
+      "type": "skill",
+      "id": "focus-rogue-2",
+      "name": "Opening Gambit: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 93,
+      "type": "skill",
+      "id": "arc-rogue-9",
+      "name": "Shadow Sweep",
+      "wallet": "combat"
+    },
+    {
+      "day": 95,
+      "type": "request",
+      "id": "trial-shadowblade-entry",
+      "title": "Shadowblade entry trial",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 95,
+      "type": "class-change",
+      "from": "rogue",
+      "to": "shadowblade",
+      "playerLevel": 32,
+      "classLevel": 1
+    },
+    {
+      "day": 96,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 96,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 97,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "rogue-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "trial-shadowblade-entry",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 100,
+      "type": "skill",
+      "id": "focus-shadowblade-0",
+      "name": "Shadowblade Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 100,
+      "type": "skill",
+      "id": "martial-spear-1",
+      "name": "Spear Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 100,
+      "type": "skill",
+      "id": "arc-fighter-1",
+      "name": "Weapon Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 40
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "focus-shadowblade-1",
+      "name": "Nightglass Thrust: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "martial-spear-2",
+      "name": "Line Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "opening-fighter-0-0",
+      "name": "Measured Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 113,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "opening-fighter-1-0",
+      "name": "Brawler’s Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "opening-fighter-2-0",
+      "name": "Shield Footwork",
+      "wallet": "combat"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "martial-sword-1",
+      "name": "Sword Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 41
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "rogue-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "martial-axe-1",
+      "name": "Axe Leverage",
+      "wallet": "combat"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "martial-unarmed-1",
+      "name": "Open-Hand Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "arc-fighter-2",
+      "name": "Shield Breaker",
+      "wallet": "combat"
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 128,
+      "type": "skill",
+      "id": "arc-fighter-3",
+      "name": "Sweeping Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 128,
+      "type": "skill",
+      "id": "opening-fighter-0-1",
+      "name": "Measured Thrust: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 128,
+      "type": "skill",
+      "id": "opening-fighter-1-1",
+      "name": "Brawler’s Rhythm: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 41
+    },
+    {
+      "day": 132,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 135,
+      "type": "skill",
+      "id": "opening-fighter-2-1",
+      "name": "Shield Footwork: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 135,
+      "type": "skill",
+      "id": "martial-sword-2",
+      "name": "Measured Cut",
+      "wallet": "combat"
+    },
+    {
+      "day": 135,
+      "type": "skill",
+      "id": "martial-axe-2",
+      "name": "Hooking Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 142,
+      "type": "skill",
+      "id": "martial-unarmed-2",
+      "name": "Combination Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 142,
+      "type": "skill",
+      "id": "universal-dex-2",
+      "name": "Sure Footing",
+      "wallet": "universal"
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 41
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 156,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 41
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 169,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 41
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 177,
+      "type": "skill",
+      "id": "profession-manufacturing-9",
+      "name": "Production Systems",
+      "wallet": "profession:manufacturing"
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 42
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 191,
+      "type": "skill",
+      "id": "arc-fighter-4",
+      "name": "Armor Splitter",
+      "wallet": "combat"
+    },
+    {
+      "day": 191,
+      "type": "skill",
+      "id": "arc-fighter-5",
+      "name": "Battle Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 212,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 212,
+      "type": "skill",
+      "id": "arc-fighter-6",
+      "name": "Steel Tempest",
+      "wallet": "combat"
+    },
+    {
+      "day": 212,
+      "type": "skill",
+      "id": "opening-fighter-0-2",
+      "name": "Measured Thrust: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 219,
+      "type": "skill",
+      "id": "opening-fighter-1-2",
+      "name": "Brawler’s Rhythm: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 219,
+      "type": "skill",
+      "id": "opening-fighter-2-2",
+      "name": "Shield Footwork: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 235,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 237,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 239,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 242,
+      "type": "skill",
+      "id": "focus-shadowblade-2",
+      "name": "Nightglass Thrust: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 244,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 256,
+      "type": "skill",
+      "id": "arc-fighter-7",
+      "name": "Duelist’s Answer",
+      "wallet": "combat"
+    },
+    {
+      "day": 256,
+      "type": "skill",
+      "id": "arc-fighter-8",
+      "name": "Vanguard Charge",
+      "wallet": "combat"
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "rogue",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 263,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 289,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 289,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 307,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 307,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 312,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 326,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "CNC Operator",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 333,
+      "type": "request",
+      "id": "shadowblade-monthly",
+      "title": "Shadowblade training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "shadowblade-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "shadowblade-weekly",
+      "title": "Precision practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 338,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 338,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 340,
+      "type": "skill",
+      "id": "martial-spear-3",
+      "name": "Braced Point",
+      "wallet": "combat"
+    },
+    {
+      "day": 340,
+      "type": "skill",
+      "id": "martial-sword-3",
+      "name": "Riposte Line",
+      "wallet": "combat"
+    },
+    {
+      "day": 340,
+      "type": "skill",
+      "id": "martial-axe-3",
+      "name": "Sundering Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "class",
+      "owner": "shadowblade",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 349,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 349,
+      "type": "skill",
+      "id": "martial-unarmed-3",
+      "name": "Counterstep",
+      "wallet": "combat"
+    },
+    {
+      "day": 351,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-monthly",
+      "title": "Manufacturing portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 360,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 360,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 363,
+      "type": "request",
+      "id": "vocation-manufacturing-practice-weekly",
+      "title": "Manufacturing field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "shadowblade-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-manufacturing-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "arc-rogue-1",
+    "profession-manufacturing-0",
+    "arc-rogue-2",
+    "arc-rogue-4",
+    "focus-rogue-0",
+    "career-opening-manufacturing-0",
+    "focus-rogue-1",
+    "career-opening-manufacturing-1",
+    "profession-manufacturing-1",
+    "profession-manufacturing-2",
+    "profession-manufacturing-3",
+    "profession-manufacturing-4",
+    "profession-manufacturing-5",
+    "profession-manufacturing-6",
+    "opening-rogue-0-0",
+    "profession-manufacturing-7",
+    "opening-rogue-1-0",
+    "opening-rogue-2-0",
+    "arc-rogue-3",
+    "arc-rogue-5",
+    "opening-rogue-0-1",
+    "opening-rogue-1-1",
+    "opening-rogue-2-1",
+    "universal-dex-1",
+    "arc-rogue-6",
+    "opening-rogue-0-2",
+    "opening-rogue-1-2",
+    "opening-rogue-2-2",
+    "arc-rogue-7",
+    "arc-rogue-8",
+    "profession-manufacturing-8",
+    "focus-rogue-2",
+    "arc-rogue-9",
+    "focus-shadowblade-0",
+    "martial-spear-1",
+    "arc-fighter-1",
+    "focus-shadowblade-1",
+    "martial-spear-2",
+    "opening-fighter-0-0",
+    "opening-fighter-1-0",
+    "opening-fighter-2-0",
+    "martial-sword-1",
+    "martial-axe-1",
+    "martial-unarmed-1",
+    "arc-fighter-2",
+    "arc-fighter-3",
+    "opening-fighter-0-1",
+    "opening-fighter-1-1",
+    "opening-fighter-2-1",
+    "martial-sword-2",
+    "martial-axe-2",
+    "martial-unarmed-2",
+    "universal-dex-2",
+    "universal-con-1",
+    "profession-manufacturing-9",
+    "arc-fighter-4",
+    "arc-fighter-5",
+    "universal-con-2",
+    "arc-fighter-6",
+    "opening-fighter-0-2",
+    "opening-fighter-1-2",
+    "opening-fighter-2-2",
+    "focus-shadowblade-2",
+    "arc-fighter-7",
+    "arc-fighter-8",
+    "universal-int-1",
+    "universal-int-2",
+    "martial-spear-3",
+    "martial-sword-3",
+    "martial-axe-3",
+    "martial-unarmed-3"
+  ],
+  "skillPurchases": [
+    {
+      "id": "arc-rogue-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-manufacturing-0",
+      "wallet": "profession:manufacturing",
+      "cost": 1
+    },
+    {
+      "id": "arc-rogue-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-rogue-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "focus-rogue-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-manufacturing-0",
+      "wallet": "profession:manufacturing",
+      "cost": 1
+    },
+    {
+      "id": "focus-rogue-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-manufacturing-1",
+      "wallet": "profession:manufacturing",
+      "cost": 1
+    },
+    {
+      "id": "profession-manufacturing-1",
+      "wallet": "profession:manufacturing",
+      "cost": 2
+    },
+    {
+      "id": "profession-manufacturing-2",
+      "wallet": "profession:manufacturing",
+      "cost": 2
+    },
+    {
+      "id": "profession-manufacturing-3",
+      "wallet": "profession:manufacturing",
+      "cost": 3
+    },
+    {
+      "id": "profession-manufacturing-4",
+      "wallet": "profession:manufacturing",
+      "cost": 5
+    },
+    {
+      "id": "profession-manufacturing-5",
+      "wallet": "profession:manufacturing",
+      "cost": 8
+    },
+    {
+      "id": "profession-manufacturing-6",
+      "wallet": "profession:manufacturing",
+      "cost": 8
+    },
+    {
+      "id": "opening-rogue-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-manufacturing-7",
+      "wallet": "profession:manufacturing",
+      "cost": 14
+    },
+    {
+      "id": "opening-rogue-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-rogue-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-rogue-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-rogue-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-rogue-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-rogue-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-rogue-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-dex-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-rogue-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-rogue-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-rogue-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-rogue-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-rogue-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-rogue-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "profession-manufacturing-8",
+      "wallet": "profession:manufacturing",
+      "cost": 18
+    },
+    {
+      "id": "focus-rogue-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-rogue-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "focus-shadowblade-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-spear-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-shadowblade-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-spear-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-sword-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-axe-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-unarmed-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-fighter-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "opening-fighter-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-sword-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-axe-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-unarmed-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-dex-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-manufacturing-9",
+      "wallet": "profession:manufacturing",
+      "cost": 24
+    },
+    {
+      "id": "arc-fighter-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-fighter-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-fighter-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-fighter-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-fighter-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-fighter-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "focus-shadowblade-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-fighter-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-fighter-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "martial-spear-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "martial-sword-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "martial-axe-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "martial-unarmed-3",
+      "wallet": "combat",
+      "cost": 10
+    }
+  ],
+  "utilities": [
+    {
+      "id": "work-order",
+      "name": "Forge Work Order",
+      "category": "manufacturing",
+      "learn": "Process Steps or Measurement Records: Primer",
+      "skills": [
+        "profession-manufacturing-0",
+        "career-opening-manufacturing-0"
+      ],
+      "effect": "In Adventures, plan several current-town crafts against a combined gold and material bill before visiting the blacksmith."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": 95,
+  "finalCharacterBytes": 549694
+}

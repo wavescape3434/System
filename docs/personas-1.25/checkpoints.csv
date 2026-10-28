@@ -1,0 +1,176 @@
+scenario,day,player_level,class,class_level,profession,profession_level,vocation,vocation_level,guild_rank,xp,gold
+maya,7,3,disciple,2,Registered Nurse,4,healthcare-practice,5,F,990,373
+maya,30,7,healer,1,Registered Nurse,9,healthcare-practice,11,E,3380,1396
+maya,90,22,healer,4,Registered Nurse,19,healthcare-practice,35,D,22790,8051
+maya,180,29,healer,9,Registered Nurse,39,healthcare-practice,45,C,38200,13048
+maya,365,46,healer,16,Registered Nurse,71,healthcare-practice,71,B,88460,12544
+tomas,7,5,artificer,4,Electrician,4,trades-practice,6,F,1800,580
+tomas,30,14,artificer,4,Electrician,9,trades-practice,22,D,10500,3180
+tomas,90,25,artificer,17,Electrician,19,trades-practice,35,C,27730,9046
+tomas,180,41,artificer,29,Electrician,39,trades-practice,56,B,71730,23826
+tomas,365,61,grand-artificer,42,Electrician,81,trades-practice,81,B,151450,50680
+ada,7,3,bard,2,Teacher,4,education-practice,5,F,930,226
+ada,30,19,bard,4,Teacher,4,education-practice,31,D,17590,4033
+ada,90,36,bard,9,Teacher,19,education-practice,57,C,55590,14868
+ada,180,45,bard,14,Teacher,44,education-practice,71,B,86920,25006
+ada,365,70,bard,20,Teacher,104,education-practice,109,A,198580,60528
+ruth,7,4,ranger,2,Farmer,4,agriculture-practice,6,F,1570,374
+ruth,30,14,ranger,4,Farmer,4,agriculture-practice,22,D,10330,2801
+ruth,90,23,ranger,8,Farmer,9,agriculture-practice,35,D,24190,4943
+ruth,180,36,ranger,12,Farmer,29,agriculture-practice,54,C,55460,15555
+ruth,365,49,ranger,16,Farmer,74,agriculture-practice,74,B,100410,30289
+evan,7,5,scholar,2,Accountant,4,accounting,8,F,1800,580
+evan,30,19,scholar,4,Accountant,4,accounting,31,D,17470,4254
+evan,90,28,scholar,8,Accountant,9,accounting,45,C,36130,9931
+evan,180,43,scholar,14,Accountant,29,accounting,67,B,78040,22859
+evan,365,66,scholar,21,Accountant,94,accounting,103,A,179660,54207
+leila,7,2,artificer,2,Architect,3,engineering-practice,3,F,600,340
+leila,30,6,artificer,4,Architect,4,engineering-practice,9,E,2740,1283
+leila,90,28,engineer,9,Architect,14,engineering-practice,36,C,34500,10746
+leila,180,44,engineer,34,Architect,44,engineering-practice,53,B,80090,28984
+leila,365,63,engineer,55,Architect,82,engineering-practice,82,B,160080,52326
+graham,7,6,scholar,6,Research Assistant,4,science-practice,6,F,2320,659
+graham,30,9,scholar,8,Research Assistant,11,science-practice,11,E,4660,1707
+graham,90,30,disciple,8,Research Assistant,29,science-practice,37,C,38920,11810
+graham,180,40,disciple,19,Research Assistant,52,science-practice,52,B,68100,21681
+graham,365,62,sage,39,Research Assistant,78,science-practice,78,B,159530,44148
+sofia,7,4,scholar,2,Paralegal,4,law-practice,6,F,1130,306
+sofia,30,15,scholar,4,Paralegal,4,law-practice,23,D,11570,3089
+sofia,90,28,bard,9,Paralegal,24,law-practice,37,C,35510,10906
+sofia,180,43,tactician,14,Paralegal,54,law-practice,56,B,79960,23818
+sofia,365,62,tactician,51,Paralegal,79,law-practice,79,B,155710,43195
+marcus,7,5,disciple,3,Social Worker,4,community-practice,4,F,1870,569
+marcus,30,20,disciple,4,Social Worker,4,community-practice,31,D,18610,4497
+marcus,90,37,disciple,14,Social Worker,19,community-practice,55,C,58190,15272
+marcus,180,53,disciple,19,Social Worker,49,community-practice,81,B,117770,33833
+marcus,365,76,high-cleric,19,Social Worker,104,community-practice,115,A,234260,72471
+imani,7,4,bard,2,Graphic Designer,4,creative-practice,6,F,1200,345
+imani,30,15,bard,4,Graphic Designer,9,creative-practice,22,D,11220,3209
+imani,90,31,minstrel,14,Graphic Designer,24,creative-practice,42,C,43680,11956
+imani,180,46,minstrel,39,Graphic Designer,49,creative-practice,56,B,87720,27002
+imani,365,69,minstrel,64,Graphic Designer,83,creative-practice,83,A,191040,64190
+ben,7,2,bard,2,Sales Representative,2,sales-practice,2,F,570,199
+ben,30,13,bard,4,Sales Representative,4,sales-practice,20,E,8520,2434
+ben,90,21,scholar,3,Sales Representative,14,sales-practice,33,D,21530,5881
+ben,180,28,marshal,4,Sales Representative,34,sales-practice,43,C,35580,11101
+ben,365,43,marshal,14,Sales Representative,65,sales-practice,65,B,77920,23584
+nadia,7,3,sentinel,1,Administrative Assistant,4,administration-practice,5,F,810,202
+nadia,30,7,sentinel,1,Administrative Assistant,9,administration-practice,12,E,3440,1233
+nadia,90,28,sentinel,1,Administrative Assistant,29,administration-practice,46,C,35430,8271
+nadia,180,44,sentinel,1,Administrative Assistant,59,administration-practice,71,B,82920,22029
+nadia,365,61,sentinel,1,Administrative Assistant,97,administration-practice,97,B,151610,41362
+hugo,7,3,warrior,1,Chef,4,hospitality-practice,5,F,890,373
+hugo,30,8,warrior,2,Chef,4,hospitality-practice,12,E,3590,1523
+hugo,90,17,warrior,6,Chef,14,hospitality-practice,26,D,14140,6854
+hugo,180,29,disciple,2,Chef,39,hospitality-practice,44,C,37675,15855
+hugo,365,37,disciple,12,Chef,54,hospitality-practice,54,C,58485,24679
+chloe,7,4,rogue,4,Quality Control Inspector,3,manufacturing-practice,3,F,1130,306
+chloe,30,15,warrior,1,Quality Control Inspector,9,manufacturing-practice,23,D,11400,3165
+chloe,90,27,duelist,7,Quality Control Inspector,19,manufacturing-practice,42,C,33515,10113
+chloe,180,35,duelist,18,Quality Control Inspector,49,manufacturing-practice,51,C,53485,19747
+chloe,365,59,duelist,44,Quality Control Inspector,78,manufacturing-practice,78,B,141485,44659
+owen,7,1,sentinel,2,Truck Driver,2,logistics-practice,2,F,280,86
+owen,30,4,sentinel,4,Truck Driver,4,logistics-practice,4,F,1190,703
+owen,90,7,sentinel,8,Truck Driver,8,logistics-practice,8,E,3430,2226
+owen,180,11,sentinel,13,Truck Driver,11,logistics-practice,11,E,6650,3345
+owen,365,16,sentinel,19,Truck Driver,17,logistics-practice,17,D,13440,9657
+priya,7,4,warrior,3,Firefighter,4,public-safety-practice,6,E,1560,492
+priya,30,15,warrior,7,Firefighter,4,public-safety-practice,23,D,12060,2957
+priya,90,29,warrior,16,Firefighter,9,public-safety-practice,42,C,36900,11634
+priya,180,41,champion,7,Firefighter,29,public-safety-practice,57,B,71600,23773
+priya,365,58,champion,34,Firefighter,79,public-safety-practice,79,B,139970,33754
+celeste,7,5,bard,4,Project Manager,4,project-management,6,F,1730,541
+celeste,30,15,marshal,1,Project Manager,9,project-management,22,D,11560,3147
+celeste,90,31,marshal,14,Project Manager,24,project-management,42,C,42060,11587
+celeste,180,44,scholar,19,Project Manager,44,project-management,57,B,80630,24396
+celeste,365,64,guild-strategist,44,Project Manager,81,project-management,81,A,167970,51088
+daniel,7,5,scholar,2,Operations Manager,4,operations,8,F,1730,426
+daniel,30,20,scholar,4,Operations Manager,9,operations,33,D,19730,4821
+daniel,90,37,marshal,4,Operations Manager,29,operations,59,C,60470,13994
+daniel,180,46,marshal,11,Operations Manager,54,operations,72,B,88800,22720
+daniel,365,71,marshal,19,Operations Manager,109,operations,110,A,203260,51262
+mei,7,5,elementalist,4,Financial Analyst,4,financial-analysis,6,F,1800,580
+mei,30,15,elementalist,4,Financial Analyst,9,financial-analysis,22,D,11240,2948
+mei,90,34,elementalist,24,Financial Analyst,24,financial-analysis,42,C,50300,13568
+mei,180,49,elementalist,44,Financial Analyst,49,financial-analysis,60,B,100400,30556
+mei,365,67,elementalist,66,Financial Analyst,83,financial-analysis,83,A,184400,60019
+jordan,7,3,artificer,2,IT Support Specialist,5,networking,5,F,1000,400
+jordan,30,14,artificer,4,IT Support Specialist,14,networking,23,D,10640,3028
+jordan,90,27,artificer,14,IT Support Specialist,34,networking,41,C,33970,10385
+jordan,180,43,network-weaver,1,IT Support Specialist,54,networking,60,B,78030,24649
+jordan,365,69,network-weaver,1,IT Support Specialist,105,networking,105,A,194770,62652
+aisha,7,3,scholar,2,Software Developer,4,software,5,F,1000,260
+aisha,30,15,arcanist,7,Software Developer,9,software,23,D,12100,3225
+aisha,90,26,arcanist,16,Software Developer,24,software,37,C,30070,9009
+aisha,180,39,arcanist,24,Software Developer,53,software,53,B,66120,23070
+aisha,365,61,archmage,34,Software Developer,79,software,81,B,153330,50351
+felix,7,3,rogue,2,Cybersecurity Analyst,4,security,6,F,1070,409
+felix,30,16,rogue,9,Cybersecurity Analyst,9,security,23,D,12240,3313
+felix,90,35,rogue,24,Cybersecurity Analyst,29,security,43,C,53160,14937
+felix,180,45,shadowblade,9,Cybersecurity Analyst,49,security,56,B,85930,24791
+felix,365,66,shadowblade,54,Cybersecurity Analyst,81,security,81,A,177790,44907
+wendy,7,5,scholar,2,Business Analyst,4,business-analysis,8,F,1800,580
+wendy,30,11,scholar,4,Business Analyst,9,business-analysis,18,E,6940,2148
+wendy,90,32,battle-analyst,4,Business Analyst,29,business-analysis,51,C,44960,11502
+wendy,180,47,battle-analyst,11,Business Analyst,54,business-analysis,73,B,91100,24465
+wendy,365,69,battle-analyst,19,Business Analyst,107,business-analysis,107,A,192840,41881
+theo,7,5,scholar,2,Data Analyst,4,analysis,8,F,1800,580
+theo,30,11,scholar,4,Data Analyst,4,analysis,18,E,7060,2347
+theo,90,33,scholar,4,Data Analyst,4,analysis,51,C,46400,13235
+theo,180,50,scholar,4,Data Analyst,4,analysis,78,B,104060,29271
+theo,365,69,scholar,4,Data Analyst,4,analysis,108,A,193880,58181
+helen,7,1,disciple,2,Explorer,2,general-practice,2,F,280,111
+helen,30,3,disciple,3,Explorer,4,general-practice,4,F,1050,670
+helen,90,7,disciple,4,Explorer,4,general-practice,6,E,3330,2036
+helen,180,11,scholar,4,Explorer,9,general-practice,9,E,6460,3462
+helen,365,16,scribe,12,Explorer,15,general-practice,15,D,13360,8572
+luis,7,5,disciple,4,Physical Therapist,4,healthcare-practice,6,F,1740,543
+luis,30,16,disciple,4,Physical Therapist,9,healthcare-practice,23,D,12300,3320
+luis,90,32,warrior,4,Physical Therapist,24,healthcare-practice,42,C,43980,12632
+luis,180,40,warrior,9,Physical Therapist,39,healthcare-practice,55,B,67440,18694
+luis,365,59,warpriest,34,Physical Therapist,80,healthcare-practice,80,B,143450,33243
+paige,7,5,warrior,1,Career Changer,4,general-practice,8,F,1610,542
+paige,30,9,warrior,1,Career Changer,4,general-practice,15,E,5120,1784
+paige,90,30,bard,1,Career Changer,4,general-practice,49,C,40390,9933
+paige,180,39,bard,1,Graphic Designer,4,creative-practice,17,B,65590,18178
+paige,365,61,bard,1,Graphic Designer,4,creative-practice,76,B,153010,39196
+quinn,7,5,scholar,4,UX Designer,4,software,5,F,1800,580
+quinn,30,10,scholar,4,UX Designer,4,software,11,E,6000,1965
+quinn,90,24,scholar,24,UX Designer,19,software,26,C,26670,9349
+quinn,180,40,scholar,39,UX Designer,44,software,43,B,68260,22923
+quinn,365,61,scholar,66,UX Designer,69,software,66,B,151190,47478
+irene,7,2,scholar,2,Librarian,3,education-practice,3,F,530,186
+irene,30,14,scholar,4,Librarian,4,education-practice,21,D,9630,2411
+irene,90,26,ranger,1,Librarian,24,education-practice,36,C,30190,7923
+irene,180,39,disciple,9,Librarian,49,education-practice,51,B,64880,16516
+irene,365,61,sage,9,Librarian,79,education-practice,80,B,154490,39957
+darius,7,5,rogue,4,CNC Operator,4,manufacturing-practice,6,F,1800,540
+darius,30,14,rogue,7,CNC Operator,9,manufacturing-practice,23,D,10840,2698
+darius,90,31,rogue,26,CNC Operator,29,manufacturing-practice,42,C,43610,16042
+darius,180,43,shadowblade,9,CNC Operator,54,manufacturing-practice,60,B,79660,26326
+darius,365,61,shadowblade,40,CNC Operator,84,manufacturing-practice,84,B,152820,50929
+elena,7,3,warrior,1,Baker,4,hospitality-practice,5,F,890,263
+elena,30,14,warrior,2,Baker,9,hospitality-practice,23,D,10580,3106
+elena,90,24,warrior,6,Baker,24,hospitality-practice,37,C,25645,9179
+elena,180,37,warrior,13,Graphic Designer,1,creative-practice,1,C,57755,22907
+elena,365,57,warrior,22,Graphic Designer,54,creative-practice,59,B,133405,29992
+noah,7,7,disciple,4,Christian Ministry Worker,4,community-practice,7,E,3190,858
+noah,30,16,disciple,4,Christian Ministry Worker,9,community-practice,22,D,12490,3363
+noah,90,33,disciple,24,Christian Ministry Worker,29,community-practice,42,C,48630,14297
+noah,180,45,high-cleric,9,Christian Ministry Worker,49,community-practice,57,B,86920,27094
+noah,365,66,high-cleric,54,Christian Ministry Worker,82,community-practice,82,A,178700,45387
+theo-with-exams,7,5,scholar,2,Data Analyst,8,analysis,8,F,1800,580
+theo-with-exams,30,11,scholar,4,Data Analyst,9,analysis,18,E,7060,2347
+theo-with-exams,90,33,scholar,9,Data Analyst,24,analysis,51,C,46400,13235
+theo-with-exams,180,50,scholar,14,Data Analyst,49,analysis,78,B,104060,29271
+theo-with-exams,365,69,scholar,20,Data Analyst,104,analysis,108,A,193880,58181
+elena-stays-baker,7,3,warrior,1,Baker,4,hospitality-practice,5,F,890,263
+elena-stays-baker,30,14,warrior,2,Baker,9,hospitality-practice,23,D,10580,3106
+elena-stays-baker,90,24,warrior,6,Baker,24,hospitality-practice,37,C,25645,9179
+elena-stays-baker,180,37,warrior,13,Baker,54,hospitality-practice,57,C,58355,23027
+elena-stays-baker,365,57,warrior,22,Baker,83,hospitality-practice,83,B,134005,30112
+maya-no-adventures,7,3,disciple,2,Registered Nurse,4,healthcare-practice,5,F,990,258
+maya-no-adventures,30,7,healer,1,Registered Nurse,9,healthcare-practice,11,E,3380,1011
+maya-no-adventures,90,22,healer,4,Registered Nurse,19,healthcare-practice,35,D,22790,5498
+maya-no-adventures,180,29,healer,9,Registered Nurse,39,healthcare-practice,45,C,38200,9500
+maya-no-adventures,365,46,healer,16,Registered Nurse,71,healthcare-practice,71,B,88460,21607

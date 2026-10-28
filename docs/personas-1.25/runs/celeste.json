@@ -1,0 +1,3833 @@
+{
+  "id": "celeste",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "celeste",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 13,
+      "WIS": 10,
+      "CHA": 13
+    },
+    "rank": "F",
+    "classId": "bard",
+    "profession": "Project Manager",
+    "vocation": "project-management"
+  },
+  "final": {
+    "day": 365,
+    "active": 271,
+    "playerLevel": 64,
+    "guildRank": "A",
+    "xp": 167970,
+    "classId": "guild-strategist",
+    "classLevel": 44,
+    "classPotential": 46,
+    "profession": "Project Manager",
+    "professionLevel": 81,
+    "professionPotential": 81,
+    "vocation": "project-management",
+    "vocationLevel": 81,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 16,
+      "INT": 56,
+      "WIS": 10,
+      "CHA": 201
+    },
+    "requests": 768,
+    "gold": 51088,
+    "skills": 90,
+    "careerUtilities": 1,
+    "examPasses": 34,
+    "stages": 155,
+    "wins": 180,
+    "losses": 0,
+    "minutes": 10260
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 5,
+      "playerLevel": 5,
+      "guildRank": "F",
+      "xp": 1730,
+      "classId": "bard",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "Project Manager",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "project-management",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 13,
+        "WIS": 10,
+        "CHA": 13
+      },
+      "requests": 15,
+      "gold": 541,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 201
+    },
+    {
+      "day": 30,
+      "active": 22,
+      "playerLevel": 15,
+      "guildRank": "D",
+      "xp": 11560,
+      "classId": "marshal",
+      "classLevel": 1,
+      "classPotential": 1,
+      "profession": "Project Manager",
+      "professionLevel": 9,
+      "professionPotential": 22,
+      "vocation": "project-management",
+      "vocationLevel": 22,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 13,
+        "WIS": 10,
+        "CHA": 15
+      },
+      "requests": 62,
+      "gold": 3147,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 1,
+      "stages": 15,
+      "wins": 16,
+      "losses": 0,
+      "minutes": 853
+    },
+    {
+      "day": 90,
+      "active": 66,
+      "playerLevel": 31,
+      "guildRank": "C",
+      "xp": 42060,
+      "classId": "marshal",
+      "classLevel": 14,
+      "classPotential": 24,
+      "profession": "Project Manager",
+      "professionLevel": 24,
+      "professionPotential": 42,
+      "vocation": "project-management",
+      "vocationLevel": 42,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 12,
+        "INT": 13,
+        "WIS": 10,
+        "CHA": 33
+      },
+      "requests": 187,
+      "gold": 11587,
+      "skills": 37,
+      "careerUtilities": 1,
+      "examPasses": 7,
+      "stages": 37,
+      "wins": 44,
+      "losses": 0,
+      "minutes": 2518
+    },
+    {
+      "day": 180,
+      "active": 131,
+      "playerLevel": 44,
+      "guildRank": "B",
+      "xp": 80630,
+      "classId": "scholar",
+      "classLevel": 19,
+      "classPotential": 26,
+      "profession": "Project Manager",
+      "professionLevel": 44,
+      "professionPotential": 57,
+      "vocation": "project-management",
+      "vocationLevel": 57,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 16,
+        "INT": 23,
+        "WIS": 10,
+        "CHA": 68
+      },
+      "requests": 374,
+      "gold": 24396,
+      "skills": 73,
+      "careerUtilities": 1,
+      "examPasses": 16,
+      "stages": 69,
+      "wins": 86,
+      "losses": 0,
+      "minutes": 4963
+    },
+    {
+      "day": 365,
+      "active": 271,
+      "playerLevel": 64,
+      "guildRank": "A",
+      "xp": 167970,
+      "classId": "guild-strategist",
+      "classLevel": 44,
+      "classPotential": 46,
+      "profession": "Project Manager",
+      "professionLevel": 81,
+      "professionPotential": 81,
+      "vocation": "project-management",
+      "vocationLevel": 81,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 16,
+        "INT": 56,
+        "WIS": 10,
+        "CHA": 201
+      },
+      "requests": 768,
+      "gold": 51088,
+      "skills": 90,
+      "careerUtilities": 1,
+      "examPasses": 34,
+      "stages": 155,
+      "wins": 180,
+      "losses": 0,
+      "minutes": 10260
+    }
+  ],
+  "income": {
+    "requests": 33594,
+    "login": 5970,
+    "battles": 17725,
+    "exploration": 129,
+    "commissions": 19670
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 12900,
+    "tempering": 12600,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 180,
+    "wins": 180,
+    "losses": 0,
+    "actions": 529,
+    "bounds": 0,
+    "explorations": 41,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 180,
+    "companionAbilities": 331,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 677,
+    "weekly": 76,
+    "monthly": 15
+  },
+  "requestsByScope": {
+    "universal": 271,
+    "class": 172,
+    "profession": 325
+  },
+  "classHistory": [
+    {
+      "id": "bard",
+      "level": 9,
+      "potential": 16,
+      "xp": 12755
+    },
+    {
+      "id": "marshal",
+      "level": 24,
+      "potential": 31,
+      "xp": 16585
+    },
+    {
+      "id": "scholar",
+      "level": 28,
+      "potential": 28,
+      "xp": 14160
+    },
+    {
+      "id": "guild-strategist",
+      "level": 44,
+      "potential": 46,
+      "xp": 35870
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Project Manager",
+      "level": 81,
+      "xp": 105660
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "project-management",
+      "level": 81,
+      "xp": 105660
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "CHA 30",
+      "met": true
+    },
+    {
+      "label": "INT 30",
+      "met": true
+    },
+    {
+      "label": "Marshal Lv. 20",
+      "met": true
+    },
+    {
+      "label": "Profession: Management & Projects / Business & Analysis / Computing & Networks",
+      "met": true
+    }
+  ],
+  "activeDays": 271,
+  "minutes": 10260,
+  "partialWorkouts": 0,
+  "expiredCommitments": 26,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 190,
+  "finalGoal": "guild-strategist",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 95,
+  "profession4Days": 22,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 276,
+    "weekly: #-day commitment: #/# days": 314,
+    "monthly: Dated practice days: #/#": 353,
+    "monthly: #-day commitment: #/# days": 331
+  },
+  "examDays": 46,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "bard-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-management-0",
+      "name": "Scope Charter",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-bard-0",
+      "name": "Bard Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-bard-1",
+      "name": "Traveler’s Refrain: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "bard-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "career-opening-management-0",
+      "name": "Work Breakdown: Primer",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "career-opening-management-1",
+      "name": "Stakeholder Map: Primer",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "profession-management-1",
+      "name": "Work Breakdown",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 22,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-management-2",
+      "name": "Stakeholder Map",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-management-3",
+      "name": "Risk Register",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-management-4",
+      "name": "Team Agreements",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "request",
+      "id": "trial-marshal-entry",
+      "title": "Marshal entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 30,
+      "type": "class-change",
+      "from": "bard",
+      "to": "marshal",
+      "playerLevel": 15,
+      "classLevel": 1
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "focus-marshal-0",
+      "name": "Marshal Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-management-5",
+      "name": "Delivery Tracking",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-management-6",
+      "name": "Decision Log",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 31,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 31,
+      "type": "take",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "marshal-weekly",
+      "title": "Coordinate a project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 51
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "focus-marshal-1",
+      "name": "Coordinated Advance: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "arc-guardian-1",
+      "name": "Shield Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "arc-bard-1",
+      "name": "Battle Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "marshal-weekly",
+      "title": "Coordinate a project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "profession-management-7",
+      "name": "Project Review",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-guardian-0-0",
+      "name": "Interpose",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-guardian-1-0",
+      "name": "Challenge",
+      "wallet": "combat"
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 48,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 50,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "opening-guardian-2-0",
+      "name": "Shield Feint",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "opening-bard-0-0",
+      "name": "Rousing Beat",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "opening-bard-1-0",
+      "name": "Soothing Refrain",
+      "wallet": "combat"
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-bard-2-0",
+      "name": "Clear Signal",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "arc-guardian-2",
+      "name": "Tower Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "arc-guardian-3",
+      "name": "Shield Rush",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "arc-bard-2",
+      "name": "Ballad of Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "arc-bard-3",
+      "name": "Distracting Verse",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "arc-guardian-4",
+      "name": "Iron Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "marshal-weekly",
+      "title": "Coordinate a project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "arc-guardian-5",
+      "name": "Return the Blow",
+      "wallet": "combat"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "arc-bard-4",
+      "name": "Refrain of Clarity",
+      "wallet": "combat"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "arc-bard-5",
+      "name": "Warning Call",
+      "wallet": "combat"
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 81,
+      "type": "skill",
+      "id": "profession-management-8",
+      "name": "Delivery Portfolio",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 81,
+      "type": "skill",
+      "id": "opening-guardian-0-1",
+      "name": "Interpose: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 81,
+      "type": "skill",
+      "id": "opening-guardian-1-1",
+      "name": "Challenge: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 88,
+      "type": "skill",
+      "id": "opening-guardian-2-1",
+      "name": "Shield Feint: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 88,
+      "type": "skill",
+      "id": "opening-bard-0-1",
+      "name": "Rousing Beat: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 88,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "marshal-monthly",
+      "title": "Marshal training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "marshal-weekly",
+      "title": "Coordinate a project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 93,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 93,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 95,
+      "type": "skill",
+      "id": "opening-bard-1-1",
+      "name": "Soothing Refrain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 95,
+      "type": "skill",
+      "id": "opening-bard-2-1",
+      "name": "Clear Signal: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 95,
+      "type": "skill",
+      "id": "arc-guardian-6",
+      "name": "Hold the Gate",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 100,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 100,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 102,
+      "type": "skill",
+      "id": "arc-bard-6",
+      "name": "Conductor’s Cue",
+      "wallet": "combat"
+    },
+    {
+      "day": 102,
+      "type": "skill",
+      "id": "opening-guardian-0-2",
+      "name": "Interpose: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 102,
+      "type": "skill",
+      "id": "opening-guardian-1-2",
+      "name": "Challenge: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 59
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 109,
+      "type": "skill",
+      "id": "opening-guardian-2-2",
+      "name": "Shield Feint: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 109,
+      "type": "skill",
+      "id": "opening-bard-0-2",
+      "name": "Rousing Beat: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 109,
+      "type": "skill",
+      "id": "opening-bard-1-2",
+      "name": "Soothing Refrain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "marshal-weekly",
+      "title": "Coordinate a project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 116,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 116,
+      "type": "skill",
+      "id": "opening-bard-2-2",
+      "name": "Clear Signal: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 116,
+      "type": "skill",
+      "id": "arc-guardian-7",
+      "name": "Rescue Formation",
+      "wallet": "combat"
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 60
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "request",
+      "id": "trial-scholar-entry",
+      "title": "Scholar entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 120,
+      "type": "class-change",
+      "from": "marshal",
+      "to": "scholar",
+      "playerLevel": 33,
+      "classLevel": 1
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 123,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 123,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 123,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 51
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 130,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 130,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 130,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "request",
+      "id": "scholar-monthly",
+      "title": "Scholar training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 152,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 159,
+      "type": "skill",
+      "id": "element-fire-1",
+      "name": "Ember Needle: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 159,
+      "type": "skill",
+      "id": "element-ice-1",
+      "name": "Rime Shard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 58
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 167,
+      "type": "skill",
+      "id": "element-storm-1",
+      "name": "Storm Chain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 167,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 167,
+      "type": "skill",
+      "id": "arc-mage-6",
+      "name": "Cinder Seal",
+      "wallet": "combat"
+    },
+    {
+      "day": 169,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "skill",
+      "id": "opening-mage-0-2",
+      "name": "Spark: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 176,
+      "type": "skill",
+      "id": "opening-mage-1-2",
+      "name": "Arcane Reading: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 176,
+      "type": "skill",
+      "id": "opening-mage-2-2",
+      "name": "Lesser Barrier: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 60
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "skill",
+      "id": "element-fire-2",
+      "name": "Ember Needle: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 183,
+      "type": "skill",
+      "id": "element-ice-2",
+      "name": "Rime Shard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 183,
+      "type": "skill",
+      "id": "element-storm-2",
+      "name": "Storm Chain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "skill",
+      "id": "arc-mage-7",
+      "name": "Confluence",
+      "wallet": "combat"
+    },
+    {
+      "day": 190,
+      "type": "skill",
+      "id": "arc-mage-8",
+      "name": "Shared Reservoir",
+      "wallet": "combat"
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "skill",
+      "id": "focus-scholar-2",
+      "name": "Aether Bolt: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 197,
+      "type": "skill",
+      "id": "arc-mage-9",
+      "name": "Starfall",
+      "wallet": "combat"
+    },
+    {
+      "day": 199,
+      "type": "request",
+      "id": "trial-guild-strategist-entry",
+      "title": "Guild Strategist entry trial",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 199,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "guild-strategist",
+      "playerLevel": 45,
+      "classLevel": 1
+    },
+    {
+      "day": 200,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 200,
+      "type": "take",
+      "id": "guild-strategist-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "trial-guild-strategist-entry",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 204,
+      "type": "skill",
+      "id": "focus-guild-strategist-0",
+      "name": "Guild Strategist Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 204,
+      "type": "skill",
+      "id": "profession-management-9",
+      "name": "Program Steward",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 204,
+      "type": "skill",
+      "id": "arc-bard-7",
+      "name": "March of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "skill",
+      "id": "focus-guild-strategist-1",
+      "name": "Perfect Coordination: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 211,
+      "type": "skill",
+      "id": "arc-bard-8",
+      "name": "Restful Chorus",
+      "wallet": "combat"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "guild-strategist-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "guild-strategist-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "request",
+      "id": "guild-strategist-monthly",
+      "title": "Guild Strategist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "guild-strategist-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "guild-strategist-monthly",
+      "title": "Guild Strategist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "guild-strategist-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "skill",
+      "id": "universal-cha-1",
+      "name": "Conversation",
+      "wallet": "universal"
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 289,
+      "type": "skill",
+      "id": "arc-bard-9",
+      "name": "Resonant Note",
+      "wallet": "combat"
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 296,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 302,
+      "type": "expired",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "guild-strategist-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "guild-strategist-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-project-management-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 318,
+      "type": "skill",
+      "id": "focus-guild-strategist-2",
+      "name": "Perfect Coordination: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-project-management-monthly",
+      "title": "Project Management portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 325,
+      "type": "skill",
+      "id": "connection",
+      "name": "Voice of Encouragement",
+      "wallet": "universal"
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 330,
+      "type": "request",
+      "id": "guild-strategist-monthly",
+      "title": "Guild Strategist training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Project Manager",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "guild-strategist-weekly",
+      "title": "Presentation practice",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "vocation-project-management-weekly",
+      "title": "Project Management field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "exam",
+      "scope": "class",
+      "owner": "guild-strategist",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "guild-strategist-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-project-management-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-management-0",
+    "focus-bard-0",
+    "focus-bard-1",
+    "career-opening-management-0",
+    "career-opening-management-1",
+    "profession-management-1",
+    "profession-management-2",
+    "profession-management-3",
+    "profession-management-4",
+    "focus-marshal-0",
+    "profession-management-5",
+    "profession-management-6",
+    "focus-marshal-1",
+    "arc-guardian-1",
+    "arc-bard-1",
+    "profession-management-7",
+    "opening-guardian-0-0",
+    "opening-guardian-1-0",
+    "opening-guardian-2-0",
+    "opening-bard-0-0",
+    "opening-bard-1-0",
+    "opening-bard-2-0",
+    "arc-guardian-2",
+    "arc-guardian-3",
+    "arc-bard-2",
+    "arc-bard-3",
+    "arc-guardian-4",
+    "arc-guardian-5",
+    "arc-bard-4",
+    "arc-bard-5",
+    "profession-management-8",
+    "opening-guardian-0-1",
+    "opening-guardian-1-1",
+    "opening-guardian-2-1",
+    "opening-bard-0-1",
+    "universal-con-1",
+    "opening-bard-1-1",
+    "opening-bard-2-1",
+    "arc-guardian-6",
+    "arc-bard-6",
+    "opening-guardian-0-2",
+    "opening-guardian-1-2",
+    "opening-guardian-2-2",
+    "opening-bard-0-2",
+    "opening-bard-1-2",
+    "universal-con-2",
+    "opening-bard-2-2",
+    "arc-guardian-7",
+    "focus-scholar-0",
+    "arc-mage-1",
+    "opening-mage-0-0",
+    "focus-scholar-1",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "element-fire-0",
+    "element-ice-0",
+    "element-storm-0",
+    "arc-mage-2",
+    "arc-mage-3",
+    "arc-mage-4",
+    "arc-mage-5",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1",
+    "element-fire-1",
+    "element-ice-1",
+    "element-storm-1",
+    "universal-int-1",
+    "arc-mage-6",
+    "opening-mage-0-2",
+    "opening-mage-1-2",
+    "opening-mage-2-2",
+    "element-fire-2",
+    "element-ice-2",
+    "element-storm-2",
+    "arc-mage-7",
+    "arc-mage-8",
+    "focus-scholar-2",
+    "arc-mage-9",
+    "focus-guild-strategist-0",
+    "profession-management-9",
+    "arc-bard-7",
+    "focus-guild-strategist-1",
+    "arc-bard-8",
+    "universal-int-2",
+    "universal-cha-1",
+    "arc-bard-9",
+    "focus-guild-strategist-2",
+    "connection"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-management-0",
+      "wallet": "profession:management",
+      "cost": 1
+    },
+    {
+      "id": "focus-bard-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-bard-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-management-0",
+      "wallet": "profession:management",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-management-1",
+      "wallet": "profession:management",
+      "cost": 1
+    },
+    {
+      "id": "profession-management-1",
+      "wallet": "profession:management",
+      "cost": 2
+    },
+    {
+      "id": "profession-management-2",
+      "wallet": "profession:management",
+      "cost": 2
+    },
+    {
+      "id": "profession-management-3",
+      "wallet": "profession:management",
+      "cost": 3
+    },
+    {
+      "id": "profession-management-4",
+      "wallet": "profession:management",
+      "cost": 5
+    },
+    {
+      "id": "focus-marshal-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-management-5",
+      "wallet": "profession:management",
+      "cost": 8
+    },
+    {
+      "id": "profession-management-6",
+      "wallet": "profession:management",
+      "cost": 8
+    },
+    {
+      "id": "focus-marshal-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-guardian-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-bard-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-management-7",
+      "wallet": "profession:management",
+      "cost": 14
+    },
+    {
+      "id": "opening-guardian-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-guardian-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-guardian-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-guardian-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-guardian-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-management-8",
+      "wallet": "profession:management",
+      "cost": 18
+    },
+    {
+      "id": "opening-guardian-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-guardian-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-guardian-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-bard-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-guardian-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "arc-bard-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-guardian-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-guardian-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-guardian-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-bard-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-bard-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-bard-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-guardian-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-fire-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-ice-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-storm-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-mage-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-fire-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-ice-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-storm-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-mage-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "focus-scholar-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-mage-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "focus-guild-strategist-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-management-9",
+      "wallet": "profession:management",
+      "cost": 24
+    },
+    {
+      "id": "arc-bard-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "focus-guild-strategist-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-cha-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-bard-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "focus-guild-strategist-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "connection",
+      "wallet": "universal",
+      "cost": 4
+    }
+  ],
+  "utilities": [
+    {
+      "id": "docket",
+      "name": "Steward’s Docket",
+      "category": "management",
+      "learn": "Scope Charter or Work Breakdown: Primer",
+      "skills": [
+        "profession-management-0",
+        "career-opening-management-0"
+      ],
+      "effect": "In Adventures, review accepted guild commissions, remaining work and where to report each one."
+    }
+  ],
+  "firstGoldDay": 330,
+  "firstPrestigeDay": 199,
+  "finalCharacterBytes": 503367
+}

@@ -1,0 +1,1910 @@
+{
+  "id": "helen",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "helen",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 10,
+      "DEX": 7,
+      "CON": 8,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "disciple",
+    "profession": "Explorer",
+    "vocation": "general-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 190,
+    "playerLevel": 16,
+    "guildRank": "D",
+    "xp": 13360,
+    "classId": "scribe",
+    "classLevel": 12,
+    "classPotential": 12,
+    "profession": "Explorer",
+    "professionLevel": 15,
+    "professionPotential": 15,
+    "vocation": "general-practice",
+    "vocationLevel": 15,
+    "stats": {
+      "STR": 10,
+      "DEX": 7,
+      "CON": 8,
+      "INT": 21,
+      "WIS": 18,
+      "CHA": 10
+    },
+    "requests": 378,
+    "gold": 8572,
+    "skills": 44,
+    "careerUtilities": 1,
+    "examPasses": 7,
+    "stages": 44,
+    "wins": 48,
+    "losses": 0,
+    "minutes": 4631
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 4,
+      "playerLevel": 1,
+      "guildRank": "F",
+      "xp": 280,
+      "classId": "disciple",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Explorer",
+      "professionLevel": 2,
+      "professionPotential": 2,
+      "vocation": "general-practice",
+      "vocationLevel": 2,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 8,
+      "gold": 111,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 1,
+      "wins": 1,
+      "losses": 0,
+      "minutes": 100
+    },
+    {
+      "day": 30,
+      "active": 15,
+      "playerLevel": 3,
+      "guildRank": "F",
+      "xp": 1050,
+      "classId": "disciple",
+      "classLevel": 3,
+      "classPotential": 3,
+      "profession": "Explorer",
+      "professionLevel": 4,
+      "professionPotential": 4,
+      "vocation": "general-practice",
+      "vocationLevel": 4,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 30,
+      "gold": 670,
+      "skills": 7,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 375
+    },
+    {
+      "day": 90,
+      "active": 47,
+      "playerLevel": 7,
+      "guildRank": "E",
+      "xp": 3330,
+      "classId": "disciple",
+      "classLevel": 4,
+      "classPotential": 7,
+      "profession": "Explorer",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "general-practice",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 95,
+      "gold": 2036,
+      "skills": 17,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 12,
+      "wins": 12,
+      "losses": 0,
+      "minutes": 1129
+    },
+    {
+      "day": 180,
+      "active": 91,
+      "playerLevel": 11,
+      "guildRank": "E",
+      "xp": 6460,
+      "classId": "scholar",
+      "classLevel": 4,
+      "classPotential": 4,
+      "profession": "Explorer",
+      "professionLevel": 9,
+      "professionPotential": 9,
+      "vocation": "general-practice",
+      "vocationLevel": 9,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 12,
+        "WIS": 15,
+        "CHA": 10
+      },
+      "requests": 182,
+      "gold": 3462,
+      "skills": 28,
+      "careerUtilities": 1,
+      "examPasses": 3,
+      "stages": 21,
+      "wins": 21,
+      "losses": 0,
+      "minutes": 2201
+    },
+    {
+      "day": 365,
+      "active": 190,
+      "playerLevel": 16,
+      "guildRank": "D",
+      "xp": 13360,
+      "classId": "scribe",
+      "classLevel": 12,
+      "classPotential": 12,
+      "profession": "Explorer",
+      "professionLevel": 15,
+      "professionPotential": 15,
+      "vocation": "general-practice",
+      "vocationLevel": 15,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 21,
+        "WIS": 18,
+        "CHA": 10
+      },
+      "requests": 378,
+      "gold": 8572,
+      "skills": 44,
+      "careerUtilities": 1,
+      "examPasses": 7,
+      "stages": 44,
+      "wins": 48,
+      "losses": 0,
+      "minutes": 4631
+    }
+  ],
+  "income": {
+    "requests": 2672,
+    "login": 4195,
+    "battles": 2900,
+    "exploration": 0,
+    "commissions": 2130
+  },
+  "spent": {
+    "supplies": 25,
+    "equipment": 1350,
+    "tempering": 1500,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 48,
+    "wins": 48,
+    "losses": 0,
+    "actions": 132,
+    "bounds": 0,
+    "explorations": 12,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 44,
+    "companionAbilities": 63,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 361,
+    "weekly": 14,
+    "monthly": 3
+  },
+  "requestsByScope": {
+    "universal": 205,
+    "class": 92,
+    "profession": 81
+  },
+  "classHistory": [
+    {
+      "id": "disciple",
+      "level": 11,
+      "potential": 11,
+      "xp": 2850
+    },
+    {
+      "id": "scholar",
+      "level": 4,
+      "potential": 4,
+      "xp": 600
+    },
+    {
+      "id": "scribe",
+      "level": 12,
+      "potential": 12,
+      "xp": 3144
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Explorer",
+      "level": 15,
+      "xp": 4860
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "general-practice",
+      "level": 15,
+      "xp": 4860
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "WIS 13",
+      "met": true
+    },
+    {
+      "label": "INT 13",
+      "met": true
+    }
+  ],
+  "activeDays": 190,
+  "minutes": 4631,
+  "partialWorkouts": 0,
+  "expiredCommitments": 36,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 31,
+  "finalGoal": "scribe",
+  "failedAttempts": 0,
+  "duplicateGuards": 8,
+  "level4Days": 78,
+  "profession4Days": 81,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 96,
+    "weekly: #-day commitment: #/# days": 41,
+    "Time budget": 127,
+    "monthly: Dated practice days: #/#": 51,
+    "monthly: #-day commitment: #/# days": 23
+  },
+  "examDays": 17,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 10,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 10,
+      "type": "skill",
+      "id": "profession-general-0",
+      "name": "Goal Charter",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 10,
+      "type": "skill",
+      "id": "focus-disciple-0",
+      "name": "Disciple Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "career-opening-general-0",
+      "name": "Learning Log: Primer",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "career-opening-general-1",
+      "name": "Time Planning: Primer",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "arc-cleric-1",
+      "name": "Restorative Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 24,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 24,
+      "type": "skill",
+      "id": "opening-cleric-0-0",
+      "name": "Helping Hand",
+      "wallet": "combat"
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 31,
+      "type": "skill",
+      "id": "profession-general-1",
+      "name": "Learning Log",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 31,
+      "type": "skill",
+      "id": "opening-cleric-1-0",
+      "name": "Protective Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 38,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 42,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Explorer",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 42,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 47,
+      "type": "skill",
+      "id": "opening-cleric-2-0",
+      "name": "Words of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 49,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 49,
+      "type": "request",
+      "id": "habit-walk-monthly-f",
+      "title": "Walking adventure · 8 days",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 49,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 54,
+      "type": "skill",
+      "id": "profession-general-2",
+      "name": "Time Planning",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 54,
+      "type": "skill",
+      "id": "arc-cleric-2",
+      "name": "Sheltering Light",
+      "wallet": "combat"
+    },
+    {
+      "day": 54,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 56,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Explorer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 56,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 61,
+      "type": "skill",
+      "id": "arc-cleric-3",
+      "name": "Mercy’s Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 63,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 63,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 70,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Explorer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 70,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 77,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 77,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 82,
+      "type": "skill",
+      "id": "focus-disciple-1",
+      "name": "Prayer of Restoration: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 82,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 84,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Explorer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 84,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 89,
+      "type": "skill",
+      "id": "profession-general-3",
+      "name": "Research Sources",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 91,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 91,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 91,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "request",
+      "id": "trial-scholar-entry",
+      "title": "Scholar entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 92,
+      "type": "class-change",
+      "from": "disciple",
+      "to": "scholar",
+      "playerLevel": 7,
+      "classLevel": 1
+    },
+    {
+      "day": 98,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Explorer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 98,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 98,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 105,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 113,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 119,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Explorer",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 119,
+      "type": "request",
+      "id": "habit-walk-monthly-f",
+      "title": "Walking adventure · 8 days",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 119,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "disciple",
+      "playerLevel": 9,
+      "classLevel": 7
+    },
+    {
+      "day": 120,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 122,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 129,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 129,
+      "type": "skill",
+      "id": "profession-general-4",
+      "name": "Practice Routine",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 143,
+      "type": "skill",
+      "id": "arc-cleric-4",
+      "name": "Steady Counsel",
+      "wallet": "combat"
+    },
+    {
+      "day": 148,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 157,
+      "type": "skill",
+      "id": "arc-cleric-5",
+      "name": "Encouraging Word",
+      "wallet": "combat"
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 175,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 175,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "class-change",
+      "from": "disciple",
+      "to": "scholar",
+      "playerLevel": 11,
+      "classLevel": 3
+    },
+    {
+      "day": 178,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 178,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 182,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 187,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 187,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 189,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Explorer",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 190,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 190,
+      "type": "request",
+      "id": "trial-scribe-entry",
+      "title": "Scripture Scribe entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 190,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "scribe",
+      "playerLevel": 11,
+      "classLevel": 1
+    },
+    {
+      "day": 194,
+      "type": "skill",
+      "id": "focus-scribe-0",
+      "name": "Scripture Scribe Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 201,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 201,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 210,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scribe",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 210,
+      "type": "request",
+      "id": "habit-walk-monthly-f",
+      "title": "Walking adventure · 8 days",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 210,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "universal-wis-1",
+      "name": "Reflection",
+      "wallet": "universal"
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 224,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scribe",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 224,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 229,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 232,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 238,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scribe",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 245,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 245,
+      "type": "skill",
+      "id": "profession-general-5",
+      "name": "Feedback Request",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 252,
+      "type": "skill",
+      "id": "focus-scribe-1",
+      "name": "Illuminated Counsel: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 259,
+      "type": "skill",
+      "id": "profession-general-6",
+      "name": "Work Samples",
+      "wallet": "profession:general"
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 262,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 273,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 273,
+      "type": "skill",
+      "id": "scripture",
+      "name": "Rooted in the Word",
+      "wallet": "universal"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 281,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 294,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 297,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 302,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 308,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scribe",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 308,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 315,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 336,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 336,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Explorer",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 336,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 336,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 350,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 351,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-general-0",
+    "focus-disciple-0",
+    "career-opening-general-0",
+    "career-opening-general-1",
+    "arc-cleric-1",
+    "opening-cleric-0-0",
+    "profession-general-1",
+    "opening-cleric-1-0",
+    "opening-cleric-2-0",
+    "profession-general-2",
+    "arc-cleric-2",
+    "universal-con-1",
+    "arc-cleric-3",
+    "focus-disciple-1",
+    "universal-con-2",
+    "profession-general-3",
+    "focus-scholar-0",
+    "arc-mage-1",
+    "opening-mage-0-0",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "universal-int-1",
+    "profession-general-4",
+    "arc-cleric-4",
+    "arc-cleric-5",
+    "focus-scholar-1",
+    "universal-int-2",
+    "element-fire-0",
+    "focus-scribe-0",
+    "element-ice-0",
+    "element-storm-0",
+    "arc-mage-2",
+    "universal-wis-1",
+    "arc-mage-3",
+    "profession-general-5",
+    "focus-scribe-1",
+    "profession-general-6",
+    "arc-mage-4",
+    "scripture",
+    "arc-mage-5",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-general-0",
+      "wallet": "profession:general",
+      "cost": 1
+    },
+    {
+      "id": "focus-disciple-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-general-0",
+      "wallet": "profession:general",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-general-1",
+      "wallet": "profession:general",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-general-1",
+      "wallet": "profession:general",
+      "cost": 2
+    },
+    {
+      "id": "opening-cleric-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-general-2",
+      "wallet": "profession:general",
+      "cost": 2
+    },
+    {
+      "id": "arc-cleric-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-cleric-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "focus-disciple-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-general-3",
+      "wallet": "profession:general",
+      "cost": 3
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-general-4",
+      "wallet": "profession:general",
+      "cost": 5
+    },
+    {
+      "id": "arc-cleric-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-cleric-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-scribe-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-wis-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "profession-general-5",
+      "wallet": "profession:general",
+      "cost": 8
+    },
+    {
+      "id": "focus-scribe-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-general-6",
+      "wallet": "profession:general",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "scripture",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    }
+  ],
+  "utilities": [
+    {
+      "id": "departure",
+      "name": "Adventurer’s Departure Check",
+      "category": "general",
+      "learn": "Goal Charter or Learning Log: Primer",
+      "skills": [
+        "profession-general-0",
+        "career-opening-general-0"
+      ],
+      "effect": "In Adventures, review a route, current party reserves, equipped-skill count and accepted local commissions before departing."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 220774
+}

@@ -1,0 +1,3066 @@
+{
+  "id": "leila",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "leila",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 13,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "artificer",
+    "profession": "Architect",
+    "vocation": "engineering-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 276,
+    "playerLevel": 63,
+    "guildRank": "B",
+    "xp": 160080,
+    "classId": "engineer",
+    "classLevel": 55,
+    "classPotential": 55,
+    "profession": "Architect",
+    "professionLevel": 82,
+    "professionPotential": 82,
+    "vocation": "engineering-practice",
+    "vocationLevel": 82,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 246,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 776,
+    "gold": 52326,
+    "skills": 43,
+    "careerUtilities": 1,
+    "examPasses": 27,
+    "stages": 152,
+    "wins": 190,
+    "losses": 0,
+    "minutes": 10279
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 6,
+      "playerLevel": 2,
+      "guildRank": "F",
+      "xp": 600,
+      "classId": "artificer",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Architect",
+      "professionLevel": 3,
+      "professionPotential": 3,
+      "vocation": "engineering-practice",
+      "vocationLevel": 3,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 13,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 15,
+      "gold": 340,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 210
+    },
+    {
+      "day": 30,
+      "active": 22,
+      "playerLevel": 6,
+      "guildRank": "E",
+      "xp": 2740,
+      "classId": "artificer",
+      "classLevel": 4,
+      "classPotential": 4,
+      "profession": "Architect",
+      "professionLevel": 4,
+      "professionPotential": 9,
+      "vocation": "engineering-practice",
+      "vocationLevel": 9,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 13,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 55,
+      "gold": 1283,
+      "skills": 12,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 13,
+      "wins": 14,
+      "losses": 0,
+      "minutes": 763
+    },
+    {
+      "day": 90,
+      "active": 66,
+      "playerLevel": 28,
+      "guildRank": "C",
+      "xp": 34500,
+      "classId": "engineer",
+      "classLevel": 9,
+      "classPotential": 24,
+      "profession": "Architect",
+      "professionLevel": 14,
+      "professionPotential": 36,
+      "vocation": "engineering-practice",
+      "vocationLevel": 36,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 21,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 183,
+      "gold": 10746,
+      "skills": 30,
+      "careerUtilities": 1,
+      "examPasses": 3,
+      "stages": 37,
+      "wins": 46,
+      "losses": 0,
+      "minutes": 2449
+    },
+    {
+      "day": 180,
+      "active": 137,
+      "playerLevel": 44,
+      "guildRank": "B",
+      "xp": 80090,
+      "classId": "engineer",
+      "classLevel": 34,
+      "classPotential": 43,
+      "profession": "Architect",
+      "professionLevel": 44,
+      "professionPotential": 53,
+      "vocation": "engineering-practice",
+      "vocationLevel": 53,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 87,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 388,
+      "gold": 28984,
+      "skills": 38,
+      "careerUtilities": 1,
+      "examPasses": 14,
+      "stages": 80,
+      "wins": 96,
+      "losses": 0,
+      "minutes": 5162
+    },
+    {
+      "day": 365,
+      "active": 276,
+      "playerLevel": 63,
+      "guildRank": "B",
+      "xp": 160080,
+      "classId": "engineer",
+      "classLevel": 55,
+      "classPotential": 55,
+      "profession": "Architect",
+      "professionLevel": 82,
+      "professionPotential": 82,
+      "vocation": "engineering-practice",
+      "vocationLevel": 82,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 246,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 776,
+      "gold": 52326,
+      "skills": 43,
+      "careerUtilities": 1,
+      "examPasses": 27,
+      "stages": 152,
+      "wins": 190,
+      "losses": 0,
+      "minutes": 10279
+    }
+  ],
+  "income": {
+    "requests": 32016,
+    "login": 6085,
+    "battles": 18510,
+    "exploration": 75,
+    "commissions": 19840
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 11100,
+    "tempering": 12600,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 190,
+    "wins": 190,
+    "losses": 0,
+    "actions": 276,
+    "bounds": 0,
+    "explorations": 56,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 173,
+    "companionAbilities": 63,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 688,
+    "weekly": 74,
+    "monthly": 14
+  },
+  "requestsByScope": {
+    "universal": 276,
+    "class": 169,
+    "profession": 331
+  },
+  "classHistory": [
+    {
+      "id": "artificer",
+      "level": 4,
+      "potential": 15,
+      "xp": 13320
+    },
+    {
+      "id": "engineer",
+      "level": 55,
+      "potential": 55,
+      "xp": 50130
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Architect",
+      "level": 82,
+      "xp": 106560
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "engineering-practice",
+      "level": 82,
+      "xp": 106560
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "INT 15",
+      "met": true
+    },
+    {
+      "label": "Profession: Engineering & Architecture / Computing & Networks / Construction & Skilled Trades",
+      "met": true
+    }
+  ],
+  "activeDays": 276,
+  "minutes": 10279,
+  "partialWorkouts": 0,
+  "expiredCommitments": 25,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 191,
+  "finalGoal": "engineer",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 41,
+  "profession4Days": 26,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 284,
+    "weekly: #-day commitment: #/# days": 332,
+    "monthly: Dated practice days: #/#": 340,
+    "monthly: #-day commitment: #/# days": 321
+  },
+  "examDays": 39,
+  "events": [
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "profession-engineering-0",
+      "name": "Design Requirements",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "focus-artificer-0",
+      "name": "Artificer Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "career-opening-engineering-0",
+      "name": "Technical Drawing: Primer",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "career-opening-engineering-1",
+      "name": "Modeling: Primer",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "profession-engineering-1",
+      "name": "Technical Drawing",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "profession-engineering-2",
+      "name": "Modeling",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "focus-artificer-1",
+      "name": "Field Mending: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-engineering-3",
+      "name": "Measurement",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-engineering-4",
+      "name": "Design Constraints",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "arc-artificer-1",
+      "name": "Field Tools",
+      "wallet": "combat"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "opening-artificer-0-0",
+      "name": "Repair Kit",
+      "wallet": "combat"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "opening-artificer-1-0",
+      "name": "Pocket Coil",
+      "wallet": "combat"
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "request",
+      "id": "trial-engineer-entry",
+      "title": "Engineer entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 43,
+      "type": "class-change",
+      "from": "artificer",
+      "to": "engineer",
+      "playerLevel": 9,
+      "classLevel": 1
+    },
+    {
+      "day": 44,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "focus-engineer-0",
+      "name": "Engineer Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "profession-engineering-5",
+      "name": "Prototype Validation",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "profession-engineering-6",
+      "name": "Failure Analysis",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 48,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 50,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 51,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 51,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 51,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "opening-artificer-2-0",
+      "name": "Calibration",
+      "wallet": "combat"
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "profession-engineering-7",
+      "name": "Design Review",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "arc-artificer-2",
+      "name": "Spark Coil",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "focus-engineer-1",
+      "name": "Overload Array: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "arc-artificer-3",
+      "name": "Volatile Charge",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "arc-artificer-4",
+      "name": "Shield Emitter",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 64
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "arc-artificer-5",
+      "name": "Diagnostic Lens",
+      "wallet": "combat"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "opening-artificer-0-1",
+      "name": "Repair Kit: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "opening-artificer-1-1",
+      "name": "Pocket Coil: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "opening-artificer-2-1",
+      "name": "Calibration: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 87,
+      "type": "request",
+      "id": "engineer-monthly",
+      "title": "Engineer training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "arc-artificer-6",
+      "name": "Overload Array",
+      "wallet": "combat"
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "opening-artificer-0-2",
+      "name": "Repair Kit: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "opening-artificer-1-2",
+      "name": "Pocket Coil: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "opening-artificer-2-2",
+      "name": "Calibration: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 115,
+      "type": "skill",
+      "id": "profession-engineering-8",
+      "name": "Engineering Portfolio",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 115,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "engineer-monthly",
+      "title": "Engineer training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 62
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 122,
+      "type": "skill",
+      "id": "arc-artificer-7",
+      "name": "Mana Cell",
+      "wallet": "combat"
+    },
+    {
+      "day": 122,
+      "type": "skill",
+      "id": "arc-artificer-8",
+      "name": "Linked Circuit",
+      "wallet": "combat"
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 150,
+      "type": "skill",
+      "id": "arc-artificer-9",
+      "name": "Adaptive Plating",
+      "wallet": "combat"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 164,
+      "type": "skill",
+      "id": "focus-engineer-2",
+      "name": "Overload Array: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 164,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "engineer-monthly",
+      "title": "Engineer training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 226,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 226,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 228,
+      "type": "skill",
+      "id": "profession-engineering-9",
+      "name": "Systems Integration",
+      "wallet": "profession:engineering"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 232,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 235,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 239,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 261,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 261,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 275,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 275,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 319,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 319,
+      "type": "skill",
+      "id": "arc-artificer-10",
+      "name": "Grand Device",
+      "wallet": "combat"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 324,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 324,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 326,
+      "type": "skill",
+      "id": "focus-engineer-3",
+      "name": "Engineer Legacy",
+      "wallet": "combat"
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 332,
+      "type": "request",
+      "id": "engineer-monthly",
+      "title": "Engineer training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "engineer-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-engineering-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "class",
+      "owner": "engineer",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 356,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-engineering-practice-monthly",
+      "title": "Engineering portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "engineer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "vocation-engineering-practice-weekly",
+      "title": "Engineering field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Architect",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "engineer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-engineering-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-engineering-0",
+    "focus-artificer-0",
+    "career-opening-engineering-0",
+    "career-opening-engineering-1",
+    "profession-engineering-1",
+    "profession-engineering-2",
+    "focus-artificer-1",
+    "profession-engineering-3",
+    "profession-engineering-4",
+    "arc-artificer-1",
+    "opening-artificer-0-0",
+    "opening-artificer-1-0",
+    "focus-engineer-0",
+    "profession-engineering-5",
+    "profession-engineering-6",
+    "opening-artificer-2-0",
+    "profession-engineering-7",
+    "arc-artificer-2",
+    "universal-con-1",
+    "focus-engineer-1",
+    "arc-artificer-3",
+    "arc-artificer-4",
+    "arc-artificer-5",
+    "opening-artificer-0-1",
+    "opening-artificer-1-1",
+    "opening-artificer-2-1",
+    "arc-artificer-6",
+    "opening-artificer-0-2",
+    "opening-artificer-1-2",
+    "opening-artificer-2-2",
+    "profession-engineering-8",
+    "universal-con-2",
+    "arc-artificer-7",
+    "arc-artificer-8",
+    "arc-artificer-9",
+    "focus-engineer-2",
+    "universal-int-1",
+    "universal-int-2",
+    "profession-engineering-9",
+    "universal-con-3",
+    "arc-artificer-10",
+    "focus-engineer-3"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-engineering-0",
+      "wallet": "profession:engineering",
+      "cost": 1
+    },
+    {
+      "id": "focus-artificer-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-engineering-0",
+      "wallet": "profession:engineering",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-engineering-1",
+      "wallet": "profession:engineering",
+      "cost": 1
+    },
+    {
+      "id": "profession-engineering-1",
+      "wallet": "profession:engineering",
+      "cost": 2
+    },
+    {
+      "id": "profession-engineering-2",
+      "wallet": "profession:engineering",
+      "cost": 2
+    },
+    {
+      "id": "focus-artificer-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-engineering-3",
+      "wallet": "profession:engineering",
+      "cost": 3
+    },
+    {
+      "id": "profession-engineering-4",
+      "wallet": "profession:engineering",
+      "cost": 5
+    },
+    {
+      "id": "arc-artificer-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-artificer-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-artificer-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-engineer-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-engineering-5",
+      "wallet": "profession:engineering",
+      "cost": 8
+    },
+    {
+      "id": "profession-engineering-6",
+      "wallet": "profession:engineering",
+      "cost": 8
+    },
+    {
+      "id": "opening-artificer-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-engineering-7",
+      "wallet": "profession:engineering",
+      "cost": 14
+    },
+    {
+      "id": "arc-artificer-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-engineer-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-artificer-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-artificer-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-artificer-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-artificer-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-artificer-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-artificer-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-artificer-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-artificer-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-artificer-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-artificer-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "profession-engineering-8",
+      "wallet": "profession:engineering",
+      "cost": 18
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-artificer-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-artificer-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-artificer-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "focus-engineer-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-engineering-9",
+      "wallet": "profession:engineering",
+      "cost": 24
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "arc-artificer-10",
+      "wallet": "combat",
+      "cost": 20
+    },
+    {
+      "id": "focus-engineer-3",
+      "wallet": "combat",
+      "cost": 24
+    }
+  ],
+  "utilities": [
+    {
+      "id": "route-plan",
+      "name": "Pathwright’s Route Plan",
+      "category": "engineering",
+      "learn": "Design Requirements or Technical Drawing: Primer",
+      "skills": [
+        "profession-engineering-0",
+        "career-opening-engineering-0"
+      ],
+      "effect": "In Adventures, trace the stage prerequisites for a chosen area and open the next reachable route."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 483637
+}

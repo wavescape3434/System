@@ -1,0 +1,695 @@
+{
+  "note": "Supplementary deterministic mechanics probes, separate from the 35 annual scenarios. Class scope inspection substitutes a render context only; it does not award or claim to earn those classes. The bounded rubric is a deliberately isolated plateau input.",
+  "classScopes": [
+    {
+      "classId": "warrior",
+      "scope": "class",
+      "stat": "STR"
+    },
+    {
+      "classId": "sentinel",
+      "scope": "class",
+      "stat": "CON"
+    },
+    {
+      "classId": "ranger",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "rogue",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "scholar",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "disciple",
+      "scope": "class",
+      "stat": "WIS"
+    },
+    {
+      "classId": "bard",
+      "scope": "class",
+      "stat": "CHA"
+    },
+    {
+      "classId": "artificer",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "monk",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "berserker",
+      "scope": "class",
+      "stat": "STR"
+    },
+    {
+      "classId": "knight",
+      "scope": "class",
+      "stat": "STR"
+    },
+    {
+      "classId": "duelist",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "scout",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "hunter",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "elementalist",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "arcanist",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "healer",
+      "scope": "class",
+      "stat": "WIS"
+    },
+    {
+      "classId": "evangelist",
+      "scope": "class",
+      "stat": "WIS"
+    },
+    {
+      "classId": "minstrel",
+      "scope": "class",
+      "stat": "CHA"
+    },
+    {
+      "classId": "marshal",
+      "scope": "class",
+      "stat": "CHA"
+    },
+    {
+      "classId": "alchemist",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "engineer",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "runewright",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "pathfinder",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "tactician",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "warden",
+      "scope": "class",
+      "stat": "CON"
+    },
+    {
+      "classId": "scribe",
+      "scope": "class",
+      "stat": "WIS"
+    },
+    {
+      "classId": "network-weaver",
+      "scope": "profession",
+      "stat": "INT"
+    },
+    {
+      "classId": "battle-analyst",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "paladin",
+      "scope": "class",
+      "stat": "STR"
+    },
+    {
+      "classId": "eldritch-knight",
+      "scope": "class",
+      "stat": "STR"
+    },
+    {
+      "classId": "warpriest",
+      "scope": "class",
+      "stat": "WIS"
+    },
+    {
+      "classId": "champion",
+      "scope": "class",
+      "stat": "STR"
+    },
+    {
+      "classId": "ironheart",
+      "scope": "class",
+      "stat": "CON"
+    },
+    {
+      "classId": "shadowblade",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "beastwarden",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "archmage",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "sage",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "high-cleric",
+      "scope": "class",
+      "stat": "WIS"
+    },
+    {
+      "classId": "maestro",
+      "scope": "class",
+      "stat": "CHA"
+    },
+    {
+      "classId": "grand-artificer",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "guild-strategist",
+      "scope": "class",
+      "stat": "CHA"
+    },
+    {
+      "classId": "realm-architect",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "dawn-sovereign",
+      "scope": "class",
+      "stat": "STR"
+    },
+    {
+      "classId": "aether-blademaster",
+      "scope": "class",
+      "stat": "STR"
+    },
+    {
+      "classId": "titan",
+      "scope": "class",
+      "stat": "CON"
+    },
+    {
+      "classId": "astral-savant",
+      "scope": "class",
+      "stat": "INT"
+    },
+    {
+      "classId": "lightbearer",
+      "scope": "class",
+      "stat": "WIS"
+    },
+    {
+      "classId": "phantom",
+      "scope": "class",
+      "stat": "DEX"
+    },
+    {
+      "classId": "worldsinger",
+      "scope": "class",
+      "stat": "CHA"
+    },
+    {
+      "classId": "world-forger",
+      "scope": "class",
+      "stat": "INT"
+    }
+  ],
+  "scopeMismatches": [
+    {
+      "classId": "network-weaver",
+      "scope": "profession",
+      "stat": "INT"
+    }
+  ],
+  "professionStats": [
+    {
+      "role": "Registered Nurse",
+      "category": "healthcare",
+      "categoryStat": "WIS",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Electrician",
+      "category": "trades",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Teacher",
+      "category": "education",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Farmer",
+      "category": "agriculture",
+      "categoryStat": "CON",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Accountant",
+      "category": "finance",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Architect",
+      "category": "engineering",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Research Assistant",
+      "category": "science",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Paralegal",
+      "category": "law",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Social Worker",
+      "category": "community",
+      "categoryStat": "WIS",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Graphic Designer",
+      "category": "creative",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Sales Representative",
+      "category": "sales",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Administrative Assistant",
+      "category": "administration",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Chef",
+      "category": "hospitality",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Quality Control Inspector",
+      "category": "manufacturing",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Truck Driver",
+      "category": "logistics",
+      "categoryStat": "CON",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Firefighter",
+      "category": "public-safety",
+      "categoryStat": "CON",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Project Manager",
+      "category": "management",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Operations Manager",
+      "category": "management",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Financial Analyst",
+      "category": "finance",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "IT Support Specialist",
+      "category": "technology",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Software Developer",
+      "category": "technology",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Cybersecurity Analyst",
+      "category": "technology",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Business Analyst",
+      "category": "business",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Data Analyst",
+      "category": "business",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Explorer",
+      "category": "general",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Physical Therapist",
+      "category": "healthcare",
+      "categoryStat": "WIS",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Career Changer",
+      "category": "general",
+      "categoryStat": "INT",
+      "requestStat": "INT"
+    },
+    {
+      "role": "UX Designer",
+      "category": "creative",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Librarian",
+      "category": "education",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "CNC Operator",
+      "category": "manufacturing",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Baker",
+      "category": "hospitality",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Christian Ministry Worker",
+      "category": "community",
+      "categoryStat": "WIS",
+      "requestStat": "INT"
+    }
+  ],
+  "statMismatches": [
+    {
+      "role": "Registered Nurse",
+      "category": "healthcare",
+      "categoryStat": "WIS",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Electrician",
+      "category": "trades",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Teacher",
+      "category": "education",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Farmer",
+      "category": "agriculture",
+      "categoryStat": "CON",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Social Worker",
+      "category": "community",
+      "categoryStat": "WIS",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Graphic Designer",
+      "category": "creative",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Sales Representative",
+      "category": "sales",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Administrative Assistant",
+      "category": "administration",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Chef",
+      "category": "hospitality",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Quality Control Inspector",
+      "category": "manufacturing",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Truck Driver",
+      "category": "logistics",
+      "categoryStat": "CON",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Firefighter",
+      "category": "public-safety",
+      "categoryStat": "CON",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Project Manager",
+      "category": "management",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Operations Manager",
+      "category": "management",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Physical Therapist",
+      "category": "healthcare",
+      "categoryStat": "WIS",
+      "requestStat": "INT"
+    },
+    {
+      "role": "UX Designer",
+      "category": "creative",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Librarian",
+      "category": "education",
+      "categoryStat": "CHA",
+      "requestStat": "INT"
+    },
+    {
+      "role": "CNC Operator",
+      "category": "manufacturing",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Baker",
+      "category": "hospitality",
+      "categoryStat": "DEX",
+      "requestStat": "INT"
+    },
+    {
+      "role": "Christian Ministry Worker",
+      "category": "community",
+      "categoryStat": "WIS",
+      "requestStat": "INT"
+    }
+  ],
+  "crossCategoryCredit": {
+    "role": "UX Designer",
+    "professionCategory": "creative",
+    "vocationCategory": "technology",
+    "professionXP": 60,
+    "creativeCareerXP": 0,
+    "technologyCareerXP": 60,
+    "receipt": {
+      "id": "vocation-software-daily",
+      "period": "2027-02-01",
+      "at": "2027-02-01T19:00:00.000Z",
+      "xp": 60,
+      "requestGroup": "daily|profession:Software Development|vocation-software-daily",
+      "gold": 12,
+      "participants": "solo",
+      "stat": "INT",
+      "classId": "bard",
+      "title": "Software Development practice",
+      "cadence": "daily",
+      "profession": "UX Designer",
+      "scope": "profession",
+      "taskVersion": 2,
+      "rank": "D",
+      "family": "vocation-software-daily",
+      "classCredits": {},
+      "careerCategory": "technology",
+      "vocationId": "software"
+    }
+  },
+  "boundedRubric": {
+    "stat": "CHA",
+    "baselineStatus": "baseline",
+    "repeated100Status": "failed",
+    "masteryAttemptAccepted": false,
+    "level": 4,
+    "potential": 5,
+    "assumption": "This fixture declares 100 as its rubric maximum. A harder rubric could be established instead; this is not a claim that every user plateaus."
+  },
+  "wallets": [
+    {
+      "id": "maya",
+      "wallet": "profession:healthcare",
+      "earned": 814,
+      "available": 727,
+      "purchased": 12,
+      "catalogNodes": 12,
+      "unownedCurrentlyLearnable": 0
+    },
+    {
+      "id": "priya",
+      "wallet": "profession:public-safety",
+      "earned": 1012,
+      "available": 925,
+      "purchased": 12,
+      "catalogNodes": 12,
+      "unownedCurrentlyLearnable": 0
+    },
+    {
+      "id": "theo",
+      "wallet": "profession:business",
+      "earned": 1833,
+      "available": 1746,
+      "purchased": 12,
+      "catalogNodes": 16,
+      "unownedCurrentlyLearnable": 0
+    },
+    {
+      "id": "theo-with-exams",
+      "wallet": "profession:business",
+      "earned": 1833,
+      "available": 1746,
+      "purchased": 12,
+      "catalogNodes": 16,
+      "unownedCurrentlyLearnable": 0
+    },
+    {
+      "id": "elena",
+      "wallet": "profession:creative",
+      "earned": 564,
+      "available": 501,
+      "purchased": 11,
+      "catalogNodes": 12,
+      "unownedCurrentlyLearnable": 0
+    },
+    {
+      "id": "quinn",
+      "wallet": "profession:creative",
+      "earned": 83,
+      "available": 52,
+      "purchased": 9,
+      "catalogNodes": 12,
+      "unownedCurrentlyLearnable": 0
+    },
+    {
+      "id": "quinn",
+      "wallet": "profession:technology",
+      "earned": 700,
+      "available": 613,
+      "purchased": 12,
+      "catalogNodes": 17,
+      "unownedCurrentlyLearnable": 0
+    },
+    {
+      "id": "noah",
+      "wallet": "profession:community",
+      "earned": 1066,
+      "available": 979,
+      "purchased": 12,
+      "catalogNodes": 12,
+      "unownedCurrentlyLearnable": 0
+    }
+  ]
+}

@@ -1,0 +1,2859 @@
+{
+  "id": "hugo",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "hugo",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "warrior",
+    "profession": "Chef",
+    "vocation": "hospitality-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 226,
+    "playerLevel": 37,
+    "guildRank": "C",
+    "xp": 58485,
+    "classId": "disciple",
+    "classLevel": 12,
+    "classPotential": 12,
+    "profession": "Chef",
+    "professionLevel": 54,
+    "professionPotential": 54,
+    "vocation": "hospitality-practice",
+    "vocationLevel": 54,
+    "stats": {
+      "STR": 20,
+      "DEX": 75,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 15,
+      "CHA": 10
+    },
+    "requests": 499,
+    "gold": 24679,
+    "skills": 49,
+    "careerUtilities": 1,
+    "examPasses": 15,
+    "stages": 155,
+    "wins": 176,
+    "losses": 0,
+    "minutes": 6391
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 5,
+      "playerLevel": 3,
+      "guildRank": "F",
+      "xp": 890,
+      "classId": "warrior",
+      "classLevel": 1,
+      "classPotential": 1,
+      "profession": "Chef",
+      "professionLevel": 4,
+      "professionPotential": 5,
+      "vocation": "hospitality-practice",
+      "vocationLevel": 5,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 12,
+      "gold": 373,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 121
+    },
+    {
+      "day": 30,
+      "active": 21,
+      "playerLevel": 8,
+      "guildRank": "E",
+      "xp": 3590,
+      "classId": "warrior",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Chef",
+      "professionLevel": 4,
+      "professionPotential": 12,
+      "vocation": "hospitality-practice",
+      "vocationLevel": 12,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 49,
+      "gold": 1523,
+      "skills": 12,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 17,
+      "wins": 18,
+      "losses": 0,
+      "minutes": 526
+    },
+    {
+      "day": 90,
+      "active": 57,
+      "playerLevel": 17,
+      "guildRank": "D",
+      "xp": 14140,
+      "classId": "warrior",
+      "classLevel": 6,
+      "classPotential": 6,
+      "profession": "Chef",
+      "professionLevel": 14,
+      "professionPotential": 26,
+      "vocation": "hospitality-practice",
+      "vocationLevel": 26,
+      "stats": {
+        "STR": 12,
+        "DEX": 15,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 131,
+      "gold": 6854,
+      "skills": 21,
+      "careerUtilities": 1,
+      "examPasses": 3,
+      "stages": 42,
+      "wins": 46,
+      "losses": 0,
+      "minutes": 1541
+    },
+    {
+      "day": 180,
+      "active": 113,
+      "playerLevel": 29,
+      "guildRank": "C",
+      "xp": 37675,
+      "classId": "disciple",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Chef",
+      "professionLevel": 39,
+      "professionPotential": 44,
+      "vocation": "hospitality-practice",
+      "vocationLevel": 44,
+      "stats": {
+        "STR": 20,
+        "DEX": 45,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 261,
+      "gold": 15855,
+      "skills": 33,
+      "careerUtilities": 1,
+      "examPasses": 10,
+      "stages": 80,
+      "wins": 90,
+      "losses": 0,
+      "minutes": 3450
+    },
+    {
+      "day": 365,
+      "active": 226,
+      "playerLevel": 37,
+      "guildRank": "C",
+      "xp": 58485,
+      "classId": "disciple",
+      "classLevel": 12,
+      "classPotential": 12,
+      "profession": "Chef",
+      "professionLevel": 54,
+      "professionPotential": 54,
+      "vocation": "hospitality-practice",
+      "vocationLevel": 54,
+      "stats": {
+        "STR": 20,
+        "DEX": 75,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 15,
+        "CHA": 10
+      },
+      "requests": 499,
+      "gold": 24679,
+      "skills": 49,
+      "careerUtilities": 1,
+      "examPasses": 15,
+      "stages": 155,
+      "wins": 176,
+      "losses": 0,
+      "minutes": 6391
+    }
+  ],
+  "income": {
+    "requests": 11697,
+    "login": 4985,
+    "battles": 17135,
+    "exploration": 222,
+    "commissions": 15890
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 13350,
+    "tempering": 11400,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 176,
+    "wins": 176,
+    "losses": 0,
+    "actions": 418,
+    "bounds": 0,
+    "explorations": 42,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 193,
+    "companionAbilities": 221,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 452,
+    "weekly": 41,
+    "monthly": 6
+  },
+  "requestsByScope": {
+    "universal": 226,
+    "class": 112,
+    "profession": 161
+  },
+  "classHistory": [
+    {
+      "id": "warrior",
+      "level": 15,
+      "potential": 15,
+      "xp": 4445
+    },
+    {
+      "id": "disciple",
+      "level": 12,
+      "potential": 12,
+      "xp": 3120
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Chef",
+      "level": 54,
+      "xp": 49112
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "hospitality-practice",
+      "level": 54,
+      "xp": 49112
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "STR 28",
+      "met": false
+    },
+    {
+      "label": "WIS 25",
+      "met": false
+    },
+    {
+      "label": "Warrior Lv. 15",
+      "met": true
+    },
+    {
+      "label": "Disciple Lv. 10",
+      "met": true
+    },
+    {
+      "label": "Paladin entry trial",
+      "met": false
+    }
+  ],
+  "activeDays": 226,
+  "minutes": 6391,
+  "partialWorkouts": 0,
+  "expiredCommitments": 61,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 73,
+  "finalGoal": "paladin",
+  "failedAttempts": 0,
+  "duplicateGuards": 10,
+  "level4Days": 44,
+  "profession4Days": 42,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 330,
+    "weekly: #-day commitment: #/# days": 288,
+    "monthly: Dated practice days: #/#": 359,
+    "monthly: #-day commitment: #/# days": 223
+  },
+  "examDays": 22,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 4,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-hospitality-0",
+      "name": "Service Standards",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-hospitality-0",
+      "name": "Guest Communication: Primer",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-hospitality-1",
+      "name": "Food Safety Study: Primer",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 11,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 12,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 31
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "focus-warrior-0",
+      "name": "Warrior Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-hospitality-1",
+      "name": "Guest Communication",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-hospitality-2",
+      "name": "Food Safety Study",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 18,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-hospitality-3",
+      "name": "Preparation Workflow",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-hospitality-4",
+      "name": "Service Recovery",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 26,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 31
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "martial-axe-1",
+      "name": "Axe Leverage",
+      "wallet": "combat"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-hospitality-5",
+      "name": "Cost & Inventory",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-hospitality-6",
+      "name": "Quality Checks",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 46,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 47,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 32
+    },
+    {
+      "day": 50,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "arc-fighter-1",
+      "name": "Weapon Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 53,
+      "type": "request",
+      "id": "warrior-monthly",
+      "title": "Warrior training adventure",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 53,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 57,
+      "type": "training-rank",
+      "from": "F",
+      "to": "E"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-fighter-0-0",
+      "name": "Measured Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-fighter-1-0",
+      "name": "Brawler’s Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 59,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 61,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 21
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "opening-fighter-2-0",
+      "name": "Shield Footwork",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "martial-sword-1",
+      "name": "Sword Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "universal-str-1",
+      "name": "Strength Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 68,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 33
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 71,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "profession-hospitality-7",
+      "name": "Service Review",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 74,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 80,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 80,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "martial-spear-1",
+      "name": "Spear Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 82,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 34
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 88,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 88,
+      "type": "skill",
+      "id": "martial-unarmed-1",
+      "name": "Open-Hand Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 95,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 95,
+      "type": "skill",
+      "id": "arc-fighter-2",
+      "name": "Shield Breaker",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 34
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 109,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 100,
+      "gold": 20
+    },
+    {
+      "day": 110,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 34
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 110,
+      "type": "skill",
+      "id": "arc-fighter-3",
+      "name": "Sweeping Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 113,
+      "type": "training-rank",
+      "from": "E",
+      "to": "D"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 116,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 117,
+      "type": "skill",
+      "id": "focus-warrior-1",
+      "name": "Iron Cleave: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "request",
+      "id": "warrior-monthly",
+      "title": "Warrior training adventure",
+      "cadence": "monthly",
+      "xp": 450,
+      "gold": 90
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 124,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 22
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 124,
+      "type": "skill",
+      "id": "martial-axe-2",
+      "name": "Hooking Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 124,
+      "type": "skill",
+      "id": "arc-fighter-4",
+      "name": "Armor Splitter",
+      "wallet": "combat"
+    },
+    {
+      "day": 124,
+      "type": "skill",
+      "id": "strength",
+      "name": "Iron Resolve",
+      "wallet": "universal"
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 35
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 138,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 23
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 145,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 36
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 145,
+      "type": "skill",
+      "id": "profession-hospitality-8",
+      "name": "Service Portfolio",
+      "wallet": "profession:hospitality"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "arc-fighter-5",
+      "name": "Battle Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "opening-fighter-0-1",
+      "name": "Measured Thrust: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 158,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 159,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 36
+    },
+    {
+      "day": 159,
+      "type": "skill",
+      "id": "opening-fighter-1-1",
+      "name": "Brawler’s Rhythm: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 165,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "opening-fighter-2-1",
+      "name": "Shield Footwork: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 169,
+      "type": "training-rank",
+      "from": "D",
+      "to": "C"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 23
+    },
+    {
+      "day": 173,
+      "type": "skill",
+      "id": "martial-axe-3",
+      "name": "Sundering Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 176,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "request",
+      "id": "trial-disciple-entry",
+      "title": "Disciple entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 176,
+      "type": "class-change",
+      "from": "warrior",
+      "to": "disciple",
+      "playerLevel": 29,
+      "classLevel": 1
+    },
+    {
+      "day": 178,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 178,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "skill",
+      "id": "focus-disciple-0",
+      "name": "Disciple Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 183,
+      "type": "skill",
+      "id": "arc-cleric-1",
+      "name": "Restorative Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 187,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 36
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 190,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 190,
+      "type": "skill",
+      "id": "opening-cleric-0-0",
+      "name": "Helping Hand",
+      "wallet": "combat"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "skill",
+      "id": "opening-cleric-1-0",
+      "name": "Protective Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 197,
+      "type": "skill",
+      "id": "universal-dex-1",
+      "name": "Mobility Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "skill",
+      "id": "opening-cleric-2-0",
+      "name": "Words of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 215,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 219,
+      "type": "skill",
+      "id": "arc-cleric-2",
+      "name": "Sheltering Light",
+      "wallet": "combat"
+    },
+    {
+      "day": 222,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 37
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 229,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 235,
+      "type": "skill",
+      "id": "focus-disciple-1",
+      "name": "Prayer of Restoration: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 239,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 239,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 249,
+      "type": "skill",
+      "id": "arc-cleric-3",
+      "name": "Mercy’s Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 256,
+      "type": "skill",
+      "id": "universal-dex-2",
+      "name": "Sure Footing",
+      "wallet": "universal"
+    },
+    {
+      "day": 257,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 263,
+      "type": "skill",
+      "id": "arc-cleric-4",
+      "name": "Steady Counsel",
+      "wallet": "combat"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 269,
+      "type": "request",
+      "id": "vocation-hospitality-practice-monthly",
+      "title": "Hospitality portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 278,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Chef",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 38
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 281,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 284,
+      "type": "skill",
+      "id": "arc-cleric-5",
+      "name": "Encouraging Word",
+      "wallet": "combat"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 298,
+      "type": "skill",
+      "id": "opening-cleric-0-1",
+      "name": "Helping Hand: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 302,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 306,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 319,
+      "type": "skill",
+      "id": "opening-cleric-1-1",
+      "name": "Protective Prayer: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 319,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-hospitality-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "skill",
+      "id": "opening-cleric-2-1",
+      "name": "Words of Courage: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "vocation-hospitality-practice-weekly",
+      "title": "Hospitality field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-hospitality-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-hospitality-0",
+    "career-opening-hospitality-0",
+    "career-opening-hospitality-1",
+    "focus-warrior-0",
+    "profession-hospitality-1",
+    "profession-hospitality-2",
+    "profession-hospitality-3",
+    "profession-hospitality-4",
+    "martial-axe-1",
+    "profession-hospitality-5",
+    "profession-hospitality-6",
+    "arc-fighter-1",
+    "opening-fighter-0-0",
+    "opening-fighter-1-0",
+    "opening-fighter-2-0",
+    "martial-sword-1",
+    "universal-str-1",
+    "profession-hospitality-7",
+    "martial-spear-1",
+    "martial-unarmed-1",
+    "arc-fighter-2",
+    "arc-fighter-3",
+    "focus-warrior-1",
+    "martial-axe-2",
+    "arc-fighter-4",
+    "strength",
+    "profession-hospitality-8",
+    "arc-fighter-5",
+    "opening-fighter-0-1",
+    "opening-fighter-1-1",
+    "opening-fighter-2-1",
+    "martial-axe-3",
+    "focus-disciple-0",
+    "arc-cleric-1",
+    "opening-cleric-0-0",
+    "opening-cleric-1-0",
+    "universal-dex-1",
+    "opening-cleric-2-0",
+    "arc-cleric-2",
+    "focus-disciple-1",
+    "arc-cleric-3",
+    "universal-dex-2",
+    "arc-cleric-4",
+    "arc-cleric-5",
+    "opening-cleric-0-1",
+    "opening-cleric-1-1",
+    "universal-con-1",
+    "opening-cleric-2-1"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-hospitality-0",
+      "wallet": "profession:hospitality",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-hospitality-0",
+      "wallet": "profession:hospitality",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-hospitality-1",
+      "wallet": "profession:hospitality",
+      "cost": 1
+    },
+    {
+      "id": "focus-warrior-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-hospitality-1",
+      "wallet": "profession:hospitality",
+      "cost": 2
+    },
+    {
+      "id": "profession-hospitality-2",
+      "wallet": "profession:hospitality",
+      "cost": 2
+    },
+    {
+      "id": "profession-hospitality-3",
+      "wallet": "profession:hospitality",
+      "cost": 3
+    },
+    {
+      "id": "profession-hospitality-4",
+      "wallet": "profession:hospitality",
+      "cost": 5
+    },
+    {
+      "id": "martial-axe-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-hospitality-5",
+      "wallet": "profession:hospitality",
+      "cost": 8
+    },
+    {
+      "id": "profession-hospitality-6",
+      "wallet": "profession:hospitality",
+      "cost": 8
+    },
+    {
+      "id": "arc-fighter-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-sword-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-str-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-hospitality-7",
+      "wallet": "profession:hospitality",
+      "cost": 14
+    },
+    {
+      "id": "martial-spear-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-unarmed-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-fighter-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "focus-warrior-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-axe-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-fighter-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "strength",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-hospitality-8",
+      "wallet": "profession:hospitality",
+      "cost": 18
+    },
+    {
+      "id": "arc-fighter-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-axe-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "focus-disciple-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-dex-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-cleric-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "focus-disciple-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-cleric-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-dex-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-cleric-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-cleric-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-cleric-2-1",
+      "wallet": "combat",
+      "cost": 3
+    }
+  ],
+  "utilities": [
+    {
+      "id": "concierge",
+      "name": "Wayfarer’s Concierge",
+      "category": "hospitality",
+      "learn": "Service Standards or Guest Communication: Primer",
+      "skills": [
+        "profession-hospitality-0",
+        "career-opening-hospitality-0"
+      ],
+      "effect": "In Adventures, compare town stores, smiths and restocking requests, then visit an unlocked town’s shops."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 529873
+}

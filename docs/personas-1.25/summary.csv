@@ -1,0 +1,33 @@
+id,name,age,profession,vocation,active_days,player_level,class,class_level,profession_level,vocation_level,guild_rank,first_gold_day,first_prestige_day,requests,real_world_minutes,xp_per_modeled_hour,wallet_gold,expired_commitments
+maya,Maya Ortiz,29,Registered Nurse,healthcare-practice,178,46,healer,16,71,71,B,,,483,6646,798.62,12544,58
+tomas,Tomas Vega,42,Electrician,trades-practice,269,61,grand-artificer,42,81,81,B,,192,753,10026,906.34,50680,30
+ada,Ada Bennett,34,Teacher,education-practice,256,70,bard,20,104,109,A,307,,741,9594,1241.9,60528,8
+ruth,Ruth Okafor,51,Farmer,agriculture-practice,176,49,ranger,16,74,74,B,,,395,7044,855.28,30289,56
+evan,Evan Park,38,Accountant,accounting,266,66,scholar,21,94,103,A,337,,750,9852,1094.15,54207,18
+leila,Leila Haddad,27,Architect,engineering-practice,276,63,engineer,55,82,82,B,,,776,10279,934.41,52326,25
+graham,Graham Ellis,23,Research Assistant,science-practice,271,62,sage,39,78,78,B,,214,764,10804,885.95,44148,24
+sofia,Sofia Marin,31,Paralegal,law-practice,283,62,tactician,51,79,79,B,,,795,10647,877.49,43195,22
+marcus,Marcus Reed,46,Social Worker,community-practice,285,76,high-cleric,19,104,115,A,258,276,793,12394,1134.06,72471,28
+imani,Imani Brooks,26,Graphic Designer,creative-practice,272,69,minstrel,64,83,83,A,326,,637,13579,844.13,64190,19
+ben,Ben Wallace,41,Sales Representative,sales-practice,190,43,marshal,14,65,65,B,,,447,6887,678.84,23584,51
+nadia,Nadia Silva,36,Administrative Assistant,administration-practice,180,61,sentinel,1,97,97,B,,,402,4778,1903.85,41362,39
+hugo,Hugo Laurent,33,Chef,hospitality-practice,226,37,disciple,12,54,54,C,,,499,6391,549.07,24679,61
+chloe,Chloe Nguyen,24,Quality Control Inspector,manufacturing-practice,269,59,duelist,44,78,78,B,,,743,9789,867.21,44659,27
+owen,Owen Price,54,Truck Driver,logistics-practice,184,16,sentinel,19,17,17,D,,,371,4567,176.57,9657,47
+priya,Priya Desai,30,Firefighter,public-safety-practice,266,58,champion,34,79,79,B,,167,613,16380,512.71,33754,26
+celeste,Celeste Morgan,39,Project Manager,project-management,271,64,guild-strategist,44,81,81,A,330,199,768,10260,982.28,51088,26
+daniel,Daniel Cho,44,Operations Manager,operations,274,71,marshal,19,109,110,A,296,,789,10229,1192.26,51262,5
+mei,Mei Tan,28,Financial Analyst,financial-analysis,272,67,elementalist,66,83,83,A,325,,771,10128,1092.42,60019,20
+jordan,Jordan Foster,32,IT Support Specialist,networking,265,69,network-weaver,1,105,105,A,325,,762,9840,1187.62,62652,16
+aisha,Aisha Rahman,25,Software Developer,software,265,61,archmage,34,79,81,B,,283,745,9823,936.56,50351,28
+felix,Felix Romero,35,Cybersecurity Analyst,security,269,66,shadowblade,54,81,81,A,348,136,758,10034,1063.13,44907,21
+wendy,Wendy Mensah,47,Business Analyst,business-analysis,270,69,battle-analyst,19,107,107,A,325,,775,10078,1148.08,41881,6
+theo,Theo Martin,22,Data Analyst,analysis,266,69,scholar,4,4,108,A,295,,771,9594,1212.51,58181,4
+helen,Helen Ward,68,Explorer,general-practice,190,16,scribe,12,15,15,D,,,378,4631,173.09,8572,36
+luis,Luis Alvarez,37,Physical Therapist,healthcare-practice,249,59,warpriest,34,80,80,B,,214,519,11576,743.52,33243,39
+paige,Paige Sato,21,Career Changer,general-practice,249,61,bard,1,4,76,B,,,570,6932,1324.38,39196,14
+quinn,Quinn Harper,28,UX Designer,software,281,61,scholar,66,69,66,B,,,776,10386,873.43,47478,29
+irene,Irene Patel,58,Librarian,education-practice,286,61,sage,9,79,80,B,,312,799,10702,866.14,39957,25
+darius,Darius Bell,40,CNC Operator,manufacturing-practice,280,61,shadowblade,40,84,84,B,,95,776,10284,891.6,50929,33
+elena,Elena Cruz,31,Baker,hospitality-practice,271,57,warrior,22,54,59,B,,,700,9718,823.66,29992,33
+noah,Noah Williams,43,Christian Ministry Worker,community-practice,263,66,high-cleric,54,82,82,A,342,101,741,11427,938.3,45387,29

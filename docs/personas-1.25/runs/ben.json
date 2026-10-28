@@ -1,0 +1,2732 @@
+{
+  "id": "ben",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "ben",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "bard",
+    "profession": "Sales Representative",
+    "vocation": "sales-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 190,
+    "playerLevel": 43,
+    "guildRank": "B",
+    "xp": 77920,
+    "classId": "marshal",
+    "classLevel": 14,
+    "classPotential": 14,
+    "profession": "Sales Representative",
+    "professionLevel": 65,
+    "professionPotential": 65,
+    "vocation": "sales-practice",
+    "vocationLevel": 65,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 12,
+      "INT": 12,
+      "WIS": 10,
+      "CHA": 119
+    },
+    "requests": 447,
+    "gold": 23584,
+    "skills": 56,
+    "careerUtilities": 1,
+    "examPasses": 17,
+    "stages": 85,
+    "wins": 98,
+    "losses": 0,
+    "minutes": 6887
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 4,
+      "playerLevel": 2,
+      "guildRank": "F",
+      "xp": 570,
+      "classId": "bard",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Sales Representative",
+      "professionLevel": 2,
+      "professionPotential": 2,
+      "vocation": "sales-practice",
+      "vocationLevel": 2,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 9,
+      "gold": 199,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 2,
+      "wins": 2,
+      "losses": 0,
+      "minutes": 145
+    },
+    {
+      "day": 30,
+      "active": 15,
+      "playerLevel": 13,
+      "guildRank": "E",
+      "xp": 8520,
+      "classId": "bard",
+      "classLevel": 4,
+      "classPotential": 4,
+      "profession": "Sales Representative",
+      "professionLevel": 4,
+      "professionPotential": 19,
+      "vocation": "sales-practice",
+      "vocationLevel": 20,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 36,
+      "gold": 2434,
+      "skills": 10,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 8,
+      "wins": 8,
+      "losses": 0,
+      "minutes": 526
+    },
+    {
+      "day": 90,
+      "active": 48,
+      "playerLevel": 21,
+      "guildRank": "D",
+      "xp": 21530,
+      "classId": "scholar",
+      "classLevel": 3,
+      "classPotential": 3,
+      "profession": "Sales Representative",
+      "professionLevel": 14,
+      "professionPotential": 33,
+      "vocation": "sales-practice",
+      "vocationLevel": 33,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 17
+      },
+      "requests": 114,
+      "gold": 5881,
+      "skills": 28,
+      "careerUtilities": 1,
+      "examPasses": 3,
+      "stages": 24,
+      "wins": 26,
+      "losses": 0,
+      "minutes": 1744
+    },
+    {
+      "day": 180,
+      "active": 92,
+      "playerLevel": 28,
+      "guildRank": "C",
+      "xp": 35580,
+      "classId": "marshal",
+      "classLevel": 4,
+      "classPotential": 6,
+      "profession": "Sales Representative",
+      "professionLevel": 34,
+      "professionPotential": 43,
+      "vocation": "sales-practice",
+      "vocationLevel": 43,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 12,
+        "WIS": 10,
+        "CHA": 39
+      },
+      "requests": 216,
+      "gold": 11101,
+      "skills": 41,
+      "careerUtilities": 1,
+      "examPasses": 8,
+      "stages": 44,
+      "wins": 48,
+      "losses": 0,
+      "minutes": 3342
+    },
+    {
+      "day": 365,
+      "active": 190,
+      "playerLevel": 43,
+      "guildRank": "B",
+      "xp": 77920,
+      "classId": "marshal",
+      "classLevel": 14,
+      "classPotential": 14,
+      "profession": "Sales Representative",
+      "professionLevel": 65,
+      "professionPotential": 65,
+      "vocation": "sales-practice",
+      "vocationLevel": 65,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 12,
+        "INT": 12,
+        "WIS": 10,
+        "CHA": 119
+      },
+      "requests": 447,
+      "gold": 23584,
+      "skills": 56,
+      "careerUtilities": 1,
+      "examPasses": 17,
+      "stages": 85,
+      "wins": 98,
+      "losses": 0,
+      "minutes": 6887
+    }
+  ],
+  "income": {
+    "requests": 15584,
+    "login": 4195,
+    "battles": 7130,
+    "exploration": 0,
+    "commissions": 5850
+  },
+  "spent": {
+    "supplies": 25,
+    "equipment": 4500,
+    "tempering": 4200,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 98,
+    "wins": 98,
+    "losses": 0,
+    "actions": 299,
+    "bounds": 0,
+    "explorations": 23,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 98,
+    "companionAbilities": 185,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 405,
+    "weekly": 35,
+    "monthly": 7
+  },
+  "requestsByScope": {
+    "universal": 149,
+    "class": 94,
+    "profession": 204
+  },
+  "classHistory": [
+    {
+      "id": "bard",
+      "level": 9,
+      "potential": 11,
+      "xp": 2850
+    },
+    {
+      "id": "scholar",
+      "level": 7,
+      "potential": 7,
+      "xp": 1320
+    },
+    {
+      "id": "marshal",
+      "level": 14,
+      "potential": 14,
+      "xp": 4337
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Sales Representative",
+      "level": 65,
+      "xp": 68580
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "sales-practice",
+      "level": 65,
+      "xp": 68580
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "CHA 14",
+      "met": true
+    },
+    {
+      "label": "INT 12",
+      "met": true
+    }
+  ],
+  "activeDays": 190,
+  "minutes": 6887,
+  "partialWorkouts": 0,
+  "expiredCommitments": 51,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 13,
+  "directVocationRequests": 113,
+  "finalGoal": "marshal",
+  "failedAttempts": 0,
+  "duplicateGuards": 9,
+  "level4Days": 129,
+  "profession4Days": 42,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "monthly: Dated practice days: #/#": 192,
+    "monthly: #-day commitment: #/# days": 150,
+    "Time budget": 26,
+    "weekly: Dated practice days: #/#": 194,
+    "weekly: #-day commitment: #/# days": 186
+  },
+  "examDays": 34,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-sales-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 6,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "profession-sales-0",
+      "name": "Audience Research",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "focus-bard-0",
+      "name": "Bard Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "career-opening-sales-0",
+      "name": "Discovery Questions: Primer",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "career-opening-sales-1",
+      "name": "Value Proposition: Primer",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "arc-bard-1",
+      "name": "Battle Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "opening-bard-0-0",
+      "name": "Rousing Beat",
+      "wallet": "combat"
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-sales-1",
+      "name": "Discovery Questions",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-sales-2",
+      "name": "Value Proposition",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-sales-3",
+      "name": "Campaign Writing",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 25,
+      "type": "request",
+      "id": "vocation-sales-practice-monthly",
+      "title": "Sales portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-sales-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "profession-sales-4",
+      "name": "Pipeline Tracking",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "profession-sales-5",
+      "name": "Objection Practice",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "profession-sales-6",
+      "name": "Campaign Measurement",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "skill",
+      "id": "focus-bard-1",
+      "name": "Traveler’s Refrain: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 41,
+      "type": "skill",
+      "id": "opening-bard-1-0",
+      "name": "Soothing Refrain",
+      "wallet": "combat"
+    },
+    {
+      "day": 41,
+      "type": "skill",
+      "id": "opening-bard-2-0",
+      "name": "Clear Signal",
+      "wallet": "combat"
+    },
+    {
+      "day": 43,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 48,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 53,
+      "type": "request",
+      "id": "vocation-sales-practice-monthly",
+      "title": "Sales portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "skill",
+      "id": "arc-bard-2",
+      "name": "Ballad of Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "bard-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 62,
+      "type": "skill",
+      "id": "arc-bard-3",
+      "name": "Distracting Verse",
+      "wallet": "combat"
+    },
+    {
+      "day": 62,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 69,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "skill",
+      "id": "profession-sales-7",
+      "name": "Client Proposal",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 71,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "request",
+      "id": "trial-scholar-entry",
+      "title": "Scholar entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 71,
+      "type": "class-change",
+      "from": "bard",
+      "to": "scholar",
+      "playerLevel": 20,
+      "classLevel": 1
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 62
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 76,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 76,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "bard-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 63
+    },
+    {
+      "day": 90,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 90,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 90,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 97,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 97,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 104,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 113,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 118,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 118,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-sales-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 146,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 148,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 148,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 149,
+      "type": "request",
+      "id": "vocation-sales-practice-monthly",
+      "title": "Sales portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 155,
+      "type": "request",
+      "id": "trial-marshal-entry",
+      "title": "Marshal entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 155,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "marshal",
+      "playerLevel": 28,
+      "classLevel": 1
+    },
+    {
+      "day": 155,
+      "type": "skill",
+      "id": "focus-marshal-0",
+      "name": "Marshal Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 155,
+      "type": "skill",
+      "id": "profession-sales-8",
+      "name": "Market Portfolio",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 155,
+      "type": "skill",
+      "id": "universal-cha-1",
+      "name": "Conversation",
+      "wallet": "universal"
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 162,
+      "type": "skill",
+      "id": "arc-guardian-1",
+      "name": "Shield Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 169,
+      "type": "skill",
+      "id": "opening-guardian-0-0",
+      "name": "Interpose",
+      "wallet": "combat"
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 177,
+      "type": "skill",
+      "id": "opening-guardian-1-0",
+      "name": "Challenge",
+      "wallet": "combat"
+    },
+    {
+      "day": 177,
+      "type": "skill",
+      "id": "opening-guardian-2-0",
+      "name": "Shield Feint",
+      "wallet": "combat"
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 190,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 191,
+      "type": "skill",
+      "id": "arc-guardian-2",
+      "name": "Tower Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 198,
+      "type": "skill",
+      "id": "connection",
+      "name": "Voice of Encouragement",
+      "wallet": "universal"
+    },
+    {
+      "day": 202,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "skill",
+      "id": "focus-marshal-1",
+      "name": "Coordinated Advance: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "vocation-sales-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 219,
+      "type": "skill",
+      "id": "arc-guardian-3",
+      "name": "Shield Rush",
+      "wallet": "combat"
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 233,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 233,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 233,
+      "type": "skill",
+      "id": "arc-guardian-4",
+      "name": "Iron Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 237,
+      "type": "request",
+      "id": "vocation-sales-practice-monthly",
+      "title": "Sales portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 237,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 239,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "skill",
+      "id": "arc-guardian-5",
+      "name": "Return the Blow",
+      "wallet": "combat"
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 258,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "skill",
+      "id": "arc-bard-4",
+      "name": "Refrain of Clarity",
+      "wallet": "combat"
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-sales-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 286,
+      "type": "skill",
+      "id": "arc-bard-5",
+      "name": "Warning Call",
+      "wallet": "combat"
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 293,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-sales-practice-monthly",
+      "title": "Sales portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "skill",
+      "id": "opening-guardian-0-1",
+      "name": "Interpose: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 302,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "vocation-sales-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 314,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 314,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "skill",
+      "id": "opening-guardian-1-1",
+      "name": "Challenge: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 316,
+      "type": "skill",
+      "id": "universal-int-3",
+      "name": "Tactical Insight",
+      "wallet": "universal"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "skill",
+      "id": "opening-guardian-2-1",
+      "name": "Shield Feint: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 331,
+      "type": "request",
+      "id": "vocation-sales-practice-monthly",
+      "title": "Sales portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "marshal-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-sales-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "skill",
+      "id": "profession-sales-9",
+      "name": "Growth Strategy",
+      "wallet": "profession:sales"
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "q-listening",
+      "title": "Conversation and listening quest",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "skill",
+      "id": "opening-bard-0-1",
+      "name": "Rousing Beat: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 356,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-sales-practice-monthly",
+      "title": "Sales portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 359,
+      "type": "take",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 359,
+      "type": "take",
+      "id": "vocation-sales-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Sales Representative",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 363,
+      "type": "request",
+      "id": "vocation-sales-practice-weekly",
+      "title": "Sales field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "marshal-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-sales-0",
+    "focus-bard-0",
+    "career-opening-sales-0",
+    "career-opening-sales-1",
+    "arc-bard-1",
+    "opening-bard-0-0",
+    "profession-sales-1",
+    "profession-sales-2",
+    "profession-sales-3",
+    "profession-sales-4",
+    "profession-sales-5",
+    "profession-sales-6",
+    "focus-bard-1",
+    "opening-bard-1-0",
+    "opening-bard-2-0",
+    "universal-con-1",
+    "arc-bard-2",
+    "arc-bard-3",
+    "universal-con-2",
+    "profession-sales-7",
+    "focus-scholar-0",
+    "arc-mage-1",
+    "opening-mage-0-0",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "element-fire-0",
+    "universal-int-1",
+    "element-ice-0",
+    "element-storm-0",
+    "arc-mage-2",
+    "universal-int-2",
+    "arc-mage-3",
+    "focus-scholar-1",
+    "focus-marshal-0",
+    "profession-sales-8",
+    "universal-cha-1",
+    "arc-guardian-1",
+    "opening-guardian-0-0",
+    "opening-guardian-1-0",
+    "opening-guardian-2-0",
+    "arc-guardian-2",
+    "connection",
+    "focus-marshal-1",
+    "arc-guardian-3",
+    "arc-guardian-4",
+    "arc-guardian-5",
+    "universal-con-3",
+    "arc-bard-4",
+    "arc-bard-5",
+    "opening-guardian-0-1",
+    "opening-guardian-1-1",
+    "universal-int-3",
+    "opening-guardian-2-1",
+    "profession-sales-9",
+    "opening-bard-0-1"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-sales-0",
+      "wallet": "profession:sales",
+      "cost": 1
+    },
+    {
+      "id": "focus-bard-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-sales-0",
+      "wallet": "profession:sales",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-sales-1",
+      "wallet": "profession:sales",
+      "cost": 1
+    },
+    {
+      "id": "arc-bard-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-sales-1",
+      "wallet": "profession:sales",
+      "cost": 2
+    },
+    {
+      "id": "profession-sales-2",
+      "wallet": "profession:sales",
+      "cost": 2
+    },
+    {
+      "id": "profession-sales-3",
+      "wallet": "profession:sales",
+      "cost": 3
+    },
+    {
+      "id": "profession-sales-4",
+      "wallet": "profession:sales",
+      "cost": 5
+    },
+    {
+      "id": "profession-sales-5",
+      "wallet": "profession:sales",
+      "cost": 8
+    },
+    {
+      "id": "profession-sales-6",
+      "wallet": "profession:sales",
+      "cost": 8
+    },
+    {
+      "id": "focus-bard-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-bard-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-sales-7",
+      "wallet": "profession:sales",
+      "cost": 14
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "focus-marshal-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-sales-8",
+      "wallet": "profession:sales",
+      "cost": 18
+    },
+    {
+      "id": "universal-cha-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-guardian-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-guardian-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "connection",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-marshal-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-guardian-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-guardian-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-guardian-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "arc-bard-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-guardian-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-guardian-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "opening-guardian-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-sales-9",
+      "wallet": "profession:sales",
+      "cost": 24
+    },
+    {
+      "id": "opening-bard-0-1",
+      "wallet": "combat",
+      "cost": 3
+    }
+  ],
+  "utilities": [
+    {
+      "id": "exchange",
+      "name": "Broker’s Exchange",
+      "category": "sales",
+      "learn": "Audience Research or Discovery Questions: Primer",
+      "skills": [
+        "profession-sales-0",
+        "career-opening-sales-0"
+      ],
+      "effect": "In Adventures, compare reachable towns’ delivery offers, gold per material and current shortages before taking a commission."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 301145
+}

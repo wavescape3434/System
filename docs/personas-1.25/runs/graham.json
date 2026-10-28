@@ -1,0 +1,3417 @@
+{
+  "id": "graham",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "graham",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 13,
+      "WIS": 13,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "scholar",
+    "profession": "Research Assistant",
+    "vocation": "science-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 271,
+    "playerLevel": 62,
+    "guildRank": "B",
+    "xp": 159530,
+    "classId": "sage",
+    "classLevel": 39,
+    "classPotential": 41,
+    "profession": "Research Assistant",
+    "professionLevel": 78,
+    "professionPotential": 78,
+    "vocation": "science-practice",
+    "vocationLevel": 78,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 199,
+      "WIS": 55,
+      "CHA": 10
+    },
+    "requests": 764,
+    "gold": 44148,
+    "skills": 74,
+    "careerUtilities": 1,
+    "examPasses": 34,
+    "stages": 158,
+    "wins": 182,
+    "losses": 0,
+    "minutes": 10804
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 5,
+      "playerLevel": 6,
+      "guildRank": "F",
+      "xp": 2320,
+      "classId": "scholar",
+      "classLevel": 6,
+      "classPotential": 6,
+      "profession": "Research Assistant",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "science-practice",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 15,
+        "WIS": 13,
+        "CHA": 10
+      },
+      "requests": 15,
+      "gold": 659,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 1,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 256
+    },
+    {
+      "day": 30,
+      "active": 23,
+      "playerLevel": 9,
+      "guildRank": "E",
+      "xp": 4660,
+      "classId": "scholar",
+      "classLevel": 8,
+      "classPotential": 8,
+      "profession": "Research Assistant",
+      "professionLevel": 11,
+      "professionPotential": 11,
+      "vocation": "science-practice",
+      "vocationLevel": 11,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 20,
+        "WIS": 13,
+        "CHA": 10
+      },
+      "requests": 60,
+      "gold": 1707,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 3,
+      "stages": 14,
+      "wins": 14,
+      "losses": 0,
+      "minutes": 889
+    },
+    {
+      "day": 90,
+      "active": 68,
+      "playerLevel": 30,
+      "guildRank": "C",
+      "xp": 38920,
+      "classId": "disciple",
+      "classLevel": 8,
+      "classPotential": 8,
+      "profession": "Research Assistant",
+      "professionLevel": 29,
+      "professionPotential": 37,
+      "vocation": "science-practice",
+      "vocationLevel": 37,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 48,
+        "WIS": 15,
+        "CHA": 10
+      },
+      "requests": 192,
+      "gold": 11810,
+      "skills": 37,
+      "careerUtilities": 1,
+      "examPasses": 10,
+      "stages": 45,
+      "wins": 50,
+      "losses": 0,
+      "minutes": 2788
+    },
+    {
+      "day": 180,
+      "active": 126,
+      "playerLevel": 40,
+      "guildRank": "B",
+      "xp": 68100,
+      "classId": "disciple",
+      "classLevel": 19,
+      "classPotential": 19,
+      "profession": "Research Assistant",
+      "professionLevel": 52,
+      "professionPotential": 52,
+      "vocation": "science-practice",
+      "vocationLevel": 52,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 99,
+        "WIS": 22,
+        "CHA": 10
+      },
+      "requests": 355,
+      "gold": 21681,
+      "skills": 60,
+      "careerUtilities": 1,
+      "examPasses": 18,
+      "stages": 79,
+      "wins": 84,
+      "losses": 0,
+      "minutes": 5062
+    },
+    {
+      "day": 365,
+      "active": 271,
+      "playerLevel": 62,
+      "guildRank": "B",
+      "xp": 159530,
+      "classId": "sage",
+      "classLevel": 39,
+      "classPotential": 41,
+      "profession": "Research Assistant",
+      "professionLevel": 78,
+      "professionPotential": 78,
+      "vocation": "science-practice",
+      "vocationLevel": 78,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 199,
+        "WIS": 55,
+        "CHA": 10
+      },
+      "requests": 764,
+      "gold": 44148,
+      "skills": 74,
+      "careerUtilities": 1,
+      "examPasses": 34,
+      "stages": 158,
+      "wins": 182,
+      "losses": 0,
+      "minutes": 10804
+    }
+  ],
+  "income": {
+    "requests": 31906,
+    "login": 5970,
+    "battles": 18400,
+    "exploration": 222,
+    "commissions": 15750
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 12000,
+    "tempering": 15600,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 182,
+    "wins": 182,
+    "losses": 0,
+    "actions": 338,
+    "bounds": 0,
+    "explorations": 40,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 185,
+    "companionAbilities": 153,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 668,
+    "weekly": 83,
+    "monthly": 13
+  },
+  "requestsByScope": {
+    "universal": 273,
+    "class": 170,
+    "profession": 321
+  },
+  "classHistory": [
+    {
+      "id": "scholar",
+      "level": 33,
+      "potential": 33,
+      "xp": 19415
+    },
+    {
+      "id": "disciple",
+      "level": 30,
+      "potential": 30,
+      "xp": 15720
+    },
+    {
+      "id": "sage",
+      "level": 39,
+      "potential": 41,
+      "xp": 29189
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Research Assistant",
+      "level": 78,
+      "xp": 98820
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "science-practice",
+      "level": 78,
+      "xp": 98820
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "INT 32",
+      "met": true
+    },
+    {
+      "label": "WIS 28",
+      "met": true
+    },
+    {
+      "label": "Scholar Lv. 20",
+      "met": true
+    },
+    {
+      "label": "Disciple Lv. 15",
+      "met": true
+    }
+  ],
+  "activeDays": 271,
+  "minutes": 10804,
+  "partialWorkouts": 0,
+  "expiredCommitments": 24,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 12,
+  "directVocationRequests": 187,
+  "finalGoal": "sage",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 10,
+  "profession4Days": 8,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 255,
+    "weekly: #-day commitment: #/# days": 286,
+    "monthly: Dated practice days: #/#": 325,
+    "monthly: #-day commitment: #/# days": 310,
+    "Time budget": 1
+  },
+  "examDays": 34,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-science-0",
+      "name": "Research Question",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "element-ice-1",
+      "name": "Rime Shard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "career-opening-science-0",
+      "name": "Literature Review: Primer",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "career-opening-science-1",
+      "name": "Experimental Design: Primer",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-science-1",
+      "name": "Literature Review",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-science-2",
+      "name": "Experimental Design",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "element-ice-2",
+      "name": "Rime Shard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-science-3",
+      "name": "Measurement Quality",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-science-4",
+      "name": "Data Collection",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "profession-science-5",
+      "name": "Statistical Reasoning",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "profession-science-6",
+      "name": "Reproducibility",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "profession-science-7",
+      "name": "Research Report",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "request",
+      "id": "scholar-monthly",
+      "title": "Scholar training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "element-fire-1",
+      "name": "Ember Needle: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "element-storm-1",
+      "name": "Storm Chain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "request",
+      "id": "trial-disciple-entry",
+      "title": "Disciple entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 78,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "disciple",
+      "playerLevel": 25,
+      "classLevel": 1
+    },
+    {
+      "day": 80,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 80,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "focus-disciple-0",
+      "name": "Disciple Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "arc-cleric-1",
+      "name": "Restorative Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "opening-cleric-0-0",
+      "name": "Helping Hand",
+      "wallet": "combat"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "focus-disciple-1",
+      "name": "Prayer of Restoration: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "opening-cleric-1-0",
+      "name": "Protective Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "opening-cleric-2-0",
+      "name": "Words of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "arc-cleric-2",
+      "name": "Sheltering Light",
+      "wallet": "combat"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "arc-cleric-3",
+      "name": "Mercy’s Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "arc-cleric-4",
+      "name": "Steady Counsel",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "arc-cleric-5",
+      "name": "Encouraging Word",
+      "wallet": "combat"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "opening-cleric-0-1",
+      "name": "Helping Hand: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "opening-cleric-1-1",
+      "name": "Protective Prayer: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "opening-cleric-2-1",
+      "name": "Words of Courage: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "profession-science-8",
+      "name": "Research Portfolio",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 128,
+      "type": "skill",
+      "id": "universal-wis-1",
+      "name": "Reflection",
+      "wallet": "universal"
+    },
+    {
+      "day": 128,
+      "type": "skill",
+      "id": "scripture",
+      "name": "Rooted in the Word",
+      "wallet": "universal"
+    },
+    {
+      "day": 128,
+      "type": "skill",
+      "id": "arc-cleric-6",
+      "name": "Sanctuary",
+      "wallet": "combat"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 135,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 135,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 135,
+      "type": "skill",
+      "id": "opening-cleric-0-2",
+      "name": "Helping Hand: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 135,
+      "type": "skill",
+      "id": "opening-cleric-1-2",
+      "name": "Protective Prayer: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 135,
+      "type": "skill",
+      "id": "opening-cleric-2-2",
+      "name": "Words of Courage: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "arc-cleric-7",
+      "name": "Shared Resolve",
+      "wallet": "combat"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "arc-cleric-8",
+      "name": "Radiant Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 146,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 152,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "universal-int-3",
+      "name": "Tactical Insight",
+      "wallet": "universal"
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 180,
+      "type": "skill",
+      "id": "universal-wis-3",
+      "name": "Field Medicine",
+      "wallet": "universal"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "request",
+      "id": "disciple-monthly",
+      "title": "Disciple training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "request",
+      "id": "trial-sage-entry",
+      "title": "Sage entry trial",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 214,
+      "type": "class-change",
+      "from": "disciple",
+      "to": "sage",
+      "playerLevel": 46,
+      "classLevel": 1
+    },
+    {
+      "day": 215,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 215,
+      "type": "take",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "focus-sage-0",
+      "name": "Sage Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "arc-mage-6",
+      "name": "Cinder Seal",
+      "wallet": "combat"
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "opening-mage-0-2",
+      "name": "Spark: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "trial-sage-entry",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "skill",
+      "id": "focus-sage-1",
+      "name": "Sage’s Revelation: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 222,
+      "type": "skill",
+      "id": "opening-mage-1-2",
+      "name": "Arcane Reading: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 222,
+      "type": "skill",
+      "id": "opening-mage-2-2",
+      "name": "Lesser Barrier: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "skill",
+      "id": "profession-science-9",
+      "name": "Independent Inquiry",
+      "wallet": "profession:science"
+    },
+    {
+      "day": 229,
+      "type": "skill",
+      "id": "element-fire-2",
+      "name": "Ember Needle: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 229,
+      "type": "skill",
+      "id": "element-storm-2",
+      "name": "Storm Chain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "arc-mage-7",
+      "name": "Confluence",
+      "wallet": "combat"
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "arc-mage-8",
+      "name": "Shared Reservoir",
+      "wallet": "combat"
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "arc-mage-9",
+      "name": "Starfall",
+      "wallet": "combat"
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 240,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 240,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "skill",
+      "id": "arc-cleric-9",
+      "name": "Watchful Care",
+      "wallet": "combat"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "sage-monthly",
+      "title": "Sage training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 300,
+      "type": "skill",
+      "id": "focus-sage-2",
+      "name": "Sage’s Revelation: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-science-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "q-study-group",
+      "title": "Study circle",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Research Assistant",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-science-practice-monthly",
+      "title": "Science portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "vocation-science-practice-weekly",
+      "title": "Science field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-science-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "request",
+      "id": "sage-monthly",
+      "title": "Sage training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-science-0",
+    "focus-scholar-0",
+    "focus-scholar-1",
+    "element-ice-0",
+    "element-ice-1",
+    "career-opening-science-0",
+    "career-opening-science-1",
+    "profession-science-1",
+    "profession-science-2",
+    "element-ice-2",
+    "profession-science-3",
+    "profession-science-4",
+    "profession-science-5",
+    "profession-science-6",
+    "arc-mage-1",
+    "opening-mage-0-0",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "profession-science-7",
+    "element-fire-0",
+    "element-storm-0",
+    "arc-mage-2",
+    "arc-mage-3",
+    "arc-mage-4",
+    "arc-mage-5",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1",
+    "element-fire-1",
+    "element-storm-1",
+    "focus-disciple-0",
+    "arc-cleric-1",
+    "opening-cleric-0-0",
+    "focus-disciple-1",
+    "opening-cleric-1-0",
+    "opening-cleric-2-0",
+    "arc-cleric-2",
+    "arc-cleric-3",
+    "arc-cleric-4",
+    "arc-cleric-5",
+    "opening-cleric-0-1",
+    "opening-cleric-1-1",
+    "opening-cleric-2-1",
+    "universal-con-1",
+    "universal-con-2",
+    "profession-science-8",
+    "universal-int-1",
+    "universal-int-2",
+    "universal-wis-1",
+    "scripture",
+    "arc-cleric-6",
+    "opening-cleric-0-2",
+    "opening-cleric-1-2",
+    "opening-cleric-2-2",
+    "universal-con-3",
+    "arc-cleric-7",
+    "arc-cleric-8",
+    "universal-int-3",
+    "universal-wis-3",
+    "focus-sage-0",
+    "arc-mage-6",
+    "opening-mage-0-2",
+    "focus-sage-1",
+    "opening-mage-1-2",
+    "opening-mage-2-2",
+    "profession-science-9",
+    "element-fire-2",
+    "element-storm-2",
+    "arc-mage-7",
+    "arc-mage-8",
+    "arc-mage-9",
+    "arc-cleric-9",
+    "focus-sage-2"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-science-0",
+      "wallet": "profession:science",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-science-0",
+      "wallet": "profession:science",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-science-1",
+      "wallet": "profession:science",
+      "cost": 1
+    },
+    {
+      "id": "profession-science-1",
+      "wallet": "profession:science",
+      "cost": 2
+    },
+    {
+      "id": "profession-science-2",
+      "wallet": "profession:science",
+      "cost": 2
+    },
+    {
+      "id": "element-ice-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "profession-science-3",
+      "wallet": "profession:science",
+      "cost": 3
+    },
+    {
+      "id": "profession-science-4",
+      "wallet": "profession:science",
+      "cost": 5
+    },
+    {
+      "id": "profession-science-5",
+      "wallet": "profession:science",
+      "cost": 8
+    },
+    {
+      "id": "profession-science-6",
+      "wallet": "profession:science",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-science-7",
+      "wallet": "profession:science",
+      "cost": 14
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-fire-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-storm-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "focus-disciple-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-disciple-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-cleric-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-cleric-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-cleric-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-science-8",
+      "wallet": "profession:science",
+      "cost": 18
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-wis-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "scripture",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-cleric-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-cleric-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-cleric-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-cleric-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "arc-cleric-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-cleric-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "universal-int-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "universal-wis-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "focus-sage-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-mage-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "focus-sage-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "profession-science-9",
+      "wallet": "profession:science",
+      "cost": 24
+    },
+    {
+      "id": "element-fire-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-storm-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-mage-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-cleric-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "focus-sage-2",
+      "wallet": "combat",
+      "cost": 14
+    }
+  ],
+  "utilities": [
+    {
+      "id": "field-record",
+      "name": "Naturalist’s Field Record",
+      "category": "science",
+      "learn": "Research Question or Literature Review: Primer",
+      "skills": [
+        "profession-science-0",
+        "career-opening-science-0"
+      ],
+      "effect": "In Adventures, review recorded exploration outcomes and confirmed defeats, then export a field report."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": 214,
+  "finalCharacterBytes": 473988
+}

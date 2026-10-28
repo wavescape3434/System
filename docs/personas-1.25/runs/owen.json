@@ -1,0 +1,1635 @@
+{
+  "id": "owen",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "owen",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 10,
+      "DEX": 7,
+      "CON": 8,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "sentinel",
+    "profession": "Truck Driver",
+    "vocation": "logistics-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 184,
+    "playerLevel": 16,
+    "guildRank": "D",
+    "xp": 13440,
+    "classId": "sentinel",
+    "classLevel": 19,
+    "classPotential": 19,
+    "profession": "Truck Driver",
+    "professionLevel": 17,
+    "professionPotential": 17,
+    "vocation": "logistics-practice",
+    "vocationLevel": 17,
+    "stats": {
+      "STR": 10,
+      "DEX": 7,
+      "CON": 26,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 371,
+    "gold": 9657,
+    "skills": 34,
+    "careerUtilities": 1,
+    "examPasses": 6,
+    "stages": 41,
+    "wins": 43,
+    "losses": 0,
+    "minutes": 4567
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 4,
+      "playerLevel": 1,
+      "guildRank": "F",
+      "xp": 280,
+      "classId": "sentinel",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Truck Driver",
+      "professionLevel": 2,
+      "professionPotential": 2,
+      "vocation": "logistics-practice",
+      "vocationLevel": 2,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 8,
+      "gold": 86,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 1,
+      "wins": 1,
+      "losses": 0,
+      "minutes": 100
+    },
+    {
+      "day": 30,
+      "active": 17,
+      "playerLevel": 4,
+      "guildRank": "F",
+      "xp": 1190,
+      "classId": "sentinel",
+      "classLevel": 4,
+      "classPotential": 4,
+      "profession": "Truck Driver",
+      "professionLevel": 4,
+      "professionPotential": 4,
+      "vocation": "logistics-practice",
+      "vocationLevel": 4,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 34,
+      "gold": 703,
+      "skills": 10,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 425
+    },
+    {
+      "day": 90,
+      "active": 47,
+      "playerLevel": 7,
+      "guildRank": "E",
+      "xp": 3430,
+      "classId": "sentinel",
+      "classLevel": 8,
+      "classPotential": 8,
+      "profession": "Truck Driver",
+      "professionLevel": 8,
+      "professionPotential": 8,
+      "vocation": "logistics-practice",
+      "vocationLevel": 8,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 12,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 95,
+      "gold": 2226,
+      "skills": 17,
+      "careerUtilities": 1,
+      "examPasses": 2,
+      "stages": 10,
+      "wins": 10,
+      "losses": 0,
+      "minutes": 1164
+    },
+    {
+      "day": 180,
+      "active": 91,
+      "playerLevel": 11,
+      "guildRank": "E",
+      "xp": 6650,
+      "classId": "sentinel",
+      "classLevel": 13,
+      "classPotential": 13,
+      "profession": "Truck Driver",
+      "professionLevel": 11,
+      "professionPotential": 11,
+      "vocation": "logistics-practice",
+      "vocationLevel": 11,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 18,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 184,
+      "gold": 3345,
+      "skills": 25,
+      "careerUtilities": 1,
+      "examPasses": 4,
+      "stages": 19,
+      "wins": 20,
+      "losses": 0,
+      "minutes": 2253
+    },
+    {
+      "day": 365,
+      "active": 184,
+      "playerLevel": 16,
+      "guildRank": "D",
+      "xp": 13440,
+      "classId": "sentinel",
+      "classLevel": 19,
+      "classPotential": 19,
+      "profession": "Truck Driver",
+      "professionLevel": 17,
+      "professionPotential": 17,
+      "vocation": "logistics-practice",
+      "vocationLevel": 17,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 26,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 371,
+      "gold": 9657,
+      "skills": 34,
+      "careerUtilities": 1,
+      "examPasses": 6,
+      "stages": 41,
+      "wins": 43,
+      "losses": 0,
+      "minutes": 4567
+    }
+  ],
+  "income": {
+    "requests": 2688,
+    "login": 4055,
+    "battles": 2475,
+    "exploration": 39,
+    "commissions": 1950
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 150,
+    "tempering": 900,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 43,
+    "wins": 43,
+    "losses": 0,
+    "actions": 147,
+    "bounds": 0,
+    "explorations": 9,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 6,
+    "companionAbilities": 87,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 362,
+    "weekly": 5,
+    "monthly": 4
+  },
+  "requestsByScope": {
+    "universal": 193,
+    "class": 93,
+    "profession": 85
+  },
+  "classHistory": [
+    {
+      "id": "sentinel",
+      "level": 19,
+      "potential": 19,
+      "xp": 6960
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Truck Driver",
+      "level": 17,
+      "xp": 5698
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "logistics-practice",
+      "level": 17,
+      "xp": 5698
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "CON 34",
+      "met": false
+    },
+    {
+      "label": "STR 25",
+      "met": false
+    },
+    {
+      "label": "Sentinel Lv. 25",
+      "met": false
+    },
+    {
+      "label": "Ironheart entry trial",
+      "met": false
+    }
+  ],
+  "activeDays": 184,
+  "minutes": 4567,
+  "partialWorkouts": 0,
+  "expiredCommitments": 47,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 0,
+  "finalGoal": "ironheart",
+  "failedAttempts": 0,
+  "duplicateGuards": 7,
+  "level4Days": 1,
+  "profession4Days": 3,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "Time budget": 244,
+    "weekly: Dated practice days: #/#": 92,
+    "weekly: #-day commitment: #/# days": 44,
+    "monthly: Dated practice days: #/#": 77,
+    "monthly: #-day commitment: #/# days": 39
+  },
+  "examDays": 6,
+  "events": [
+    {
+      "day": 2,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 2,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 9,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "profession-logistics-0",
+      "name": "Flow Mapping",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "focus-sentinel-0",
+      "name": "Sentinel Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "arc-guardian-1",
+      "name": "Shield Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "career-opening-logistics-0",
+      "name": "Inventory Accuracy: Primer",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "opening-guardian-0-0",
+      "name": "Interpose",
+      "wallet": "combat"
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "career-opening-logistics-1",
+      "name": "Route Planning: Primer",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "opening-guardian-1-0",
+      "name": "Challenge",
+      "wallet": "combat"
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-logistics-1",
+      "name": "Inventory Accuracy",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "opening-guardian-2-0",
+      "name": "Shield Feint",
+      "wallet": "combat"
+    },
+    {
+      "day": 35,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sentinel",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 487
+    },
+    {
+      "day": 35,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 37,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "arc-guardian-2",
+      "name": "Tower Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 42,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Truck Driver",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 493
+    },
+    {
+      "day": 42,
+      "type": "request",
+      "id": "habit-walk-monthly-f",
+      "title": "Walking adventure · 8 days",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 42,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 44,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "focus-sentinel-1",
+      "name": "Sentinel’s Challenge: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "profession-logistics-2",
+      "name": "Route Planning",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 50,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 51,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 58,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "arc-guardian-3",
+      "name": "Shield Rush",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 65,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "profession-logistics-3",
+      "name": "Capacity Planning",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 71,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 79,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 79,
+      "type": "skill",
+      "id": "arc-guardian-4",
+      "name": "Iron Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 91,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 93,
+      "type": "skill",
+      "id": "profession-logistics-4",
+      "name": "Dispatch Coordination",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 93,
+      "type": "skill",
+      "id": "arc-guardian-5",
+      "name": "Return the Blow",
+      "wallet": "combat"
+    },
+    {
+      "day": 100,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "opening-guardian-0-1",
+      "name": "Interpose: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 126,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sentinel",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 525
+    },
+    {
+      "day": 126,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 128,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 128,
+      "type": "skill",
+      "id": "opening-guardian-1-1",
+      "name": "Challenge: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 137,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 142,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 147,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Truck Driver",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 529
+    },
+    {
+      "day": 147,
+      "type": "request",
+      "id": "habit-walk-monthly-f",
+      "title": "Walking adventure · 8 days",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 147,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 149,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "skill",
+      "id": "opening-guardian-2-1",
+      "name": "Shield Feint: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 151,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 155,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 156,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 165,
+      "type": "skill",
+      "id": "arc-guardian-6",
+      "name": "Hold the Gate",
+      "wallet": "combat"
+    },
+    {
+      "day": 170,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 176,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 182,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 184,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 186,
+      "type": "skill",
+      "id": "profession-logistics-5",
+      "name": "Supply Risk",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 190,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 191,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 197,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 198,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 200,
+      "type": "skill",
+      "id": "profession-logistics-6",
+      "name": "Delivery Metrics",
+      "wallet": "profession:logistics"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 207,
+      "type": "skill",
+      "id": "opening-guardian-0-2",
+      "name": "Interpose: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 219,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 225,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 226,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 232,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 233,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 238,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sentinel",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 537
+    },
+    {
+      "day": 238,
+      "type": "request",
+      "id": "habit-walk-monthly-f",
+      "title": "Walking adventure · 8 days",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 238,
+      "type": "skill",
+      "id": "opening-guardian-1-2",
+      "name": "Challenge: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 239,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 242,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 244,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 247,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 254,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 261,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 268,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 273,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Truck Driver",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 538
+    },
+    {
+      "day": 273,
+      "type": "request",
+      "id": "habit-walk-monthly-f",
+      "title": "Walking adventure · 8 days",
+      "cadence": "monthly",
+      "xp": 180,
+      "gold": 36
+    },
+    {
+      "day": 273,
+      "type": "request",
+      "id": "habit-walk-weekly-f",
+      "title": "Walking week · 3 days",
+      "cadence": "weekly",
+      "xp": 40,
+      "gold": 8
+    },
+    {
+      "day": 273,
+      "type": "skill",
+      "id": "opening-guardian-2-2",
+      "name": "Shield Feint: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 275,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 281,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 289,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 296,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 302,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 303,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 303,
+      "type": "skill",
+      "id": "arc-guardian-7",
+      "name": "Rescue Formation",
+      "wallet": "combat"
+    },
+    {
+      "day": 305,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 310,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 317,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 324,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 331,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "habit-walk-monthly-f",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 345,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 345,
+      "type": "skill",
+      "id": "arc-guardian-8",
+      "name": "Unbroken Watch",
+      "wallet": "combat"
+    },
+    {
+      "day": 351,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 359,
+      "type": "take",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "habit-walk-weekly-f",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-logistics-0",
+    "focus-sentinel-0",
+    "arc-guardian-1",
+    "career-opening-logistics-0",
+    "opening-guardian-0-0",
+    "career-opening-logistics-1",
+    "opening-guardian-1-0",
+    "profession-logistics-1",
+    "opening-guardian-2-0",
+    "arc-guardian-2",
+    "focus-sentinel-1",
+    "profession-logistics-2",
+    "universal-con-1",
+    "arc-guardian-3",
+    "profession-logistics-3",
+    "arc-guardian-4",
+    "profession-logistics-4",
+    "arc-guardian-5",
+    "universal-con-2",
+    "opening-guardian-0-1",
+    "opening-guardian-1-1",
+    "opening-guardian-2-1",
+    "universal-int-1",
+    "arc-guardian-6",
+    "profession-logistics-5",
+    "profession-logistics-6",
+    "opening-guardian-0-2",
+    "universal-int-2",
+    "opening-guardian-1-2",
+    "opening-guardian-2-2",
+    "universal-con-3",
+    "arc-guardian-7",
+    "arc-guardian-8"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-logistics-0",
+      "wallet": "profession:logistics",
+      "cost": 1
+    },
+    {
+      "id": "focus-sentinel-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-guardian-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-logistics-0",
+      "wallet": "profession:logistics",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-logistics-1",
+      "wallet": "profession:logistics",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-logistics-1",
+      "wallet": "profession:logistics",
+      "cost": 2
+    },
+    {
+      "id": "opening-guardian-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-guardian-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "focus-sentinel-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-logistics-2",
+      "wallet": "profession:logistics",
+      "cost": 2
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-guardian-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "profession-logistics-3",
+      "wallet": "profession:logistics",
+      "cost": 3
+    },
+    {
+      "id": "arc-guardian-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-logistics-4",
+      "wallet": "profession:logistics",
+      "cost": 5
+    },
+    {
+      "id": "arc-guardian-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-guardian-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-guardian-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-guardian-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-guardian-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "profession-logistics-5",
+      "wallet": "profession:logistics",
+      "cost": 8
+    },
+    {
+      "id": "profession-logistics-6",
+      "wallet": "profession:logistics",
+      "cost": 8
+    },
+    {
+      "id": "opening-guardian-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-guardian-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-guardian-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "arc-guardian-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-guardian-8",
+      "wallet": "combat",
+      "cost": 8
+    }
+  ],
+  "utilities": [
+    {
+      "id": "manifest",
+      "name": "Caravan Manifest",
+      "category": "logistics",
+      "learn": "Flow Mapping or Inventory Accuracy: Primer",
+      "skills": [
+        "profession-logistics-0",
+        "career-opening-logistics-0"
+      ],
+      "effect": "In Adventures, combine accepted delivery requirements, compare carried materials and find accessible supply routes."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 234444
+}

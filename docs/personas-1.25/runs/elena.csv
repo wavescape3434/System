@@ -1,0 +1,365 @@
+elena,1,1,1,F,80,warrior,1,1,Baker,1,1,hospitality-practice,1,9,10,10,10,10,10,3,26,1,0,0,0,0,0,40
+elena,2,1,1,F,150,warrior,1,1,Baker,2,2,hospitality-practice,2,9,10,10,10,10,10,5,55,1,0,0,0,0,0,65
+elena,3,0,1,F,150,warrior,1,1,Baker,2,2,hospitality-practice,2,9,10,10,10,10,10,5,55,1,0,0,0,0,0,65
+elena,4,0,1,F,150,warrior,1,1,Baker,2,2,hospitality-practice,2,9,10,10,10,10,10,5,55,1,0,0,0,0,0,65
+elena,5,1,3,F,820,warrior,1,1,Baker,4,5,hospitality-practice,5,9,10,10,10,10,10,8,204,1,0,0,0,0,0,93
+elena,6,1,3,F,890,warrior,1,1,Baker,4,5,hospitality-practice,5,9,10,10,10,10,10,10,263,1,0,0,2,2,0,128
+elena,7,0,3,F,890,warrior,1,1,Baker,4,5,hospitality-practice,5,9,10,10,10,10,10,10,263,1,0,0,2,2,0,128
+elena,8,1,3,F,970,warrior,1,1,Baker,4,6,hospitality-practice,6,9,10,10,10,10,10,13,299,4,1,0,2,2,0,168
+elena,9,1,3,F,1040,warrior,1,1,Baker,4,6,hospitality-practice,6,9,10,10,10,10,10,15,338,4,1,0,2,2,0,193
+elena,10,1,4,F,1110,warrior,1,1,Baker,4,6,hospitality-practice,6,9,10,10,10,10,10,17,517,4,1,0,4,4,0,218
+elena,11,1,4,F,1230,warrior,1,1,Baker,4,6,hospitality-practice,6,9,10,10,10,10,10,21,551,4,1,0,4,4,0,261
+elena,12,1,5,F,1900,warrior,1,1,Baker,4,8,hospitality-practice,8,9,10,10,10,10,10,24,700,4,1,0,4,4,0,289
+elena,13,1,5,F,1970,warrior,1,1,Baker,4,9,hospitality-practice,9,9,10,10,10,10,10,26,689,4,1,0,6,6,0,314
+elena,14,0,5,F,1970,warrior,1,1,Baker,4,9,hospitality-practice,9,9,10,10,10,10,10,26,689,4,1,0,6,6,0,314
+elena,15,1,5,F,2050,warrior,1,1,Baker,4,9,hospitality-practice,9,9,10,10,10,10,10,29,725,7,1,0,6,6,0,354
+elena,16,1,5,F,2120,warrior,1,1,Baker,4,9,hospitality-practice,9,9,10,10,10,10,10,31,759,7,1,0,6,6,0,379
+elena,17,1,6,F,2190,warrior,1,1,Baker,4,9,hospitality-practice,9,9,10,10,10,10,10,33,1108,7,1,0,8,8,0,404
+elena,18,1,6,F,2310,warrior,2,2,Baker,4,9,hospitality-practice,9,9,10,10,10,10,10,37,1182,7,1,0,8,8,0,447
+elena,19,1,7,E,2980,warrior,2,2,Baker,4,11,hospitality-practice,11,9,10,10,10,10,10,40,1326,7,1,0,8,8,0,475
+elena,20,1,7,E,3050,warrior,2,2,Baker,9,11,hospitality-practice,11,9,12,10,10,10,10,42,1350,7,1,1,10,10,0,510
+elena,21,0,7,E,3050,warrior,2,2,Baker,9,11,hospitality-practice,11,9,12,10,10,10,10,42,1350,7,1,1,10,10,0,510
+elena,22,1,13,D,9430,warrior,2,2,Baker,9,22,hospitality-practice,22,9,12,10,10,10,10,46,2641,10,1,1,10,10,0,553
+elena,23,1,13,D,9500,warrior,2,2,Baker,9,22,hospitality-practice,22,9,12,10,10,10,10,48,2675,10,1,1,10,10,0,578
+elena,24,1,13,D,9570,warrior,2,2,Baker,9,22,hospitality-practice,22,9,12,10,10,10,10,50,2719,10,1,1,11,12,0,603
+elena,25,1,14,D,9690,warrior,2,2,Baker,9,22,hospitality-practice,22,9,12,10,10,10,10,54,2768,10,1,1,11,12,0,646
+elena,26,1,14,D,10360,warrior,2,2,Baker,9,23,hospitality-practice,23,9,12,10,10,10,10,57,2952,10,1,1,11,12,0,674
+elena,27,1,14,D,10430,warrior,2,2,Baker,9,23,hospitality-practice,23,9,12,10,10,10,10,59,3046,10,1,1,12,14,0,699
+elena,28,0,14,D,10430,warrior,2,2,Baker,9,23,hospitality-practice,23,9,12,10,10,10,10,59,3046,10,1,1,12,14,0,699
+elena,29,1,14,D,10510,warrior,2,2,Baker,9,23,hospitality-practice,23,9,12,10,10,10,10,62,3077,12,1,1,12,14,0,739
+elena,30,1,14,D,10580,warrior,2,2,Baker,9,23,hospitality-practice,23,9,12,10,10,10,10,64,3106,12,1,1,12,14,0,764
+elena,31,1,14,D,10650,warrior,2,2,Baker,9,24,hospitality-practice,24,9,12,10,10,10,10,66,2785,12,1,1,14,16,0,789
+elena,32,1,14,D,10770,warrior,2,2,Baker,9,24,hospitality-practice,24,9,12,10,10,10,10,70,2829,12,1,1,14,16,0,832
+elena,33,1,15,D,11440,warrior,2,2,Baker,9,24,hospitality-practice,24,9,12,10,10,10,10,73,2988,12,1,1,14,16,0,860
+elena,34,1,15,D,11510,warrior,2,2,Baker,14,24,hospitality-practice,24,9,15,10,10,10,10,75,2852,12,1,2,16,18,0,895
+elena,35,0,15,D,11510,warrior,2,2,Baker,14,24,hospitality-practice,24,9,15,10,10,10,10,75,2852,12,1,2,16,18,0,895
+elena,36,1,15,D,11590,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,78,2878,13,1,2,16,18,0,935
+elena,37,1,15,D,11660,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,80,2907,13,1,2,16,18,0,960
+elena,38,1,15,D,11730,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,82,3016,13,1,2,17,20,0,985
+elena,39,1,15,D,11810,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,85,3052,13,1,2,17,20,0,1025
+elena,40,1,15,D,11880,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,87,3086,13,1,2,17,20,0,1050
+elena,41,1,15,D,11950,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,89,3235,13,1,2,19,22,0,1075
+elena,42,0,15,D,11950,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,89,3235,13,1,2,19,22,0,1075
+elena,43,1,15,D,12030,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,92,3301,13,1,2,19,22,0,1115
+elena,44,0,15,D,12030,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,92,3301,13,1,2,19,22,0,1115
+elena,45,1,15,D,12100,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,94,2880,13,1,2,21,24,0,1140
+elena,46,1,16,D,12220,warrior,3,3,Baker,14,25,hospitality-practice,25,9,15,10,10,10,10,98,2919,13,1,2,21,24,0,1183
+elena,47,1,16,D,12890,warrior,3,3,Baker,14,26,hospitality-practice,26,9,15,10,10,10,10,101,3068,13,1,2,21,24,0,1211
+elena,48,1,16,D,12960,warrior,3,3,Baker,14,26,hospitality-practice,26,9,15,10,10,10,10,103,3252,13,1,2,23,26,0,1236
+elena,49,0,16,D,12960,warrior,3,3,Baker,14,26,hospitality-practice,26,9,15,10,10,10,10,103,3252,13,1,2,23,26,0,1236
+elena,50,1,20,D,19340,warrior,3,3,Baker,14,33,hospitality-practice,33,9,15,10,10,10,10,107,4548,15,1,2,23,26,0,1279
+elena,51,1,20,D,19410,warrior,3,3,Baker,14,33,hospitality-practice,33,9,15,10,10,10,10,109,4587,15,1,2,23,26,0,1304
+elena,52,1,20,D,19480,warrior,3,3,Baker,14,33,hospitality-practice,33,9,15,10,10,10,10,111,4781,15,1,2,25,28,0,1329
+elena,53,1,20,D,19780,warrior,4,4,Baker,14,33,hospitality-practice,33,10,15,10,10,10,10,116,4851,15,1,2,25,28,0,1375
+elena,54,1,21,D,20450,warrior,4,4,Baker,14,33,hospitality-practice,33,10,15,10,10,10,10,119,5000,15,1,2,25,28,0,1403
+elena,55,1,21,D,20520,warrior,4,4,Baker,19,33,hospitality-practice,33,10,19,10,10,10,10,121,5129,15,1,3,26,30,0,1438
+elena,56,0,21,D,20520,warrior,4,4,Baker,19,33,hospitality-practice,33,10,19,10,10,10,10,121,5129,15,1,3,26,30,0,1438
+elena,57,0,21,D,20520,warrior,4,4,Baker,19,33,hospitality-practice,33,10,19,10,10,10,10,121,5129,15,1,3,26,30,0,1438
+elena,58,1,21,D,20590,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,123,5163,17,1,3,26,30,0,1463
+elena,59,1,21,D,20660,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,125,5337,17,1,3,28,32,0,1488
+elena,60,1,21,D,20755,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,128,5381,17,1,3,28,32,0,1543
+elena,61,0,21,D,20755,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,128,5381,17,1,3,28,32,0,1543
+elena,62,1,21,D,21425,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,131,5755,17,1,3,30,34,0,1571
+elena,63,0,21,D,21425,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,131,5755,17,1,3,30,34,0,1571
+elena,64,1,21,D,21520,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,134,5784,17,1,3,30,34,0,1626
+elena,65,1,21,D,21590,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,136,5813,18,1,3,30,34,0,1651
+elena,66,1,21,D,21660,warrior,4,4,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,138,6182,18,1,3,32,36,0,1676
+elena,67,1,22,D,21855,warrior,4,5,Baker,19,34,hospitality-practice,34,10,19,10,10,10,10,142,6241,18,1,3,32,36,0,1734
+elena,68,1,22,D,22525,warrior,4,5,Baker,19,35,hospitality-practice,35,10,19,10,10,10,10,145,6395,18,1,3,32,36,0,1762
+elena,69,1,22,D,22595,warrior,5,5,Baker,19,35,hospitality-practice,35,12,19,10,10,10,10,147,6569,18,1,4,34,38,0,1797
+elena,70,0,22,D,22595,warrior,5,5,Baker,19,35,hospitality-practice,35,12,19,10,10,10,10,147,6569,18,1,4,34,38,0,1797
+elena,71,0,22,D,22595,warrior,5,5,Baker,19,35,hospitality-practice,35,12,19,10,10,10,10,147,6569,18,1,4,34,38,0,1797
+elena,72,1,22,D,22665,warrior,5,5,Baker,19,35,hospitality-practice,35,12,19,10,10,10,10,149,6633,19,1,4,34,38,0,1822
+elena,73,1,22,D,22735,warrior,5,5,Baker,19,35,hospitality-practice,35,12,19,10,10,10,10,151,7277,19,1,4,35,40,0,1847
+elena,74,1,22,D,22830,warrior,5,5,Baker,19,35,hospitality-practice,35,12,19,10,10,10,10,154,7311,19,1,4,35,40,0,1902
+elena,75,1,22,D,23500,warrior,5,5,Baker,19,36,hospitality-practice,36,12,19,10,10,10,10,157,7460,19,1,4,35,40,0,1930
+elena,76,0,22,D,23500,warrior,5,5,Baker,19,36,hospitality-practice,36,12,19,10,10,10,10,157,7460,19,1,4,35,40,0,1930
+elena,77,0,22,D,23500,warrior,5,5,Baker,19,36,hospitality-practice,36,12,19,10,10,10,10,157,7460,19,1,4,35,40,0,1930
+elena,78,1,22,D,23595,warrior,5,5,Baker,19,36,hospitality-practice,36,12,19,10,10,10,10,160,7499,19,1,4,35,40,0,1985
+elena,79,1,23,D,23665,warrior,5,5,Baker,19,36,hospitality-practice,36,12,19,10,10,10,10,162,7533,19,1,4,35,40,0,2010
+elena,80,1,23,D,23735,warrior,5,5,Baker,19,36,hospitality-practice,36,12,19,10,10,10,10,164,7687,19,1,4,37,42,0,2035
+elena,81,1,23,D,23930,warrior,6,6,Baker,19,36,hospitality-practice,36,12,19,10,10,10,10,168,7776,19,1,4,37,42,0,2093
+elena,82,1,23,C,24600,warrior,6,6,Baker,19,37,hospitality-practice,37,12,19,10,10,10,10,171,7920,19,1,4,37,42,0,2121
+elena,83,1,23,C,24670,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,173,8529,19,1,5,39,44,0,2156
+elena,84,0,23,C,24670,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,173,8529,19,1,5,39,44,0,2156
+elena,85,0,23,C,24670,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,173,8529,19,1,5,39,44,0,2156
+elena,86,1,23,C,24740,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,175,8558,21,1,5,39,44,0,2181
+elena,87,1,23,C,24810,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,177,8757,21,1,5,41,46,0,2206
+elena,88,1,23,C,24905,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,180,8796,21,1,5,41,46,0,2261
+elena,89,1,23,C,25575,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,183,8955,21,1,5,41,46,0,2289
+elena,90,1,24,C,25645,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,185,9179,21,1,5,43,48,0,2314
+elena,91,0,24,C,25645,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,185,9179,21,1,5,43,48,0,2314
+elena,92,1,24,C,25740,warrior,6,6,Baker,24,37,hospitality-practice,37,12,24,10,10,10,10,188,9208,21,1,5,43,48,0,2369
+elena,93,1,24,C,25810,warrior,6,6,Baker,24,38,hospitality-practice,38,12,24,10,10,10,10,190,9237,21,1,5,43,48,0,2394
+elena,94,1,24,C,25880,warrior,6,6,Baker,24,38,hospitality-practice,38,12,24,10,10,10,10,192,9476,21,1,5,44,50,0,2419
+elena,95,1,24,C,26075,warrior,6,6,Baker,24,38,hospitality-practice,38,12,24,10,10,10,10,196,9535,21,1,5,44,50,0,2477
+elena,96,1,24,C,26745,warrior,6,6,Baker,24,38,hospitality-practice,38,12,24,10,10,10,10,199,9689,21,1,5,44,50,0,2505
+elena,97,1,24,C,26815,warrior,6,6,Baker,29,38,hospitality-practice,38,12,30,10,10,10,10,201,10928,21,1,6,46,52,0,2540
+elena,98,0,24,C,26815,warrior,6,6,Baker,29,38,hospitality-practice,38,12,30,10,10,10,10,201,10928,21,1,6,46,52,0,2540
+elena,99,1,24,C,26910,warrior,6,6,Baker,29,38,hospitality-practice,38,12,30,10,10,10,10,204,10997,21,1,6,46,52,0,2595
+elena,100,1,24,C,26980,warrior,6,6,Baker,29,38,hospitality-practice,38,12,30,10,10,10,10,206,11021,22,1,6,46,52,0,2620
+elena,101,1,24,C,27050,warrior,6,6,Baker,29,38,hospitality-practice,38,12,30,10,10,10,10,208,11380,22,1,6,48,54,0,2645
+elena,102,1,24,C,27245,warrior,7,7,Baker,29,38,hospitality-practice,38,12,30,10,10,10,10,212,11434,22,1,6,48,54,0,2703
+elena,103,1,25,C,27915,warrior,7,7,Baker,29,39,hospitality-practice,39,12,30,10,10,10,10,215,11588,22,1,6,48,54,0,2731
+elena,104,1,25,C,27985,warrior,7,7,Baker,29,39,hospitality-practice,39,12,30,10,10,10,10,217,11822,22,1,6,50,56,0,2756
+elena,105,0,25,C,27985,warrior,7,7,Baker,29,39,hospitality-practice,39,12,30,10,10,10,10,217,11822,22,1,6,50,56,0,2756
+elena,106,1,25,C,28080,warrior,7,7,Baker,29,39,hospitality-practice,39,12,30,10,10,10,10,220,11866,22,1,6,50,56,0,2811
+elena,107,0,25,C,28080,warrior,7,7,Baker,29,39,hospitality-practice,39,12,30,10,10,10,10,220,11866,22,1,6,50,56,0,2811
+elena,108,1,25,C,28150,warrior,7,7,Baker,29,39,hospitality-practice,39,12,30,10,10,10,10,222,12080,23,1,6,52,58,0,2836
+elena,109,1,25,C,28345,warrior,7,7,Baker,29,39,hospitality-practice,39,12,30,10,10,10,10,226,12129,23,1,6,52,58,0,2894
+elena,110,1,25,C,29015,warrior,7,7,Baker,29,40,hospitality-practice,40,12,30,10,10,10,10,229,12278,23,1,6,52,58,0,2922
+elena,111,1,28,C,35385,warrior,7,7,Baker,34,44,hospitality-practice,44,12,37,10,10,10,10,232,13762,23,1,7,54,60,0,2960
+elena,112,0,28,C,35385,warrior,7,7,Baker,34,44,hospitality-practice,44,12,37,10,10,10,10,232,13762,23,1,7,54,60,0,2960
+elena,113,1,28,C,35515,warrior,8,8,Baker,34,44,hospitality-practice,44,12,37,10,10,10,10,235,13808,23,1,7,54,60,0,3025
+elena,114,1,28,C,35585,warrior,8,8,Baker,34,44,hospitality-practice,44,12,37,10,10,10,10,237,13842,23,1,7,54,60,0,3050
+elena,115,1,28,C,35655,warrior,8,8,Baker,34,45,hospitality-practice,45,12,37,10,10,10,10,239,14051,25,1,7,56,62,0,3075
+elena,116,1,28,C,35785,warrior,8,8,Baker,34,45,hospitality-practice,45,12,37,10,10,10,10,242,14127,25,1,7,56,62,0,3140
+elena,117,1,29,C,37145,warrior,9,10,Baker,34,45,hospitality-practice,45,13,37,10,10,10,10,247,14409,25,1,7,56,62,0,3174
+elena,118,1,29,C,37215,warrior,9,10,Baker,34,45,hospitality-practice,45,13,37,10,10,10,10,249,14998,25,1,7,58,64,0,3209
+elena,119,0,29,C,37215,warrior,9,10,Baker,34,45,hospitality-practice,45,13,37,10,10,10,10,249,14998,25,1,7,58,64,0,3209
+elena,120,0,29,C,37215,warrior,9,10,Baker,34,45,hospitality-practice,45,13,37,10,10,10,10,249,14998,25,1,7,58,64,0,3209
+elena,121,1,29,C,37285,warrior,9,10,Baker,34,45,hospitality-practice,45,13,37,10,10,10,10,251,15027,25,1,7,58,64,0,3234
+elena,122,1,29,C,37355,warrior,9,10,Baker,34,45,hospitality-practice,45,13,37,10,10,10,10,253,15291,28,1,7,60,66,0,3259
+elena,123,1,29,C,37485,warrior,9,10,Baker,34,45,hospitality-practice,45,13,37,10,10,10,10,256,15337,28,1,7,60,66,0,3324
+elena,124,1,29,C,38155,warrior,9,10,Baker,34,46,hospitality-practice,46,13,37,10,10,10,10,259,15496,28,1,7,60,66,0,3352
+elena,125,1,29,C,38225,warrior,9,10,Baker,39,46,hospitality-practice,46,13,45,10,10,10,10,261,16190,28,1,8,62,68,0,3387
+elena,126,0,29,C,38225,warrior,9,10,Baker,39,46,hospitality-practice,46,13,45,10,10,10,10,261,16190,28,1,8,62,68,0,3387
+elena,127,1,29,C,38355,warrior,9,10,Baker,39,46,hospitality-practice,46,13,45,10,10,10,10,264,16226,28,1,8,62,68,0,3452
+elena,128,0,29,C,38355,warrior,9,10,Baker,39,46,hospitality-practice,46,13,45,10,10,10,10,264,16226,28,1,8,62,68,0,3452
+elena,129,1,29,C,38425,warrior,9,10,Baker,39,46,hospitality-practice,46,13,45,10,10,10,10,266,16665,28,1,8,63,70,0,3477
+elena,130,0,29,C,38425,warrior,9,10,Baker,39,46,hospitality-practice,46,13,45,10,10,10,10,266,16665,28,1,8,63,70,0,3477
+elena,131,1,30,C,39095,warrior,9,10,Baker,39,46,hospitality-practice,46,13,45,10,10,10,10,269,16814,28,1,8,63,70,0,3505
+elena,132,1,30,C,39165,warrior,10,10,Baker,39,46,hospitality-practice,46,16,45,10,10,10,10,271,17358,28,1,9,65,72,0,3540
+elena,133,0,30,C,39165,warrior,10,10,Baker,39,46,hospitality-practice,46,16,45,10,10,10,10,271,17358,28,1,9,65,72,0,3540
+elena,134,0,30,C,39165,warrior,10,10,Baker,39,46,hospitality-practice,46,16,45,10,10,10,10,271,17358,28,1,9,65,72,0,3540
+elena,135,0,30,C,39165,warrior,10,10,Baker,39,46,hospitality-practice,46,16,45,10,10,10,10,271,17358,28,1,9,65,72,0,3540
+elena,136,0,30,C,39165,warrior,10,10,Baker,39,46,hospitality-practice,46,16,45,10,10,10,10,271,17358,28,1,9,65,72,0,3540
+elena,137,1,30,C,39295,warrior,10,10,Baker,39,46,hospitality-practice,46,16,45,10,10,10,10,274,17404,28,1,9,65,72,0,3605
+elena,138,1,30,C,39365,warrior,10,10,Baker,39,46,hospitality-practice,46,16,45,10,10,10,10,276,17443,28,1,9,65,72,0,3630
+elena,139,1,30,C,40035,warrior,10,10,Baker,44,47,hospitality-practice,47,16,54,10,10,10,10,279,16852,28,1,10,67,74,0,3668
+elena,140,0,30,C,40035,warrior,10,10,Baker,44,47,hospitality-practice,47,16,54,10,10,10,10,279,16852,28,1,10,67,74,0,3668
+elena,141,1,30,C,40165,warrior,10,10,Baker,44,47,hospitality-practice,47,16,54,10,10,10,10,282,16888,28,1,10,67,74,0,3733
+elena,142,1,33,C,46535,warrior,10,10,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,285,18177,28,1,10,67,74,0,3761
+elena,143,1,33,C,46605,warrior,10,10,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,287,19056,28,1,10,69,76,0,3786
+elena,144,1,33,C,46735,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,290,19102,29,1,10,69,76,0,3851
+elena,145,1,33,C,46805,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,292,19136,29,1,10,69,76,0,3876
+elena,146,1,33,C,46875,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,294,19380,29,1,10,71,78,0,3901
+elena,147,0,33,C,46875,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,294,19380,29,1,10,71,78,0,3901
+elena,148,1,33,C,47005,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,297,19456,29,1,10,71,78,0,3966
+elena,149,1,33,C,47075,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,299,19480,29,1,10,71,78,0,3991
+elena,150,1,33,C,47145,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,301,19709,29,1,10,73,80,0,4016
+elena,151,1,33,C,47275,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,304,19750,29,1,10,73,80,0,4081
+elena,152,0,33,C,47275,warrior,11,11,Baker,44,51,hospitality-practice,51,16,54,10,10,10,10,304,19750,29,1,10,73,80,0,4081
+elena,153,1,33,C,48185,warrior,11,11,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,308,20132,29,1,11,75,82,0,4122
+elena,154,0,33,C,48185,warrior,11,11,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,308,20132,29,1,11,75,82,0,4122
+elena,155,0,33,C,48185,warrior,11,11,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,308,20132,29,1,11,75,82,0,4122
+elena,156,1,33,C,48255,warrior,11,11,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,310,20166,29,1,11,75,82,0,4147
+elena,157,1,33,C,48325,warrior,11,11,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,312,20390,29,1,11,77,84,0,4172
+elena,158,1,33,C,48455,warrior,12,12,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,315,20466,30,1,11,77,84,0,4237
+elena,159,1,34,C,49125,warrior,12,12,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,318,20610,30,1,11,77,84,0,4265
+elena,160,1,34,C,49195,warrior,12,12,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,320,21099,30,1,11,79,86,0,4290
+elena,161,0,34,C,49195,warrior,12,12,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,320,21099,30,1,11,79,86,0,4290
+elena,162,1,34,C,49325,warrior,12,12,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,323,21140,30,1,11,79,86,0,4355
+elena,163,1,34,C,49395,warrior,12,12,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,325,21174,30,1,11,79,86,0,4380
+elena,164,1,34,C,49465,warrior,12,12,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,327,21443,30,1,11,81,88,0,4405
+elena,165,1,34,C,49595,warrior,12,12,Baker,49,52,hospitality-practice,52,16,64,10,10,10,10,330,21494,31,1,11,81,88,0,4470
+elena,166,1,34,C,50505,warrior,12,12,Baker,49,53,hospitality-practice,53,16,64,10,10,10,10,334,21726,31,1,11,81,88,0,4501
+elena,167,1,34,C,50575,warrior,12,12,Baker,53,53,hospitality-practice,53,16,75,10,10,10,10,336,20630,31,1,12,83,90,0,4536
+elena,168,0,34,C,50575,warrior,12,12,Baker,53,53,hospitality-practice,53,16,75,10,10,10,10,336,20630,31,1,12,83,90,0,4536
+elena,169,1,34,C,50735,warrior,13,13,Baker,53,53,hospitality-practice,53,16,75,10,10,10,10,338,20677,31,1,12,83,90,0,4591
+elena,170,1,34,C,50805,warrior,13,13,Baker,53,53,hospitality-practice,53,16,75,10,10,10,10,340,20706,31,1,12,83,90,0,4616
+elena,171,1,34,C,50875,warrior,13,13,Baker,53,53,hospitality-practice,53,16,75,10,10,10,10,342,20910,31,1,12,84,92,0,4641
+elena,172,1,36,C,57245,warrior,13,13,Baker,54,57,hospitality-practice,57,16,75,10,10,10,10,345,22204,33,1,12,84,92,0,4669
+elena,173,1,36,C,57315,warrior,13,13,Baker,54,57,hospitality-practice,57,16,75,10,10,10,10,347,22243,33,1,12,84,92,0,4694
+elena,174,1,36,C,57385,warrior,13,13,Baker,54,57,hospitality-practice,57,16,75,10,10,10,10,349,22517,33,1,12,86,94,0,4719
+elena,175,0,36,C,57385,warrior,13,13,Baker,54,57,hospitality-practice,57,16,75,10,10,10,10,349,22517,33,1,12,86,94,0,4719
+elena,176,0,36,C,57385,warrior,13,13,Baker,54,57,hospitality-practice,57,16,75,10,10,10,10,349,22517,33,1,12,86,94,0,4719
+elena,177,1,36,C,57455,warrior,13,13,Baker,54,57,hospitality-practice,57,16,75,10,10,10,10,351,22541,33,1,12,86,94,0,4744
+elena,178,1,36,C,57525,warrior,13,13,Baker,54,57,hospitality-practice,57,16,75,10,10,10,10,353,22826,33,1,12,88,96,0,4769
+elena,179,1,37,C,57685,warrior,13,13,Baker,54,57,hospitality-practice,57,16,75,10,10,10,10,355,22873,33,1,12,88,96,0,4824
+elena,180,1,37,C,57755,warrior,13,13,Graphic Designer,1,1,creative-practice,1,16,75,10,10,10,10,357,22907,33,1,12,88,96,0,4849
+elena,181,1,37,C,57825,warrior,13,13,Graphic Designer,2,2,creative-practice,2,16,87,10,10,10,10,359,23071,33,1,13,88,98,0,4884
+elena,182,0,37,C,57825,warrior,13,13,Graphic Designer,2,2,creative-practice,2,16,87,10,10,10,10,359,23071,33,1,13,88,98,0,4884
+elena,183,0,37,C,57825,warrior,13,13,Graphic Designer,2,2,creative-practice,2,16,87,10,10,10,10,359,23071,33,1,13,88,98,0,4884
+elena,184,1,37,C,57895,warrior,13,13,Graphic Designer,2,2,creative-practice,2,16,87,10,10,10,10,361,23110,33,1,13,88,98,0,4909
+elena,185,1,37,C,57965,warrior,13,13,Graphic Designer,2,2,creative-practice,2,16,87,10,10,10,10,363,23444,33,1,13,90,100,0,4934
+elena,186,1,37,C,58035,warrior,13,13,Graphic Designer,3,3,creative-practice,3,16,87,10,10,10,10,365,23468,36,2,13,90,100,0,4959
+elena,187,1,37,C,58705,warrior,13,13,Graphic Designer,4,6,creative-practice,6,16,87,10,10,10,10,368,23617,36,2,13,90,100,0,4987
+elena,188,1,37,C,58775,warrior,13,13,Graphic Designer,4,6,creative-practice,6,16,87,10,10,10,10,370,24551,36,2,13,91,102,0,5022
+elena,189,0,37,C,58775,warrior,13,13,Graphic Designer,4,6,creative-practice,6,16,87,10,10,10,10,370,24551,36,2,13,91,102,0,5022
+elena,190,1,37,C,58935,warrior,13,13,Graphic Designer,4,6,creative-practice,6,16,87,10,10,10,10,372,24603,36,2,13,91,102,0,5077
+elena,191,1,37,C,59005,warrior,13,13,Graphic Designer,4,6,creative-practice,6,16,87,10,10,10,10,374,24637,36,2,13,91,102,0,5102
+elena,192,1,37,C,59075,warrior,13,13,Graphic Designer,4,7,creative-practice,7,16,87,10,10,10,10,376,24886,36,2,13,93,104,0,5127
+elena,193,1,37,C,59835,warrior,14,15,Graphic Designer,4,7,creative-practice,7,16,87,10,10,10,10,379,25088,39,2,13,93,104,0,5185
+elena,194,1,37,C,60505,warrior,14,15,Graphic Designer,4,9,creative-practice,9,16,87,10,10,10,10,382,25232,39,2,13,93,104,0,5213
+elena,195,1,37,C,60575,warrior,15,15,Graphic Designer,4,9,creative-practice,9,20,87,10,10,10,10,384,25931,39,2,14,95,106,0,5248
+elena,196,0,37,C,60575,warrior,15,15,Graphic Designer,4,9,creative-practice,9,20,87,10,10,10,10,384,25931,39,2,14,95,106,0,5248
+elena,197,1,38,C,60705,scholar,1,1,Graphic Designer,4,9,creative-practice,9,20,87,10,10,10,10,387,25972,39,2,14,95,106,0,5298
+elena,198,1,38,C,60775,scholar,1,1,Graphic Designer,4,9,creative-practice,9,20,87,10,10,10,10,389,26006,39,2,14,95,106,0,5323
+elena,199,0,38,C,60775,scholar,1,1,Graphic Designer,4,9,creative-practice,9,20,87,10,10,10,10,389,26006,39,2,14,95,106,0,5323
+elena,200,1,38,C,60845,scholar,1,1,Graphic Designer,4,9,creative-practice,9,20,87,10,10,10,10,391,26040,42,2,14,95,106,0,5348
+elena,201,1,38,C,61575,scholar,2,2,Graphic Designer,4,11,creative-practice,11,20,87,10,10,10,10,395,26211,42,2,14,95,106,0,5396
+elena,202,1,38,C,61645,scholar,2,2,Graphic Designer,9,11,creative-practice,11,20,87,10,10,10,12,397,27030,42,2,15,97,108,0,5431
+elena,203,0,38,C,61645,scholar,2,2,Graphic Designer,9,11,creative-practice,11,20,87,10,10,10,12,397,27030,42,2,15,97,108,0,5431
+elena,204,1,40,B,68075,scholar,2,2,Graphic Designer,9,22,creative-practice,22,20,87,10,10,10,12,401,28326,42,2,15,97,108,0,5479
+elena,205,1,40,B,68145,scholar,2,2,Graphic Designer,9,22,creative-practice,22,20,87,10,10,10,12,403,28355,42,2,15,97,108,0,5504
+elena,206,0,40,B,68145,scholar,2,2,Graphic Designer,9,22,creative-practice,22,20,87,10,10,10,12,403,28355,42,2,15,97,108,0,5504
+elena,207,1,40,B,68215,scholar,2,2,Graphic Designer,9,22,creative-practice,22,20,87,10,10,10,12,405,28384,45,2,15,97,108,0,5529
+elena,208,1,40,B,68945,scholar,2,2,Graphic Designer,9,23,creative-practice,23,20,87,10,10,10,12,409,28550,45,2,15,97,108,0,5577
+elena,209,1,40,B,69015,scholar,2,2,Graphic Designer,9,23,creative-practice,23,20,87,10,10,10,12,411,25654,45,2,15,99,110,0,5602
+elena,210,0,40,B,69015,scholar,2,2,Graphic Designer,9,23,creative-practice,23,20,87,10,10,10,12,411,25654,45,2,15,99,110,0,5602
+elena,211,1,40,B,69145,scholar,3,3,Graphic Designer,9,23,creative-practice,23,20,87,10,10,10,12,414,25705,45,2,15,99,110,0,5647
+elena,212,1,40,B,69215,scholar,3,3,Graphic Designer,9,23,creative-practice,23,20,87,10,10,10,12,416,25769,45,2,15,99,110,0,5672
+elena,213,0,40,B,69215,scholar,3,3,Graphic Designer,9,23,creative-practice,23,20,87,10,10,10,12,416,25769,45,2,15,99,110,0,5672
+elena,214,1,40,B,69285,scholar,3,3,Graphic Designer,9,23,creative-practice,23,20,87,10,10,10,12,418,25793,48,2,15,99,110,0,5697
+elena,215,1,40,B,69415,scholar,3,3,Graphic Designer,9,23,creative-practice,23,20,87,10,10,10,12,421,25834,48,2,15,99,110,0,5742
+elena,216,1,40,B,69485,scholar,3,3,Graphic Designer,14,24,creative-practice,24,20,87,10,10,10,15,423,26108,48,2,16,101,112,0,5777
+elena,217,0,40,B,69485,scholar,3,3,Graphic Designer,14,24,creative-practice,24,20,87,10,10,10,15,423,26108,48,2,16,101,112,0,5777
+elena,218,1,40,B,69615,scholar,3,3,Graphic Designer,14,24,creative-practice,24,20,87,10,10,10,15,426,26154,48,2,16,101,112,0,5822
+elena,219,1,40,B,69685,scholar,3,3,Graphic Designer,14,24,creative-practice,24,20,87,10,10,10,15,428,26188,48,2,16,101,112,0,5847
+elena,220,0,40,B,69685,scholar,3,3,Graphic Designer,14,24,creative-practice,24,20,87,10,10,10,15,428,26188,48,2,16,101,112,0,5847
+elena,221,0,40,B,69685,scholar,3,3,Graphic Designer,14,24,creative-practice,24,20,87,10,10,10,15,428,26188,48,2,16,101,112,0,5847
+elena,222,1,41,B,70415,scholar,4,4,Graphic Designer,14,25,creative-practice,25,20,87,10,10,10,15,432,26359,51,2,16,101,112,0,5895
+elena,223,0,41,B,70415,scholar,4,4,Graphic Designer,14,25,creative-practice,25,20,87,10,10,10,15,432,26359,51,2,16,101,112,0,5895
+elena,224,0,41,B,70415,scholar,4,4,Graphic Designer,14,25,creative-practice,25,20,87,10,10,10,15,432,26359,51,2,16,101,112,0,5895
+elena,225,1,41,B,70545,scholar,4,4,Graphic Designer,14,25,creative-practice,25,20,87,10,10,10,15,435,26435,51,2,16,101,112,0,5940
+elena,226,1,41,B,70615,scholar,4,4,Graphic Designer,14,25,creative-practice,25,20,87,10,10,10,15,437,26459,51,2,16,101,112,0,5965
+elena,227,1,41,B,70745,scholar,4,4,Graphic Designer,14,25,creative-practice,25,20,87,10,10,10,15,440,26740,51,2,16,103,114,0,6010
+elena,228,1,41,B,70815,scholar,4,4,Graphic Designer,14,25,creative-practice,25,20,87,10,10,10,15,442,26769,51,2,16,103,114,0,6035
+elena,229,1,41,B,72145,scholar,4,7,Graphic Designer,14,26,creative-practice,26,20,87,10,10,10,15,447,27055,54,2,16,103,114,0,6086
+elena,230,0,41,B,72145,scholar,4,7,Graphic Designer,14,26,creative-practice,26,20,87,10,10,10,15,447,27055,54,2,16,103,114,0,6086
+elena,231,0,41,B,72145,scholar,4,7,Graphic Designer,14,26,creative-practice,26,20,87,10,10,10,15,447,27055,54,2,16,103,114,0,6086
+elena,232,1,41,B,72275,scholar,4,7,Graphic Designer,14,26,creative-practice,26,20,87,10,10,10,15,450,27101,54,2,16,103,114,0,6131
+elena,233,1,41,B,72345,scholar,4,7,Graphic Designer,14,26,creative-practice,26,20,87,10,10,10,15,452,27140,54,2,16,103,114,0,6156
+elena,234,1,43,B,78775,scholar,4,7,Graphic Designer,14,32,creative-practice,32,20,87,10,10,10,15,456,28656,54,2,16,104,116,0,6204
+elena,235,1,43,B,78845,scholar,4,7,Graphic Designer,14,32,creative-practice,32,20,87,10,10,10,15,458,28680,54,2,16,104,116,0,6229
+elena,236,1,44,B,80175,scholar,4,9,Graphic Designer,14,33,creative-practice,33,20,87,10,10,10,15,463,28961,57,2,16,104,116,0,6280
+elena,237,1,44,B,80245,scholar,4,9,Graphic Designer,14,33,creative-practice,33,20,87,10,10,10,15,465,29770,57,2,16,106,118,0,6315
+elena,238,0,44,B,80245,scholar,4,9,Graphic Designer,14,33,creative-practice,33,20,87,10,10,10,15,465,29770,57,2,16,106,118,0,6315
+elena,239,1,44,B,80375,scholar,4,9,Graphic Designer,14,33,creative-practice,33,20,87,10,10,10,15,468,29816,57,2,16,106,118,0,6360
+elena,240,1,44,B,80445,scholar,4,9,Graphic Designer,14,33,creative-practice,33,20,87,10,10,10,15,470,29850,57,2,16,106,118,0,6385
+elena,241,1,44,B,80575,scholar,4,10,Graphic Designer,14,33,creative-practice,33,20,87,10,10,10,15,473,30086,57,2,16,107,120,0,6430
+elena,242,1,44,B,80645,scholar,4,10,Graphic Designer,14,33,creative-practice,33,20,87,10,10,10,15,475,30150,57,2,16,107,120,0,6455
+elena,243,1,44,B,81975,scholar,4,11,Graphic Designer,14,34,creative-practice,34,20,87,10,10,10,15,480,30426,60,2,16,107,120,0,6506
+elena,244,1,44,B,82045,scholar,4,11,Graphic Designer,19,34,creative-practice,34,20,87,10,10,10,19,482,30685,60,2,17,109,122,0,6541
+elena,245,0,44,B,82045,scholar,4,11,Graphic Designer,19,34,creative-practice,34,20,87,10,10,10,19,482,30685,60,2,17,109,122,0,6541
+elena,246,1,44,B,82175,scholar,4,11,Graphic Designer,19,34,creative-practice,34,20,87,10,10,10,19,485,30726,60,2,17,109,122,0,6586
+elena,247,1,44,B,82245,scholar,4,11,Graphic Designer,19,34,creative-practice,34,20,87,10,10,10,19,487,30760,60,2,17,109,122,0,6611
+elena,248,1,44,B,82375,scholar,4,12,Graphic Designer,19,34,creative-practice,34,20,87,10,10,10,19,490,31081,60,2,17,111,124,0,6656
+elena,249,1,44,B,82445,scholar,4,12,Graphic Designer,19,34,creative-practice,34,20,87,10,10,10,19,492,31120,60,2,17,111,124,0,6681
+elena,250,1,45,B,83775,scholar,4,13,Graphic Designer,19,35,creative-practice,35,20,87,10,10,10,19,497,31436,63,2,17,111,124,0,6732
+elena,251,1,45,B,83845,scholar,9,13,Graphic Designer,19,35,creative-practice,35,20,87,10,12,10,19,499,31660,63,2,18,112,126,0,6767
+elena,252,0,45,B,83845,scholar,9,13,Graphic Designer,19,35,creative-practice,35,20,87,10,12,10,19,499,31660,63,2,18,112,126,0,6767
+elena,253,1,45,B,83975,scholar,9,13,Graphic Designer,19,35,creative-practice,35,20,87,10,12,10,19,502,31701,63,2,18,112,126,0,6812
+elena,254,1,45,B,84045,scholar,9,13,Graphic Designer,19,35,creative-practice,35,20,87,10,12,10,19,504,31730,63,2,18,112,126,0,6837
+elena,255,1,45,B,84175,scholar,9,13,Graphic Designer,19,35,creative-practice,35,20,87,10,12,10,19,507,32051,63,2,18,114,128,0,6882
+elena,256,1,45,B,84245,scholar,9,13,Graphic Designer,19,35,creative-practice,35,20,87,10,12,10,19,509,32085,63,2,18,114,128,0,6907
+elena,257,1,45,B,84375,scholar,9,13,Graphic Designer,19,35,creative-practice,35,20,87,10,12,10,19,512,32136,64,2,18,114,128,0,6952
+elena,258,1,45,B,84445,scholar,9,13,Graphic Designer,24,35,creative-practice,35,20,87,10,12,10,24,514,28400,64,2,19,116,130,0,6987
+elena,259,0,45,B,84445,scholar,9,13,Graphic Designer,24,35,creative-practice,35,20,87,10,12,10,24,514,28400,64,2,19,116,130,0,6987
+elena,260,1,45,B,84575,scholar,9,14,Graphic Designer,24,35,creative-practice,35,20,87,10,12,10,24,517,28436,64,2,19,116,130,0,7032
+elena,261,1,45,B,84645,scholar,9,14,Graphic Designer,24,35,creative-practice,35,20,87,10,12,10,24,519,28465,64,2,19,116,130,0,7057
+elena,262,1,45,B,84775,scholar,9,14,Graphic Designer,24,35,creative-practice,35,20,87,10,12,10,24,522,28716,64,2,19,117,132,0,7102
+elena,263,1,45,B,84845,scholar,9,14,Graphic Designer,24,35,creative-practice,35,20,87,10,12,10,24,524,28750,64,2,19,117,132,0,7127
+elena,264,1,47,B,92475,scholar,9,15,Graphic Designer,24,41,creative-practice,41,20,87,10,12,10,24,530,30296,67,2,19,117,132,0,7181
+elena,265,0,47,B,92475,scholar,9,15,Graphic Designer,24,41,creative-practice,41,20,87,10,12,10,24,530,30296,67,2,19,117,132,0,7181
+elena,266,0,47,B,92475,scholar,9,15,Graphic Designer,24,41,creative-practice,41,20,87,10,12,10,24,530,30296,67,2,19,117,132,0,7181
+elena,267,1,47,B,92605,scholar,9,15,Graphic Designer,24,41,creative-practice,41,20,87,10,12,10,24,533,30347,67,2,19,117,132,0,7226
+elena,268,1,47,B,92675,scholar,9,15,Graphic Designer,24,41,creative-practice,41,20,87,10,12,10,24,535,30411,67,2,19,117,132,0,7251
+elena,269,1,49,B,99105,scholar,9,24,Graphic Designer,24,41,creative-practice,41,20,87,10,13,10,24,539,32437,67,2,19,118,134,0,7299
+elena,270,1,49,B,99175,scholar,9,24,Graphic Designer,24,41,creative-practice,41,20,87,10,13,10,24,541,32466,67,2,19,118,134,0,7324
+elena,271,1,49,B,100505,scholar,9,25,Graphic Designer,24,42,creative-practice,42,20,87,10,13,10,24,546,32747,70,2,19,118,134,0,7375
+elena,272,1,49,B,100575,scholar,9,25,Graphic Designer,24,42,creative-practice,42,20,87,10,13,10,24,548,33091,70,2,19,120,136,0,7410
+elena,273,0,49,B,100575,scholar,9,25,Graphic Designer,24,42,creative-practice,42,20,87,10,13,10,24,548,33091,70,2,19,120,136,0,7410
+elena,274,1,49,B,100705,scholar,9,25,Graphic Designer,24,42,creative-practice,42,20,87,10,13,10,24,551,33137,70,2,19,120,136,0,7455
+elena,275,1,49,B,100775,scholar,9,25,Graphic Designer,24,42,creative-practice,42,20,87,10,13,10,24,553,33176,70,2,19,120,136,0,7480
+elena,276,0,49,B,100775,scholar,9,25,Graphic Designer,24,42,creative-practice,42,20,87,10,13,10,24,553,33176,70,2,19,120,136,0,7480
+elena,277,0,49,B,100775,scholar,9,25,Graphic Designer,24,42,creative-practice,42,20,87,10,13,10,24,553,33176,70,2,19,120,136,0,7480
+elena,278,0,49,B,100775,scholar,9,25,Graphic Designer,24,42,creative-practice,42,20,87,10,13,10,24,553,33176,70,2,19,120,136,0,7480
+elena,279,1,49,B,101445,scholar,9,25,Graphic Designer,29,42,creative-practice,42,20,87,10,13,10,30,556,34550,72,2,20,121,138,0,7518
+elena,280,0,49,B,101445,scholar,9,25,Graphic Designer,29,42,creative-practice,42,20,87,10,13,10,30,556,34550,72,2,20,121,138,0,7518
+elena,281,0,49,B,101445,scholar,9,25,Graphic Designer,29,42,creative-practice,42,20,87,10,13,10,30,556,34550,72,2,20,121,138,0,7518
+elena,282,1,49,B,101515,scholar,9,25,Graphic Designer,29,42,creative-practice,42,20,87,10,13,10,30,558,34574,72,2,20,121,138,0,7543
+elena,283,1,49,B,101645,scholar,9,25,Graphic Designer,29,42,creative-practice,42,20,87,10,13,10,30,561,27245,72,2,20,123,140,0,7588
+elena,284,1,49,B,101715,scholar,9,25,Graphic Designer,29,42,creative-practice,42,20,87,10,13,10,30,563,27274,72,2,20,123,140,0,7613
+elena,285,1,50,B,102445,scholar,9,25,Graphic Designer,29,43,creative-practice,43,20,87,10,13,10,30,567,27440,72,2,20,123,140,0,7661
+elena,286,1,50,B,102515,scholar,14,25,Graphic Designer,29,43,creative-practice,43,20,87,10,16,10,30,569,27679,74,2,21,124,142,0,7696
+elena,287,0,50,B,102515,scholar,14,25,Graphic Designer,29,43,creative-practice,43,20,87,10,16,10,30,569,27679,74,2,21,124,142,0,7696
+elena,288,1,50,B,102645,scholar,14,26,Graphic Designer,29,43,creative-practice,43,20,87,10,16,10,30,572,27730,74,2,21,124,142,0,7741
+elena,289,1,50,B,102715,scholar,14,26,Graphic Designer,29,43,creative-practice,43,20,87,10,16,10,30,574,27794,74,2,21,124,142,0,7766
+elena,290,1,50,B,102845,scholar,14,26,Graphic Designer,29,43,creative-practice,43,20,87,10,16,10,30,577,28375,74,2,21,125,144,0,7811
+elena,291,1,50,B,102915,scholar,14,26,Graphic Designer,29,43,creative-practice,43,20,87,10,16,10,30,579,28404,74,2,21,125,144,0,7836
+elena,292,1,50,B,104245,scholar,14,26,Graphic Designer,29,44,creative-practice,44,20,87,10,16,10,30,584,28685,74,2,21,125,144,0,7887
+elena,293,1,50,B,104315,scholar,14,26,Graphic Designer,34,44,creative-practice,44,20,87,10,16,10,37,586,29554,74,2,22,127,146,0,7922
+elena,294,0,50,B,104315,scholar,14,26,Graphic Designer,34,44,creative-practice,44,20,87,10,16,10,37,586,29554,74,2,22,127,146,0,7922
+elena,295,0,50,B,104315,scholar,14,26,Graphic Designer,34,44,creative-practice,44,20,87,10,16,10,37,586,29554,74,2,22,127,146,0,7922
+elena,296,1,52,B,110685,scholar,14,26,Graphic Designer,34,48,creative-practice,48,20,87,10,16,10,37,589,30848,74,2,22,127,146,0,7950
+elena,297,1,52,B,110815,scholar,14,26,Graphic Designer,34,48,creative-practice,48,20,87,10,16,10,37,592,31079,74,2,22,127,148,0,7995
+elena,298,1,52,B,110885,scholar,14,26,Graphic Designer,34,48,creative-practice,48,20,87,10,16,10,37,594,31143,74,2,22,127,148,0,8020
+elena,299,1,52,B,111015,scholar,14,26,Graphic Designer,34,48,creative-practice,48,20,87,10,16,10,37,597,31179,74,2,22,127,148,0,8065
+elena,300,1,52,B,111085,scholar,19,26,Graphic Designer,34,48,creative-practice,48,20,87,10,20,10,37,599,15248,74,2,23,129,150,0,8100
+elena,301,0,52,B,111085,scholar,19,26,Graphic Designer,34,48,creative-practice,48,20,87,10,20,10,37,599,15248,74,2,23,129,150,0,8100
+elena,302,1,52,B,111245,warrior,15,15,Graphic Designer,34,48,creative-practice,48,20,87,10,20,10,37,601,15295,74,2,23,129,150,0,8155
+elena,303,0,52,B,111245,warrior,15,15,Graphic Designer,34,48,creative-practice,48,20,87,10,20,10,37,601,15295,74,2,23,129,150,0,8155
+elena,304,0,52,B,111245,warrior,15,15,Graphic Designer,34,48,creative-practice,48,20,87,10,20,10,37,601,15295,74,2,23,129,150,0,8155
+elena,305,1,52,B,112005,warrior,16,16,Graphic Designer,34,48,creative-practice,48,20,87,10,20,10,37,604,15467,74,2,23,129,150,0,8213
+elena,306,1,52,B,112075,warrior,16,16,Graphic Designer,34,48,creative-practice,48,20,87,10,20,10,37,606,15501,74,2,23,129,150,0,8238
+elena,307,1,52,B,112145,warrior,16,16,Graphic Designer,39,48,creative-practice,48,20,87,10,20,10,45,608,16305,77,2,24,131,152,0,8273
+elena,308,0,52,B,112145,warrior,16,16,Graphic Designer,39,48,creative-practice,48,20,87,10,20,10,45,608,16305,77,2,24,131,152,0,8273
+elena,309,1,52,B,112305,warrior,17,17,Graphic Designer,39,48,creative-practice,48,20,87,10,20,10,45,610,16387,77,2,24,131,152,0,8328
+elena,310,1,52,B,112375,warrior,17,17,Graphic Designer,39,48,creative-practice,48,20,87,10,20,10,45,612,16411,77,2,24,131,152,0,8353
+elena,311,1,52,B,112445,warrior,17,17,Graphic Designer,39,48,creative-practice,48,20,87,10,20,10,45,614,16720,77,2,24,133,154,0,8378
+elena,312,1,52,B,112515,warrior,17,17,Graphic Designer,39,48,creative-practice,48,20,87,10,20,10,45,616,16749,77,2,24,133,154,0,8403
+elena,313,1,52,B,112585,warrior,17,17,Graphic Designer,39,48,creative-practice,48,20,87,10,20,10,45,618,16783,77,2,24,133,154,0,8428
+elena,314,1,52,B,112655,warrior,17,17,Graphic Designer,39,48,creative-practice,48,20,87,10,25,10,45,620,17032,80,2,25,134,156,0,8463
+elena,315,0,52,B,112655,warrior,17,17,Graphic Designer,39,48,creative-practice,48,20,87,10,25,10,45,620,17032,80,2,25,134,156,0,8463
+elena,316,1,52,B,112815,warrior,17,17,Graphic Designer,39,48,creative-practice,48,20,87,10,25,10,45,622,17089,80,2,25,134,156,0,8518
+elena,317,1,52,B,112885,warrior,17,17,Graphic Designer,39,49,creative-practice,49,20,87,10,25,10,45,624,17153,80,2,25,134,156,0,8543
+elena,318,1,52,B,112955,warrior,17,17,Graphic Designer,39,49,creative-practice,49,20,87,10,25,10,45,626,17917,80,2,25,136,158,0,8568
+elena,319,1,52,B,113715,warrior,18,18,Graphic Designer,39,49,creative-practice,49,20,87,10,25,10,45,629,18084,80,2,25,136,158,0,8626
+elena,320,1,52,B,114385,warrior,18,18,Graphic Designer,39,49,creative-practice,49,20,87,10,25,10,45,632,18233,80,2,25,136,158,0,8654
+elena,321,1,53,B,114455,warrior,18,18,Graphic Designer,44,49,creative-practice,49,20,87,10,25,10,54,634,18537,83,2,26,138,160,0,8689
+elena,322,0,53,B,114455,warrior,18,18,Graphic Designer,44,49,creative-practice,49,20,87,10,25,10,54,634,18537,83,2,26,138,160,0,8689
+elena,323,1,53,B,114615,warrior,18,18,Graphic Designer,44,49,creative-practice,49,20,87,10,25,10,54,636,18589,83,2,26,138,160,0,8744
+elena,324,1,53,B,114685,warrior,18,18,Graphic Designer,44,49,creative-practice,49,20,87,10,25,10,54,638,18628,83,2,26,138,160,0,8769
+elena,325,1,54,B,121055,warrior,18,18,Graphic Designer,44,53,creative-practice,53,20,87,10,25,10,54,641,22227,83,2,26,139,162,0,8797
+elena,326,0,54,B,121055,warrior,18,18,Graphic Designer,44,53,creative-practice,53,20,87,10,25,10,54,641,22227,83,2,26,139,162,0,8797
+elena,327,1,54,B,121125,warrior,18,18,Graphic Designer,44,53,creative-practice,53,20,87,10,25,10,54,643,22251,83,2,26,139,162,0,8822
+elena,328,1,54,B,121195,warrior,18,18,Graphic Designer,44,53,creative-practice,53,20,87,10,31,10,54,645,22560,85,2,27,140,164,0,8857
+elena,329,0,54,B,121195,warrior,18,18,Graphic Designer,44,53,creative-practice,53,20,87,10,31,10,54,645,22560,85,2,27,140,164,0,8857
+elena,330,0,54,B,121195,warrior,18,18,Graphic Designer,44,53,creative-practice,53,20,87,10,31,10,54,645,22560,85,2,27,140,164,0,8857
+elena,331,0,54,B,121195,warrior,18,18,Graphic Designer,44,53,creative-practice,53,20,87,10,31,10,54,645,22560,85,2,27,140,164,0,8857
+elena,332,1,54,B,121265,warrior,18,18,Graphic Designer,44,53,creative-practice,53,20,87,10,31,10,54,647,22859,85,2,27,142,166,0,8882
+elena,333,1,54,B,121425,warrior,19,19,Graphic Designer,44,53,creative-practice,53,20,87,10,31,10,54,649,22911,85,2,27,142,166,0,8937
+elena,334,1,54,B,121495,warrior,19,19,Graphic Designer,44,53,creative-practice,53,20,87,10,31,10,54,651,22945,85,2,27,142,166,0,8962
+elena,335,1,54,B,122165,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,654,23369,85,2,28,143,168,0,9000
+elena,336,0,54,B,122165,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,654,23369,85,2,28,143,168,0,9000
+elena,337,1,54,B,122325,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,656,23451,85,2,28,143,168,0,9055
+elena,338,0,54,B,122325,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,656,23451,85,2,28,143,168,0,9055
+elena,339,0,54,B,122325,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,656,23451,85,2,28,143,168,0,9055
+elena,340,1,54,B,122395,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,658,23475,85,2,28,143,168,0,9080
+elena,341,1,54,B,122465,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,660,23504,85,2,28,143,168,0,9105
+elena,342,0,54,B,122465,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,660,23504,85,2,28,143,168,0,9105
+elena,343,0,54,B,122465,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,660,23504,85,2,28,143,168,0,9105
+elena,344,1,54,B,122625,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,662,23551,85,2,28,143,168,0,9160
+elena,345,1,54,B,122695,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,664,23585,85,2,28,143,168,0,9185
+elena,346,1,54,B,122765,warrior,19,19,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,666,24389,85,2,28,145,170,0,9210
+elena,347,1,55,B,123525,warrior,19,20,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,669,24566,85,2,28,145,170,0,9268
+elena,348,1,55,B,124195,warrior,19,20,Graphic Designer,49,54,creative-practice,54,20,87,10,31,10,64,672,24750,85,2,28,145,170,0,9296
+elena,349,1,55,B,124265,warrior,20,20,Graphic Designer,49,54,creative-practice,54,25,87,10,31,10,64,674,25589,85,2,29,147,172,0,9331
+elena,350,0,55,B,124265,warrior,20,20,Graphic Designer,49,54,creative-practice,54,25,87,10,31,10,64,674,25589,85,2,29,147,172,0,9331
+elena,351,1,55,B,124425,warrior,20,20,Graphic Designer,49,54,creative-practice,54,25,87,10,31,10,64,676,25636,86,2,29,147,172,0,9386
+elena,352,1,55,B,124495,warrior,20,20,Graphic Designer,49,54,creative-practice,54,25,87,10,31,10,64,678,25665,86,2,29,147,172,0,9411
+elena,353,1,55,B,124565,warrior,20,20,Graphic Designer,49,54,creative-practice,54,25,87,10,31,10,64,680,25999,86,2,29,149,174,0,9436
+elena,354,0,55,B,124565,warrior,20,20,Graphic Designer,49,54,creative-practice,54,25,87,10,31,10,64,680,25999,86,2,29,149,174,0,9436
+elena,355,1,55,B,125235,warrior,20,20,Graphic Designer,49,55,creative-practice,55,25,87,10,31,10,64,683,26153,86,2,29,149,174,0,9464
+elena,356,1,55,B,125305,warrior,20,20,Graphic Designer,54,55,creative-practice,55,25,87,10,31,10,75,685,27712,86,2,30,151,176,0,9499
+elena,357,0,55,B,125305,warrior,20,20,Graphic Designer,54,55,creative-practice,55,25,87,10,31,10,75,685,27712,86,2,30,151,176,0,9499
+elena,358,1,55,B,125465,warrior,21,21,Graphic Designer,54,55,creative-practice,55,25,87,10,31,10,75,687,27794,87,2,30,151,176,0,9554
+elena,359,1,57,B,131835,warrior,21,21,Graphic Designer,54,58,creative-practice,58,25,87,10,31,10,75,690,29078,87,2,30,151,176,0,9582
+elena,360,1,57,B,131905,warrior,21,21,Graphic Designer,54,58,creative-practice,58,25,87,10,31,10,75,692,29397,87,2,30,153,178,0,9607
+elena,361,1,57,B,132665,warrior,22,22,Graphic Designer,54,58,creative-practice,58,25,87,10,31,10,75,695,29564,87,2,30,153,178,0,9665
+elena,362,1,57,B,133335,warrior,22,22,Graphic Designer,54,59,creative-practice,59,25,87,10,31,10,75,698,29718,87,2,30,153,178,0,9693
+elena,363,1,57,B,133405,warrior,22,22,Graphic Designer,54,59,creative-practice,59,25,87,10,31,10,75,700,29992,87,2,30,154,180,0,9718
+elena,364,0,57,B,133405,warrior,22,22,Graphic Designer,54,59,creative-practice,59,25,87,10,31,10,75,700,29992,87,2,30,154,180,0,9718
+elena,365,0,57,B,133405,warrior,22,22,Graphic Designer,54,59,creative-practice,59,25,87,10,31,10,75,700,29992,87,2,30,154,180,0,9718

@@ -1,0 +1,3224 @@
+{
+  "id": "marcus",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "marcus",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 3,
+      "DEX": 5,
+      "CON": 8,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "disciple",
+    "profession": "Social Worker",
+    "vocation": "community-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 285,
+    "playerLevel": 76,
+    "guildRank": "A",
+    "xp": 234260,
+    "classId": "high-cleric",
+    "classLevel": 19,
+    "classPotential": 21,
+    "profession": "Social Worker",
+    "professionLevel": 104,
+    "professionPotential": 115,
+    "vocation": "community-practice",
+    "vocationLevel": 115,
+    "stats": {
+      "STR": 3,
+      "DEX": 5,
+      "CON": 8,
+      "INT": 10,
+      "WIS": 280,
+      "CHA": 11
+    },
+    "requests": 793,
+    "gold": 72471,
+    "skills": 55,
+    "careerUtilities": 1,
+    "examPasses": 28,
+    "stages": 162,
+    "wins": 188,
+    "losses": 0,
+    "minutes": 12394
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 5,
+      "playerLevel": 5,
+      "guildRank": "F",
+      "xp": 1870,
+      "classId": "disciple",
+      "classLevel": 3,
+      "classPotential": 3,
+      "profession": "Social Worker",
+      "professionLevel": 4,
+      "professionPotential": 4,
+      "vocation": "community-practice",
+      "vocationLevel": 4,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 13,
+      "gold": 569,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 315
+    },
+    {
+      "day": 30,
+      "active": 23,
+      "playerLevel": 20,
+      "guildRank": "D",
+      "xp": 18610,
+      "classId": "disciple",
+      "classLevel": 4,
+      "classPotential": 6,
+      "profession": "Social Worker",
+      "professionLevel": 4,
+      "professionPotential": 31,
+      "vocation": "community-practice",
+      "vocationLevel": 31,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 11,
+        "CHA": 10
+      },
+      "requests": 63,
+      "gold": 4497,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 14,
+      "wins": 14,
+      "losses": 0,
+      "minutes": 973
+    },
+    {
+      "day": 90,
+      "active": 71,
+      "playerLevel": 37,
+      "guildRank": "C",
+      "xp": 58190,
+      "classId": "disciple",
+      "classLevel": 14,
+      "classPotential": 14,
+      "profession": "Social Worker",
+      "professionLevel": 19,
+      "professionPotential": 55,
+      "vocation": "community-practice",
+      "vocationLevel": 55,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 27,
+        "CHA": 10
+      },
+      "requests": 197,
+      "gold": 15272,
+      "skills": 35,
+      "careerUtilities": 1,
+      "examPasses": 5,
+      "stages": 39,
+      "wins": 46,
+      "losses": 0,
+      "minutes": 3182
+    },
+    {
+      "day": 180,
+      "active": 140,
+      "playerLevel": 53,
+      "guildRank": "B",
+      "xp": 117770,
+      "classId": "disciple",
+      "classLevel": 19,
+      "classPotential": 20,
+      "profession": "Social Worker",
+      "professionLevel": 49,
+      "professionPotential": 81,
+      "vocation": "community-practice",
+      "vocationLevel": 81,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 79,
+        "CHA": 10
+      },
+      "requests": 392,
+      "gold": 33833,
+      "skills": 41,
+      "careerUtilities": 1,
+      "examPasses": 12,
+      "stages": 79,
+      "wins": 90,
+      "losses": 0,
+      "minutes": 6144
+    },
+    {
+      "day": 365,
+      "active": 285,
+      "playerLevel": 76,
+      "guildRank": "A",
+      "xp": 234260,
+      "classId": "high-cleric",
+      "classLevel": 19,
+      "classPotential": 21,
+      "profession": "Social Worker",
+      "professionLevel": 104,
+      "professionPotential": 115,
+      "vocation": "community-practice",
+      "vocationLevel": 115,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 280,
+        "CHA": 11
+      },
+      "requests": 793,
+      "gold": 72471,
+      "skills": 55,
+      "careerUtilities": 1,
+      "examPasses": 28,
+      "stages": 162,
+      "wins": 188,
+      "losses": 0,
+      "minutes": 12394
+    }
+  ],
+  "income": {
+    "requests": 46852,
+    "login": 6280,
+    "battles": 18730,
+    "exploration": 249,
+    "commissions": 16460
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 11100,
+    "tempering": 4500,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 188,
+    "wins": 188,
+    "losses": 0,
+    "actions": 548,
+    "bounds": 0,
+    "explorations": 45,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 45,
+    "companionAbilities": 345,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 696,
+    "weekly": 73,
+    "monthly": 24
+  },
+  "requestsByScope": {
+    "universal": 287,
+    "class": 138,
+    "profession": 368
+  },
+  "classHistory": [
+    {
+      "id": "disciple",
+      "level": 26,
+      "potential": 26,
+      "xp": 12707
+    },
+    {
+      "id": "high-cleric",
+      "level": 19,
+      "potential": 21,
+      "xp": 8480
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Social Worker",
+      "level": 104,
+      "xp": 206872
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "community-practice",
+      "level": 115,
+      "xp": 206872
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "WIS 36",
+      "met": true
+    },
+    {
+      "label": "Disciple Lv. 25",
+      "met": true
+    }
+  ],
+  "activeDays": 285,
+  "minutes": 12394,
+  "partialWorkouts": 0,
+  "expiredCommitments": 28,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 13,
+  "directVocationRequests": 180,
+  "finalGoal": "high-cleric",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 60,
+  "profession4Days": 25,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "monthly: Dated practice days: #/#": 264,
+    "monthly: #-day commitment: #/# days": 392,
+    "weekly: Dated practice days: #/#": 172,
+    "weekly: #-day commitment: #/# days": 314,
+    "Time budget": 113
+  },
+  "examDays": 34,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 6,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-community-0",
+      "name": "Needs Assessment",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-disciple-0",
+      "name": "Disciple Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-community-0",
+      "name": "Active Listening: Primer",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 13,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 13,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "focus-disciple-1",
+      "name": "Prayer of Restoration: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "career-opening-community-1",
+      "name": "Resource Mapping: Primer",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-community-1",
+      "name": "Active Listening",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-community-2",
+      "name": "Resource Mapping",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-community-3",
+      "name": "Service Planning",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-community-4",
+      "name": "Boundaries & Consent",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 23,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 23,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-community-5",
+      "name": "Case Documentation",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-community-6",
+      "name": "Community Outreach",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "arc-cleric-1",
+      "name": "Restorative Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-cleric-0-0",
+      "name": "Helping Hand",
+      "wallet": "combat"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-cleric-1-0",
+      "name": "Protective Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-cleric-2-0",
+      "name": "Words of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "profession-community-7",
+      "name": "Service Review",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "arc-cleric-2",
+      "name": "Sheltering Light",
+      "wallet": "combat"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "arc-cleric-3",
+      "name": "Mercy’s Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "arc-cleric-4",
+      "name": "Steady Counsel",
+      "wallet": "combat"
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "arc-cleric-5",
+      "name": "Encouraging Word",
+      "wallet": "combat"
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "opening-cleric-0-1",
+      "name": "Helping Hand: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 51,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "skill",
+      "id": "profession-community-8",
+      "name": "Community Portfolio",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 57,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 57,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "skill",
+      "id": "opening-cleric-1-1",
+      "name": "Protective Prayer: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 64,
+      "type": "skill",
+      "id": "opening-cleric-2-1",
+      "name": "Words of Courage: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 64,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 65
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 71,
+      "type": "skill",
+      "id": "universal-wis-1",
+      "name": "Reflection",
+      "wallet": "universal"
+    },
+    {
+      "day": 71,
+      "type": "skill",
+      "id": "scripture",
+      "name": "Rooted in the Word",
+      "wallet": "universal"
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "skill",
+      "id": "arc-cleric-6",
+      "name": "Sanctuary",
+      "wallet": "combat"
+    },
+    {
+      "day": 78,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 78,
+      "type": "skill",
+      "id": "universal-int-3",
+      "name": "Tactical Insight",
+      "wallet": "universal"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "skill",
+      "id": "universal-wis-3",
+      "name": "Field Medicine",
+      "wallet": "universal"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 93,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 93,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 93,
+      "type": "skill",
+      "id": "opening-cleric-0-2",
+      "name": "Helping Hand: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 97,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 97,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "profession-community-9",
+      "name": "Service Steward",
+      "wallet": "profession:community"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "opening-cleric-1-2",
+      "name": "Protective Prayer: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 122,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 122,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 122,
+      "type": "skill",
+      "id": "opening-cleric-2-2",
+      "name": "Words of Courage: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 132,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 146,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 148,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 148,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "skill",
+      "id": "arc-cleric-7",
+      "name": "Shared Resolve",
+      "wallet": "combat"
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 172,
+      "type": "skill",
+      "id": "arc-cleric-8",
+      "name": "Radiant Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 176,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 176,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 181,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 202,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 207,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 207,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 230,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 232,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 232,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 235,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 235,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 276,
+      "type": "request",
+      "id": "trial-high-cleric-entry",
+      "title": "High Cleric entry trial",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 276,
+      "type": "class-change",
+      "from": "disciple",
+      "to": "high-cleric",
+      "playerLevel": 66,
+      "classLevel": 1
+    },
+    {
+      "day": 277,
+      "type": "skill",
+      "id": "focus-high-cleric-0",
+      "name": "High Cleric Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 277,
+      "type": "skill",
+      "id": "arc-bard-1",
+      "name": "Battle Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 277,
+      "type": "skill",
+      "id": "opening-bard-0-0",
+      "name": "Rousing Beat",
+      "wallet": "combat"
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 281,
+      "type": "expired",
+      "id": "trial-high-cleric-entry",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 284,
+      "type": "skill",
+      "id": "focus-high-cleric-1",
+      "name": "Sanctuary of Mercy: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 284,
+      "type": "skill",
+      "id": "opening-bard-1-0",
+      "name": "Soothing Refrain",
+      "wallet": "combat"
+    },
+    {
+      "day": 284,
+      "type": "skill",
+      "id": "opening-bard-2-0",
+      "name": "Clear Signal",
+      "wallet": "combat"
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "high-cleric",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 291,
+      "type": "skill",
+      "id": "arc-cleric-9",
+      "name": "Watchful Care",
+      "wallet": "combat"
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 85,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 296,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "class",
+      "owner": "high-cleric",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 314,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 314,
+      "type": "exam",
+      "scope": "class",
+      "owner": "high-cleric",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 319,
+      "type": "skill",
+      "id": "arc-bard-2",
+      "name": "Ballad of Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 319,
+      "type": "skill",
+      "id": "arc-bard-3",
+      "name": "Distracting Verse",
+      "wallet": "combat"
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 90,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 326,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 326,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "class",
+      "owner": "high-cleric",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-community-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 95,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 338,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 338,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "q-service-team",
+      "title": "Service team commission",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "class",
+      "owner": "high-cleric",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 348,
+      "type": "skill",
+      "id": "opening-bard-0-1",
+      "name": "Rousing Beat: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 348,
+      "type": "skill",
+      "id": "opening-bard-1-1",
+      "name": "Soothing Refrain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 348,
+      "type": "skill",
+      "id": "opening-bard-2-1",
+      "name": "Clear Signal: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Social Worker",
+      "milestone": 100,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 356,
+      "type": "exam",
+      "scope": "class",
+      "owner": "high-cleric",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 59
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-community-practice-monthly",
+      "title": "Community portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-community-practice-weekly",
+      "title": "Community field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "skill",
+      "id": "arc-bard-4",
+      "name": "Refrain of Clarity",
+      "wallet": "combat"
+    },
+    {
+      "day": 362,
+      "type": "skill",
+      "id": "arc-bard-5",
+      "name": "Warning Call",
+      "wallet": "combat"
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "vocation-community-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-community-0",
+    "focus-disciple-0",
+    "career-opening-community-0",
+    "focus-disciple-1",
+    "career-opening-community-1",
+    "profession-community-1",
+    "profession-community-2",
+    "profession-community-3",
+    "profession-community-4",
+    "profession-community-5",
+    "profession-community-6",
+    "arc-cleric-1",
+    "opening-cleric-0-0",
+    "opening-cleric-1-0",
+    "opening-cleric-2-0",
+    "profession-community-7",
+    "arc-cleric-2",
+    "arc-cleric-3",
+    "arc-cleric-4",
+    "arc-cleric-5",
+    "opening-cleric-0-1",
+    "profession-community-8",
+    "universal-con-1",
+    "universal-con-2",
+    "opening-cleric-1-1",
+    "opening-cleric-2-1",
+    "universal-int-1",
+    "universal-int-2",
+    "universal-wis-1",
+    "scripture",
+    "arc-cleric-6",
+    "universal-con-3",
+    "universal-int-3",
+    "universal-wis-3",
+    "opening-cleric-0-2",
+    "profession-community-9",
+    "opening-cleric-1-2",
+    "opening-cleric-2-2",
+    "arc-cleric-7",
+    "arc-cleric-8",
+    "focus-high-cleric-0",
+    "arc-bard-1",
+    "opening-bard-0-0",
+    "focus-high-cleric-1",
+    "opening-bard-1-0",
+    "opening-bard-2-0",
+    "arc-cleric-9",
+    "arc-bard-2",
+    "arc-bard-3",
+    "opening-bard-0-1",
+    "opening-bard-1-1",
+    "opening-bard-2-1",
+    "arc-bard-4",
+    "arc-bard-5"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-community-0",
+      "wallet": "profession:community",
+      "cost": 1
+    },
+    {
+      "id": "focus-disciple-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-community-0",
+      "wallet": "profession:community",
+      "cost": 1
+    },
+    {
+      "id": "focus-disciple-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-community-1",
+      "wallet": "profession:community",
+      "cost": 1
+    },
+    {
+      "id": "profession-community-1",
+      "wallet": "profession:community",
+      "cost": 2
+    },
+    {
+      "id": "profession-community-2",
+      "wallet": "profession:community",
+      "cost": 2
+    },
+    {
+      "id": "profession-community-3",
+      "wallet": "profession:community",
+      "cost": 3
+    },
+    {
+      "id": "profession-community-4",
+      "wallet": "profession:community",
+      "cost": 5
+    },
+    {
+      "id": "profession-community-5",
+      "wallet": "profession:community",
+      "cost": 8
+    },
+    {
+      "id": "profession-community-6",
+      "wallet": "profession:community",
+      "cost": 8
+    },
+    {
+      "id": "arc-cleric-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-community-7",
+      "wallet": "profession:community",
+      "cost": 14
+    },
+    {
+      "id": "arc-cleric-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-cleric-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-cleric-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-cleric-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-community-8",
+      "wallet": "profession:community",
+      "cost": 18
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-cleric-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-wis-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "scripture",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-cleric-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "universal-int-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "universal-wis-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "opening-cleric-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "profession-community-9",
+      "wallet": "profession:community",
+      "cost": 24
+    },
+    {
+      "id": "opening-cleric-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-cleric-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-cleric-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-cleric-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "focus-high-cleric-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-bard-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-high-cleric-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-bard-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "opening-bard-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-5",
+      "wallet": "combat",
+      "cost": 3
+    }
+  ],
+  "utilities": [
+    {
+      "id": "service-roster",
+      "name": "Companions’ Service Roster",
+      "category": "community",
+      "learn": "Needs Assessment or Active Listening: Primer",
+      "skills": [
+        "profession-community-0",
+        "career-opening-community-0"
+      ],
+      "effect": "In Adventures, review companion recruitment requirements and active-party coverage."
+    }
+  ],
+  "firstGoldDay": 258,
+  "firstPrestigeDay": 276,
+  "finalCharacterBytes": 494184
+}

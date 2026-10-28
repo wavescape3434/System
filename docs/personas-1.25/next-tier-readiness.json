@@ -1,0 +1,23 @@
+{
+  "note": "Read-only check of catalog qualification fields against actual earned final metrics. This does not award the class or complete its entry trial.",
+  "ready": [
+    {
+      "id": "tomas",
+      "class": "world-forger",
+      "name": "World Forger",
+      "status": "Qualifies to take entry trial; not chosen by this scenario"
+    },
+    {
+      "id": "felix",
+      "class": "phantom",
+      "name": "Phantom",
+      "status": "Qualifies to take entry trial; not chosen by this scenario"
+    },
+    {
+      "id": "darius",
+      "class": "phantom",
+      "name": "Phantom",
+      "status": "Qualifies to take entry trial; not chosen by this scenario"
+    }
+  ]
+}

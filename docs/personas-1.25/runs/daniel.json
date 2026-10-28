@@ -1,0 +1,3121 @@
+{
+  "id": "daniel",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "daniel",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 13
+    },
+    "rank": "F",
+    "classId": "sentinel",
+    "profession": "Operations Manager",
+    "vocation": "operations"
+  },
+  "final": {
+    "day": 365,
+    "active": 274,
+    "playerLevel": 71,
+    "guildRank": "A",
+    "xp": 203260,
+    "classId": "marshal",
+    "classLevel": 19,
+    "classPotential": 19,
+    "profession": "Operations Manager",
+    "professionLevel": 109,
+    "professionPotential": 110,
+    "vocation": "operations",
+    "vocationLevel": 110,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 14,
+      "INT": 12,
+      "WIS": 10,
+      "CHA": 280
+    },
+    "requests": 789,
+    "gold": 51262,
+    "skills": 57,
+    "careerUtilities": 1,
+    "examPasses": 25,
+    "stages": 79,
+    "wins": 92,
+    "losses": 0,
+    "minutes": 10229
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 5,
+      "playerLevel": 5,
+      "guildRank": "F",
+      "xp": 1730,
+      "classId": "scholar",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Operations Manager",
+      "professionLevel": 4,
+      "professionPotential": 8,
+      "vocation": "operations",
+      "vocationLevel": 8,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 13
+      },
+      "requests": 15,
+      "gold": 426,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 2,
+      "wins": 2,
+      "losses": 0,
+      "minutes": 206
+    },
+    {
+      "day": 30,
+      "active": 23,
+      "playerLevel": 20,
+      "guildRank": "D",
+      "xp": 19730,
+      "classId": "scholar",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "Operations Manager",
+      "professionLevel": 9,
+      "professionPotential": 33,
+      "vocation": "operations",
+      "vocationLevel": 33,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 16
+      },
+      "requests": 68,
+      "gold": 4821,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 1,
+      "stages": 8,
+      "wins": 8,
+      "losses": 0,
+      "minutes": 880
+    },
+    {
+      "day": 90,
+      "active": 71,
+      "playerLevel": 37,
+      "guildRank": "C",
+      "xp": 60470,
+      "classId": "marshal",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "Operations Manager",
+      "professionLevel": 29,
+      "professionPotential": 59,
+      "vocation": "operations",
+      "vocationLevel": 59,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 12,
+        "WIS": 10,
+        "CHA": 36
+      },
+      "requests": 209,
+      "gold": 13994,
+      "skills": 30,
+      "careerUtilities": 1,
+      "examPasses": 6,
+      "stages": 24,
+      "wins": 26,
+      "losses": 0,
+      "minutes": 2681
+    },
+    {
+      "day": 180,
+      "active": 138,
+      "playerLevel": 46,
+      "guildRank": "B",
+      "xp": 88800,
+      "classId": "marshal",
+      "classLevel": 11,
+      "classPotential": 11,
+      "profession": "Operations Manager",
+      "professionLevel": 54,
+      "professionPotential": 72,
+      "vocation": "operations",
+      "vocationLevel": 72,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 12,
+        "INT": 12,
+        "WIS": 10,
+        "CHA": 85
+      },
+      "requests": 394,
+      "gold": 22720,
+      "skills": 43,
+      "careerUtilities": 1,
+      "examPasses": 13,
+      "stages": 44,
+      "wins": 48,
+      "losses": 0,
+      "minutes": 5167
+    },
+    {
+      "day": 365,
+      "active": 274,
+      "playerLevel": 71,
+      "guildRank": "A",
+      "xp": 203260,
+      "classId": "marshal",
+      "classLevel": 19,
+      "classPotential": 19,
+      "profession": "Operations Manager",
+      "professionLevel": 109,
+      "professionPotential": 110,
+      "vocation": "operations",
+      "vocationLevel": 110,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 14,
+        "INT": 12,
+        "WIS": 10,
+        "CHA": 280
+      },
+      "requests": 789,
+      "gold": 51262,
+      "skills": 57,
+      "careerUtilities": 1,
+      "examPasses": 25,
+      "stages": 79,
+      "wins": 92,
+      "losses": 0,
+      "minutes": 10229
+    }
+  ],
+  "income": {
+    "requests": 40652,
+    "login": 6055,
+    "battles": 6445,
+    "exploration": 60,
+    "commissions": 6350
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 3600,
+    "tempering": 4200,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 92,
+    "wins": 92,
+    "losses": 0,
+    "actions": 245,
+    "bounds": 0,
+    "explorations": 21,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 94,
+    "companionAbilities": 151,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 686,
+    "weekly": 83,
+    "monthly": 20
+  },
+  "requestsByScope": {
+    "universal": 274,
+    "class": 138,
+    "profession": 377
+  },
+  "classHistory": [
+    {
+      "id": "sentinel",
+      "level": 1,
+      "potential": 1,
+      "xp": 548
+    },
+    {
+      "id": "scholar",
+      "level": 8,
+      "potential": 8,
+      "xp": 1500
+    },
+    {
+      "id": "marshal",
+      "level": 19,
+      "potential": 19,
+      "xp": 7278
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Operations Manager",
+      "level": 109,
+      "xp": 192240
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "operations",
+      "level": 110,
+      "xp": 192240
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "CHA 14",
+      "met": true
+    },
+    {
+      "label": "INT 12",
+      "met": true
+    }
+  ],
+  "activeDays": 274,
+  "minutes": 10229,
+  "partialWorkouts": 0,
+  "expiredCommitments": 5,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 188,
+  "finalGoal": "marshal",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 67,
+  "profession4Days": 15,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 176,
+    "weekly: #-day commitment: #/# days": 314,
+    "monthly: Dated practice days: #/#": 220,
+    "monthly: #-day commitment: #/# days": 322,
+    "Time budget": 41
+  },
+  "examDays": 30,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "request",
+      "id": "trial-scholar-entry",
+      "title": "Scholar entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 1,
+      "type": "class-change",
+      "from": "sentinel",
+      "to": "scholar",
+      "playerLevel": 1,
+      "classLevel": 1
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 6,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-management-0",
+      "name": "Scope Charter",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-management-0",
+      "name": "Work Breakdown: Primer",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 13,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "career-opening-management-1",
+      "name": "Stakeholder Map: Primer",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-management-1",
+      "name": "Work Breakdown",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-management-2",
+      "name": "Stakeholder Map",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-management-3",
+      "name": "Risk Register",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-management-4",
+      "name": "Team Agreements",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 23,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 27,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-management-5",
+      "name": "Delivery Tracking",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-management-6",
+      "name": "Decision Log",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "profession-management-7",
+      "name": "Project Review",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "profession-management-8",
+      "name": "Delivery Portfolio",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 51,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 58,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "request",
+      "id": "trial-marshal-entry",
+      "title": "Marshal entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 64,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "marshal",
+      "playerLevel": 30,
+      "classLevel": 1
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "focus-marshal-0",
+      "name": "Marshal Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "skill",
+      "id": "arc-guardian-1",
+      "name": "Shield Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 69,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "arc-bard-1",
+      "name": "Battle Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "opening-guardian-0-0",
+      "name": "Interpose",
+      "wallet": "combat"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 79,
+      "type": "skill",
+      "id": "opening-guardian-1-0",
+      "name": "Challenge",
+      "wallet": "combat"
+    },
+    {
+      "day": 79,
+      "type": "skill",
+      "id": "opening-guardian-2-0",
+      "name": "Shield Feint",
+      "wallet": "combat"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 86,
+      "type": "skill",
+      "id": "opening-bard-0-0",
+      "name": "Rousing Beat",
+      "wallet": "combat"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 93,
+      "type": "skill",
+      "id": "opening-bard-1-0",
+      "name": "Soothing Refrain",
+      "wallet": "combat"
+    },
+    {
+      "day": 93,
+      "type": "skill",
+      "id": "opening-bard-2-0",
+      "name": "Clear Signal",
+      "wallet": "combat"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "focus-marshal-1",
+      "name": "Coordinated Advance: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "profession-management-9",
+      "name": "Program Steward",
+      "wallet": "profession:management"
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "arc-guardian-2",
+      "name": "Tower Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "arc-guardian-3",
+      "name": "Shield Rush",
+      "wallet": "combat"
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 132,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 136,
+      "type": "skill",
+      "id": "arc-bard-2",
+      "name": "Ballad of Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 143,
+      "type": "skill",
+      "id": "arc-bard-3",
+      "name": "Distracting Verse",
+      "wallet": "combat"
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 146,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 150,
+      "type": "skill",
+      "id": "arc-guardian-4",
+      "name": "Iron Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 157,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 164,
+      "type": "skill",
+      "id": "arc-guardian-5",
+      "name": "Return the Blow",
+      "wallet": "combat"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 179,
+      "type": "skill",
+      "id": "arc-bard-4",
+      "name": "Refrain of Clarity",
+      "wallet": "combat"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 193,
+      "type": "skill",
+      "id": "arc-bard-5",
+      "name": "Warning Call",
+      "wallet": "combat"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 201,
+      "type": "skill",
+      "id": "opening-guardian-0-1",
+      "name": "Interpose: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 205,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "opening-guardian-1-1",
+      "name": "Challenge: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 226,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 226,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "skill",
+      "id": "opening-guardian-2-1",
+      "name": "Shield Feint: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 235,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 237,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "class",
+      "owner": "marshal",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 244,
+      "type": "skill",
+      "id": "opening-bard-0-1",
+      "name": "Rousing Beat: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "skill",
+      "id": "opening-bard-1-1",
+      "name": "Soothing Refrain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "skill",
+      "id": "opening-bard-2-1",
+      "name": "Clear Signal: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 265,
+      "type": "skill",
+      "id": "universal-cha-1",
+      "name": "Conversation",
+      "wallet": "universal"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 85,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "skill",
+      "id": "arc-guardian-6",
+      "name": "Hold the Gate",
+      "wallet": "combat"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 90,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 293,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "skill",
+      "id": "arc-bard-6",
+      "name": "Conductor’s Cue",
+      "wallet": "combat"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 95,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 314,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "skill",
+      "id": "connection",
+      "name": "Voice of Encouragement",
+      "wallet": "universal"
+    },
+    {
+      "day": 326,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 326,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 100,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-operations-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "skill",
+      "id": "opening-guardian-0-2",
+      "name": "Interpose: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Operations Manager",
+      "milestone": 105,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 349,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-operations-monthly",
+      "title": "Operations portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-operations-weekly",
+      "title": "Operations field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "skill",
+      "id": "opening-guardian-1-2",
+      "name": "Challenge: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "vocation-operations-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-management-0",
+    "focus-scholar-0",
+    "career-opening-management-0",
+    "focus-scholar-1",
+    "career-opening-management-1",
+    "profession-management-1",
+    "profession-management-2",
+    "profession-management-3",
+    "profession-management-4",
+    "profession-management-5",
+    "profession-management-6",
+    "arc-mage-1",
+    "profession-management-7",
+    "opening-mage-0-0",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "element-fire-0",
+    "element-ice-0",
+    "profession-management-8",
+    "element-storm-0",
+    "universal-con-1",
+    "arc-mage-2",
+    "focus-marshal-0",
+    "arc-guardian-1",
+    "arc-bard-1",
+    "opening-guardian-0-0",
+    "opening-guardian-1-0",
+    "opening-guardian-2-0",
+    "opening-bard-0-0",
+    "opening-bard-1-0",
+    "opening-bard-2-0",
+    "focus-marshal-1",
+    "profession-management-9",
+    "universal-con-2",
+    "arc-guardian-2",
+    "arc-guardian-3",
+    "arc-bard-2",
+    "arc-bard-3",
+    "arc-guardian-4",
+    "universal-int-1",
+    "arc-guardian-5",
+    "arc-bard-4",
+    "arc-bard-5",
+    "opening-guardian-0-1",
+    "opening-guardian-1-1",
+    "universal-int-2",
+    "opening-guardian-2-1",
+    "opening-bard-0-1",
+    "opening-bard-1-1",
+    "opening-bard-2-1",
+    "universal-cha-1",
+    "arc-guardian-6",
+    "arc-bard-6",
+    "connection",
+    "opening-guardian-0-2",
+    "opening-guardian-1-2"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-management-0",
+      "wallet": "profession:management",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-management-0",
+      "wallet": "profession:management",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-management-1",
+      "wallet": "profession:management",
+      "cost": 1
+    },
+    {
+      "id": "profession-management-1",
+      "wallet": "profession:management",
+      "cost": 2
+    },
+    {
+      "id": "profession-management-2",
+      "wallet": "profession:management",
+      "cost": 2
+    },
+    {
+      "id": "profession-management-3",
+      "wallet": "profession:management",
+      "cost": 3
+    },
+    {
+      "id": "profession-management-4",
+      "wallet": "profession:management",
+      "cost": 5
+    },
+    {
+      "id": "profession-management-5",
+      "wallet": "profession:management",
+      "cost": 8
+    },
+    {
+      "id": "profession-management-6",
+      "wallet": "profession:management",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-management-7",
+      "wallet": "profession:management",
+      "cost": 14
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-management-8",
+      "wallet": "profession:management",
+      "cost": 18
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "focus-marshal-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-guardian-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-bard-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-guardian-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-marshal-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-management-9",
+      "wallet": "profession:management",
+      "cost": 24
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-guardian-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-guardian-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-guardian-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-guardian-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-guardian-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-guardian-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-guardian-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-cha-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-guardian-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "arc-bard-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "connection",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-guardian-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-guardian-1-2",
+      "wallet": "combat",
+      "cost": 6
+    }
+  ],
+  "utilities": [
+    {
+      "id": "docket",
+      "name": "Steward’s Docket",
+      "category": "management",
+      "learn": "Scope Charter or Work Breakdown: Primer",
+      "skills": [
+        "profession-management-0",
+        "career-opening-management-0"
+      ],
+      "effect": "In Adventures, review accepted guild commissions, remaining work and where to report each one."
+    }
+  ],
+  "firstGoldDay": 296,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 480721
+}

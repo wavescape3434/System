@@ -1,0 +1,2598 @@
+{
+  "id": "theo",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "theo",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "scholar",
+    "profession": "Data Analyst",
+    "vocation": "analysis"
+  },
+  "final": {
+    "day": 365,
+    "active": 266,
+    "playerLevel": 69,
+    "guildRank": "A",
+    "xp": 193880,
+    "classId": "scholar",
+    "classLevel": 4,
+    "classPotential": 20,
+    "profession": "Data Analyst",
+    "professionLevel": 4,
+    "professionPotential": 108,
+    "vocation": "analysis",
+    "vocationLevel": 108,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 19,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 771,
+    "gold": 58181,
+    "skills": 37,
+    "careerUtilities": 1,
+    "examPasses": 0,
+    "stages": 145,
+    "wins": 172,
+    "losses": 0,
+    "minutes": 9594
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 6,
+      "playerLevel": 5,
+      "guildRank": "F",
+      "xp": 1800,
+      "classId": "scholar",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Data Analyst",
+      "professionLevel": 4,
+      "professionPotential": 8,
+      "vocation": "analysis",
+      "vocationLevel": 8,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 17,
+      "gold": 580,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 216
+    },
+    {
+      "day": 30,
+      "active": 22,
+      "playerLevel": 11,
+      "guildRank": "E",
+      "xp": 7060,
+      "classId": "scholar",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "Data Analyst",
+      "professionLevel": 4,
+      "professionPotential": 18,
+      "vocation": "analysis",
+      "vocationLevel": 18,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 64,
+      "gold": 2347,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 12,
+      "wins": 12,
+      "losses": 0,
+      "minutes": 814
+    },
+    {
+      "day": 90,
+      "active": 68,
+      "playerLevel": 33,
+      "guildRank": "C",
+      "xp": 46400,
+      "classId": "scholar",
+      "classLevel": 4,
+      "classPotential": 9,
+      "profession": "Data Analyst",
+      "professionLevel": 4,
+      "professionPotential": 51,
+      "vocation": "analysis",
+      "vocationLevel": 51,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 12,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 198,
+      "gold": 13235,
+      "skills": 25,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 37,
+      "wins": 42,
+      "losses": 0,
+      "minutes": 2464
+    },
+    {
+      "day": 180,
+      "active": 134,
+      "playerLevel": 50,
+      "guildRank": "B",
+      "xp": 104060,
+      "classId": "scholar",
+      "classLevel": 4,
+      "classPotential": 14,
+      "profession": "Data Analyst",
+      "professionLevel": 4,
+      "professionPotential": 78,
+      "vocation": "analysis",
+      "vocationLevel": 78,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 15,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 392,
+      "gold": 29271,
+      "skills": 35,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 72,
+      "wins": 86,
+      "losses": 0,
+      "minutes": 4878
+    },
+    {
+      "day": 365,
+      "active": 266,
+      "playerLevel": 69,
+      "guildRank": "A",
+      "xp": 193880,
+      "classId": "scholar",
+      "classLevel": 4,
+      "classPotential": 20,
+      "profession": "Data Analyst",
+      "professionLevel": 4,
+      "professionPotential": 108,
+      "vocation": "analysis",
+      "vocationLevel": 108,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 19,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 771,
+      "gold": 58181,
+      "skills": 37,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 145,
+      "wins": 172,
+      "losses": 0,
+      "minutes": 9594
+    }
+  ],
+  "income": {
+    "requests": 38776,
+    "login": 5890,
+    "battles": 15565,
+    "exploration": 150,
+    "commissions": 12700
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 12000,
+    "tempering": 2400,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 172,
+    "wins": 172,
+    "losses": 0,
+    "actions": 348,
+    "bounds": 0,
+    "explorations": 41,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 175,
+    "companionAbilities": 173,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 663,
+    "weekly": 90,
+    "monthly": 18
+  },
+  "requestsByScope": {
+    "universal": 266,
+    "class": 131,
+    "profession": 374
+  },
+  "classHistory": [
+    {
+      "id": "scholar",
+      "level": 4,
+      "potential": 20,
+      "xp": 7860
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Data Analyst",
+      "level": 4,
+      "xp": 183360
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "analysis",
+      "level": 108,
+      "xp": 183360
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "INT 50",
+      "met": false
+    },
+    {
+      "label": "Archmage Lv. 40",
+      "met": false
+    },
+    {
+      "label": "Astral Savant entry trial",
+      "met": false
+    }
+  ],
+  "activeDays": 266,
+  "minutes": 9594,
+  "partialWorkouts": 0,
+  "expiredCommitments": 4,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 185,
+  "finalGoal": "astral-savant",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 342,
+  "profession4Days": 361,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 190,
+    "weekly: #-day commitment: #/# days": 330,
+    "monthly: Dated practice days: #/#": 198,
+    "monthly: #-day commitment: #/# days": 278
+  },
+  "examDays": 0,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-business-0",
+      "name": "Question Framing",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "career-opening-business-0",
+      "name": "Spreadsheet Craft: Primer",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "career-opening-business-1",
+      "name": "Stakeholder Inquiry: Primer",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-business-1",
+      "name": "Spreadsheet Craft",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-business-2",
+      "name": "Stakeholder Inquiry",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-business-3",
+      "name": "SQL Foundations",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-business-4",
+      "name": "Process Mapping",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-business-5",
+      "name": "Data Visualization",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "profession-business-6",
+      "name": "Evidence Review",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 51,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 51,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 51,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 51,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "profession-business-7",
+      "name": "Decision Brief",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 58,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 72,
+      "type": "skill",
+      "id": "profession-business-8",
+      "name": "Analytical Portfolio",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 79,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 93,
+      "type": "skill",
+      "id": "element-fire-1",
+      "name": "Ember Needle: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "profession-business-9",
+      "name": "Strategic Insight",
+      "wallet": "profession:business"
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 135,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 135,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 135,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 143,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 143,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 163,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 163,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "element-ice-1",
+      "name": "Rime Shard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "skill",
+      "id": "element-storm-1",
+      "name": "Storm Chain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 191,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 191,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 205,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 226,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 226,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 226,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 254,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 254,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 268,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 268,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 332,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-analysis-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "vocation-analysis-weekly",
+      "title": "Data Analysis field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-analysis-monthly",
+      "title": "Data Analysis portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-analysis-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "arc-mage-1",
+    "profession-business-0",
+    "focus-scholar-0",
+    "arc-mage-2",
+    "career-opening-business-0",
+    "career-opening-business-1",
+    "element-fire-0",
+    "profession-business-1",
+    "profession-business-2",
+    "profession-business-3",
+    "profession-business-4",
+    "profession-business-5",
+    "arc-mage-4",
+    "profession-business-6",
+    "opening-mage-0-0",
+    "opening-mage-1-0",
+    "profession-business-7",
+    "opening-mage-2-0",
+    "element-ice-0",
+    "element-storm-0",
+    "universal-con-1",
+    "focus-scholar-1",
+    "profession-business-8",
+    "arc-mage-3",
+    "element-fire-1",
+    "arc-mage-5",
+    "universal-con-2",
+    "profession-business-9",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1",
+    "element-ice-1",
+    "universal-int-1",
+    "element-storm-1",
+    "universal-int-2",
+    "universal-con-3"
+  ],
+  "skillPurchases": [
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-business-0",
+      "wallet": "profession:business",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "career-opening-business-0",
+      "wallet": "profession:business",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-business-1",
+      "wallet": "profession:business",
+      "cost": 1
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-business-1",
+      "wallet": "profession:business",
+      "cost": 2
+    },
+    {
+      "id": "profession-business-2",
+      "wallet": "profession:business",
+      "cost": 2
+    },
+    {
+      "id": "profession-business-3",
+      "wallet": "profession:business",
+      "cost": 3
+    },
+    {
+      "id": "profession-business-4",
+      "wallet": "profession:business",
+      "cost": 5
+    },
+    {
+      "id": "profession-business-5",
+      "wallet": "profession:business",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-business-6",
+      "wallet": "profession:business",
+      "cost": 8
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-business-7",
+      "wallet": "profession:business",
+      "cost": 14
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-business-8",
+      "wallet": "profession:business",
+      "cost": 18
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "element-fire-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-business-9",
+      "wallet": "profession:business",
+      "cost": 24
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-ice-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "element-storm-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    }
+  ],
+  "utilities": [
+    {
+      "id": "ledger",
+      "name": "Quartermaster’s Ledger",
+      "category": "business",
+      "learn": "Question Framing or Spreadsheet Craft: Primer",
+      "skills": [
+        "profession-business-0",
+        "career-opening-business-0"
+      ],
+      "effect": "In Adventures, inspect supply stock, restocking commissions and reachable gathering routes in the current town."
+    }
+  ],
+  "firstGoldDay": 295,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 446829
+}

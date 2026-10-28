@@ -1,0 +1,2729 @@
+{
+  "id": "maya",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "maya",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 3,
+      "DEX": 5,
+      "CON": 8,
+      "INT": 10,
+      "WIS": 13,
+      "CHA": 13
+    },
+    "rank": "F",
+    "classId": "sentinel",
+    "profession": "Registered Nurse",
+    "vocation": "healthcare-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 178,
+    "playerLevel": 46,
+    "guildRank": "B",
+    "xp": 88460,
+    "classId": "healer",
+    "classLevel": 16,
+    "classPotential": 16,
+    "profession": "Registered Nurse",
+    "professionLevel": 71,
+    "professionPotential": 71,
+    "vocation": "healthcare-practice",
+    "vocationLevel": 71,
+    "stats": {
+      "STR": 3,
+      "DEX": 5,
+      "CON": 8,
+      "INT": 10,
+      "WIS": 139,
+      "CHA": 15
+    },
+    "requests": 483,
+    "gold": 12544,
+    "skills": 42,
+    "careerUtilities": 1,
+    "examPasses": 17,
+    "stages": 154,
+    "wins": 182,
+    "losses": 0,
+    "minutes": 6646
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 4,
+      "playerLevel": 3,
+      "guildRank": "F",
+      "xp": 990,
+      "classId": "disciple",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Registered Nurse",
+      "professionLevel": 4,
+      "professionPotential": 5,
+      "vocation": "healthcare-practice",
+      "vocationLevel": 5,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 13,
+        "CHA": 13
+      },
+      "requests": 10,
+      "gold": 373,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 143
+    },
+    {
+      "day": 30,
+      "active": 16,
+      "playerLevel": 7,
+      "guildRank": "E",
+      "xp": 3380,
+      "classId": "healer",
+      "classLevel": 1,
+      "classPotential": 1,
+      "profession": "Registered Nurse",
+      "professionLevel": 9,
+      "professionPotential": 11,
+      "vocation": "healthcare-practice",
+      "vocationLevel": 11,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 15,
+        "CHA": 13
+      },
+      "requests": 41,
+      "gold": 1396,
+      "skills": 10,
+      "careerUtilities": 1,
+      "examPasses": 1,
+      "stages": 16,
+      "wins": 16,
+      "losses": 0,
+      "minutes": 589
+    },
+    {
+      "day": 90,
+      "active": 43,
+      "playerLevel": 22,
+      "guildRank": "D",
+      "xp": 22790,
+      "classId": "healer",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "Registered Nurse",
+      "professionLevel": 19,
+      "professionPotential": 35,
+      "vocation": "healthcare-practice",
+      "vocationLevel": 35,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 22,
+        "CHA": 13
+      },
+      "requests": 116,
+      "gold": 8051,
+      "skills": 21,
+      "careerUtilities": 1,
+      "examPasses": 3,
+      "stages": 42,
+      "wins": 46,
+      "losses": 0,
+      "minutes": 1571
+    },
+    {
+      "day": 180,
+      "active": 84,
+      "playerLevel": 29,
+      "guildRank": "C",
+      "xp": 38200,
+      "classId": "healer",
+      "classLevel": 9,
+      "classPotential": 10,
+      "profession": "Registered Nurse",
+      "professionLevel": 39,
+      "professionPotential": 45,
+      "vocation": "healthcare-practice",
+      "vocationLevel": 45,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 50,
+        "CHA": 13
+      },
+      "requests": 231,
+      "gold": 13048,
+      "skills": 30,
+      "careerUtilities": 1,
+      "examPasses": 8,
+      "stages": 74,
+      "wins": 80,
+      "losses": 0,
+      "minutes": 3193
+    },
+    {
+      "day": 365,
+      "active": 178,
+      "playerLevel": 46,
+      "guildRank": "B",
+      "xp": 88460,
+      "classId": "healer",
+      "classLevel": 16,
+      "classPotential": 16,
+      "profession": "Registered Nurse",
+      "professionLevel": 71,
+      "professionPotential": 71,
+      "vocation": "healthcare-practice",
+      "vocationLevel": 71,
+      "stats": {
+        "STR": 3,
+        "DEX": 5,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 139,
+        "CHA": 15
+      },
+      "requests": 483,
+      "gold": 12544,
+      "skills": 42,
+      "careerUtilities": 1,
+      "examPasses": 17,
+      "stages": 154,
+      "wins": 182,
+      "losses": 0,
+      "minutes": 6646
+    }
+  ],
+  "income": {
+    "requests": 17692,
+    "login": 3915,
+    "battles": 17785,
+    "exploration": 162,
+    "commissions": 17590
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 12000,
+    "tempering": 32100,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 182,
+    "wins": 182,
+    "losses": 0,
+    "actions": 593,
+    "bounds": 0,
+    "explorations": 47,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 167,
+    "companionAbilities": 367,
+    "suppliesUsed": 4
+  },
+  "requestsByCadence": {
+    "daily": 441,
+    "weekly": 34,
+    "monthly": 8
+  },
+  "requestsByScope": {
+    "universal": 176,
+    "class": 87,
+    "profession": 220
+  },
+  "classHistory": [
+    {
+      "id": "sentinel",
+      "level": 1,
+      "potential": 1,
+      "xp": 352
+    },
+    {
+      "id": "disciple",
+      "level": 4,
+      "potential": 7,
+      "xp": 1620
+    },
+    {
+      "id": "healer",
+      "level": 16,
+      "potential": 16,
+      "xp": 4884
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Registered Nurse",
+      "level": 71,
+      "xp": 81480
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "healthcare-practice",
+      "level": 71,
+      "xp": 81480
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "WIS 15",
+      "met": true
+    },
+    {
+      "label": "CHA 12",
+      "met": true
+    }
+  ],
+  "activeDays": 178,
+  "minutes": 6646,
+  "partialWorkouts": 0,
+  "expiredCommitments": 58,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 129,
+  "finalGoal": "healer",
+  "failedAttempts": 0,
+  "duplicateGuards": 10,
+  "level4Days": 72,
+  "profession4Days": 21,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 228,
+    "weekly: #-day commitment: #/# days": 214,
+    "monthly: Dated practice days: #/#": 222,
+    "monthly: #-day commitment: #/# days": 175,
+    "Time budget": 3
+  },
+  "examDays": 33,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "sentinel-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "request",
+      "id": "trial-disciple-entry",
+      "title": "Disciple entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 1,
+      "type": "class-change",
+      "from": "sentinel",
+      "to": "disciple",
+      "playerLevel": 1,
+      "classLevel": 1
+    },
+    {
+      "day": 3,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 6,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "sentinel-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-healthcare-0",
+      "name": "Care Foundations",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-disciple-0",
+      "name": "Disciple Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-healthcare-0",
+      "name": "Clear Handoffs: Primer",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 17,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 17,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "career-opening-healthcare-1",
+      "name": "Health Literacy: Primer",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "profession-healthcare-1",
+      "name": "Clear Handoffs",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "profession-healthcare-2",
+      "name": "Health Literacy",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 24,
+      "type": "skill",
+      "id": "profession-healthcare-3",
+      "name": "Observation Records",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 24,
+      "type": "skill",
+      "id": "profession-healthcare-4",
+      "name": "Care Coordination",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 24,
+      "type": "skill",
+      "id": "arc-cleric-1",
+      "name": "Restorative Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 27,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-healthcare-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "request",
+      "id": "trial-healer-entry",
+      "title": "Healer entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 29,
+      "type": "class-change",
+      "from": "disciple",
+      "to": "healer",
+      "playerLevel": 7,
+      "classLevel": 1
+    },
+    {
+      "day": 31,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 31,
+      "type": "take",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 31,
+      "type": "skill",
+      "id": "focus-healer-0",
+      "name": "Healer Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 31,
+      "type": "skill",
+      "id": "arc-bard-1",
+      "name": "Battle Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "profession-healthcare-5",
+      "name": "Evidence Appraisal",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "profession-healthcare-6",
+      "name": "Patient Communication",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 38,
+      "type": "skill",
+      "id": "opening-cleric-0-0",
+      "name": "Helping Hand",
+      "wallet": "combat"
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 45,
+      "type": "skill",
+      "id": "opening-cleric-1-0",
+      "name": "Protective Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 52,
+      "type": "request",
+      "id": "vocation-healthcare-practice-monthly",
+      "title": "Healthcare portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "opening-cleric-2-0",
+      "name": "Words of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "profession-healthcare-7",
+      "name": "Care Quality Review",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "opening-bard-0-0",
+      "name": "Rousing Beat",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-healthcare-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "opening-bard-1-0",
+      "name": "Soothing Refrain",
+      "wallet": "combat"
+    },
+    {
+      "day": 71,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 71,
+      "type": "expired",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "opening-bard-2-0",
+      "name": "Clear Signal",
+      "wallet": "combat"
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "class",
+      "owner": "healer",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 80,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 80,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-healthcare-practice-monthly",
+      "title": "Healthcare portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 97,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 97,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "class",
+      "owner": "healer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 97,
+      "type": "skill",
+      "id": "arc-cleric-2",
+      "name": "Sheltering Light",
+      "wallet": "combat"
+    },
+    {
+      "day": 97,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "class",
+      "owner": "healer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "skill",
+      "id": "arc-cleric-3",
+      "name": "Mercy’s Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 113,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "skill",
+      "id": "focus-healer-1",
+      "name": "Merciful Rain: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "class",
+      "owner": "healer",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "skill",
+      "id": "arc-bard-2",
+      "name": "Ballad of Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 146,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 148,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "skill",
+      "id": "arc-bard-3",
+      "name": "Distracting Verse",
+      "wallet": "combat"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-healthcare-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "skill",
+      "id": "profession-healthcare-8",
+      "name": "Care Portfolio",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 169,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "skill",
+      "id": "arc-cleric-4",
+      "name": "Steady Counsel",
+      "wallet": "combat"
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "class",
+      "owner": "healer",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "vocation-healthcare-practice-monthly",
+      "title": "Healthcare portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 176,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 181,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-healthcare-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "skill",
+      "id": "arc-cleric-5",
+      "name": "Encouraging Word",
+      "wallet": "combat"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "class",
+      "owner": "healer",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 202,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "skill",
+      "id": "arc-bard-4",
+      "name": "Refrain of Clarity",
+      "wallet": "combat"
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "vocation-healthcare-practice-monthly",
+      "title": "Healthcare portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-healthcare-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 225,
+      "type": "skill",
+      "id": "arc-bard-5",
+      "name": "Warning Call",
+      "wallet": "combat"
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-healthcare-practice-monthly",
+      "title": "Healthcare portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 244,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "skill",
+      "id": "opening-cleric-0-1",
+      "name": "Helping Hand: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "skill",
+      "id": "opening-cleric-1-1",
+      "name": "Protective Prayer: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-healthcare-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 283,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 283,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 283,
+      "type": "skill",
+      "id": "opening-cleric-2-1",
+      "name": "Words of Courage: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 297,
+      "type": "request",
+      "id": "vocation-healthcare-practice-monthly",
+      "title": "Healthcare portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 297,
+      "type": "skill",
+      "id": "profession-healthcare-9",
+      "name": "Clinical Stewardship",
+      "wallet": "profession:healthcare"
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 302,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-healthcare-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "skill",
+      "id": "opening-bard-0-1",
+      "name": "Rousing Beat: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 307,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 318,
+      "type": "skill",
+      "id": "opening-bard-1-1",
+      "name": "Soothing Refrain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "class",
+      "owner": "healer",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-healthcare-practice-monthly",
+      "title": "Healthcare portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 325,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "healer-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-healthcare-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 346,
+      "type": "skill",
+      "id": "opening-bard-2-1",
+      "name": "Clear Signal: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 349,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 353,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 353,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-healthcare-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 360,
+      "type": "request",
+      "id": "vocation-healthcare-practice-monthly",
+      "title": "Healthcare portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Registered Nurse",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 363,
+      "type": "request",
+      "id": "vocation-healthcare-practice-weekly",
+      "title": "Healthcare field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "healer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-healthcare-0",
+    "focus-disciple-0",
+    "career-opening-healthcare-0",
+    "career-opening-healthcare-1",
+    "profession-healthcare-1",
+    "profession-healthcare-2",
+    "profession-healthcare-3",
+    "profession-healthcare-4",
+    "arc-cleric-1",
+    "focus-healer-0",
+    "arc-bard-1",
+    "profession-healthcare-5",
+    "profession-healthcare-6",
+    "opening-cleric-0-0",
+    "opening-cleric-1-0",
+    "opening-cleric-2-0",
+    "profession-healthcare-7",
+    "opening-bard-0-0",
+    "opening-bard-1-0",
+    "opening-bard-2-0",
+    "arc-cleric-2",
+    "universal-con-1",
+    "arc-cleric-3",
+    "focus-healer-1",
+    "arc-bard-2",
+    "arc-bard-3",
+    "profession-healthcare-8",
+    "arc-cleric-4",
+    "universal-con-2",
+    "arc-cleric-5",
+    "arc-bard-4",
+    "arc-bard-5",
+    "opening-cleric-0-1",
+    "universal-int-1",
+    "opening-cleric-1-1",
+    "opening-cleric-2-1",
+    "profession-healthcare-9",
+    "opening-bard-0-1",
+    "opening-bard-1-1",
+    "universal-int-2",
+    "opening-bard-2-1"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-healthcare-0",
+      "wallet": "profession:healthcare",
+      "cost": 1
+    },
+    {
+      "id": "focus-disciple-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-healthcare-0",
+      "wallet": "profession:healthcare",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-healthcare-1",
+      "wallet": "profession:healthcare",
+      "cost": 1
+    },
+    {
+      "id": "profession-healthcare-1",
+      "wallet": "profession:healthcare",
+      "cost": 2
+    },
+    {
+      "id": "profession-healthcare-2",
+      "wallet": "profession:healthcare",
+      "cost": 2
+    },
+    {
+      "id": "profession-healthcare-3",
+      "wallet": "profession:healthcare",
+      "cost": 3
+    },
+    {
+      "id": "profession-healthcare-4",
+      "wallet": "profession:healthcare",
+      "cost": 5
+    },
+    {
+      "id": "arc-cleric-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-healer-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-bard-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-healthcare-5",
+      "wallet": "profession:healthcare",
+      "cost": 8
+    },
+    {
+      "id": "profession-healthcare-6",
+      "wallet": "profession:healthcare",
+      "cost": 8
+    },
+    {
+      "id": "opening-cleric-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-healthcare-7",
+      "wallet": "profession:healthcare",
+      "cost": 14
+    },
+    {
+      "id": "opening-bard-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-cleric-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "focus-healer-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "profession-healthcare-8",
+      "wallet": "profession:healthcare",
+      "cost": 18
+    },
+    {
+      "id": "arc-cleric-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-cleric-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-cleric-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-healthcare-9",
+      "wallet": "profession:healthcare",
+      "cost": 24
+    },
+    {
+      "id": "opening-bard-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-bard-2-1",
+      "wallet": "combat",
+      "cost": 3
+    }
+  ],
+  "utilities": [
+    {
+      "id": "triage",
+      "name": "Chirurgeon’s Triage",
+      "category": "healthcare",
+      "learn": "Care Foundations or Clear Handoffs: Primer",
+      "skills": [
+        "profession-healthcare-0",
+        "career-opening-healthcare-0"
+      ],
+      "effect": "In Adventures, compare party recovery needs with potion and ether effects before spending supplies."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 329651
+}

@@ -1,0 +1,39 @@
+{
+  "appVersion": "1.25.0",
+  "appSourceCommit": "abbe6eb0ee63d72606b7483bf9d34194041d30e8",
+  "appSourceTree": "5b6138c55c1bbe31151c94f138c767d05a51f0bb",
+  "customers": 32,
+  "annualScenarios": 35,
+  "accountDays": 12775,
+  "dailyWalletsReconciled": 12775,
+  "dailyTimeBudgetChecks": 12775,
+  "weeklyAndCheckpointRoundtripsPerScenario": 56,
+  "schemaValidationCallsInMainScenarios": 3920,
+  "duplicatePayoutsRejected": 479,
+  "encounters": 5543,
+  "combatActionBounds": 0,
+  "productionFilesChanged": false,
+  "repeatability": {
+    "scenario": "leila",
+    "days": 365,
+    "caseJSONMatches": true,
+    "dailyCSVMatches": true,
+    "sha256": {
+      "json": "f964cfe34a0394dd33824fec586ad5d262dafc45cce88fa39e26976078c156b3",
+      "csv": "ac0e6e2cbdf77df2bb7a603ee90f9881833b57676a73d20b4025a748d85960a4"
+    },
+    "note": "Independent full-year replay; not counted as another customer or in the 12,775 main account-days."
+  },
+  "reproducedScopeDefects": [
+    {
+      "classId": "network-weaver",
+      "scope": "profession",
+      "stat": "INT"
+    }
+  ],
+  "categoryRequestStatDifferences": 20,
+  "fictionalInputs": true,
+  "physicalAndroidTest": false,
+  "humanEfficacyOrRetentionTest": false,
+  "documentationLinksChecked": 40
+}

@@ -1,0 +1,3368 @@
+{
+  "id": "tomas",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "tomas",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "artificer",
+    "profession": "Electrician",
+    "vocation": "trades-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 269,
+    "playerLevel": 61,
+    "guildRank": "B",
+    "xp": 151450,
+    "classId": "grand-artificer",
+    "classLevel": 42,
+    "classPotential": 42,
+    "profession": "Electrician",
+    "professionLevel": 81,
+    "professionPotential": 81,
+    "vocation": "trades-practice",
+    "vocationLevel": 81,
+    "stats": {
+      "STR": 9,
+      "DEX": 162,
+      "CON": 10,
+      "INT": 92,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 753,
+    "gold": 50680,
+    "skills": 70,
+    "careerUtilities": 1,
+    "examPasses": 31,
+    "stages": 154,
+    "wins": 180,
+    "losses": 0,
+    "minutes": 10026
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 6,
+      "playerLevel": 5,
+      "guildRank": "F",
+      "xp": 1800,
+      "classId": "artificer",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "Electrician",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "trades-practice",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 17,
+      "gold": 580,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 226
+    },
+    {
+      "day": 30,
+      "active": 24,
+      "playerLevel": 14,
+      "guildRank": "D",
+      "xp": 10500,
+      "classId": "artificer",
+      "classLevel": 4,
+      "classPotential": 7,
+      "profession": "Electrician",
+      "professionLevel": 9,
+      "professionPotential": 22,
+      "vocation": "trades-practice",
+      "vocationLevel": 22,
+      "stats": {
+        "STR": 9,
+        "DEX": 12,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 64,
+      "gold": 3180,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 1,
+      "stages": 13,
+      "wins": 14,
+      "losses": 0,
+      "minutes": 892
+    },
+    {
+      "day": 90,
+      "active": 67,
+      "playerLevel": 25,
+      "guildRank": "C",
+      "xp": 27730,
+      "classId": "artificer",
+      "classLevel": 17,
+      "classPotential": 17,
+      "profession": "Electrician",
+      "professionLevel": 19,
+      "professionPotential": 35,
+      "vocation": "trades-practice",
+      "vocationLevel": 35,
+      "stats": {
+        "STR": 9,
+        "DEX": 19,
+        "CON": 10,
+        "INT": 19,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 184,
+      "gold": 9046,
+      "skills": 28,
+      "careerUtilities": 1,
+      "examPasses": 6,
+      "stages": 42,
+      "wins": 44,
+      "losses": 0,
+      "minutes": 2503
+    },
+    {
+      "day": 180,
+      "active": 135,
+      "playerLevel": 41,
+      "guildRank": "B",
+      "xp": 71730,
+      "classId": "artificer",
+      "classLevel": 29,
+      "classPotential": 33,
+      "profession": "Electrician",
+      "professionLevel": 39,
+      "professionPotential": 56,
+      "vocation": "trades-practice",
+      "vocationLevel": 56,
+      "stats": {
+        "STR": 9,
+        "DEX": 45,
+        "CON": 10,
+        "INT": 31,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 378,
+      "gold": 23826,
+      "skills": 36,
+      "careerUtilities": 1,
+      "examPasses": 12,
+      "stages": 76,
+      "wins": 88,
+      "losses": 0,
+      "minutes": 5015
+    },
+    {
+      "day": 365,
+      "active": 269,
+      "playerLevel": 61,
+      "guildRank": "B",
+      "xp": 151450,
+      "classId": "grand-artificer",
+      "classLevel": 42,
+      "classPotential": 42,
+      "profession": "Electrician",
+      "professionLevel": 81,
+      "professionPotential": 81,
+      "vocation": "trades-practice",
+      "vocationLevel": 81,
+      "stats": {
+        "STR": 9,
+        "DEX": 162,
+        "CON": 10,
+        "INT": 92,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 753,
+      "gold": 50680,
+      "skills": 70,
+      "careerUtilities": 1,
+      "examPasses": 31,
+      "stages": 154,
+      "wins": 180,
+      "losses": 0,
+      "minutes": 10026
+    }
+  ],
+  "income": {
+    "requests": 30290,
+    "login": 5930,
+    "battles": 17590,
+    "exploration": 120,
+    "commissions": 18100
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 11550,
+    "tempering": 9300,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 180,
+    "wins": 180,
+    "losses": 0,
+    "actions": 370,
+    "bounds": 0,
+    "explorations": 43,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 178,
+    "companionAbilities": 184,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 670,
+    "weekly": 70,
+    "monthly": 13
+  },
+  "requestsByScope": {
+    "universal": 269,
+    "class": 163,
+    "profession": 321
+  },
+  "classHistory": [
+    {
+      "id": "artificer",
+      "level": 38,
+      "potential": 38,
+      "xp": 25280
+    },
+    {
+      "id": "grand-artificer",
+      "level": 42,
+      "potential": 42,
+      "xp": 30245
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Electrician",
+      "level": 81,
+      "xp": 104878
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "trades-practice",
+      "level": 81,
+      "xp": 104878
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "INT 34",
+      "met": true
+    },
+    {
+      "label": "Artificer Lv. 25",
+      "met": true
+    },
+    {
+      "label": "Skill: Shield Emitter",
+      "met": true
+    }
+  ],
+  "activeDays": 269,
+  "minutes": 10026,
+  "partialWorkouts": 0,
+  "expiredCommitments": 30,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 186,
+  "finalGoal": "grand-artificer",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 58,
+  "profession4Days": 22,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 277,
+    "weekly: #-day commitment: #/# days": 318,
+    "monthly: Dated practice days: #/#": 344,
+    "monthly: #-day commitment: #/# days": 318
+  },
+  "examDays": 37,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "arc-artificer-1",
+      "name": "Field Tools",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-trades-0",
+      "name": "Tool Knowledge",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "arc-artificer-2",
+      "name": "Spark Coil",
+      "wallet": "combat"
+    },
+    {
+      "day": 13,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 31
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "arc-artificer-4",
+      "name": "Shield Emitter",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "focus-artificer-0",
+      "name": "Artificer Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "focus-artificer-1",
+      "name": "Field Mending: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 22,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "career-opening-trades-0",
+      "name": "Measurement: Primer",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "career-opening-trades-1",
+      "name": "Plans & Diagrams: Primer",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-trades-1",
+      "name": "Measurement",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 33
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-trades-2",
+      "name": "Plans & Diagrams",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-trades-3",
+      "name": "Material Selection",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-trades-4",
+      "name": "Work Sequencing",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "profession-trades-5",
+      "name": "Fault Finding",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "profession-trades-6",
+      "name": "Quality Inspection",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-artificer-0-0",
+      "name": "Repair Kit",
+      "wallet": "combat"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 34
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-artificer-1-0",
+      "name": "Pocket Coil",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "opening-artificer-2-0",
+      "name": "Calibration",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "arc-artificer-3",
+      "name": "Volatile Charge",
+      "wallet": "combat"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "profession-trades-7",
+      "name": "Verified Repair",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "arc-artificer-5",
+      "name": "Diagnostic Lens",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "skill",
+      "id": "opening-artificer-0-1",
+      "name": "Repair Kit: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-artificer-1-1",
+      "name": "Pocket Coil: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "opening-artificer-2-1",
+      "name": "Calibration: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 58,
+      "type": "skill",
+      "id": "universal-dex-1",
+      "name": "Mobility Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "arc-artificer-6",
+      "name": "Overload Array",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 35
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "opening-artificer-0-2",
+      "name": "Repair Kit: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 61
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "opening-artificer-1-2",
+      "name": "Pocket Coil: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 37
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "opening-artificer-2-2",
+      "name": "Calibration: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "arc-artificer-7",
+      "name": "Mana Cell",
+      "wallet": "combat"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 37
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "universal-dex-2",
+      "name": "Sure Footing",
+      "wallet": "universal"
+    },
+    {
+      "day": 108,
+      "type": "skill",
+      "id": "arc-artificer-8",
+      "name": "Linked Circuit",
+      "wallet": "combat"
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 113,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 115,
+      "type": "skill",
+      "id": "profession-trades-8",
+      "name": "Trade Portfolio",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 38
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 165,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 169,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 173,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 179,
+      "type": "skill",
+      "id": "focus-artificer-2",
+      "name": "Field Mending: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 179,
+      "type": "skill",
+      "id": "arc-artificer-9",
+      "name": "Adaptive Plating",
+      "wallet": "combat"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "artificer-monthly",
+      "title": "Artificer training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 190,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 192,
+      "type": "request",
+      "id": "trial-grand-artificer-entry",
+      "title": "Grand Artificer entry trial",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 192,
+      "type": "class-change",
+      "from": "artificer",
+      "to": "grand-artificer",
+      "playerLevel": 42,
+      "classLevel": 1
+    },
+    {
+      "day": 194,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 194,
+      "type": "take",
+      "id": "grand-artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 194,
+      "type": "skill",
+      "id": "focus-grand-artificer-0",
+      "name": "Grand Artificer Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 194,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 194,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 197,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 197,
+      "type": "expired",
+      "id": "trial-grand-artificer-entry",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 197,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 201,
+      "type": "skill",
+      "id": "focus-grand-artificer-1",
+      "name": "Grand Mechanism: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 201,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 201,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 208,
+      "type": "skill",
+      "id": "profession-trades-9",
+      "name": "Master Craft",
+      "wallet": "profession:trades"
+    },
+    {
+      "day": 208,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 208,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 40
+    },
+    {
+      "day": 211,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "grand-artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "grand-artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 215,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "request",
+      "id": "grand-artificer-monthly",
+      "title": "Grand Artificer training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "skill",
+      "id": "element-fire-1",
+      "name": "Ember Needle: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 243,
+      "type": "skill",
+      "id": "element-ice-1",
+      "name": "Rime Shard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 243,
+      "type": "skill",
+      "id": "element-storm-1",
+      "name": "Storm Chain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 250,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 59
+    },
+    {
+      "day": 258,
+      "type": "skill",
+      "id": "arc-mage-6",
+      "name": "Cinder Seal",
+      "wallet": "combat"
+    },
+    {
+      "day": 258,
+      "type": "skill",
+      "id": "opening-mage-0-2",
+      "name": "Spark: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 258,
+      "type": "skill",
+      "id": "opening-mage-1-2",
+      "name": "Arcane Reading: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 265,
+      "type": "skill",
+      "id": "opening-mage-2-2",
+      "name": "Lesser Barrier: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 265,
+      "type": "skill",
+      "id": "element-fire-2",
+      "name": "Ember Needle: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 265,
+      "type": "skill",
+      "id": "element-ice-2",
+      "name": "Rime Shard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 61
+    },
+    {
+      "day": 272,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 272,
+      "type": "skill",
+      "id": "element-storm-2",
+      "name": "Storm Chain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "grand-artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 286,
+      "type": "skill",
+      "id": "focus-grand-artificer-2",
+      "name": "Grand Mechanism: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 286,
+      "type": "skill",
+      "id": "arc-mage-7",
+      "name": "Confluence",
+      "wallet": "combat"
+    },
+    {
+      "day": 286,
+      "type": "skill",
+      "id": "arc-mage-8",
+      "name": "Shared Reservoir",
+      "wallet": "combat"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 296,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 302,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "request",
+      "id": "grand-artificer-monthly",
+      "title": "Grand Artificer training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 303,
+      "type": "skill",
+      "id": "arc-artificer-10",
+      "name": "Grand Device",
+      "wallet": "combat"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "grand-artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 317,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 317,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 324,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "grand-artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 331,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 331,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "grand-artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "grand-artificer-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-trades-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "class",
+      "owner": "grand-artificer",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 41
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 349,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "vocation-trades-practice-weekly",
+      "title": "Construction field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-trades-practice-monthly",
+      "title": "Construction portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Electrician",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 42
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "grand-artificer-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-trades-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "arc-artificer-1",
+    "profession-trades-0",
+    "arc-artificer-2",
+    "arc-artificer-4",
+    "focus-artificer-0",
+    "focus-artificer-1",
+    "career-opening-trades-0",
+    "career-opening-trades-1",
+    "profession-trades-1",
+    "profession-trades-2",
+    "profession-trades-3",
+    "profession-trades-4",
+    "profession-trades-5",
+    "profession-trades-6",
+    "opening-artificer-0-0",
+    "opening-artificer-1-0",
+    "opening-artificer-2-0",
+    "arc-artificer-3",
+    "profession-trades-7",
+    "arc-artificer-5",
+    "opening-artificer-0-1",
+    "opening-artificer-1-1",
+    "opening-artificer-2-1",
+    "universal-dex-1",
+    "arc-artificer-6",
+    "opening-artificer-0-2",
+    "opening-artificer-1-2",
+    "opening-artificer-2-2",
+    "arc-artificer-7",
+    "universal-dex-2",
+    "arc-artificer-8",
+    "profession-trades-8",
+    "universal-con-1",
+    "focus-artificer-2",
+    "arc-artificer-9",
+    "focus-grand-artificer-0",
+    "arc-mage-1",
+    "opening-mage-0-0",
+    "focus-grand-artificer-1",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "profession-trades-9",
+    "element-fire-0",
+    "element-ice-0",
+    "element-storm-0",
+    "arc-mage-2",
+    "arc-mage-3",
+    "universal-con-2",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1",
+    "element-fire-1",
+    "element-ice-1",
+    "element-storm-1",
+    "arc-mage-4",
+    "arc-mage-5",
+    "arc-mage-6",
+    "opening-mage-0-2",
+    "opening-mage-1-2",
+    "opening-mage-2-2",
+    "element-fire-2",
+    "element-ice-2",
+    "universal-int-1",
+    "element-storm-2",
+    "focus-grand-artificer-2",
+    "arc-mage-7",
+    "arc-mage-8",
+    "arc-artificer-10",
+    "universal-int-2"
+  ],
+  "skillPurchases": [
+    {
+      "id": "arc-artificer-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-trades-0",
+      "wallet": "profession:trades",
+      "cost": 1
+    },
+    {
+      "id": "arc-artificer-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-artificer-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "focus-artificer-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-artificer-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "career-opening-trades-0",
+      "wallet": "profession:trades",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-trades-1",
+      "wallet": "profession:trades",
+      "cost": 1
+    },
+    {
+      "id": "profession-trades-1",
+      "wallet": "profession:trades",
+      "cost": 2
+    },
+    {
+      "id": "profession-trades-2",
+      "wallet": "profession:trades",
+      "cost": 2
+    },
+    {
+      "id": "profession-trades-3",
+      "wallet": "profession:trades",
+      "cost": 3
+    },
+    {
+      "id": "profession-trades-4",
+      "wallet": "profession:trades",
+      "cost": 5
+    },
+    {
+      "id": "profession-trades-5",
+      "wallet": "profession:trades",
+      "cost": 8
+    },
+    {
+      "id": "profession-trades-6",
+      "wallet": "profession:trades",
+      "cost": 8
+    },
+    {
+      "id": "opening-artificer-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-artificer-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-artificer-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-artificer-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "profession-trades-7",
+      "wallet": "profession:trades",
+      "cost": 14
+    },
+    {
+      "id": "arc-artificer-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-artificer-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-artificer-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-artificer-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-dex-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-artificer-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-artificer-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-artificer-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-artificer-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-artificer-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "universal-dex-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-artificer-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "profession-trades-8",
+      "wallet": "profession:trades",
+      "cost": 18
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-artificer-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-artificer-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "focus-grand-artificer-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-grand-artificer-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-trades-9",
+      "wallet": "profession:trades",
+      "cost": 24
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-fire-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-ice-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-storm-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-mage-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-mage-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-fire-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-ice-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "element-storm-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "focus-grand-artificer-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-mage-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-artificer-10",
+      "wallet": "combat",
+      "cost": 20
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    }
+  ],
+  "utilities": [
+    {
+      "id": "appraisal",
+      "name": "Artisan’s Appraisal",
+      "category": "trades",
+      "learn": "Tool Knowledge or Measurement: Primer",
+      "skills": [
+        "profession-trades-0",
+        "career-opening-trades-0"
+      ],
+      "effect": "In Adventures, compare current-town equipment with your loadout and check the gold and materials still needed."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": 192,
+  "finalCharacterBytes": 504970
+}

@@ -1,0 +1,3547 @@
+{
+  "id": "irene",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "irene",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 10,
+      "DEX": 7,
+      "CON": 8,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "scholar",
+    "profession": "Librarian",
+    "vocation": "education-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 286,
+    "playerLevel": 61,
+    "guildRank": "B",
+    "xp": 154490,
+    "classId": "sage",
+    "classLevel": 9,
+    "classPotential": 24,
+    "profession": "Librarian",
+    "professionLevel": 79,
+    "professionPotential": 80,
+    "vocation": "education-practice",
+    "vocationLevel": 80,
+    "stats": {
+      "STR": 10,
+      "DEX": 9,
+      "CON": 8,
+      "INT": 47,
+      "WIS": 40,
+      "CHA": 145
+    },
+    "requests": 799,
+    "gold": 39957,
+    "skills": 80,
+    "careerUtilities": 1,
+    "examPasses": 30,
+    "stages": 43,
+    "wins": 48,
+    "losses": 0,
+    "minutes": 10702
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 5,
+      "playerLevel": 2,
+      "guildRank": "F",
+      "xp": 530,
+      "classId": "scholar",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Librarian",
+      "professionLevel": 3,
+      "professionPotential": 3,
+      "vocation": "education-practice",
+      "vocationLevel": 3,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 13,
+      "gold": 186,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 0,
+      "wins": 0,
+      "losses": 0,
+      "minutes": 185
+    },
+    {
+      "day": 30,
+      "active": 21,
+      "playerLevel": 14,
+      "guildRank": "D",
+      "xp": 9630,
+      "classId": "scholar",
+      "classLevel": 4,
+      "classPotential": 7,
+      "profession": "Librarian",
+      "professionLevel": 4,
+      "professionPotential": 21,
+      "vocation": "education-practice",
+      "vocationLevel": 21,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 56,
+      "gold": 2411,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 1,
+      "wins": 1,
+      "losses": 0,
+      "minutes": 764
+    },
+    {
+      "day": 90,
+      "active": 67,
+      "playerLevel": 26,
+      "guildRank": "C",
+      "xp": 30190,
+      "classId": "ranger",
+      "classLevel": 1,
+      "classPotential": 1,
+      "profession": "Librarian",
+      "professionLevel": 24,
+      "professionPotential": 36,
+      "vocation": "education-practice",
+      "vocationLevel": 36,
+      "stats": {
+        "STR": 10,
+        "DEX": 7,
+        "CON": 8,
+        "INT": 15,
+        "WIS": 10,
+        "CHA": 24
+      },
+      "requests": 189,
+      "gold": 7923,
+      "skills": 36,
+      "careerUtilities": 1,
+      "examPasses": 6,
+      "stages": 10,
+      "wins": 10,
+      "losses": 0,
+      "minutes": 2530
+    },
+    {
+      "day": 180,
+      "active": 141,
+      "playerLevel": 39,
+      "guildRank": "B",
+      "xp": 64880,
+      "classId": "disciple",
+      "classLevel": 9,
+      "classPotential": 23,
+      "profession": "Librarian",
+      "professionLevel": 49,
+      "professionPotential": 51,
+      "vocation": "education-practice",
+      "vocationLevel": 51,
+      "stats": {
+        "STR": 10,
+        "DEX": 9,
+        "CON": 8,
+        "INT": 24,
+        "WIS": 13,
+        "CHA": 64
+      },
+      "requests": 390,
+      "gold": 16516,
+      "skills": 66,
+      "careerUtilities": 1,
+      "examPasses": 15,
+      "stages": 20,
+      "wins": 21,
+      "losses": 0,
+      "minutes": 5281
+    },
+    {
+      "day": 365,
+      "active": 286,
+      "playerLevel": 61,
+      "guildRank": "B",
+      "xp": 154490,
+      "classId": "sage",
+      "classLevel": 9,
+      "classPotential": 24,
+      "profession": "Librarian",
+      "professionLevel": 79,
+      "professionPotential": 80,
+      "vocation": "education-practice",
+      "vocationLevel": 80,
+      "stats": {
+        "STR": 10,
+        "DEX": 9,
+        "CON": 8,
+        "INT": 47,
+        "WIS": 40,
+        "CHA": 145
+      },
+      "requests": 799,
+      "gold": 39957,
+      "skills": 80,
+      "careerUtilities": 1,
+      "examPasses": 30,
+      "stages": 43,
+      "wins": 48,
+      "losses": 0,
+      "minutes": 10702
+    }
+  ],
+  "income": {
+    "requests": 30898,
+    "login": 6305,
+    "battles": 2735,
+    "exploration": 39,
+    "commissions": 2230
+  },
+  "spent": {
+    "supplies": 0,
+    "equipment": 1500,
+    "tempering": 300,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 48,
+    "wins": 48,
+    "losses": 0,
+    "actions": 97,
+    "bounds": 0,
+    "explorations": 11,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 49,
+    "companionAbilities": 48,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 714,
+    "weekly": 72,
+    "monthly": 13
+  },
+  "requestsByScope": {
+    "universal": 285,
+    "class": 180,
+    "profession": 334
+  },
+  "classHistory": [
+    {
+      "id": "scholar",
+      "level": 36,
+      "potential": 36,
+      "xp": 22010
+    },
+    {
+      "id": "ranger",
+      "level": 9,
+      "potential": 9,
+      "xp": 1860
+    },
+    {
+      "id": "disciple",
+      "level": 34,
+      "potential": 34,
+      "xp": 19980
+    },
+    {
+      "id": "sage",
+      "level": 9,
+      "potential": 24,
+      "xp": 10805
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Librarian",
+      "level": 79,
+      "xp": 103500
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "education-practice",
+      "level": 80,
+      "xp": 103500
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "INT 32",
+      "met": true
+    },
+    {
+      "label": "WIS 28",
+      "met": true
+    },
+    {
+      "label": "Scholar Lv. 20",
+      "met": true
+    },
+    {
+      "label": "Disciple Lv. 15",
+      "met": true
+    }
+  ],
+  "activeDays": 286,
+  "minutes": 10702,
+  "partialWorkouts": 0,
+  "expiredCommitments": 25,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 193,
+  "finalGoal": "sage",
+  "failedAttempts": 0,
+  "duplicateGuards": 17,
+  "level4Days": 106,
+  "profession4Days": 24,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "monthly: Dated practice days: #/#": 376,
+    "monthly: #-day commitment: #/# days": 351,
+    "weekly: Dated practice days: #/#": 264,
+    "weekly: #-day commitment: #/# days": 313,
+    "Time budget": 82
+  },
+  "examDays": 39,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 9,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 9,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "profession-education-0",
+      "name": "Learning Objectives",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "focus-scholar-0",
+      "name": "Scholar Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "career-opening-education-0",
+      "name": "Lesson Design: Primer",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "career-opening-education-1",
+      "name": "Retrieval Practice: Primer",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "profession-education-1",
+      "name": "Lesson Design",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 16,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-education-2",
+      "name": "Retrieval Practice",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-education-3",
+      "name": "Learner Feedback",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 23,
+      "type": "skill",
+      "id": "profession-education-4",
+      "name": "Assessment Design",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 27,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 27,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "focus-scholar-1",
+      "name": "Aether Bolt: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-education-5",
+      "name": "Accessible Materials",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 30,
+      "type": "skill",
+      "id": "profession-education-6",
+      "name": "Coaching Dialogue",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 37,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 44,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "arc-mage-2",
+      "name": "Ember Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "arc-mage-3",
+      "name": "Analyze Sigil",
+      "wallet": "combat"
+    },
+    {
+      "day": 52,
+      "type": "skill",
+      "id": "arc-mage-4",
+      "name": "Mana Recall",
+      "wallet": "combat"
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "profession-education-7",
+      "name": "Teaching Review",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "arc-mage-5",
+      "name": "Rune Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 59,
+      "type": "skill",
+      "id": "opening-mage-0-1",
+      "name": "Spark: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 63
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "opening-mage-1-1",
+      "name": "Arcane Reading: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "opening-mage-2-1",
+      "name": "Lesser Barrier: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "element-fire-1",
+      "name": "Ember Needle: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 69,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "element-ice-1",
+      "name": "Rime Shard: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "element-storm-1",
+      "name": "Storm Chain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 73,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 65
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 79,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 79,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "arc-mage-6",
+      "name": "Cinder Seal",
+      "wallet": "combat"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "opening-mage-0-2",
+      "name": "Spark: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "opening-mage-1-2",
+      "name": "Arcane Reading: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 62
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "opening-mage-2-2",
+      "name": "Lesser Barrier: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 87,
+      "type": "skill",
+      "id": "element-fire-2",
+      "name": "Ember Needle: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "trial-ranger-entry",
+      "title": "Ranger entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 90,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "ranger",
+      "playerLevel": 25,
+      "classLevel": 1
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "focus-ranger-0",
+      "name": "Ranger Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "arc-ranger-1",
+      "name": "Bow Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 97,
+      "type": "request",
+      "id": "ranger-weekly",
+      "title": "Explore a route",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 97,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "focus-ranger-1",
+      "name": "Hawk’s Mark: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "opening-ranger-0-0",
+      "name": "Opening Shot",
+      "wallet": "combat"
+    },
+    {
+      "day": 101,
+      "type": "skill",
+      "id": "opening-ranger-1-0",
+      "name": "Herbal Dressing",
+      "wallet": "combat"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "class",
+      "owner": "ranger",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 23
+    },
+    {
+      "day": 109,
+      "type": "skill",
+      "id": "opening-ranger-2-0",
+      "name": "Tracking Eye",
+      "wallet": "combat"
+    },
+    {
+      "day": 109,
+      "type": "skill",
+      "id": "arc-ranger-2",
+      "name": "Twin Arrows",
+      "wallet": "combat"
+    },
+    {
+      "day": 109,
+      "type": "skill",
+      "id": "universal-dex-1",
+      "name": "Mobility Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 116,
+      "type": "skill",
+      "id": "profession-education-8",
+      "name": "Teaching Portfolio",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 116,
+      "type": "skill",
+      "id": "arc-ranger-3",
+      "name": "Quarry Mark",
+      "wallet": "combat"
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "ranger",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 24
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "ranger-weekly",
+      "title": "Explore a route",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "class-change",
+      "from": "ranger",
+      "to": "scholar",
+      "playerLevel": 30,
+      "classLevel": 19
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 123,
+      "type": "skill",
+      "id": "element-ice-2",
+      "name": "Rime Shard: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 130,
+      "type": "skill",
+      "id": "element-storm-2",
+      "name": "Storm Chain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "request",
+      "id": "trial-disciple-entry",
+      "title": "Disciple entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 134,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "disciple",
+      "playerLevel": 31,
+      "classLevel": 1
+    },
+    {
+      "day": 135,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "focus-disciple-0",
+      "name": "Disciple Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "arc-cleric-1",
+      "name": "Restorative Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 137,
+      "type": "skill",
+      "id": "opening-cleric-0-0",
+      "name": "Helping Hand",
+      "wallet": "combat"
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "focus-disciple-1",
+      "name": "Prayer of Restoration: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "opening-cleric-1-0",
+      "name": "Protective Prayer",
+      "wallet": "combat"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "opening-cleric-2-0",
+      "name": "Words of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "skill",
+      "id": "arc-cleric-2",
+      "name": "Sheltering Light",
+      "wallet": "combat"
+    },
+    {
+      "day": 151,
+      "type": "skill",
+      "id": "arc-cleric-3",
+      "name": "Mercy’s Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 151,
+      "type": "skill",
+      "id": "arc-cleric-4",
+      "name": "Steady Counsel",
+      "wallet": "combat"
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 53
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 153,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 158,
+      "type": "skill",
+      "id": "arc-cleric-5",
+      "name": "Encouraging Word",
+      "wallet": "combat"
+    },
+    {
+      "day": 158,
+      "type": "skill",
+      "id": "opening-cleric-0-1",
+      "name": "Helping Hand: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 158,
+      "type": "skill",
+      "id": "universal-dex-2",
+      "name": "Sure Footing",
+      "wallet": "universal"
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 165,
+      "type": "skill",
+      "id": "opening-cleric-1-1",
+      "name": "Protective Prayer: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 165,
+      "type": "skill",
+      "id": "opening-cleric-2-1",
+      "name": "Words of Courage: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 56
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 172,
+      "type": "skill",
+      "id": "arc-cleric-6",
+      "name": "Sanctuary",
+      "wallet": "combat"
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 179,
+      "type": "request",
+      "id": "disciple-monthly",
+      "title": "Disciple training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 179,
+      "type": "skill",
+      "id": "opening-cleric-0-2",
+      "name": "Helping Hand: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 179,
+      "type": "skill",
+      "id": "opening-cleric-1-2",
+      "name": "Protective Prayer: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 179,
+      "type": "skill",
+      "id": "opening-cleric-2-2",
+      "name": "Words of Courage: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 181,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "disciple-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 188,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 200,
+      "type": "skill",
+      "id": "arc-cleric-7",
+      "name": "Shared Resolve",
+      "wallet": "combat"
+    },
+    {
+      "day": 200,
+      "type": "skill",
+      "id": "arc-cleric-8",
+      "name": "Radiant Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 202,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 205,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 207,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "disciple-monthly",
+      "title": "Disciple training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "disciple-weekly",
+      "title": "Scripture and service",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "class-change",
+      "from": "disciple",
+      "to": "scholar",
+      "playerLevel": 45,
+      "classLevel": 20
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 212,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "skill",
+      "id": "arc-mage-7",
+      "name": "Confluence",
+      "wallet": "combat"
+    },
+    {
+      "day": 214,
+      "type": "skill",
+      "id": "arc-mage-8",
+      "name": "Shared Reservoir",
+      "wallet": "combat"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "disciple-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 237,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "skill",
+      "id": "profession-education-9",
+      "name": "Learning Architect",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 244,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "class",
+      "owner": "disciple",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 62
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 279,
+      "type": "skill",
+      "id": "focus-scholar-2",
+      "name": "Aether Bolt: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 279,
+      "type": "skill",
+      "id": "arc-mage-9",
+      "name": "Starfall",
+      "wallet": "combat"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 293,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 293,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "scholar-monthly",
+      "title": "Scholar training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "scholar-weekly",
+      "title": "Apply a concept",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 307,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 310,
+      "type": "take",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 310,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 312,
+      "type": "request",
+      "id": "trial-sage-entry",
+      "title": "Sage entry trial",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 312,
+      "type": "class-change",
+      "from": "scholar",
+      "to": "sage",
+      "playerLevel": 56,
+      "classLevel": 1
+    },
+    {
+      "day": 313,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "take",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 314,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "skill",
+      "id": "focus-sage-0",
+      "name": "Sage Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 314,
+      "type": "skill",
+      "id": "arc-cleric-9",
+      "name": "Watchful Care",
+      "wallet": "combat"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "scholar-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "trial-sage-entry",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 52
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "skill",
+      "id": "focus-sage-1",
+      "name": "Sage’s Revelation: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 326,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Librarian",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "scholar-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "sage-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 342,
+      "type": "exam",
+      "scope": "class",
+      "owner": "scholar",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 68
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "class",
+      "owner": "sage",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 58
+    },
+    {
+      "day": 363,
+      "type": "request",
+      "id": "sage-weekly",
+      "title": "Teach a topic",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 363,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 363,
+      "type": "skill",
+      "id": "universal-wis-1",
+      "name": "Reflection",
+      "wallet": "universal"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "sage-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-education-0",
+    "focus-scholar-0",
+    "career-opening-education-0",
+    "career-opening-education-1",
+    "profession-education-1",
+    "arc-mage-1",
+    "profession-education-2",
+    "profession-education-3",
+    "profession-education-4",
+    "focus-scholar-1",
+    "profession-education-5",
+    "profession-education-6",
+    "opening-mage-0-0",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "element-fire-0",
+    "element-ice-0",
+    "element-storm-0",
+    "arc-mage-2",
+    "arc-mage-3",
+    "arc-mage-4",
+    "profession-education-7",
+    "arc-mage-5",
+    "opening-mage-0-1",
+    "opening-mage-1-1",
+    "opening-mage-2-1",
+    "element-fire-1",
+    "element-ice-1",
+    "element-storm-1",
+    "universal-con-1",
+    "arc-mage-6",
+    "opening-mage-0-2",
+    "opening-mage-1-2",
+    "opening-mage-2-2",
+    "element-fire-2",
+    "focus-ranger-0",
+    "arc-ranger-1",
+    "focus-ranger-1",
+    "opening-ranger-0-0",
+    "opening-ranger-1-0",
+    "opening-ranger-2-0",
+    "arc-ranger-2",
+    "universal-dex-1",
+    "profession-education-8",
+    "arc-ranger-3",
+    "element-ice-2",
+    "element-storm-2",
+    "focus-disciple-0",
+    "arc-cleric-1",
+    "opening-cleric-0-0",
+    "focus-disciple-1",
+    "opening-cleric-1-0",
+    "opening-cleric-2-0",
+    "arc-cleric-2",
+    "arc-cleric-3",
+    "arc-cleric-4",
+    "arc-cleric-5",
+    "opening-cleric-0-1",
+    "universal-dex-2",
+    "opening-cleric-1-1",
+    "opening-cleric-2-1",
+    "arc-cleric-6",
+    "opening-cleric-0-2",
+    "opening-cleric-1-2",
+    "opening-cleric-2-2",
+    "arc-cleric-7",
+    "arc-cleric-8",
+    "universal-con-2",
+    "arc-mage-7",
+    "arc-mage-8",
+    "profession-education-9",
+    "universal-int-1",
+    "focus-scholar-2",
+    "arc-mage-9",
+    "universal-int-2",
+    "focus-sage-0",
+    "arc-cleric-9",
+    "focus-sage-1",
+    "universal-wis-1"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-education-0",
+      "wallet": "profession:education",
+      "cost": 1
+    },
+    {
+      "id": "focus-scholar-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-education-0",
+      "wallet": "profession:education",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-education-1",
+      "wallet": "profession:education",
+      "cost": 1
+    },
+    {
+      "id": "profession-education-1",
+      "wallet": "profession:education",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-education-2",
+      "wallet": "profession:education",
+      "cost": 2
+    },
+    {
+      "id": "profession-education-3",
+      "wallet": "profession:education",
+      "cost": 3
+    },
+    {
+      "id": "profession-education-4",
+      "wallet": "profession:education",
+      "cost": 5
+    },
+    {
+      "id": "focus-scholar-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-education-5",
+      "wallet": "profession:education",
+      "cost": 8
+    },
+    {
+      "id": "profession-education-6",
+      "wallet": "profession:education",
+      "cost": 8
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-mage-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-education-7",
+      "wallet": "profession:education",
+      "cost": 14
+    },
+    {
+      "id": "arc-mage-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-mage-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-fire-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-ice-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "element-storm-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-mage-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-mage-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-fire-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "focus-ranger-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-ranger-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-ranger-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-ranger-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-ranger-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-ranger-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-ranger-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-dex-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-education-8",
+      "wallet": "profession:education",
+      "cost": 18
+    },
+    {
+      "id": "arc-ranger-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "element-ice-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "element-storm-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "focus-disciple-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-disciple-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-cleric-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-cleric-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-cleric-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-cleric-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-dex-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-cleric-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-cleric-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-cleric-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-cleric-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-cleric-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-cleric-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-cleric-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-cleric-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-mage-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-mage-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "profession-education-9",
+      "wallet": "profession:education",
+      "cost": 24
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-scholar-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-mage-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "focus-sage-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-cleric-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "focus-sage-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-wis-1",
+      "wallet": "universal",
+      "cost": 4
+    }
+  ],
+  "utilities": [
+    {
+      "id": "battle-primer",
+      "name": "Tutor’s Battle Primer",
+      "category": "education",
+      "learn": "Learning Objectives or Lesson Design: Primer",
+      "skills": [
+        "profession-education-0",
+        "career-opening-education-0"
+      ],
+      "effect": "In Adventures, prepare for the next stage using enemy patterns and your currently equipped party abilities."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": 312,
+  "finalCharacterBytes": 476106
+}

@@ -22,3 +22,7 @@ android/app/src/main/res/xml/config.xml
 android/app/google-services.json
 *.jks
 *.keystore
+
+# Intermediate partitions; the cohort and individual scenario records are published.
+docs/personas-1.25/results-batch-*.json
+docs/personas-1.25/daily-batch-*.csv

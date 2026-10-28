@@ -1,0 +1,2774 @@
+{
+  "id": "ada",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "ada",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 13
+    },
+    "rank": "F",
+    "classId": "bard",
+    "profession": "Teacher",
+    "vocation": "education-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 256,
+    "playerLevel": 70,
+    "guildRank": "A",
+    "xp": 198580,
+    "classId": "bard",
+    "classLevel": 20,
+    "classPotential": 20,
+    "profession": "Teacher",
+    "professionLevel": 104,
+    "professionPotential": 109,
+    "vocation": "education-practice",
+    "vocationLevel": 109,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 267
+    },
+    "requests": 741,
+    "gold": 60528,
+    "skills": 38,
+    "careerUtilities": 1,
+    "examPasses": 24,
+    "stages": 146,
+    "wins": 170,
+    "losses": 0,
+    "minutes": 9594
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 3,
+      "playerLevel": 3,
+      "guildRank": "F",
+      "xp": 930,
+      "classId": "bard",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Teacher",
+      "professionLevel": 4,
+      "professionPotential": 5,
+      "vocation": "education-practice",
+      "vocationLevel": 5,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 13
+      },
+      "requests": 9,
+      "gold": 226,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 0,
+      "wins": 0,
+      "losses": 0,
+      "minutes": 118
+    },
+    {
+      "day": 30,
+      "active": 19,
+      "playerLevel": 19,
+      "guildRank": "D",
+      "xp": 17590,
+      "classId": "bard",
+      "classLevel": 4,
+      "classPotential": 5,
+      "profession": "Teacher",
+      "professionLevel": 4,
+      "professionPotential": 31,
+      "vocation": "education-practice",
+      "vocationLevel": 31,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 14
+      },
+      "requests": 56,
+      "gold": 4033,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 6,
+      "wins": 6,
+      "losses": 0,
+      "minutes": 726
+    },
+    {
+      "day": 90,
+      "active": 63,
+      "playerLevel": 36,
+      "guildRank": "C",
+      "xp": 55590,
+      "classId": "bard",
+      "classLevel": 9,
+      "classPotential": 9,
+      "profession": "Teacher",
+      "professionLevel": 19,
+      "professionPotential": 57,
+      "vocation": "education-practice",
+      "vocationLevel": 57,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 27
+      },
+      "requests": 184,
+      "gold": 14868,
+      "skills": 23,
+      "careerUtilities": 1,
+      "examPasses": 4,
+      "stages": 38,
+      "wins": 40,
+      "losses": 0,
+      "minutes": 2380
+    },
+    {
+      "day": 180,
+      "active": 124,
+      "playerLevel": 45,
+      "guildRank": "B",
+      "xp": 86920,
+      "classId": "bard",
+      "classLevel": 14,
+      "classPotential": 14,
+      "profession": "Teacher",
+      "professionLevel": 44,
+      "professionPotential": 71,
+      "vocation": "education-practice",
+      "vocationLevel": 71,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 66
+      },
+      "requests": 360,
+      "gold": 25006,
+      "skills": 31,
+      "careerUtilities": 1,
+      "examPasses": 10,
+      "stages": 72,
+      "wins": 80,
+      "losses": 0,
+      "minutes": 4664
+    },
+    {
+      "day": 365,
+      "active": 256,
+      "playerLevel": 70,
+      "guildRank": "A",
+      "xp": 198580,
+      "classId": "bard",
+      "classLevel": 20,
+      "classPotential": 20,
+      "profession": "Teacher",
+      "professionLevel": 104,
+      "professionPotential": 109,
+      "vocation": "education-practice",
+      "vocationLevel": 109,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 267
+      },
+      "requests": 741,
+      "gold": 60528,
+      "skills": 38,
+      "careerUtilities": 1,
+      "examPasses": 24,
+      "stages": 146,
+      "wins": 170,
+      "losses": 0,
+      "minutes": 9594
+    }
+  ],
+  "income": {
+    "requests": 39716,
+    "login": 5640,
+    "battles": 15830,
+    "exploration": 192,
+    "commissions": 16700
+  },
+  "spent": {
+    "supplies": 0,
+    "equipment": 12000,
+    "tempering": 5100,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 170,
+    "wins": 170,
+    "losses": 0,
+    "actions": 492,
+    "bounds": 0,
+    "explorations": 50,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 170,
+    "companionAbilities": 310,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 643,
+    "weekly": 78,
+    "monthly": 20
+  },
+  "requestsByScope": {
+    "universal": 256,
+    "class": 131,
+    "profession": 354
+  },
+  "classHistory": [
+    {
+      "id": "bard",
+      "level": 20,
+      "potential": 20,
+      "xp": 7860
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Teacher",
+      "level": 104,
+      "xp": 188160
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "education-practice",
+      "level": 109,
+      "xp": 188160
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "CHA 36",
+      "met": true
+    },
+    {
+      "label": "Bard Lv. 25",
+      "met": false
+    },
+    {
+      "label": "Maestro entry trial",
+      "met": false
+    }
+  ],
+  "activeDays": 256,
+  "minutes": 9594,
+  "partialWorkouts": 0,
+  "expiredCommitments": 8,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 177,
+  "finalGoal": "maestro",
+  "failedAttempts": 0,
+  "duplicateGuards": 15,
+  "level4Days": 40,
+  "profession4Days": 36,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 168,
+    "weekly: #-day commitment: #/# days": 288,
+    "monthly: Dated practice days: #/#": 242,
+    "monthly: #-day commitment: #/# days": 326,
+    "Time budget": 47
+  },
+  "examDays": 28,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-education-0",
+      "name": "Learning Objectives",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-bard-0",
+      "name": "Bard Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-education-0",
+      "name": "Lesson Design: Primer",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "career-opening-education-1",
+      "name": "Retrieval Practice: Primer",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-education-1",
+      "name": "Lesson Design",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-education-2",
+      "name": "Retrieval Practice",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 20,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "focus-bard-1",
+      "name": "Traveler’s Refrain: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-education-3",
+      "name": "Learner Feedback",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-education-4",
+      "name": "Assessment Design",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 23,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-education-5",
+      "name": "Accessible Materials",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-education-6",
+      "name": "Coaching Dialogue",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "arc-bard-1",
+      "name": "Battle Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "baseline",
+      "route": "improvement",
+      "value": 55
+    },
+    {
+      "day": 34,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-bard-0-0",
+      "name": "Rousing Beat",
+      "wallet": "combat"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-bard-1-0",
+      "name": "Soothing Refrain",
+      "wallet": "combat"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-bard-2-0",
+      "name": "Clear Signal",
+      "wallet": "combat"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 41,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 41,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "profession-education-7",
+      "name": "Teaching Review",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "arc-bard-2",
+      "name": "Ballad of Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 48,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "arc-bard-3",
+      "name": "Distracting Verse",
+      "wallet": "combat"
+    },
+    {
+      "day": 51,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 57
+    },
+    {
+      "day": 57,
+      "type": "skill",
+      "id": "profession-education-8",
+      "name": "Teaching Portfolio",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 57,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 64,
+      "type": "skill",
+      "id": "arc-bard-4",
+      "name": "Refrain of Clarity",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 59
+    },
+    {
+      "day": 69,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 66
+    },
+    {
+      "day": 76,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 79,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 79,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 79,
+      "type": "skill",
+      "id": "arc-bard-5",
+      "name": "Warning Call",
+      "wallet": "combat"
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 67
+    },
+    {
+      "day": 90,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 97,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 100,
+      "type": "skill",
+      "id": "opening-bard-0-1",
+      "name": "Rousing Beat: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 104,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 107,
+      "type": "skill",
+      "id": "opening-bard-1-1",
+      "name": "Soothing Refrain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 111,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 62
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "profession-education-9",
+      "name": "Learning Architect",
+      "wallet": "profession:education"
+    },
+    {
+      "day": 114,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 69
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "skill",
+      "id": "opening-bard-2-1",
+      "name": "Clear Signal: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 132,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 144,
+      "type": "skill",
+      "id": "arc-bard-6",
+      "name": "Conductor’s Cue",
+      "wallet": "combat"
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 146,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 146,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "expired",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 160,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "opening-bard-0-2",
+      "name": "Rousing Beat: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 195,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 206,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 207,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 214,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 66
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "skill",
+      "id": "opening-bard-1-2",
+      "name": "Soothing Refrain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 223,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 71
+    },
+    {
+      "day": 223,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 235,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 240,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 240,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 240,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 244,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 247,
+      "type": "skill",
+      "id": "opening-bard-2-2",
+      "name": "Clear Signal: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 251,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 251,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 261,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 261,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 272,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 279,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 284,
+      "type": "skill",
+      "id": "arc-bard-7",
+      "name": "March of Courage",
+      "wallet": "combat"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 289,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 289,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 291,
+      "type": "skill",
+      "id": "universal-cha-1",
+      "name": "Conversation",
+      "wallet": "universal"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 293,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 296,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 85,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 307,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 307,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 314,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 319,
+      "type": "skill",
+      "id": "arc-bard-8",
+      "name": "Restful Chorus",
+      "wallet": "combat"
+    },
+    {
+      "day": 320,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 90,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 321,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "profession-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-education-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 95,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 335,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "expired",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "skill",
+      "id": "connection",
+      "name": "Voice of Encouragement",
+      "wallet": "universal"
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "class",
+      "owner": "bard",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 70
+    },
+    {
+      "day": 349,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 352,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Teacher",
+      "milestone": 100,
+      "status": "passed",
+      "route": "mastery",
+      "value": 72
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "profession-monthly",
+      "title": "Portfolio project",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-education-practice-monthly",
+      "title": "Education portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-education-practice-weekly",
+      "title": "Education field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "profession-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "profession-weekly",
+      "title": "Profession project",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 365,
+      "type": "expired",
+      "id": "vocation-education-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-education-0",
+    "focus-bard-0",
+    "career-opening-education-0",
+    "career-opening-education-1",
+    "profession-education-1",
+    "profession-education-2",
+    "focus-bard-1",
+    "profession-education-3",
+    "profession-education-4",
+    "profession-education-5",
+    "profession-education-6",
+    "arc-bard-1",
+    "opening-bard-0-0",
+    "opening-bard-1-0",
+    "opening-bard-2-0",
+    "profession-education-7",
+    "arc-bard-2",
+    "arc-bard-3",
+    "profession-education-8",
+    "universal-con-1",
+    "arc-bard-4",
+    "arc-bard-5",
+    "opening-bard-0-1",
+    "opening-bard-1-1",
+    "profession-education-9",
+    "universal-con-2",
+    "opening-bard-2-1",
+    "arc-bard-6",
+    "universal-int-1",
+    "opening-bard-0-2",
+    "opening-bard-1-2",
+    "universal-int-2",
+    "opening-bard-2-2",
+    "arc-bard-7",
+    "universal-cha-1",
+    "arc-bard-8",
+    "connection"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-education-0",
+      "wallet": "profession:education",
+      "cost": 1
+    },
+    {
+      "id": "focus-bard-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-education-0",
+      "wallet": "profession:education",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-education-1",
+      "wallet": "profession:education",
+      "cost": 1
+    },
+    {
+      "id": "profession-education-1",
+      "wallet": "profession:education",
+      "cost": 2
+    },
+    {
+      "id": "profession-education-2",
+      "wallet": "profession:education",
+      "cost": 2
+    },
+    {
+      "id": "focus-bard-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-education-3",
+      "wallet": "profession:education",
+      "cost": 3
+    },
+    {
+      "id": "profession-education-4",
+      "wallet": "profession:education",
+      "cost": 5
+    },
+    {
+      "id": "profession-education-5",
+      "wallet": "profession:education",
+      "cost": 8
+    },
+    {
+      "id": "profession-education-6",
+      "wallet": "profession:education",
+      "cost": 8
+    },
+    {
+      "id": "arc-bard-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-education-7",
+      "wallet": "profession:education",
+      "cost": 14
+    },
+    {
+      "id": "arc-bard-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "profession-education-8",
+      "wallet": "profession:education",
+      "cost": 18
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-bard-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-education-9",
+      "wallet": "profession:education",
+      "cost": 24
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-bard-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-bard-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-bard-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-bard-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-bard-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "universal-cha-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-bard-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "connection",
+      "wallet": "universal",
+      "cost": 4
+    }
+  ],
+  "utilities": [
+    {
+      "id": "battle-primer",
+      "name": "Tutor’s Battle Primer",
+      "category": "education",
+      "learn": "Learning Objectives or Lesson Design: Primer",
+      "skills": [
+        "profession-education-0",
+        "career-opening-education-0"
+      ],
+      "effect": "In Adventures, prepare for the next stage using enemy patterns and your currently equipped party abilities."
+    }
+  ],
+  "firstGoldDay": 307,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 444997
+}

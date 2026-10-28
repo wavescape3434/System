@@ -1,0 +1,3335 @@
+{
+  "id": "priya",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "priya",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 24,
+      "DEX": 15,
+      "CON": 12,
+      "INT": 10,
+      "WIS": 13,
+      "CHA": 13
+    },
+    "rank": "E",
+    "classId": "warrior",
+    "profession": "Firefighter",
+    "vocation": "public-safety-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 266,
+    "playerLevel": 58,
+    "guildRank": "B",
+    "xp": 139970,
+    "classId": "champion",
+    "classLevel": 34,
+    "classPotential": 35,
+    "profession": "Firefighter",
+    "professionLevel": 79,
+    "professionPotential": 79,
+    "vocation": "public-safety-practice",
+    "vocationLevel": 79,
+    "stats": {
+      "STR": 69,
+      "DEX": 15,
+      "CON": 147,
+      "INT": 10,
+      "WIS": 13,
+      "CHA": 17
+    },
+    "requests": 613,
+    "gold": 33754,
+    "skills": 75,
+    "careerUtilities": 1,
+    "examPasses": 26,
+    "stages": 231,
+    "wins": 279,
+    "losses": 0,
+    "minutes": 16380
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 6,
+      "playerLevel": 4,
+      "guildRank": "E",
+      "xp": 1560,
+      "classId": "warrior",
+      "classLevel": 3,
+      "classPotential": 3,
+      "profession": "Firefighter",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "public-safety-practice",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 24,
+        "DEX": 15,
+        "CON": 12,
+        "INT": 10,
+        "WIS": 13,
+        "CHA": 13
+      },
+      "requests": 14,
+      "gold": 492,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 6,
+      "wins": 6,
+      "losses": 0,
+      "minutes": 356
+    },
+    {
+      "day": 30,
+      "active": 22,
+      "playerLevel": 15,
+      "guildRank": "D",
+      "xp": 12060,
+      "classId": "warrior",
+      "classLevel": 7,
+      "classPotential": 7,
+      "profession": "Firefighter",
+      "professionLevel": 4,
+      "professionPotential": 23,
+      "vocation": "public-safety-practice",
+      "vocationLevel": 23,
+      "stats": {
+        "STR": 26,
+        "DEX": 15,
+        "CON": 12,
+        "INT": 10,
+        "WIS": 13,
+        "CHA": 13
+      },
+      "requests": 52,
+      "gold": 2957,
+      "skills": 10,
+      "careerUtilities": 1,
+      "examPasses": 1,
+      "stages": 18,
+      "wins": 18,
+      "losses": 0,
+      "minutes": 1294
+    },
+    {
+      "day": 90,
+      "active": 67,
+      "playerLevel": 29,
+      "guildRank": "C",
+      "xp": 36900,
+      "classId": "warrior",
+      "classLevel": 16,
+      "classPotential": 16,
+      "profession": "Firefighter",
+      "professionLevel": 9,
+      "professionPotential": 42,
+      "vocation": "public-safety-practice",
+      "vocationLevel": 42,
+      "stats": {
+        "STR": 34,
+        "DEX": 15,
+        "CON": 14,
+        "INT": 10,
+        "WIS": 13,
+        "CHA": 13
+      },
+      "requests": 154,
+      "gold": 11634,
+      "skills": 37,
+      "careerUtilities": 1,
+      "examPasses": 4,
+      "stages": 59,
+      "wins": 69,
+      "losses": 0,
+      "minutes": 4015
+    },
+    {
+      "day": 180,
+      "active": 131,
+      "playerLevel": 41,
+      "guildRank": "B",
+      "xp": 71600,
+      "classId": "champion",
+      "classLevel": 7,
+      "classPotential": 7,
+      "profession": "Firefighter",
+      "professionLevel": 29,
+      "professionPotential": 57,
+      "vocation": "public-safety-practice",
+      "vocationLevel": 57,
+      "stats": {
+        "STR": 47,
+        "DEX": 15,
+        "CON": 32,
+        "INT": 10,
+        "WIS": 13,
+        "CHA": 13
+      },
+      "requests": 304,
+      "gold": 23773,
+      "skills": 57,
+      "careerUtilities": 1,
+      "examPasses": 11,
+      "stages": 111,
+      "wins": 135,
+      "losses": 0,
+      "minutes": 7993
+    },
+    {
+      "day": 365,
+      "active": 266,
+      "playerLevel": 58,
+      "guildRank": "B",
+      "xp": 139970,
+      "classId": "champion",
+      "classLevel": 34,
+      "classPotential": 35,
+      "profession": "Firefighter",
+      "professionLevel": 79,
+      "professionPotential": 79,
+      "vocation": "public-safety-practice",
+      "vocationLevel": 79,
+      "stats": {
+        "STR": 69,
+        "DEX": 15,
+        "CON": 147,
+        "INT": 10,
+        "WIS": 13,
+        "CHA": 17
+      },
+      "requests": 613,
+      "gold": 33754,
+      "skills": 75,
+      "careerUtilities": 1,
+      "examPasses": 26,
+      "stages": 231,
+      "wins": 279,
+      "losses": 0,
+      "minutes": 16380
+    }
+  ],
+  "income": {
+    "requests": 27994,
+    "login": 5890,
+    "battles": 34955,
+    "exploration": 525,
+    "commissions": 31640
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 35850,
+    "tempering": 30900,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 279,
+    "wins": 279,
+    "losses": 0,
+    "actions": 447,
+    "bounds": 0,
+    "explorations": 78,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 280,
+    "companionAbilities": 167,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 532,
+    "weekly": 70,
+    "monthly": 11
+  },
+  "requestsByScope": {
+    "universal": 183,
+    "class": 112,
+    "profession": 318
+  },
+  "classHistory": [
+    {
+      "id": "warrior",
+      "level": 29,
+      "potential": 30,
+      "xp": 16070
+    },
+    {
+      "id": "champion",
+      "level": 34,
+      "potential": 35,
+      "xp": 21647
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Firefighter",
+      "level": 79,
+      "xp": 101205
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "public-safety-practice",
+      "level": 79,
+      "xp": 101205
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "STR 34",
+      "met": true
+    },
+    {
+      "label": "Warrior Lv. 25",
+      "met": true
+    },
+    {
+      "label": "Skill: Armor Splitter",
+      "met": true
+    }
+  ],
+  "activeDays": 266,
+  "minutes": 16380,
+  "partialWorkouts": 0,
+  "expiredCommitments": 26,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 183,
+  "finalGoal": "champion",
+  "failedAttempts": 0,
+  "duplicateGuards": 13,
+  "level4Days": 11,
+  "profession4Days": 29,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "Time budget": 83,
+    "weekly: Dated practice days: #/#": 233,
+    "weekly: #-day commitment: #/# days": 251,
+    "monthly: Dated practice days: #/#": 301,
+    "monthly: #-day commitment: #/# days": 232
+  },
+  "examDays": 36,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 4,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 691
+    },
+    {
+      "day": 9,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 9,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "arc-fighter-1",
+      "name": "Weapon Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "profession-public-safety-0",
+      "name": "Preparedness",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 9,
+      "type": "skill",
+      "id": "arc-fighter-2",
+      "name": "Shield Breaker",
+      "wallet": "combat"
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "focus-warrior-0",
+      "name": "Warrior Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "career-opening-public-safety-0",
+      "name": "Situation Reports: Primer",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 17,
+      "type": "skill",
+      "id": "career-opening-public-safety-1",
+      "name": "Risk Assessment: Primer",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 18,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 22,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 25,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 25,
+      "type": "skill",
+      "id": "arc-fighter-4",
+      "name": "Armor Splitter",
+      "wallet": "combat"
+    },
+    {
+      "day": 25,
+      "type": "skill",
+      "id": "focus-warrior-1",
+      "name": "Iron Cleave: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 25,
+      "type": "skill",
+      "id": "martial-spear-1",
+      "name": "Spear Reach",
+      "wallet": "combat"
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 27,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 51
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 32,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 240,
+      "gold": 48
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "martial-spear-2",
+      "name": "Line Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "profession-public-safety-1",
+      "name": "Situation Reports",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "profession-public-safety-2",
+      "name": "Risk Assessment",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 33,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 722
+    },
+    {
+      "day": 39,
+      "type": "skill",
+      "id": "profession-public-safety-3",
+      "name": "Response Planning",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 39,
+      "type": "skill",
+      "id": "profession-public-safety-4",
+      "name": "Team Communication",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 39,
+      "type": "skill",
+      "id": "profession-public-safety-5",
+      "name": "Incident Records",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 44,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 44,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 46,
+      "type": "skill",
+      "id": "profession-public-safety-6",
+      "name": "After-Action Review",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 46,
+      "type": "skill",
+      "id": "profession-public-safety-7",
+      "name": "Readiness Exercise",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 46,
+      "type": "skill",
+      "id": "opening-fighter-0-0",
+      "name": "Measured Thrust",
+      "wallet": "combat"
+    },
+    {
+      "day": 47,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 53,
+      "type": "skill",
+      "id": "opening-fighter-1-0",
+      "name": "Brawler’s Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 53,
+      "type": "skill",
+      "id": "opening-fighter-2-0",
+      "name": "Shield Footwork",
+      "wallet": "combat"
+    },
+    {
+      "day": 53,
+      "type": "skill",
+      "id": "martial-sword-1",
+      "name": "Sword Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 737
+    },
+    {
+      "day": 57,
+      "type": "training-rank",
+      "from": "D",
+      "to": "C"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "request",
+      "id": "warrior-monthly",
+      "title": "Warrior training adventure",
+      "cadence": "monthly",
+      "xp": 1080,
+      "gold": 216
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 60,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 60,
+      "type": "skill",
+      "id": "martial-axe-1",
+      "name": "Axe Leverage",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "skill",
+      "id": "martial-unarmed-1",
+      "name": "Open-Hand Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 60,
+      "type": "skill",
+      "id": "arc-fighter-3",
+      "name": "Sweeping Edge",
+      "wallet": "combat"
+    },
+    {
+      "day": 62,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 54
+    },
+    {
+      "day": 62,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 67,
+      "type": "skill",
+      "id": "arc-fighter-5",
+      "name": "Battle Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 67,
+      "type": "skill",
+      "id": "opening-fighter-0-1",
+      "name": "Measured Thrust: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 67,
+      "type": "skill",
+      "id": "opening-fighter-1-1",
+      "name": "Brawler’s Rhythm: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 744
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 74,
+      "type": "skill",
+      "id": "opening-fighter-2-1",
+      "name": "Shield Footwork: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 74,
+      "type": "skill",
+      "id": "martial-sword-2",
+      "name": "Measured Cut",
+      "wallet": "combat"
+    },
+    {
+      "day": 74,
+      "type": "skill",
+      "id": "martial-axe-2",
+      "name": "Hooking Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 81,
+      "type": "skill",
+      "id": "profession-public-safety-8",
+      "name": "Safety Portfolio",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 81,
+      "type": "skill",
+      "id": "martial-unarmed-2",
+      "name": "Combination Strike",
+      "wallet": "combat"
+    },
+    {
+      "day": 81,
+      "type": "skill",
+      "id": "universal-str-1",
+      "name": "Strength Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 83,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 56
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 86,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 88,
+      "type": "skill",
+      "id": "strength",
+      "name": "Iron Resolve",
+      "wallet": "universal"
+    },
+    {
+      "day": 88,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 88,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 752
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 95,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 95,
+      "type": "skill",
+      "id": "martial-spear-3",
+      "name": "Braced Point",
+      "wallet": "combat"
+    },
+    {
+      "day": 95,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 95,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 102,
+      "type": "skill",
+      "id": "arc-fighter-6",
+      "name": "Steel Tempest",
+      "wallet": "combat"
+    },
+    {
+      "day": 102,
+      "type": "skill",
+      "id": "opening-fighter-0-2",
+      "name": "Measured Thrust: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 756
+    },
+    {
+      "day": 107,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 107,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 109,
+      "type": "skill",
+      "id": "universal-str-3",
+      "name": "Power Strike",
+      "wallet": "universal"
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 113,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 114,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 759
+    },
+    {
+      "day": 118,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 125,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 130,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 58
+    },
+    {
+      "day": 132,
+      "type": "skill",
+      "id": "opening-fighter-1-2",
+      "name": "Brawler’s Rhythm: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 132,
+      "type": "skill",
+      "id": "opening-fighter-2-2",
+      "name": "Shield Footwork: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 132,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 137,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 763
+    },
+    {
+      "day": 139,
+      "type": "skill",
+      "id": "arc-fighter-7",
+      "name": "Duelist’s Answer",
+      "wallet": "combat"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 144,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 146,
+      "type": "skill",
+      "id": "arc-fighter-8",
+      "name": "Vanguard Charge",
+      "wallet": "combat"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 764
+    },
+    {
+      "day": 153,
+      "type": "skill",
+      "id": "martial-sword-3",
+      "name": "Riposte Line",
+      "wallet": "combat"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 158,
+      "type": "request",
+      "id": "warrior-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 160,
+      "type": "exam",
+      "scope": "class",
+      "owner": "warrior",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 60
+    },
+    {
+      "day": 160,
+      "type": "skill",
+      "id": "universal-int-3",
+      "name": "Tactical Insight",
+      "wallet": "universal"
+    },
+    {
+      "day": 160,
+      "type": "skill",
+      "id": "martial-axe-3",
+      "name": "Sundering Arc",
+      "wallet": "combat"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "trial-champion-entry",
+      "title": "Champion entry trial",
+      "cadence": "weekly",
+      "xp": 1400,
+      "gold": 280
+    },
+    {
+      "day": 167,
+      "type": "class-change",
+      "from": "warrior",
+      "to": "champion",
+      "playerLevel": 38,
+      "classLevel": 1
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 766
+    },
+    {
+      "day": 167,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 167,
+      "type": "skill",
+      "id": "focus-champion-0",
+      "name": "Champion Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 167,
+      "type": "skill",
+      "id": "arc-bard-1",
+      "name": "Battle Rhythm",
+      "wallet": "combat"
+    },
+    {
+      "day": 167,
+      "type": "skill",
+      "id": "opening-bard-0-0",
+      "name": "Rousing Beat",
+      "wallet": "combat"
+    },
+    {
+      "day": 169,
+      "type": "expired",
+      "id": "warrior-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 169,
+      "type": "expired",
+      "id": "trial-champion-entry",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 174,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 174,
+      "type": "skill",
+      "id": "focus-champion-1",
+      "name": "Champion’s Verdict: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 174,
+      "type": "skill",
+      "id": "opening-bard-1-0",
+      "name": "Soothing Refrain",
+      "wallet": "combat"
+    },
+    {
+      "day": 174,
+      "type": "skill",
+      "id": "opening-bard-2-0",
+      "name": "Clear Signal",
+      "wallet": "combat"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 181,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 767
+    },
+    {
+      "day": 181,
+      "type": "skill",
+      "id": "arc-bard-2",
+      "name": "Ballad of Recovery",
+      "wallet": "combat"
+    },
+    {
+      "day": 181,
+      "type": "skill",
+      "id": "arc-bard-3",
+      "name": "Distracting Verse",
+      "wallet": "combat"
+    },
+    {
+      "day": 181,
+      "type": "skill",
+      "id": "martial-unarmed-3",
+      "name": "Counterstep",
+      "wallet": "combat"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "warrior-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 60
+    },
+    {
+      "day": 188,
+      "type": "skill",
+      "id": "opening-bard-0-1",
+      "name": "Rousing Beat: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 193,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 195,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 767
+    },
+    {
+      "day": 195,
+      "type": "skill",
+      "id": "opening-bard-1-1",
+      "name": "Soothing Refrain: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 195,
+      "type": "skill",
+      "id": "opening-bard-2-1",
+      "name": "Clear Signal: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 201,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 204,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 207,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 768
+    },
+    {
+      "day": 209,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "skill",
+      "id": "arc-fighter-9",
+      "name": "Warrior’s Resolve",
+      "wallet": "combat"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 215,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 61
+    },
+    {
+      "day": 216,
+      "type": "skill",
+      "id": "profession-public-safety-9",
+      "name": "Response Leadership",
+      "wallet": "profession:public-safety"
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 221,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 228,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 62
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 235,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 237,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 769
+    },
+    {
+      "day": 243,
+      "type": "expired",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 62
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 249,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 258,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 63
+    },
+    {
+      "day": 258,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "skill",
+      "id": "martial-spear-4",
+      "name": "Master of the Spear",
+      "wallet": "combat"
+    },
+    {
+      "day": 260,
+      "type": "skill",
+      "id": "arc-bard-4",
+      "name": "Refrain of Clarity",
+      "wallet": "combat"
+    },
+    {
+      "day": 260,
+      "type": "skill",
+      "id": "arc-bard-5",
+      "name": "Warning Call",
+      "wallet": "combat"
+    },
+    {
+      "day": 263,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 769
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 270,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 271,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 272,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "skill",
+      "id": "arc-bard-6",
+      "name": "Conductor’s Cue",
+      "wallet": "combat"
+    },
+    {
+      "day": 274,
+      "type": "skill",
+      "id": "martial-sword-4",
+      "name": "Master of the Blade",
+      "wallet": "combat"
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 769
+    },
+    {
+      "day": 281,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 282,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 285,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 63
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 293,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 770
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-22"
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 298,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 298,
+      "type": "skill",
+      "id": "opening-bard-0-2",
+      "name": "Rousing Beat: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 298,
+      "type": "skill",
+      "id": "opening-bard-1-2",
+      "name": "Soothing Refrain: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 299,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 307,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 770
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 313,
+      "type": "skill",
+      "id": "opening-bard-2-2",
+      "name": "Clear Signal: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 321,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 770
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 326,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 328,
+      "type": "exam",
+      "scope": "class",
+      "owner": "champion",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 64
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 334,
+      "type": "skill",
+      "id": "focus-champion-2",
+      "name": "Champion’s Verdict: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "champion-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-public-safety-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Firefighter",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery",
+      "value": 770
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 340,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 342,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "expired",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 354,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-public-safety-practice-monthly",
+      "title": "Safety portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 361,
+      "type": "request",
+      "id": "champion-weekly",
+      "title": "Three strength sessions",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "vocation-public-safety-practice-weekly",
+      "title": "Safety field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 363,
+      "type": "skill",
+      "id": "martial-axe-4",
+      "name": "Master of the Axe",
+      "wallet": "combat"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "champion-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-public-safety-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "request",
+      "id": "champion-monthly",
+      "title": "Champion training adventure",
+      "cadence": "monthly",
+      "xp": 2700,
+      "gold": 540
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "arc-fighter-1",
+    "profession-public-safety-0",
+    "arc-fighter-2",
+    "focus-warrior-0",
+    "career-opening-public-safety-0",
+    "career-opening-public-safety-1",
+    "arc-fighter-4",
+    "focus-warrior-1",
+    "martial-spear-1",
+    "martial-spear-2",
+    "profession-public-safety-1",
+    "profession-public-safety-2",
+    "profession-public-safety-3",
+    "profession-public-safety-4",
+    "profession-public-safety-5",
+    "profession-public-safety-6",
+    "profession-public-safety-7",
+    "opening-fighter-0-0",
+    "opening-fighter-1-0",
+    "opening-fighter-2-0",
+    "martial-sword-1",
+    "martial-axe-1",
+    "martial-unarmed-1",
+    "arc-fighter-3",
+    "arc-fighter-5",
+    "opening-fighter-0-1",
+    "opening-fighter-1-1",
+    "opening-fighter-2-1",
+    "martial-sword-2",
+    "martial-axe-2",
+    "profession-public-safety-8",
+    "martial-unarmed-2",
+    "universal-str-1",
+    "strength",
+    "universal-con-1",
+    "universal-con-2",
+    "martial-spear-3",
+    "universal-int-1",
+    "universal-int-2",
+    "arc-fighter-6",
+    "opening-fighter-0-2",
+    "universal-str-3",
+    "opening-fighter-1-2",
+    "opening-fighter-2-2",
+    "universal-con-3",
+    "arc-fighter-7",
+    "arc-fighter-8",
+    "martial-sword-3",
+    "universal-int-3",
+    "martial-axe-3",
+    "focus-champion-0",
+    "arc-bard-1",
+    "opening-bard-0-0",
+    "focus-champion-1",
+    "opening-bard-1-0",
+    "opening-bard-2-0",
+    "arc-bard-2",
+    "arc-bard-3",
+    "martial-unarmed-3",
+    "opening-bard-0-1",
+    "opening-bard-1-1",
+    "opening-bard-2-1",
+    "arc-fighter-9",
+    "profession-public-safety-9",
+    "martial-spear-4",
+    "arc-bard-4",
+    "arc-bard-5",
+    "arc-bard-6",
+    "martial-sword-4",
+    "opening-bard-0-2",
+    "opening-bard-1-2",
+    "opening-bard-2-2",
+    "focus-champion-2",
+    "martial-axe-4"
+  ],
+  "skillPurchases": [
+    {
+      "id": "arc-fighter-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-public-safety-0",
+      "wallet": "profession:public-safety",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "focus-warrior-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-public-safety-0",
+      "wallet": "profession:public-safety",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-public-safety-1",
+      "wallet": "profession:public-safety",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "focus-warrior-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-spear-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-spear-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-public-safety-1",
+      "wallet": "profession:public-safety",
+      "cost": 2
+    },
+    {
+      "id": "profession-public-safety-2",
+      "wallet": "profession:public-safety",
+      "cost": 2
+    },
+    {
+      "id": "profession-public-safety-3",
+      "wallet": "profession:public-safety",
+      "cost": 3
+    },
+    {
+      "id": "profession-public-safety-4",
+      "wallet": "profession:public-safety",
+      "cost": 5
+    },
+    {
+      "id": "profession-public-safety-5",
+      "wallet": "profession:public-safety",
+      "cost": 8
+    },
+    {
+      "id": "profession-public-safety-6",
+      "wallet": "profession:public-safety",
+      "cost": 8
+    },
+    {
+      "id": "profession-public-safety-7",
+      "wallet": "profession:public-safety",
+      "cost": 14
+    },
+    {
+      "id": "opening-fighter-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-fighter-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-sword-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-axe-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "martial-unarmed-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-fighter-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-fighter-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-fighter-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-sword-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "martial-axe-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-public-safety-8",
+      "wallet": "profession:public-safety",
+      "cost": 18
+    },
+    {
+      "id": "martial-unarmed-2",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-str-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "strength",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "martial-spear-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-fighter-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-fighter-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-str-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "opening-fighter-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-fighter-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "arc-fighter-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "arc-fighter-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "martial-sword-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "universal-int-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "martial-axe-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "focus-champion-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-bard-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "focus-champion-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-bard-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-bard-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-bard-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "martial-unarmed-3",
+      "wallet": "combat",
+      "cost": 10
+    },
+    {
+      "id": "opening-bard-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-bard-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-fighter-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "profession-public-safety-9",
+      "wallet": "profession:public-safety",
+      "cost": 24
+    },
+    {
+      "id": "martial-spear-4",
+      "wallet": "combat",
+      "cost": 24
+    },
+    {
+      "id": "arc-bard-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-bard-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "martial-sword-4",
+      "wallet": "combat",
+      "cost": 24
+    },
+    {
+      "id": "opening-bard-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-bard-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-bard-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "focus-champion-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "martial-axe-4",
+      "wallet": "combat",
+      "cost": 24
+    }
+  ],
+  "utilities": [
+    {
+      "id": "watch",
+      "name": "Sentinel’s Watch",
+      "category": "public-safety",
+      "learn": "Preparedness or Situation Reports: Primer",
+      "skills": [
+        "profession-public-safety-0",
+        "career-opening-public-safety-0"
+      ],
+      "effect": "In Adventures, review roaming-boss and ambush risks across cleared areas before another exploration."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": 167,
+  "finalCharacterBytes": 821528
+}

@@ -1,0 +1,2653 @@
+{
+  "id": "ruth",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "ruth",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "ranger",
+    "profession": "Farmer",
+    "vocation": "agriculture-practice"
+  },
+  "final": {
+    "day": 365,
+    "active": 176,
+    "playerLevel": 49,
+    "guildRank": "B",
+    "xp": 100410,
+    "classId": "ranger",
+    "classLevel": 16,
+    "classPotential": 16,
+    "profession": "Farmer",
+    "professionLevel": 74,
+    "professionPotential": 74,
+    "vocation": "agriculture-practice",
+    "vocationLevel": 74,
+    "stats": {
+      "STR": 9,
+      "DEX": 19,
+      "CON": 129,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 395,
+    "gold": 30289,
+    "skills": 39,
+    "careerUtilities": 1,
+    "examPasses": 17,
+    "stages": 75,
+    "wins": 86,
+    "losses": 0,
+    "minutes": 7044
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 4,
+      "playerLevel": 4,
+      "guildRank": "F",
+      "xp": 1570,
+      "classId": "ranger",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "Farmer",
+      "professionLevel": 4,
+      "professionPotential": 6,
+      "vocation": "agriculture-practice",
+      "vocationLevel": 6,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 9,
+      "gold": 374,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 0,
+      "stages": 2,
+      "wins": 2,
+      "losses": 0,
+      "minutes": 218
+    },
+    {
+      "day": 30,
+      "active": 17,
+      "playerLevel": 14,
+      "guildRank": "D",
+      "xp": 10330,
+      "classId": "ranger",
+      "classLevel": 4,
+      "classPotential": 4,
+      "profession": "Farmer",
+      "professionLevel": 4,
+      "professionPotential": 22,
+      "vocation": "agriculture-practice",
+      "vocationLevel": 22,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 38,
+      "gold": 2801,
+      "skills": 13,
+      "careerUtilities": 1,
+      "examPasses": 0,
+      "stages": 8,
+      "wins": 8,
+      "losses": 0,
+      "minutes": 677
+    },
+    {
+      "day": 90,
+      "active": 46,
+      "playerLevel": 23,
+      "guildRank": "D",
+      "xp": 24190,
+      "classId": "ranger",
+      "classLevel": 8,
+      "classPotential": 8,
+      "profession": "Farmer",
+      "professionLevel": 9,
+      "professionPotential": 35,
+      "vocation": "agriculture-practice",
+      "vocationLevel": 35,
+      "stats": {
+        "STR": 9,
+        "DEX": 12,
+        "CON": 12,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 103,
+      "gold": 4943,
+      "skills": 23,
+      "careerUtilities": 1,
+      "examPasses": 2,
+      "stages": 21,
+      "wins": 22,
+      "losses": 0,
+      "minutes": 1858
+    },
+    {
+      "day": 180,
+      "active": 94,
+      "playerLevel": 36,
+      "guildRank": "C",
+      "xp": 55460,
+      "classId": "ranger",
+      "classLevel": 12,
+      "classPotential": 12,
+      "profession": "Farmer",
+      "professionLevel": 29,
+      "professionPotential": 54,
+      "vocation": "agriculture-practice",
+      "vocationLevel": 54,
+      "stats": {
+        "STR": 9,
+        "DEX": 15,
+        "CON": 30,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 211,
+      "gold": 15555,
+      "skills": 33,
+      "careerUtilities": 1,
+      "examPasses": 7,
+      "stages": 40,
+      "wins": 44,
+      "losses": 0,
+      "minutes": 3879
+    },
+    {
+      "day": 365,
+      "active": 176,
+      "playerLevel": 49,
+      "guildRank": "B",
+      "xp": 100410,
+      "classId": "ranger",
+      "classLevel": 16,
+      "classPotential": 16,
+      "profession": "Farmer",
+      "professionLevel": 74,
+      "professionPotential": 74,
+      "vocation": "agriculture-practice",
+      "vocationLevel": 74,
+      "stats": {
+        "STR": 9,
+        "DEX": 19,
+        "CON": 129,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 395,
+      "gold": 30289,
+      "skills": 39,
+      "careerUtilities": 1,
+      "examPasses": 17,
+      "stages": 75,
+      "wins": 86,
+      "losses": 0,
+      "minutes": 7044
+    }
+  ],
+  "income": {
+    "requests": 20082,
+    "login": 3885,
+    "battles": 5965,
+    "exploration": 117,
+    "commissions": 5540
+  },
+  "spent": {
+    "supplies": 50,
+    "equipment": 3000,
+    "tempering": 1800,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 86,
+    "wins": 86,
+    "losses": 0,
+    "actions": 182,
+    "bounds": 0,
+    "explorations": 30,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 91,
+    "companionAbilities": 91,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 341,
+    "weekly": 45,
+    "monthly": 9
+  },
+  "requestsByScope": {
+    "universal": 86,
+    "class": 90,
+    "profession": 219
+  },
+  "classHistory": [
+    {
+      "id": "ranger",
+      "level": 16,
+      "potential": 16,
+      "xp": 5400
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "Farmer",
+      "level": 74,
+      "xp": 88965
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "agriculture-practice",
+      "level": 74,
+      "xp": 88965
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "DEX 30",
+      "met": false
+    },
+    {
+      "label": "CON 28",
+      "met": true
+    },
+    {
+      "label": "Ranger Lv. 25",
+      "met": false
+    },
+    {
+      "label": "Beastwarden entry trial",
+      "met": false
+    }
+  ],
+  "activeDays": 176,
+  "minutes": 7044,
+  "partialWorkouts": 0,
+  "expiredCommitments": 56,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 11,
+  "directVocationRequests": 133,
+  "finalGoal": "beastwarden",
+  "failedAttempts": 0,
+  "duplicateGuards": 8,
+  "level4Days": 2,
+  "profession4Days": 42,
+  "careerChangeDone": false,
+  "certificateDone": false,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 232,
+    "weekly: #-day commitment: #/# days": 156,
+    "monthly: Dated practice days: #/#": 239,
+    "monthly: #-day commitment: #/# days": 196,
+    "Time budget": 41
+  },
+  "examDays": 23,
+  "events": [
+    {
+      "day": 1,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 1,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 7,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 7,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "profession-agriculture-0",
+      "name": "Site Observation",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "focus-ranger-0",
+      "name": "Ranger Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 8,
+      "type": "skill",
+      "id": "career-opening-agriculture-0",
+      "name": "Seasonal Planning: Primer",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 14,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 557
+    },
+    {
+      "day": 14,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "career-opening-agriculture-1",
+      "name": "Resource Records: Primer",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-agriculture-1",
+      "name": "Seasonal Planning",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 15,
+      "type": "skill",
+      "id": "profession-agriculture-2",
+      "name": "Resource Records",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 21,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "focus-ranger-1",
+      "name": "Hawk’s Mark: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-agriculture-3",
+      "name": "Equipment Knowledge",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 22,
+      "type": "skill",
+      "id": "profession-agriculture-4",
+      "name": "Stewardship Practice",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 24,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 28,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 5,
+      "status": "failed",
+      "route": "improvement",
+      "value": 571
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-agriculture-5",
+      "name": "Maintenance Schedule",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "profession-agriculture-6",
+      "name": "Condition Monitoring",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 29,
+      "type": "skill",
+      "id": "arc-ranger-1",
+      "name": "Bow Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 35,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 35,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 36,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-01"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "opening-ranger-0-0",
+      "name": "Opening Shot",
+      "wallet": "combat"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "universal-dex-1",
+      "name": "Mobility Basics",
+      "wallet": "universal"
+    },
+    {
+      "day": 36,
+      "type": "skill",
+      "id": "universal-dex-2",
+      "name": "Sure Footing",
+      "wallet": "universal"
+    },
+    {
+      "day": 42,
+      "type": "exam",
+      "scope": "class",
+      "owner": "ranger",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 32
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "opening-ranger-1-0",
+      "name": "Herbal Dressing",
+      "wallet": "combat"
+    },
+    {
+      "day": 43,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 49,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement",
+      "value": 583
+    },
+    {
+      "day": 49,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 50,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-15"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "skill",
+      "id": "opening-ranger-2-0",
+      "name": "Tracking Eye",
+      "wallet": "combat"
+    },
+    {
+      "day": 52,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "expired",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "skill",
+      "id": "profession-agriculture-7",
+      "name": "Site Review",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 63,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 63,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 64,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 66,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 66,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "arc-ranger-2",
+      "name": "Twin Arrows",
+      "wallet": "combat"
+    },
+    {
+      "day": 66,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 70,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 593
+    },
+    {
+      "day": 70,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 71,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 71,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 77,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 80,
+      "type": "skill",
+      "id": "arc-ranger-3",
+      "name": "Quarry Mark",
+      "wallet": "combat"
+    },
+    {
+      "day": 84,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 600
+    },
+    {
+      "day": 84,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 85,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 91,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 91,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 91,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 91,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 92,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "arc-ranger-4",
+      "name": "Trail Remedy",
+      "wallet": "combat"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 94,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 98,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 605
+    },
+    {
+      "day": 98,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 99,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "expired",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 112,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 10,
+      "status": "failed",
+      "route": "improvement",
+      "value": 609
+    },
+    {
+      "day": 112,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 113,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 117,
+      "type": "skill",
+      "id": "arc-ranger-5",
+      "name": "Hawk Volley",
+      "wallet": "combat"
+    },
+    {
+      "day": 119,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 119,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 119,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 120,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 122,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 122,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 124,
+      "type": "skill",
+      "id": "profession-agriculture-8",
+      "name": "Land Portfolio",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 124,
+      "type": "skill",
+      "id": "universal-dex-3",
+      "name": "Quickstep",
+      "wallet": "universal"
+    },
+    {
+      "day": 126,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 613
+    },
+    {
+      "day": 126,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 127,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 127,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "skill",
+      "id": "opening-ranger-0-1",
+      "name": "Opening Shot: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 133,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 140,
+      "type": "exam",
+      "scope": "class",
+      "owner": "ranger",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement",
+      "value": 36
+    },
+    {
+      "day": 140,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 143,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 147,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 147,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 619
+    },
+    {
+      "day": 148,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 148,
+      "type": "expired",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 152,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "skill",
+      "id": "opening-ranger-1-1",
+      "name": "Herbal Dressing: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 154,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 155,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 155,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 161,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery",
+      "value": 621
+    },
+    {
+      "day": 161,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "opening-ranger-2-1",
+      "name": "Tracking Eye: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 169,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 175,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 175,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery",
+      "value": 623
+    },
+    {
+      "day": 176,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 176,
+      "type": "expired",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-19"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 176,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 178,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 180,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 210,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery",
+      "value": 624
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 217,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 218,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 218,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "skill",
+      "id": "arc-ranger-6",
+      "name": "Expedition Guard",
+      "wallet": "combat"
+    },
+    {
+      "day": 224,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery",
+      "value": 626
+    },
+    {
+      "day": 224,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 231,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 231,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 232,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 236,
+      "type": "skill",
+      "id": "universal-int-3",
+      "name": "Tactical Insight",
+      "wallet": "universal"
+    },
+    {
+      "day": 238,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery",
+      "value": 628
+    },
+    {
+      "day": 238,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 239,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 245,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 246,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "skill",
+      "id": "opening-ranger-0-2",
+      "name": "Opening Shot: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "expired",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 266,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery",
+      "value": 629
+    },
+    {
+      "day": 266,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 267,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 267,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 269,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 273,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 273,
+      "type": "skill",
+      "id": "profession-agriculture-9",
+      "name": "Resource Steward",
+      "wallet": "profession:agriculture"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 274,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-25"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 274,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 280,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery",
+      "value": 630
+    },
+    {
+      "day": 280,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 281,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 287,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 287,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 294,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery",
+      "value": 631
+    },
+    {
+      "day": 294,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 295,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 297,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 301,
+      "type": "exam",
+      "scope": "class",
+      "owner": "ranger",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery",
+      "value": 39
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 308,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery",
+      "value": 632
+    },
+    {
+      "day": 308,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 308,
+      "type": "skill",
+      "id": "opening-ranger-1-2",
+      "name": "Herbal Dressing: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 309,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 315,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 315,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 316,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 316,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 322,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery",
+      "value": 632
+    },
+    {
+      "day": 322,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-13"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "expired",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 332,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 335,
+      "type": "expired",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 336,
+      "type": "take",
+      "id": "ranger-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 336,
+      "type": "take",
+      "id": "vocation-agriculture-practice-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 336,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "Farmer",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery",
+      "value": 633
+    },
+    {
+      "day": 336,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 337,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 343,
+      "type": "request",
+      "id": "q-group-hike",
+      "title": "Group hike",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 344,
+      "type": "skill",
+      "id": "opening-ranger-2-2",
+      "name": "Tracking Eye: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 350,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 351,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 357,
+      "type": "request",
+      "id": "vocation-agriculture-practice-monthly",
+      "title": "Land, Agriculture portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 357,
+      "type": "request",
+      "id": "vocation-agriculture-practice-weekly",
+      "title": "Land, Agriculture field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 358,
+      "type": "expired",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "ranger-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-agriculture-practice-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-agriculture-0",
+    "focus-ranger-0",
+    "career-opening-agriculture-0",
+    "career-opening-agriculture-1",
+    "profession-agriculture-1",
+    "profession-agriculture-2",
+    "focus-ranger-1",
+    "profession-agriculture-3",
+    "profession-agriculture-4",
+    "profession-agriculture-5",
+    "profession-agriculture-6",
+    "arc-ranger-1",
+    "opening-ranger-0-0",
+    "universal-dex-1",
+    "universal-dex-2",
+    "opening-ranger-1-0",
+    "universal-con-1",
+    "opening-ranger-2-0",
+    "profession-agriculture-7",
+    "arc-ranger-2",
+    "universal-con-2",
+    "arc-ranger-3",
+    "arc-ranger-4",
+    "universal-int-1",
+    "universal-int-2",
+    "arc-ranger-5",
+    "profession-agriculture-8",
+    "universal-dex-3",
+    "opening-ranger-0-1",
+    "opening-ranger-1-1",
+    "opening-ranger-2-1",
+    "universal-con-3",
+    "arc-ranger-6",
+    "universal-int-3",
+    "opening-ranger-0-2",
+    "profession-agriculture-9",
+    "opening-ranger-1-2",
+    "opening-ranger-2-2"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-agriculture-0",
+      "wallet": "profession:agriculture",
+      "cost": 1
+    },
+    {
+      "id": "focus-ranger-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-agriculture-0",
+      "wallet": "profession:agriculture",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-agriculture-1",
+      "wallet": "profession:agriculture",
+      "cost": 1
+    },
+    {
+      "id": "profession-agriculture-1",
+      "wallet": "profession:agriculture",
+      "cost": 2
+    },
+    {
+      "id": "profession-agriculture-2",
+      "wallet": "profession:agriculture",
+      "cost": 2
+    },
+    {
+      "id": "focus-ranger-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-agriculture-3",
+      "wallet": "profession:agriculture",
+      "cost": 3
+    },
+    {
+      "id": "profession-agriculture-4",
+      "wallet": "profession:agriculture",
+      "cost": 5
+    },
+    {
+      "id": "profession-agriculture-5",
+      "wallet": "profession:agriculture",
+      "cost": 8
+    },
+    {
+      "id": "profession-agriculture-6",
+      "wallet": "profession:agriculture",
+      "cost": 8
+    },
+    {
+      "id": "arc-ranger-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-ranger-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-dex-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-dex-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-ranger-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "opening-ranger-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-agriculture-7",
+      "wallet": "profession:agriculture",
+      "cost": 14
+    },
+    {
+      "id": "arc-ranger-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-ranger-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-ranger-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-ranger-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-agriculture-8",
+      "wallet": "profession:agriculture",
+      "cost": 18
+    },
+    {
+      "id": "universal-dex-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "opening-ranger-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-ranger-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-ranger-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "arc-ranger-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "universal-int-3",
+      "wallet": "universal",
+      "cost": 8
+    },
+    {
+      "id": "opening-ranger-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "profession-agriculture-9",
+      "wallet": "profession:agriculture",
+      "cost": 24
+    },
+    {
+      "id": "opening-ranger-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-ranger-2-2",
+      "wallet": "combat",
+      "cost": 6
+    }
+  ],
+  "utilities": [
+    {
+      "id": "atlas",
+      "name": "Herbalist’s Atlas",
+      "category": "agriculture",
+      "learn": "Site Observation or Seasonal Planning: Primer",
+      "skills": [
+        "profession-agriculture-0",
+        "career-opening-agriculture-0"
+      ],
+      "effect": "In Adventures, find resources in accessible areas and see which routes are ready for repeat exploration."
+    }
+  ],
+  "firstGoldDay": null,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 281220
+}

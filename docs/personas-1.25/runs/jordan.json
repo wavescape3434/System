@@ -1,0 +1,3101 @@
+{
+  "id": "jordan",
+  "signature": "80daa46bbbc8dbc81f5b25d46878d550413f2ee58d9573713a1107f6d28319f4",
+  "profileId": "jordan",
+  "variant": "primary",
+  "days": 365,
+  "initial": {
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "rank": "F",
+    "classId": "artificer",
+    "profession": "IT Support Specialist",
+    "vocation": "networking"
+  },
+  "final": {
+    "day": 365,
+    "active": 265,
+    "playerLevel": 69,
+    "guildRank": "A",
+    "xp": 194770,
+    "classId": "network-weaver",
+    "classLevel": 1,
+    "classPotential": 1,
+    "profession": "IT Support Specialist",
+    "professionLevel": 105,
+    "professionPotential": 105,
+    "vocation": "networking",
+    "vocationLevel": 105,
+    "stats": {
+      "STR": 9,
+      "DEX": 10,
+      "CON": 10,
+      "INT": 296,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "requests": 762,
+    "gold": 62652,
+    "skills": 53,
+    "careerUtilities": 1,
+    "examPasses": 27,
+    "stages": 151,
+    "wins": 178,
+    "losses": 0,
+    "minutes": 9840
+  },
+  "checkpoints": [
+    {
+      "day": 7,
+      "active": 4,
+      "playerLevel": 3,
+      "guildRank": "F",
+      "xp": 1000,
+      "classId": "artificer",
+      "classLevel": 2,
+      "classPotential": 2,
+      "profession": "IT Support Specialist",
+      "professionLevel": 5,
+      "professionPotential": 5,
+      "vocation": "networking",
+      "vocationLevel": 5,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 12,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 11,
+      "gold": 400,
+      "skills": 1,
+      "careerUtilities": 0,
+      "examPasses": 1,
+      "stages": 4,
+      "wins": 4,
+      "losses": 0,
+      "minutes": 153
+    },
+    {
+      "day": 30,
+      "active": 20,
+      "playerLevel": 14,
+      "guildRank": "D",
+      "xp": 10640,
+      "classId": "artificer",
+      "classLevel": 4,
+      "classPotential": 4,
+      "profession": "IT Support Specialist",
+      "professionLevel": 14,
+      "professionPotential": 23,
+      "vocation": "networking",
+      "vocationLevel": 23,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 15,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 54,
+      "gold": 3028,
+      "skills": 10,
+      "careerUtilities": 1,
+      "examPasses": 2,
+      "stages": 12,
+      "wins": 12,
+      "losses": 0,
+      "minutes": 715
+    },
+    {
+      "day": 90,
+      "active": 61,
+      "playerLevel": 27,
+      "guildRank": "C",
+      "xp": 33970,
+      "classId": "artificer",
+      "classLevel": 14,
+      "classPotential": 14,
+      "profession": "IT Support Specialist",
+      "professionLevel": 34,
+      "professionPotential": 41,
+      "vocation": "networking",
+      "vocationLevel": 41,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 42,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 170,
+      "gold": 10385,
+      "skills": 28,
+      "careerUtilities": 1,
+      "examPasses": 8,
+      "stages": 41,
+      "wins": 44,
+      "losses": 0,
+      "minutes": 2259
+    },
+    {
+      "day": 180,
+      "active": 129,
+      "playerLevel": 43,
+      "guildRank": "B",
+      "xp": 78030,
+      "classId": "network-weaver",
+      "classLevel": 1,
+      "classPotential": 1,
+      "profession": "IT Support Specialist",
+      "professionLevel": 54,
+      "professionPotential": 60,
+      "vocation": "networking",
+      "vocationLevel": 60,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 103,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 365,
+      "gold": 24649,
+      "skills": 41,
+      "careerUtilities": 1,
+      "examPasses": 16,
+      "stages": 82,
+      "wins": 90,
+      "losses": 0,
+      "minutes": 4816
+    },
+    {
+      "day": 365,
+      "active": 265,
+      "playerLevel": 69,
+      "guildRank": "A",
+      "xp": 194770,
+      "classId": "network-weaver",
+      "classLevel": 1,
+      "classPotential": 1,
+      "profession": "IT Support Specialist",
+      "professionLevel": 105,
+      "professionPotential": 105,
+      "vocation": "networking",
+      "vocationLevel": 105,
+      "stats": {
+        "STR": 9,
+        "DEX": 10,
+        "CON": 10,
+        "INT": 296,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "requests": 762,
+      "gold": 62652,
+      "skills": 53,
+      "careerUtilities": 1,
+      "examPasses": 27,
+      "stages": 151,
+      "wins": 178,
+      "losses": 0,
+      "minutes": 9840
+    }
+  ],
+  "income": {
+    "requests": 38954,
+    "login": 5840,
+    "battles": 17860,
+    "exploration": 213,
+    "commissions": 18410
+  },
+  "spent": {
+    "supplies": 25,
+    "equipment": 11550,
+    "tempering": 6600,
+    "brewing": 450
+  },
+  "combat": {
+    "attempts": 178,
+    "wins": 178,
+    "losses": 0,
+    "actions": 357,
+    "bounds": 0,
+    "explorations": 51,
+    "hunts": 0,
+    "huntWins": 0,
+    "ambushes": 0,
+    "heroAbilities": 158,
+    "companionAbilities": 167,
+    "suppliesUsed": 0
+  },
+  "requestsByCadence": {
+    "daily": 662,
+    "weekly": 81,
+    "monthly": 19
+  },
+  "requestsByScope": {
+    "universal": 265,
+    "class": 78,
+    "profession": 419
+  },
+  "classHistory": [
+    {
+      "id": "artificer",
+      "level": 31,
+      "potential": 31,
+      "xp": 17355
+    },
+    {
+      "id": "network-weaver",
+      "level": 1,
+      "potential": 1,
+      "xp": 4395
+    }
+  ],
+  "professionHistory": [
+    {
+      "name": "IT Support Specialist",
+      "level": 105,
+      "xp": 174720
+    }
+  ],
+  "vocationHistory": [
+    {
+      "id": "networking",
+      "level": 105,
+      "xp": 174720
+    }
+  ],
+  "goalRequirements": [
+    {
+      "label": "INT 15",
+      "met": true
+    },
+    {
+      "label": "Skill: Architect of Connections",
+      "met": true
+    }
+  ],
+  "activeDays": 265,
+  "minutes": 9840,
+  "partialWorkouts": 0,
+  "expiredCommitments": 16,
+  "crossCategoryProfessionXP": 0,
+  "socialRequests": 0,
+  "directVocationRequests": 190,
+  "finalGoal": "network-weaver",
+  "failedAttempts": 0,
+  "duplicateGuards": 16,
+  "level4Days": 10,
+  "profession4Days": 1,
+  "careerChangeDone": false,
+  "certificateDone": true,
+  "blocks": {
+    "weekly: Dated practice days: #/#": 231,
+    "weekly: #-day commitment: #/# days": 300,
+    "monthly: Dated practice days: #/#": 324,
+    "monthly: #-day commitment: #/# days": 356
+  },
+  "examDays": 27,
+  "events": [
+    {
+      "day": 3,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 3,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 3,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 3,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 5,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 6,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 8,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-01"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 8,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 11,
+      "type": "skill",
+      "id": "profession-technology-0",
+      "name": "System Foundations",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 11,
+      "type": "skill",
+      "id": "focus-artificer-0",
+      "name": "Artificer Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 11,
+      "type": "skill",
+      "id": "career-opening-technology-0",
+      "name": "Command Line: Primer",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 12,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 15,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-08"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 16,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 18,
+      "type": "skill",
+      "id": "career-opening-technology-1",
+      "name": "Network Models: Primer",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 18,
+      "type": "skill",
+      "id": "profession-technology-1",
+      "name": "Command Line",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 18,
+      "type": "skill",
+      "id": "profession-technology-2",
+      "name": "Network Models",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 19,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 20,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 22,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-15"
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 23,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 25,
+      "type": "skill",
+      "id": "focus-artificer-1",
+      "name": "Field Mending: Discipline",
+      "wallet": "combat"
+    },
+    {
+      "day": 25,
+      "type": "skill",
+      "id": "profession-technology-3",
+      "name": "Automation",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 25,
+      "type": "skill",
+      "id": "profession-technology-4",
+      "name": "Routing & Services",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 26,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-02"
+    },
+    {
+      "day": 29,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-02-22"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 29,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "profession-technology-5",
+      "name": "Fault Isolation",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "profession-technology-6",
+      "name": "Security Boundaries",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 32,
+      "type": "skill",
+      "id": "arc-artificer-1",
+      "name": "Field Tools",
+      "wallet": "combat"
+    },
+    {
+      "day": 34,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 38,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 38,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 39,
+      "type": "skill",
+      "id": "opening-artificer-0-0",
+      "name": "Repair Kit",
+      "wallet": "combat"
+    },
+    {
+      "day": 40,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 43,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-08"
+    },
+    {
+      "day": 46,
+      "type": "skill",
+      "id": "profession-technology-7",
+      "name": "Verified Lab",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 46,
+      "type": "skill",
+      "id": "opening-artificer-1-0",
+      "name": "Pocket Coil",
+      "wallet": "combat"
+    },
+    {
+      "day": 46,
+      "type": "skill",
+      "id": "opening-artificer-2-0",
+      "name": "Calibration",
+      "wallet": "combat"
+    },
+    {
+      "day": 48,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 5,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-22"
+    },
+    {
+      "day": 50,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 54,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 55,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 57,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-03-29"
+    },
+    {
+      "day": 60,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-03"
+    },
+    {
+      "day": 61,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 61,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 61,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 61,
+      "type": "skill",
+      "id": "arc-artificer-2",
+      "name": "Spark Coil",
+      "wallet": "combat"
+    },
+    {
+      "day": 61,
+      "type": "skill",
+      "id": "arc-artificer-3",
+      "name": "Volatile Charge",
+      "wallet": "combat"
+    },
+    {
+      "day": 61,
+      "type": "skill",
+      "id": "arc-artificer-4",
+      "name": "Shield Emitter",
+      "wallet": "combat"
+    },
+    {
+      "day": 65,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 65,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 68,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 68,
+      "type": "skill",
+      "id": "arc-artificer-5",
+      "name": "Diagnostic Lens",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "skill",
+      "id": "opening-artificer-0-1",
+      "name": "Repair Kit: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 68,
+      "type": "skill",
+      "id": "opening-artificer-1-1",
+      "name": "Pocket Coil: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 69,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 10,
+      "status": "passed",
+      "route": "improvement"
+    },
+    {
+      "day": 71,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-05"
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 72,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 75,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 75,
+      "type": "skill",
+      "id": "universal-con-1",
+      "name": "Conditioning",
+      "wallet": "universal"
+    },
+    {
+      "day": 76,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 78,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-12"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 78,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-19"
+    },
+    {
+      "day": 81,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 82,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 82,
+      "type": "skill",
+      "id": "profession-technology-8",
+      "name": "System Design",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 82,
+      "type": "skill",
+      "id": "opening-artificer-2-1",
+      "name": "Calibration: Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 82,
+      "type": "skill",
+      "id": "arc-artificer-6",
+      "name": "Overload Array",
+      "wallet": "combat"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 85,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-04-26"
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 89,
+      "type": "skill",
+      "id": "opening-artificer-0-2",
+      "name": "Repair Kit: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 90,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-04"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-05"
+    },
+    {
+      "day": 90,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 92,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-03"
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 96,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 96,
+      "type": "skill",
+      "id": "opening-artificer-1-2",
+      "name": "Pocket Coil: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 97,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 15,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 99,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-10"
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 103,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 103,
+      "type": "skill",
+      "id": "opening-artificer-2-2",
+      "name": "Calibration: Refinement",
+      "wallet": "combat"
+    },
+    {
+      "day": 104,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 35,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 106,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-17"
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 110,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 110,
+      "type": "skill",
+      "id": "arc-artificer-7",
+      "name": "Mana Cell",
+      "wallet": "combat"
+    },
+    {
+      "day": 111,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 113,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-24"
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "artificer-monthly",
+      "title": "Artificer training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 117,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 117,
+      "type": "skill",
+      "id": "universal-con-2",
+      "name": "Endurance",
+      "wallet": "universal"
+    },
+    {
+      "day": 117,
+      "type": "skill",
+      "id": "arc-artificer-8",
+      "name": "Linked Circuit",
+      "wallet": "combat"
+    },
+    {
+      "day": 118,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 20,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 120,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-05-31"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 121,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 124,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 125,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 40,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 128,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 128,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 131,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 132,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 25,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 134,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-07"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 134,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 138,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 138,
+      "type": "skill",
+      "id": "focus-artificer-2",
+      "name": "Field Mending: Mastery",
+      "wallet": "combat"
+    },
+    {
+      "day": 138,
+      "type": "skill",
+      "id": "arc-artificer-9",
+      "name": "Adaptive Plating",
+      "wallet": "combat"
+    },
+    {
+      "day": 139,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 45,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 141,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-14"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 141,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-21"
+    },
+    {
+      "day": 142,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 145,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 148,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-06-28"
+    },
+    {
+      "day": 151,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-06"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 151,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 152,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 153,
+      "type": "exam",
+      "scope": "class",
+      "owner": "artificer",
+      "milestone": 30,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 156,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 156,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 159,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 162,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-05"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 162,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-12"
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "artificer-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 166,
+      "type": "skill",
+      "id": "universal-int-1",
+      "name": "Study Method",
+      "wallet": "universal"
+    },
+    {
+      "day": 167,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 50,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 172,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 173,
+      "type": "skill",
+      "id": "profession-technology-9",
+      "name": "Reliable Systems",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 177,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 180,
+      "type": "certificate",
+      "name": "CompTIA Network+"
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "trial-network-weaver-entry",
+      "title": "Network Weaver entry trial",
+      "cadence": "daily",
+      "xp": 60,
+      "gold": 12
+    },
+    {
+      "day": 180,
+      "type": "class-change",
+      "from": "artificer",
+      "to": "network-weaver",
+      "playerLevel": 43,
+      "classLevel": 1
+    },
+    {
+      "day": 180,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 180,
+      "type": "skill",
+      "id": "focus-network-weaver-0",
+      "name": "Network Weaver Initiation",
+      "wallet": "combat"
+    },
+    {
+      "day": 180,
+      "type": "skill",
+      "id": "arc-mage-1",
+      "name": "Aether Control",
+      "wallet": "combat"
+    },
+    {
+      "day": 180,
+      "type": "skill",
+      "id": "opening-mage-0-0",
+      "name": "Spark",
+      "wallet": "combat"
+    },
+    {
+      "day": 182,
+      "type": "expired",
+      "id": "artificer-monthly",
+      "cadence": "monthly",
+      "period": "2027-07"
+    },
+    {
+      "day": 183,
+      "type": "expired",
+      "id": "artificer-weekly",
+      "cadence": "weekly",
+      "period": "2027-07-26"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-02"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "network-weaver-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 183,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-08"
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 187,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 187,
+      "type": "skill",
+      "id": "network-initiate",
+      "name": "Packet Initiate",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 187,
+      "type": "skill",
+      "id": "opening-mage-1-0",
+      "name": "Arcane Reading",
+      "wallet": "combat"
+    },
+    {
+      "day": 187,
+      "type": "skill",
+      "id": "opening-mage-2-0",
+      "name": "Lesser Barrier",
+      "wallet": "combat"
+    },
+    {
+      "day": 188,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 55,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 190,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-09"
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 194,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 194,
+      "type": "skill",
+      "id": "network-subnet",
+      "name": "Subnetting",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 194,
+      "type": "skill",
+      "id": "network-switch",
+      "name": "Switching",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 194,
+      "type": "skill",
+      "id": "network-route",
+      "name": "Routing",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 197,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-16"
+    },
+    {
+      "day": 202,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 60,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 202,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 202,
+      "type": "skill",
+      "id": "element-fire-0",
+      "name": "Ember Needle",
+      "wallet": "combat"
+    },
+    {
+      "day": 202,
+      "type": "skill",
+      "id": "element-ice-0",
+      "name": "Rime Shard",
+      "wallet": "combat"
+    },
+    {
+      "day": 202,
+      "type": "skill",
+      "id": "element-storm-0",
+      "name": "Storm Chain",
+      "wallet": "combat"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-23"
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "network-weaver-monthly",
+      "title": "Network Weaver training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 204,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 208,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 209,
+      "type": "skill",
+      "id": "network-lab",
+      "name": "Network Lab Builder",
+      "wallet": "profession:technology"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 211,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-08-30"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "network-weaver-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 213,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-09"
+    },
+    {
+      "day": 216,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 65,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 216,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 220,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 220,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-06"
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 222,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 225,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-13"
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 229,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 230,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 70,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 230,
+      "type": "skill",
+      "id": "universal-int-2",
+      "name": "Focused Recall",
+      "wallet": "universal"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 232,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-20"
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "network-weaver-monthly",
+      "title": "Network Weaver training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 234,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 236,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 239,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-09-27"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "network-weaver-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-10"
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 243,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 244,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 75,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 246,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-04"
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 250,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 253,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-11"
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 257,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 260,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-10-18"
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "network-weaver-monthly",
+      "title": "Network Weaver training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 264,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 265,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 80,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 275,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 275,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-01"
+    },
+    {
+      "day": 275,
+      "type": "take",
+      "id": "network-weaver-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 275,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-11"
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 278,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 279,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 85,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 281,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-08"
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 286,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 288,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-15"
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 292,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "network-weaver-monthly",
+      "title": "Network Weaver training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 295,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 300,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 90,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 302,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-11-29"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "network-weaver-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 304,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2027-12"
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 306,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 309,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-06"
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 313,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 323,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-20"
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "network-weaver-monthly",
+      "title": "Network Weaver training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 325,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 327,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 330,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2027-12-27"
+    },
+    {
+      "day": 332,
+      "type": "skill",
+      "id": "universal-con-3",
+      "name": "Second Wind",
+      "wallet": "universal"
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 334,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "network-weaver-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "take",
+      "id": "vocation-networking-monthly",
+      "cadence": "monthly",
+      "period": "2028-01"
+    },
+    {
+      "day": 335,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 95,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 337,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-03"
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 341,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 346,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 346,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-10"
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 348,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 349,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 100,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 351,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-17"
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 355,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "network-weaver-monthly",
+      "title": "Network Weaver training adventure",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 356,
+      "type": "request",
+      "id": "vocation-networking-monthly",
+      "title": "Networking portfolio commission",
+      "cadence": "monthly",
+      "xp": 6300,
+      "gold": 1260
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 358,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-24"
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "network-weaver-weekly",
+      "title": "Build a prototype",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 362,
+      "type": "request",
+      "id": "vocation-networking-weekly",
+      "title": "Networking field assignment",
+      "cadence": "weekly",
+      "xp": 600,
+      "gold": 120
+    },
+    {
+      "day": 363,
+      "type": "exam",
+      "scope": "profession",
+      "owner": "IT Support Specialist",
+      "milestone": 105,
+      "status": "passed",
+      "route": "mastery"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "network-weaver-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    },
+    {
+      "day": 365,
+      "type": "take",
+      "id": "vocation-networking-weekly",
+      "cadence": "weekly",
+      "period": "2028-01-31"
+    }
+  ],
+  "earnedSkills": [
+    "universal-root",
+    "profession-technology-0",
+    "focus-artificer-0",
+    "career-opening-technology-0",
+    "career-opening-technology-1",
+    "profession-technology-1",
+    "profession-technology-2",
+    "focus-artificer-1",
+    "profession-technology-3",
+    "profession-technology-4",
+    "profession-technology-5",
+    "profession-technology-6",
+    "arc-artificer-1",
+    "opening-artificer-0-0",
+    "profession-technology-7",
+    "opening-artificer-1-0",
+    "opening-artificer-2-0",
+    "arc-artificer-2",
+    "arc-artificer-3",
+    "arc-artificer-4",
+    "arc-artificer-5",
+    "opening-artificer-0-1",
+    "opening-artificer-1-1",
+    "universal-con-1",
+    "profession-technology-8",
+    "opening-artificer-2-1",
+    "arc-artificer-6",
+    "opening-artificer-0-2",
+    "opening-artificer-1-2",
+    "opening-artificer-2-2",
+    "arc-artificer-7",
+    "universal-con-2",
+    "arc-artificer-8",
+    "focus-artificer-2",
+    "arc-artificer-9",
+    "universal-int-1",
+    "profession-technology-9",
+    "network-intermediate",
+    "focus-network-weaver-0",
+    "arc-mage-1",
+    "opening-mage-0-0",
+    "network-initiate",
+    "opening-mage-1-0",
+    "opening-mage-2-0",
+    "network-subnet",
+    "network-switch",
+    "network-route",
+    "element-fire-0",
+    "element-ice-0",
+    "element-storm-0",
+    "network-lab",
+    "universal-int-2",
+    "universal-con-3"
+  ],
+  "skillPurchases": [
+    {
+      "id": "profession-technology-0",
+      "wallet": "profession:technology",
+      "cost": 1
+    },
+    {
+      "id": "focus-artificer-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-technology-0",
+      "wallet": "profession:technology",
+      "cost": 1
+    },
+    {
+      "id": "career-opening-technology-1",
+      "wallet": "profession:technology",
+      "cost": 1
+    },
+    {
+      "id": "profession-technology-1",
+      "wallet": "profession:technology",
+      "cost": 2
+    },
+    {
+      "id": "profession-technology-2",
+      "wallet": "profession:technology",
+      "cost": 2
+    },
+    {
+      "id": "focus-artificer-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "profession-technology-3",
+      "wallet": "profession:technology",
+      "cost": 3
+    },
+    {
+      "id": "profession-technology-4",
+      "wallet": "profession:technology",
+      "cost": 5
+    },
+    {
+      "id": "profession-technology-5",
+      "wallet": "profession:technology",
+      "cost": 8
+    },
+    {
+      "id": "profession-technology-6",
+      "wallet": "profession:technology",
+      "cost": 8
+    },
+    {
+      "id": "arc-artificer-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-artificer-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "profession-technology-7",
+      "wallet": "profession:technology",
+      "cost": 14
+    },
+    {
+      "id": "opening-artificer-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-artificer-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-artificer-2",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-artificer-3",
+      "wallet": "combat",
+      "cost": 2
+    },
+    {
+      "id": "arc-artificer-4",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-artificer-5",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-artificer-0-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "opening-artificer-1-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "universal-con-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-technology-8",
+      "wallet": "profession:technology",
+      "cost": 18
+    },
+    {
+      "id": "opening-artificer-2-1",
+      "wallet": "combat",
+      "cost": 3
+    },
+    {
+      "id": "arc-artificer-6",
+      "wallet": "combat",
+      "cost": 5
+    },
+    {
+      "id": "opening-artificer-0-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-artificer-1-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "opening-artificer-2-2",
+      "wallet": "combat",
+      "cost": 6
+    },
+    {
+      "id": "arc-artificer-7",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "universal-con-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "arc-artificer-8",
+      "wallet": "combat",
+      "cost": 8
+    },
+    {
+      "id": "focus-artificer-2",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "arc-artificer-9",
+      "wallet": "combat",
+      "cost": 14
+    },
+    {
+      "id": "universal-int-1",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "profession-technology-9",
+      "wallet": "profession:technology",
+      "cost": 24
+    },
+    {
+      "id": "focus-network-weaver-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "arc-mage-1",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-0-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "network-initiate",
+      "wallet": "profession:technology",
+      "cost": 4
+    },
+    {
+      "id": "opening-mage-1-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "opening-mage-2-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "network-subnet",
+      "wallet": "profession:technology",
+      "cost": 4
+    },
+    {
+      "id": "network-switch",
+      "wallet": "profession:technology",
+      "cost": 4
+    },
+    {
+      "id": "network-route",
+      "wallet": "profession:technology",
+      "cost": 4
+    },
+    {
+      "id": "element-fire-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-ice-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "element-storm-0",
+      "wallet": "combat",
+      "cost": 1
+    },
+    {
+      "id": "network-lab",
+      "wallet": "profession:technology",
+      "cost": 4
+    },
+    {
+      "id": "universal-int-2",
+      "wallet": "universal",
+      "cost": 4
+    },
+    {
+      "id": "universal-con-3",
+      "wallet": "universal",
+      "cost": 8
+    }
+  ],
+  "utilities": [
+    {
+      "id": "diagnostics",
+      "name": "Warden’s Diagnostics",
+      "category": "technology",
+      "learn": "System Foundations or Command Line: Primer",
+      "skills": [
+        "profession-technology-0",
+        "career-opening-technology-0"
+      ],
+      "effect": "In Adventures, inspect the next stage’s enemy HP, attack, defense and known tactics before entering."
+    }
+  ],
+  "firstGoldDay": 325,
+  "firstPrestigeDay": null,
+  "finalCharacterBytes": 482726
+}

@@ -31,6 +31,12 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## One-year customer simulations
+
+[32 complete fictional customer profiles](docs/personas-1.25/README.md) span all 20 profession categories, all 25 vocations and 28 classes. Thirty-five annual scenarios cover 12,775 account-days, with day-7/30/90/180/365 checkpoints, real app gates/rewards, retained career changes, exams and Adventures. [All profiles](docs/personas-1.25/CUSTOMERS.md) · [Findings to fix](docs/personas-1.25/PRIORITIES.md) · [Methods](docs/personas-1.25/METHOD.md).
+
+These are scripted app outcomes, not customer interviews or predicted real-world gains. The study reproduces a Network Weaver scope defect and records schedule/reward, class-lineage and later career-depth opportunities. App rules and the APK remain 1.25.0.
+
 ## Version 1.25.0
 
 A two-day balanced strength regimen with home, weights and gym versions, F–C prescriptions and independent walking progression. Record actual sets/load/effort, retain unfinished device drafts and compare repeatable performance. Strength-class/calendar goals follow the plan; hybrid classes retain their secondary focus. Knowledge results can track checked accuracy by topic. [Efficacy review and 60-day ledger checks](docs/training-1.25/README.md) · [Changes](docs/update-1.25.md) · [Verification](docs/verification-1.25.md) · [Previews](docs/screenshots/README.md).
