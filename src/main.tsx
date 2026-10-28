@@ -30,3 +30,5 @@ import "./planning-recovery.css";
 import "./primary-storage.css";
 
 import "./fieldwork.css";
+
+import "./regimen.css";

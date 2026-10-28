@@ -1,7 +1,7 @@
 {
   "name": "the-guild",
   "private": true,
-  "version": "1.24.0",
+  "version": "1.25.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -16,7 +16,8 @@
     "simulate:economy": "node scripts/simulate-economy.mjs",
     "simulate:hunts": "node scripts/simulate-hunts.mjs",
     "simulate:builds": "node scripts/simulate-builds.mjs",
-    "simulate:long-economy": "node scripts/simulate-long-economy.mjs"
+    "simulate:long-economy": "node scripts/simulate-long-economy.mjs",
+    "simulate:regimen": "node scripts/simulate-regimen.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.5.3",

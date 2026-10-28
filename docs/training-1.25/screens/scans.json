@@ -1,0 +1,61 @@
+{
+  "screens": [
+    {
+      "name": "regimen-settings-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "regimen-home-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "regimen-technique-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "regimen-log-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "regimen-goal-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "regimen-gym-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "regimen-imperial-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "regimen-large-text-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

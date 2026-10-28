@@ -78,3 +78,8 @@ export function classPractice(
   const secondary = mix[1] && mix[1][1]! >= 25 ? PRACTICE[mix[1][0]] : null;
   return `${technique ? primary.technique : primary.activity}${!technique && secondary ? ` ${secondary.short}` : ""}`;
 }
+
+export function classSecondaryPractice(path: ClassPath): string | undefined {
+  const mix = Object.entries(path.mix).sort((a, b) => b[1]! - a[1]!);
+  return mix[1] && mix[1][1]! >= 25 ? PRACTICE[mix[1][0]].short : undefined;
+}

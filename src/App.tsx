@@ -14,6 +14,7 @@ import {
 import { migrateSkillPlans } from "./skill-plans";
 import { refreshAdventure } from "./rpg";
 import ActivityResultForm from "./ActivityResultForm";
+import WorkoutRecordForm from "./WorkoutRecordForm";
 import {
   EMPTY_RESULT,
   parseResult,
@@ -917,7 +918,7 @@ export default function App() {
               )}
               <span>{objective.minutes}</span>
             </div>
-            {objectiveTaken && !objectiveDone && (
+            {objectiveTaken && !objectiveDone && !objective.workout && (
               <>
                 <button
                   className="text-button result-toggle"
@@ -937,6 +938,28 @@ export default function App() {
                 )}
               </>
             )}
+            {objectiveTaken &&
+              !objectiveDone &&
+              objective.workout &&
+              !objectiveBlocks.length && (
+                <WorkoutRecordForm
+                  key={`${c.id}:${objective.id}`}
+                  receiptKey={`${objective.id}:${c.takenRequests?.find((r) => r.id === objective.id)?.takenAt}`}
+                  c={c}
+                  prescription={objective.workout}
+                  ready={!checklistRemaining}
+                  pending={false}
+                  onSubmit={async (workout) => {
+                    const next = completeWithResult(c, objective, { workout });
+                    if (next === c || !(await update(next))) return false;
+                    notify(
+                      `+${next.completions.at(-1)!.xp} XP · Progress saved.`,
+                    );
+                    close();
+                    return true;
+                  }}
+                />
+              )}
             {objectiveDone &&
               c.completions.find(
                 (x) =>
@@ -1129,42 +1152,43 @@ export default function App() {
                   : "Take request"}
               </button>
             )}
-            {(isTaken(c, objective) || isComplete(c, objective)) && (
-              <button
-                className="button primary full"
-                disabled={
-                  (objective.taskVersion === 2 &&
-                    taskRequirements(c, objective).length > 0) ||
-                  isComplete(c, objective) ||
-                  !!parsedResult.error ||
-                  (!!objective.checklist &&
-                    checked.length < objective.checklist.length)
-                }
-                onClick={async () => {
-                  const next = completeWithResult(
-                    c,
-                    objective,
-                    parsedResult.result,
-                  );
-                  if (next === c || !(await update(next))) return;
-                  const reward = next.completions.at(-1)!;
-                  notify(
-                    `+${reward.xp} XP · +${reward.gold || 0} gold. Progress saved.`,
-                  );
-                  close();
-                }}
-              >
-                {isComplete(c, objective) ? (
-                  <>
-                    <CheckCircle2 size={18} /> Already completed this period
-                  </>
-                ) : (
-                  <>
-                    Submit completed request <Check size={18} />
-                  </>
-                )}
-              </button>
-            )}
+            {(isTaken(c, objective) || isComplete(c, objective)) &&
+              (!objective.workout || objectiveDone) && (
+                <button
+                  className="button primary full"
+                  disabled={
+                    (objective.taskVersion === 2 &&
+                      taskRequirements(c, objective).length > 0) ||
+                    isComplete(c, objective) ||
+                    !!parsedResult.error ||
+                    (!!objective.checklist &&
+                      checked.length < objective.checklist.length)
+                  }
+                  onClick={async () => {
+                    const next = completeWithResult(
+                      c,
+                      objective,
+                      parsedResult.result,
+                    );
+                    if (next === c || !(await update(next))) return;
+                    const reward = next.completions.at(-1)!;
+                    notify(
+                      `+${reward.xp} XP · +${reward.gold || 0} gold. Progress saved.`,
+                    );
+                    close();
+                  }}
+                >
+                  {isComplete(c, objective) ? (
+                    <>
+                      <CheckCircle2 size={18} /> Already completed this period
+                    </>
+                  ) : (
+                    <>
+                      Submit completed request <Check size={18} />
+                    </>
+                  )}
+                </button>
+              )}
             {isTaken(c, objective) && !isComplete(c, objective) && (
               <button
                 className="text-button release-request"

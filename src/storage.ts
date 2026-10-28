@@ -1,4 +1,9 @@
 import { TOWN_GEAR } from "./world-catalog";
+import {
+  canonicalWorkout,
+  validTrainingPlan,
+  validWorkoutPrescription,
+} from "./training-prescriptions";
 import { ELEMENTS, DISCIPLINES, SIGNATURE_DETAILS } from "./combat-identity";
 import { MAX_TEMPER } from "./equipment-progression";
 import { validSkillPlans } from "./skill-plans";
@@ -123,6 +128,7 @@ export function validateCharacter(x: unknown): x is Character {
               ATTRIBUTES.every((a) => finite(h.stats?.[a]) && h.stats[a] >= 1),
           ))) &&
       (c.preferences === undefined || validPreferences(c.preferences)) &&
+      (c.trainingPlan === undefined || validTrainingPlan(c.trainingPlan)) &&
       (c.classEntries === undefined ||
         (!!c.classEntries &&
           typeof c.classEntries === "object" &&
@@ -157,6 +163,13 @@ export function validateCharacter(x: unknown): x is Character {
             c.takenRequests.length &&
           c.takenRequests.every(
             (r) =>
+              (r.trainingContext === undefined ||
+                validTrainingPlan(r.trainingContext)) &&
+              (r.workout === undefined ||
+                (validWorkoutPrescription(r.workout) &&
+                  r.workout.rank === r.rank &&
+                  r.cadence === "daily" &&
+                  r.stat === "STR")) &&
               date(r.takenAt) &&
               str(r.takenPeriod) &&
               r.takenPeriod === objectivePeriod(r, new Date(r.takenAt)) &&
@@ -225,6 +238,15 @@ export function validateCharacter(x: unknown): x is Character {
       Array.isArray(c.completions) &&
       c.completions.every(
         (o) =>
+          (o.workout === undefined ||
+            (validWorkoutPrescription(o.workout) &&
+              o.workout.rank === o.rank &&
+              o.cadence === "daily" &&
+              o.stat === "STR")) &&
+          (!o.result?.workout ||
+            (!!o.workout &&
+              canonicalWorkout(o.workout) ===
+                canonicalWorkout(o.result.workout.prescription))) &&
           (o.cadence === undefined ||
             ["daily", "weekly", "monthly"].includes(o.cadence)) &&
           (o.result === undefined || validActivityResult(o.result)) &&

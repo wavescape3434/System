@@ -166,7 +166,9 @@ test("blank results remain optional and invalid measured results cannot be submi
   await page
     .getByLabel("Reps per set (or total without sets)", { exact: true })
     .fill("12");
-  await expect(page.getByRole("alert")).toContainText("name the exercise");
+  await expect(page.getByRole("alert")).toContainText(
+    /name strength exercises/i,
+  );
   await expect(
     page.getByRole("button", { name: "Submit completed request", exact: true }),
   ).toBeDisabled();

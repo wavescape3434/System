@@ -1,4 +1,5 @@
 import type { Attribute, Character, Objective } from "./domain";
+import { regimenReward } from "./training-regimen";
 import type { TaskRank } from "./task-ranks";
 import { TASK_RANKS } from "./task-ranks";
 import { requestReward } from "./request-balance";
@@ -198,5 +199,28 @@ export function balanceRequest(c: Character, o: Objective): Objective {
     if (o.id === `${c.activeClass}-monthly`)
       shaped.title = `${o.category} training adventure`;
   }
+  if (o.workout) shaped = { ...shaped, ...regimenReward(o.workout.rank) };
+  if (o.id.startsWith("regimen-weekly-") || o.id.startsWith("regimen-monthly-"))
+    shaped = {
+      ...shaped,
+      minimumSessions: o.cadence === "weekly" ? 2 : 8,
+      minimumDays: o.cadence === "weekly" ? 3 : 28,
+    };
+  if (
+    c.trainingPlan &&
+    o.scope === "class" &&
+    o.stat === "STR" &&
+    o.cadence !== "daily"
+  )
+    shaped = {
+      ...shaped,
+      minimumSessions: o.cadence === "weekly" ? 2 : 8,
+      minimumDays: o.cadence === "weekly" ? 3 : 28,
+      practice: {
+        classId: c.activeClass,
+        minimumRank: c.trainingPlan.rank,
+        workoutOnly: true,
+      },
+    };
   return shaped;
 }

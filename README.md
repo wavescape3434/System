@@ -24,12 +24,18 @@ npm run dev
 ### Check the app
 
 ```sh
-npm test -- --maxWorkers=2 # progression, recurrence, persistence validation
+npm test -- --maxWorkers=1 # progression, recurrence, persistence validation
 npm run build    # strict TypeScript check and production build
 npm run test:e2e # browser workflows at desktop and phone sizes
 ```
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
+
+## Version 1.25.0
+
+A two-day balanced strength regimen with home, weights and gym versions, F–C prescriptions and independent walking progression. Record actual sets/load/effort, retain unfinished device drafts and compare repeatable performance. Strength-class/calendar goals follow the plan; hybrid classes retain their secondary focus. Knowledge results can track checked accuracy by topic. [Efficacy review and 60-day ledger checks](docs/training-1.25/README.md) · [Changes](docs/update-1.25.md) · [Verification](docs/verification-1.25.md) · [Previews](docs/screenshots/README.md).
+
+Android **1.25.0 / code 27** keeps the package and signing certificate. Game ranks are authored training tiers, not validated population percentiles. No guaranteed fitness gains or freshly verified 2026 guidelines are claimed. Google setup and physical Android runtime checks remain outstanding.
 
 ## Version 1.24.0
 

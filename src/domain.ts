@@ -1,4 +1,7 @@
+import { refineTrainingGuidance } from "./training-guidance";
 import { progressionLedger } from "./progression-ledger";
+import { validWorkoutPrescription } from "./training-prescriptions";
+import { workoutSummary } from "./training-regimen";
 import {
   calendarGoal,
   adventureConditionMet,
@@ -85,6 +88,7 @@ export function selectSubclass(c: Character, id: string | null): Character {
 }
 export { PROFESSIONS } from "./professions";
 export interface Objective {
+  workout?: import("./training-prescriptions").WorkoutPrescription;
   gold?: number;
   trainingMix?: Partial<Record<Attribute, number>>;
   participants?: "solo" | "group";
@@ -116,7 +120,13 @@ export interface Objective {
   adventureBonus?: { contractId: string; xp: number; gold: number };
   persistent?: boolean;
   instanceId?: string;
-  practice?: { family?: string; classId?: string; careerCategory?: string };
+  practice?: {
+    family?: string;
+    classId?: string;
+    careerCategory?: string;
+    minimumRank?: TaskRank;
+    workoutOnly?: boolean;
+  };
   once?: boolean;
   careerCategory?: string;
   checklist?: string[];
@@ -198,6 +208,7 @@ const CORE: Record<string, [string, string, string, string]> = {
   ],
 };
 export interface TakenRequest extends Objective {
+  trainingContext?: import("./training-prescriptions").TrainingPlan;
   takenAt: string;
   takenPeriod: string;
   classId: string;
@@ -205,6 +216,7 @@ export interface TakenRequest extends Objective {
   vocationId?: string;
 }
 export interface Completion {
+  workout?: import("./training-prescriptions").WorkoutPrescription;
   result?: import("./activity-results").ActivityResult;
   gold?: number;
   requestGroup?: string;
@@ -247,6 +259,7 @@ export interface JournalEntry {
   text: string;
 }
 export interface Character {
+  trainingPlan?: import("./training-prescriptions").TrainingPlan;
   skillPlans?: import("./skill-plans").SkillPlans;
   version: 1;
   id: string;
@@ -1111,7 +1124,7 @@ export function objectives(c: Character): Objective[] {
     }
   return [...tasks, ...(c.calendarVersion === 1 ? extraObjectives(c) : [])].map(
     (raw) => {
-      const o = decorateRequest(calendarGoal(c, raw));
+      const o = decorateRequest(calendarGoal(c, refineTrainingGuidance(raw)));
       const taken = c.takenRequests?.find((r) => r.id === o.id);
       return o.persistent && taken
         ? { ...o, instanceId: taken.takenPeriod }
@@ -1220,6 +1233,7 @@ export function complete(
         classId: actual.targetClass || taken?.classId || c.activeClass,
         title: actual.title,
         cadence: actual.cadence,
+        ...(actual.workout ? { workout: actual.workout } : {}),
         profession: taken?.profession || c.profession,
         scope: actual.scope,
         ...(actual.taskVersion === 2
@@ -1345,6 +1359,7 @@ export function takeRequest(
       ...(c.takenRequests || []).filter((r) => r.id !== id),
       {
         ...o,
+        ...(c.trainingPlan ? { trainingContext: { ...c.trainingPlan } } : {}),
         takenAt: now.toISOString(),
         ...(instanceId ? { instanceId } : {}),
         takenPeriod: instanceId || objectivePeriod(o, now),
@@ -1368,13 +1383,36 @@ export function resolveTakenRequest(
     activeClass: r.classId,
     profession: r.profession,
     vocation: r.vocationId || null,
+    trainingPlan: r.trainingContext,
   };
-  return r.kind === "class-trial" && r.targetClass
-    ? entryTrial(context, r.targetClass)
-    : (r.taskVersion === 2
-        ? objectives(context)
-        : legacyObjectives(context)
-      ).find((o) => o.id === r.id);
+  const resolved =
+    r.kind === "class-trial" && r.targetClass
+      ? entryTrial(context, r.targetClass)
+      : (r.taskVersion === 2
+          ? objectives(context)
+          : legacyObjectives(context)
+        ).find((o) => o.id === r.id);
+  if (r.workout) {
+    if (
+      !resolved?.workout ||
+      !validWorkoutPrescription(r.workout) ||
+      resolved.rank !== r.workout.rank ||
+      (r.id.startsWith("regimen-") &&
+        resolved.workout.session !== r.workout.session)
+    )
+      return;
+    return {
+      ...resolved,
+      workout: r.workout,
+      equipment: r.workout.environment === "home" ? "bodyweight" : "weights",
+      description:
+        workoutSummary(r.workout) +
+        (resolved.scope === "class"
+          ? ` Complete the class focus: ${currentPath(context).goal}`
+          : ""),
+    };
+  }
+  return resolved;
 }
 export const takenObjectives = (c: Character, now = new Date()): Objective[] =>
   (c.takenRequests || [])

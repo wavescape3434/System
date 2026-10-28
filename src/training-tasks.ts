@@ -1,4 +1,12 @@
-import { classPractice } from "./class-practice";
+import { classPractice, classSecondaryPractice } from "./class-practice";
+import {
+  regimenRequests,
+  regimenGoals,
+  hardStrength,
+  nextStrengthSession,
+  workoutSummary,
+} from "./training-regimen";
+import { workoutPrescription } from "./training-prescriptions";
 import { periodStart, adventureConditionMet } from "./calendar-goals";
 import { habitRequests, balanceRequest } from "./adventure-requests";
 import { requestReward } from "./request-balance";
@@ -733,7 +741,7 @@ export function rankedObjectives(
   c: Character,
   legacy: Objective[],
 ): Objective[] {
-  const list = legacy
+  const list: Objective[] = legacy
     .filter((o) => o.scope !== "universal")
     .map((o) => {
       const rank: TaskRank =
@@ -778,6 +786,40 @@ export function rankedObjectives(
         o.id.endsWith("technique-daily"),
       );
       o.kind = undefined;
+      if (
+        c.trainingPlan &&
+        o.stat === "STR" &&
+        !o.id.endsWith("technique-daily")
+      ) {
+        o.rank = c.trainingPlan.rank;
+        o.workout = workoutPrescription(
+          c.trainingPlan.rank,
+          nextStrengthSession(c),
+          c.trainingPlan.environment,
+        );
+        o.description =
+          workoutSummary(o.workout) +
+          ` Complete the class focus: ${CLASSES.find((p) => p.id === c.activeClass)!.goal}`;
+        o.minutes = `${o.workout.minutes} min`;
+        o.equipment =
+          c.trainingPlan.environment === "home" ? "bodyweight" : "weights";
+        o.cooldownHours = 48;
+        // Easy technique review is separate practice, not a hard strength session.
+        o.family = `class-${c.activeClass}-strength`;
+        const secondary = classSecondaryPractice(
+          CLASSES.find((p) => p.id === c.activeClass)!,
+        );
+        if (secondary) o.checklist = [secondary];
+      }
+    }
+  if (c.trainingPlan)
+    for (const o of list.filter(
+      (o) => o.scope === "class" && o.stat === "STR" && o.cadence !== "daily",
+    )) {
+      o.rank = c.trainingPlan.rank;
+      o.minimumSessions = o.cadence === "weekly" ? 2 : 8;
+      o.minimumDays = o.cadence === "weekly" ? 3 : 28;
+      o.description = `${o.cadence === "weekly" ? "Complete two" : "Complete eight"} full-body class sessions on separate days with recovery between them. Record exercises, reps and loads, and review progress on the same variations. Complete your class’s secondary focus as part of each session.`;
     }
   const filtered = list.filter(
     (o) =>
@@ -799,7 +841,12 @@ export function rankedObjectives(
       "Independently tailor and submit one relevant job application, or improve a portfolio work sample against a target role's requirements.";
   const monthly = filtered.find((o) => o.id === "profession-monthly");
   if (monthly) monthly.careerCategory = careerCategory(c.profession).id;
-  return [...universalTasks(), ...filtered].map((o) => balanceRequest(c, o));
+  return [
+    ...universalTasks(),
+    ...regimenRequests(c),
+    ...regimenGoals(),
+    ...filtered,
+  ].map((o) => balanceRequest(c, o));
 }
 export function entryTrial(_c: Character, id: string): Objective | undefined {
   const p = CLASSES.find((p) => p.id === id);
@@ -845,6 +892,24 @@ export function taskRequirements(
 ): string[] {
   const missing: string[] = [];
   const prefs = c.preferences;
+  const otherStrength =
+    o.workout || hardStrength(o)
+      ? c.completions
+          .filter(
+            (x) =>
+              hardStrength(x) &&
+              (o.workout || (x.workout && hardStrength(o))) &&
+              new Date(x.at) <= now,
+          )
+          .sort((a, b) => Date.parse(b.at) - Date.parse(a.at))[0]
+      : undefined;
+  if (otherStrength) {
+    const hours = (now.getTime() - Date.parse(otherStrength.at)) / 3600000;
+    if (hours < 48)
+      missing.push(
+        `${Math.ceil(48 - hours)} hours until another full-body or overlapping strength request`,
+      );
+  }
   if (
     o.equipment &&
     o.equipment !== "bodyweight" &&
@@ -964,7 +1029,19 @@ export function requestProgress(c: Character, o: Objective, now = new Date()) {
           new Date(x.at) > now
         )
           return false;
-        if (o.practice?.family) return x.family === o.practice.family;
+        if (o.practice?.workoutOnly && !x.workout) return false;
+        if (
+          o.practice?.minimumRank &&
+          TASK_RANKS.indexOf(x.rank || "F") <
+            TASK_RANKS.indexOf(o.practice.minimumRank)
+        )
+          return false;
+        if (o.practice?.family)
+          return (
+            x.family === o.practice.family ||
+            (["u-push", "u-resistance"].includes(o.practice.family) &&
+              !!x.workout)
+          );
         if (o.practice?.classId)
           return x.scope === "class" && x.classId === o.practice.classId;
         if (o.practice?.careerCategory)
@@ -976,7 +1053,11 @@ export function requestProgress(c: Character, o: Objective, now = new Date()) {
       })
       .map((x) => new Date(x.at).toDateString()),
   ).size;
-  return { days, sessions, startedAt: taken.takenAt };
+  return {
+    days,
+    sessions,
+    startedAt: o.calendarBound ? start.toISOString() : taken.takenAt,
+  };
 }
 
 function monday(d: Date) {

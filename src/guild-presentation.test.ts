@@ -107,7 +107,9 @@ describe("specific request instructions", () => {
     );
     for (const o of list) {
       const brief = requestBrief(o, c);
-      expect(brief.steps).toHaveLength(3);
+      expect(brief.steps).toHaveLength(
+        o.workout ? o.workout.exercises.length + 2 : 3,
+      );
       expect(brief.record.length).toBeGreaterThan(20);
       expect(brief.steps.join(" ")).not.toContain("undefined");
     }

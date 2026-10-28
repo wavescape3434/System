@@ -1,3 +1,4 @@
+import TrainingRegimen from "./TrainingRegimen";
 import { useViewState } from "./useViewState";
 import { careerCategory } from "./careers";
 import { useState, useEffect, useMemo } from "react";
@@ -48,7 +49,7 @@ export default function RequestBoard({
       `${key}.view`,
       section?.split(":")[0] || "board",
       !!section,
-      ["board", "taken", "pinned", "suggested"],
+      ["board", "taken", "pinned", "suggested", "regimen"],
     ),
     [tab, setTab] = useViewState<Cadence | "all">(
       `${key}.cadence`,
@@ -199,6 +200,7 @@ export default function RequestBoard({
       <div className="request-view-tabs">
         {[
           ["board", "Guild board"],
+          ["regimen", "Regimen"],
           ["taken", `Taken (${taken.filter((o) => !isComplete(c, o)).length})`],
           ["pinned", `Pinned (${pins.length})`],
           ["suggested", `Suggested (${groupRequests(suggestions).length})`],
@@ -219,358 +221,383 @@ export default function RequestBoard({
           </button>
         ))}
       </div>
-      <div className="tabs request-cadence-tabs">
-        {view === "taken" && (
-          <button
-            className={tab === "all" ? "active" : ""}
-            onClick={() => setTab("all")}
-          >
-            All taken <span>{taken.length}</span>
-          </button>
-        )}
-        {(["daily", "weekly", "monthly"] as Cadence[]).map((t) => (
-          <button
-            key={t}
-            className={cadence === t ? "active" : ""}
-            onClick={() => {
-              setTab(t);
-              setRank("all");
-            }}
-          >
-            {t === "daily"
-              ? "Daily tasks"
-              : t === "weekly"
-                ? "Weekly quests"
-                : "Monthly adventures"}{" "}
-            <span>
-              {groupRequests(source.filter((o) => o.cadence === t)).length}
-            </span>
-          </button>
-        ))}
-      </div>
-      <nav className="request-shortcuts" aria-label="Request boards">
-        {[
-          ["all", "All boards"],
-          ["class", currentPath(c).name],
-          ["profession", c.profession],
-          ...(activeVocation(c) ? [["vocation", activeVocation(c)!.name]] : []),
-        ].map(([id, label]) => (
-          <button
-            key={id}
-            className={category === id && !universalBoard ? "active" : ""}
-            onClick={() => {
-              resetFilters();
-              setCategory(id);
-              setView("board");
-            }}
-          >
-            {label}
-          </button>
-        ))}
-      </nav>
-      <div className="request-discovery">
-        <label className="request-search">
-          <Search size={18} />
-          <input
-            aria-label="Search requests"
-            type="search"
-            placeholder="Search requests"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </label>
-        <button
-          className="button secondary request-filter-toggle"
-          aria-expanded={filtersOpen}
-          aria-controls="request-filters"
-          onClick={() => setFiltersOpen(!filtersOpen)}
-        >
-          <SlidersHorizontal size={17} /> Filters
-          {filterCount ? ` (${filterCount})` : ""}
-        </button>
-      </div>
-      <div
-        id="request-filters"
-        className={`request-tools request-filter-fields ${filtersOpen ? "open" : ""}`}
-      >
-        <label className="objective-filter">
-          Category
-          <select
-            aria-label="Objective category"
-            value={category}
-            onChange={(e) => {
-              setCategory(e.target.value);
-              setUniversalBoard("");
-            }}
-          >
-            {[
-              ["all", "All objectives"],
-              ["universal", "Universal"],
-              ["class", "Class"],
-              ["vocation", "Vocation"],
-              ["profession", "Profession"],
-              ["career", "All career"],
-              ["hybrid", "Hybrid"],
-              ["trials", "Class trials"],
-            ].map(([id, t]) => (
-              <option key={id} value={id}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="objective-filter">
-          Rank
-          <select
-            aria-label="Request rank"
-            value={rank}
-            onChange={(e) => setRank(e.target.value)}
-          >
-            <option value="all">F–{ranks.at(-1)} · All ranks</option>
-            {ranks.map((r) => (
-              <option key={r} value={r}>
-                {r} · {TASK_NAMES[r]}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="objective-filter">
-          Focus
-          <select
-            aria-label="Request focus"
-            value={focus}
-            onChange={(e) => setFocus(e.target.value)}
-          >
-            <option value="all">All stats</option>
-            {ATTRIBUTES.map((a) => (
-              <option key={a}>{a}</option>
-            ))}
-          </select>
-        </label>
-        <label className="objective-filter">
-          Sort
-          <select
-            aria-label="Sort requests"
-            value={sort}
-            onChange={(e) => setSort(e.target.value)}
-          >
-            <option value="relevant">Current focus</option>
-            <option value="name">Name</option>
-            <option value="pinned">Pinned first</option>
-            <option value="reward">Highest reward</option>
-          </select>
-        </label>
-      </div>
-      {(filterCount > 0 || query) && (
-        <button className="text-button request-clear" onClick={resetFilters}>
-          Clear filters
-        </button>
-      )}
-      {showBoards && (
-        <section
-          className="universal-board-hall"
-          aria-label="Universal request boards"
-        >
-          <h3>Universal boards</h3>
-          <div className="stat-board-doors">
-            {ATTRIBUTES.map((stat) => (
+      {view === "regimen" ? (
+        <TrainingRegimen c={c} update={update} openObjective={openObjective} />
+      ) : (
+        <>
+          <div className="tabs request-cadence-tabs">
+            {view === "taken" && (
               <button
-                key={stat}
-                className={`stat-board-door focus-${stat.toLowerCase()}`}
-                aria-label={`Open ${STAT_NAMES[stat]} board`}
-                disabled={!boardCounts[stat]}
+                className={tab === "all" ? "active" : ""}
+                onClick={() => setTab("all")}
+              >
+                All taken <span>{taken.length}</span>
+              </button>
+            )}
+            {(["daily", "weekly", "monthly"] as Cadence[]).map((t) => (
+              <button
+                key={t}
+                className={cadence === t ? "active" : ""}
                 onClick={() => {
-                  setUniversalBoard(stat);
-                  setFocus("all");
+                  setTab(t);
+                  setRank("all");
                 }}
               >
-                <Icon name={stat} size={28} />
+                {t === "daily"
+                  ? "Daily tasks"
+                  : t === "weekly"
+                    ? "Weekly quests"
+                    : "Monthly adventures"}{" "}
                 <span>
-                  <b>{STAT_NAMES[stat]}</b>
-                  <small>
-                    {stat} · {boardCounts[stat]} requests
-                  </small>
+                  {groupRequests(source.filter((o) => o.cadence === t)).length}
                 </span>
               </button>
             ))}
           </div>
-        </section>
-      )}
-      {browsing && universalBoard && (
-        <div className="stat-board-heading">
-          <button
-            className="button secondary"
-            onClick={() => setUniversalBoard("")}
-          >
-            <ArrowLeft size={16} />
-            All boards
-          </button>
-          <Icon name={universalBoard} size={27} />
-          <h3>{STAT_NAMES[universalBoard as keyof typeof STAT_NAMES]} board</h3>
-        </div>
-      )}
-      {(!showBoards || groups.length > 0) && (
-        <>
-          <div className="section-heading page-section-heading">
-            <h3>
-              {view === "taken"
-                ? "Taken requests"
-                : view === "pinned"
-                  ? "Pinned requests"
-                  : view === "suggested"
-                    ? "Suggested requests"
-                    : universalBoard
-                      ? `${STAT_NAMES[universalBoard as keyof typeof STAT_NAMES]} requests`
-                      : showBoards
-                        ? "Class & career requests"
-                        : cadence === "daily"
-                          ? "Daily tasks"
-                          : cadence === "weekly"
-                            ? "Weekly quests"
-                            : "Monthly adventures"}
-            </h3>
-            <Tag>
-              {groups.length} requests
-              {cadence === "all"
-                ? " · All taken"
-                : ` · ${fmt(periodStart(cadence))}${cadence !== "daily" ? ` – ${fmt(end)}` : ""}`}
-            </Tag>
+          <nav className="request-shortcuts" aria-label="Request boards">
+            {[
+              ["all", "All boards"],
+              ["class", currentPath(c).name],
+              ["profession", c.profession],
+              ...(activeVocation(c)
+                ? [["vocation", activeVocation(c)!.name]]
+                : []),
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                className={category === id && !universalBoard ? "active" : ""}
+                onClick={() => {
+                  resetFilters();
+                  setCategory(id);
+                  setView("board");
+                }}
+              >
+                {label}
+              </button>
+            ))}
+          </nav>
+          <div className="request-discovery">
+            <label className="request-search">
+              <Search size={18} />
+              <input
+                aria-label="Search requests"
+                type="search"
+                placeholder="Search requests"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </label>
+            <button
+              className="button secondary request-filter-toggle"
+              aria-expanded={filtersOpen}
+              aria-controls="request-filters"
+              onClick={() => setFiltersOpen(!filtersOpen)}
+            >
+              <SlidersHorizontal size={17} /> Filters
+              {filterCount ? ` (${filterCount})` : ""}
+            </button>
           </div>
-          <div className="guild-request-board">
-            <div className="board-inscription">
-              <span>✦</span>
-              {view === "taken"
-                ? "ACCEPTED COMMISSIONS"
-                : "THE ADVENTURERS GUILD"}
-              <span>✦</span>
-            </div>
-            <div className="objectives-grid request-papers compact-papers">
-              {groups.slice(0, limit).map((g) => {
-                const chosen =
-                    g.variants.find((o) => isTaken(c, o)) ||
-                    g.variants.find((o) => isComplete(c, o)) ||
-                    g.variants.find(
-                      (o) =>
-                        !taskRequirements(c, o, new Date(), "accept").length,
-                    ) ||
-                    g.variants[0],
-                  done = isComplete(c, chosen),
-                  accepted = isTaken(c, chosen),
-                  multi = g.variants.length > 1;
-                const scope = scopeOf(chosen),
-                  Scope =
-                    scope === "universal"
-                      ? Users
-                      : scope === "profession"
-                        ? BriefcaseBusiness
-                        : scope === "vocation"
-                          ? Compass
-                          : Shield,
-                  hybrid = !!(
-                    chosen.adventureRequirement || chosen.adventureBonus
-                  ),
-                  Realm = hybrid ? Blend : Globe;
-                return (
-                  <article
-                    key={g.id}
-                    data-scope={scope}
-                    className={`panel objective-card guild-request-paper compact-request ${done ? "completed" : ""} ${accepted ? "accepted" : ""}`}
-                  >
-                    <span
-                      role="img"
-                      className={`request-scope-icon request-focus-icon focus-${chosen.stat.toLowerCase()}`}
-                      title={`${STAT_NAMES[chosen.stat]} · ${scope} request`}
-                      aria-label={`${STAT_NAMES[chosen.stat]} (${chosen.stat}) · ${scope} request`}
-                      data-stat={chosen.stat}
-                    >
-                      <Icon name={chosen.stat} size={20} />
-                      <small aria-hidden="true">{chosen.stat}</small>
-                      <span className="request-type-badge" aria-hidden="true">
-                        <Scope size={9} />
-                      </span>
-                    </span>
-                    <span
-                      role="img"
-                      className="request-realm-icon"
-                      title={hybrid ? "Real world + adventure" : "Real world"}
-                      aria-label={
-                        hybrid ? "Real world and adventure" : "Real world"
-                      }
-                    >
-                      <Realm size={17} />
-                    </span>
-                    <button
-                      className="request-compact-name"
-                      aria-label={`View ${g.title}`}
-                      onClick={() => openObjective(chosen)}
-                    >
-                      {g.title}
-                    </button>
-                    <span
-                      className="compact-rank"
-                      title={
-                        accepted ? "Taken" : done ? "Completed" : "Available"
-                      }
-                    >
-                      {accepted || done || !multi
-                        ? chosen.rank
-                        : `${g.variants[0].rank}–${g.variants.at(-1)!.rank}`}
-                    </span>
-                    <span className="request-state">
-                      {done ? "Completed" : accepted ? "Taken" : ""}
-                    </span>
-                    <button
-                      className="compact-details"
-                      aria-label={`Show details for ${g.title}`}
-                      onClick={() => openObjective(chosen)}
-                    >
-                      <Plus size={18} />
-                    </button>
-                    <button
-                      className={`request-pin-toggle ${pins.includes(g.id) ? "pinned" : ""}`}
-                      aria-label={`${pins.includes(g.id) ? "Unpin" : "Pin"} ${g.title}`}
-                      aria-pressed={pins.includes(g.id)}
-                      onClick={() => pin(g.id)}
-                    >
-                      <Star
-                        size={13}
-                        fill={pins.includes(g.id) ? "currentColor" : "none"}
-                      />
-                    </button>
-                  </article>
-                );
-              })}
-            </div>
-            {!groups.length && (
-              <div className="empty-request-board">
-                <h3>
-                  {view === "taken"
-                    ? cadence === "all"
-                      ? "No taken requests"
-                      : `No ${cadence} requests`
-                    : "No matching requests"}
-                </h3>
-                {view === "taken" && cadence !== "all" && taken.length > 0 && (
+          <div
+            id="request-filters"
+            className={`request-tools request-filter-fields ${filtersOpen ? "open" : ""}`}
+          >
+            <label className="objective-filter">
+              Category
+              <select
+                aria-label="Objective category"
+                value={category}
+                onChange={(e) => {
+                  setCategory(e.target.value);
+                  setUniversalBoard("");
+                }}
+              >
+                {[
+                  ["all", "All objectives"],
+                  ["universal", "Universal"],
+                  ["class", "Class"],
+                  ["vocation", "Vocation"],
+                  ["profession", "Profession"],
+                  ["career", "All career"],
+                  ["hybrid", "Hybrid"],
+                  ["trials", "Class trials"],
+                ].map(([id, t]) => (
+                  <option key={id} value={id}>
+                    {t}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="objective-filter">
+              Rank
+              <select
+                aria-label="Request rank"
+                value={rank}
+                onChange={(e) => setRank(e.target.value)}
+              >
+                <option value="all">F–{ranks.at(-1)} · All ranks</option>
+                {ranks.map((r) => (
+                  <option key={r} value={r}>
+                    {r} · {TASK_NAMES[r]}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="objective-filter">
+              Focus
+              <select
+                aria-label="Request focus"
+                value={focus}
+                onChange={(e) => setFocus(e.target.value)}
+              >
+                <option value="all">All stats</option>
+                {ATTRIBUTES.map((a) => (
+                  <option key={a}>{a}</option>
+                ))}
+              </select>
+            </label>
+            <label className="objective-filter">
+              Sort
+              <select
+                aria-label="Sort requests"
+                value={sort}
+                onChange={(e) => setSort(e.target.value)}
+              >
+                <option value="relevant">Current focus</option>
+                <option value="name">Name</option>
+                <option value="pinned">Pinned first</option>
+                <option value="reward">Highest reward</option>
+              </select>
+            </label>
+          </div>
+          {(filterCount > 0 || query) && (
+            <button
+              className="text-button request-clear"
+              onClick={resetFilters}
+            >
+              Clear filters
+            </button>
+          )}
+          {showBoards && (
+            <section
+              className="universal-board-hall"
+              aria-label="Universal request boards"
+            >
+              <h3>Universal boards</h3>
+              <div className="stat-board-doors">
+                {ATTRIBUTES.map((stat) => (
                   <button
-                    className="button secondary"
+                    key={stat}
+                    className={`stat-board-door focus-${stat.toLowerCase()}`}
+                    aria-label={`Open ${STAT_NAMES[stat]} board`}
+                    disabled={!boardCounts[stat]}
                     onClick={() => {
-                      setTab("all");
-                      resetFilters();
+                      setUniversalBoard(stat);
+                      setFocus("all");
                     }}
                   >
-                    Show all taken requests
+                    <Icon name={stat} size={28} />
+                    <span>
+                      <b>{STAT_NAMES[stat]}</b>
+                      <small>
+                        {stat} · {boardCounts[stat]} requests
+                      </small>
+                    </span>
                   </button>
+                ))}
+              </div>
+            </section>
+          )}
+          {browsing && universalBoard && (
+            <div className="stat-board-heading">
+              <button
+                className="button secondary"
+                onClick={() => setUniversalBoard("")}
+              >
+                <ArrowLeft size={16} />
+                All boards
+              </button>
+              <Icon name={universalBoard} size={27} />
+              <h3>
+                {STAT_NAMES[universalBoard as keyof typeof STAT_NAMES]} board
+              </h3>
+            </div>
+          )}
+          {(!showBoards || groups.length > 0) && (
+            <>
+              <div className="section-heading page-section-heading">
+                <h3>
+                  {view === "taken"
+                    ? "Taken requests"
+                    : view === "pinned"
+                      ? "Pinned requests"
+                      : view === "suggested"
+                        ? "Suggested requests"
+                        : universalBoard
+                          ? `${STAT_NAMES[universalBoard as keyof typeof STAT_NAMES]} requests`
+                          : showBoards
+                            ? "Class & career requests"
+                            : cadence === "daily"
+                              ? "Daily tasks"
+                              : cadence === "weekly"
+                                ? "Weekly quests"
+                                : "Monthly adventures"}
+                </h3>
+                <Tag>
+                  {groups.length} requests
+                  {cadence === "all"
+                    ? " · All taken"
+                    : ` · ${fmt(periodStart(cadence))}${cadence !== "daily" ? ` – ${fmt(end)}` : ""}`}
+                </Tag>
+              </div>
+              <div className="guild-request-board">
+                <div className="board-inscription">
+                  <span>✦</span>
+                  {view === "taken"
+                    ? "ACCEPTED COMMISSIONS"
+                    : "THE ADVENTURERS GUILD"}
+                  <span>✦</span>
+                </div>
+                <div className="objectives-grid request-papers compact-papers">
+                  {groups.slice(0, limit).map((g) => {
+                    const chosen =
+                        g.variants.find((o) => isTaken(c, o)) ||
+                        g.variants.find((o) => isComplete(c, o)) ||
+                        g.variants.find(
+                          (o) =>
+                            !taskRequirements(c, o, new Date(), "accept")
+                              .length,
+                        ) ||
+                        g.variants[0],
+                      done = isComplete(c, chosen),
+                      accepted = isTaken(c, chosen),
+                      multi = g.variants.length > 1;
+                    const scope = scopeOf(chosen),
+                      Scope =
+                        scope === "universal"
+                          ? Users
+                          : scope === "profession"
+                            ? BriefcaseBusiness
+                            : scope === "vocation"
+                              ? Compass
+                              : Shield,
+                      hybrid = !!(
+                        chosen.adventureRequirement || chosen.adventureBonus
+                      ),
+                      Realm = hybrid ? Blend : Globe;
+                    return (
+                      <article
+                        key={g.id}
+                        data-scope={scope}
+                        className={`panel objective-card guild-request-paper compact-request ${done ? "completed" : ""} ${accepted ? "accepted" : ""}`}
+                      >
+                        <span
+                          role="img"
+                          className={`request-scope-icon request-focus-icon focus-${chosen.stat.toLowerCase()}`}
+                          title={`${STAT_NAMES[chosen.stat]} · ${scope} request`}
+                          aria-label={`${STAT_NAMES[chosen.stat]} (${chosen.stat}) · ${scope} request`}
+                          data-stat={chosen.stat}
+                        >
+                          <Icon name={chosen.stat} size={20} />
+                          <small aria-hidden="true">{chosen.stat}</small>
+                          <span
+                            className="request-type-badge"
+                            aria-hidden="true"
+                          >
+                            <Scope size={9} />
+                          </span>
+                        </span>
+                        <span
+                          role="img"
+                          className="request-realm-icon"
+                          title={
+                            hybrid ? "Real world + adventure" : "Real world"
+                          }
+                          aria-label={
+                            hybrid ? "Real world and adventure" : "Real world"
+                          }
+                        >
+                          <Realm size={17} />
+                        </span>
+                        <button
+                          className="request-compact-name"
+                          aria-label={`View ${g.title}`}
+                          onClick={() => openObjective(chosen)}
+                        >
+                          {g.title}
+                        </button>
+                        <span
+                          className="compact-rank"
+                          title={
+                            accepted
+                              ? "Taken"
+                              : done
+                                ? "Completed"
+                                : "Available"
+                          }
+                        >
+                          {accepted || done || !multi
+                            ? chosen.rank
+                            : `${g.variants[0].rank}–${g.variants.at(-1)!.rank}`}
+                        </span>
+                        <span className="request-state">
+                          {done ? "Completed" : accepted ? "Taken" : ""}
+                        </span>
+                        <button
+                          className="compact-details"
+                          aria-label={`Show details for ${g.title}`}
+                          onClick={() => openObjective(chosen)}
+                        >
+                          <Plus size={18} />
+                        </button>
+                        <button
+                          className={`request-pin-toggle ${pins.includes(g.id) ? "pinned" : ""}`}
+                          aria-label={`${pins.includes(g.id) ? "Unpin" : "Pin"} ${g.title}`}
+                          aria-pressed={pins.includes(g.id)}
+                          onClick={() => pin(g.id)}
+                        >
+                          <Star
+                            size={13}
+                            fill={pins.includes(g.id) ? "currentColor" : "none"}
+                          />
+                        </button>
+                      </article>
+                    );
+                  })}
+                </div>
+                {!groups.length && (
+                  <div className="empty-request-board">
+                    <h3>
+                      {view === "taken"
+                        ? cadence === "all"
+                          ? "No taken requests"
+                          : `No ${cadence} requests`
+                        : "No matching requests"}
+                    </h3>
+                    {view === "taken" &&
+                      cadence !== "all" &&
+                      taken.length > 0 && (
+                        <button
+                          className="button secondary"
+                          onClick={() => {
+                            setTab("all");
+                            resetFilters();
+                          }}
+                        >
+                          Show all taken requests
+                        </button>
+                      )}
+                  </div>
                 )}
               </div>
-            )}
-          </div>
-          {groups.length > limit && (
-            <button
-              className="button secondary request-load-more"
-              onClick={() => setLimit((n) => n + 30)}
-            >
-              Show {Math.min(30, groups.length - limit)} more
-            </button>
+              {groups.length > limit && (
+                <button
+                  className="button secondary request-load-more"
+                  onClick={() => setLimit((n) => n + 30)}
+                >
+                  Show {Math.min(30, groups.length - limit)} more
+                </button>
+              )}
+            </>
           )}
         </>
       )}

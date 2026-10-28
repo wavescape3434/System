@@ -660,6 +660,7 @@ test("recurring requests return as suggestions and require another manual accept
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
   await page.clock.setSystemTime(new Date("2026-10-21T12:00:00Z"));
   await page.reload();
   await page
@@ -690,6 +691,7 @@ test("recurring requests return as suggestions and require another manual accept
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
   const c = await page.evaluate(async () =>
     JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );

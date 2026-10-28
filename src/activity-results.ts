@@ -2,8 +2,13 @@ import type { Character, Completion, Objective } from "./domain";
 import { completeTaken, takenObjectives, isComplete } from "./domain";
 import { requestProgress } from "./training-tasks";
 import type { PerformanceSeries } from "./performance-history";
+import { validWorkoutLog, canonicalWorkout } from "./training-prescriptions";
 
 export interface ActivityResult {
+  topic?: string;
+  attempted?: number;
+  correct?: number;
+  workout?: import("./training-prescriptions").WorkoutLog;
   exercise?: string;
   sets?: number;
   reps?: number;
@@ -13,8 +18,14 @@ export interface ActivityResult {
   count?: number;
   output?: string;
 }
-export type ResultDraft = Record<keyof ActivityResult, string>;
+export type ResultDraft = Record<
+  Exclude<keyof ActivityResult, "workout">,
+  string
+>;
 export const EMPTY_RESULT: ResultDraft = {
+  topic: "",
+  attempted: "",
+  correct: "",
   exercise: "",
   sets: "",
   reps: "",
@@ -25,6 +36,8 @@ export const EMPTY_RESULT: ResultDraft = {
   output: "",
 };
 const limits = {
+  attempted: 1000000,
+  correct: 1000000,
   sets: 1000,
   reps: 100000,
   loadKg: 10000,
@@ -35,15 +48,21 @@ const limits = {
 export function validActivityResult(input: unknown): input is ActivityResult {
   if (!input || typeof input !== "object" || Array.isArray(input)) return false;
   const r = input as ActivityResult;
-  if (Object.keys(r).some((k) => !Object.hasOwn(EMPTY_RESULT, k))) return false;
   if (
-    ["exercise", "output"].some((k) => {
-      const value = r[k as "exercise" | "output"];
+    Object.keys(r).some(
+      (k) => k !== "workout" && !Object.hasOwn(EMPTY_RESULT, k),
+    )
+  )
+    return false;
+  if (r.workout !== undefined && !validWorkoutLog(r.workout)) return false;
+  if (
+    ["exercise", "output", "topic"].some((k) => {
+      const value = r[k as "exercise" | "output" | "topic"];
       return (
         value !== undefined &&
         (typeof value !== "string" ||
           !value.trim() ||
-          value.length > (k === "exercise" ? 80 : 280))
+          value.length > (k === "exercise" ? 80 : k === "topic" ? 100 : 280))
       );
     })
   )
@@ -54,13 +73,21 @@ export function validActivityResult(input: unknown): input is ActivityResult {
       value !== undefined &&
       (typeof value !== "number" ||
         !Number.isFinite(value) ||
-        value <= 0 ||
+        (key === "correct" ? value < 0 : value <= 0) ||
         value > max ||
-        (["sets", "reps", "count"].includes(key) && !Number.isInteger(value)))
+        (["sets", "reps", "count", "attempted", "correct"].includes(key) &&
+          !Number.isInteger(value)))
     )
       return false;
   }
   if ((r.sets || r.reps || r.loadKg) && !r.exercise) return false;
+  if (
+    (r.attempted !== undefined || r.correct !== undefined) &&
+    (r.attempted === undefined ||
+      r.correct === undefined ||
+      r.correct > r.attempted)
+  )
+    return false;
   return Object.keys(r).length > 0;
 }
 export function parseResult(
@@ -68,7 +95,7 @@ export function parseResult(
   imperial = false,
 ): { result?: ActivityResult; error?: string } {
   const result: ActivityResult = {};
-  for (const key of ["exercise", "output"] as const)
+  for (const key of ["exercise", "output", "topic"] as const)
     if (draft[key].trim()) result[key] = draft[key].trim();
   for (const key of Object.keys(limits) as (keyof typeof limits)[]) {
     if (!draft[key].trim()) continue;
@@ -85,7 +112,7 @@ export function parseResult(
     ? { result }
     : {
         error:
-          "Use positive values, whole sets/reps/items, and name the exercise for strength results.",
+          "Use positive values and whole counts. Name strength exercises; for checked questions enter both attempted and correct (0 up to attempted).",
       };
 }
 export function resultDraft(
@@ -94,6 +121,7 @@ export function resultDraft(
 ): ResultDraft {
   const draft = { ...EMPTY_RESULT };
   for (const [key, value] of Object.entries(result || {})) {
+    if (key === "workout") continue;
     const factor =
       imperial && key === "loadKg"
         ? 2.2046226218
@@ -114,6 +142,16 @@ export function completeWithResult(
   now = new Date(),
 ): Character {
   if (result && !validActivityResult(result)) return c;
+  const actual = result?.workout
+    ? takenObjectives(c, now).find((r) => r.id === o.id)
+    : undefined;
+  if (
+    result?.workout &&
+    (!actual?.workout ||
+      canonicalWorkout(actual.workout) !==
+        canonicalWorkout(result.workout.prescription))
+  )
+    return c;
   const next = completeTaken(c, o, now);
   if (next === c || !result) return next;
   return {
@@ -126,7 +164,20 @@ export function completeWithResult(
 export function resultSummary(r?: ActivityResult, imperial = false): string {
   if (!r) return "";
   return [
+    r.workout &&
+      `${r.workout.prescription.exercises.length} movements · session ${r.workout.prescription.session} · ${r.workout.prescription.rank} rank`,
+    r.workout &&
+      r.workout.exercises
+        .map(
+          (e) =>
+            `${e.variation}: ${e.reps.join("/")} reps${e.loadKg ? ` at ${Math.round(e.loadKg * (imperial ? 2.2046226218 : 1) * 100) / 100} ${imperial ? "lb" : "kg"}` : ""}, ${e.rir} reps left`,
+        )
+        .join("; "),
     r.exercise,
+    r.topic,
+    r.attempted !== undefined &&
+      r.correct !== undefined &&
+      `${r.correct}/${r.attempted} checked answers`,
     r.sets && `${r.sets} sets`,
     r.reps && `${r.reps} reps${r.sets ? "/set" : " total"}`,
     r.loadKg &&
@@ -159,6 +210,8 @@ export function creditedGoals(
       c.takenRequests?.find((r) => r.id === o.id)?.classId ||
       c.activeClass,
     scope: o.scope,
+    rank: o.rank,
+    ...(o.workout ? { workout: o.workout } : {}),
     family: o.family,
     careerCategory: o.careerCategory,
     stat: o.stat,
@@ -183,13 +236,19 @@ export function activityResultHistory(
   for (const x of c.completions) {
     const r = x.result;
     if (!r || new Date(x.at) < start || new Date(x.at) > now) continue;
-    const name = r.exercise || x.title;
-    const add = (metric: string, unit: string, value?: number) => {
+    const name = r.exercise || r.topic || x.title;
+    const add = (
+      metric: string,
+      unit: string,
+      value?: number,
+      exerciseName?: string,
+      exerciseKey?: string,
+    ) => {
       if (value === undefined) return;
-      const id = `${r.exercise?.toLowerCase() || x.requestGroup || x.id}:${metric}`;
+      const id = `${exerciseKey || r.exercise?.toLowerCase() || (r.topic ? `topic:${r.topic.trim().toLowerCase()}` : "") || x.requestGroup || x.id}:${metric}`;
       const series = groups.get(id) || {
         id,
-        title: `${name} · ${metric}`,
+        title: `${exerciseName || name} · ${metric}`,
         unit,
         points: [],
       };
@@ -221,6 +280,28 @@ export function activityResultHistory(
       r.distanceKm ? r.distanceKm * (imperial ? 0.6213711922 : 1) : undefined,
     );
     add("completed items", "items", r.count);
+    if (r.attempted !== undefined && r.correct !== undefined)
+      add("checked accuracy", "%", (r.correct / r.attempted) * 100);
+    for (const entry of r.workout?.exercises || []) {
+      const prescribed = r.workout!.prescription.exercises.find(
+        (e) => e.id === entry.id,
+      )!;
+      const key = `workout:${entry.id}:${entry.variation.trim().toLowerCase()}`;
+      add(
+        "total repetitions",
+        "reps",
+        entry.reps.reduce((n, r) => n + r, 0) * (prescribed.perSide ? 2 : 1),
+        entry.variation,
+        key,
+      );
+      add(
+        "load used",
+        imperial ? "lb" : "kg",
+        entry.loadKg ? entry.loadKg * (imperial ? 2.2046226218 : 1) : undefined,
+        entry.variation,
+        key,
+      );
+    }
   }
   return [...groups.values()].map((g) => ({
     ...g,

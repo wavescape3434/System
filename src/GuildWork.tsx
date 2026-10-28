@@ -37,6 +37,11 @@ export default function GuildWork({
   return (
     <section className="panel guild-work" aria-label="Current work">
       <div className="guild-work-links">
+        <button onClick={() => navigate("objectives", "regimen")}>
+          <Icon name="STR" size={19} />
+          <span>Today’s regimen</span>
+          <ArrowRight size={17} />
+        </button>
         <button onClick={() => navigate("objectives", "board:daily:class")}>
           <Icon name={currentPath(c).stat} size={19} />
           <span>{currentPath(c).name} requests</span>

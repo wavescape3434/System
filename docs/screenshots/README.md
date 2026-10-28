@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.24.0 — screenshots
+# The Adventurers Guild 1.25.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Balanced training — version 1.25
+
+| Home plan | Work-set log | Weekly commitment |
+| --- | --- | --- |
+| [<img src="regimen-home-mobile.png" width="230" alt="F-rank home strength plan with exact exercises and rest">](regimen-home-mobile.png) | [<img src="regimen-log-mobile.png" width="230" alt="Blank actual-set inputs with setup and effort fields">](regimen-log-mobile.png) | [<img src="regimen-goal-mobile.png" width="230" alt="Manually accepted two-day weekly training request">](regimen-goal-mobile.png) |
+
+[Plan settings](regimen-settings-mobile.png) · [Technique and progression](regimen-technique-mobile.png) · [Gym on desktop](regimen-gym-desktop.png) · [Imperial load entry](regimen-imperial-mobile.png) · [Large-text phone layout](regimen-large-text-mobile.png)
+
+[Task efficacy review](../training-1.25/README.md) · [Capture fixtures and scans](../training-1.25/screens/README.md). These use sample characters and scripted dates, not personal or observed fitness results.
 
 ## Combat builds — version 1.24
 

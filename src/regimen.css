@@ -1,0 +1,148 @@
+.training-regimen {
+  display: grid;
+  gap: 18px;
+}
+.training-regimen > .section-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.regimen-settings {
+  display: grid;
+  gap: 14px;
+}
+.regimen-settings label,
+.workout-record label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+.regimen-settings input,
+.regimen-settings select,
+.workout-record input,
+.workout-record select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #947b51;
+  border-radius: 5px;
+  background: #fffdf5;
+  color: #302b21;
+  font: inherit;
+}
+.regimen-week {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+.regimen-week button {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 12px 6px;
+  min-width: 0;
+  background: #f0e2bd;
+  color: #3b3023;
+  border: 1px solid #aa8b51;
+  border-radius: 6px;
+  min-height: 72px;
+}
+.regimen-week button[aria-pressed="true"] {
+  background: #214e3b;
+  color: #fff4d5;
+  border-color: #214e3b;
+}
+.regimen-week small {
+  font-size: 0.7rem;
+  overflow-wrap: anywhere;
+}
+.regimen-exercises {
+  padding-left: 24px;
+}
+.regimen-exercises > li {
+  padding: 16px 4px;
+  border-bottom: 1px solid #b6a680;
+}
+.regimen-exercises h4 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+.regimen-exercises p {
+  margin: 10px 0;
+}
+.regimen-exercises summary,
+.training-regimen details summary {
+  min-height: 44px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+.regimen-last {
+  color: #374e3e;
+  font-weight: 600;
+}
+.regimen-progress {
+  border-left: 3px solid #346c49;
+  padding-left: 12px;
+}
+.regimen-class-choice {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 0;
+}
+.regimen-class-choice input {
+  width: 22px;
+  height: 22px;
+}
+.regimen-request-actions {
+  padding-top: 12px;
+}
+.workout-record {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+}
+.workout-record fieldset {
+  min-width: 0;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #a18b60;
+  border-radius: 7px;
+  background: #f7f0dc;
+}
+.workout-record legend {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0 6px;
+}
+.workout-set-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+.training-regimen details p {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .regimen-week {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .regimen-week button {
+    min-height: 68px;
+  }
+  .workout-record fieldset {
+    padding: 12px;
+  }
+}
+
+.workout-record legend {
+  max-width: 100%;
+  white-space: normal;
+}
+.regimen-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

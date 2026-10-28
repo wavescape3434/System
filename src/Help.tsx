@@ -1,8 +1,51 @@
+import { TRAINING_SOURCES } from "./training-prescriptions";
 import { useState } from "react";
 import { Search, ChevronRight, ExternalLink } from "lucide-react";
 import { METRIC_SOURCES } from "./metrics";
 import type { Page } from "./screens";
 const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
+  {
+    title: "Study results by subject",
+    page: "objectives",
+    sections: [
+      [
+        "Comparable learning checks",
+        "For knowledge practice, name the topic/source and optionally record checked questions attempted and correct. Zero correct answers is a valid result. Journey keeps topic-specific accuracy apart; question difficulty and marking still need to be comparable. A count of problems or minutes alone is not proof of greater intelligence. Use spaced retrieval and fresh applications within the same field, then correct errors.",
+      ],
+    ],
+  },
+
+  {
+    title: "Training regimen",
+    page: "objectives",
+    sections: [
+      [
+        "Daily plan",
+        "Open Objectives → Regimen or Today’s regimen on the Guild. Start a balanced two-day strength plan, choose home/weights/gym and an F–C training dose. The first strength day starts the repeating week; session B follows three days later. Walk on five days and keep one recovery day. Walking targets are selected separately from strength rank, in five-minute steps; build toward 150 moderate minutes per week. Short walks are a valid beginning. Training request ranks do not change the Guild rank on your card.",
+      ],
+      [
+        "Choosing difficulty",
+        "F starts with one work set and easy supported movements. E uses two sets, D builds repetition consistency and C uses three challenging sets. A recorded floor-pushup or bench assessment can suggest E; otherwise the default is F. Choose F when returning after a long break. Those cutoffs are conservative game suggestions, not population norms or a full-body fitness diagnosis. Adjust variation or load so the prescribed reps leave the stated clean repetitions in reserve. Best effort means repeatable quality and recovery, not taking every set to failure.",
+      ],
+      [
+        "Progression and results",
+        "Record every work set, setup, external load and clean reps left. After two comparable top-range sessions on separate days, change one variable: reps, then a harder variation or a conservative 2–5% load increase when available. Four logged days spanning at least ten days, both A/B sessions and strong recent results trigger a rank-review prompt. The prompt never increases base stats or changes the plan automatically. Weeks 1–2 emphasize consistency and control; later checks compare the same movements. Individual improvement varies; the app does not promise a gain per week.",
+      ],
+      [
+        "Home pulling",
+        "The no-weight plan uses self-resisted rows. They provide a starting movement but their resistance is difficult to measure and is not equivalent to a loaded row test. The weights version accepts a weighed sturdy backpack or dumbbells. Record the total external load moved each repetition, with a consistent grip/range. For paired-side sets, enter the lower completed count when sides differ; graphs conservatively count that number on both sides.",
+      ],
+      [
+        "Rewards and commitments",
+        "A complete session is one request at its selected rank; component movements do not receive automatic extra rewards. Hard overlapping strength work blocks another full session for 48 hours. Strength-class versions train that class directly and retain its secondary real-world focus. Planned strength quests use two weekly and eight monthly days, with matching-rank practice. Universal calendar goals can count the same legitimate practice day but require their own manual acceptance and submission. Ordinary daily requests stop at C; B/A are prepared goals and S–SSS are assessed achievements, not instructions to train longer every day.",
+      ],
+      [
+        "Saved work",
+        "Submitted logs appear in Journey practice graphs and Regimen recent training. Unfinished form entries stay on this device through reloads, under the accepted request and unit system; at most two drafts per character are retained. Drafts are not character-backup progress. A failed primary save retains the draft. Taken prescriptions keep their original setup and rank after plan edits; release an unfinished request explicitly to replace it.",
+      ],
+    ],
+  },
+
   {
     title: "Character appearance",
     page: "settings",
@@ -472,6 +515,14 @@ export default function Help({ navigate }: { navigate?: (p: Page) => void }) {
       {!list.length && <p className="panel">No matching help topics.</p>}
       <details className="panel research-sources">
         <summary>Assessment & training sources</summary>
+        {TRAINING_SOURCES.map((s) => (
+          <p key={s.url}>
+            <a href={s.url} target="_blank" rel="noreferrer">
+              {s.title} <ExternalLink size={12} />
+            </a>
+            <small>{s.rule}</small>
+          </p>
+        ))}
         {METRIC_SOURCES.map((s) => (
           <p key={s.id}>
             <a href={s.url} target="_blank" rel="noreferrer">

@@ -1,0 +1,42 @@
+{
+  "version": "1.25.0",
+  "versionCode": 27,
+  "package": "com.theguild.personal",
+  "minimumAPI": 24,
+  "targetAPI": 36,
+  "bytes": 14056447,
+  "sha256": "6a50be0f5811cf9942c8f3a79fbf73564e2b85498c34b6e655a5b0ddf667e57e",
+  "matchingWebFiles": 38,
+  "generatedCordovaStubs": 2,
+  "startupJavaScriptBytes": 1037836,
+  "certificateSHA256": "f6c745055e1d566d935ce766c749393e4936eca36f7e1d85c26d5176a65181e5",
+  "primaryDatabase": "the-guild.primary.v1",
+  "physicalAndroidVerified": false,
+  "liveFirebaseVerified": false,
+  "unitChecks": 325,
+  "unitFiles": 30,
+  "unitRun": {
+    "passed": 325,
+    "failed": 0,
+    "workers": 1,
+    "durationSeconds": 53.9
+  },
+  "browserWorkflows": 128,
+  "browserRun": {
+    "passed": 128,
+    "failed": 0,
+    "duration": "9.6m",
+    "workers": 2,
+    "testTimeoutMilliseconds": 60000
+  },
+  "scannedViews": 8,
+  "screenOverflow": 0,
+  "automatedAccessibilityFindings": 0,
+  "uncaughtScreenErrors": 0,
+  "scriptedLedgerCases": 24,
+  "accountDays": 1440,
+  "workoutReceipts": 432,
+  "repeatedPayoutsBlocked": 432,
+  "recoveryBypassesBlocked": 432,
+  "exerciseInputsArePredictions": false
+}

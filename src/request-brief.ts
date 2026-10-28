@@ -16,7 +16,19 @@ export function requestBrief(o: Objective, c: Character): RequestBrief {
       ? o.minutes
       : "the target stated in the commission, with its qualifying practice days";
   let brief: Omit<RequestBrief, "finish">;
-  if (/pushup|push-up/.test(topic) && o.scope === "universal")
+  if (o.workout)
+    brief = protocol(
+      [
+        o.workout.warmup,
+        ...o.workout.exercises.map(
+          (e) =>
+            `${e.name}: ${e.sets} sets of ${e.min}–${e.max}${e.perSide ? " per side" : ""}; rest ${e.restSeconds} seconds. ${e.cues}`,
+        ),
+        `Finish with ${o.workout.rir} clean repetitions in reserve. Keep setup and range consistent; progress after two comparable top-range sessions.`,
+      ],
+      "Every work set, exercise setup, external load where used, and clean reps left. A full session pays once; its component movements are not additional claims.",
+    );
+  else if (/pushup|push-up/.test(topic) && o.scope === "universal")
     brief = protocol(
       [
         "Use the variation named in the request: wall, incline, knee or floor. Set your hands on a stable surface and keep your trunk aligned.",
