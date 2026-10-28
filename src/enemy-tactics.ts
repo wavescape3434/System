@@ -52,7 +52,14 @@ export function enemyIntent(unit: Unit, round: number): string {
           : huntEnraged(unit)
             ? "Enraged · +30% damage"
             : "";
-  return [shell, attack, specialty].filter(Boolean).join(" · ");
+  return [
+    shell,
+    attack,
+    specialty,
+    unit.chill ? `Chilled ${unit.chill} · attack damage −25%` : "",
+  ]
+    .filter(Boolean)
+    .join(" · ");
 }
 
 export const TACTIC_NAMES = {

@@ -39,6 +39,14 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
         "The turn queue follows the current combat rules: living party members act, then living enemies. Select an enemy for attacks or an ally for healing. HP and MP stay visible in the party panel. Skills learned in the tree must be equipped in the adventure loadout; the active class signature is always available.",
       ],
       [
+        "Martial disciplines",
+        "Fighter-tree techniques carry their discipline across class changes when equipped. Swords gain 25% technique damage on the next turn after guarding an enemy round. Spears ignore half of remaining defense and deal 25% more damage against a charging enemy; spear counters also ignore half of defense. Axe hits progressively remove 20% of remaining defense. Unarmed techniques use the higher of physical attack or DEX technique power and cost 1 less MP. These are learned techniques, without a matching-weapon requirement. DEX-led Ranger/Rogue classes can use DEX as their stronger attack source; WIS-led Cleric classes can use WIS as their stronger magic source. Existing stronger attack/magic values are retained.",
+      ],
+      [
+        "Elements and prestige techniques",
+        "Pyromancy, Frostcraft and Stormcalling have independent early Mage-tree routes. Elemental weakness multiplies raw damage by 1.3; resistance by 0.8, before defense. Neutral spells remain neutral. Rime Shard also reduces enemy attack damage by 25% for two enemy rounds, including boss attacks. Storm Chain arcs at half strength to other living enemies. Select a target to inspect its matchup and open Technique details for commands. Selected prestige signatures and their learned focus variants add protection, aether burns, executions, MP echoes or spreading burns. New rules are saved when a fight begins; older active fights keep their existing commands.",
+      ],
+      [
         "Briar Road enemy tactics",
         "The first two stages stay simple. Later stages introduce shells and winding-up attacks. Ordinary hits wear a shell down and deal reduced damage; power attacks, sweeping techniques, magic, piercing attacks and shield bashes break it immediately. Analysis also breaks a shell. A winding-up enemy telegraphs a heavy strike. The area guardian prepares a cleave that hits all living allies every third round: guard, use a party barrier, heal or use a supply before it lands. Mira can heal or cast Glimmer. Other regions retain their current encounters while further tactics are developed.",
       ],

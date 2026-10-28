@@ -45,3 +45,25 @@
 .signature-loadout .eyebrow {
   color: #f5e3b7;
 }
+.battle-technique-guide {
+  border: 1px solid #71868f;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 8px 0 12px;
+  color: #e4eaf0;
+  background: #17242e;
+  font-size: 0.85rem;
+}
+.battle-technique-guide summary {
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 24px;
+}
+.battle-technique-guide p {
+  color: #e4eaf0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.elemental-readout {
+  text-transform: capitalize;
+}

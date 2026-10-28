@@ -231,7 +231,7 @@ describe("reminders and early choices", () => {
             s.cost === 1 &&
             s.combat,
         ),
-      ).toHaveLength(family === "fighter" ? 8 : 4);
+      ).toHaveLength(family === "fighter" ? 8 : family === "mage" ? 7 : 4);
     let c = demoCharacter();
     c.completions = [
       {

@@ -1,4 +1,11 @@
 import { COMPANION_TACTICS } from "./companion-tactics";
+import {
+  combatIdentity,
+  identityDescription,
+  ENEMY_AFFINITIES,
+  elementMultiplier,
+} from "./combat-identity";
+import type { Discipline, Element } from "./combat-identity";
 import { gearModifiers } from "./equipment-progression";
 import {
   SUPPLY_PRICES,
@@ -344,6 +351,9 @@ export interface Ability {
   potency?: number;
   description?: string;
   rank?: number;
+  discipline?: Discipline;
+  element?: Element;
+  signature?: string;
 }
 const ability = (id: string, name: string, type: string): Ability => ({
   id,
@@ -351,6 +361,13 @@ const ability = (id: string, name: string, type: string): Ability => ({
   type,
   cost: COMBAT_EFFECTS[type]?.mp || 5,
   power: type === "fire" ? 1.6 : type === "power" ? 1.8 : 1.2,
+  ...combatIdentity(id, type),
+  description: [
+    COMBAT_EFFECTS[type]?.description,
+    identityDescription(id, type),
+  ]
+    .filter(Boolean)
+    .join(" "),
 });
 export interface Unit {
   id: string;
@@ -383,6 +400,12 @@ export interface Unit {
   cleave?: boolean;
   burn?: number;
   burnDamage?: number;
+  precision?: number;
+  poise?: boolean;
+  counterPierce?: boolean;
+  chill?: number;
+  weak?: Element;
+  resist?: Element;
 }
 export interface Battle {
   encounterId: string;
@@ -444,12 +467,18 @@ export function adventureParty(c: Character, now = new Date()): Unit[] {
     maxHp,
     mp: maxMp,
     maxMp,
-    attack:
+    attack: Math.max(
       7 +
-      s.STR * 2 +
-      s.DEX +
-      Math.floor(((s.DEX / 2) * (mix.rogue || 0)) / 100),
-    magic: 6 + s.INT * 2 + s.WIS + Math.round((4 * (mix.artificer || 0)) / 100),
+        s.STR * 2 +
+        s.DEX +
+        Math.floor(((s.DEX / 2) * (mix.rogue || 0)) / 100),
+      (mix.ranger || 0) + (mix.rogue || 0) >= 50 ? 7 + s.DEX * 2 + s.STR : 0,
+    ),
+    precision: 7 + s.DEX * 2 + s.STR,
+    magic: Math.max(
+      6 + s.INT * 2 + s.WIS + Math.round((4 * (mix.artificer || 0)) / 100),
+      (mix.cleric || 0) >= 50 ? 6 + s.WIS * 2 + s.INT : 0,
+    ),
     defense:
       2 +
       Math.floor(s.CON * 0.8) +
@@ -572,6 +601,7 @@ export function encounterEnemies(id: string): Unit[] {
       guard: false,
       abilities: [],
       boss,
+      ...ENEMY_AFFINITIES[kind],
       ...openingTactics(e.id, i),
       ...huntTactics(e, i),
     };
@@ -644,6 +674,8 @@ export const SHELL_BREAK_EFFECTS = [
   "bash",
   "hybrid",
   "coordinated",
+  "ice",
+  "storm",
 ] as const;
 export const breaksShellImmediately = (type: string) =>
   type === "scan" || (SHELL_BREAK_EFFECTS as readonly string[]).includes(type);
@@ -659,22 +691,54 @@ export function takeAction(input: Battle, action: Action): Battle {
   let potency = 1;
   let breaksShell = false;
   if (!actor || actor.hp <= 0) return input;
-  const hit = (target: Unit, raw: number) => {
+  const poised = actor.poise;
+  delete actor.poise;
+  let discipline: Discipline | undefined, element: Element | undefined;
+  let execution = false;
+  let physical = actor.attack;
+  const hit = (target: Unit, raw: number, ignoreDefense = false) => {
     const shielded = (target.shell || 0) > 0;
     if (shielded) {
       target.shell = breaksShell ? 0 : Math.max(0, target.shell! - 1);
       if (!target.shell) b.log.push(`${target.name}'s shell breaks.`);
     }
+    const defense = ignoreDefense
+        ? 0
+        : Math.max(0, target.defense - (actor.penetration || 0)),
+      affinity = elementMultiplier(element, target),
+      style =
+        (discipline === "sword" && poised
+          ? 1.25
+          : discipline === "spear" && chargedAttack(target, b.round)
+            ? 1.25
+            : 1) * (execution && target.hp <= target.maxHp / 2 ? 1.4 : 1);
     const damage = Math.max(
       1,
       Math.round(
-        (raw * potency * (shielded && !breaksShell ? 0.55 : 1) -
-          Math.max(0, target.defense - (actor.penetration || 0))) *
+        (raw *
+          potency *
+          style *
+          affinity *
+          (shielded && !breaksShell ? 0.55 : 1) -
+          defense * (discipline === "spear" ? 0.5 : 1)) *
           (target.guard ? 0.45 / (target.guardPower || 1) : 1),
       ),
     );
     target.hp = Math.max(0, target.hp - damage);
     b.log.push(`${actor.name} → ${target.name}: ${damage} damage.`);
+    if (affinity !== 1)
+      b.log.push(
+        `${target.name}: ${element} ${affinity > 1 ? "weakness" : "resistance"}.`,
+      );
+    if (discipline === "sword" && poised)
+      b.log.push("Sword follow-through: +25% damage.");
+    if (discipline === "spear" && chargedAttack(target, b.round))
+      b.log.push("Spear intercept: +25% damage.");
+    if (discipline === "axe" && target.defense > 0) {
+      const removed = Math.max(1, Math.ceil(target.defense * 0.2));
+      target.defense = Math.max(0, target.defense - removed);
+      b.log.push(`${target.name}: axe sunders ${removed} defense.`);
+    }
   };
   if (action.kind === "flee") {
     b.phase = "fled";
@@ -714,6 +778,13 @@ export function takeAction(input: Battle, action: Action): Battle {
     if (!target || target.hp <= 0) return input;
     actor.mp -= skill.cost;
     potency = skill.potency || 1;
+    discipline = skill.discipline;
+    element = skill.element;
+    execution = ["shadowblade", "phantom"].includes(skill.signature || "");
+    physical =
+      discipline === "unarmed"
+        ? Math.max(actor.attack, actor.precision || 0)
+        : actor.attack;
     breaksShell = (SHELL_BREAK_EFFECTS as readonly string[]).includes(
       skill.type,
     );
@@ -743,6 +814,13 @@ export function takeAction(input: Battle, action: Action): Battle {
       actor.guard = true;
       actor.counter = true;
       actor.counterPower = potency;
+      if (discipline === "unarmed")
+        actor.counterPower *= Math.max(
+          1,
+          (actor.precision || 0) / Math.max(1, actor.attack),
+        );
+      if (discipline === "sword" && poised) actor.counterPower *= 1.25;
+      if (discipline === "spear") actor.counterPierce = true;
       actor.guardPower = potency;
     } else if (skill.type === "rally" || skill.type === "formation")
       for (const ally of b.party.filter((p) => p.hp > 0)) {
@@ -775,26 +853,27 @@ export function takeAction(input: Battle, action: Action): Battle {
       if (skill.type === "focus") restore(actor, 0.35);
     } else if (skill.type === "quick" || skill.type === "area")
       for (const enemy of b.enemies.filter((p) => p.hp > 0))
-        hit(
-          enemy,
-          skill.type === "quick" ? actor.attack * 0.9 : actor.magic * 1.1,
-        );
+        hit(enemy, skill.type === "quick" ? physical * 0.9 : actor.magic * 1.1);
     else if (skill.type === "pierce")
-      hit(target, actor.attack * 1.2 + target.defense);
+      hit(
+        target,
+        physical * 1.2 + (discipline === "spear" ? 0 : target.defense),
+        discipline === "spear",
+      );
     else if (skill.type === "flurry") {
-      hit(target, actor.attack * 0.8);
-      if (target.hp > 0) hit(target, actor.attack * 0.8);
+      hit(target, physical * 0.8);
+      if (target.hp > 0) hit(target, physical * 0.8);
     } else if (skill.type === "bash") {
-      hit(target, actor.attack * 1.15);
+      hit(target, physical * 1.15);
       if (!target.boss) target.stun = 1;
       else b.log.push(`${target.name} resists stun.`);
     } else if (skill.type === "hybrid") {
-      hit(target, actor.attack * 0.85 + actor.magic * 0.6);
+      hit(target, physical * 0.85 + actor.magic * 0.6);
       restore(actor, 0.25);
     } else if (skill.type === "coordinated")
       hit(
         target,
-        actor.attack +
+        physical +
           b.party
             .filter((p) => p.hp > 0 && p.id !== actor.id)
             .reduce((n, p) => n + p.attack * 0.4, 0),
@@ -802,12 +881,63 @@ export function takeAction(input: Battle, action: Action): Battle {
     else if (skill.type === "burn") {
       hit(target, actor.magic * 0.9);
       target.burn = 3;
-      target.burnDamage = Math.max(1, Math.round(actor.magic * 0.3 * potency));
+      target.burnDamage = Math.max(
+        1,
+        Math.round(
+          actor.magic * 0.3 * potency * elementMultiplier(element, target),
+        ),
+      );
+    } else if (skill.type === "ice") {
+      hit(target, actor.magic * 1.25);
+      if (target.hp > 0) target.chill = 2;
+    } else if (skill.type === "storm") {
+      hit(target, actor.magic * 1.15);
+      for (const other of b.enemies.filter(
+        (e) => e.hp > 0 && e.id !== target.id,
+      ))
+        hit(other, actor.magic * 0.575);
     } else
       hit(
         target,
-        (skill.type === "fire" ? actor.magic : actor.attack) * skill.power,
+        (skill.type === "fire" ? actor.magic : physical) * skill.power,
       );
+    const signature = skill.signature;
+    if (
+      ["paladin", "dawn-sovereign", "high-cleric", "lightbearer"].includes(
+        signature || "",
+      )
+    )
+      for (const ally of b.party.filter((u) => u.hp > 0)) {
+        ally.guard = true;
+        ally.guardPower = potency;
+      }
+    if (
+      ["eldritch-knight", "aether-blademaster"].includes(signature || "") &&
+      target.hp > 0
+    ) {
+      target.burn = 3;
+      target.burnDamage = Math.max(1, Math.round(actor.magic * 0.3 * potency));
+      b.log.push(`${target.name}: aether burn for three rounds.`);
+    }
+    if (["archmage", "astral-savant"].includes(signature || "")) {
+      const restored = Math.min(
+        Math.floor(skill.cost / 2),
+        input.enemies.filter((e) => e.hp > 0).length * 2,
+      );
+      actor.mp = Math.min(actor.maxMp, actor.mp + restored);
+      b.log.push(`${actor.name}: spell echo +${restored} MP.`);
+    }
+    if (["grand-artificer", "world-forger"].includes(signature || ""))
+      for (const enemy of b.enemies.filter(
+        (e) => e.hp > 0 && e.id !== target.id,
+      )) {
+        enemy.burn = 3;
+        enemy.burnDamage = Math.max(
+          1,
+          Math.round(actor.magic * 0.15 * potency),
+        );
+        b.log.push(`${enemy.name}: spreading burn for three rounds.`);
+      }
   }
 
   if (b.enemies.every((x) => x.hp === 0)) {
@@ -836,6 +966,7 @@ export function enemyVolley(b: Battle): Battle {
     }
     if ((enemy.stun || 0) > 0) {
       enemy.stun!--;
+      if (enemy.chill) enemy.chill--;
       b.log.push(`${enemy.name} is stunned.`);
       continue;
     }
@@ -861,9 +992,12 @@ export function enemyVolley(b: Battle): Battle {
             (target.guard ? 0.45 / (target.guardPower || 1) : 1),
         ),
       );
-      target.hp = Math.max(0, target.hp - damage);
+      const chilledDamage = enemy.chill
+        ? Math.max(1, Math.round(damage * 0.75))
+        : damage;
+      target.hp = Math.max(0, target.hp - chilledDamage);
       b.log.push(
-        `${enemy.name}${charged ? (enemy.cleave ? (enemy.tactic ? ` uses ${TACTIC_NAMES[enemy.tactic]} Cleave on` : " uses Briar Cleave on") : " uses Heavy Strike on") : " attacks"} ${target.name}: ${damage} damage.`,
+        `${enemy.name}${charged ? (enemy.cleave ? (enemy.tactic ? ` uses ${TACTIC_NAMES[enemy.tactic]} Cleave on` : " uses Briar Cleave on") : " uses Heavy Strike on") : " attacks"} ${target.name}: ${chilledDamage} damage.`,
       );
       if (enemy.tactic === "siphon" && charged && target.hp > 0) {
         const drained = Math.min(
@@ -876,14 +1010,17 @@ export function enemyVolley(b: Battle): Battle {
       if (target.counter && target.hp > 0) {
         const amount = Math.max(
           1,
-          Math.round(target.attack * (target.counterPower || 1)) -
-            enemy.defense,
+          Math.round(
+            target.attack * (target.counterPower || 1) -
+              enemy.defense * (target.counterPierce ? 0.5 : 1),
+          ),
         );
         enemy.hp = Math.max(0, enemy.hp - amount);
         b.log.push(`${target.name} counters: ${amount} damage.`);
         if (enemy.hp === 0) break;
       }
     }
+    if (enemy.chill) enemy.chill--;
   }
   for (const enemy of b.enemies)
     if (
@@ -896,10 +1033,12 @@ export function enemyVolley(b: Battle): Battle {
       b.log.push(`${enemy.name} reforms its shell.`);
     }
   for (const ally of b.party) {
+    ally.poise = ally.guard && ally.hp > 0;
     ally.guard = false;
     ally.guardPower = 1;
     ally.counter = false;
     ally.counterPower = 1;
+    ally.counterPierce = false;
     if ((ally.taunt || 0) > 0) ally.taunt!--;
   }
   if (b.enemies.every((x) => x.hp === 0) && b.party.some((p) => p.hp > 0)) {

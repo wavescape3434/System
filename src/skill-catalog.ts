@@ -824,7 +824,7 @@ const COMBAT_LEVELS: Record<string, number> = {
 for (const s of SKILLS.filter(
   (s) => !s.legacy && !!s.combat && !s.nonCombat && !s.automatic,
 )) {
-  const opening = /^(opening-[a-z]+-\d+)-\d+$/.exec(s.id);
+  const opening = /^((?:opening-[a-z]+-\d+|element-[a-z]+))-\d+$/.exec(s.id);
   s.combatFamily =
     opening?.[1] ||
     (s.archetype && s.id.startsWith("arc-")

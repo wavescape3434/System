@@ -273,15 +273,38 @@ export default function AdventureGame({
             techniques, magic or analysis
           </div>
         )}
+        {battle.phase === "player" && battle.enemies[target]?.weak && (
+          <div className="battle-tactic-readout elemental-readout">
+            <Sparkles size={16} />
+            <span>
+              Weak: {battle.enemies[target].weak} ×1.3 · Resists:{" "}
+              {battle.enemies[target].resist} ×0.8
+            </span>
+          </div>
+        )}
         {battle.phase === "player" ? (
           <div className="battle-controls">
             <div className="turn-status">
               <b>{actor.name}</b>
+              {actor.poise &&
+                actor.abilities.some((a) => a.discipline === "sword") && (
+                  <span>Sword follow-through ready</span>
+                )}
               <span>
                 {actor.mp} MP · Target: {battle.enemies[target]?.name} · Ally:{" "}
                 {battle.party[ally]?.name}
               </span>
             </div>
+            <details className="battle-technique-guide" key={actor.id}>
+              <summary>Technique details</summary>
+              {actor.abilities.map((skill) => (
+                <p key={skill.id}>
+                  <b>{skill.name}</b> · {skill.cost} MP
+                  <br />
+                  {skill.description || COMBAT_EFFECTS[skill.type]?.description}
+                </p>
+              ))}
+            </details>
             <div className="battle-actions">
               <button onClick={() => command({ kind: "attack", target })}>
                 <Sword size={19} />
@@ -309,6 +332,11 @@ export default function AdventureGame({
                   <Sparkles size={18} />
                   {skill.name}
                   <small>
+                    {skill.element
+                      ? `${skill.element} · `
+                      : skill.discipline
+                        ? `${skill.discipline} · `
+                        : ""}
                     {skill.rank ? `Rank ${skill.rank} · ` : ""}
                     {skill.cost} MP
                   </small>

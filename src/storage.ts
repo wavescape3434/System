@@ -1,4 +1,5 @@
 import { TOWN_GEAR } from "./world-catalog";
+import { ELEMENTS, DISCIPLINES, SIGNATURE_DETAILS } from "./combat-identity";
 import { MAX_TEMPER } from "./equipment-progression";
 import { validSkillPlans } from "./skill-plans";
 import { validActivityResult } from "./activity-results";
@@ -485,8 +486,17 @@ function validCampaign(input: unknown): boolean {
             "burn",
             "burnDamage",
             "counterPower",
+            "precision",
           ].every((k) => u[k] === undefined || finite(u[k])) &&
           (u.counter === undefined || typeof u.counter === "boolean") &&
+          (u.poise === undefined || typeof u.poise === "boolean") &&
+          (u.counterPierce === undefined ||
+            typeof u.counterPierce === "boolean") &&
+          (u.chill === undefined ||
+            (Number.isInteger(u.chill) && u.chill >= 0 && u.chill <= 2)) &&
+          [u.weak, u.resist].every(
+            (e) => e === undefined || ELEMENTS.includes(e),
+          ) &&
           (u.cleave === undefined || typeof u.cleave === "boolean") &&
           (u.tactic === undefined ||
             ["bulwark", "stalker", "siphon", "ravager"].includes(u.tactic)) &&
@@ -513,7 +523,14 @@ function validCampaign(input: unknown): boolean {
                 (typeof a.rank === "number" &&
                   Number.isInteger(a.rank) &&
                   a.rank >= 1)) &&
-              (a.description === undefined || str(a.description)),
+              (a.description === undefined || str(a.description)) &&
+              (a.discipline === undefined ||
+                DISCIPLINES.some((v) => v === a.discipline)) &&
+              (a.element === undefined ||
+                ELEMENTS.some((v) => v === a.element)) &&
+              (a.signature === undefined ||
+                (typeof a.signature === "string" &&
+                  Object.hasOwn(SIGNATURE_DETAILS, a.signature))),
           ),
       );
     return (

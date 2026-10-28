@@ -31,6 +31,14 @@ npm run test:e2e # browser workflows at desktop and phone sizes
 
 Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Chromium installation on another machine. Vite is started automatically for the tests. The app's Android plugins need device testing; browser tests do not establish native sign-in or sharing readiness.
 
+## Version 1.24.0
+
+Distinct martial disciplines, three ranked elemental paths, focused DEX/WIS scaling and prestige effects make learned builds play differently. Battle matchups and phone-accessible technique details show the rules. [Changes](docs/update-1.24.md) · [Verification](docs/verification-1.24.md) · [Previews](docs/screenshots/README.md).
+
+The [build comparison](docs/builds-1.24/README.md) covers 5,424 synthetic fights. The [90-day economy study](docs/economy-1.24/README.md) follows 32 modeled accounts with actual purchases, weekly/monthly and career work. Gold surplus and broader combat balance remain open. Companion-led builds and midnight recovery remain.
+
+Android **1.24.0 / code 26** keeps the package and signing certificate. Google setup remains deferred; physical Android runtime testing is outstanding.
+
 ## Version 1.23.0
 
 Choose optional Elite hunts in each region, inspect fixed difficulty and visible enemy tactics, and replay without restoring reserves. Companions keep their player-level growth and gain clearer tactical roles. **Companion-led builds remain valid; automatic full recovery remains local midnight.** [Changes](docs/update-1.23.md) · [Verification](docs/verification-1.23.md) · [Previews](docs/screenshots/README.md).

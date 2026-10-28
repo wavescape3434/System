@@ -1,0 +1,40 @@
+{
+  "version": "1.24.0",
+  "versionCode": 26,
+  "package": "com.theguild.personal",
+  "bytes": 14404512,
+  "sha256": "ed63af4c70672280035a93931b070b6c0ea7c1e09d994b3260c81e923a9d9b78",
+  "matchingWebFiles": 38,
+  "generatedCordovaStubs": 2,
+  "startupJavaScriptBytes": 994287,
+  "unitChecks": 300,
+  "unitFiles": 29,
+  "browserWorkflows": 120,
+  "scannedViews": 6,
+  "classesProbed": 51,
+  "syntheticCombatProbes": 5424,
+  "modeledAccounts": 32,
+  "accountDays": 2880,
+  "martialDisciplines": 4,
+  "elementalPaths": 3,
+  "newElementalNodes": 9,
+  "prestigeEffectClasses": 12,
+  "certificateSHA256": "f6c745055e1d566d935ce766c749393e4936eca36f7e1d85c26d5176a65181e5",
+  "primaryDatabase": "the-guild.primary.v1",
+  "physicalAndroidVerified": false,
+  "liveFirebaseVerified": false,
+  "browserRun": {
+    "passed": 119,
+    "failed": 1,
+    "duration": "7.3m",
+    "workers": 2,
+    "testTimeoutMilliseconds": 60000,
+    "failure": "Old shell assertion counted the new affinity readout; selector corrected and persisted shell state added"
+  },
+  "finalTargetedRun": {
+    "passed": 3,
+    "failed": 0,
+    "duration": "16.1s"
+  },
+  "uniqueBrowserWorkflowsVerified": 120
+}

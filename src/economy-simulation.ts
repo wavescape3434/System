@@ -10,7 +10,13 @@ import {
   learnSkill,
   skillRequirements,
   skillWallet,
+  objectivePeriod,
+  isComplete,
+  characterRank,
+  level,
+  adventurerXP,
 } from "./domain";
+import { taskRequirements } from "./training-tasks";
 import { EMPTY_ASSESSMENT } from "./metrics";
 import type { Character, Stats } from "./domain";
 import { SKILLS } from "./skill-catalog";
@@ -31,6 +37,7 @@ import {
   TOWN_GEAR,
   WORLD_CONTRACTS,
   WORLD_ENCOUNTERS,
+  ELITE_HUNTS,
 } from "./world-catalog";
 import { placeOpen, placeCleared } from "./world-state";
 import {
@@ -56,6 +63,8 @@ export interface EconomyOptions {
   statFixture?: number;
   priority?: "commissions" | "equipment";
   mode?: "campaign" | "exploration";
+  calendarCareer?: boolean;
+  huntGrade?: number;
 }
 export function economyCharacter(classId: string, statFixture = 10) {
   let c = createCharacter(
@@ -185,6 +194,9 @@ export function simulateEconomy(
   let c = economyCharacter(options.classId, options.statFixture),
     seed = options.seed,
     failedPurchases = 0;
+  if (options.calendarCareer)
+    c = { ...c, profession: "Analyst", vocation: "networking" };
+  const requestIncome = { daily: 0, weekly: 0, monthly: 0, career: 0 };
   const random = () => {
       seed = (1664525 * seed + 1013904223) >>> 0;
       return seed / 4294967296;
@@ -212,6 +224,9 @@ export function simulateEconomy(
     attempts = 0,
     actions = 0,
     explorations = 0,
+    huntAttempts = 0,
+    huntWins = 0,
+    huntLosses = 0,
     stockBlocks = 0;
   const shop = () => {
     let data = campaign(c);
@@ -297,6 +312,30 @@ export function simulateEconomy(
         c = next;
       }
   };
+  // These explicit simulated submissions assume the listed work/checklist was done.
+  // Calendar practice and span gates still run against actual prior daily receipts.
+  const submit = (id: string, now: Date) => {
+    const o = objectives(c).find((o) => o.id === id);
+    if (!o) throw Error("Missing modeled routine " + id);
+    if (isComplete(c, o, now)) return;
+    c = takeRequest(c, id, now);
+    if (taskRequirements(c, o, now).length) return;
+    if (o.checklist)
+      c = {
+        ...c,
+        milestones: {
+          ...c.milestones,
+          [`${o.id}:${objectivePeriod(o, now)}`]: o.checklist.map((_, i) => i),
+        },
+      };
+    const next = completeTaken(c, o, now);
+    const gold = next.completions
+      .slice(c.completions.length)
+      .reduce((n, r) => n + (r.gold || 0), 0);
+    income.requests += gold;
+    requestIncome[o.scope === "profession" ? "career" : o.cadence] += gold;
+    c = next;
+  };
   for (let day = 0; day < options.days; day++) {
     const now = new Date(ECONOMY_START);
     now.setDate(now.getDate() + day);
@@ -305,18 +344,26 @@ export function simulateEconomy(
     const beforeLogin = campaign(c).gold;
     c = claimLoginReward(c, now);
     income.login += campaign(c).gold - beforeLogin;
+    const calendar = options.calendarCareer
+      ? [
+          "habit-walk-weekly-f",
+          "habit-scripture-weekly-f",
+          "habit-walk-monthly-f",
+          "habit-scripture-monthly-f",
+          "vocation-networking-weekly",
+          "vocation-networking-monthly",
+        ]
+      : [];
+    for (const id of calendar) c = takeRequest(c, id, now);
     if (options.routine !== "login")
       for (const id of options.routine === "active"
         ? ["u-walk-brisk", "u-spaced-recall", "u-bible-recall", "u-read-5"]
         : ["u-walk-brisk", "u-spaced-recall", "u-bible-recall"]) {
-        const o = objectives(c).find((o) => o.id === id);
-        if (!o) throw Error("Missing routine " + id);
-        const next = completeTaken(takeRequest(c, id, now), o, now);
-        income.requests += next.completions
-          .slice(c.completions.length)
-          .reduce((n, r) => n + (r.gold || 0), 0);
-        c = next;
+        submit(id, now);
       }
+    if (options.calendarCareer && day % 7 < 6)
+      submit("vocation-networking-daily", now);
+    for (const id of calendar) submit(id, now);
     // Spend only actually earned combat points; no exam outcomes or stat gains are fabricated.
     for (const s of SKILLS.filter(
       (s) => !s.nonCombat && !s.automatic && skillWallet(c, s) === "combat",
@@ -411,7 +458,16 @@ export function simulateEconomy(
         next = places.flatMap((p) =>
           p.stages.filter((id) => !campaign(c).cleared.includes(id)),
         )[0];
-      if (next) c = startBattle(c, next, now);
+      const hunt =
+        options.huntGrade && day % 7 >= 5 && slot === 0
+          ? ELITE_HUNTS.filter(
+              (h) =>
+                h.huntGrade === options.huntGrade &&
+                placeCleared(campaign(c), h.placeId),
+            ).at(-1)
+          : undefined;
+      if (hunt) c = startBattle(c, hunt.id, now);
+      else if (next) c = startBattle(c, next, now);
       else {
         const place = places.find((p) => placeCleared(campaign(c), p.id))!;
         const before = campaign(c).gold;
@@ -428,6 +484,7 @@ export function simulateEconomy(
       }
       slot++;
       attempts++;
+      if (hunt) huntAttempts++;
       let turn = 0;
       while (campaign(c).battle?.phase === "player" && turn++ < 160) {
         const before = campaign(c).inventory;
@@ -445,6 +502,7 @@ export function simulateEconomy(
         c = claimVictory(c);
         income.battles += campaign(c).gold - before;
         wins++;
+        if (hunt) huntWins++;
         today.wins++;
         c = leaveBattle(c);
       } else {
@@ -453,6 +511,7 @@ export function simulateEconomy(
           c = act(c, { kind: "flee", target: 0 }, now);
         }
         losses++;
+        if (hunt) huntLosses++;
         today.losses++;
         c = returnToMap(c);
         break;
@@ -480,6 +539,12 @@ export function simulateEconomy(
       ...today,
       realXp: totalXP(c),
       baseStats: stats(c),
+      rank: characterRank(c),
+      playerLevel: level(adventurerXP(c)),
+      requestIncome: { ...requestIncome },
+      huntAttempts,
+      huntWins,
+      huntLosses,
       income: { ...income },
       spent: { ...spent },
       itemsUsed: { ...itemsUsed },
@@ -493,7 +558,13 @@ export function simulateEconomy(
   return {
     options,
     day7: history[6],
-    day30: history.at(-1),
+    day30: history[29] || history.at(-1),
+    day60: history[59],
+    day90: history[89],
+    requestIncome,
+    huntAttempts,
+    huntWins,
+    huntLosses,
     income,
     spent,
     itemsUsed,

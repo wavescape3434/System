@@ -1,5 +1,6 @@
 import type { Skill } from "./skill-catalog";
 import { COMBAT_EFFECTS } from "./class-roles";
+import { combatIdentity, identityDescription } from "./combat-identity";
 
 export const combatFamily = (s: Skill) => s.combatFamily || s.id;
 export function combatProfile(s: Skill) {
@@ -7,7 +8,14 @@ export function combatProfile(s: Skill) {
     base = COMBAT_EFFECTS[s.combat || ""];
   const potency = rank === 1 ? 1 : rank === 2 ? 1.15 : 1.4 + (rank - 3) * 0.25;
   const mp = base
-    ? Math.max(1, base.mp - Math.min(2, Math.floor(rank / 2)))
+    ? Math.max(
+        1,
+        base.mp -
+          Math.min(2, Math.floor(rank / 2)) -
+          (combatIdentity(s.id, s.combat || "").discipline === "unarmed"
+            ? 1
+            : 0),
+      )
     : 0;
   const statBonus =
     s.nonCombat || s.automatic || s.id === "universal-root"
@@ -25,7 +33,15 @@ export function combatProfile(s: Skill) {
           : ["taunt", "bulwark"].includes(effect)
             ? `${effect === "bulwark" ? "Guard all allies" : "Guard yourself"} this enemy round; draw attacks for ${Math.ceil(2 * potency)} rounds.`
             : `${base.description}${potency > 1 ? ` ${Math.round(potency * 100)}% effect strength.` : ""}`;
-  return { rank, potency, mp, statBonus, description: detail };
+  return {
+    rank,
+    potency,
+    mp,
+    statBonus,
+    description: [detail, identityDescription(s.id, effect)]
+      .filter(Boolean)
+      .join(" "),
+  };
 }
 export function bestCombatSkills(earned: string[], skills: Skill[]): Skill[] {
   const ids = new Set(earned),

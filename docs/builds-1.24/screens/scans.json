@@ -1,0 +1,47 @@
+{
+  "screens": [
+    {
+      "name": "builds-martial-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "builds-frost-tree-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "builds-elements-battle-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "builds-techniques-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "builds-elements-desktop",
+      "width": 1440,
+      "height": 1100,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "builds-prestige-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

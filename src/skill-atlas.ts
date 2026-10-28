@@ -22,6 +22,11 @@ export const STYLE_COLORS = [
 export function skillStyle(s: Skill, list: Skill[]): string {
   if (s.category === "universal")
     return s.id === "universal-root" ? "Foundation" : s.stat;
+  const element = /^element-(fire|ice|storm)-/.exec(s.id)?.[1];
+  if (element)
+    return { fire: "Pyromancy", ice: "Frostcraft", storm: "Stormcalling" }[
+      element
+    ]!;
   const weapon = /^martial-(sword|spear|axe|unarmed)-/.exec(s.id)?.[1];
   if (weapon)
     return {

@@ -1,6 +1,16 @@
-# The Adventurers Guild 1.23.0 — screenshots
+# The Adventurers Guild 1.24.0 — screenshots
 
 These are browser previews using sample characters. Exploration results, prior activity, and late-game unlocks are scripted fixtures for illustration. Open an image at full size.
+
+## Combat builds — version 1.24
+
+| Martial disciplines | Elemental tree | Battle matchups |
+| --- | --- | --- |
+| [<img src="builds-martial-mobile.png" width="230" alt="Sword and spear techniques describe their distinct combat rules">](builds-martial-mobile.png) | [<img src="builds-frost-tree-mobile.png" width="230" alt="Frostcraft prerequisites and the selected Rime Shard effect">](builds-frost-tree-mobile.png) | [<img src="builds-elements-battle-mobile.png" width="230" alt="Enemy weakness and three different elemental commands">](builds-elements-battle-mobile.png) |
+
+[Phone technique details](builds-techniques-mobile.png) · [Prestige protection](builds-prestige-mobile.png) · [Desktop battle](builds-elements-desktop.png)
+
+[Build report](../builds-1.24/README.md) · [Ninety-day economy](../economy-1.24/README.md) · [Fixtures/scans](../builds-1.24/screens/README.md).
 
 ## Elite hunts — version 1.23
 

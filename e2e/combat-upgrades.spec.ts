@@ -158,9 +158,13 @@ test("a shell is visible, ordinary attacks chip it, and a class technique breaks
   await page.reload();
   await nav(page, "Adventures");
   await page.locator(".pixel-stage-enter").click();
-  await expect(page.locator(".battle-tactic-readout")).toContainText("Shell 2");
+  await expect(
+    page.locator(".battle-tactic-readout").filter({ hasText: /Shell \d+/ }),
+  ).toContainText("Shell 2");
   await page.getByRole("button", { name: "Attack", exact: true }).click();
-  await expect(page.locator(".battle-tactic-readout")).toContainText("Shell 1");
+  await expect(
+    page.locator(".battle-tactic-readout").filter({ hasText: /Shell \d+/ }),
+  ).toContainText("Shell 1");
   await page.getByRole("button", { name: /^Guard/ }).click();
   const signature = await page.evaluate(
     async () =>
@@ -172,7 +176,17 @@ test("a shell is visible, ordinary attacks chip it, and a class technique breaks
     .getByRole("button")
     .filter({ hasText: signature })
     .click();
-  await expect(page.locator(".battle-tactic-readout")).toHaveCount(0);
+  await expect(
+    page.locator(".battle-tactic-readout").filter({ hasText: /Shell \d+/ }),
+  ).toHaveCount(0);
+  expect(
+    await page.evaluate(
+      async () =>
+        JSON.parse(
+          (await (await import("/e2e/browser-store.ts")).readString())!,
+        ).campaign.battle.enemies[0].shell,
+    ),
+  ).toBe(0);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,

@@ -208,6 +208,16 @@ export const COMBAT_EFFECTS: Record<
   },
   "heal-all": { description: "Restore HP to all living party members.", mp: 8 },
   fire: { description: "High magic damage to one enemy.", mp: 5 },
+  ice: {
+    description:
+      "Ice damage to one enemy; reduce its attack damage by 25% for two enemy rounds.",
+    mp: 6,
+  },
+  storm: {
+    description:
+      "Storm damage to one enemy with a half-strength arc to every other living enemy.",
+    mp: 8,
+  },
   area: { description: "Magic damage to all living enemies.", mp: 8 },
   rally: {
     description:

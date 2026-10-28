@@ -367,6 +367,48 @@ for (const [branch, title, names, effects, coordinates] of martialBranches)
       combat: effects[i],
     });
   });
+// Independent elemental routes offer early alternatives, then upgrade in one slot.
+for (const [branch, name, effect, detail] of [
+  ["fire", "Ember Needle", "fire", "Concentrated fire damage to one enemy."],
+  [
+    "ice",
+    "Rime Shard",
+    "ice",
+    "Ice damage and 25% less enemy attack damage for two enemy rounds.",
+  ],
+  [
+    "storm",
+    "Storm Chain",
+    "storm",
+    "Storm damage to one enemy with a half-strength arc to every other enemy.",
+  ],
+])
+  for (let i = 0; i < 3; i++)
+    EXPANDED_SKILLS.push({
+      id: `element-${branch}-${i}`,
+      name: name + ["", ": Control", ": Refinement"][i],
+      description: detail,
+      stat: "INT",
+      category: "class",
+      branch: "Elements",
+      owner: "mage",
+      archetype: "mage",
+      parents: i ? [`element-${branch}-${i - 1}`] : [],
+      x: 2000 + ["fire", "ice", "storm"].indexOf(branch) * 240,
+      y: 1000 - i * 280,
+      cost: [1, 3, 6][i],
+      target: [1, 4, 10][i],
+      requiredLevel: [1, 3, 7][i],
+      proof: `Complete ${[1, 4, 10][i]} Mage class requests`,
+      current: (c) =>
+        c.completions.filter(
+          (o) =>
+            (!o.scope || o.scope === "class" || o.scope === "subclass") &&
+            !!CLASSES.find((p) => p.id === o.classId)?.mix.mage,
+        ).length,
+      tier: "I",
+      combat: effect,
+    });
 // Focus trees add class identity to the shared archetype foundations.
 for (const p of CLASSES) {
   const current = (c: Character) =>

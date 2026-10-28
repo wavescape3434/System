@@ -1,5 +1,6 @@
 import type { Attribute, Stats } from "./domain";
 import { CLASSES as LEGACY } from "./legacy-classes";
+import { SIGNATURE_DETAILS } from "./combat-identity";
 export const ARCHETYPES = [
   {
     id: "fighter",
@@ -770,29 +771,34 @@ export const CLASSES: ClassPath[] = rows.map(
       signature: {
         name: signatureName,
         effect,
-        description: (
-          {
-            quick: "Strike every enemy with a sweeping physical attack.",
-            taunt: "Guard and draw enemy attacks for two rounds.",
-            pierce: "A focused attack that bypasses armor.",
-            scan: "Expose one enemy: reduce its defense by 3.",
-            fire: "Deal concentrated magic damage to one enemy.",
-            heal: "Restore a living ally’s HP.",
-            rally: "Raise the party’s attack and magic for the battle.",
-            flurry: "Strike one enemy twice.",
-            power: "Deal heavy physical damage to one enemy.",
-            ward: "Protect the party until the enemy round ends.",
-            counter: "Guard and counter incoming attacks.",
-            area: "Deal magic damage to every living enemy.",
-            "heal-all": "Restore HP to all living allies.",
-            "focus-all": "Restore MP to the whole party.",
-            coordinated: "Lead a coordinated physical attack.",
-            burn: "Inflict magic damage and three rounds of burning.",
-            bulwark: "Guard all allies and draw attacks for two rounds.",
-            hybrid: "Strike with physical and magic power.",
-            formation: "Raise party defense for the battle.",
-          } as Record<string, string>
-        )[effect],
+        description: [
+          (
+            {
+              quick: "Strike every enemy with a sweeping physical attack.",
+              taunt: "Guard and draw enemy attacks for two rounds.",
+              pierce: "A focused attack that bypasses armor.",
+              scan: "Expose one enemy: reduce its defense by 3.",
+              fire: "Deal concentrated magic damage to one enemy.",
+              heal: "Restore a living ally’s HP.",
+              rally: "Raise the party’s attack and magic for the battle.",
+              flurry: "Strike one enemy twice.",
+              power: "Deal heavy physical damage to one enemy.",
+              ward: "Protect the party until the enemy round ends.",
+              counter: "Guard and counter incoming attacks.",
+              area: "Deal magic damage to every living enemy.",
+              "heal-all": "Restore HP to all living allies.",
+              "focus-all": "Restore MP to the whole party.",
+              coordinated: "Lead a coordinated physical attack.",
+              burn: "Inflict magic damage and three rounds of burning.",
+              bulwark: "Guard all allies and draw attacks for two rounds.",
+              hybrid: "Strike with physical and magic power.",
+              formation: "Raise party defense for the battle.",
+            } as Record<string, string>
+          )[effect],
+          SIGNATURE_DETAILS[id],
+        ]
+          .filter(Boolean)
+          .join(" "),
       },
       subclasses: LEGACY.find((p) => p.id === id)?.subclasses || [],
     };
