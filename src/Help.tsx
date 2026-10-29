@@ -5,6 +5,16 @@ import { METRIC_SOURCES } from "./metrics";
 import type { Page } from "./screens";
 const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
   {
+    title: "Current ability and difficulty",
+    page: "objectives",
+    sections: [
+      [
+        "Setting proficiency",
+        "Open Objectives → Ability settings or Settings → Ability. Select a class focus, profession, vocation or activity, then name the specific subject, starting proficiency and a checkable success criterion/source. F uses a worked example; E familiar independent practice; D unfamiliar standard work; C constrained application. The board suggests the matching variant. Two separate-day checked results at the same topic/rank can suggest reviewing difficulty, but never change it automatically. The 85%/60% thresholds are practice heuristics, not validated mastery boundaries. Taken requests keep their original contracts.",
+      ],
+    ],
+  },
+  {
     title: "Study results by subject",
     page: "objectives",
     sections: [
@@ -25,7 +35,7 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Choosing difficulty",
-        "F starts with one work set and easy supported movements. E uses two sets, D builds repetition consistency and C uses three challenging sets. A recorded floor-pushup or bench assessment can suggest E; otherwise the default is F. Choose F when returning after a long break. Those cutoffs are conservative game suggestions, not population norms or a full-body fitness diagnosis. Adjust variation or load so the prescribed reps leave the stated clean repetitions in reserve. Best effort means repeatable quality and recovery, not taking every set to failure.",
+        "F starts with one work set and easy supported movements. E uses two sets, D builds repetition consistency and C uses three challenging sets. A recorded floor-pushup or bench assessment can suggest E session volume; otherwise the default is F. Exercise setup is separate: 8–29 floor pushups suggest floor practice, while 30+ suggests a harder floor variation. Independently calibrate legs, hips and core in Edit plan. Choose F when returning after a long break. Those cutoffs are conservative game suggestions, not population norms or a full-body fitness diagnosis. Adjust variation or load so the prescribed reps leave the stated clean repetitions in reserve. Best effort means repeatable quality and recovery, not taking every set to failure.",
       ],
       [
         "Progression and results",
@@ -173,15 +183,15 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Published and provisional references",
-        "Grip strength uses published age/sex means for adults 20–90, with interpolation between five-year ages. Unassisted chair stands use a pooled mean for ages 18–35. Walking uses age/sex/height/mass equations where supported. These are sample-specific references, not universal averages. Pushups, bench estimates, balance, and the original mental checks use explicitly provisional game anchors.",
+        "Grip strength uses published age/sex means for adults 20–90, with interpolation between five-year ages. Unassisted chair stands use a pooled mean for ages 18–35. The optional six-minute walk uses age/sex/height/mass equations where supported. New registrations default to imperial and ask for a timed mile, labeled walk or run/run-walk. Mile time alone cannot estimate VO₂max; its 16-minute walk / 10-minute run anchor is provisional. These are sample-specific references, not universal averages. Pushups, bench estimates, balance, and the original mental checks use explicitly provisional game anchors.",
       ],
       [
         "What the checks measure",
-        "Pushups and chair stands measure muscular endurance/function, a bench estimate measures a different aspect of strength, and one-leg stance measures static balance. INT checks learning and reasoning; WIS checks evidence, planning, and practical judgment; CHA checks listening and communication choices. These brief checks are not global intelligence, spiritual, or personality tests.",
+        "Pushups and chair stands measure muscular endurance/function, a bench estimate measures a different aspect of strength, and one-leg stance measures static balance. INT checks learning and reasoning; WIS checks evidence, planning, and practical judgment; CHA uses performed spoken explanations, summaries and teach-back with an anchored self-review. These brief checks are not global intelligence, spiritual, or personality tests.",
       ],
       [
         "Rechecking progress",
-        "Save performance checks in Settings to compare actual results over time. Recalibrating starting stats is a separate confirmed action and retains earned training points. New checks rotate through 24 scenario sets per attribute and keep previous form IDs, scores, and timing. The checks are game assessments, not psychometrically validated trait tests. No assessment includes Bible verses.",
+        "Save performance checks in Settings to compare actual results over time. Recalibrating starting stats is a separate confirmed action and retains earned training points. New v3 checks rotate reasoning/judgment problem families and communication topics while retaining older v2 forms and scores. A changed version starts a fresh comparison baseline. Faster completion alone does not pass a v3 improvement exam. The checks are game assessments, not psychometrically validated trait tests. No assessment includes Bible verses.",
       ],
     ],
   },

@@ -85,7 +85,7 @@ test("registration has imperial feet and inches, explicit maxima, sequential tes
   );
   expect(c.baseline.assessment.heightCm).toBeCloseTo(180.34, 2);
   expect(c.preferences.units).toBe("imperial");
-  expect(c.assessmentFormsSeen).toContain("int-v2-0-c1");
+  expect(c.assessmentFormsSeen).toContain("int-v3-0-c1");
 });
 test("reassessment remembers started forms and rotates questions even after leaving and returning", async ({
   page,
@@ -119,9 +119,9 @@ test("reassessment remembers started forms and rotates questions even after leav
     JSON.parse((await (await import("/e2e/browser-store.ts")).readString())!),
   );
   expect(c.assessmentFormsSeen).toEqual([
-    "wis-v2-0-c1",
-    "wis-v2-1-c1",
-    "wis-v2-2-c1",
+    "wis-v3-0-c1",
+    "wis-v3-1-c1",
+    "wis-v3-2-c1",
   ]);
 });
 test("a class examination holds the stat milestone until the measured result improves", async ({

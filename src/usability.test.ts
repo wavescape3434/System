@@ -175,7 +175,7 @@ describe("earned mastery examinations", () => {
   it("allows a new perfect mental form without an ever-faster timer after two improved milestones", () => {
     let c = ready("scholar");
     c.exams = [5, 10].map((milestone, i) => {
-      const form = mentalForm("INT", `int-v2-${i}-c1`);
+      const form = mentalForm("INT", `int-v3-${i}-c1`);
       return {
         id: `mental-${milestone}`,
         scope: "class",

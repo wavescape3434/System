@@ -1,4 +1,7 @@
 import AppearancePicker from "./AppearancePicker";
+import { PROFICIENCY_LEVELS } from "./proficiency";
+import type { Proficiency } from "./proficiency";
+import { careerCategory } from "./careers";
 import CharacterSprite from "./CharacterSprite";
 import { findAppearance, classAppearance } from "./appearance-catalog";
 import AssessmentForm from "./AssessmentForm";
@@ -51,10 +54,12 @@ export default function Onboarding({
     ),
     [seenForms, setSeenForms] = useState<string[]>(draft?.seenForms || []),
     [units, setUnits] = useState<"metric" | "imperial">(
-      draft?.units || "metric",
+      draft?.units || "imperial",
     ),
     [classId, setClassId] = useState(draft?.classId || "disciple"),
-    [profession, setProfession] = useState(draft?.profession || "Analyst");
+    [profession, setProfession] = useState(draft?.profession || "Analyst"),
+    [careerAbility, setCareerAbility] = useState(draft?.careerAbility || ""),
+    [careerTopic, setCareerTopic] = useState(draft?.careerTopic || "");
   useEffect(() => {
     if (step > 0)
       saveRegistrationDraft({
@@ -66,8 +71,21 @@ export default function Onboarding({
         units,
         classId,
         profession,
+        careerAbility,
+        careerTopic,
       });
-  }, [step, appearance, name, baseline, seenForms, units, classId, profession]);
+  }, [
+    step,
+    appearance,
+    name,
+    baseline,
+    seenForms,
+    units,
+    classId,
+    profession,
+    careerAbility,
+    careerTopic,
+  ]);
   const finish = async (c: Character) => {
     if (await onCreate(c)) clearRegistrationDraft();
   };
@@ -257,6 +275,32 @@ export default function Onboarding({
                   selected={classId}
                   onSelect={setClassId}
                 />
+                <label>
+                  Profession practice · current ability
+                  <select
+                    value={careerAbility}
+                    onChange={(e) => setCareerAbility(e.target.value)}
+                  >
+                    <option value="">Choose after a practice sample</option>
+                    {Object.entries(PROFICIENCY_LEVELS).map(([r, label]) => (
+                      <option key={r} value={r}>
+                        {r} · {label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                {careerAbility && (
+                  <label>
+                    Specific subject
+                    <input
+                      maxLength={100}
+                      minLength={2}
+                      value={careerTopic}
+                      placeholder={`What are you practicing in ${profession}?`}
+                      onChange={(e) => setCareerTopic(e.target.value)}
+                    />
+                  </label>
+                )}
                 <div className="rank-intro">
                   <div className="rank-mini">{startingRankFor(values)}</div>
                   <span>
@@ -274,6 +318,20 @@ export default function Onboarding({
                       ...createCharacter(name, baseline, classId, profession),
                       ...(appearance ? { appearance } : {}),
                       assessmentFormsSeen: seenForms,
+                      ...(careerAbility && careerTopic.trim().length >= 2
+                        ? {
+                            proficiencies: {
+                              [`career:${careerCategory(profession).id}:${profession}`]:
+                                {
+                                  rank: careerAbility as Proficiency["rank"],
+                                  topic: careerTopic.trim(),
+                                  criterion:
+                                    "Complete the stated work independently and check it against a named answer key or rubric.",
+                                  reviewedAt: new Date().toISOString(),
+                                },
+                            },
+                          }
+                        : {}),
                       preferences: {
                         units,
                         textSize: "standard",

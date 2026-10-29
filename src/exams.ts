@@ -31,6 +31,17 @@ export interface FitnessProtocol {
   initial: (a: Assessment) => number | null;
 }
 export const FITNESS_PROTOCOLS: FitnessProtocol[] = [
+  ...(["walk", "run"] as const).map((mode) => ({
+    id: `mile-${mode}`,
+    stat: "CON" as const,
+    name: `One-mile ${mode} time`,
+    unit: "seconds",
+    lower: true,
+    instructions:
+      "Time the same measured mile (1.609 km), route, method and conditions. Include all breaks; enter total seconds. Compare walking only with walking and running/run-walking only with the same method.",
+    initial: (a: Assessment) =>
+      (a.mileMode || "walk") === mode ? (a.mileSeconds ?? null) : null,
+  })),
   ...(["floor", "incline", "knee", "wall"] as const).map((style) => ({
     id: `push-${style}`,
     stat: "STR" as const,
@@ -202,13 +213,20 @@ export function masteryStandard(
   t: ExamTarget,
   protocol?: string,
 ) {
+  const recentForm = [...ownerRecords(c, t)]
+    .reverse()
+    .find((e) => e.formId || e.mental?.formId);
+  const modern =
+    (recentForm?.formId || recentForm?.mental?.formId)?.includes("-v3-") ||
+    false;
   const records = ownerRecords(c, t).filter(
     (e) =>
       e.status === "passed" &&
       e.milestone < t.milestone &&
       (protocol
         ? e.protocol === protocol && e.value !== undefined
-        : !!e.mental),
+        : !!e.mental &&
+          (e.mental.formId?.includes("-v3-") || false) === modern),
   );
   const improvements = new Set(
     records.filter((e) => e.route !== "mastery").map((e) => e.milestone),
@@ -261,8 +279,9 @@ export function previousMental(
 ): MentalResult | undefined {
   const records = ownerRecords(c, t).filter((e) => e.mental);
   return (
-    [...records].reverse().find((e) => e.status === "passed")?.mental ||
-    records.find((e) => e.status === "baseline")?.mental ||
+    [...records]
+      .reverse()
+      .find((e) => e.status === "passed" || e.status === "baseline")?.mental ||
     c.assessmentHistory?.find(
       (h) => h.assessment.mental?.[t.stat as MentalStat],
     )?.assessment.mental?.[t.stat as MentalStat] ||
@@ -429,20 +448,25 @@ export function submitMentalExam(
     score = (r: MentalResult) =>
       checkScore(t.stat as MentalStat, r.answers, r.formId);
   const mastery = masteryStandard(c, t);
-  if (route === "mastery" && !mastery.eligible) return c;
-  const status = !previous
-    ? "baseline"
-    : route === "mastery"
-      ? mastery.at &&
-        anotherDay(mastery.at, now) &&
-        score(result) >= Math.max(4, mastery.value) &&
-        (result.challenge || 1) >= mastery.challenge
-        ? "passed"
-        : "failed"
-      : anotherDay(previous.completedAt, now) &&
-          mentalPass(result, previous, score)
-        ? "passed"
-        : "failed";
+  const comparable =
+    previous &&
+    (previous.formId?.includes("-v3-") || false) ===
+      (result.formId?.includes("-v3-") || false);
+  if (route === "mastery" && !mastery.eligible && comparable) return c;
+  const status =
+    !previous || !comparable
+      ? "baseline"
+      : route === "mastery"
+        ? mastery.at &&
+          anotherDay(mastery.at, now) &&
+          score(result) >= Math.max(4, mastery.value) &&
+          (result.challenge || 1) >= mastery.challenge
+          ? "passed"
+          : "failed"
+        : anotherDay(previous.completedAt, now) &&
+            mentalPass(result, previous, score)
+          ? "passed"
+          : "failed";
   return {
     ...c,
     exams: (c.exams || []).map((e) =>

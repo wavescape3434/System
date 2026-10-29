@@ -35,7 +35,13 @@ Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Ch
 
 [32 complete fictional customer profiles](docs/personas-1.25/README.md) span all 20 profession categories, all 25 vocations and 28 classes. Thirty-five annual scenarios cover 12,775 account-days, with day-7/30/90/180/365 checkpoints, real app gates/rewards, retained career changes, exams and Adventures. [All profiles](docs/personas-1.25/CUSTOMERS.md) · [Findings to fix](docs/personas-1.25/PRIORITIES.md) · [Methods](docs/personas-1.25/METHOD.md).
 
-These are scripted app outcomes, not customer interviews or predicted real-world gains. The study reproduces a Network Weaver scope defect and records schedule/reward, class-lineage and later career-depth opportunities. App rules and the APK remain 1.25.0.
+These are scripted app outcomes, not customer interviews or predicted real-world gains. The study reproduces a Network Weaver scope defect and records schedule/reward, class-lineage and later career-depth opportunities. That study used app 1.25.0; its historical results are unchanged by later releases.
+
+## Version 1.26.0
+
+Ability-based objective selection, independent home exercise setups, F–C career/vocation work, specific subject/rubric profiles, imperial-default mile-time entry and new reasoning/judgment/spoken-communication checks. Accepted work and earned progress remain. [Research, 90 thirty-day software ledgers and screenshots](docs/proficiency-1.26/README.md) · [Changes](docs/update-1.26.md) · [Verification](docs/verification-1.26.md) · [Fantasy stat proposal](docs/proficiency-1.26/STAT-PROPOSAL.md).
+
+The six original stat names remain. New assessment/proficiency cutoffs are provisional game choices; software simulations do not establish human efficacy. Android **1.26.0 / code 28** retains the package and certificate. Google setup and physical Android checks remain outstanding.
 
 ## Version 1.25.0
 

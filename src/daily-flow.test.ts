@@ -242,6 +242,7 @@ describe("optional request results", () => {
       journeyItems(c).find((x) => x.kind === "completion")!.detail,
     ).toContain("Riverside loop");
     expect(resultSummary(c.completions[0].result)).toContain("0.4 km");
+    c.preferences!.units = "metric";
     const series = activityResultHistory(c, new Date(2027, 1, 1), now);
     expect(series.map((x) => x.unit).sort()).toEqual(["km", "min"]);
     c.preferences!.units = "imperial";

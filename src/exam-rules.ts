@@ -79,6 +79,7 @@ export function mentalPass(
     before = score(previous);
   if (now < 4) return false;
   if (now > before) return true;
+  if (current.formId?.includes("-v3-")) return false;
   return (
     !!current.durationMs &&
     !!previous.durationMs &&

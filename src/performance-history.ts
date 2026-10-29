@@ -110,6 +110,15 @@ export function performanceHistory(
       key,
     );
     add(
+      `mile-${a.mileMode || "walk"}`,
+      `One-mile ${a.mileMode || "walk"} time`,
+      "seconds",
+      at,
+      a.mileSeconds,
+      key,
+      true,
+    );
+    add(
       "pullups",
       "Maximum consecutive strict pullups",
       "repetitions",
@@ -121,9 +130,11 @@ export function performanceHistory(
       const r = a.mental?.[stat];
       if (r?.formId)
         add(
-          `${stat}-c${r.challenge || 1}`,
+          `${stat}-${r.formId.includes("-v3-") ? "v3" : "v2"}-c${r.challenge || 1}`,
           `${stat} game check · challenge ${r.challenge || 1}`,
-          "correct / 5",
+          stat === "CHA" && r.formId.includes("-v3-")
+            ? "self-review / 5"
+            : "correct / 5",
           r.completedAt,
           checkScore(stat, r.answers, r.formId),
           `${key}-${stat}`,
@@ -143,9 +154,11 @@ export function performanceHistory(
     if (e.mental?.formId && ["INT", "WIS", "CHA"].includes(e.stat)) {
       const stat = e.stat as "INT" | "WIS" | "CHA";
       add(
-        `${stat}-c${e.mental.challenge || 1}`,
+        `${stat}-${e.mental.formId.includes("-v3-") ? "v3" : "v2"}-c${e.mental.challenge || 1}`,
         `${stat} game check · challenge ${e.mental.challenge || 1}`,
-        "correct / 5",
+        stat === "CHA" && e.mental.formId.includes("-v3-")
+          ? "self-review / 5"
+          : "correct / 5",
         e.at,
         checkScore(stat, e.mental.answers, e.mental.formId),
         e.id,

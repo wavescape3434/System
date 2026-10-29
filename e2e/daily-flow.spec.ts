@@ -79,6 +79,11 @@ test("optional walk results survive reload, feed Journey and count once toward c
     let c = JSON.parse(
       (await (await import("/e2e/browser-store.ts")).readString())!,
     );
+    c.preferences = {
+      ...(await import("/src/preferences.ts")).DEFAULT_PREFERENCES,
+      ...c.preferences,
+      units: "metric",
+    };
     for (const id of [
       "habit-walk-weekly-f",
       "habit-walk-monthly-f",
@@ -189,7 +194,8 @@ test("blank results remain optional and invalid measured results cannot be submi
 test("HP and MP carry through Continue and recover at local midnight while the app stays open", async ({
   page,
 }) => {
-  await page.clock.install({ time: new Date("2027-02-10T23:59:50-07:00") });
+  await page.clock.install({ time: new Date("2027-02-10T23:59:49-07:00") });
+  await page.clock.pauseAt(new Date("2027-02-10T23:59:50-07:00"));
   await sample(page);
   await nav(page, "Adventures");
   await page.getByRole("button", { name: /STAGE 1/ }).click();
@@ -229,6 +235,7 @@ test("HP and MP carry through Continue and recover at local midnight while the a
     ),
   );
   await page.clock.runFor(11000);
+  await page.clock.resume();
   await expect
     .poll(() =>
       page.evaluate(

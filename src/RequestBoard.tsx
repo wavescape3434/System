@@ -1,4 +1,6 @@
 import TrainingRegimen from "./TrainingRegimen";
+import AbilitySettings from "./AbilitySettings";
+import { recommendedRequest } from "./proficiency";
 import { useViewState } from "./useViewState";
 import { careerCategory } from "./careers";
 import { useState, useEffect, useMemo } from "react";
@@ -49,7 +51,7 @@ export default function RequestBoard({
       `${key}.view`,
       section?.split(":")[0] || "board",
       !!section,
-      ["board", "taken", "pinned", "suggested", "regimen"],
+      ["board", "taken", "pinned", "suggested", "regimen", "ability"],
     ),
     [tab, setTab] = useViewState<Cadence | "all">(
       `${key}.cadence`,
@@ -201,6 +203,7 @@ export default function RequestBoard({
         {[
           ["board", "Guild board"],
           ["regimen", "Regimen"],
+          ["ability", "Ability settings"],
           ["taken", `Taken (${taken.filter((o) => !isComplete(c, o)).length})`],
           ["pinned", `Pinned (${pins.length})`],
           ["suggested", `Suggested (${groupRequests(suggestions).length})`],
@@ -221,7 +224,9 @@ export default function RequestBoard({
           </button>
         ))}
       </div>
-      {view === "regimen" ? (
+      {view === "ability" ? (
+        <AbilitySettings c={c} all={all} update={update} />
+      ) : view === "regimen" ? (
         <TrainingRegimen c={c} update={update} openObjective={openObjective} />
       ) : (
         <>
@@ -462,15 +467,10 @@ export default function RequestBoard({
                     const chosen =
                         g.variants.find((o) => isTaken(c, o)) ||
                         g.variants.find((o) => isComplete(c, o)) ||
-                        g.variants.find(
-                          (o) =>
-                            !taskRequirements(c, o, new Date(), "accept")
-                              .length,
-                        ) ||
+                        recommendedRequest(c, g.variants) ||
                         g.variants[0],
                       done = isComplete(c, chosen),
-                      accepted = isTaken(c, chosen),
-                      multi = g.variants.length > 1;
+                      accepted = isTaken(c, chosen);
                     const scope = scopeOf(chosen),
                       Scope =
                         scope === "universal"
@@ -532,12 +532,10 @@ export default function RequestBoard({
                               ? "Taken"
                               : done
                                 ? "Completed"
-                                : "Available"
+                                : `Suggested ${chosen.rank}; available ${g.variants[0].rank}–${g.variants.at(-1)!.rank}`
                           }
                         >
-                          {accepted || done || !multi
-                            ? chosen.rank
-                            : `${g.variants[0].rank}–${g.variants.at(-1)!.rank}`}
+                          {chosen.rank}
                         </span>
                         <span className="request-state">
                           {done ? "Completed" : accepted ? "Taken" : ""}

@@ -119,7 +119,16 @@ This is the working backlog from the version 1.13 product review. Update the sta
 - **P08/P09:** 12/32 primary profiles reach Gold on days 258–348; 11/32 enter prestige classes. Mixed schedules have uneven calendar eligibility and reward yield. Ordinary encounters remain accessible with companions under this study's limited encounter policy. These are modeled outcomes, not retention/efficacy evidence or a class-balance ranking.
 - Ranked follow-ups are maintained as [U01–U10](docs/personas-1.25/PRIORITIES.md). This study changes no app rules, rewards, owned progress or APK.
 
-**Next:** fix U01 first; then improve progression-state actions and review advanced-class lineage, schedule feasibility and career depth using U02–U08. Run matched effort/frequency studies before changing rewards. Continue the broader P01/P02 and P08 work, retain companion-led play and both gold sources, and preserve local-midnight recovery. Physical Android/runtime validation remains P05 work; Google setup stays deferred.
+## Batch 13 — 1.26.0
+
+- **P09 current ability:** separate pushing setup from full-body volume; use latest same-activity checks, independent home leg/hip/core setup controls, and unchanged accepted recipe snapshots. A 35-floor-pushup result selects harder practice immediately. Physical cutoffs remain authored suggestions.
+- **P04/P07/P09:** subject/criterion proficiency profiles, F–C daily career and vocation variants, category-specific work, explicit unfamiliar application/constraints and review prompts. Ninety thirty-day ledgers cover all twenty categories and twenty-five vocations; they verify software rather than human gains. [Research and evidence](docs/proficiency-1.26/README.md).
+- **Assessment:** imperial-default timed-mile entry; v3 logic, judgment and performed communication checks; old-form scoring/history retained; fresh family baselines; no speed-only v3 pass. Optional temporary local audio, explicit recording action and denial fallback. Native microphone behavior remains unverified.
+- **U01 forward fix:** class ownership takes priority for the class's own IDs, avoiding the Network Weaver technical-prefix collision even outside technology careers. Already accepted contracts and historical receipts are retained; a compensating historical class-credit migration remains open.
+- **Owner direction:** retain the current fantasy stat names for this release. Review the [seven-stat proposal](docs/proficiency-1.26/STAT-PROPOSAL.md) before any schema/earned-stat migration.
+- **Still open:** trusted subject-placement banks, reviewed professional/achievement rubrics, comparable-form reliability/ceilings, aerobic-volume history, partial-work records, observed adherence/efficacy and physical Android testing. Primary-paper retrieval remains blocked; source-access limits are explicit.
+
+**Next:** complete U01 historical-credit repair; then improve progression-state actions and review advanced-class lineage, schedule feasibility and career depth using U02–U08. Run matched effort/frequency studies before changing rewards. Continue the broader P01/P02 and P08 work, retain companion-led play and both gold sources, and preserve local-midnight recovery. Physical Android/runtime validation remains P05 work; Google setup stays deferred.
 
 ## Guardrails
 

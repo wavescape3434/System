@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { mentalForm, nextMentalForm, formScore } from "./exam-bank";
 import type { MentalStat, MentalResult, MentalForm } from "./exam-bank";
 import { Tag } from "./ui";
+import CommunicationTrial from "./CommunicationTrial";
 export default function MentalCheck({
   stat,
   saved,
@@ -53,7 +54,17 @@ export default function MentalCheck({
     return (
       <section className="mind-check">
         <h3>{title}</h3>
-        <Tag>5 questions · 2–4 minutes</Tag>
+        <Tag>
+          {stat === "CHA"
+            ? "5 spoken exercises · 6–10 minutes"
+            : "5 problems · 4–7 minutes"}
+        </Tag>
+        {stat === "CHA" && (
+          <p>
+            Practice aloud, then rate the listed criteria. Optional recordings
+            stay in this screen and are discarded when you leave.
+          </p>
+        )}
         {saved && (
           <p className="assessment-inline-data">
             Previous check:{" "}
@@ -89,7 +100,12 @@ export default function MentalCheck({
           {form.questions.map((q, i) => (
             <details key={q.id}>
               <summary>
-                {answers[i] === q.answer ? "✓" : "○"} {q.prompt}
+                {q.performance
+                  ? `${answers[i]}/3`
+                  : answers[i] === q.answer
+                    ? "✓"
+                    : "○"}{" "}
+                {q.prompt}
               </summary>
               <p>{q.explanation}</p>
             </details>
@@ -104,9 +120,16 @@ export default function MentalCheck({
   return (
     <section className="mind-check">
       <span className="eyebrow">
-        {stat} · QUESTION {index + 1} / 5
+        {stat} · {q.performance ? "EXERCISE" : "QUESTION"} {index + 1} / 5
       </span>
       <h3>{q.prompt}</h3>
+      {q.performance && (
+        <CommunicationTrial
+          key={q.id}
+          seconds={q.performance.seconds}
+          criteria={q.performance.criteria}
+        />
+      )}
       <div className="check-options">
         {q.options.map((text, i) => (
           <button

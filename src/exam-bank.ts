@@ -5,6 +5,7 @@ export interface ExamQuestion {
   options: string[];
   answer: number;
   explanation: string;
+  performance?: { seconds: number; criteria: string[] };
 }
 export interface MentalResult {
   answers: number[];
@@ -183,8 +184,9 @@ function question(
 }
 export function mentalForm(
   stat: MentalStat,
-  formId = `${stat.toLowerCase()}-v2-0-c1`,
+  formId = `${stat.toLowerCase()}-v3-0-c1`,
 ): MentalForm {
+  if (formId.includes("-v3-")) return abilityForm(stat, formId);
   const match = /^(int|wis|cha)-v2-(\d+)-c(\d+)$/.exec(formId);
   const sequence = match ? Number(match[2]) : 0,
     challenge = match ? Number(match[3]) : 1;
@@ -371,19 +373,22 @@ export function nextMentalForm(
   const usedIndexes = new Set(
     used
       .map((id) =>
-        new RegExp(`^${stat.toLowerCase()}-v2-(\\d+)-c\\d+$`).exec(id),
+        new RegExp(`^${stat.toLowerCase()}-v3-(\\d+)-c\\d+$`).exec(id),
       )
       .filter(Boolean)
       .map((m) => Number(m![1])),
   );
   let n = 0;
   while (usedIndexes.has(n)) n++;
-  return mentalForm(stat, `${stat.toLowerCase()}-v2-${n}-c${challenge}`);
+  return mentalForm(stat, `${stat.toLowerCase()}-v3-${n}-c${challenge}`);
 }
 export const formScore = (form: MentalForm, answers: number[]) =>
-  form.questions.reduce(
-    (sum, q, i) => sum + (answers[i] === q.answer ? 1 : 0),
-    0,
-  );
+  form.stat === "CHA" && form.id.includes("-v3-")
+    ? Math.round((answers.reduce((sum, n) => sum + n, 0) / 3) * 10) / 10
+    : form.questions.reduce(
+        (sum, q, i) => sum + (answers[i] === q.answer ? 1 : 0),
+        0,
+      );
 export const validMentalFormId = (id: unknown) =>
-  typeof id === "string" && /^(int|wis|cha)-v2-\d{1,7}-c\d{1,4}$/.test(id);
+  typeof id === "string" && /^(int|wis|cha)-v[23]-\d{1,7}-c\d{1,4}$/.test(id);
+import { abilityForm } from "./ability-checks";

@@ -1,7 +1,7 @@
 import type { Character, Objective, Completion } from "./domain";
 import { TASK_XP, TASK_GOLD } from "./task-ranks";
 import { hasEquipment } from "./preferences";
-import { REGIMEN_RANKS, workoutPrescription } from "./training-prescriptions";
+import { REGIMEN_RANKS, abilityWorkout } from "./training-prescriptions";
 import type {
   RegimenRank,
   WorkoutPrescription,
@@ -13,7 +13,7 @@ export const localDate = (d = new Date()) =>
 export const dateNumber = (s: string) =>
   Date.parse(s + "T12:00:00Z") / 86400000;
 export function startingRegimenRank(c: Character): RegimenRank {
-  const a = c.baseline.assessment;
+  const a = c.assessmentHistory?.at(-1)?.assessment || c.baseline.assessment;
   if (
     a?.strengthTest === "pushups" &&
     a.pushupStyle === "floor" &&
@@ -32,10 +32,75 @@ export function startingRegimenRank(c: Character): RegimenRank {
     return "E";
   return "F";
 }
+export function latestPush(
+  c: Character,
+): { style: string; count: number } | undefined {
+  const records = [
+    ...(c.assessmentHistory || []),
+    ...(c.baseline.assessment
+      ? [{ at: c.createdAt, assessment: c.baseline.assessment }]
+      : []),
+  ]
+    .filter(
+      (r) =>
+        r.assessment.strengthTest === "pushups" && r.assessment.pushups != null,
+    )
+    .map((r) => ({
+      at: r.at,
+      style: r.assessment.pushupStyle,
+      count: r.assessment.pushups!,
+    }));
+  const exams = (c.exams || [])
+    .filter(
+      (e) =>
+        e.protocol?.startsWith("push-") &&
+        e.value != null &&
+        (e.status === "passed" || e.status === "baseline"),
+    )
+    .map((e) => ({ at: e.at, style: e.protocol!.slice(5), count: e.value! }));
+  return [...records, ...exams].sort(
+    (a, b) => Date.parse(b.at) - Date.parse(a.at),
+  )[0];
+}
+export function assessedPushLevel(c: Character): 1 | 2 | 3 | 4 {
+  const result = latestPush(c);
+  if (!result) return 1;
+  if (result.style === "floor")
+    return result.count >= 30
+      ? 4
+      : result.count >= 8
+        ? 3
+        : result.count >= 1
+          ? 2
+          : 1;
+  return result.style === "incline" ||
+    result.style === "knee" ||
+    result.count >= 20
+    ? 2
+    : 1;
+}
+export const personalizedWorkout = (
+  c: Character,
+  rank: RegimenRank,
+  session: "A" | "B",
+  environment: TrainingPlan["environment"],
+) =>
+  abilityWorkout(
+    rank,
+    session,
+    environment,
+    c.trainingPlan?.pushLevel || assessedPushLevel(c),
+    c.trainingPlan?.movementLevels,
+  );
 export const defaultTrainingPlan = (c: Character): TrainingPlan => ({
   version: 1,
   startedOn: localDate(),
-  walkMinutes: 5,
+  walkMinutes: (
+    c.assessmentHistory?.at(-1)?.assessment || c.baseline.assessment
+  )?.mileSeconds
+    ? 15
+    : 5,
+  pushLevel: assessedPushLevel(c),
   rank: startingRegimenRank(c),
   environment: c.preferences?.equipment.includes("gym")
     ? "gym"
@@ -56,11 +121,19 @@ export const workoutSummary = (p: WorkoutPrescription) =>
 const requestCache = new Map<string, Objective[]>();
 export function regimenRequests(c: Character): Objective[] {
   const environment = (c.trainingPlan || defaultTrainingPlan(c)).environment;
-  const cached = requestCache.get(environment);
+  const pushLevel = c.trainingPlan?.pushLevel || assessedPushLevel(c);
+  const cacheKey = `${environment}:${pushLevel}:${JSON.stringify(c.trainingPlan?.movementLevels || {})}`;
+  const cached = requestCache.get(cacheKey);
   if (cached) return cached;
   const result: Objective[] = REGIMEN_RANKS.flatMap((rank) =>
     (["A", "B"] as const).map((session) => {
-      const workout = workoutPrescription(rank, session, environment);
+      const workout = abilityWorkout(
+        rank,
+        session,
+        environment,
+        pushLevel,
+        c.trainingPlan?.movementLevels,
+      );
       return {
         id: `regimen-${session.toLowerCase()}-${rank.toLowerCase()}`,
         title: `Full-body session ${session} · ${rank}`,
@@ -84,7 +157,7 @@ export function regimenRequests(c: Character): Objective[] {
       };
     }),
   );
-  requestCache.set(environment, result);
+  requestCache.set(cacheKey, result);
   return result;
 }
 export function regimenGoals(): Objective[] {

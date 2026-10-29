@@ -6,6 +6,8 @@ import { validMentalFormId } from "./exam-bank";
 import { findAppearance } from "./appearance-catalog";
 export const REGISTRATION_DRAFT_KEY = "the-guild.registration-draft.v1";
 export interface RegistrationDraft {
+  careerAbility?: string;
+  careerTopic?: string;
   step: number;
   name: string;
   appearance?: string;
@@ -21,6 +23,10 @@ export function loadRegistrationDraft(): RegistrationDraft | null {
       localStorage.getItem(REGISTRATION_DRAFT_KEY) || "null",
     );
     return d &&
+      (d.careerAbility === undefined ||
+        ["", "F", "E", "D", "C"].includes(d.careerAbility)) &&
+      (d.careerTopic === undefined ||
+        (typeof d.careerTopic === "string" && d.careerTopic.length <= 100)) &&
       [1, 2, 3].includes(d.step) &&
       typeof d.name === "string" &&
       d.name.length <= 32 &&

@@ -42,7 +42,7 @@ test("compact requests expose icons and rank, with work and rewards inside detai
     .click();
   await expect(page.getByRole("dialog")).toContainText("XP");
   await page.getByLabel("Choose request rank").selectOption("u-floor-push-20");
-  await expect(page.getByRole("dialog")).toContainText("3 × 20");
+  await expect(page.getByRole("dialog")).toContainText("3 sets × 6–12");
   await page
     .getByRole("dialog")
     .getByRole("button", { name: "Take request", exact: true })

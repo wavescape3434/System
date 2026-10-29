@@ -39,9 +39,11 @@ test("paper requests show precise rank instructions, keep stat icons distinct an
     paper.getByRole("heading", { name: "Instructions", exact: true }),
   ).toBeVisible();
   await expect(paper.locator(".request-instructions")).toContainText(
-    "60–120 seconds",
+    "2–3 minutes",
   );
-  await expect(paper.locator(".request-variant-title")).toContainText("3 × 20");
+  await expect(paper.locator(".request-variant-title")).toContainText(
+    "Progressive pushup strength",
+  );
   await paper
     .getByRole("button", { name: "Take request", exact: true })
     .click();

@@ -1,4 +1,5 @@
 import CareerWorkRecord from "./CareerWorkRecord";
+import { recommendedRequest } from "./proficiency";
 import GuildWork from "./GuildWork";
 import { loginReward, claimLoginReward, LOGIN_REWARDS } from "./login-rewards";
 import { campaign } from "./rpg";
@@ -359,11 +360,15 @@ export function Paths({
           onClick={() => {
             if (progress.examRequired) setView("exams");
             else {
-              const commission = objectives(c).find(
-                (o) =>
-                  o.scope === "class" &&
-                  o.cadence === "daily" &&
-                  o.kind !== "class-trial",
+              const commission = recommendedRequest(
+                c,
+                objectives(c).filter(
+                  (o) =>
+                    o.scope === "class" &&
+                    o.cadence === "daily" &&
+                    (o.id === `${c.activeClass}-daily` ||
+                      o.id.startsWith(`${c.activeClass}-daily-proficiency-`)),
+                ),
               );
               if (commission) openObjective(commission);
             }

@@ -1,4 +1,5 @@
 import { TOWN_GEAR } from "./world-catalog";
+import { validProficiencies } from "./proficiency";
 import {
   canonicalWorkout,
   validTrainingPlan,
@@ -45,6 +46,7 @@ export function validateCharacter(x: unknown): x is Character {
     const path = CLASSES.find((p) => p.id === c.activeClass);
     return (
       c.version === 1 &&
+      (c.proficiencies === undefined || validProficiencies(c.proficiencies)) &&
       (c.skillPlans === undefined || validSkillPlans(c.skillPlans)) &&
       str(c.id) &&
       str(c.name) &&

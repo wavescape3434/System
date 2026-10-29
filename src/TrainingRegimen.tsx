@@ -17,7 +17,6 @@ import {
   REGIMEN_RANKS,
   TRAINING_RANKS,
   validTrainingPlan,
-  workoutPrescription,
 } from "./training-prescriptions";
 import type { TrainingPlan } from "./training-prescriptions";
 import {
@@ -26,6 +25,8 @@ import {
   dateNumber,
   exerciseProgress,
   planProgress,
+  personalizedWorkout,
+  assessedPushLevel,
 } from "./training-regimen";
 import { hasEquipment } from "./preferences";
 import { Icon, Tag } from "./ui";
@@ -69,7 +70,12 @@ export default function TrainingRegimen({
   const request = existing || (creditClass && preferred ? preferred : planned);
   const p =
       request?.workout ||
-      workoutPrescription(plan.rank, session, plan.environment),
+      personalizedWorkout(
+        { ...c, trainingPlan: plan },
+        plan.rank,
+        session,
+        plan.environment,
+      ),
     done = request && isComplete(c, request),
     accepted = request && isTaken(c, request),
     blocks = request
@@ -161,6 +167,90 @@ export default function TrainingRegimen({
             </select>
           </label>
           <label>
+            Pushing variation
+            <select
+              value={draft.pushLevel || assessedPushLevel(c)}
+              onChange={(e) =>
+                setDraft({
+                  ...draft,
+                  pushLevel: Number(
+                    e.target.value,
+                  ) as TrainingPlan["pushLevel"],
+                })
+              }
+            >
+              <option value="1">Wall</option>
+              <option value="2">Incline</option>
+              <option value="3">Floor</option>
+              <option value="4">
+                Harder floor · tempo / low feet elevation
+              </option>
+            </select>
+          </label>
+          <p>
+            Pushing setup follows your latest assessment. Sets follow the
+            selected request rank; other movements are calibrated independently
+            by reps in reserve.
+          </p>
+          {draft.environment === "home" && (
+            <details>
+              <summary>Calibrate legs, hips & core</summary>
+              {(["squat", "hinge", "core"] as const).map((key) => (
+                <label key={key}>
+                  {
+                    {
+                      squat: "Leg variation",
+                      hinge: "Hip variation",
+                      core: "Core variation",
+                    }[key]
+                  }
+                  <select
+                    value={draft.movementLevels?.[key] || ""}
+                    onChange={(e) => {
+                      const levels = { ...draft.movementLevels };
+                      if (e.target.value)
+                        levels[key] = Number(e.target.value) as 1 | 2 | 3 | 4;
+                      else delete levels[key];
+                      setDraft({ ...draft, movementLevels: levels });
+                    }}
+                  >
+                    <option value="">Use rank's starting setup</option>
+                    {{
+                      squat: [
+                        "Chair sit-to-stand",
+                        "Bodyweight squat",
+                        "Supported split squat",
+                        "Slow-tempo split squat",
+                      ],
+                      hinge: [
+                        "Glute bridge",
+                        "Paused bridge",
+                        "Staggered-stance bridge",
+                        "Single-leg bridge",
+                      ],
+                      core: [
+                        "Short reach",
+                        "Standard reach",
+                        "Long reach / pause",
+                        "Slow long reach / pause",
+                      ],
+                    }[key].map((name, i) => (
+                      <option key={name} value={i + 1}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              ))}
+              <p>
+                Use an easy practice set to find a setup where 6–12 reps leave
+                2–3 clean reps possible. Assess each movement separately. For
+                rows, self-resistance is a fallback; choose a weighed backpack
+                or gym row for measurable pulling overload.
+              </p>
+            </details>
+          )}
+          <label>
             Equipment
             <select
               value={draft.environment}
@@ -239,6 +329,20 @@ export default function TrainingRegimen({
       {localDate() < plan.startedOn && (
         <p className="notice">
           Plan begins {plan.startedOn}. Preview the sessions below.
+        </p>
+      )}
+      {plan.pushLevel && assessedPushLevel(c) > plan.pushLevel && !editing && (
+        <p className="notice">
+          Your latest pushup check supports a harder setup.{" "}
+          <button
+            className="text-button"
+            onClick={() => {
+              setDraft({ ...plan, pushLevel: assessedPushLevel(c) });
+              setEditing(true);
+            }}
+          >
+            Review exercise difficulty
+          </button>
         </p>
       )}
       {strength ? (

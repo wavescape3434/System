@@ -13,7 +13,7 @@ export interface Preferences {
   };
 }
 export const DEFAULT_PREFERENCES: Preferences = {
-  units: "metric",
+  units: "imperial",
   textSize: "standard",
   reduceMotion: false,
   equipment: ["bodyweight"],

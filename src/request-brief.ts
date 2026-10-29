@@ -32,7 +32,7 @@ export function requestBrief(o: Objective, c: Character): RequestBrief {
     brief = protocol(
       [
         "Use the variation named in the request: wall, incline, knee or floor. Set your hands on a stable surface and keep your trunk aligned.",
-        `Complete the stated sets and repetitions: ${workload}. Lower under control and use the same range each repetition. Rest 60–120 seconds between sets; incomplete or shortened repetitions do not meet the target.`,
+        `Complete the stated sets and repetitions: ${workload}. Lower under control and use the same range each repetition. Rest ${o.id === "u-floor-push-20" ? "2–3 minutes" : "60–120 seconds"} between sets; incomplete or shortened repetitions do not meet the target.`,
         "Record each set separately. Stop the set when form changes; the request is complete only when its prescribed volume is achieved.",
       ],
       "Variation, surface height if applicable, repetitions in each set, and rest used.",

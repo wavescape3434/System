@@ -1,4 +1,5 @@
 import AppearancePicker from "./AppearancePicker";
+import AbilitySettings from "./AbilitySettings";
 import CharacterSprite from "./CharacterSprite";
 import { characterAppearance } from "./appearance-catalog";
 import { selectAppearance } from "./appearance";
@@ -7,7 +8,7 @@ import { usedExamForms } from "./exams";
 import { useState } from "react";
 import { Settings2, UserRound, Shield, Activity, Save } from "lucide-react";
 import type { Character, Stats } from "./domain";
-import { ATTRIBUTES, startingStats } from "./domain";
+import { ATTRIBUTES, startingStats, objectives } from "./domain";
 import { DEFAULT_PREFERENCES } from "./preferences";
 import type { Preferences } from "./preferences";
 import { localRecovery } from "./storage";
@@ -98,6 +99,12 @@ export default function Settings({
           onClick={() => setTab("assessment")}
         >
           Assessment
+        </button>
+        <button
+          className={tab === "ability" ? "active" : ""}
+          onClick={() => setTab("ability")}
+        >
+          Ability
         </button>
         <button
           className={tab === "account" ? "active" : ""}
@@ -267,6 +274,9 @@ export default function Settings({
           </label>
         </section>
       )}
+      {tab === "ability" && (
+        <AbilitySettings c={c} all={objectives(c)} update={update} />
+      )}
       {tab === "assessment" && (
         <section className="panel assessment-settings">
           <h2>Performance check</h2>
@@ -344,7 +354,7 @@ export default function Settings({
           </div>
           <div className="settings-record">
             <span>Version</span>
-            <Tag>1.25.0</Tag>
+            <Tag>1.26.0</Tag>
           </div>
           <button className="button primary" onClick={onAccount}>
             Account & backups

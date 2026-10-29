@@ -294,6 +294,7 @@ test("weighted baseline opens eligible strength paths", async ({ page }) => {
   await page
     .getByLabel("Strength assessment", { exact: true })
     .selectOption("weighted");
+  await page.getByLabel("Assessment units").selectOption("metric");
   await page.getByLabel("Bench press load (kg)").fill("50");
   await page.getByLabel("Repetitions in the set (reps)").fill("8");
   await page.getByLabel("Body mass (kg)").fill("70");
@@ -419,9 +420,8 @@ test("assessment fields clear without a forced zero and show time units", async 
   await expect(input).toHaveValue("");
   await input.pressSequentially("12");
   await expect(input).toHaveValue("12");
-  await expect(
-    page.getByLabel("Distance walked in 6 minutes (metres)", { exact: false }),
-  ).toBeVisible();
+  await expect(page.getByLabel("Mile minutes", { exact: true })).toBeVisible();
+  await expect(page.getByLabel("Mile seconds", { exact: true })).toBeVisible();
   await expect(
     page.getByLabel("One-leg balance, eyes open (seconds)", { exact: false }),
   ).toBeVisible();

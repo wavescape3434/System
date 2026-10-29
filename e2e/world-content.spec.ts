@@ -72,7 +72,7 @@ test("one request card chooses a rank and pins the group across reload", async (
     })
     .click();
   await page.getByLabel("Choose request rank").selectOption("u-floor-push-20");
-  await expect(page.getByRole("dialog")).toContainText("3 × 20");
+  await expect(page.getByRole("dialog")).toContainText("3 sets × 6–12");
   await page
     .getByRole("dialog")
     .getByRole("button", { name: "Take request", exact: true })

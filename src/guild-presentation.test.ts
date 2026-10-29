@@ -89,7 +89,7 @@ describe("specific request instructions", () => {
       list = objectives(c);
     const push = list.find((o) => o.id === "u-floor-push-20")!;
     const pushBrief = requestBrief(push, c);
-    expect(pushBrief.steps.join(" ")).toContain("3 sets × 20");
+    expect(pushBrief.steps.join(" ")).toContain("3 sets × 6–12");
     expect(pushBrief.record).toContain("repetitions in each set");
     const bible = list.find((o) => o.id === "u-bible-recall")!;
     expect(requestBrief(bible, c).steps.join(" ")).toContain(

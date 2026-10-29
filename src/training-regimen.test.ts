@@ -139,6 +139,7 @@ describe("specific graded training", () => {
     expect(defaultTrainingPlan(c).rank).toBe("F");
     c.baseStats.STR = 500;
     expect(startingRegimenRank(c)).toBe("F");
+    c.assessmentHistory = [];
     c.baseline.assessment = {
       ...EMPTY_ASSESSMENT,
       pushups: 20,

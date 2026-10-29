@@ -120,7 +120,7 @@ describe("rotating, nonreligious assessments", () => {
       ),
     ).toBe(5);
     const q = mentalForm("INT").questions[0];
-    expect(q.options[q.answer]).toBe("10");
+    expect(q.options[q.answer]).toBe("Some L4 objects are not in M4");
   });
 });
 describe("milestone certification", () => {
@@ -212,8 +212,8 @@ describe("milestone certification", () => {
     expect(classLevel(c, "scholar")).toBe(9);
     expect(validateCharacter(c)).toBe(true);
   });
-  it("uses an actual five percent time reduction at an accuracy ceiling, and offers a separate work-sample baseline", () => {
-    const f = mentalForm("INT"),
+  it("preserves the legacy timer route and offers a separate work-sample baseline", () => {
+    const f = mentalForm("INT", "int-v2-0-c1"),
       a = {
         answers: f.questions.map((q) => q.answer),
         formId: f.id,

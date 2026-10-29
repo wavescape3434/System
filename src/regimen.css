@@ -146,3 +146,90 @@
   flex-wrap: wrap;
   gap: 12px;
 }
+
+.ability-settings form {
+  display: grid;
+  gap: 1rem;
+  max-width: 48rem;
+}
+.ability-settings label {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.ability-settings select,
+.ability-settings input,
+.ability-settings textarea {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.ability-settings textarea {
+  min-height: 6rem;
+}
+.communication-trial audio {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.75rem;
+}
+.communication-trial .button {
+  margin: 0.25rem;
+}
+.regimen-settings button,
+.ability-settings button {
+  scroll-margin-block: 110px;
+}
+.toast {
+  pointer-events: none;
+}
+.toast button {
+  pointer-events: auto;
+}
+.assessment-grid .mile-time {
+  grid-column: 1 / -1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #b49b6f;
+  background: #fffaf0;
+}
+.mile-time legend {
+  padding: 0 6px;
+  color: #4b3a25;
+  font-size: 0.9rem;
+}
+.mile-time label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  font-size: 0.85rem;
+}
+.mile-time input,
+.assessment-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #b49b6f;
+  border-radius: 4px;
+  background: #fffdf6;
+  color: #302b21;
+  font: inherit;
+}
+.assessment-v2 .assessment-protocol > summary,
+.mind-check > .eyebrow {
+  color: #594520;
+}
+.ability-settings input,
+.ability-settings select,
+.ability-settings textarea {
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #947b51;
+  border-radius: 5px;
+  background: #fffdf5;
+  color: #302b21;
+  font: inherit;
+}

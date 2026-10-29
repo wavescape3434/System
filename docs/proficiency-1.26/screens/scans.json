@@ -1,0 +1,41 @@
+{
+  "errors": [],
+  "scans": [
+    {
+      "name": "mile-assessment",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "reasoning",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "communication",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "experienced-regimen",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "career-proficiency",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "career-proficiency-desktop",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    }
+  ]
+}

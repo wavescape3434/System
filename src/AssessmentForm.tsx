@@ -11,7 +11,7 @@ import MentalCheck from "./MentalCheck";
 export default function AssessmentForm({
   value,
   onChange,
-  units = "metric",
+  units = "imperial",
   onUnitsChange,
   onFormStart,
   usedForms = [],
@@ -47,6 +47,7 @@ export default function AssessmentForm({
       | "pushupStyle"
       | "mental"
       | "chairAssisted"
+      | "mileMode"
     >,
     label: string,
     unit: string,
@@ -81,7 +82,7 @@ export default function AssessmentForm({
           }}
         >
           <option value="metric">Metric · cm, kg, metres</option>
-          <option value="imperial">Imperial · ft & in, lb, yards</option>
+          <option value="imperial">Imperial · ft & in, lb, miles</option>
         </select>
       </label>
       <div className="assessment-tabs">
@@ -257,12 +258,25 @@ export default function AssessmentForm({
           )}
           <div className="assessment-grid">
             {field("balanceSeconds", "One-leg balance, eyes open", "seconds")}
-            {field(
-              "walkMetres",
-              "Distance walked in 6 minutes",
-              imperial ? "yards" : "metres",
-              imperial ? 1.0936132983 : 1,
-            )}
+            <MileTime
+              value={value.mileSeconds ?? null}
+              onChange={(mileSeconds) => onChange({ ...value, mileSeconds })}
+            />
+            <label className="assessment-field">
+              Mile method
+              <select
+                value={value.mileMode || "walk"}
+                onChange={(e) =>
+                  onChange({
+                    ...value,
+                    mileMode: e.target.value as "walk" | "run",
+                  })
+                }
+              >
+                <option value="walk">Walk</option>
+                <option value="run">Run / run-walk</option>
+              </select>
+            </label>
             {field(
               "pullups",
               "Maximum consecutive strict pullups",
@@ -270,13 +284,29 @@ export default function AssessmentForm({
             )}
           </div>
           <details className="assessment-protocol">
-            <summary>Balance & walking protocols</summary>
+            <summary>Balance & mile protocols</summary>
             <p>
               Balance: keep eyes open, hands on hips, and lift one foot near
               stable support. Use the best of three attempts, stopping each at
-              45 seconds. Walking: use a flat measured course and walk for six
-              minutes. Record distance, not how long you usually walk. Use the
-              same course and method for later checks.
+              45 seconds. Mile: time one measured mile (1.609 km) on a flat
+              route or track. Enter minutes and seconds, including any walking
+              breaks. Use the same route and method for later checks. Leave it
+              blank if you do not have a recent result; you do not need an
+              all-out attempt.
+            </p>
+          </details>
+          <details className="assessment-protocol">
+            <summary>Alternative: six-minute walk</summary>
+            {field(
+              "walkMetres",
+              "Distance walked in 6 minutes",
+              imperial ? "yards" : "metres",
+              imperial ? 1.0936132983 : 1,
+            )}
+            <p>
+              Optional measured-course protocol. Existing six-minute results
+              remain separate from mile times. A mile result takes priority when
+              both are entered.
             </p>
           </details>
         </>
@@ -374,6 +404,65 @@ export default function AssessmentForm({
           )
         ))}
     </div>
+  );
+}
+function MileTime({
+  value,
+  onChange,
+}: {
+  value: number | null;
+  onChange: (n: number | null) => void;
+}) {
+  const [minutes, setMinutes] = useState(
+    value == null ? "" : String(Math.floor(value / 60)),
+  );
+  const [seconds, setSeconds] = useState(
+    value == null ? "" : String(value % 60),
+  );
+  const change = (m: string, s: string) => {
+    setMinutes(m);
+    setSeconds(s);
+    onChange(
+      m === "" && s === ""
+        ? null
+        : !Number.isInteger(Number(m || 0)) ||
+            !Number.isInteger(Number(s || 0)) ||
+            Number(s || 0) < 0 ||
+            Number(s || 0) > 59
+          ? NaN
+          : Number(m || 0) * 60 + Number(s || 0),
+    );
+  };
+  return (
+    <fieldset className="mile-time">
+      <legend>Time for one mile (1.609 km)</legend>
+      <label>
+        Minutes
+        <input
+          aria-label="Mile minutes"
+          type="number"
+          min="0"
+          max="180"
+          step="1"
+          value={minutes}
+          placeholder="Minutes"
+          onChange={(e) => change(e.target.value, seconds)}
+        />
+      </label>
+      <label>
+        Seconds
+        <input
+          aria-label="Mile seconds"
+          type="number"
+          min="0"
+          max="59"
+          step="1"
+          value={seconds}
+          placeholder="Seconds"
+          onChange={(e) => change(minutes, e.target.value)}
+        />
+      </label>
+    </fieldset>
   );
 }
 function MetricInput({

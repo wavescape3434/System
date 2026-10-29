@@ -2,7 +2,12 @@ import type { TaskRank } from "./task-ranks";
 export const REGIMEN_RANKS = ["F", "E", "D", "C"] as const;
 export type RegimenRank = (typeof REGIMEN_RANKS)[number];
 export type TrainingEnvironment = "home" | "weights" | "gym";
+export type MovementLevels = Partial<
+  Record<"squat" | "hinge" | "core", 1 | 2 | 3 | 4>
+>;
 export interface TrainingPlan {
+  movementLevels?: MovementLevels;
+  pushLevel?: 1 | 2 | 3 | 4;
   walkMinutes?: number;
   version: 1;
   startedOn: string;
@@ -22,7 +27,9 @@ export interface ExercisePrescription {
   load: boolean;
 }
 export interface WorkoutPrescription {
-  version: 1;
+  movementLevels?: MovementLevels;
+  version: 1 | 2;
+  pushLevel?: 1 | 2 | 3 | 4;
   rank: RegimenRank;
   session: "A" | "B";
   environment: TrainingEnvironment;
@@ -266,6 +273,9 @@ export const validTrainingPlan = (v: unknown): v is TrainingPlan => {
   if (
     !p ||
     p.version !== 1 ||
+    (p.movementLevels !== undefined &&
+      !validMovementLevels(p.movementLevels)) ||
+    (p.pushLevel !== undefined && ![1, 2, 3, 4].includes(p.pushLevel)) ||
     (p.walkMinutes !== undefined &&
       (!Number.isInteger(p.walkMinutes) ||
         p.walkMinutes < 5 ||
@@ -294,16 +304,75 @@ export function validWorkoutPrescription(v: unknown): v is WorkoutPrescription {
   const p = v as WorkoutPrescription;
   if (
     !p ||
-    p.version !== 1 ||
+    ![1, 2].includes(p.version) ||
     !REGIMEN_RANKS.includes(p.rank) ||
     !["A", "B"].includes(p.session) ||
     !["home", "weights", "gym"].includes(p.environment)
   )
     return false;
+  if (
+    p.version === 2 &&
+    (![1, 2, 3, 4].includes(p.pushLevel!) ||
+      (p.movementLevels !== undefined &&
+        !validMovementLevels(p.movementLevels)))
+  )
+    return false;
   return (
     canonicalWorkout(p) ===
-    canonicalWorkout(workoutPrescription(p.rank, p.session, p.environment))
+    canonicalWorkout(
+      p.version === 2
+        ? abilityWorkout(
+            p.rank,
+            p.session,
+            p.environment,
+            p.pushLevel!,
+            p.movementLevels,
+          )
+        : workoutPrescription(p.rank, p.session, p.environment),
+    )
   );
+}
+export function abilityWorkout(
+  rank: RegimenRank,
+  session: "A" | "B",
+  environment: TrainingEnvironment,
+  pushLevel: 1 | 2 | 3 | 4,
+  movementLevels?: MovementLevels,
+): WorkoutPrescription {
+  const base = workoutPrescription(rank, session, environment);
+  return {
+    ...base,
+    version: 2,
+    pushLevel,
+    ...(movementLevels ? { movementLevels: { ...movementLevels } } : {}),
+    exercises: base.exercises.map((original) => {
+      const e = calibrateMovement(
+        original,
+        environment,
+        session,
+        movementLevels,
+      );
+      return e.id !== "push" || environment !== "home"
+        ? { ...e }
+        : {
+            ...e,
+            name: [
+              "Wall pushup",
+              "Incline pushup",
+              "Floor pushup",
+              "Harder floor pushup variation",
+            ][pushLevel - 1],
+            min: 6,
+            max: 12,
+            cues:
+              pushLevel === 4
+                ? "Start with feet on a low stable step or a three-second lowering phase at floor level. Choose a setup where 6–12 clean reps leave 2–3 more possible. If you could do many more, use a slightly harder setup; if six clean reps are not possible, lower the feet or use ordinary floor pushups. Record elevation or tempo."
+                : "Use the named variation on a fixed surface and a consistent full comfortable range. Choose surface height or tempo so 6–12 reps leave 2–3 clean reps possible. Record the setup. Warm-up sets do not count as work sets.",
+            progress:
+              "After two comparable top-range sessions with at least two clean reps left, lower the incline, add a slow lowering phase, or raise the feet a small amount. Change one variable and rebuild from six reps.",
+          };
+    }),
+  };
 }
 export function validWorkoutLog(v: unknown): v is WorkoutLog {
   const w = v as WorkoutLog;
@@ -340,4 +409,64 @@ export function validWorkoutLog(v: unknown): v is WorkoutLog {
       );
     })
   );
+}
+
+export function validMovementLevels(input: unknown): input is MovementLevels {
+  return (
+    !!input &&
+    typeof input === "object" &&
+    !Array.isArray(input) &&
+    Object.entries(input).every(
+      ([key, n]) =>
+        ["squat", "hinge", "core"].includes(key) && [1, 2, 3, 4].includes(n),
+    )
+  );
+}
+function calibrateMovement(
+  e: ExercisePrescription,
+  environment: TrainingEnvironment,
+  session: "A" | "B",
+  levels?: MovementLevels,
+): ExercisePrescription {
+  const key = e.id === "split-squat" ? "squat" : e.id;
+  const level = levels?.[key as keyof MovementLevels];
+  if (!level || environment !== "home") return e;
+  const names: Record<string, string[]> = {
+    squat: [
+      "Chair sit-to-stand",
+      "Controlled bodyweight squat",
+      "Supported split squat",
+      "Slow-tempo split squat",
+    ],
+    hinge: [
+      "Glute bridge",
+      "Paused glute bridge",
+      "Staggered-stance glute bridge",
+      "Controlled single-leg glute bridge",
+    ],
+    core: [
+      session === "A" ? "Short-reach dead bug" : "Short-reach bird dog",
+      session === "A" ? "Dead bug" : "Bird dog",
+      session === "A" ? "Long-reach dead bug" : "Paused bird dog",
+      session === "A" ? "Slow long-reach dead bug" : "Slow paused bird dog",
+    ],
+  };
+  const cues: Record<string, string> = {
+    squat:
+      "Keep a stable support beside you; lower through the same comfortable depth. For split squats use a split stance and count each side. At level four lower for three seconds.",
+    hinge:
+      "Lie on your back with feet planted; raise the hips without arching. Pause for two seconds at level two, shift more work to one side at level three, and lift the other foot only if level four stays controlled.",
+    core: "Keep the trunk still. Reach only as far as you can control. At levels three and four extend the opposite arm and leg farther; use a two-second pause, then a three-second return at level four.",
+  };
+  return {
+    ...e,
+    name: names[key][level - 1],
+    min: 6,
+    max: 12,
+    perSide:
+      key === "core" || ((key === "squat" || key === "hinge") && level >= 3),
+    cues:
+      cues[key] +
+      " Choose a setup leaving 2–3 clean reps. Reduce difficulty if the minimum cannot be performed with control.",
+  };
 }

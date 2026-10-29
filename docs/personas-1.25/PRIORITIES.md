@@ -2,6 +2,8 @@
 
 The annual cohort is fictional. “Confirmed” below means a current rule or reproducible code behavior, not a finding from customer interviews. No app rules were changed during the study.
 
+**1.26 follow-up:** newly issued Network Weaver requests now use class ownership and bypass career-prefix filtering. Historical receipts and taken contracts are unchanged, so U01 still needs compensating historical class credit. U04 has a first subject-proficiency/daily-difficulty pass; controlled schedule/reward studies and reviewed curricula remain open. [Changes and evidence](../proficiency-1.26/README.md).
+
 | ID | Priority / type | Evidence | Next concrete improvement | Existing roadmap |
 | --- | --- | --- | --- | --- |
 | U01 | Highest — confirmed defect | Jordan earns Network Weaver but its commissions are classified as profession work by the `network-` prefix. Class level stays 1. The supplementary probe finds this scope mismatch in the 51-class catalogue. | Assign scope from explicit request ownership. Protect class IDs from technical-request filters. Test daily/weekly/monthly class work, a later profession/vocation change, and retained accepted requests. Repair historical class credit without subtracting already earned rewards. | P01/P09 |

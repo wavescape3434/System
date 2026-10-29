@@ -12,7 +12,7 @@ const DETAILS: Record<string, string> = {
   "u-floor-push-8":
     "Complete 3 sets of 8 controlled full-range floor pushups, resting 90–120 seconds. Keep trunk alignment and a consistent chest target. Stop before form changes and retain about 2 clean reps. Build repetitions at the same setup before using a harder variation.",
   "u-floor-push-20":
-    "Complete 3 sets of 20 controlled full-range floor pushups, resting 2–3 minutes. This is a muscular-endurance target, not a requirement for building maximal strength. Build to the volume gradually, keep a consistent range and leave about 2 clean reps when possible. Use the full-body regimen for balanced strength training.",
+    "Complete 3 sets of 6–12 harder pushups, resting 2–3 minutes. Start with a three-second lowering phase or feet on a low stable step. Choose a setup where the target leaves 2–3 clean reps possible; reduce the elevation or use ordinary floor pushups if six controlled reps are not possible. Record tempo/elevation and each set. After two top-range sessions, change one difficulty variable and rebuild from six reps. This is pushing practice; use Regimen for full-body work.",
   "u-chair-squat":
     "Complete 2 sets of 8 sit-to-stands from a stable chair against a wall, resting 60–90 seconds. Keep feet planted and lower under control. Hand assistance is allowed when needed; record the chair height and assistance and keep them consistent for comparison.",
   "u-bodyweight-squat":
@@ -67,12 +67,23 @@ export function refineTrainingGuidance(o: Objective): Objective {
   };
   const match = /^practice-(core|hinge|carry)-([fedc])$/.exec(o.id);
   const minutes =
-    o.id === "u-run-walk"
-      ? "28 min total"
-      : o.id === "u-walk-brisk"
-        ? "34–36 min · 30 brisk"
-        : match
-          ? `${durations[match[1]].split(",")["fedc".indexOf(match[2])]} min`
-          : o.minutes;
-  return description ? { ...o, description, minutes } : o;
+    o.id === "u-floor-push-20"
+      ? "3 sets × 6–12"
+      : o.id === "u-run-walk"
+        ? "28 min total"
+        : o.id === "u-walk-brisk"
+          ? "34–36 min · 30 brisk"
+          : match
+            ? `${durations[match[1]].split(",")["fedc".indexOf(match[2])]} min`
+            : o.minutes;
+  return description
+    ? {
+        ...o,
+        ...(o.id === "u-floor-push-20"
+          ? { title: "Progressive pushup strength" }
+          : {}),
+        description,
+        minutes,
+      }
+    : o;
 }

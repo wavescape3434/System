@@ -256,9 +256,11 @@ export default function ClassExams({
                           </b>
                           {activeRoute === "improvement" && (
                             <p>
-                              Score at least 4/5 and improve accuracy, or retain
-                              accuracy and finish at least 5% faster. Use a
-                              later-day attempt.
+                              New v3 checks require at least 4/5 and improved
+                              accuracy on a later day; finishing faster alone
+                              does not pass. An older v2 check starts a new
+                              comparison baseline. Use an alternate work sample
+                              if a brief check reaches its ceiling.
                             </p>
                           )}
                         </>

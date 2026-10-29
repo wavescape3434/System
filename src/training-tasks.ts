@@ -5,8 +5,8 @@ import {
   hardStrength,
   nextStrengthSession,
   workoutSummary,
+  personalizedWorkout,
 } from "./training-regimen";
-import { workoutPrescription } from "./training-prescriptions";
 import { periodStart, adventureConditionMet } from "./calendar-goals";
 import { habitRequests, balanceRequest } from "./adventure-requests";
 import { requestReward } from "./request-balance";
@@ -792,7 +792,8 @@ export function rankedObjectives(
         !o.id.endsWith("technique-daily")
       ) {
         o.rank = c.trainingPlan.rank;
-        o.workout = workoutPrescription(
+        o.workout = personalizedWorkout(
+          c,
           c.trainingPlan.rank,
           nextStrengthSession(c),
           c.trainingPlan.environment,
@@ -823,7 +824,7 @@ export function rankedObjectives(
     }
   const filtered = list.filter(
     (o) =>
-      (!o.id.startsWith("network-") || networking) &&
+      (o.scope === "class" || !o.id.startsWith("network-") || networking) &&
       (!o.id.startsWith("analysis-") || analysis),
   );
   for (const o of filtered)
@@ -845,7 +846,28 @@ export function rankedObjectives(
     ...universalTasks(),
     ...regimenRequests(c),
     ...regimenGoals(),
-    ...filtered,
+    ...filtered.flatMap((o) =>
+      o.cadence === "daily" &&
+      !o.workout &&
+      (o.scope === "profession" || ["INT", "WIS", "CHA"].includes(o.stat)) &&
+      !o.id.endsWith("technique-daily")
+        ? (["F", "E", "D", "C"] as const).map((rank) => ({
+            ...o,
+            id:
+              rank === "D" ? o.id : `${o.id}-proficiency-${rank.toLowerCase()}`,
+            rank,
+            requestGroup: o.id,
+            groupTitle: o.title,
+            minutes: {
+              F: "5–10 min",
+              E: "15 min",
+              D: "25 min",
+              C: "35–45 min",
+            }[rank],
+            ...requestReward(rank, "daily"),
+          }))
+        : [o],
+    ),
   ].map((o) => balanceRequest(c, o));
 }
 export function entryTrial(_c: Character, id: string): Objective | undefined {

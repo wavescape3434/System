@@ -207,3 +207,7 @@ These show the existing guild, class, assessment, Settings, and Journey features
 [Version 1.7 rules and content](../update-1.7.md) · [Verification](../verification-1.7.md)
 
 Browser viewport checks do not establish runtime verification on a physical Android device.
+
+## 1.26 ability and assessment views
+
+[Timed-mile entry](../proficiency-1.26/screens/mile-assessment.png) · [Reasoning](../proficiency-1.26/screens/reasoning.png) · [Spoken communication](../proficiency-1.26/screens/communication.png) · [Experienced home regimen](../proficiency-1.26/screens/experienced-regimen.png) · [Career proficiency](../proficiency-1.26/screens/career-proficiency.png) · [Desktop proficiency](../proficiency-1.26/screens/career-proficiency-desktop.png). These views use fictional samples; six scoped scans have no horizontal overflow, page errors or axe-core WCAG A/AA findings. [Research and verification](../proficiency-1.26/README.md).

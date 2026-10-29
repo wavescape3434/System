@@ -1,0 +1,17 @@
+{
+  "package": "com.theguild.personal",
+  "version": "1.26.0",
+  "versionCode": 28,
+  "bytes": 14126871,
+  "sha256": "a36a4dcb118620cd2a9541546da6ea661b1470d794538dee2bc49195086ea2a0",
+  "certificateSha256": "f6c745055e1d566d935ce766c749393e4936eca36f7e1d85c26d5176a65181e5",
+  "matchedWebFiles": 38,
+  "additionalPackagedFiles": [
+    "assets/public/cordova.js",
+    "assets/public/cordova_plugins.js"
+  ],
+  "recordAudioPermissionDeclared": true,
+  "minimumApi": 24,
+  "targetApi": 36,
+  "physicalDeviceTested": false
+}

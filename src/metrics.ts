@@ -12,6 +12,8 @@ export interface Assessment {
   chairStands: number | null;
   balanceSeconds: number | null;
   walkMetres: number | null;
+  mileSeconds?: number | null;
+  mileMode?: "walk" | "run";
   heightCm: number | null;
   massKg: number | null;
   liftKg: number | null;
@@ -318,17 +320,26 @@ export function assessmentResults(a: Assessment): MetricResult[] {
     "30 s · provisional balance reference",
   );
   const prediction = predictedWalk(a);
-  add(
-    "CON",
-    a.walkMetres,
-    prediction || 550,
-    `${a.walkMetres} m / 6 min`,
-    prediction
-      ? `${Math.round(prediction)} m · age/sex/height/mass prediction`
-      : "550 m · provisional adult reference",
-    prediction ? "published" : "provisional",
-    prediction ? (a.age! < 40 ? "walk-general" : "enright") : undefined,
-  );
+  if (a.mileSeconds != null)
+    add(
+      "CON",
+      (a.mileMode === "run" ? 600 : 960) / a.mileSeconds,
+      1,
+      `${Math.floor(a.mileSeconds / 60)}:${String(a.mileSeconds % 60).padStart(2, "0")} · one-mile ${a.mileMode || "walk"}`,
+      `${a.mileMode === "run" ? "10" : "16"} min · provisional game anchor, not an age/sex population mean or VO₂max estimate`,
+    );
+  else
+    add(
+      "CON",
+      a.walkMetres,
+      prediction || 550,
+      `${a.walkMetres} m / 6 min`,
+      prediction
+        ? `${Math.round(prediction)} m · age/sex/height/mass prediction`
+        : "550 m · provisional adult reference",
+      prediction ? "published" : "provisional",
+      prediction ? (a.age! < 40 ? "walk-general" : "enright") : undefined,
+    );
   for (const stat of ["INT", "WIS", "CHA"] as const) {
     const check = a.mental?.[stat];
     const score = check ? checkScore(stat, check.answers, check.formId) : null;
@@ -337,7 +348,9 @@ export function assessmentResults(a: Assessment): MetricResult[] {
       score,
       3,
       score === null ? "" : `${score}/5 · ${MIND_CHECKS[stat].name}`,
-      "3/5 · provisional game reference; not a population or clinical score",
+      stat === "CHA" && check?.formId?.includes("-v3-")
+        ? "3/5 · provisional self-review anchor; not an independently assessed communication or personality score"
+        : "3/5 · provisional game reference; not a population or clinical score",
     );
   }
   return results;
@@ -364,6 +377,15 @@ export function assessmentErrors(a: Assessment): string[] {
   if (a.heightCm !== null && a.heightCm <= 0)
     errors.push("Height must be greater than zero");
   if (
+    a.mileSeconds != null &&
+    (!Number.isInteger(a.mileSeconds) ||
+      a.mileSeconds < 120 ||
+      a.mileSeconds > 10800)
+  )
+    errors.push(
+      "Mile time must be between 2 and 180 minutes, in whole seconds",
+    );
+  if (
     a.strengthTest === "weighted" &&
     a.liftKg !== null &&
     a.liftReps !== null &&
@@ -382,6 +404,12 @@ export function validAssessment(input: unknown): input is Assessment {
   const a = input as Assessment;
   return (
     a.version === 2 &&
+    (a.mileSeconds === undefined ||
+      a.mileSeconds === null ||
+      (Number.isInteger(a.mileSeconds) &&
+        a.mileSeconds >= 120 &&
+        a.mileSeconds <= 10800)) &&
+    (a.mileMode === undefined || ["walk", "run"].includes(a.mileMode)) &&
     ["male", "female", "unspecified"].includes(a.sex) &&
     ["pushups", "chair", "weighted", "grip"].includes(a.strengthTest) &&
     ["floor", "knee", "incline", "wall"].includes(a.pushupStyle) &&

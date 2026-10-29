@@ -1,4 +1,5 @@
 import { refineTrainingGuidance } from "./training-guidance";
+import { applyProficiency } from "./proficiency";
 import { progressionLedger } from "./progression-ledger";
 import { validWorkoutPrescription } from "./training-prescriptions";
 import { workoutSummary } from "./training-regimen";
@@ -259,6 +260,7 @@ export interface JournalEntry {
   text: string;
 }
 export interface Character {
+  proficiencies?: Record<string, import("./proficiency").Proficiency>;
   trainingPlan?: import("./training-prescriptions").TrainingPlan;
   skillPlans?: import("./skill-plans").SkillPlans;
   version: 1;
@@ -1074,12 +1076,12 @@ export function legacyObjectives(c: Character): Objective[] {
   }
   for (const o of result) {
     o.scope ??=
-      o.id.startsWith("profession-") ||
-      o.id.startsWith("network-") ||
-      o.id.startsWith("analysis-")
-        ? "profession"
-        : o.category === p.name
-          ? "class"
+      o.id.startsWith(`${p.id}-`) && o.category === p.name
+        ? "class"
+        : o.id.startsWith("profession-") ||
+            o.id.startsWith("network-") ||
+            o.id.startsWith("analysis-")
+          ? "profession"
           : "universal";
     if (o.scope === "profession")
       o.careerCategory ??= o.id.startsWith("network-")
@@ -1103,7 +1105,7 @@ export function legacyObjectives(c: Character): Objective[] {
     careerCategory(c.profession).id === "business";
   const visible = result.filter(
     (o) =>
-      (!o.id.startsWith("network-") || technical) &&
+      (o.scope === "class" || !o.id.startsWith("network-") || technical) &&
       (!o.id.startsWith("analysis-") || analytical),
   );
   return visible;
@@ -1124,7 +1126,9 @@ export function objectives(c: Character): Objective[] {
     }
   return [...tasks, ...(c.calendarVersion === 1 ? extraObjectives(c) : [])].map(
     (raw) => {
-      const o = decorateRequest(calendarGoal(c, refineTrainingGuidance(raw)));
+      const o = decorateRequest(
+        calendarGoal(c, applyProficiency(refineTrainingGuidance(raw), c)),
+      );
       const taken = c.takenRequests?.find((r) => r.id === o.id);
       return o.persistent && taken
         ? { ...o, instanceId: taken.takenPeriod }
