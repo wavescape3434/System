@@ -211,3 +211,7 @@ Browser viewport checks do not establish runtime verification on a physical Andr
 ## 1.26 ability and assessment views
 
 [Timed-mile entry](../proficiency-1.26/screens/mile-assessment.png) · [Reasoning](../proficiency-1.26/screens/reasoning.png) · [Spoken communication](../proficiency-1.26/screens/communication.png) · [Experienced home regimen](../proficiency-1.26/screens/experienced-regimen.png) · [Career proficiency](../proficiency-1.26/screens/career-proficiency.png) · [Desktop proficiency](../proficiency-1.26/screens/career-proficiency-desktop.png). These views use fictional samples; six scoped scans have no horizontal overflow, page errors or axe-core WCAG A/AA findings. [Research and verification](../proficiency-1.26/README.md).
+
+## 1.27 adaptive activity views
+
+[Teacher starting sample](../adaptive-1.27/screens/teacher-work-sample.png) · [Adapted language request](../adaptive-1.27/screens/adapted-language.png) · [Independent gym loads](../adaptive-1.27/screens/separate-gym-loads.png) · [Chef profession exam](../adaptive-1.27/screens/chef-milestone.png) · [Desktop ability settings](../adaptive-1.27/screens/ability-settings-desktop.png). These use fictional characters and declared work results. [Methods and evidence](../adaptive-1.27/README.md).

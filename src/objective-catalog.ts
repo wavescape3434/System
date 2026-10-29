@@ -208,6 +208,33 @@ const DAILY: Series[] = [
   ],
 ];
 const groups: Record<string, [string, string[]]> = {
+  mobility: [
+    "Mobility control",
+    [
+      "u-mobility-5",
+      "practice-joint-control-f",
+      "practice-joint-control-e",
+      "practice-joint-control-d",
+      "practice-joint-control-c",
+    ],
+  ],
+  study: [
+    "Study practice",
+    ["u-read-5", "u-recall-15", "u-spaced-recall", "u-apply-concept"],
+  ],
+  balance: [
+    "Balance practice",
+    [
+      "u-balance-supported",
+      "u-balance-practice",
+      "u-balance-reach",
+      "u-balance-pattern",
+    ],
+  ],
+  pull: [
+    "Pulling practice",
+    ["u-pull-assisted", "u-pull-controlled", "u-pull-practice", "u-pullup-3"],
+  ],
   walk: ["Walking", ["u-walk-5", "u-walk-15", "u-walk-brisk"]],
   push: [
     "Pushup practice",
@@ -215,10 +242,15 @@ const groups: Record<string, [string, string[]]> = {
   ],
   squat: [
     "Squat practice",
-    ["u-chair-squat", "u-bodyweight-squat", "u-split-squat"],
+    [
+      "u-supported-squat",
+      "u-chair-squat",
+      "u-bodyweight-squat",
+      "u-split-squat",
+    ],
   ],
   running: ["Running", ["u-run-walk", "u-run-5k"]],
-  pull: ["Pullup progression", ["u-pullup-8", "u-pullup-12"]],
+  pullAchievement: ["Pullup progression", ["u-pullup-8", "u-pullup-12"]],
   bible: [
     "Bible study",
     [

@@ -1,0 +1,113 @@
+{
+  "version": "1.27.0",
+  "reviewDate": "2026-10-29",
+  "timezone": "America/Denver",
+  "unitChecks": 357,
+  "unitFiles": 32,
+  "unitFullRunPassed": true,
+  "browserWorkflows": 137,
+  "browserFullRun": {
+    "passed": 131,
+    "failed": 6
+  },
+  "browserTargetedRerun": {
+    "passed": 6,
+    "failed": 0
+  },
+  "dailyScenarios": 110,
+  "dailyAccountDays": 4950,
+  "regimenScenarios": 6,
+  "regimenAccountDays": 360,
+  "validatedSaves": 5058,
+  "duplicateDailyClaimsRefused": 4950,
+  "sourceSha256": {
+    "e2e/guild.spec.ts": "00acf8778c94f4aeee9490a2f00bc4e2ba750530e7478a76e073df205398c1cb",
+    "e2e/planning-recovery.spec.ts": "30520cf0c16bfe4f90700264a4ee9c3d4cf3ae42e8c2831776df215def85b7f7",
+    "e2e/proficiency.spec.ts": "5401c03ddd92bd529667a05488dbef7b2e64933680587c651967f1b7e8728c53",
+    "src/AbilitySettings.tsx": "08766634139b7b8dae32d7c8bee8fc936cb2c5d17ee1956427a0ae612872e6a1",
+    "src/App.tsx": "1a66145d707f8f3fcdc813e017c75cb67fcb1049a8e3371ad69ae374ab4aa15c",
+    "src/ClassExams.tsx": "e95e2a5f9364e4082ad2c852ec51140ed11d8a963854ad9b6c7ef0c43e6f8110",
+    "src/Help.tsx": "8f0e7a9dc0132588d4503ff01f9ff9ded0294aff1efee514645a1fa967c3ae75",
+    "src/Onboarding.tsx": "fa637f6e55ae9bd2c7052605ef4054b164a961f02c4ac4309aa3949f158306dd",
+    "src/Settings.tsx": "036d2769db698372c334e6e6123679a52864b3196d054aaeafd9c290f573eac2",
+    "src/TrainingRegimen.tsx": "a7e3e767f154f53430acad588e5c77b59b0ccce92fc61319421b6f3dab211349",
+    "src/WorkoutRecordForm.tsx": "28461963fb92f9d8c6b835d4cb1af877d014ce76b8db43eeffe3a172a80ff3f5",
+    "src/activity-results.ts": "3b0c12794bb25a42bc7d36e13cf17f04b6fd10d3a32096c0cf13f48c8140c728",
+    "src/domain.ts": "289b3c53b7fb2dc34c18333a356b24d97fc413bfda80acbc81528b85d4d8864e",
+    "src/exams.ts": "49e70f49e807eed88b69882729257a83273d1dfb9f2f07e51103ef2c46bc05d4",
+    "src/journey.ts": "c7704c2f71a66f811fdcd46f707124ee757be8095cc240139f19d947da408165",
+    "src/objective-catalog.ts": "373d535325e199184861c6cddcb16c17bb711e72b760c408a534411e892b669c",
+    "src/primary-store.ts": "e7b8ae9c3e648dba3a59d94d4b72dc5904ca68f0df39e314d4fe89d046d4c02c",
+    "src/proficiency.test.ts": "cb141adca2c461d9d97762191dce94e566f39df0dd2f3a44429e12696c9f6b74",
+    "src/proficiency.ts": "766bf1a7f4731a490dae489b30ae02f51d7e9830983838d348e3b6223c1f180e",
+    "src/regimen.css": "00946786e54acbb95a55fbfd6aab7c6555553d6322b746afae1a2502e672a16a",
+    "src/registration-draft.ts": "a96b4ade21614d49d5ae0dbf95582bed33f565e92df634d306e33a8f03bdd070",
+    "src/storage.ts": "9a66b03fbe203827d61387e24d5ea74a3bbf9f32581ce6414d68a071e29649aa",
+    "src/training-guidance.ts": "7e2679e314e58051ca1385dcde4805f0da59c1600c36f9d63a42f2b0b2bce737",
+    "src/training-prescriptions.ts": "05a4ec03fd3615f85f668bfbf06d6f68b30a2a77482566d0778eae85bc67c0dc",
+    "src/training-regimen.ts": "42a8e8ca214df9373e719ab14c85a5333a21681731750d7d7e292179f21f6c20",
+    "src/training-tasks.ts": "d991d2c3be8414e58292276e9c7b09b146d7eb19ba9c2af734b224f193c62200",
+    "e2e/adaptive-ability.spec.ts": "2c292959aecd39a8ffb66e8f0ef81f2a466b9a639c1245a62e327e71d7f16345",
+    "scripts/capture-adaptive-ability.mjs": "57f151c4ca8804bb777bccb9901ed1f0f080ae4a77471f9ccc141c8ae7a0ae5b",
+    "scripts/plot-adaptive-ability.py": "9c6c60c3392036401479c827069415eb17629d013dfb7ebe7e9e7ce324d0b9d7",
+    "scripts/simulate-adaptive-ability.mjs": "7b0eb061934d42fd1155b31a6f1bc7b36cbf40dfeda81cd9078ae8b8a53531ea",
+    "src/AbilityCheckForm.tsx": "fc3d8a770298238edb2d1a276ab6b3664d5785278d3be9ea5ca948f20cbe1cc0",
+    "src/ability-rubrics.ts": "caeeff2cd81e4ad945fea50b19bb4a5bb35fb278bd755b18d2218ad153f6a5b5",
+    "src/adaptive-ability.test.ts": "fe0b628c44fe9d6d5a36b9ef739cc6aab25433c4bc465e32d6107ba122ae42aa",
+    "src/adaptive-ability.ts": "32d8f4c7ed163957da759543feb8a8919eca84c644c6be8ba97be6991af7bc8d",
+    "src/workout-calibration.ts": "db7096950cf145a75e8f4dbcefb1407866227cf5098321cc1e55f0bd66f4e937"
+  },
+  "screenScans": {
+    "errors": [],
+    "scans": [
+      {
+        "name": "teacher-work-sample",
+        "width": 390,
+        "overflow": false,
+        "violations": []
+      },
+      {
+        "name": "adapted-language",
+        "width": 390,
+        "overflow": false,
+        "violations": []
+      },
+      {
+        "name": "separate-gym-loads",
+        "width": 390,
+        "overflow": false,
+        "violations": []
+      },
+      {
+        "name": "chef-milestone",
+        "width": 390,
+        "overflow": false,
+        "violations": []
+      },
+      {
+        "name": "ability-settings-desktop",
+        "width": 1440,
+        "overflow": false,
+        "violations": []
+      }
+    ]
+  },
+  "apk": {
+    "package": "com.theguild.personal",
+    "version": "1.27.0",
+    "versionCode": 29,
+    "bytes": 14088638,
+    "sha256": "c01f5177cf81c2cfa006facccd1d06bfef4d07aac5f64ffcd5c94f0d3c11f248",
+    "certificateSha256": "f6c745055e1d566d935ce766c749393e4936eca36f7e1d85c26d5176a65181e5",
+    "matchedWebFiles": 38,
+    "additionalPackagedFiles": [
+      "assets/public/cordova.js",
+      "assets/public/cordova_plugins.js"
+    ],
+    "recordAudioPermissionDeclared": true,
+    "minimumApi": 24,
+    "targetApi": 36,
+    "physicalDeviceTested": false
+  },
+  "physicalDeviceTested": false
+}

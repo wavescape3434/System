@@ -1,4 +1,5 @@
 import { TOWN_GEAR } from "./world-catalog";
+import { validAbilityCheck } from "./adaptive-ability";
 import { validProficiencies } from "./proficiency";
 import {
   canonicalWorkout,
@@ -46,6 +47,11 @@ export function validateCharacter(x: unknown): x is Character {
     const path = CLASSES.find((p) => p.id === c.activeClass);
     return (
       c.version === 1 &&
+      (c.abilityChecks === undefined ||
+        (Array.isArray(c.abilityChecks) &&
+          new Set(c.abilityChecks.map((r) => r.id)).size ===
+            c.abilityChecks.length &&
+          c.abilityChecks.every(validAbilityCheck))) &&
       (c.proficiencies === undefined || validProficiencies(c.proficiencies)) &&
       (c.skillPlans === undefined || validSkillPlans(c.skillPlans)) &&
       str(c.id) &&

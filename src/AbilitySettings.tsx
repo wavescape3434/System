@@ -1,8 +1,10 @@
+import AbilityCheckForm from "./AbilityCheckForm";
+import { abilityKey } from "./adaptive-ability";
 import { useState } from "react";
 import type { Character, Objective } from "./domain";
 import {
   PROFICIENCY_LEVELS,
-  proficiencyKey,
+  activeProficiency,
   proficiencyFeedback,
 } from "./proficiency";
 import type { Proficiency } from "./proficiency";
@@ -26,7 +28,7 @@ export default function AbilitySettings({
             o.kind !== "class-trial" &&
             !o.id.includes("technique-daily"),
         )
-        .map((o) => [proficiencyKey(c, o), o]),
+        .map((o) => [abilityKey(c, o), o]),
     ).entries(),
   ].sort((a, b) => {
     const priority = (o: Objective) =>
@@ -35,9 +37,24 @@ export default function AbilitySettings({
       priority(a[1]) - priority(b[1]) || a[1].title.localeCompare(b[1].title)
     );
   });
+  const probes = [
+    ...new Map(
+      all
+        .filter(
+          (o) =>
+            o.cadence === "daily" &&
+            !o.workout &&
+            o.kind !== "class-trial" &&
+            !o.id.includes("technique-daily"),
+        )
+        .map((o) => [abilityKey(c, o), o]),
+    ).entries(),
+  ];
+  const [probeKey, setProbeKey] = useState(probes[0]?.[0] || "");
+  const probe = probes.find(([k]) => k === probeKey)?.[1];
   const [key, setKey] = useState(choices[0]?.[0] || ""),
     [draft, setDraft] = useState<Proficiency>(
-      c.proficiencies?.[key] || {
+      (choices[0] ? activeProficiency(c, choices[0][1]) : undefined) || {
         rank: "F",
         topic: "",
         criterion: "",
@@ -54,6 +71,24 @@ export default function AbilitySettings({
         Choose difficulty from what you can do now. Guild rank and character
         stats do not set your real-world ability.
       </p>
+      <label>
+        Activity to calibrate
+        <select
+          aria-label="Activity to calibrate"
+          value={probeKey}
+          onChange={(e) => setProbeKey(e.target.value)}
+        >
+          {probes.map(([k, o]) => (
+            <option key={k} value={k}>
+              {o.category} · {o.groupTitle || o.title}
+            </option>
+          ))}
+        </select>
+      </label>
+      {probe && (
+        <AbilityCheckForm key={probeKey} c={c} o={probe} update={update} />
+      )}
+      <h3>Manual starting plan</h3>
       <form
         onSubmit={async (e) => {
           e.preventDefault();
@@ -91,7 +126,9 @@ export default function AbilitySettings({
               const next = e.target.value;
               setKey(next);
               setDraft(
-                c.proficiencies?.[next] || {
+                (choices.find(([k]) => k === next)
+                  ? activeProficiency(c, choices.find(([k]) => k === next)![1])
+                  : undefined) || {
                   rank: "F",
                   topic: "",
                   criterion: "",

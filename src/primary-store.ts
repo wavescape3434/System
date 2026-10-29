@@ -8,6 +8,7 @@ import {
 export const PRIMARY_DATABASE = "the-guild.primary.v1";
 export const HISTORY_FIELDS = [
   "completions",
+  "abilityChecks",
   "journeyEvents",
   "journal",
   "assessmentHistory",

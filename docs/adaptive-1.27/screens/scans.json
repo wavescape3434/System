@@ -1,0 +1,35 @@
+{
+  "errors": [],
+  "scans": [
+    {
+      "name": "teacher-work-sample",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "adapted-language",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "separate-gym-loads",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "chef-milestone",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "ability-settings-desktop",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    }
+  ]
+}

@@ -37,6 +37,12 @@ Browser tests use `/usr/bin/chromium` by default. Set `CHROMIUM_PATH` to your Ch
 
 These are scripted app outcomes, not customer interviews or predicted real-world gains. The study reproduces a Network Weaver scope defect and records schedule/reward, class-lineage and later career-depth opportunities. That study used app 1.25.0; its historical results are unchanged by later releases.
 
+## Version 1.27.0
+
+Performed ability samples and comparable results now adapt future work across exercise, learning, communication, judgment, all twenty profession categories and all twenty-five vocations. Each movement or subject keeps its own comparison; profession exams use profession work. [Changes](docs/update-1.27.md) · [Methods, simulations and screens](docs/adaptive-1.27/README.md) · [Verification](docs/verification-1.27.md).
+
+Android **1.27.0 / code 29** retains the package and signing certificate. Exact cutoffs and rubrics are provisional practice rules, not validated norms or guaranteed human improvement. Google setup and physical Android checks remain outstanding.
+
 ## Version 1.26.0
 
 Ability-based objective selection, independent home exercise setups, F–C career/vocation work, specific subject/rubric profiles, imperial-default mile-time entry and new reasoning/judgment/spoken-communication checks. Accepted work and earned progress remain. [Research, 90 thirty-day software ledgers and screenshots](docs/proficiency-1.26/README.md) · [Changes](docs/update-1.26.md) · [Verification](docs/verification-1.26.md) · [Fantasy stat proposal](docs/proficiency-1.26/STAT-PROPOSAL.md).

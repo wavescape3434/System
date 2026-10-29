@@ -1,3 +1,5 @@
+import { validAbilityCheck } from "./adaptive-ability";
+import type { AbilityCheck } from "./adaptive-ability";
 import type { Baseline } from "./domain";
 import { CLASSES } from "./domain";
 import { PROFESSIONS } from "./professions";
@@ -6,6 +8,7 @@ import { validMentalFormId } from "./exam-bank";
 import { findAppearance } from "./appearance-catalog";
 export const REGISTRATION_DRAFT_KEY = "the-guild.registration-draft.v1";
 export interface RegistrationDraft {
+  abilityChecks?: AbilityCheck[];
   careerAbility?: string;
   careerTopic?: string;
   step: number;
@@ -23,6 +26,10 @@ export function loadRegistrationDraft(): RegistrationDraft | null {
       localStorage.getItem(REGISTRATION_DRAFT_KEY) || "null",
     );
     return d &&
+      (d.abilityChecks === undefined ||
+        (Array.isArray(d.abilityChecks) &&
+          d.abilityChecks.length <= 100 &&
+          d.abilityChecks.every(validAbilityCheck))) &&
       (d.careerAbility === undefined ||
         ["", "F", "E", "D", "C"].includes(d.careerAbility)) &&
       (d.careerTopic === undefined ||

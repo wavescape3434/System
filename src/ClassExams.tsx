@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { CAREER_RUBRICS } from "./ability-rubrics";
+import { careerCategory } from "./careers";
 import type { Character } from "./domain";
 import { checkScore } from "./metrics";
 import {
@@ -32,7 +34,10 @@ export default function ClassExams({
     [mode, setMode] = useState("quiz"),
     [route, setRoute] = useState<ExamRoute>("improvement");
   const targets = examTargets(c),
-    physical = !!target && ["STR", "DEX", "CON"].includes(target.stat),
+    physical =
+      !!target &&
+      target.scope === "class" &&
+      ["STR", "DEX", "CON"].includes(target.stat),
     p = FITNESS_PROTOCOLS.find((p) => p.id === protocol),
     before =
       target && p
@@ -106,12 +111,13 @@ export default function ClassExams({
               onClick={() => {
                 setTarget(t);
                 setProtocol(
-                  FITNESS_PROTOCOLS.find((p) => p.stat === t.stat)?.id ||
-                    `work-${t.stat}`,
+                  (t.scope === "class"
+                    ? FITNESS_PROTOCOLS.find((p) => p.stat === t.stat)?.id
+                    : undefined) || `work-${t.stat}`,
                 );
                 setRaw("");
                 setNote("");
-                setMode("quiz");
+                setMode(t.scope === "profession" ? "work" : "quiz");
                 setRoute("improvement");
               }}
             >
@@ -207,7 +213,7 @@ export default function ClassExams({
           )}
           {last?.status !== "passed" && (
             <>
-              {!physical && (
+              {!physical && target.scope === "class" && (
                 <div className="tabs">
                   <button
                     className={mode === "quiz" ? "active" : ""}
@@ -235,7 +241,25 @@ export default function ClassExams({
                   </button>
                 </div>
               )}
-              {!physical && mode === "quiz" ? (
+              {target.scope === "profession" && (
+                <section className="profession-exam-brief">
+                  <h3>Profession work sample</h3>
+                  <p>
+                    Use the same task type, source level, ten-minute limit and
+                    marking guide for the comparison. Count correct outcomes
+                    against the rubric.
+                  </p>
+                  <ul>
+                    {(
+                      CAREER_RUBRICS[careerCategory(target.owner).id] ||
+                      CAREER_RUBRICS.general
+                    ).map((criterion) => (
+                      <li key={criterion}>{criterion}</li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+              {!physical && target.scope === "class" && mode === "quiz" ? (
                 <>
                   <div className="exam-comparison">
                     {(() => {
@@ -309,7 +333,9 @@ export default function ClassExams({
                   <p>
                     {physical
                       ? p?.instructions
-                      : "Choose a repeatable solo work sample: verified correct problems for INT, evidence-based decisions for WIS, or clearly conveyed points in a recorded explanation for CHA. Use a fixed ten-minute window and a documented marking guide."}
+                      : target.scope === "profession"
+                        ? "Choose a repeatable solo task from your profession. Use a fixed ten-minute window and count correctly completed outcomes against the same documented marking guide. Keep the task type and source difficulty comparable."
+                        : "Choose a repeatable solo work sample: verified correct problems for INT, evidence-based decisions for WIS, or clearly conveyed points in a recorded explanation for CHA. Use a fixed ten-minute window and a documented marking guide."}
                   </p>
                   {before && activeRoute === "improvement" && (
                     <div className="exam-comparison">

@@ -3,8 +3,15 @@ import { completeTaken, takenObjectives, isComplete } from "./domain";
 import { requestProgress } from "./training-tasks";
 import type { PerformanceSeries } from "./performance-history";
 import { validWorkoutLog, canonicalWorkout } from "./training-prescriptions";
+import {
+  validPracticeEvidence,
+  abilityKey,
+  abilityRecommendation,
+} from "./adaptive-ability";
+import type { PracticeEvidence } from "./adaptive-ability";
 
 export interface ActivityResult {
+  practice?: PracticeEvidence;
   topic?: string;
   attempted?: number;
   correct?: number;
@@ -19,7 +26,7 @@ export interface ActivityResult {
   output?: string;
 }
 export type ResultDraft = Record<
-  Exclude<keyof ActivityResult, "workout">,
+  Exclude<keyof ActivityResult, "workout" | "practice">,
   string
 >;
 export const EMPTY_RESULT: ResultDraft = {
@@ -50,11 +57,14 @@ export function validActivityResult(input: unknown): input is ActivityResult {
   const r = input as ActivityResult;
   if (
     Object.keys(r).some(
-      (k) => k !== "workout" && !Object.hasOwn(EMPTY_RESULT, k),
+      (k) =>
+        k !== "workout" && k !== "practice" && !Object.hasOwn(EMPTY_RESULT, k),
     )
   )
     return false;
   if (r.workout !== undefined && !validWorkoutLog(r.workout)) return false;
+  if (r.practice !== undefined && !validPracticeEvidence(r.practice))
+    return false;
   if (
     ["exercise", "output", "topic"].some((k) => {
       const value = r[k as "exercise" | "output" | "topic"];
@@ -121,7 +131,7 @@ export function resultDraft(
 ): ResultDraft {
   const draft = { ...EMPTY_RESULT };
   for (const [key, value] of Object.entries(result || {})) {
-    if (key === "workout") continue;
+    if (key === "workout" || key === "practice") continue;
     const factor =
       imperial && key === "loadKg"
         ? 2.2046226218
@@ -142,9 +152,18 @@ export function completeWithResult(
   now = new Date(),
 ): Character {
   if (result && !validActivityResult(result)) return c;
-  const actual = result?.workout
-    ? takenObjectives(c, now).find((r) => r.id === o.id)
-    : undefined;
+
+  const actual =
+    result?.workout || result?.practice
+      ? takenObjectives(c, now).find((r) => r.id === o.id)
+      : undefined;
+  if (
+    result?.practice &&
+    (!actual ||
+      actual.cadence !== "daily" ||
+      result.practice.level !== actual.rank)
+  )
+    return c;
   if (
     result?.workout &&
     (!actual?.workout ||
@@ -154,16 +173,42 @@ export function completeWithResult(
     return c;
   const next = completeTaken(c, o, now);
   if (next === c || !result) return next;
-  return {
+  const recorded = {
     ...next,
     completions: next.completions.map((x, i) =>
       i === next.completions.length - 1 ? { ...x, result: { ...result } } : x,
     ),
   };
+  if (!result.practice || !actual) return recorded;
+  const receipt = recorded.completions.at(-1)!;
+  const owner = {
+    ...recorded,
+    activeClass: receipt.classId,
+    profession: receipt.profession || recorded.profession,
+    vocation: receipt.vocationId || null,
+  };
+  const key = abilityKey(owner, actual);
+  const level =
+    abilityRecommendation(owner, actual, result.practice.subject, now)?.level ||
+    result.practice.level;
+  return {
+    ...recorded,
+    proficiencies: {
+      ...recorded.proficiencies,
+      [key]: {
+        rank: level,
+        topic: result.practice.subject.trim(),
+        criterion: `Compare the same activity against ${result.practice.source.trim()}`,
+        reviewedAt: now.toISOString(),
+      },
+    },
+  };
 }
 export function resultSummary(r?: ActivityResult, imperial = false): string {
   if (!r) return "";
   return [
+    r.practice &&
+      `${r.practice.subject} · ${r.practice.source} · ${r.practice.criteriaMet}/${r.practice.criteriaTotal} criteria · ${r.practice.level} practice${r.practice.unfamiliar && r.practice.independent ? " · unfamiliar, independent" : ""}`,
     r.workout &&
       `${r.workout.prescription.exercises.length} movements · session ${r.workout.prescription.session} · ${r.workout.prescription.rank} rank`,
     r.workout &&

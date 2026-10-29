@@ -2,6 +2,7 @@ import { classPractice, classSecondaryPractice } from "./class-practice";
 import {
   regimenRequests,
   regimenGoals,
+  regimenWalkingRequest,
   hardStrength,
   nextStrengthSession,
   workoutSummary,
@@ -29,6 +30,78 @@ type TaskRow = [
   number?,
 ];
 const ROWS: TaskRow[] = [
+  [
+    "balance-supported",
+    "Supported balance",
+    "Beside a fixed support, complete two sets of eight gentle weight shifts and three supported ten-second single-leg holds per side.",
+    "F",
+    "DEX",
+    "5 min",
+    "balance",
+  ],
+  [
+    "balance-reach",
+    "Balance and controlled reaches",
+    "Beside stable support, complete three twenty-second single-leg holds per side with slow reaches toward three nearby floor targets. Count support touches and errors.",
+    "D",
+    "DEX",
+    "3 rounds / side",
+    "balance",
+  ],
+  [
+    "balance-pattern",
+    "Linked balance patterns",
+    "Complete three controlled rounds per side linking a supported single-leg stance, shallow knee bend and short three-direction reach. Keep the same targets and reduce errors before speed.",
+    "C",
+    "DEX",
+    "3 controlled rounds",
+    "balance",
+  ],
+  [
+    "pull-assisted",
+    "Assisted pulling foundation",
+    "With a secure bar and stable foot support, complete one set of five controlled foot-assisted pulls. Keep support stable and record assistance. Use a measured row in the weights regimen when this setup is unavailable.",
+    "F",
+    "STR",
+    "1 set × 5",
+    "pull",
+    "pullup-bar",
+    48,
+  ],
+  [
+    "pull-controlled",
+    "Controlled assisted pulls",
+    "Complete two sets of four to six controlled assisted pulls using the same secure bar, stable foot support and assistance. Rest two minutes and leave two clean reps possible.",
+    "E",
+    "STR",
+    "2 sets × 4–6",
+    "pull",
+    "pullup-bar",
+    48,
+  ],
+  [
+    "pull-practice",
+    "Strict pull practice",
+    "Complete three sets of three to six controlled strict pullups, resting two to three minutes. Finish with two clean reps possible; use the assisted tier if minimum reps cannot be performed with that reserve.",
+    "D",
+    "STR",
+    "3 sets × 3–6",
+    "pull",
+    "pullup-bar",
+    48,
+    4,
+  ],
+  [
+    "supported-squat",
+    "Supported chair stands",
+    "Complete one set of five controlled chair sit-to-stands beside stable support, using hand assistance if needed. Record chair height, assistance and clean reps left.",
+    "F",
+    "STR",
+    "1 set × 5",
+    "legs",
+    "bodyweight",
+    48,
+  ],
   [
     "walk-5",
     "Walk for 5 minutes",
@@ -197,11 +270,11 @@ const ROWS: TaskRow[] = [
   ],
   [
     "pullup-3",
-    "Pullups · 3 × 3",
-    "Complete three sets of three strict pullups from a controlled hang, with no kipping and adequate rest.",
+    "Progressive pulling strength",
+    "Complete three sets of six to ten strict pulling repetitions using a slow lowering phase or a familiar measured added load. Rest two to three minutes and keep two clean reps possible. If minimum reps are not controlled, use the strict or assisted practice tier.",
     "C",
     "STR",
-    "3 sets × 3",
+    "3 sets × 6–10",
     "pull",
     "pullup-bar",
     48,
@@ -803,7 +876,11 @@ export function rankedObjectives(
           ` Complete the class focus: ${CLASSES.find((p) => p.id === c.activeClass)!.goal}`;
         o.minutes = `${o.workout.minutes} min`;
         o.equipment =
-          c.trainingPlan.environment === "home" ? "bodyweight" : "weights";
+          c.trainingPlan.environment === "home"
+            ? o.workout.calibration?.pullLevel
+              ? "pullup-bar"
+              : "bodyweight"
+            : "weights";
         o.cooldownHours = 48;
         // Easy technique review is separate practice, not a hard strength session.
         o.family = `class-${c.activeClass}-strength`;
@@ -842,14 +919,16 @@ export function rankedObjectives(
       "Independently tailor and submit one relevant job application, or improve a portfolio work sample against a target role's requirements.";
   const monthly = filtered.find((o) => o.id === "profession-monthly");
   if (monthly) monthly.careerCategory = careerCategory(c.profession).id;
+  const personalWalks = regimenWalkingRequest(c);
   return [
     ...universalTasks(),
     ...regimenRequests(c),
     ...regimenGoals(),
+    ...personalWalks,
     ...filtered.flatMap((o) =>
       o.cadence === "daily" &&
       !o.workout &&
-      (o.scope === "profession" || ["INT", "WIS", "CHA"].includes(o.stat)) &&
+      (o.scope === "profession" || o.scope === "class") &&
       !o.id.endsWith("technique-daily")
         ? (["F", "E", "D", "C"] as const).map((rank) => ({
             ...o,
@@ -868,7 +947,13 @@ export function rankedObjectives(
           }))
         : [o],
     ),
-  ].map((o) => balanceRequest(c, o));
+  ].map((o) => {
+    const shaped = balanceRequest(c, o);
+    const walk = personalWalks.find((w) => w.id === o.id);
+    return walk
+      ? { ...shaped, xp: Math.min(150, walk.xp), gold: walk.gold }
+      : shaped;
+  });
 }
 export function entryTrial(_c: Character, id: string): Objective | undefined {
   const p = CLASSES.find((p) => p.id === id);
@@ -1058,6 +1143,11 @@ export function requestProgress(c: Character, o: Objective, now = new Date()) {
             TASK_RANKS.indexOf(o.practice.minimumRank)
         )
           return false;
+        if (
+          o.practice?.family === "u-reading" &&
+          ["u-reading", "u-study", "extra-retrieval"].includes(x.family || "")
+        )
+          return true;
         if (o.practice?.family)
           return (
             x.family === o.practice.family ||

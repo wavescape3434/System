@@ -93,15 +93,17 @@ export default function TrainingRegimen({
       .reverse();
   const walkingMinutes =
     plan.walkMinutes || ({ F: 5, E: 15, D: 30, C: 30 } as const)[plan.rank];
-  const walk = all.find(
-    (o) =>
-      o.id ===
-      (walkingMinutes >= 30
-        ? "u-walk-brisk"
-        : walkingMinutes >= 15
-          ? "u-walk-15"
-          : "u-walk-5"),
-  );
+  const walk =
+    all.find((o) => o.id === `u-walk-${walkingMinutes}`) ||
+    all.find(
+      (o) =>
+        o.id ===
+        (walkingMinutes >= 30
+          ? "u-walk-brisk"
+          : walkingMinutes >= 15
+            ? "u-walk-15"
+            : "u-walk-5"),
+    );
   const save = async () => {
     if (!validTrainingPlan(draft)) {
       setError("Choose a valid start date and training rank.");
@@ -147,6 +149,16 @@ export default function TrainingRegimen({
           }}
         >
           <h3>Balanced strength & fitness</h3>
+          <label>
+            <input
+              type="checkbox"
+              checked={draft.automaticAbility !== false}
+              onChange={(e) =>
+                setDraft({ ...draft, automaticAbility: e.target.checked })
+              }
+            />
+            Adapt future exercises from comparable training results
+          </label>
           <p>Two strength days · five walking days · one recovery day</p>
           <label>
             Strength request rank
@@ -287,7 +299,7 @@ export default function TrainingRegimen({
                 setDraft({ ...draft, walkMinutes: Number(e.target.value) })
               }
             >
-              {[5, 10, 15, 20, 25, 30].map((n) => (
+              {[5, 10, 15, 20, 25, 30, 45, 60].map((n) => (
                 <option key={n} value={n}>
                   {n} minutes
                 </option>
@@ -364,6 +376,19 @@ export default function TrainingRegimen({
               return (
                 <li key={e.id}>
                   <h4>{e.name}</h4>
+                  {e.suggestedLoadKg && (
+                    <small>
+                      Suggested next load:{" "}
+                      {Math.round(
+                        e.suggestedLoadKg *
+                          (c.preferences?.units === "imperial"
+                            ? 2.2046226218
+                            : 1) *
+                          10,
+                      ) / 10}{" "}
+                      {c.preferences?.units === "imperial" ? "lb" : "kg"}
+                    </small>
+                  )}
                   <b>
                     {e.sets} × {e.min}–{e.max}
                     {e.perSide ? " each side" : ""} · rest {e.restSeconds} sec

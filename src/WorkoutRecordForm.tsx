@@ -93,6 +93,13 @@ export default function WorkoutRecordForm({
           <legend>
             {i + 1}. {e.name}
           </legend>
+          {e.suggestedLoadKg && (
+            <p>
+              Suggested next load:{" "}
+              {Math.round(e.suggestedLoadKg * factor * 10) / 10}{" "}
+              {imperial ? "lb" : "kg"}. Record the load actually used.
+            </p>
+          )}
           <label>
             Setup / variation
             <input

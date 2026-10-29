@@ -9,8 +9,16 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
     page: "objectives",
     sections: [
       [
-        "Setting proficiency",
-        "Open Objectives → Ability settings or Settings → Ability. Select a class focus, profession, vocation or activity, then name the specific subject, starting proficiency and a checkable success criterion/source. F uses a worked example; E familiar independent practice; D unfamiliar standard work; C constrained application. The board suggests the matching variant. Two separate-day checked results at the same topic/rank can suggest reviewing difficulty, but never change it automatically. The 85%/60% thresholds are practice heuristics, not validated mastery boundaries. Taken requests keep their original contracts.",
+        "Checking current ability",
+        "Open a request → Check current ability, or Objectives → Ability settings. Perform a sample at a suitable difficulty, name the subject and comparison source, and mark the criteria actually met. F is supported practice; E familiar independent work; D unfamiliar standard work; C constrained application. The result selects a future request variant without awarding XP or stats. Missing evidence starts with a low-tier probe; it does not establish that you are a beginner. You can choose another tier or set a manual starting plan. Taken requests keep their accepted contracts.",
+      ],
+      [
+        "Automatic difficulty",
+        "Opt into Use this result to adapt future work when submitting a request. Two independent results on different days at 85% or above suggest the next daily tier, up to C. Mental and career practice also requires unfamiliar work; physical practice can repeat the same exercise. Below 60%, assisted work, or familiar-only mental practice suggests a prerequisite. Checks compare the same activity, subject, source version and tier within 90 days; changing any of those starts a new comparison. Actual correct/attempted counts take precedence over self-rated criteria. Time alone never proves proficiency. These thresholds are authored practice heuristics, not validated mastery boundaries.",
+      ],
+      [
+        "Different activities and professions",
+        "Language, writing, Scripture study, judgment, communication and coordination keep their own practice instructions and comparison records. Each profession category has a four-part work rubric, and vocations retain their focused work. Proficiency in one subject does not promote unrelated subjects or subskills. C-tier success calls for harder source material, transfer or a prepared project rather than endless extra daily volume. Recovery habits keep maintenance doses. Profession milestone exams compare actual profession work, including roles associated with physical game stats.",
       ],
     ],
   },
@@ -35,11 +43,11 @@ const TOPICS: { title: string; page?: Page; sections: [string, string][] }[] = [
       ],
       [
         "Choosing difficulty",
-        "F starts with one work set and easy supported movements. E uses two sets, D builds repetition consistency and C uses three challenging sets. A recorded floor-pushup or bench assessment can suggest E session volume; otherwise the default is F. Exercise setup is separate: 8–29 floor pushups suggest floor practice, while 30+ suggests a harder floor variation. Independently calibrate legs, hips and core in Edit plan. Choose F when returning after a long break. Those cutoffs are conservative game suggestions, not population norms or a full-body fitness diagnosis. Adjust variation or load so the prescribed reps leave the stated clean repetitions in reserve. Best effort means repeatable quality and recovery, not taking every set to failure.",
+        "F starts with one work set. E uses two sets, D builds repetition consistency and C uses three challenging sets. Starting assessments suggest session volume and relevant setups separately: pushing, chair stands, pullups and balance do not stand in for each other. Automatic exercise progression adapts pressing, rows, legs, hinges and core independently from comparable logs. Edit plan can override the starting setup or disable automatic progression for a deliberate recovery plan. Bench-to-home suggestions are provisional trial setups, not a tested equivalence. Adjust variation or load to leave the stated clean repetitions in reserve; reduce it if that is not achievable.",
       ],
       [
         "Progression and results",
-        "Record every work set, setup, external load and clean reps left. After two comparable top-range sessions on separate days, change one variable: reps, then a harder variation or a conservative 2–5% load increase when available. Four logged days spanning at least ten days, both A/B sessions and strong recent results trigger a rank-review prompt. The prompt never increases base stats or changes the plan automatically. Weeks 1–2 emphasize consistency and control; later checks compare the same movements. Individual improvement varies; the app does not promise a gain per week.",
+        "Record every work set, setup, external load and clean reps left. With automatic progression enabled, two comparable top-range sessions at least 48 hours apart and with two clean reps left suggest a harder bodyweight setup or 2.5% more external load for that movement. Core A/B patterns are compared separately. A zero-reserve loaded set suggests 5% less next time. Review suggested loads against equipment increments and recovery; log the actual load used. Self-resistance rows cannot establish measurable overload. Session-volume rank remains a separate plan choice. No log changes base stats or guarantees a real-world rate of improvement.",
       ],
       [
         "Home pulling",

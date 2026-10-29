@@ -5,7 +5,16 @@ export type TrainingEnvironment = "home" | "weights" | "gym";
 export type MovementLevels = Partial<
   Record<"squat" | "hinge" | "core", 1 | 2 | 3 | 4>
 >;
+export interface WorkoutCalibration {
+  pullLevel?: 1 | 2 | 3 | 4;
+  push: 1 | 2 | 3 | 4;
+  levels?: MovementLevels;
+  loads?: Partial<
+    Record<"push" | "squat" | "split-squat" | "row" | "hinge" | "core", number>
+  >;
+}
 export interface TrainingPlan {
+  automaticAbility?: boolean;
   movementLevels?: MovementLevels;
   pushLevel?: 1 | 2 | 3 | 4;
   walkMinutes?: number;
@@ -15,6 +24,7 @@ export interface TrainingPlan {
   environment: TrainingEnvironment;
 }
 export interface ExercisePrescription {
+  suggestedLoadKg?: number;
   id: string;
   name: string;
   sets: number;
@@ -28,7 +38,8 @@ export interface ExercisePrescription {
 }
 export interface WorkoutPrescription {
   movementLevels?: MovementLevels;
-  version: 1 | 2;
+  version: 1 | 2 | 3;
+  calibration?: WorkoutCalibration;
   pushLevel?: 1 | 2 | 3 | 4;
   rank: RegimenRank;
   session: "A" | "B";
@@ -273,13 +284,15 @@ export const validTrainingPlan = (v: unknown): v is TrainingPlan => {
   if (
     !p ||
     p.version !== 1 ||
+    (p.automaticAbility !== undefined &&
+      typeof p.automaticAbility !== "boolean") ||
     (p.movementLevels !== undefined &&
       !validMovementLevels(p.movementLevels)) ||
     (p.pushLevel !== undefined && ![1, 2, 3, 4].includes(p.pushLevel)) ||
     (p.walkMinutes !== undefined &&
       (!Number.isInteger(p.walkMinutes) ||
         p.walkMinutes < 5 ||
-        p.walkMinutes > 30 ||
+        p.walkMinutes > 60 ||
         p.walkMinutes % 5 !== 0)) ||
     !REGIMEN_RANKS.includes(p.rank) ||
     !["home", "weights", "gym"].includes(p.environment) ||
@@ -304,12 +317,25 @@ export function validWorkoutPrescription(v: unknown): v is WorkoutPrescription {
   const p = v as WorkoutPrescription;
   if (
     !p ||
-    ![1, 2].includes(p.version) ||
+    ![1, 2, 3].includes(p.version) ||
     !REGIMEN_RANKS.includes(p.rank) ||
     !["A", "B"].includes(p.session) ||
     !["home", "weights", "gym"].includes(p.environment)
   )
     return false;
+  if (p.version === 3)
+    return (
+      validWorkoutCalibration(p.calibration) &&
+      canonicalWorkout(p) ===
+        canonicalWorkout(
+          calibratedWorkoutRecipe(
+            p.rank,
+            p.session,
+            p.environment,
+            p.calibration!,
+          ),
+        )
+    );
   if (
     p.version === 2 &&
     (![1, 2, 3, 4].includes(p.pushLevel!) ||
@@ -468,5 +494,86 @@ function calibrateMovement(
     cues:
       cues[key] +
       " Choose a setup leaving 2–3 clean reps. Reduce difficulty if the minimum cannot be performed with control.",
+  };
+}
+
+export function validWorkoutCalibration(
+  input: unknown,
+): input is WorkoutCalibration {
+  const x = input as WorkoutCalibration;
+  return (
+    !!x &&
+    Object.keys(x).every((k) =>
+      ["push", "levels", "loads", "pullLevel"].includes(k),
+    ) &&
+    [1, 2, 3, 4].includes(x.push) &&
+    (x.pullLevel === undefined || [1, 2, 3, 4].includes(x.pullLevel)) &&
+    (x.levels === undefined || validMovementLevels(x.levels)) &&
+    (x.loads === undefined ||
+      (!!x.loads &&
+        typeof x.loads === "object" &&
+        !Array.isArray(x.loads) &&
+        Object.entries(x.loads).every(
+          ([id, n]) =>
+            ["push", "squat", "split-squat", "row", "hinge", "core"].includes(
+              id,
+            ) &&
+            Number.isFinite(n) &&
+            n > 0 &&
+            n <= 10000,
+        )))
+  );
+}
+export function calibratedWorkoutRecipe(
+  rank: RegimenRank,
+  session: "A" | "B",
+  environment: TrainingEnvironment,
+  calibration: WorkoutCalibration,
+): WorkoutPrescription {
+  const p = abilityWorkout(
+    rank,
+    session,
+    environment,
+    calibration.push,
+    calibration.levels,
+  );
+  return {
+    ...p,
+    version: 3,
+    calibration: {
+      ...calibration,
+      ...(calibration.levels ? { levels: { ...calibration.levels } } : {}),
+      ...(calibration.loads ? { loads: { ...calibration.loads } } : {}),
+    },
+    exercises: p.exercises.map((e) => {
+      if (e.id === "row" && environment === "home" && calibration.pullLevel)
+        return {
+          ...e,
+          name:
+            calibration.pullLevel >= 4
+              ? "Slow-tempo strict pullup"
+              : calibration.pullLevel >= 3
+                ? "Strict pullup"
+                : "Foot-assisted pullup",
+          min: calibration.pullLevel >= 4 ? 6 : 3,
+          max: calibration.pullLevel >= 4 ? 10 : 6,
+          perSide: false,
+          cues: "Use a securely fixed bar, a repeatable controlled hang and no kipping. For assistance use stable foot support; record the setup. For the harder variation lower for three seconds. Choose a setup leaving two clean reps and reduce difficulty if minimum reps are not controlled.",
+          progress:
+            "Build to the top range at the same setup before reducing assistance or adding a small familiar load. Keep the bar setup and range consistent.",
+        };
+      return e.load &&
+        calibration.loads?.[
+          e.id as keyof NonNullable<WorkoutCalibration["loads"]>
+        ]
+        ? {
+            ...e,
+            suggestedLoadKg:
+              calibration.loads[
+                e.id as keyof NonNullable<WorkoutCalibration["loads"]>
+              ],
+          }
+        : { ...e };
+    }),
   };
 }

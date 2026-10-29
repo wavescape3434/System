@@ -21,8 +21,6 @@ const DETAILS: Record<string, string> = {
     "Complete 3 sets of 10 supported split squats on each side. Hold a fixed support, lower straight down through a controlled comfortable range and rest 90–120 seconds between sets. Keep stance length and depth consistent and record the lower side's completed reps if counts differ.",
   "u-weighted-strength":
     "Warm up for 5 minutes. Complete 2–3 work sets of 6–12 reps each of a familiar goblet squat or leg press, chest press or dumbbell floor press, supported row and Romanian deadlift or glute bridge; add 2 sets of 6–10 dead bugs per side. Rest 2 minutes between compound sets and leave about 2 clean reps in reserve. Choose loads you can control; record each exercise, set, load and range. For the guided A/B version with per-set logging, use Regimen.",
-  "u-pullup-3":
-    "Complete 3 sets of 3 strict pullups with a secure bar, controlled hang and consistent range; rest 2–3 minutes. No kipping. Stop before form changes. Strict pullups are one optional pulling-strength route, not a prerequisite for beginning full-body training.",
   "u-pullup-8":
     "After the dated preparation, complete 4 sets of 8 strict pullups with 2–3 minutes rest and consistent full range. This is a prepared muscular-endurance assessment; keep ordinary training submaximal and record every set.",
   "u-pullup-12":

@@ -1,3 +1,6 @@
+import AbilityCheckForm, { PracticeQualityForm } from "./AbilityCheckForm";
+import { validPracticeEvidence } from "./adaptive-ability";
+import type { PracticeEvidence } from "./adaptive-ability";
 import { exportData } from "./file-export";
 import {
   loadPrimary,
@@ -33,6 +36,7 @@ import {
   cancelReminders,
 } from "./reminders";
 import { LocalNotifications } from "@capacitor/local-notifications";
+import { recommendedRequest } from "./proficiency";
 import { groupRequests } from "./objective-catalog";
 import {
   periodStart,
@@ -166,6 +170,7 @@ export default function App() {
     [checked, setChecked] = useState<number[]>([]),
     [resultsOpen, setResultsOpen] = useState(false),
     [draft, setDraft] = useState({ ...EMPTY_RESULT }),
+    [practice, setPractice] = useState<PracticeEvidence | undefined>(),
     [toast, setToast] = useState(""),
     [user, setUser] = useState<User | null>(null),
     [menu, setMenu] = useState(false),
@@ -410,6 +415,7 @@ export default function App() {
       (x) => x.id === o.id && x.period === objectivePeriod(o),
     )?.result;
     setDraft(resultDraft(saved, c?.preferences?.units === "imperial"));
+    setPractice(saved?.practice);
     setResultsOpen(!!saved);
   };
   const run = async (fn: () => Promise<void>) => {
@@ -446,7 +452,17 @@ export default function App() {
     ? { c, update, navigate, openObjective, notify, section }
     : null;
   const active = PAGES.find((p) => p.id === page)!;
-  const parsedResult = parseResult(draft, preferences.units === "imperial");
+  const baseResult = parseResult(draft, preferences.units === "imperial");
+  const parsedResult = {
+    result: practice
+      ? { ...(baseResult.result || {}), practice }
+      : baseResult.result,
+    error:
+      baseResult.error ||
+      (practice && !validPracticeEvidence(practice)
+        ? "Name the subject and comparison source for the ability result."
+        : undefined),
+  };
   const objectiveDone = !!(c && objective && isComplete(c, objective));
   const objectiveTaken = !!(c && objective && isTaken(c, objective));
   const objectiveBlocks =
@@ -851,6 +867,7 @@ export default function App() {
                           c.milestones[`${o.id}:${objectivePeriod(o)}`] || [],
                         );
                         setDraft({ ...EMPTY_RESULT });
+                        setPractice(undefined);
                         setResultsOpen(false);
                       }}
                     >
@@ -864,6 +881,30 @@ export default function App() {
                 </div>
               ) : null;
             })()}
+            {!objectiveTaken && !objectiveDone && (
+              <AbilityCheckForm
+                key={objective.id}
+                c={c}
+                o={objective}
+                update={update}
+                onCalibrated={(next) => {
+                  const group = groupRequests(objectives(next)).find((g) =>
+                    g.variants.some((o) => o.id === objective.id),
+                  );
+                  if (group) {
+                    const chosen = recommendedRequest(next, group.variants);
+                    setObjective(chosen);
+                    setChecked(
+                      next.milestones[
+                        `${chosen.id}:${objectivePeriod(chosen)}`
+                      ] || [],
+                    );
+                    setDraft({ ...EMPTY_RESULT });
+                    setPractice(undefined);
+                  }
+                }}
+              />
+            )}
             {objective.calendarBound && (
               <Tag>
                 {periodStart(objective.cadence).toLocaleDateString()} –{" "}
@@ -928,13 +969,21 @@ export default function App() {
                   {resultsOpen ? "Hide results" : "Add results (optional)"}
                 </button>
                 {resultsOpen && (
-                  <ActivityResultForm
-                    o={objective}
-                    draft={draft}
-                    onChange={setDraft}
-                    imperial={preferences.units === "imperial"}
-                    error={parsedResult.error}
-                  />
+                  <>
+                    <ActivityResultForm
+                      o={objective}
+                      draft={draft}
+                      onChange={setDraft}
+                      imperial={preferences.units === "imperial"}
+                      error={parsedResult.error}
+                    />
+                    <PracticeQualityForm
+                      c={c}
+                      o={objective}
+                      value={practice}
+                      onChange={setPractice}
+                    />
+                  </>
                 )}
               </>
             )}

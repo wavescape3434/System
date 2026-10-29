@@ -68,6 +68,11 @@
   margin: 0 0 8px;
   font-size: 1.3rem;
 }
+.regimen-exercises > li > small {
+  display: block;
+  margin: 6px 0;
+  line-height: 1.5;
+}
 .regimen-exercises p {
   margin: 10px 0;
 }
@@ -232,4 +237,60 @@
   background: #fffdf5;
   color: #302b21;
   font: inherit;
+}
+.ability-check,
+.practice-quality {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  margin: 14px 0;
+  border: 1px solid #b49b6f;
+  border-radius: 6px;
+  background: #fffaf0;
+}
+.ability-check label,
+.practice-quality label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.ability-check label:has(input[type="checkbox"]),
+.practice-quality label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+.ability-check input:not([type="checkbox"]),
+.ability-check select,
+.practice-quality input:not([type="checkbox"]),
+.practice-quality select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px;
+  color: #302b21;
+  background: #fffdf5;
+  border: 1px solid #947b51;
+  font: inherit;
+}
+.ability-check input[type="checkbox"],
+.practice-quality input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+.ability-check fieldset {
+  min-width: 0;
+  display: grid;
+  gap: 10px;
+}
+.regimen-settings label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.regimen-settings input[type="checkbox"] {
+  width: 20px;
+  min-height: 20px;
+  flex: 0 0 auto;
 }

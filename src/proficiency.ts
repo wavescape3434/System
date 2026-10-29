@@ -1,10 +1,13 @@
 import type { Character, Objective } from "./domain";
 import type { RegimenRank } from "./training-prescriptions";
 import { REGIMEN_RANKS } from "./training-prescriptions";
-import { CAREER_GUIDES } from "./career-guides";
-import { CLASSES } from "./class-catalog";
-import { VOCATIONS } from "./careers";
 import { latestPush } from "./training-regimen";
+import {
+  abilityKey,
+  abilityRecommendation,
+  abilityBrief,
+  physicalActivityRank,
+} from "./adaptive-ability";
 export interface Proficiency {
   rank: RegimenRank;
   topic: string;
@@ -40,6 +43,17 @@ export function proficiencyKey(c: Character, o: Objective): string {
   if (o.scope === "class") return `class:${c.activeClass}:${o.stat}`;
   return `activity:${o.family || o.requestGroup || o.id}`;
 }
+export function activeProficiency(c: Character, o: Objective) {
+  if (!c.proficiencies) return undefined;
+  const exact = c.proficiencies?.[abilityKey(c, o)];
+  if (exact) return exact;
+  const main =
+    o.scope === "universal" ||
+    o.id.replace(/-proficiency-[fedc]$/, "") === "profession-daily" ||
+    o.id.replace(/-proficiency-[fedc]$/, "") === `${c.activeClass}-daily` ||
+    o.id.replace(/-proficiency-[fedc]$/, "") === `vocation-${c.vocation}-daily`;
+  return main ? c.proficiencies?.[proficiencyKey(c, o)] : undefined;
+}
 export const PROFICIENCY_LEVELS = {
   F: "New · follow an example, then repeat one small part unaided",
   E: "Foundation · complete familiar work unaided; correct errors with a guide",
@@ -52,7 +66,10 @@ export function recommendedRequest(
 ): Objective {
   const first = variants[0];
   if (!first) return first;
-  let target = c.proficiencies?.[proficiencyKey(c, first)]?.rank;
+  const profile = activeProficiency(c, first);
+  const measured = abilityRecommendation(c, first, profile?.topic);
+  let target =
+    measured?.level || profile?.rank || physicalActivityRank(c, first);
   const a = c.assessmentHistory?.at(-1)?.assessment || c.baseline.assessment;
   const pushing = latestPush(c);
   if (!target && first.family === "u-push" && pushing) {
@@ -80,28 +97,25 @@ export function recommendedRequest(
         : "F");
   if (!target && first.family === "u-walk" && a?.mileSeconds) target = "E";
   // Unknown ability stays visible as uncalibrated. Never infer real proficiency from RPG stats.
-  if (!target) return variants.find((o) => o.rank === "D") || first;
+  if (!target) return variants[0];
+  const distance = (o: Objective) =>
+    Math.abs(
+      ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"].indexOf(o.rank || "F") -
+        REGIMEN_RANKS.indexOf(target!),
+    );
   return (
     variants.find((o) => o.rank === target) ||
     variants.reduce(
-      (best, o) =>
-        Math.abs(
-          REGIMEN_RANKS.indexOf(o.rank as RegimenRank) -
-            REGIMEN_RANKS.indexOf(target!),
-        ) <
-        Math.abs(
-          REGIMEN_RANKS.indexOf(best.rank as RegimenRank) -
-            REGIMEN_RANKS.indexOf(target!),
-        )
-          ? o
-          : best,
+      (best, o) => (distance(o) < distance(best) ? o : best),
       first,
     )
   );
 }
 export function proficiencyFeedback(c: Character, o: Objective) {
-  const key = proficiencyKey(c, o),
-    p = c.proficiencies?.[key];
+  const p = activeProficiency(c, o);
+  const adaptive = abilityRecommendation(c, o, p?.topic);
+  if (adaptive)
+    return `${adaptive.level} suggested · ${adaptive.latest.subject} · ${adaptive.reason}`;
   if (!p) return "Set a subject and starting difficulty in Ability settings.";
   const last = c.completions
     .filter(
@@ -135,83 +149,44 @@ export function proficiencyFeedback(c: Character, o: Objective) {
       : "Keep the difficulty. Correct errors, then retry comparable material on a later day.";
 }
 export function applyProficiency(o: Objective, c: Character): Objective {
-  const p = c.proficiencies?.[proficiencyKey(c, o)];
+  if (o.cadence !== "daily") {
+    if (!c.proficiencies && !c.abilityChecks?.length && !c.completions.length)
+      return o;
+    const profile = activeProficiency(c, o),
+      recommendation = abilityRecommendation(c, o, profile?.topic);
+    const subject = profile?.topic || recommendation?.latest.subject;
+    if (!subject || o.kind === "class-trial") return o;
+    const brief = abilityBrief(
+      o,
+      recommendation?.level || profile?.rank || "F",
+    );
+    if (brief.domain === "recovery") return o;
+    return {
+      ...o,
+      description: `${o.description} Preparation subject: ${subject}. Review actual work against: ${brief.criteria.join("; ")}. ${brief.next} The request's stated calendar, practice-day and achievement requirements still apply.`,
+      tags: [...(o.tags || []), subject],
+    };
+  }
   if (
     o.cadence !== "daily" ||
     o.workout ||
-    o.id.includes("technique-daily") ||
     o.kind === "class-trial" ||
-    (o.scope === "universal" && !p)
+    o.id.includes("technique-daily")
   )
     return o;
-  if (!(["INT", "WIS", "CHA"].includes(o.stat) || o.scope === "profession"))
-    return p
-      ? {
-          ...o,
-          description: `${o.description} Setup: ${p.topic}. Success criterion: ${p.criterion}.`,
-        }
-      : o;
-  const steps: Record<RegimenRank, string> = {
-    F: "Study one worked example for 3 minutes. Close it and reproduce one essential step; check and correct the result. Spend 5–10 minutes total.",
-    E: "Work for 15 minutes on three familiar examples without copying a solution. Check each against a reliable answer key or rubric, correct errors, and retry one later.",
-    D: "Spend 25 minutes on at least three unfamiliar standard problems or one equivalent work sample. Explain the method, check the outcome, and redo the weakest part without notes.",
-    C: "Spend 35–45 minutes on an unfamiliar case with two real constraints (for example incomplete information and a time or resource limit). Compare two approaches, test the result, and defend the trade-off against the declared rubric.",
-  };
-  const rank = (o.rank || p?.rank || "D") as RegimenRank;
-  if (o.stat === "CHA" && o.scope !== "profession") {
-    const work = {
-      F: "Record a 60-second explanation and identify one unclear sentence.",
-      E: "Record a two-minute explanation for a beginner; replace jargon, add a concrete example and record the revised version.",
-      D: "Listen once to an unfamiliar two-minute explanation, summarize it aloud, check the source, and re-record after correcting missing or invented details.",
-      C: "Prepare a five-minute explanation of an unfamiliar topic for two different audiences. Record both, compare clarity, structure, accuracy and audience fit, and rework the weakest minute.",
-    };
-    return {
-      ...o,
-      description: `${work[rank]} Subject: ${p?.topic || "choose a specific topic"}. Success criterion: ${p?.criterion || "main point first, accurate supporting detail, usable next step, and a reviewed revision"}. Keep both attempts and review one measurable change.`,
-    };
-  }
-  if (o.stat === "WIS" && o.scope !== "profession") {
-    const faith = /bible|scripture|disciple|cleric|prayer/i.test(
-      `${o.id} ${o.description}`,
-    );
-    const work = faith
-      ? {
-          F: "Read a short Bible passage in its chapter context. State the speaker, audience and main point; check against the text.",
-          E: "Outline a complete Bible paragraph without notes, then verify its context and correct unsupported assumptions.",
-          D: "Compare two interpretations of a Bible passage using the surrounding chapter and a reliable commentary. Separate textual evidence from application.",
-          C: "Study a difficult Bible passage in its full literary context. Compare two supported interpretations, examine the strongest objection to your conclusion, and record one application to review later.",
-        }
-      : {
-          F: "Record one prediction with its reason and a checkable outcome date.",
-          E: "For one decision, separate observed facts from assumptions and state your confidence before checking the outcome.",
-          D: "Review five dated predictions on one subject. Compare confidence with outcomes, identify one recurring error, and change a decision rule.",
-          C: "Analyze an unfamiliar uncertain decision using two plausible explanations, relevant base rates, consequences and a disconfirming test. Record your forecast before seeing the result, then schedule a review.",
-        };
-    return {
-      ...o,
-      description: `${work[rank]} Subject: ${p?.topic || "choose a specific subject"}. Success criterion: ${p?.criterion || "state evidence, uncertainty, one correction and a later check"}.`,
-    };
-  }
-  const guide =
-    o.scope === "profession" && o.careerCategory
-      ? CAREER_GUIDES[o.careerCategory]
-      : undefined;
-  const goal =
-    o.scope === "class"
-      ? CLASSES.find((x) => x.id === c.activeClass)?.goal
-      : undefined;
-  const assignment = guide ? guide[{ F: 0, E: 2, D: 5, C: 9 }[rank]] : goal;
-  const vocation = o.id.startsWith("vocation-")
-    ? VOCATIONS.find((v) => v.id === c.vocation)
-    : undefined;
-  const introduction = vocation
-    ? `Focus: ${vocation.practice} ${assignment || ""}`
-    : assignment
-      ? `Focus: ${assignment}`
-      : o.description;
+  const profile = activeProficiency(c, o);
+  const recommendation = abilityRecommendation(c, o, profile?.topic);
+  const rank = (
+    o.rank && REGIMEN_RANKS.includes(o.rank as RegimenRank) ? o.rank : "F"
+  ) as RegimenRank;
+  const brief = abilityBrief(o, rank);
+  if (brief.domain === "recovery") return o;
+  const subject = profile?.topic || recommendation?.latest.subject;
+  if (["strength", "aerobic"].includes(brief.domain) && o.scope !== "class")
+    return { ...o, description: `${o.description} ${brief.next}` };
   return {
     ...o,
-    description: `${introduction}\nSubject: ${p?.topic || "choose a specific subject in Ability settings"}. ${steps[rank] || steps.D} Success criterion: ${p?.criterion || "declare an answer key or performance rubric before starting"}. Record the source/version, difficulty and actual outcome; a familiar easy set does not demonstrate the next tier.`,
-    tags: [...(o.tags || []), ...(p ? [p.topic] : [])],
+    description: `${brief.task}${subject ? ` Subject: ${subject}.` : ""} Success criteria: ${brief.criteria.join("; ")}.${profile ? ` Comparison source/criterion: ${profile.criterion}.` : ""} ${brief.next}`,
+    tags: [...(o.tags || []), ...(subject ? [subject] : [])],
   };
 }

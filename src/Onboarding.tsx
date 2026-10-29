@@ -1,3 +1,5 @@
+import AbilityCheckForm from "./AbilityCheckForm";
+import type { AbilityCheck } from "./adaptive-ability";
 import AppearancePicker from "./AppearancePicker";
 import { PROFICIENCY_LEVELS } from "./proficiency";
 import type { Proficiency } from "./proficiency";
@@ -7,7 +9,7 @@ import { findAppearance, classAppearance } from "./appearance-catalog";
 import AssessmentForm from "./AssessmentForm";
 import { EMPTY_ASSESSMENT } from "./metrics";
 import ClassBrowser from "./ClassBrowser";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import {
   loadRegistrationDraft,
   saveRegistrationDraft,
@@ -23,6 +25,7 @@ import {
   createCharacter,
   demoCharacter,
   startingRankFor,
+  objectives,
 } from "./domain";
 import type { Character, Baseline } from "./domain";
 import { Crest, Tag } from "./ui";
@@ -59,7 +62,10 @@ export default function Onboarding({
     [classId, setClassId] = useState(draft?.classId || "disciple"),
     [profession, setProfession] = useState(draft?.profession || "Analyst"),
     [careerAbility, setCareerAbility] = useState(draft?.careerAbility || ""),
-    [careerTopic, setCareerTopic] = useState(draft?.careerTopic || "");
+    [careerTopic, setCareerTopic] = useState(draft?.careerTopic || ""),
+    [abilityChecks, setAbilityChecks] = useState<AbilityCheck[]>(
+      draft?.abilityChecks || [],
+    );
   useEffect(() => {
     if (step > 0)
       saveRegistrationDraft({
@@ -73,6 +79,7 @@ export default function Onboarding({
         profession,
         careerAbility,
         careerTopic,
+        abilityChecks,
       });
   }, [
     step,
@@ -85,11 +92,22 @@ export default function Onboarding({
     profession,
     careerAbility,
     careerTopic,
+    abilityChecks,
   ]);
   const finish = async (c: Character) => {
     if (await onCreate(c)) clearRegistrationDraft();
   };
   const values = startingStats(baseline);
+  const placementCharacter = useMemo(
+    () => ({
+      ...createCharacter(name, baseline, classId, profession),
+      abilityChecks,
+    }),
+    [name, baseline, classId, profession, abilityChecks],
+  );
+  const professionProbe = objectives(placementCharacter).find(
+    (o) => o.id === "profession-daily",
+  )!;
   return (
     <div className="onboarding">
       {appearanceOpen && (
@@ -275,6 +293,17 @@ export default function Onboarding({
                   selected={classId}
                   onSelect={setClassId}
                 />
+                <details>
+                  <summary>Check starting profession ability</summary>
+                  <AbilityCheckForm
+                    c={placementCharacter}
+                    o={professionProbe}
+                    update={async (next) => {
+                      setAbilityChecks(next.abilityChecks || []);
+                      return true;
+                    }}
+                  />
+                </details>
                 <label>
                   Profession practice · current ability
                   <select
@@ -318,6 +347,7 @@ export default function Onboarding({
                       ...createCharacter(name, baseline, classId, profession),
                       ...(appearance ? { appearance } : {}),
                       assessmentFormsSeen: seenForms,
+                      abilityChecks,
                       ...(careerAbility && careerTopic.trim().length >= 2
                         ? {
                             proficiencies: {

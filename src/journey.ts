@@ -32,6 +32,7 @@ export function rangeStart(
     const dates = [
       c.createdAt,
       ...c.completions.map((o) => o.at),
+      ...(c.abilityChecks || []).map((p) => p.at),
       ...(c.journeyEvents || []).map((e) => e.at),
       ...c.journal.map((j) => j.at),
       ...c.certificates.map((cert) =>
@@ -57,6 +58,13 @@ export function journeyItems(c: Character): JourneyItem[] {
       title: "Joined the Guild",
       detail: `Starting rank ${c.startingRank || "F"}`,
     },
+    ...(c.abilityChecks || []).map((p) => ({
+      id: `ability-${p.id}`,
+      at: p.at,
+      kind: "note" as const,
+      title: `Ability check · ${p.subject}`,
+      detail: `${p.level} sample · ${p.value}/${p.total} criteria · ${p.source}`,
+    })),
     ...c.completions.map((o) => ({
       id: `completion-${o.id}-${o.period}`,
       at: o.at,

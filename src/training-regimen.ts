@@ -1,7 +1,8 @@
+import { adaptiveWorkout } from "./workout-calibration";
 import type { Character, Objective, Completion } from "./domain";
 import { TASK_XP, TASK_GOLD } from "./task-ranks";
 import { hasEquipment } from "./preferences";
-import { REGIMEN_RANKS, abilityWorkout } from "./training-prescriptions";
+import { REGIMEN_RANKS } from "./training-prescriptions";
 import type {
   RegimenRank,
   WorkoutPrescription,
@@ -18,6 +19,12 @@ export function startingRegimenRank(c: Character): RegimenRank {
     a?.strengthTest === "pushups" &&
     a.pushupStyle === "floor" &&
     (a.pushups || 0) >= 12
+  )
+    return "E";
+  if (
+    a?.strengthTest === "chair" &&
+    !a.chairAssisted &&
+    (a.chairStands || 0) >= 15
   )
     return "E";
   if (
@@ -64,7 +71,21 @@ export function latestPush(
 }
 export function assessedPushLevel(c: Character): 1 | 2 | 3 | 4 {
   const result = latestPush(c);
-  if (!result) return 1;
+  if (!result) {
+    const a = c.assessmentHistory?.at(-1)?.assessment || c.baseline.assessment;
+    if (
+      a?.strengthTest === "weighted" &&
+      a.massKg &&
+      a.liftKg &&
+      a.liftReps &&
+      a.liftReps >= 4 &&
+      a.liftReps <= 10
+    ) {
+      const ratio = a.liftKg / a.massKg;
+      return ratio >= 1 ? 4 : ratio >= 0.75 ? 3 : ratio >= 0.4 ? 2 : 1;
+    }
+    return 1;
+  }
   if (result.style === "floor")
     return result.count >= 30
       ? 4
@@ -84,16 +105,10 @@ export const personalizedWorkout = (
   rank: RegimenRank,
   session: "A" | "B",
   environment: TrainingPlan["environment"],
-) =>
-  abilityWorkout(
-    rank,
-    session,
-    environment,
-    c.trainingPlan?.pushLevel || assessedPushLevel(c),
-    c.trainingPlan?.movementLevels,
-  );
+) => adaptiveWorkout(c, rank, session, environment, assessedPushLevel(c));
 export const defaultTrainingPlan = (c: Character): TrainingPlan => ({
   version: 1,
+  automaticAbility: true,
   startedOn: localDate(),
   walkMinutes: (
     c.assessmentHistory?.at(-1)?.assessment || c.baseline.assessment
@@ -118,22 +133,18 @@ export const regimenReward = (rank: RegimenRank) => ({
 });
 export const workoutSummary = (p: WorkoutPrescription) =>
   `${p.minutes} minutes. ${p.warmup} Complete ${p.exercises.map((e) => `${e.name}: ${e.sets} × ${e.min}–${e.max}${e.perSide ? " per side" : ""}`).join("; ")}. Rest 90–120 seconds between work sets. Finish each set with about ${p.rir} clean repetitions in reserve. Record the same variation, load and range for comparisons.`;
-const requestCache = new Map<string, Objective[]>();
+const requestCache = new WeakMap<Character, Map<string, Objective[]>>();
 export function regimenRequests(c: Character): Objective[] {
   const environment = (c.trainingPlan || defaultTrainingPlan(c)).environment;
   const pushLevel = c.trainingPlan?.pushLevel || assessedPushLevel(c);
-  const cacheKey = `${environment}:${pushLevel}:${JSON.stringify(c.trainingPlan?.movementLevels || {})}`;
-  const cached = requestCache.get(cacheKey);
+  const cacheKey = `${environment}:${pushLevel}:${JSON.stringify(c.trainingPlan?.movementLevels || {})}:${c.trainingPlan?.automaticAbility}:${c.completions.length}:${c.completions.at(-1)?.at}:${c.id}`;
+  const cache = requestCache.get(c) || new Map<string, Objective[]>();
+  requestCache.set(c, cache);
+  const cached = cache.get(cacheKey);
   if (cached) return cached;
   const result: Objective[] = REGIMEN_RANKS.flatMap((rank) =>
     (["A", "B"] as const).map((session) => {
-      const workout = abilityWorkout(
-        rank,
-        session,
-        environment,
-        pushLevel,
-        c.trainingPlan?.movementLevels,
-      );
+      const workout = personalizedWorkout(c, rank, session, environment);
       return {
         id: `regimen-${session.toLowerCase()}-${rank.toLowerCase()}`,
         title: `Full-body session ${session} · ${rank}`,
@@ -148,7 +159,12 @@ export function regimenRequests(c: Character): Objective[] {
         participants: "solo",
         family: "u-resistance",
         cooldownHours: 48,
-        equipment: environment === "home" ? "bodyweight" : "weights",
+        equipment:
+          environment === "home"
+            ? workout.calibration?.pullLevel
+              ? "pullup-bar"
+              : "bodyweight"
+            : "weights",
         requestGroup: `regimen-${session}`,
         groupTitle: `Full-body session ${session}`,
         tags: ["Regimen", "Strength", "Full body"],
@@ -157,7 +173,7 @@ export function regimenRequests(c: Character): Objective[] {
       };
     }),
   );
-  requestCache.set(cacheKey, result);
+  cache.set(cacheKey, result);
   return result;
 }
 export function regimenGoals(): Objective[] {
@@ -193,6 +209,37 @@ export function regimenGoals(): Objective[] {
       gold: TASK_GOLD[rank] * (cadence === "weekly" ? 4 : 18),
     })),
   );
+}
+export function regimenWalkingRequest(c: Character): Objective[] {
+  const minutes = c.trainingPlan?.walkMinutes;
+  if (!minutes || [5, 15, 30].includes(minutes)) return [];
+  const rank = minutes < 15 ? "E" : minutes < 30 ? "D" : "C";
+  const xp =
+    minutes < 15
+      ? Math.round(10 + (minutes - 5) * 1.5)
+      : minutes < 30
+        ? Math.round(25 + ((minutes - 15) * 35) / 15)
+        : Math.round(60 + (minutes - 30) * 6);
+  return [
+    {
+      id: `u-walk-${minutes}`,
+      title: `Walk for ${minutes} minutes`,
+      description: `Walk for ${minutes} minutes at a sustainable conversational effort, with an easy start and finish. Record actual duration and effort; keep this walking record separate from running or cycling.`,
+      cadence: "daily",
+      stat: "CON",
+      rank,
+      xp,
+      gold: Math.max(2, Math.round(xp / 5)),
+      minutes: `${minutes} min`,
+      scope: "universal",
+      category: "Universal",
+      taskVersion: 2,
+      participants: "solo",
+      family: "u-walk",
+      requestGroup: "walk",
+      groupTitle: "Walking",
+    },
+  ];
 }
 export const hardStrength = (
   x:

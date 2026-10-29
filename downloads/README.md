@@ -1,10 +1,10 @@
-# Install The Adventurers Guild 1.26.0 on Android
+# Install The Adventurers Guild 1.27.0 on Android
 
 Open `the-guild-debug.apk` in this folder on GitHub, then select **Download raw file** (the download arrow). Open the downloaded APK on your Android phone. Android may ask you to allow installations from your browser or file manager.
 
 Requires Android 7.0 or newer. Install this update over your existing app to retain character data; export a backup first. This is a signed development build for personal testing, not a Play Store release. Google sign-in and cloud backups need the Firebase/OAuth configuration described in the main README; the local app works without it.
 
-Version **1.26.0 / code 28** adds ability-based work selection, independently calibrated home exercises, graded career/vocation practice, imperial-default mile entry and new logic/judgment/spoken-communication checks. Open **Objectives → Ability settings** or **Regimen → Edit plan**. [Research and simulations](../docs/proficiency-1.26/README.md) · [Changes](../docs/update-1.26.md) · [Verification](../docs/verification-1.26.md).
+Version **1.27.0 / code 29** adapts future work from performed activity samples and comparable results across exercise, learning, communication, judgment, professions and vocations. Movements and subjects progress separately; profession milestone exams use profession work. Open a request → **Check current ability**, **Objectives → Ability settings**, or **Regimen → Edit plan**. [Methods and simulations](../docs/adaptive-1.27/README.md) · [Changes](../docs/update-1.27.md) · [Verification](../docs/verification-1.27.md).
 
 Google setup stays deferred. The APK is compiled, signature-checked and compared with production web assets; installed behavior still needs physical Android testing. [Remaining P05 work](../docs/readiness-1.17.md).
 

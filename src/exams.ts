@@ -351,7 +351,7 @@ export function submitFitnessExam(
     p = FITNESS_PROTOCOLS.find((p) => p.id === protocolId && p.stat === t.stat);
   const workSample =
     protocolId === workProtocolId(t.stat, note) &&
-    ["INT", "WIS", "CHA"].includes(t.stat);
+    (t.scope === "profession" || ["INT", "WIS", "CHA"].includes(t.stat));
   if (
     !actual ||
     (!p && !workSample) ||

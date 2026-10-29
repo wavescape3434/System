@@ -130,6 +130,9 @@ test("restoring an older file preserves the exact replaced character and can rec
   await page
     .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
+  await page
+    .getByRole("combobox", { name: "Choose request rank", exact: true })
+    .selectOption("warrior-daily");
   await page.getByRole("button", { name: "Take request", exact: true }).click();
   await page
     .getByRole("button", { name: "Add results (optional)", exact: true })

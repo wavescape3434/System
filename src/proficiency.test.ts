@@ -152,7 +152,9 @@ describe("ability-based work instead of RPG-stat inference", () => {
       )!.variants;
       expect(variants.map((o) => o.rank)).toEqual(["F", "E", "D", "C"]);
       expect(recommendedRequest(c, variants).rank).toBe("C");
-      expect(variants.at(-1)!.description).toContain("two real constraints");
+      expect(variants.at(-1)!.description).toContain(
+        "two declared constraints",
+      );
       expect(validateCharacter(c)).toBe(true);
     }
     for (const vocation of VOCATIONS) {

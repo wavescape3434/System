@@ -4,6 +4,7 @@ test.use({
   viewport: { width: 390, height: 844 },
 });
 const nav = async (page: Page, name: string) => {
+  await page.locator(".app-shell").waitFor();
   const menu = page.getByRole("button", {
     name: "Open navigation",
     exact: true,
@@ -127,7 +128,9 @@ test("career proficiency persists and selects challenging, category-specific wor
     .click();
   await page
     .getByRole("combobox", { name: "Practice area", exact: true })
-    .selectOption("career:healthcare:Registered Nurse");
+    .selectOption({
+      label: "profession · Registered Nurse · Profession practice",
+    });
   await page
     .getByLabel("Subject or activity", { exact: true })
     .fill("Structured handoffs in fictional cases");
@@ -159,7 +162,9 @@ test("career proficiency persists and selects challenging, category-specific wor
   await expect(page.getByRole("dialog")).toContainText(
     "Structured handoffs in fictional cases",
   );
-  await expect(page.getByRole("dialog")).toContainText("two real constraints");
+  await expect(page.getByRole("dialog")).toContainText(
+    "two declared constraints",
+  );
   expect((await read(page)).completions).toHaveLength(0);
 });
 test("CHA is a spoken trial with timer and anchored rubric, without automatic microphone use", async ({

@@ -4,7 +4,14 @@ async function sample(page: import("@playwright/test").Page) {
   await page.goto("/");
   await page.getByRole("button", { name: "Try a sample character" }).click();
 }
-async function takeOpen(page: import("@playwright/test").Page) {
+async function takeOpen(
+  page: import("@playwright/test").Page,
+  rankId?: string,
+) {
+  if (rankId)
+    await page
+      .getByRole("combobox", { name: "Choose request rank", exact: true })
+      .selectOption(rankId);
   const take = page.getByRole("button", { name: "Take request", exact: true });
   if (await take.isVisible()) await take.click();
 }
@@ -78,7 +85,7 @@ test("objectives cannot award twice and the reward survives reload", async ({
   await page
     .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
-  await takeOpen(page);
+  await takeOpen(page, "warrior-daily");
   await page.getByRole("button", { name: "Submit completed request" }).click();
   await page
     .getByRole("button", { name: "Objectives", exact: true })
@@ -106,7 +113,7 @@ test("class changes update objectives and keep the previous class record", async
   await page
     .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
-  await takeOpen(page);
+  await takeOpen(page, "warrior-daily");
   await page.getByRole("button", { name: "Submit completed request" }).click();
   await page.getByRole("button", { name: "Class Paths", exact: true }).click();
   await enterClass(page, "Bard");
@@ -597,7 +604,7 @@ test("Taken requests persist and keep their original class credit after a class 
   await page
     .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
-  await takeOpen(page);
+  await takeOpen(page, "warrior-daily");
   await page.getByRole("button", { name: "Close dialog", exact: true }).click();
   await page
     .locator(".request-view-tabs")
@@ -656,7 +663,7 @@ test("recurring requests return as suggestions and require another manual accept
   await page
     .getByRole("button", { name: "View Warrior commission", exact: true })
     .click();
-  await takeOpen(page);
+  await takeOpen(page, "warrior-daily");
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();
@@ -687,7 +694,7 @@ test("recurring requests return as suggestions and require another manual accept
       exact: true,
     }),
   ).toHaveCount(0);
-  await takeOpen(page);
+  await takeOpen(page, "warrior-daily");
   await page
     .getByRole("button", { name: "Submit completed request", exact: true })
     .click();

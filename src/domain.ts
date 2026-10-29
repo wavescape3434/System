@@ -260,6 +260,7 @@ export interface JournalEntry {
   text: string;
 }
 export interface Character {
+  abilityChecks?: import("./adaptive-ability").AbilityCheck[];
   proficiencies?: Record<string, import("./proficiency").Proficiency>;
   trainingPlan?: import("./training-prescriptions").TrainingPlan;
   skillPlans?: import("./skill-plans").SkillPlans;
@@ -1408,7 +1409,12 @@ export function resolveTakenRequest(
     return {
       ...resolved,
       workout: r.workout,
-      equipment: r.workout.environment === "home" ? "bodyweight" : "weights",
+      equipment:
+        r.workout.environment === "home"
+          ? r.workout.calibration?.pullLevel
+            ? "pullup-bar"
+            : "bodyweight"
+          : "weights",
       description:
         workoutSummary(r.workout) +
         (resolved.scope === "class"
@@ -1416,7 +1422,22 @@ export function resolveTakenRequest(
           : ""),
     };
   }
-  return resolved;
+  return resolved
+    ? {
+        ...resolved,
+        ...(typeof r.description === "string" && r.description.length <= 12000
+          ? { description: r.description }
+          : {}),
+        ...(typeof r.minutes === "string" && r.minutes.length <= 100
+          ? { minutes: r.minutes }
+          : {}),
+        ...(Array.isArray(r.tags) &&
+        r.tags.length <= 30 &&
+        r.tags.every((t) => typeof t === "string" && t.length <= 200)
+          ? { tags: [...r.tags] }
+          : {}),
+      }
+    : undefined;
 }
 export const takenObjectives = (c: Character, now = new Date()): Objective[] =>
   (c.takenRequests || [])
